@@ -1,0 +1,40 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@worldprint/wdesign-carousel": ["libs/carousel/src/index.ts"],
+      "@worldprint/wdesign-core": ["libs/core/src/index.ts"],
+      "@worldprint/wdesign-dates": ["libs/dates/src/index.ts"],
+      "@worldprint/wdesign-dropzone": ["libs/dropzone/src/index.ts"],
+      "@worldprint/wdesign-form": ["libs/form/src/index.ts"],
+      "@worldprint/wdesign-hooks": ["libs/hooks/src/index.ts"],
+      "@worldprint/wdesign-modals": ["libs/modals/src/index.ts"],
+      "@worldprint/wdesign-next": ["libs/next/src/index.ts"],
+      "@worldprint/wdesign-notifications": ["libs/notifications/src/index.ts"],
+      "@worldprint/wdesign-nprogress": ["libs/nprogress/src/index.ts"],
+      "@worldprint/wdesign-prism": ["libs/prism/src/index.ts"],
+      "@worldprint/wdesign-remix": ["libs/remix/src/index.ts"],
+      "@worldprint/wdesign-spotlight": ["libs/spotlight/src/index.ts"],
+      "@worldprint/wdesign-ssr": ["libs/ssr/src/index.ts"],
+      "@worldprint/wdesign-styles": ["libs/styles/src/index.ts"],
+      "@worldprint/wdesign-styles-api": ["libs/styles-api/src/index.ts"],
+      "@worldprint/wdesign-table": ["libs/table/src/index.ts"],
+      "@worldprint/wdesign-tiptap": ["libs/tiptap/src/index.ts"],
+      "@worldprint/wdesign-utils": ["libs/utils/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

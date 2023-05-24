@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ActionIcon,
-  ActionIconProps,
-  Tooltip,
-} from '@worldprinter/wdesign-core';
+import { ActionIcon, ActionIconProps, Tooltip } from '@worldprinter/wdesign-core';
 import { HTMLPropsRef, MRT_TableInstance } from '..';
 
 interface Props<TData extends Record<string, any> = {}>
@@ -19,7 +15,7 @@ const commonStyles = {
 };
 
 export const MRT_ToggleDensePaddingButton = <
-  TData extends Record<string, any> = {}
+  TData extends Record<string, any> = {},
 >({
   table,
   ...rest

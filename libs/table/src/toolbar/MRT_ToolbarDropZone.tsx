@@ -30,7 +30,7 @@ export const MRT_ToolbarDropZone = <TData extends Record<string, any> = {}>({
         !!enableGrouping &&
           !!draggingColumn &&
           draggingColumn.columnDef.enableGrouping !== false &&
-          !grouping.includes(draggingColumn.id)
+          !grouping.includes(draggingColumn.id),
       );
     }
   }, [enableGrouping, draggingColumn, grouping]);
@@ -44,7 +44,7 @@ export const MRT_ToolbarDropZone = <TData extends Record<string, any> = {}>({
             alignItems: 'center',
             backgroundColor: theme.fn.rgba(
               getPrimaryColor(theme),
-              hoveredColumn?.id === 'drop-zone' ? 0.2 : 0.1
+              hoveredColumn?.id === 'drop-zone' ? 0.2 : 0.1,
             ),
             border: `dashed ${getPrimaryColor(theme)} 2px`,
             justifyContent: 'center',
@@ -59,7 +59,7 @@ export const MRT_ToolbarDropZone = <TData extends Record<string, any> = {}>({
           <Text>
             {localization.dropToGroupBy.replace(
               '{column}',
-              draggingColumn?.columnDef?.header ?? ''
+              draggingColumn?.columnDef?.header ?? '',
             )}
           </Text>
         </Flex>

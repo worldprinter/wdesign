@@ -41,11 +41,11 @@ export const MRT_ToolbarAlertBanner = <TData extends Record<string, any> = {}>({
       ? localization.selectedCountOfRowCountRowsSelected
           ?.replace(
             '{selectedCount}',
-            getSelectedRowModel().rows.length.toString()
+            getSelectedRowModel().rows.length.toString(),
           )
           ?.replace(
             '{rowCount}',
-            (rowCount ?? getPrePaginationRowModel().rows.length).toString()
+            (rowCount ?? getPrePaginationRowModel().rows.length).toString(),
           )
       : null;
 

@@ -9,7 +9,7 @@ interface Props<TData extends Record<string, any> = {}>
 }
 
 export const MRT_ToggleFiltersButton = <
-  TData extends Record<string, any> = {}
+  TData extends Record<string, any> = {},
 >({
   table,
   ...rest

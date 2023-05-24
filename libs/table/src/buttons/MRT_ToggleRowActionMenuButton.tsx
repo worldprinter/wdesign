@@ -11,7 +11,7 @@ interface Props<TData extends Record<string, any> = {}> {
 }
 
 export const MRT_ToggleRowActionMenuButton = <
-  TData extends Record<string, any> = {}
+  TData extends Record<string, any> = {},
 >({
   cell,
   row,

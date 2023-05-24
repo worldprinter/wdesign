@@ -1,56 +1,56 @@
-import React from 'react';
+import React from 'react'
 import {
-  ActionIcon,
-  ActionIconProps,
-  Tooltip,
-} from '@worldprinter/wdesign-core';
-import type { HTMLPropsRef, MRT_TableInstance } from '..';
+    ActionIcon,
+    ActionIconProps,
+    Tooltip,
+} from '@worldprinter/wdesign-core'
+import type { HTMLPropsRef, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}>
-  extends ActionIconProps,
-    HTMLPropsRef<HTMLButtonElement> {
-  table: MRT_TableInstance<TData>;
+    extends ActionIconProps,
+        HTMLPropsRef<HTMLButtonElement> {
+    table: MRT_TableInstance<TData>
 }
 
 export const MRT_ToggleGlobalFilterButton = <
-  TData extends Record<string, any> = {}
+    TData extends Record<string, any> = {},
 >({
-  table,
-  ...rest
+    table,
+    ...rest
 }: Props<TData>) => {
-  const {
-    getState,
-    options: {
-      icons: { IconSearch, IconCircleOff },
+    const {
+        getState,
+        options: {
+            icons: { IconSearch, IconCircleOff },
 
-      localization,
-    },
-    refs: { searchInputRef },
-    setShowGlobalFilter,
-  } = table;
-  const { globalFilter, showGlobalFilter } = getState();
+            localization,
+        },
+        refs: { searchInputRef },
+        setShowGlobalFilter,
+    } = table
+    const { globalFilter, showGlobalFilter } = getState()
 
-  const handleToggleSearch = () => {
-    setShowGlobalFilter(!showGlobalFilter);
-    setTimeout(() => searchInputRef.current?.focus(), 100);
-  };
+    const handleToggleSearch = () => {
+        setShowGlobalFilter(!showGlobalFilter)
+        setTimeout(() => searchInputRef.current?.focus(), 100)
+    }
 
-  return (
-    <Tooltip
-      withinPortal
-      withArrow
-      label={rest?.title ?? localization.showHideSearch}
-    >
-      <ActionIcon
-        aria-label={rest?.title ?? localization.showHideSearch}
-        disabled={!!globalFilter}
-        onClick={handleToggleSearch}
-        size="lg"
-        {...rest}
-        title={undefined}
-      >
-        {showGlobalFilter ? <IconCircleOff /> : <IconSearch />}
-      </ActionIcon>
-    </Tooltip>
-  );
-};
+    return (
+        <Tooltip
+            withinPortal
+            withArrow
+            label={rest?.title ?? localization.showHideSearch}
+        >
+            <ActionIcon
+                aria-label={rest?.title ?? localization.showHideSearch}
+                disabled={!!globalFilter}
+                onClick={handleToggleSearch}
+                size='lg'
+                {...rest}
+                title={undefined}
+            >
+                {showGlobalFilter ? <IconCircleOff /> : <IconSearch />}
+            </ActionIcon>
+        </Tooltip>
+    )
+}

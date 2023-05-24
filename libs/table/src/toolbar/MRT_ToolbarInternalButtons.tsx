@@ -12,7 +12,7 @@ interface Props<TData extends Record<string, any> = {}> {
 }
 
 export const MRT_ToolbarInternalButtons = <
-  TData extends Record<string, any> = {}
+  TData extends Record<string, any> = {},
 >({
   table,
 }: Props<TData>) => {

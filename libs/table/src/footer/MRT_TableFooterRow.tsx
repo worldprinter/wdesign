@@ -33,7 +33,7 @@ export const MRT_TableFooterRow = ({
       (header) =>
         (typeof header.column.columnDef.footer === 'string' &&
           !!header.column.columnDef.footer) ||
-        header.column.columnDef.Footer
+        header.column.columnDef.Footer,
     )
   )
     return null;
@@ -50,7 +50,7 @@ export const MRT_TableFooterRow = ({
       sx={(theme) => ({
         backgroundColor: theme.fn.lighten(
           theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-          0.06
+          0.06,
         ),
         display: layoutMode === 'grid' ? 'flex' : 'table-row',
         width: '100%',

@@ -1,4 +1,33 @@
 {
   "name": "@worldprinter/wdesign-carousel",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "private": false,
+  "description": "WDesign Carousel Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worldprinter/wdesign.git",
+    "directory": "libs/carousel"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "ui",
+    "components",
+    "ui-kit",
+    "library",
+    "frontend",
+    "carousel",
+    "slider",
+    "slick"
+  ],
+  "author": "Worldprinter <worldprinter@qingmu.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/worldprinter/wdesign/issues"
+  },
+  "homepage": "https://github.com/worldprinter/wdesign",
+  "publishConfig": {
+    "access": "public"
+  }
 }

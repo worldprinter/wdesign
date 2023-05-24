@@ -1,4 +1,33 @@
 {
   "name": "@worldprinter/wdesign-table",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "private": false,
+  "description": "WDesign Table Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worldprinter/wdesign.git",
+    "directory": "libs/table"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "ui",
+    "components",
+    "ui-kit",
+    "library",
+    "frontend",
+    "table",
+    "slider",
+    "slick"
+  ],
+  "author": "Worldprinter <worldprinter@qingmu.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/worldprinter/wdesign/issues"
+  },
+  "homepage": "https://github.com/worldprinter/wdesign",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -6,6 +6,7 @@
   "private": false,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@jscutlery/semver": "^3.0.0",
     "@nx/eslint-plugin": "16.2.1",
     "@nx/jest": "16.2.1",
     "@nx/js": "16.2.1",

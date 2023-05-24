@@ -32,7 +32,7 @@
           "react/jsx-runtime"
         ],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "babel",
+        "compiler": "tsc",
         "assets": [
           {
             "glob": "libs/dates/README.md",

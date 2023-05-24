@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps, MantineNumberSize } from '@worldprint/wdesign-styles';
+import { DefaultProps, useComponentDefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles, { StackStylesParams } from './Stack.styles';
 
@@ -37,4 +37,4 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>((props, ref) => {
   return <Box className={cx(classes.root, className)} ref={ref} {...others} />;
 });
 
-Stack.displayName = '@worldprint/wdesign-core/Stack';
+Stack.displayName = '@worldprinter/wdesign-core/Stack';

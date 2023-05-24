@@ -1,5 +1,5 @@
 import React from 'react';
-import { rem } from '@worldprint/wdesign-styles';
+import { rem } from '@worldprinter/wdesign-styles';
 
 interface ChevronProps {
   size: number | string;

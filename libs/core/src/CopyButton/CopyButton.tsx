@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
-import { useClipboard } from '@worldprint/wdesign-hooks';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useClipboard } from '@worldprinter/wdesign-hooks';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 
 export interface CopyButtonProps {
   /** Function called with current status */
@@ -29,4 +29,4 @@ export function CopyButton(props: CopyButtonProps) {
   return <>{children({ copy, copied: clipboard.copied, ...others })}</>;
 }
 
-CopyButton.displayName = '@worldprint/wdesign-core/CopyButton';
+CopyButton.displayName = '@worldprinter/wdesign-core/CopyButton';

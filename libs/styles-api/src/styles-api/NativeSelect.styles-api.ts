@@ -1,4 +1,4 @@
-import type { NativeSelectStylesNames } from '@worldprint/wdesign-core';
+import type { NativeSelectStylesNames } from '@worldprinter/wdesign-core';
 import { Input } from './Input.styles-api';
 import { InputWrapper } from './InputWrapper.styles-api';
 

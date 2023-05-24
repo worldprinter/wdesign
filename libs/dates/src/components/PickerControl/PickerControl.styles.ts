@@ -1,4 +1,4 @@
-import { createStyles, getSize, rem } from '@worldprint/wdesign-core';
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-core';
 import { sizes } from '../Day/Day.styles';
 
 export default createStyles((theme, _, { size }) => {

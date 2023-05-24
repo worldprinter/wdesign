@@ -1,4 +1,4 @@
-import type { ModalStylesNames } from '@worldprint/wdesign-core';
+import type { ModalStylesNames } from '@worldprinter/wdesign-core';
 
 export const Modal: Record<ModalStylesNames, string> = {
   root: 'Root element',

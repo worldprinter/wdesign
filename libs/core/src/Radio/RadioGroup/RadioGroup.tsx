@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useUncontrolled, useId } from '@worldprint/wdesign-hooks';
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useUncontrolled, useId } from '@worldprinter/wdesign-hooks';
+import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Input, InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input';
 import { RadioGroupProvider } from '../RadioGroup.context';
 
@@ -79,4 +79,4 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
   }
 );
 
-RadioGroup.displayName = '@worldprint/wdesign-core/RadioGroup';
+RadioGroup.displayName = '@worldprinter/wdesign-core/RadioGroup';

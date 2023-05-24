@@ -53,19 +53,24 @@ export function Transition({
   onEnter,
   onExited,
 }: TransitionProps) {
-  const { transitionDuration, transitionStatus, transitionTimingFunction } = useTransition({
-    mounted,
-    exitDuration,
-    duration,
-    timingFunction,
-    onExit,
-    onEntered,
-    onEnter,
-    onExited,
-  });
+  const { transitionDuration, transitionStatus, transitionTimingFunction } =
+    useTransition({
+      mounted,
+      exitDuration,
+      duration,
+      timingFunction,
+      onExit,
+      onEntered,
+      onEnter,
+      onExited,
+    });
 
   if (transitionDuration === 0) {
-    return mounted ? <>{children({})}</> : keepMounted ? children({ display: 'none' }) : null;
+    return mounted ? (
+      <>{children({})}</>
+    ) : keepMounted ? (
+      children({ display: 'none' })
+    ) : null;
   }
 
   return transitionStatus === 'exited' ? (
@@ -86,4 +91,4 @@ export function Transition({
   );
 }
 
-Transition.displayName = '@worldprint/wdesign-core/Transition';
+Transition.displayName = '@worldprinter/wdesign-core/Transition';

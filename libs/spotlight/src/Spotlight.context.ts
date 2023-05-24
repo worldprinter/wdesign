@@ -36,7 +36,7 @@ export function useSpotlight() {
   const ctx = useContext(SpotlightContext);
 
   if (!ctx) {
-    throw new Error('[@worldprint/wdesign-spotlight] SpotlightProvider was not found in tree');
+    throw new Error('[@worldprinter/wdesign-spotlight] SpotlightProvider was not found in tree');
   }
 
   return ctx;

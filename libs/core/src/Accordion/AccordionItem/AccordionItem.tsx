@@ -3,7 +3,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { AccordionItemContextProvider } from '../AccordionItem.context';
 import useStyles from './AccordionItem.styles';
@@ -55,4 +55,4 @@ export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
   }
 );
 
-AccordionItem.displayName = '@worldprint/wdesign-core/AccordionItem';
+AccordionItem.displayName = '@worldprinter/wdesign-core/AccordionItem';

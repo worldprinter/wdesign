@@ -22,7 +22,7 @@ import type {
   SelectProps,
   MultiSelectProps,
   FlexProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import type {
   AggregationFn,
   Cell,

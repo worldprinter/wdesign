@@ -3,8 +3,8 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { createScopedKeydownHandler } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils';
 import { UnstyledButton } from '../../UnstyledButton';
 import { useAccordionContext } from '../Accordion.context';
 import { useAccordionItemContext } from '../AccordionItem.context';
@@ -110,4 +110,4 @@ export const AccordionControl = forwardRef<
   );
 });
 
-AccordionControl.displayName = '@worldprint/wdesign-core/AccordionControl';
+AccordionControl.displayName = '@worldprinter/wdesign-core/AccordionControl';

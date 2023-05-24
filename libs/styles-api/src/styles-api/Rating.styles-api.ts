@@ -1,4 +1,4 @@
-import { RatingStylesNames } from '@worldprint/wdesign-core/src/Rating';
+import { RatingStylesNames } from '@worldprinter/wdesign-core/src/Rating';
 
 export const Rating: Record<RatingStylesNames, string> = {
   root: 'Root element',

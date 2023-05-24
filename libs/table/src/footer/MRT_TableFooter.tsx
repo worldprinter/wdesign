@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@worldprint/wdesign-core';
+import { Box } from '@worldprinter/wdesign-core';
 import { MRT_TableFooterRow } from './MRT_TableFooterRow';
 import type { MRT_TableInstance, MRT_VirtualItem } from '..';
 

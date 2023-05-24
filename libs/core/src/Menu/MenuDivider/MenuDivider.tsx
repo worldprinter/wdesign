@@ -3,7 +3,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { useMenuContext } from '../Menu.context';
 import useStyles from './MenuDivider.styles';
@@ -38,4 +38,4 @@ export const MenuDivider = forwardRef<HTMLDivElement, MenuDividerProps>(
   }
 );
 
-MenuDivider.displayName = '@worldprint/wdesign-core/MenuDivider';
+MenuDivider.displayName = '@worldprinter/wdesign-core/MenuDivider';

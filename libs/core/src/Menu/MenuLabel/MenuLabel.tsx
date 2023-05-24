@@ -3,7 +3,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Text } from '../../Text';
 import { useMenuContext } from '../Menu.context';
 import useStyles from './MenuLabel.styles';
@@ -44,4 +44,4 @@ export const MenuLabel = forwardRef<HTMLDivElement, MenuLabelProps>(
   }
 );
 
-MenuLabel.displayName = '@worldprint/wdesign-core/MenuLabel';
+MenuLabel.displayName = '@worldprinter/wdesign-core/MenuLabel';

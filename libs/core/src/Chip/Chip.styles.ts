@@ -6,7 +6,7 @@ import {
   MantineTheme,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export const sizes = {
   xs: rem(24),
@@ -56,10 +56,15 @@ function getVariantStyles(
   if (variant === 'light') {
     return {
       label: {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[6]
+            : theme.colors.gray[1],
         ...theme.fn.hover({
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[0],
         }),
       },
 
@@ -68,7 +73,8 @@ function getVariantStyles(
         backgroundColor: lightColors.background,
         ...theme.fn.hover({ backgroundColor: lightColors.hover }),
         '&, &:hover': {
-          backgroundColor: theme.fn.variant({ variant: 'light', color }).background,
+          backgroundColor: theme.fn.variant({ variant: 'light', color })
+            .background,
         },
       },
     };
@@ -77,10 +83,15 @@ function getVariantStyles(
   if (variant === 'filled') {
     return {
       label: {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[6]
+            : theme.colors.gray[1],
         ...theme.fn.hover({
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[0],
         }),
       },
 
@@ -95,12 +106,18 @@ function getVariantStyles(
   if (variant === 'outline') {
     return {
       label: {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
-        borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[4],
+        backgroundColor:
+          theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+        borderColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[4]
+            : theme.colors.gray[4],
 
         ...theme.fn.hover({
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[0],
         }),
       },
 
@@ -113,136 +130,175 @@ function getVariantStyles(
   return { label: null, checked: null };
 }
 
-export default createStyles((theme, { radius, color }: ChipStylesParams, { size, variant }) => {
-  const variantStyles = getVariantStyles(theme, { color }, variant);
+export default createStyles(
+  (theme, { radius, color }: ChipStylesParams, { size, variant }) => {
+    const variantStyles = getVariantStyles(theme, { color }, variant);
 
-  return {
-    root: {},
+    return {
+      root: {},
 
-    label: {
-      ref: getStylesRef('label'),
-      ...theme.fn.fontStyles(),
-      boxSizing: 'border-box',
-      color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-      display: 'inline-block',
-      alignItems: 'center',
-      userSelect: 'none',
-      border: `${rem(1)} solid transparent`,
-      borderRadius: theme.fn.radius(radius),
-      height: getSize({ size, sizes }),
-      fontSize: getSize({ size, sizes: theme.fontSizes }),
-      lineHeight: `calc(${getSize({ size, sizes })} - ${rem(2)})`,
-      paddingLeft: getSize({ size, sizes: padding }),
-      paddingRight: getSize({ size, sizes: padding }),
-      cursor: 'pointer',
-      whiteSpace: 'nowrap',
-      transition: 'background-color 100ms ease',
-      WebkitTapHighlightColor: 'transparent',
-      ...variantStyles.label,
+      label: {
+        ref: getStylesRef('label'),
+        ...theme.fn.fontStyles(),
+        boxSizing: 'border-box',
+        color:
+          theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        display: 'inline-block',
+        alignItems: 'center',
+        userSelect: 'none',
+        border: `${rem(1)} solid transparent`,
+        borderRadius: theme.fn.radius(radius),
+        height: getSize({ size, sizes }),
+        fontSize: getSize({ size, sizes: theme.fontSizes }),
+        lineHeight: `calc(${getSize({ size, sizes })} - ${rem(2)})`,
+        paddingLeft: getSize({ size, sizes: padding }),
+        paddingRight: getSize({ size, sizes: padding }),
+        cursor: 'pointer',
+        whiteSpace: 'nowrap',
+        transition: 'background-color 100ms ease',
+        WebkitTapHighlightColor: 'transparent',
+        ...variantStyles.label,
 
-      '&[data-disabled]': {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
-        cursor: 'not-allowed',
-        pointerEvents: 'none',
-
-        ...theme.fn.hover({
+        '&[data-disabled]': {
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        }),
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[1],
+          borderColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[1],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[3]
+              : theme.colors.gray[5],
+          cursor: 'not-allowed',
+          pointerEvents: 'none',
 
-        [`& .${getStylesRef('iconWrapper')}`]: {
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
-        },
-      },
+          ...theme.fn.hover({
+            backgroundColor:
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[5]
+                : theme.colors.gray[1],
+          }),
 
-      '&[data-checked]': {
-        paddingLeft: getSize({ size, sizes: checkedPadding }),
-        paddingRight: getSize({ size, sizes: checkedPadding }),
-        '&:not([data-disabled])': variantStyles.checked,
-      },
-    },
-
-    iconWrapper: {
-      ref: getStylesRef('iconWrapper'),
-      color:
-        variant === 'filled'
-          ? theme.white
-          : theme.fn.variant({ variant: 'filled', color }).background,
-      width: `calc(${getSize({ size, sizes: iconSizes })} + (${getSize({
-        size,
-        sizes: theme.spacing,
-      })} / 1.5))`,
-      maxWidth: `calc(${getSize({ size, sizes: iconSizes })} + (${getSize({
-        size,
-        sizes: theme.spacing,
-      })} / 1.5))`,
-      height: getSize({ size, sizes: iconSizes }),
-      display: 'inline-block',
-      verticalAlign: 'middle',
-      overflow: 'hidden',
-    },
-
-    checkIcon: {
-      width: getSize({ size, sizes: iconSizes }),
-      height: `calc(${getSize({ size, sizes: iconSizes })} / 1.1)`,
-      display: 'block',
-    },
-
-    input: {
-      width: 0,
-      height: 0,
-      padding: 0,
-      opacity: 0,
-      margin: 0,
-
-      '&:disabled + label': {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
-        cursor: 'not-allowed',
-        pointerEvents: 'none',
-
-        ...theme.fn.hover({
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-        }),
-
-        [`& .${getStylesRef('iconWrapper')}`]: {
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
+          [`& .${getStylesRef('iconWrapper')}`]: {
+            color:
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[3]
+                : theme.colors.gray[5],
+          },
         },
 
         '&[data-checked]': {
           paddingLeft: getSize({ size, sizes: checkedPadding }),
           paddingRight: getSize({ size, sizes: checkedPadding }),
+          '&:not([data-disabled])': variantStyles.checked,
+        },
+      },
 
-          '&:not([data-disabled])': {
+      iconWrapper: {
+        ref: getStylesRef('iconWrapper'),
+        color:
+          variant === 'filled'
+            ? theme.white
+            : theme.fn.variant({ variant: 'filled', color }).background,
+        width: `calc(${getSize({ size, sizes: iconSizes })} + (${getSize({
+          size,
+          sizes: theme.spacing,
+        })} / 1.5))`,
+        maxWidth: `calc(${getSize({ size, sizes: iconSizes })} + (${getSize({
+          size,
+          sizes: theme.spacing,
+        })} / 1.5))`,
+        height: getSize({ size, sizes: iconSizes }),
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        overflow: 'hidden',
+      },
+
+      checkIcon: {
+        width: getSize({ size, sizes: iconSizes }),
+        height: `calc(${getSize({ size, sizes: iconSizes })} / 1.1)`,
+        display: 'block',
+      },
+
+      input: {
+        width: 0,
+        height: 0,
+        padding: 0,
+        opacity: 0,
+        margin: 0,
+
+        '&:disabled + label': {
+          backgroundColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[1],
+          borderColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[1],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[3]
+              : theme.colors.gray[5],
+          cursor: 'not-allowed',
+          pointerEvents: 'none',
+
+          ...theme.fn.hover({
             backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-            borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-            color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[5]
+                : theme.colors.gray[1],
+          }),
+
+          [`& .${getStylesRef('iconWrapper')}`]: {
+            color:
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[3]
+                : theme.colors.gray[5],
+          },
+
+          '&[data-checked]': {
+            paddingLeft: getSize({ size, sizes: checkedPadding }),
+            paddingRight: getSize({ size, sizes: checkedPadding }),
+
+            '&:not([data-disabled])': {
+              backgroundColor:
+                theme.colorScheme === 'dark'
+                  ? theme.colors.dark[5]
+                  : theme.colors.gray[1],
+              borderColor:
+                theme.colorScheme === 'dark'
+                  ? theme.colors.dark[5]
+                  : theme.colors.gray[1],
+              color:
+                theme.colorScheme === 'dark'
+                  ? theme.colors.dark[3]
+                  : theme.colors.gray[5],
+            },
           },
         },
-      },
 
-      '&:focus': {
-        outline: 'none',
+        '&:focus': {
+          outline: 'none',
 
-        [`& + .${getStylesRef('label')}`]: {
-          ...(theme.focusRing === 'always' || theme.focusRing === 'auto'
-            ? theme.focusRingStyles.styles(theme)
-            : theme.focusRingStyles.resetStyles(theme)),
-        },
-
-        '&:focus:not(:focus-visible)': {
           [`& + .${getStylesRef('label')}`]: {
-            ...(theme.focusRing === 'auto' || theme.focusRing === 'never'
-              ? theme.focusRingStyles.resetStyles(theme)
-              : null),
+            ...(theme.focusRing === 'always' || theme.focusRing === 'auto'
+              ? theme.focusRingStyles.styles(theme)
+              : theme.focusRingStyles.resetStyles(theme)),
+          },
+
+          '&:focus:not(:focus-visible)': {
+            [`& + .${getStylesRef('label')}`]: {
+              ...(theme.focusRing === 'auto' || theme.focusRing === 'never'
+                ? theme.focusRingStyles.resetStyles(theme)
+                : null),
+            },
           },
         },
       },
-    },
-  };
-});
+    };
+  }
+);

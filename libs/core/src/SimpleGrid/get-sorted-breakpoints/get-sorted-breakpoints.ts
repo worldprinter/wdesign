@@ -1,4 +1,4 @@
-import { MantineTheme, getBreakpointValue, getSize } from '@worldprint/wdesign-styles';
+import { MantineTheme, getBreakpointValue, getSize } from '@worldprinter/wdesign-styles';
 
 export function getSortedBreakpoints<T extends Record<string, any>>(
   theme: MantineTheme,

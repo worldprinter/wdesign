@@ -1,4 +1,4 @@
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import { ACCORDION_ERRORS } from './Accordion.errors';
 
 interface AccordionItemContext {

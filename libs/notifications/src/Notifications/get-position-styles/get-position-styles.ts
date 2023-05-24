@@ -1,4 +1,4 @@
-import { CSSObject } from '@worldprint/wdesign-core';
+import { CSSObject } from '@worldprinter/wdesign-core';
 import { NotificationsPositioning } from '../../types';
 
 export default function getPositionStyles(

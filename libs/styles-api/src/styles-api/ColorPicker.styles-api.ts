@@ -1,4 +1,4 @@
-import { ColorPickerStylesNames } from '@worldprint/wdesign-core';
+import { ColorPickerStylesNames } from '@worldprinter/wdesign-core';
 
 export const ColorPicker: Record<ColorPickerStylesNames, string> = {
   wrapper: 'Root element',

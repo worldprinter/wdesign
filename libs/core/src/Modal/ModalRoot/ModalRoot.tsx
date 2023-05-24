@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineNumberSize, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { ModalBase, ModalBaseDefaultProps, ModalBaseSettings } from '../../ModalBase';
 import { ModalProvider, ScrollAreaComponent } from '../Modal.context';
 import useStyles from './ModalRoot.styles';

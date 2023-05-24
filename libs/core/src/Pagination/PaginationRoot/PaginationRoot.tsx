@@ -6,9 +6,9 @@ import {
   useComponentDefaultProps,
   ClassNames,
   Styles,
-} from '@worldprint/wdesign-styles';
-import { usePagination } from '@worldprint/wdesign-hooks';
-import { createEventHandler } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { usePagination } from '@worldprinter/wdesign-hooks';
+import { createEventHandler } from '@worldprinter/wdesign-utils';
 import { PaginationProvider } from '../Pagination.context';
 import type { PaginationControlStylesNames } from '../PaginationControl/PaginationControl';
 import type { PaginationDotsStylesNames } from '../PaginationDots/PaginationDots';

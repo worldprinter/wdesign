@@ -1,4 +1,4 @@
-import type { ListStylesNames } from '@worldprint/wdesign-core';
+import type { ListStylesNames } from '@worldprinter/wdesign-core';
 
 export const List: Record<ListStylesNames, string> = {
   root: 'Root element (ul or ol)',

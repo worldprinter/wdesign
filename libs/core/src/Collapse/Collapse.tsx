@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
-import { useReducedMotion } from '@worldprint/wdesign-hooks';
+import { useReducedMotion } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   useComponentDefaultProps,
   useMantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box, extractSystemStyles } from '../Box';
 import { useCollapse } from './use-collapse';
 
@@ -85,4 +85,4 @@ export const Collapse = forwardRef<HTMLDivElement, CollapseProps>(
   }
 );
 
-Collapse.displayName = '@worldprint/wdesign-core/Collapse';
+Collapse.displayName = '@worldprinter/wdesign-core/Collapse';

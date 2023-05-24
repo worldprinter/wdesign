@@ -4,7 +4,7 @@ import {
   Box,
   useComponentDefaultProps,
   Selectors,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { useRichTextEditorContext } from '../../RichTextEditor.context';
 import useStyles from './ControlsGroup.styles';
 
@@ -41,4 +41,4 @@ export const ControlsGroup = forwardRef<
   );
 });
 
-ControlsGroup.displayName = '@worldprint/wdesign-tiptap/ControlsGroup';
+ControlsGroup.displayName = '@worldprinter/wdesign-tiptap/ControlsGroup';

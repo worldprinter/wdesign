@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useMantineTheme } from '@worldprint/wdesign-styles';
+import { useMantineTheme } from '@worldprinter/wdesign-styles';
 import { getArrowPositionStyles } from './get-arrow-position-styles';
 import { ArrowPosition, FloatingPosition } from '../types';
 
@@ -53,4 +53,4 @@ export const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
   }
 );
 
-FloatingArrow.displayName = '@worldprint/wdesign-core/FloatingArrow';
+FloatingArrow.displayName = '@worldprinter/wdesign-core/FloatingArrow';

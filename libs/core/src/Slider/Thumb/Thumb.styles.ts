@@ -1,4 +1,4 @@
-import { createStyles, MantineColor, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineColor, rem, getSize } from '@worldprinter/wdesign-styles';
 import { sizes } from '../SliderRoot/SliderRoot.styles';
 
 interface ThumbStyles {

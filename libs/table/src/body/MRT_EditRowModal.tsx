@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Modal, Stack, Text } from '@worldprint/wdesign-core';
+import { Flex, Modal, Stack, Text } from '@worldprinter/wdesign-core';
 import { MRT_EditActionButtons } from '../buttons/MRT_EditActionButtons';
 import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput';
 import type { MRT_Row, MRT_TableInstance } from '..';

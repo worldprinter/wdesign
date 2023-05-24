@@ -8,8 +8,8 @@ import {
   packSx,
   Select,
   TextInput,
-} from '@worldprint/wdesign-core';
-import { useDebouncedValue } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDebouncedValue } from '@worldprinter/wdesign-hooks';
 import type { MRT_Header, MRT_TableInstance } from '..';
 
 interface Props {

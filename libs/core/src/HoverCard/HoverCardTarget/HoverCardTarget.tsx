@@ -1,11 +1,11 @@
 import React, { cloneElement, forwardRef } from 'react';
-import { isElement, createEventHandler } from '@worldprint/wdesign-utils';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { isElement, createEventHandler } from '@worldprinter/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Popover, PopoverTargetProps } from '../../Popover';
 import { useHoverCardContext } from '../HoverCard.context';
 import { HOVER_CARD_ERRORS } from '../HoverCard.errors';
 
-export interface HoverCardTargetProps extends PopoverTargetProps {}
+export type HoverCardTargetProps = PopoverTargetProps
 
 const defaultProps: Partial<HoverCardTargetProps> = {
   refProp: 'ref',
@@ -44,4 +44,4 @@ export const HoverCardTarget = forwardRef<HTMLElement, HoverCardTargetProps>(
   }
 );
 
-HoverCardTarget.displayName = '@worldprint/wdesign-core/HoverCardTarget';
+HoverCardTarget.displayName = '@worldprinter/wdesign-core/HoverCardTarget';

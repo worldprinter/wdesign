@@ -6,7 +6,7 @@ import {
   MantineTheme,
   em,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export type ColSpan = number | 'auto' | 'content';
 

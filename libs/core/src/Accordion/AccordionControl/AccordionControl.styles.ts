@@ -1,4 +1,4 @@
-import { createStyles, MantineTheme, CSSObject, rem } from '@worldprint/wdesign-styles';
+import { createStyles, MantineTheme, CSSObject, rem } from '@worldprinter/wdesign-styles';
 import { AccordionStylesParams, AccordionChevronPosition } from '../Accordion.types';
 
 export interface AccordionControlStylesParams extends AccordionStylesParams {

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps, rem } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { useComponentDefaultProps, rem } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { ActionIcon, ActionIconProps } from '../ActionIcon/ActionIcon';
 import { CloseIcon } from './CloseIcon';
 
@@ -44,7 +44,7 @@ export const _CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
   }
 );
 
-_CloseButton.displayName = '@worldprint/wdesign-core/CloseButton';
+_CloseButton.displayName = '@worldprinter/wdesign-core/CloseButton';
 
 export const CloseButton = createPolymorphicComponent<
   'button',

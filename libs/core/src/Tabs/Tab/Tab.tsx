@@ -4,8 +4,8 @@ import {
   Selectors,
   MantineColor,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { createScopedKeydownHandler } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils';
 import { UnstyledButton } from '../../UnstyledButton';
 import { useTabsContext } from '../Tabs.context';
 import useStyles from './Tab.styles';
@@ -116,4 +116,4 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
   );
 });
 
-Tab.displayName = '@worldprint/wdesign-core/Tab';
+Tab.displayName = '@worldprinter/wdesign-core/Tab';

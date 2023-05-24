@@ -4,7 +4,7 @@ import {
   MantineSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Text } from '../../Text';
 import useStyles from './InputError.styles';
 
@@ -59,4 +59,4 @@ export const InputError = forwardRef<HTMLDivElement, InputErrorProps>(
   }
 );
 
-InputError.displayName = '@worldprint/wdesign-core/InputError';
+InputError.displayName = '@worldprinter/wdesign-core/InputError';

@@ -5,7 +5,7 @@ import {
   Selectors,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
 import useStyles from './TimelineItem.styles';
@@ -108,4 +108,4 @@ export const TimelineItem = forwardRef<HTMLDivElement, TimelineItemProps>((props
   );
 });
 
-TimelineItem.displayName = '@worldprint/wdesign-core/TimelineItem';
+TimelineItem.displayName = '@worldprinter/wdesign-core/TimelineItem';

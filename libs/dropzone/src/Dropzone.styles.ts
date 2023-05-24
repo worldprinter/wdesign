@@ -3,7 +3,7 @@ import {
   MantineNumberSize,
   rem,
   getSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 
 export interface DropzoneStylesParams {
   padding: MantineNumberSize;

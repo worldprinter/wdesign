@@ -4,7 +4,7 @@ import {
   MantineNumberSize,
   getDefaultZIndex,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Overlay } from '../Overlay';
 import { Transition } from '../Transition';
 import { Loader, LoaderProps } from '../Loader';
@@ -125,4 +125,4 @@ export const LoadingOverlay = forwardRef<HTMLDivElement, LoadingOverlayProps>(
   }
 );
 
-LoadingOverlay.displayName = '@worldprint/wdesign-core/LoadingOverlay';
+LoadingOverlay.displayName = '@worldprinter/wdesign-core/LoadingOverlay';

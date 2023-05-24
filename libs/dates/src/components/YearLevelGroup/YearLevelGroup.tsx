@@ -4,7 +4,7 @@ import {
   Box,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import dayjs from 'dayjs';
 import {
   YearLevel,
@@ -175,4 +175,4 @@ export const YearLevelGroup = forwardRef<HTMLDivElement, YearLevelGroupProps>(
   }
 );
 
-YearLevelGroup.displayName = '@worldprint/wdesign-dates/YearLevelGroup';
+YearLevelGroup.displayName = '@worldprinter/wdesign-dates/YearLevelGroup';

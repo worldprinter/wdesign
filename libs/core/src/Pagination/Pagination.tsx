@@ -3,7 +3,7 @@ import {
   getSize,
   useComponentDefaultProps,
   useMantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Group, GroupProps } from '../Group';
 import {
   PaginationRoot,
@@ -143,7 +143,7 @@ export function Pagination(props: PaginationProps) {
   );
 }
 
-Pagination.displayName = '@worldprint/wdesign-core/Pagination';
+Pagination.displayName = '@worldprinter/wdesign-core/Pagination';
 Pagination.Root = PaginationRoot;
 Pagination.Items = PaginationItems;
 Pagination.Control = PaginationControl;

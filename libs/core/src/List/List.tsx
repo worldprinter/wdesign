@@ -4,8 +4,8 @@ import {
   MantineNumberSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { ListItem, ListItemStylesNames } from './ListItem/ListItem';
 import { ListProvider } from './List.context';
@@ -107,4 +107,4 @@ export const List: ListComponent = forwardRef<HTMLUListElement, ListProps>(
 ) as any;
 
 List.Item = ListItem;
-List.displayName = '@worldprint/wdesign-core/List';
+List.displayName = '@worldprinter/wdesign-core/List';

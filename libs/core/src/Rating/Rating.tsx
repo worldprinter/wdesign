@@ -5,8 +5,13 @@ import {
   useComponentDefaultProps,
   Selectors,
   MantineColor,
-} from '@worldprint/wdesign-styles';
-import { useUncontrolled, clamp, useMergedRef, useId } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import {
+  useUncontrolled,
+  clamp,
+  useMergedRef,
+  useId,
+} from '@worldprinter/wdesign-hooks';
 import { Box } from '../Box';
 import { RatingItem, RatingItemStylesNames } from './RatingItem/RatingItem';
 import useStyles from './Rating.styles';
@@ -260,4 +265,4 @@ export const Rating = forwardRef<HTMLInputElement, RatingProps>(
   }
 );
 
-Rating.displayName = '@worldprint/wdesign-core/Rating';
+Rating.displayName = '@worldprinter/wdesign-core/Rating';

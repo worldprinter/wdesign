@@ -7,8 +7,12 @@ import {
   Box,
   PortalProps,
   rem,
-} from '@worldprint/wdesign-core';
-import { useReducedMotion, useForceUpdate, useDidUpdate } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import {
+  useReducedMotion,
+  useForceUpdate,
+  useDidUpdate,
+} from '@worldprinter/wdesign-hooks';
 import { NotificationsPositioning } from '../types';
 import {
   notifications as GlobalNotifications,
@@ -167,7 +171,7 @@ export const Notifications: React.FC<NotificationsProps> &
   );
 };
 
-Notifications.displayName = '@worldprint/wdesign-notifications/Notifications';
+Notifications.displayName = '@worldprinter/wdesign-notifications/Notifications';
 Notifications.show = GlobalNotifications.show;
 Notifications.hide = GlobalNotifications.hide;
 Notifications.update = GlobalNotifications.update;

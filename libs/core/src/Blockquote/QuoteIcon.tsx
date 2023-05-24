@@ -1,5 +1,5 @@
 import React from 'react';
-import { rem } from '@worldprint/wdesign-styles';
+import { rem } from '@worldprinter/wdesign-styles';
 
 export function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (

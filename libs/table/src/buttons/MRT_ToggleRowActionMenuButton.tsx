@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { ActionIcon, Tooltip } from '@worldprint/wdesign-core';
+import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core';
 import { MRT_RowActionMenu } from '../menus/MRT_RowActionMenu';
 import { MRT_EditActionButtons } from './MRT_EditActionButtons';
 import type { MRT_Cell, MRT_Row, MRT_TableInstance } from '..';

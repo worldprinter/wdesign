@@ -1,4 +1,4 @@
-import type { InputWrapperStylesNames } from '@worldprint/wdesign-core';
+import type { InputWrapperStylesNames } from '@worldprinter/wdesign-core';
 
 export const InputWrapper: Record<InputWrapperStylesNames, string> = {
   root: 'Root element',

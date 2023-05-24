@@ -5,7 +5,7 @@ import {
   MantineColor,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Tooltip } from '../Tooltip';
@@ -156,4 +156,4 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   }
 );
 
-Progress.displayName = '@worldprint/wdesign-core/Progress';
+Progress.displayName = '@worldprinter/wdesign-core/Progress';

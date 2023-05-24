@@ -1,4 +1,4 @@
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import { HOVER_CARD_ERRORS } from './HoverCard.errors';
 
 interface HoverCardContext {

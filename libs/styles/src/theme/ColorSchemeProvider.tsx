@@ -36,4 +36,4 @@ export function ColorSchemeProvider({
   );
 }
 
-ColorSchemeProvider.displayName = '@worldprint/wdesign-core/ColorSchemeProvider';
+ColorSchemeProvider.displayName = '@worldprinter/wdesign-core/ColorSchemeProvider';

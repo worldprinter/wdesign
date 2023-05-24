@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, keyframes, rem } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize, keyframes, rem } from '@worldprinter/wdesign-styles';
 
 export interface SkeletonStylesParams {
   height: number | string;

@@ -3,8 +3,8 @@ import {
   DefaultProps,
   getDefaultZIndex,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { packSx } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { packSx } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { OptionalPortal, PortalProps } from '../Portal';
 
@@ -66,4 +66,4 @@ export const Affix = forwardRef<HTMLDivElement, AffixProps>(
   }
 );
 
-Affix.displayName = '@worldprint/wdesign-core/Affix';
+Affix.displayName = '@worldprinter/wdesign-core/Affix';

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, MantineNumberSize, Selectors } from '@worldprint/wdesign-styles';
+import { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { Input } from '../Input';
 import useStyles from './InlineInput.styles';
@@ -72,4 +72,4 @@ export const InlineInput = forwardRef<HTMLDivElement, InlineInputProps>(
   }
 );
 
-InlineInput.displayName = '@worldprint/wdesign-core/InlineInput';
+InlineInput.displayName = '@worldprinter/wdesign-core/InlineInput';

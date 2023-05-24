@@ -3,8 +3,8 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles, {
   BackgroundImageStylesParams,
@@ -41,7 +41,7 @@ export const _BackgroundImage = forwardRef<
   return <Box {...others} ref={ref} className={cx(classes.root, className)} />;
 });
 
-_BackgroundImage.displayName = '@worldprint/wdesign-core/BackgroundImage';
+_BackgroundImage.displayName = '@worldprinter/wdesign-core/BackgroundImage';
 
 export const BackgroundImage = createPolymorphicComponent<
   'div',

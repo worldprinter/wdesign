@@ -3,7 +3,7 @@ import {
   Selectors,
   useComponentDefaultProps,
   DefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import {
   PaginationDotsIcon,
@@ -45,4 +45,4 @@ export const PaginationDots = forwardRef<HTMLDivElement, PaginationDotsProps>(
   }
 );
 
-PaginationDots.displayName = '@worldprint/wdesign-core/PaginationDots';
+PaginationDots.displayName = '@worldprinter/wdesign-core/PaginationDots';

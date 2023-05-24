@@ -7,7 +7,7 @@ import {
   CSSObject,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export const ACTION_ICON_VARIANTS = [
   'subtle',

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Text, TextProps } from '../Text/Text';
 import useStyles from './Anchor.styles';
 
@@ -50,6 +50,6 @@ export const _Anchor = forwardRef<
   );
 });
 
-_Anchor.displayName = '@worldprint/wdesign-core/Anchor';
+_Anchor.displayName = '@worldprinter/wdesign-core/Anchor';
 
 export const Anchor = createPolymorphicComponent<'a', AnchorProps>(_Anchor);

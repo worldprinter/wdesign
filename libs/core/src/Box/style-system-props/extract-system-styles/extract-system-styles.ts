@@ -1,4 +1,4 @@
-import { MantineStyleSystemProps, filterProps } from '@worldprint/wdesign-styles';
+import { MantineStyleSystemProps, filterProps } from '@worldprinter/wdesign-styles';
 
 export function extractSystemStyles<T extends Record<string, any>>(
   others: MantineStyleSystemProps & T

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles from './UnstyledButton.styles';
 
@@ -38,7 +38,7 @@ export const _UnstyledButton = forwardRef<
   );
 });
 
-_UnstyledButton.displayName = '@worldprint/wdesign-core/UnstyledButton';
+_UnstyledButton.displayName = '@worldprinter/wdesign-core/UnstyledButton';
 
 export const UnstyledButton = createPolymorphicComponent<
   'button',

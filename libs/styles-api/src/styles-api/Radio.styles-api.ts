@@ -1,7 +1,7 @@
 import type {
   RadioGroupStylesNames,
   RadioStylesNames,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { InputWrapper } from './InputWrapper.styles-api';
 
 export const RadioGroup: Record<RadioGroupStylesNames, string> = InputWrapper;

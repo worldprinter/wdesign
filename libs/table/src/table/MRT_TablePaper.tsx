@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from '@worldprint/wdesign-core';
+import { Paper } from '@worldprinter/wdesign-core';
 import { MRT_TopToolbar } from '../toolbar/MRT_TopToolbar';
 import { MRT_BottomToolbar } from '../toolbar/MRT_BottomToolbar';
 import { MRT_TableContainer } from './MRT_TableContainer';

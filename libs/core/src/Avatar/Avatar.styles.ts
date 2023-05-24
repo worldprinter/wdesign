@@ -7,7 +7,7 @@ import {
   MantineGradient,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export const AVATAR_VARIANTS = ['filled', 'light', 'gradient', 'outline'];
 
@@ -33,15 +33,26 @@ interface GetGroupStylesInput {
   theme: MantineTheme;
 }
 
-function getGroupStyles({ withinGroup, spacing, theme }: GetGroupStylesInput): CSSObject {
+function getGroupStyles({
+  withinGroup,
+  spacing,
+  theme,
+}: GetGroupStylesInput): CSSObject {
   if (!withinGroup) {
     return null;
   }
 
   return {
-    marginLeft: `calc(${getSize({ size: spacing, sizes: theme.spacing })} * -1)`,
-    backgroundColor: `${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white}`,
-    border: `${rem(2)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white}`,
+    marginLeft: `calc(${getSize({
+      size: spacing,
+      sizes: theme.spacing,
+    })} * -1)`,
+    backgroundColor: `${
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
+    }`,
+    border: `${rem(2)} solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
+    }`,
   };
 }
 
@@ -52,7 +63,12 @@ interface GetVariantStylesInput {
   gradient: MantineGradient;
 }
 
-function getVariantStyles({ theme, variant, color, gradient }: GetVariantStylesInput) {
+function getVariantStyles({
+  theme,
+  variant,
+  color,
+  gradient,
+}: GetVariantStylesInput) {
   const colors = theme.fn.variant({ variant, color, gradient });
 
   if (AVATAR_VARIANTS.includes(variant)) {

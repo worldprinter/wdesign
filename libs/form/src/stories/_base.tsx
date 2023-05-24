@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Group, Code, rem } from '@worldprint/wdesign-core';
+import { Button, Group, Code, rem } from '@worldprinter/wdesign-core';
 
 export function FormBase({ children, form }) {
   const [values, setValues] = useState({});

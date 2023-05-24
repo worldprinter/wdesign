@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 
-export interface SpaceProps extends DefaultProps {}
+export type SpaceProps = DefaultProps
 
 const defaultProps: Partial<SpaceProps> = {
   w: 0,
@@ -14,4 +14,4 @@ export const Space = forwardRef<HTMLDivElement, SpaceProps>((props: SpaceProps, 
   return <Box ref={ref} w={w} miw={w} h={h} mih={h} {...others} />;
 });
 
-Space.displayName = '@worldprint/wdesign-core/Space';
+Space.displayName = '@worldprinter/wdesign-core/Space';

@@ -4,7 +4,7 @@ import {
   Range,
   useVirtualizer,
 } from '@tanstack/react-virtual';
-import { Table } from '@worldprint/wdesign-core';
+import { Table } from '@worldprinter/wdesign-core';
 import { MRT_TableHead } from '../head/MRT_TableHead';
 import { Memo_MRT_TableBody, MRT_TableBody } from '../body/MRT_TableBody';
 import { MRT_TableFooter } from '../footer/MRT_TableFooter';

@@ -6,7 +6,7 @@ import {
   MantineNumberSize,
   Selectors,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import dayjs from 'dayjs';
 import useStyles, { DayStylesParams } from './Day.styles';
 
@@ -119,4 +119,4 @@ export const Day = forwardRef<HTMLButtonElement, DayProps>((props, ref) => {
   );
 });
 
-Day.displayName = '@worldprint/wdesign-dates/Day';
+Day.displayName = '@worldprinter/wdesign-dates/Day';

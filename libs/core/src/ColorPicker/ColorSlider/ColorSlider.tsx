@@ -5,8 +5,8 @@ import {
   useDidUpdate,
   UseMovePosition,
   useMergedRef,
-} from '@worldprint/wdesign-hooks';
-import { DefaultProps, MantineSize, Selectors, rem } from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-hooks';
+import { DefaultProps, MantineSize, Selectors, rem } from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { Thumb, ThumbStylesNames } from '../Thumb/Thumb';
 import useStyles from './ColorSlider.styles';
@@ -138,4 +138,4 @@ export const ColorSlider = forwardRef<HTMLDivElement, ColorSliderProps>(
   }
 );
 
-ColorSlider.displayName = '@worldprint/wdesign-core/ColorSlider';
+ColorSlider.displayName = '@worldprinter/wdesign-core/ColorSlider';

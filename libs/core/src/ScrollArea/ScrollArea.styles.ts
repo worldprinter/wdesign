@@ -1,4 +1,4 @@
-import { createStyles, getStylesRef, rem } from '@worldprint/wdesign-styles';
+import { createStyles, getStylesRef, rem } from '@worldprinter/wdesign-styles';
 
 export interface ScrollAreaStylesParams {
   scrollbarSize: number | string;
@@ -10,7 +10,12 @@ export interface ScrollAreaStylesParams {
 export default createStyles(
   (
     theme,
-    { scrollbarSize, offsetScrollbars, scrollbarHovered, hidden }: ScrollAreaStylesParams
+    {
+      scrollbarSize,
+      offsetScrollbars,
+      scrollbarHovered,
+      hidden,
+    }: ScrollAreaStylesParams
   ) => ({
     root: {
       overflow: 'hidden',
@@ -32,7 +37,10 @@ export default createStyles(
       transition: 'background-color 150ms ease, opacity 150ms ease',
 
       '&:hover': {
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[8]
+            : theme.colors.gray[0],
         [`& .${getStylesRef('thumb')}`]: {
           backgroundColor:
             theme.colorScheme === 'dark'
@@ -83,7 +91,10 @@ export default createStyles(
     },
 
     corner: {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      backgroundColor:
+        theme.colorScheme === 'dark'
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
       transition: 'opacity 150ms ease',
       opacity: scrollbarHovered ? 1 : 0,
       display: hidden ? 'none' : undefined,

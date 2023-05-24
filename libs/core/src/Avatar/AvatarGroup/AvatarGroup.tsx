@@ -3,7 +3,7 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { AvatarGroupProvider } from './AvatarGroup.context';
 import useStyles from './AvatarGroup.styles';
@@ -47,4 +47,4 @@ export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
   }
 );
 
-AvatarGroup.displayName = '@worldprint/wdesign-core/AvatarGroup';
+AvatarGroup.displayName = '@worldprinter/wdesign-core/AvatarGroup';

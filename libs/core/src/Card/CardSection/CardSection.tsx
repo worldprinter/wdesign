@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { useCardPadding } from '../Card.context';
 import { Box } from '../../Box';
 import useStyles from './CardSection.styles';
@@ -46,7 +46,7 @@ export const _CardSection = forwardRef<HTMLDivElement, CardSectionProps>(
   }
 );
 
-_CardSection.displayName = '@worldprint/wdesign-core/CardSection';
+_CardSection.displayName = '@worldprinter/wdesign-core/CardSection';
 
 export const CardSection = createPolymorphicComponent<'div', CardSectionProps>(
   _CardSection

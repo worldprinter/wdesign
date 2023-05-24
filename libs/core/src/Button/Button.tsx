@@ -9,8 +9,8 @@ import {
   useComponentDefaultProps,
   Variants,
   getSize,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { UnstyledButton } from '../UnstyledButton';
 import { Loader, LoaderProps } from '../Loader';
 import { ButtonGroup } from './ButtonGroup/ButtonGroup';
@@ -168,7 +168,7 @@ export const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 ) as any;
 
-_Button.displayName = '@worldprint/wdesign-core/Button';
+_Button.displayName = '@worldprinter/wdesign-core/Button';
 _Button.Group = ButtonGroup;
 
 export const Button = createPolymorphicComponent<

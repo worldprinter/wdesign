@@ -1,5 +1,5 @@
 import React, { DragEvent, useEffect } from 'react';
-import { Flex, Text, Transition } from '@worldprint/wdesign-core';
+import { Flex, Text, Transition } from '@worldprinter/wdesign-core';
 import type { MRT_TableInstance } from '..';
 import { getPrimaryColor } from '../column.utils';
 

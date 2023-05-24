@@ -1,4 +1,8 @@
-import { createStyles, MantineNumberSize, getSize } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineNumberSize,
+  getSize,
+} from '@worldprinter/wdesign-styles';
 
 interface AvatarGroupStylesParams {
   spacing: MantineNumberSize;

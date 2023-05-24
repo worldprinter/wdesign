@@ -1,5 +1,8 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import {
+  DefaultProps,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles from './TypographyStylesProvider.styles';
 
@@ -32,4 +35,4 @@ export const TypographyStylesProvider = forwardRef<
 });
 
 TypographyStylesProvider.displayName =
-  '@worldprint/wdesign-core/TypographyStylesProvider';
+  '@worldprinter/wdesign-core/TypographyStylesProvider';

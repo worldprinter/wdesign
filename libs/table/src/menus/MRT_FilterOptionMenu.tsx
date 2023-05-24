@@ -1,5 +1,5 @@
 import React, { Fragment, useMemo } from 'react';
-import { Flex, Menu } from '@worldprint/wdesign-core';
+import { Flex, Menu } from '@worldprinter/wdesign-core';
 import type {
   MRT_FilterOption,
   MRT_Header,

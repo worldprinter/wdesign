@@ -1,4 +1,4 @@
-import type { SwitchStylesNames } from '@worldprint/wdesign-core';
+import type { SwitchStylesNames } from '@worldprinter/wdesign-core';
 
 export const Switch: Record<SwitchStylesNames, string> = {
   root: 'Root element',

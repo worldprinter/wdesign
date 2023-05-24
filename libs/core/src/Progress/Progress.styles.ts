@@ -5,7 +5,7 @@ import {
   keyframes,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 const sizes = {
   xs: rem(3),

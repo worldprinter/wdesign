@@ -5,7 +5,7 @@ import {
   MANTINE_SIZES,
   MantineSize,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export interface GridStylesParams {
   gutter: MantineNumberSize;

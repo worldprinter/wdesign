@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Box, Skeleton, useMantineTheme } from '@worldprint/wdesign-core';
+import { Box, Skeleton, useMantineTheme } from '@worldprinter/wdesign-core';
 import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput';
 import { MRT_CopyButton } from '../buttons/MRT_CopyButton';
 import { MRT_TableBodyRowGrabHandle } from './MRT_TableBodyRowGrabHandle';

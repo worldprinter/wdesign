@@ -1,4 +1,4 @@
-import { createStyles } from '@worldprint/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core';
 
 export default createStyles(() => ({
   placeholder: {},

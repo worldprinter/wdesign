@@ -1,4 +1,4 @@
-import type { MantineNumberSize } from '@worldprint/wdesign-core';
+import type { MantineNumberSize } from '@worldprinter/wdesign-core';
 import type { EmblaCarouselType } from 'embla-carousel-react';
 
 export type Embla = EmblaCarouselType;

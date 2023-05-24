@@ -1,4 +1,4 @@
-import type { TabsStylesNames } from '@worldprint/wdesign-core';
+import type { TabsStylesNames } from '@worldprinter/wdesign-core';
 
 export const Tabs: Record<TabsStylesNames, string> = {
   root: 'Root element',

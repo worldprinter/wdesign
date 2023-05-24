@@ -4,7 +4,7 @@ import {
   Box,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import dayjs from 'dayjs';
 import {
   MonthLevel,
@@ -193,4 +193,4 @@ export const MonthLevelGroup = forwardRef<HTMLDivElement, MonthLevelGroupProps>(
   }
 );
 
-MonthLevelGroup.displayName = '@worldprint/wdesign-dates/MonthLevelGroup';
+MonthLevelGroup.displayName = '@worldprinter/wdesign-dates/MonthLevelGroup';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { createEventHandler } from '@worldprint/wdesign-utils';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { createEventHandler } from '@worldprinter/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Popover, PopoverDropdownProps } from '../../Popover';
 import { useHoverCardContext } from '../HoverCard.context';
 
@@ -30,4 +30,4 @@ export function HoverCardDropdown(props: HoverCardDropdownProps) {
   );
 }
 
-HoverCardDropdown.displayName = '@worldprint/wdesign-core/HoverCardDropdown';
+HoverCardDropdown.displayName = '@worldprinter/wdesign-core/HoverCardDropdown';

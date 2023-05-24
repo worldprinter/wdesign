@@ -1,11 +1,12 @@
-import type { RichTextEditorStylesNames } from '@worldprint/wdesign-tiptap';
+import type { RichTextEditorStylesNames } from '@worldprinter/wdesign-tiptap';
 
 export const RichTextEditor: Record<RichTextEditorStylesNames, string> = {
   root: 'Root element',
   toolbar: 'Toolbar element',
   content: 'Content area',
   typographyStylesProvider: 'TypographyStylesProvider component, wraps content',
-  control: 'RichTextEditor.Control root element, used as a base for all controls',
+  control:
+    'RichTextEditor.Control root element, used as a base for all controls',
   controlsGroup: 'RichTextEditor.ControlsGroup component root',
   linkEditor: 'Link editor root element',
   linkEditorSave: 'Link editor save button',

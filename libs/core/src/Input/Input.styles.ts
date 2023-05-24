@@ -1,4 +1,10 @@
-import { createStyles, MantineNumberSize, MantineTheme, rem, getSize } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineNumberSize,
+  MantineTheme,
+  rem,
+  getSize,
+} from '@worldprinter/wdesign-styles';
 
 export interface InputStylesParams {
   radius: MantineNumberSize;
@@ -35,9 +41,12 @@ function getVariantStyles({ theme, variant }: GetVariantStylesInput) {
   if (variant === 'default') {
     return {
       border: `${rem(1)} solid ${
-        theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[4]
+        theme.colorScheme === 'dark'
+          ? theme.colors.dark[4]
+          : theme.colors.gray[4]
       }`,
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+      backgroundColor:
+        theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
       transition: 'border-color 100ms ease',
       '&:focus, &:focus-within': theme.focusRingStyles.inputStyles(theme),
     };
@@ -46,7 +55,10 @@ function getVariantStyles({ theme, variant }: GetVariantStylesInput) {
   if (variant === 'filled') {
     return {
       border: `${rem(1)} solid transparent`,
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+      backgroundColor:
+        theme.colorScheme === 'dark'
+          ? theme.colors.dark[5]
+          : theme.colors.gray[1],
       '&:focus, &:focus-within': theme.focusRingStyles.inputStyles(theme),
     };
   }
@@ -114,7 +126,9 @@ export default createStyles(
       wrapper: {
         position: 'relative',
         marginTop: offsetTop ? `calc(${theme.spacing.xs} / 2)` : undefined,
-        marginBottom: offsetBottom ? `calc(${theme.spacing.xs} / 2)` : undefined,
+        marginBottom: offsetBottom
+          ? `calc(${theme.spacing.xs} / 2)`
+          : undefined,
 
         '&:has(input:disabled)': {
           '& .mantine-Input-rightSection': {
@@ -131,13 +145,16 @@ export default createStyles(
             : 'auto'
           : getSize({ size, sizes }),
         WebkitTapHighlightColor: 'transparent',
-        lineHeight: multiline ? theme.lineHeight : `calc(${getSize({ size, sizes })} - ${rem(2)})`,
+        lineHeight: multiline
+          ? theme.lineHeight
+          : `calc(${getSize({ size, sizes })} - ${rem(2)})`,
         appearance: 'none',
         resize: 'none',
         boxSizing: 'border-box',
         fontSize: getSize({ size, sizes: theme.fontSizes }),
         width: '100%',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        color:
+          theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
         display: 'block',
         textAlign: 'left',
         cursor: pointer ? 'pointer' : undefined,
@@ -146,7 +163,9 @@ export default createStyles(
 
         '&:disabled, &[data-disabled]': {
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[6]
+              : theme.colors.gray[1],
           color: theme.colors.dark[2],
           opacity: 0.6,
           cursor: 'not-allowed',
@@ -168,7 +187,10 @@ export default createStyles(
         },
 
         '&[data-with-icon]': {
-          paddingLeft: typeof iconWidth === 'number' ? rem(iconWidth) : getSize({ size, sizes }),
+          paddingLeft:
+            typeof iconWidth === 'number'
+              ? rem(iconWidth)
+              : getSize({ size, sizes }),
         },
 
         '&::placeholder': {

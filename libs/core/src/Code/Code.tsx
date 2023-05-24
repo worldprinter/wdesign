@@ -3,7 +3,7 @@ import {
   DefaultProps,
   MantineColor,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles, { CodeStylesParams } from './Code.styles';
 
@@ -62,4 +62,4 @@ export const Code = forwardRef<HTMLElement, CodeProps>(
   }
 );
 
-Code.displayName = '@worldprint/wdesign-core/Code';
+Code.displayName = '@worldprinter/wdesign-core/Code';

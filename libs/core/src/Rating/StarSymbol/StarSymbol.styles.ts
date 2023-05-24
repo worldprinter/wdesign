@@ -1,4 +1,9 @@
-import { createStyles, MantineColor, rem, getSize } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineColor,
+  rem,
+  getSize,
+} from '@worldprinter/wdesign-styles';
 
 export interface StarSymbolStylesParams {
   type: 'empty' | 'full';
@@ -13,20 +18,25 @@ const sizes = {
   xl: rem(32),
 };
 
-export default createStyles((theme, { type, color }: StarSymbolStylesParams, { size }) => {
-  const emptyColor = theme.colorScheme === 'light' ? theme.colors.gray[3] : theme.colors.gray[8];
-  const fullColor = theme.fn.variant({
-    variant: 'filled',
-    color,
-    primaryFallback: false,
-  }).background;
+export default createStyles(
+  (theme, { type, color }: StarSymbolStylesParams, { size }) => {
+    const emptyColor =
+      theme.colorScheme === 'light'
+        ? theme.colors.gray[3]
+        : theme.colors.gray[8];
+    const fullColor = theme.fn.variant({
+      variant: 'filled',
+      color,
+      primaryFallback: false,
+    }).background;
 
-  return {
-    icon: {
-      stroke: type === 'empty' ? emptyColor : fullColor,
-      fill: type === 'empty' ? emptyColor : fullColor,
-      width: getSize({ size, sizes }),
-      height: getSize({ size, sizes }),
-    },
-  };
-});
+    return {
+      icon: {
+        stroke: type === 'empty' ? emptyColor : fullColor,
+        fill: type === 'empty' ? emptyColor : fullColor,
+        width: getSize({ size, sizes }),
+        height: getSize({ size, sizes }),
+      },
+    };
+  }
+);

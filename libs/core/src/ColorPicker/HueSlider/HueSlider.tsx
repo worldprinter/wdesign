@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { rem, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { ColorSlider, BaseColorSliderProps } from '../ColorSlider/ColorSlider';
 
 export type HueSliderProps = BaseColorSliderProps;
@@ -38,4 +38,4 @@ export const HueSlider = forwardRef<HTMLDivElement, HueSliderProps>(
   }
 );
 
-HueSlider.displayName = '@worldprint/wdesign-core/HueSlider';
+HueSlider.displayName = '@worldprinter/wdesign-core/HueSlider';

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { useGridContext } from '../Grid.context';
 import useStyles, { ColSpan } from './Col.styles';
@@ -149,4 +149,4 @@ export const Col = forwardRef<HTMLDivElement, ColProps>(
   }
 );
 
-Col.displayName = '@worldprint/wdesign-core/Col';
+Col.displayName = '@worldprinter/wdesign-core/Col';

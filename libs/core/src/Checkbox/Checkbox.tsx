@@ -5,9 +5,9 @@ import {
   Selectors,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
-import { useId } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
+import { useId } from '@worldprinter/wdesign-hooks';
 import { extractSystemStyles } from '../Box';
 import { InlineInput, InlineInputStylesNames } from '../InlineInput';
 import { useCheckboxGroupContext } from './CheckboxGroup.context';
@@ -168,5 +168,5 @@ export const Checkbox: CheckboxComponent = forwardRef<
   );
 }) as any;
 
-Checkbox.displayName = '@worldprint/wdesign-core/Checkbox';
+Checkbox.displayName = '@worldprinter/wdesign-core/Checkbox';
 Checkbox.Group = CheckboxGroup;

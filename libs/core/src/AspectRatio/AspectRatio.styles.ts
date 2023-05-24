@@ -1,4 +1,4 @@
-import { createStyles } from '@worldprint/wdesign-styles';
+import { createStyles } from '@worldprinter/wdesign-styles';
 
 export interface AspectRatioStylesParams {
   ratio: number;

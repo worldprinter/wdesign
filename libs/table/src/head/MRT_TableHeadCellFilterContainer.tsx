@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionIcon, Collapse, Flex, Menu, Text, Tooltip } from '@worldprint/wdesign-core';
+import { ActionIcon, Collapse, Flex, Menu, Text, Tooltip } from '@worldprinter/wdesign-core';
 import { IconFilter } from '@tabler/icons-react';
 import { MRT_FilterRangeFields } from '../inputs/MRT_FilterRangeFields';
 import { MRT_FilterTextInput } from '../inputs/MRT_FilterTextInput';

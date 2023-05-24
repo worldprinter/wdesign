@@ -1,5 +1,5 @@
-import { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprint/wdesign-styles';
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import { TransitionOverride } from '../Transition';
 import type { ModalBaseStylesNames } from './ModalBase';
 

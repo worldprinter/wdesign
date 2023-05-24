@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, rem } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize, rem } from '@worldprinter/wdesign-styles';
 
 export interface OverlayStylesParams {
   color: string;

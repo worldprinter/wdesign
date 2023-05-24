@@ -1,4 +1,4 @@
-import type { ScrollAreaStylesNames } from '@worldprint/wdesign-core';
+import type { ScrollAreaStylesNames } from '@worldprinter/wdesign-core';
 
 export const ScrollArea: Record<ScrollAreaStylesNames, string> = {
   root: 'Root element',

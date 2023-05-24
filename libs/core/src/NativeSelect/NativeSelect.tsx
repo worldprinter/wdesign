@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, MantineSize, useMantineTheme } from '@worldprint/wdesign-styles';
+import { DefaultProps, MantineSize, useMantineTheme } from '@worldprinter/wdesign-styles';
 import {
   InputWrapperBaseProps,
   InputWrapperStylesNames,
@@ -92,4 +92,4 @@ export const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
   }
 );
 
-NativeSelect.displayName = '@worldprint/wdesign-core/NativeSelect';
+NativeSelect.displayName = '@worldprinter/wdesign-core/NativeSelect';

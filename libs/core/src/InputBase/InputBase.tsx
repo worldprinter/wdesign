@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { DefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import {
   Input,
   InputSharedProps,
@@ -42,7 +42,7 @@ export const _InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
   }
 );
 
-_InputBase.displayName = '@worldprint/wdesign-core/InputBase';
+_InputBase.displayName = '@worldprinter/wdesign-core/InputBase';
 
 export const InputBase = createPolymorphicComponent<'input', InputBaseProps>(
   _InputBase

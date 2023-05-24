@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@worldprint/wdesign-core';
+import { Box } from '@worldprinter/wdesign-core';
 import { MRT_TableHeadCell } from './MRT_TableHeadCell';
 import type {
   MRT_Header,

@@ -4,7 +4,7 @@ import {
   MantineNumberSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { UnstyledButton } from '../UnstyledButton';
 import useStyles, { BurgerStylesParams } from './Burger.styles';
 
@@ -64,4 +64,4 @@ export const Burger = forwardRef<HTMLButtonElement, BurgerProps>(
   }
 );
 
-Burger.displayName = '@worldprint/wdesign-core/Burger';
+Burger.displayName = '@worldprinter/wdesign-core/Burger';

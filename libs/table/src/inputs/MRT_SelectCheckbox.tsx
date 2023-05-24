@@ -5,7 +5,7 @@ import {
   Radio,
   RadioProps,
   Tooltip,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import type { MRT_Row, MRT_TableInstance } from '..';
 
 interface Props {

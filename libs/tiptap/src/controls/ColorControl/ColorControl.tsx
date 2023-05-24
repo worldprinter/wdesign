@@ -3,7 +3,7 @@ import {
   ColorSwatch,
   DefaultProps,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { Control } from '../Control/Control';
 import { useRichTextEditorContext } from '../../RichTextEditor.context';
 

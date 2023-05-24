@@ -5,7 +5,7 @@ import {
   Text,
   MantineNumberSize,
   MantineColor,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import type { SpotlightAction } from '../types';
 import type {
   DefaultActionProps,
@@ -111,4 +111,4 @@ export function ActionsList({
   );
 }
 
-ActionsList.displayName = '@worldprint/wdesign-spotlight/ActionsList';
+ActionsList.displayName = '@worldprinter/wdesign-spotlight/ActionsList';

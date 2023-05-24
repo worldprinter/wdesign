@@ -7,7 +7,7 @@ import {
   MantineNumberSize,
   useComponentDefaultProps,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Text } from '../../Text';
 import { Loader } from '../../Loader';
 import { CheckboxIcon } from '../../Checkbox';
@@ -230,4 +230,4 @@ export const Step = forwardRef<HTMLButtonElement, StepProps>(
   }
 );
 
-Step.displayName = '@worldprint/wdesign-core/Step';
+Step.displayName = '@worldprinter/wdesign-core/Step';

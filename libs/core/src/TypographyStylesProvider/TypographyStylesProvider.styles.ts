@@ -1,5 +1,5 @@
-import { createStyles, rem } from '@worldprint/wdesign-styles';
-import { keys } from '@worldprint/wdesign-utils';
+import { createStyles, rem } from '@worldprinter/wdesign-styles';
+import { keys } from '@worldprinter/wdesign-utils';
 
 export default createStyles((theme) => {
   const headings = keys(theme.headings.sizes).reduce((acc, h) => {
@@ -46,7 +46,10 @@ export default createStyles((theme) => {
       },
 
       '& mark': {
-        backgroundColor: theme.fn.themeColor('yellow', theme.colorScheme === 'dark' ? 5 : 2),
+        backgroundColor: theme.fn.themeColor(
+          'yellow',
+          theme.colorScheme === 'dark' ? 5 : 2
+        ),
         color: theme.colorScheme === 'dark' ? theme.colors.dark[9] : 'inherit',
       },
 
@@ -56,12 +59,17 @@ export default createStyles((theme) => {
         borderBottom: 0,
         borderLeft: 0,
         borderRight: 0,
-        borderTop: `${rem(1)} dashed ${theme.colors.gray[theme.colorScheme === 'dark' ? 4 : 6]}`,
+        borderTop: `${rem(1)} dashed ${
+          theme.colors.gray[theme.colorScheme === 'dark' ? 4 : 6]
+        }`,
       },
 
       '& a': {
         ...theme.fn.focusStyles(),
-        color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6],
+        color:
+          theme.colors[theme.primaryColor][
+            theme.colorScheme === 'dark' ? 4 : 6
+          ],
         textDecoration: 'none',
 
         '&:hover': {
@@ -79,7 +87,10 @@ export default createStyles((theme) => {
         fontFamily: theme.fontFamilyMonospace,
         fontSize: theme.fontSizes.sm,
         borderRadius: theme.radius.sm,
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[8]
+            : theme.colors.gray[0],
 
         '& code': {
           backgroundColor: 'transparent',
@@ -94,12 +105,18 @@ export default createStyles((theme) => {
         lineHeight: theme.lineHeight,
         padding: `${rem(1)} ${rem(5)}`,
         borderRadius: theme.radius.sm,
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[0],
+        color:
+          theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[9]
+            : theme.colors.gray[0],
         fontFamily: theme.fontFamilyMonospace,
         fontSize: theme.fontSizes.xs,
         border: `${rem(1)} solid ${
-          theme.colorScheme === 'dark' ? theme.colors.dark[9] : theme.colors.gray[3]
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[9]
+            : theme.colors.gray[3]
         }`,
       },
 
@@ -121,33 +138,45 @@ export default createStyles((theme) => {
         '& caption': {
           marginTop: theme.spacing.xs,
           fontSize: theme.fontSizes.sm,
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[2]
+              : theme.colors.gray[6],
         },
 
         '& th': {
           textAlign: 'left',
           fontWeight: 'bold',
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[0]
+              : theme.colors.gray[7],
           fontSize: 14,
           padding: `${rem(7)} ${rem(10)}`,
         },
 
         '& thead th': {
           borderBottom: `${rem(1)} solid ${
-            theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[3]
           }`,
         },
 
         '& tfoot th': {
           borderTop: `${rem(1)} solid ${
-            theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[3]
           }`,
         },
 
         '& td': {
           padding: `${rem(7)} ${rem(10)}`,
           borderBottom: `${rem(1)} solid ${
-            theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[3]
           }`,
           fontSize: 14,
         },
@@ -164,16 +193,22 @@ export default createStyles((theme) => {
         borderTopRightRadius: theme.radius.sm,
         borderBottomRightRadius: theme.radius.sm,
         padding: `${theme.spacing.md} ${theme.spacing.lg}`,
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        color:
+          theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
         borderLeft: `${rem(6)} solid ${
-          theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[4]
+            : theme.colors.gray[3]
         }`,
 
         '& cite': {
           display: 'block',
           fontSize: theme.fontSizes.sm,
           marginTop: theme.spacing.xs,
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[2]
+              : theme.colors.gray[6],
           overflow: 'hidden',
           textOverflow: 'ellipsis',
         },

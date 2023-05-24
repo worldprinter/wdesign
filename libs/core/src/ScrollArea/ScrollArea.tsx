@@ -5,8 +5,11 @@ import {
   Selectors,
   useMantineTheme,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents, packSx } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import {
+  ForwardRefWithStaticComponents,
+  packSx,
+} from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles, { ScrollAreaStylesParams } from './ScrollArea.styles';
 
@@ -131,7 +134,7 @@ export const _ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
   }
 ) as any;
 
-export interface ScrollAreaAutosizeProps extends ScrollAreaProps {}
+export type ScrollAreaAutosizeProps = ScrollAreaProps;
 
 const ScrollAreaAutosize = forwardRef<HTMLDivElement, ScrollAreaAutosizeProps>(
   (props, ref) => {
@@ -181,8 +184,9 @@ const ScrollAreaAutosize = forwardRef<HTMLDivElement, ScrollAreaAutosizeProps>(
   }
 );
 
-ScrollAreaAutosize.displayName = '@worldprint/wdesign-core/ScrollAreaAutosize';
-_ScrollArea.displayName = '@worldprint/wdesign-core/ScrollArea';
+ScrollAreaAutosize.displayName =
+  '@worldprinter/wdesign-core/ScrollAreaAutosize';
+_ScrollArea.displayName = '@worldprinter/wdesign-core/ScrollArea';
 _ScrollArea.Autosize = ScrollAreaAutosize;
 
 export const ScrollArea: ForwardRefWithStaticComponents<

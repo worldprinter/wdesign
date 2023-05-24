@@ -1,4 +1,4 @@
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 
 export type ScrollAreaComponent = React.FC<any>;
 

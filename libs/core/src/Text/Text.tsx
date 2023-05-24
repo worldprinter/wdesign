@@ -6,8 +6,8 @@ import {
   MantineColor,
   MantineNumberSize,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles from './Text.styles';
 
@@ -120,6 +120,6 @@ export const _Text = forwardRef<HTMLDivElement, TextProps>((props, ref) => {
   );
 });
 
-_Text.displayName = '@worldprint/wdesign-core/Text';
+_Text.displayName = '@worldprinter/wdesign-core/Text';
 
 export const Text = createPolymorphicComponent<'div', TextProps>(_Text);

@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect } from 'react';
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { useModalBaseContext } from '../ModalBase.context';
 import useStyles from './ModalBaseTitle.styles';

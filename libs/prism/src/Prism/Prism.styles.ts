@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, rem } from '@worldprint/wdesign-core';
+import { createStyles, MantineNumberSize, rem } from '@worldprinter/wdesign-core';
 
 export interface PrismStylesParams {
   colorScheme: 'light' | 'dark';

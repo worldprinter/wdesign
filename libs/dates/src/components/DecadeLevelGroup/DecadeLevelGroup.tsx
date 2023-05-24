@@ -4,7 +4,7 @@ import {
   Box,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import dayjs from 'dayjs';
 import {
   DecadeLevel,
@@ -173,4 +173,4 @@ export const DecadeLevelGroup = forwardRef<
   );
 });
 
-DecadeLevelGroup.displayName = '@worldprint/wdesign-dates/DecadeLevelGroup';
+DecadeLevelGroup.displayName = '@worldprinter/wdesign-dates/DecadeLevelGroup';

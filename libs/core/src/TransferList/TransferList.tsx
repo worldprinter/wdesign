@@ -3,8 +3,8 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import { RenderList, RenderListStylesNames } from './RenderList/RenderList';
 import { SelectScrollArea } from '../Select/SelectScrollArea/SelectScrollArea';
 import { DefaultItem } from './DefaultItem/DefaultItem';
@@ -269,4 +269,4 @@ export const TransferList = forwardRef<HTMLDivElement, TransferListProps>(
   }
 );
 
-TransferList.displayName = '@worldprint/wdesign-core/TransferList';
+TransferList.displayName = '@worldprinter/wdesign-core/TransferList';

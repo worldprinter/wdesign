@@ -6,8 +6,8 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   MonthLevelGroup,
   MonthLevelGroupStylesNames,
@@ -415,4 +415,4 @@ export const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
   }
 );
 
-Calendar.displayName = '@worldprint/wdesign-dates/Calendar';
+Calendar.displayName = '@worldprinter/wdesign-dates/Calendar';

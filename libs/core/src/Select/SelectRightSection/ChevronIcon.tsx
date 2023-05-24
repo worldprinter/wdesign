@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMantineTheme, MantineSize, getSize, rem } from '@worldprint/wdesign-styles';
+import { useMantineTheme, MantineSize, getSize, rem } from '@worldprinter/wdesign-styles';
 
 interface ChevronIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   size: MantineSize;

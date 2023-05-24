@@ -1,4 +1,4 @@
-import type { SpoilerStylesNames } from '@worldprint/wdesign-core';
+import type { SpoilerStylesNames } from '@worldprinter/wdesign-core';
 
 export const Spoiler: Record<SpoilerStylesNames, string> = {
   root: 'Root element',

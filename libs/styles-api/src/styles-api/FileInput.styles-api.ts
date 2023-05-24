@@ -1,4 +1,4 @@
-import type { FileInputStylesNames } from '@worldprint/wdesign-core';
+import type { FileInputStylesNames } from '@worldprinter/wdesign-core';
 import { Input } from './Input.styles-api';
 import { InputWrapper } from './InputWrapper.styles-api';
 

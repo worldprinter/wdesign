@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, CheckboxProps, Tooltip } from '@worldprint/wdesign-core';
+import { Checkbox, CheckboxProps, Tooltip } from '@worldprinter/wdesign-core';
 import type { MRT_Column, MRT_TableInstance } from '..';
 
 interface Props {

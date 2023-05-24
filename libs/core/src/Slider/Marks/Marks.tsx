@@ -4,7 +4,7 @@ import {
   MantineNumberSize,
   MantineColor,
   Selectors,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { getPosition } from '../utils/get-position/get-position';
 import { isMarkFilled } from './is-mark-filled';
@@ -82,4 +82,4 @@ export function Marks({
   return <div className={classes.marksContainer}>{items}</div>;
 }
 
-Marks.displayName = '@worldprint/wdesign-core/SliderMarks';
+Marks.displayName = '@worldprinter/wdesign-core/SliderMarks';

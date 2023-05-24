@@ -1,7 +1,7 @@
 import React from 'react';
-import { getContextItemIndex, useHovered } from '@worldprint/wdesign-utils';
-import { useDidUpdate, useUncontrolled } from '@worldprint/wdesign-hooks';
-import { ClassNames, Styles, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { getContextItemIndex, useHovered } from '@worldprinter/wdesign-utils';
+import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks';
+import { ClassNames, Styles, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { useDelayedHover } from '../Floating';
 import { Popover, PopoverBaseProps, PopoverStylesNames } from '../Popover';
 import { MenuDivider, MenuDividerStylesNames } from './MenuDivider/MenuDivider';
@@ -180,7 +180,7 @@ export function Menu(props: MenuProps) {
   );
 }
 
-Menu.displayName = '@worldprint/wdesign-core/Menu';
+Menu.displayName = '@worldprinter/wdesign-core/Menu';
 Menu.Item = MenuItem;
 Menu.Label = MenuLabel;
 Menu.Dropdown = MenuDropdown;

@@ -1,4 +1,10 @@
-import { createStyles, MantineNumberSize, MantineColor, getStylesRef, rem } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineNumberSize,
+  MantineColor,
+  getStylesRef,
+  rem,
+} from '@worldprinter/wdesign-styles';
 
 export const WRAPPER_PADDING = 4;
 
@@ -45,7 +51,8 @@ export default createStyles(
         WebkitTapHighlightColor: 'transparent',
         borderRadius: theme.fn.radius(radius),
         fontWeight: 500,
-        fontSize: size in theme.fontSizes ? theme.fontSizes[size] : theme.fontSizes.sm,
+        fontSize:
+          size in theme.fontSizes ? theme.fontSizes[size] : theme.fontSizes.sm,
         cursor: 'pointer',
         display: 'block',
         textAlign: 'center',
@@ -54,18 +61,25 @@ export default createStyles(
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         userSelect: 'none',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7],
+        color:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[1]
+            : theme.colors.gray[7],
         transition: `color ${shouldAnimate ? 0 : transitionDuration}ms ${
           transitionTimingFunction || theme.transitionTimingFunction
         }`,
 
         '&:hover': {
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+          color:
+            theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
         },
 
         '&[data-disabled]': {
           '&, &:hover': {
-            color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
+            color:
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[3]
+                : theme.colors.gray[5],
             cursor: 'not-allowed',
             pointerEvents: 'none',
           },
@@ -73,7 +87,8 @@ export default createStyles(
 
         '&[data-active]': {
           '&, &:hover': {
-            color: color || theme.colorScheme === 'dark' ? theme.white : theme.black,
+            color:
+              color || theme.colorScheme === 'dark' ? theme.white : theme.black,
           },
         },
       },
@@ -84,14 +99,17 @@ export default createStyles(
         boxSizing: 'border-box',
         flex: 1,
         zIndex: 2,
-        transition: `border-left-color ${shouldAnimate ? 0 : transitionDuration}ms ${
-          transitionTimingFunction || theme.transitionTimingFunction
-        }`,
+        transition: `border-left-color ${
+          shouldAnimate ? 0 : transitionDuration
+        }ms ${transitionTimingFunction || theme.transitionTimingFunction}`,
 
         '&:not(:first-of-type)': {
           borderStyle: 'solid',
           borderWidth: vertical ? `${rem(1)} 0 0 0` : `0 0 0 ${rem(1)}`,
-          borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3],
+          borderColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[3],
         },
       },
 
@@ -124,7 +142,10 @@ export default createStyles(
 
         '&:disabled + label': {
           '&, &:hover': {
-            color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
+            color:
+              theme.colorScheme === 'dark'
+                ? theme.colors.dark[3]
+                : theme.colors.gray[5],
             cursor: 'not-allowed',
             pointerEvents: 'none',
           },
@@ -136,7 +157,10 @@ export default createStyles(
         display: fullWidth || vertical ? 'flex' : 'inline-flex',
         width: vertical && !fullWidth ? 'max-content' : 'auto',
         flexDirection: vertical ? 'column' : 'row',
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[8]
+            : theme.colors.gray[1],
         borderRadius: theme.fn.radius(radius),
         overflow: 'hidden',
         padding: WRAPPER_PADDING,
@@ -147,7 +171,8 @@ export default createStyles(
         borderTopColor: 'transparent !important',
 
         [`& + .${getStylesRef('control')}`]: {
-          [vertical ? 'borderTopColor' : 'borderLeftColor']: 'transparent !important',
+          [vertical ? 'borderTopColor' : 'borderLeftColor']:
+            'transparent !important',
         },
         borderRadius: theme.fn.radius(radius),
         boxShadow: shouldAnimate
@@ -169,7 +194,8 @@ export default createStyles(
         borderRadius: theme.fn.radius(radius),
         position: 'absolute',
         zIndex: 1,
-        boxShadow: color || theme.colorScheme === 'dark' ? 'none' : theme.shadows.xs,
+        boxShadow:
+          color || theme.colorScheme === 'dark' ? 'none' : theme.shadows.xs,
         transition: `transform ${shouldAnimate ? 0 : transitionDuration}ms ${
           theme.transitionTimingFunction
         }, width ${shouldAnimate ? 0 : transitionDuration / 2}ms ${

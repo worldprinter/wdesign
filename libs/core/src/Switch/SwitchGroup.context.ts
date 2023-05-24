@@ -1,4 +1,4 @@
-import { MantineSize } from '@worldprint/wdesign-styles';
+import { MantineSize } from '@worldprinter/wdesign-styles';
 import { createContext, useContext } from 'react';
 
 interface SwitchGroupContextValue {

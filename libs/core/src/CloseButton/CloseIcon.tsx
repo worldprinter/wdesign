@@ -18,4 +18,4 @@ export function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-CloseIcon.displayName = '@worldprint/wdesign-core/CloseIcon';
+CloseIcon.displayName = '@worldprinter/wdesign-core/CloseIcon';

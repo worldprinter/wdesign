@@ -18,4 +18,4 @@ export function OptionalPortal({
   return <>{children}</>;
 }
 
-OptionalPortal.displayName = '@worldprint/wdesign-core/OptionalPortal';
+OptionalPortal.displayName = '@worldprinter/wdesign-core/OptionalPortal';

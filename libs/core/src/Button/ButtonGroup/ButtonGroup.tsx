@@ -1,6 +1,9 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import {
+  DefaultProps,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import useStyles, { ButtonGroupStylesParams } from './ButtonGroup.styles';
 
@@ -36,4 +39,4 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
   }
 );
 
-ButtonGroup.displayName = '@worldprint/wdesign-core/ButtonGroup';
+ButtonGroup.displayName = '@worldprinter/wdesign-core/ButtonGroup';

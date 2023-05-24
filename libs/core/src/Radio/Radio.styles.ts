@@ -1,4 +1,4 @@
-import { createStyles, MantineColor, getStylesRef, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineColor, getStylesRef, rem, getSize } from '@worldprinter/wdesign-styles';
 
 export interface RadioStylesParams {
   color: MantineColor;

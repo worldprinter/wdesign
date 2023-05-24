@@ -1,4 +1,4 @@
-import { clamp } from '@worldprint/wdesign-hooks';
+import { clamp } from '@worldprinter/wdesign-hooks';
 import type { CalendarLevel } from '../../../types';
 
 // 0 – month, 1 – year, 2 – decade;

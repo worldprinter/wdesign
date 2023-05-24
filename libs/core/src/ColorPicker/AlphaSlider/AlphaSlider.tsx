@@ -3,7 +3,7 @@ import {
   useMantineTheme,
   useComponentDefaultProps,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { ColorSlider, BaseColorSliderProps } from '../ColorSlider/ColorSlider';
 import { round } from '../converters/parsers';
 
@@ -57,4 +57,4 @@ export const AlphaSlider = forwardRef<HTMLDivElement, AlphaSliderProps>(
   }
 );
 
-AlphaSlider.displayName = '@worldprint/wdesign-core/AlphaSlider';
+AlphaSlider.displayName = '@worldprinter/wdesign-core/AlphaSlider';

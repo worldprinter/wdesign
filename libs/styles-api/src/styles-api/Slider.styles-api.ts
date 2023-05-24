@@ -1,4 +1,4 @@
-import type { SliderStylesNames } from '@worldprint/wdesign-core';
+import type { SliderStylesNames } from '@worldprinter/wdesign-core';
 
 export const Slider: Record<SliderStylesNames, string> = {
   root: 'Root element',

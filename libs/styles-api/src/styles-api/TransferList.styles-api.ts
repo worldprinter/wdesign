@@ -1,4 +1,4 @@
-import type { TransferListStylesNames } from '@worldprint/wdesign-core';
+import type { TransferListStylesNames } from '@worldprinter/wdesign-core';
 
 export const TransferList: Record<TransferListStylesNames, string> = {
   transferList: 'One of list',

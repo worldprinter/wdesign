@@ -5,7 +5,7 @@ import {
   Global,
   rem,
   em,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { useAppShellContext } from '../AppShell.context';
 import useStyles, {
@@ -122,4 +122,4 @@ export const VerticalSection = forwardRef<HTMLElement, VerticalSectionProps>(
   }
 );
 
-VerticalSection.displayName = '@worldprint/wdesign-core/VerticalSection';
+VerticalSection.displayName = '@worldprinter/wdesign-core/VerticalSection';

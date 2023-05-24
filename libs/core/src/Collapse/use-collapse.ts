@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { flushSync } from 'react-dom';
-import { useDidUpdate, mergeRefs } from '@worldprint/wdesign-hooks';
+import { useDidUpdate, mergeRefs } from '@worldprinter/wdesign-hooks';
 
 function getAutoHeightDuration(height: number | string) {
   if (!height || typeof height === 'string') {

@@ -1,4 +1,4 @@
-import { CSSObject, rem } from '@worldprint/wdesign-styles';
+import { CSSObject, rem } from '@worldprinter/wdesign-styles';
 import type { FloatingPosition, FloatingSide, FloatingPlacement, ArrowPosition } from '../types';
 
 function horizontalSide(

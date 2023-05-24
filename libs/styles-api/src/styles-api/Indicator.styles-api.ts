@@ -1,4 +1,4 @@
-import type { IndicatorStylesNames } from '@worldprint/wdesign-core';
+import type { IndicatorStylesNames } from '@worldprinter/wdesign-core';
 
 export const Indicator: Record<IndicatorStylesNames, string> = {
   root: 'Root element',

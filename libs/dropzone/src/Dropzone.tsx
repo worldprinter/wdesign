@@ -14,9 +14,9 @@ import {
   LoadingOverlay,
   Box,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
-import { assignRef } from '@worldprint/wdesign-hooks';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-core';
+import { assignRef } from '@worldprinter/wdesign-hooks';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { DropzoneProvider } from './Dropzone.context';
 import { DropzoneAccept, DropzoneIdle, DropzoneReject } from './DropzoneStatus';
 import type { DropzoneFullScreenType } from './DropzoneFullScreen';
@@ -225,7 +225,7 @@ export function _Dropzone(props: DropzoneProps) {
   );
 }
 
-_Dropzone.displayName = '@worldprint/wdesign-dropzone/Dropzone';
+_Dropzone.displayName = '@worldprinter/wdesign-dropzone/Dropzone';
 _Dropzone.Accept = DropzoneAccept;
 _Dropzone.Reject = DropzoneReject;
 _Dropzone.Idle = DropzoneIdle;

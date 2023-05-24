@@ -1,4 +1,4 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprint/wdesign-styles';
+import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles';
 import { TabsStylesParams } from '../Tabs.types';
 
 interface TabStylesParams extends TabsStylesParams {

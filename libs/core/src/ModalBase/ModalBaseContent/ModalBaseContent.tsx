@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Selectors, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Paper, PaperProps } from '../../Paper';
 import { Transition, TransitionOverride } from '../../Transition';
 import { FocusTrap } from '../../FocusTrap';

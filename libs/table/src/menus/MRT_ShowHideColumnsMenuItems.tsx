@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Box, Menu, Switch, Tooltip, Text } from '@worldprint/wdesign-core';
+import { Box, Menu, Switch, Tooltip, Text } from '@worldprinter/wdesign-core';
 import { MRT_ColumnPinningButtons } from '../buttons/MRT_ColumnPinningButtons';
 import { MRT_GrabHandleButton } from '../buttons/MRT_GrabHandleButton';
 import { getPrimaryColor, reorderColumn } from '../column.utils';

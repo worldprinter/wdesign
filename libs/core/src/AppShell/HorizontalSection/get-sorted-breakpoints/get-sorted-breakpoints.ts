@@ -1,4 +1,4 @@
-import { MantineSize, MantineTheme, getSize, getBreakpointValue } from '@worldprint/wdesign-styles';
+import { MantineSize, MantineTheme, getSize, getBreakpointValue } from '@worldprinter/wdesign-styles';
 
 type Breakpoints<T> = Partial<Record<MantineSize | (string & {}), T>>;
 

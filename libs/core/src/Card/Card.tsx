@@ -1,6 +1,9 @@
 import React, { Children, cloneElement, forwardRef } from 'react';
-import { MantineNumberSize, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import {
+  MantineNumberSize,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Paper, PaperProps } from '../Paper/Paper';
 import { CardSection } from './CardSection/CardSection';
 import useStyles from './Card.styles';
@@ -60,7 +63,7 @@ export const _Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
 }) as any;
 
 _Card.Section = CardSection;
-_Card.displayName = '@worldprint/wdesign-core/Card';
+_Card.displayName = '@worldprinter/wdesign-core/Card';
 
 export const Card = createPolymorphicComponent<
   'div',

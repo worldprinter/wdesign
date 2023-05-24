@@ -1,4 +1,4 @@
-import type { SegmentedControlStylesNames } from '@worldprint/wdesign-core';
+import type { SegmentedControlStylesNames } from '@worldprinter/wdesign-core';
 
 export const SegmentedControl: Record<SegmentedControlStylesNames, string> = {
   root: 'Root element',

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { getSafeId } from '@worldprint/wdesign-utils';
-import { useUncontrolled, useId } from '@worldprint/wdesign-hooks';
+import { getSafeId } from '@worldprinter/wdesign-utils';
+import { useUncontrolled, useId } from '@worldprinter/wdesign-hooks';
 import {
   ClassNames,
   MantineColor,
   MantineNumberSize,
   Styles,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { TabsContextProvider } from './Tabs.context';
 import { TABS_ERRORS } from './Tabs.errors';
 import {
@@ -132,4 +132,4 @@ export function TabsProvider({
   );
 }
 
-TabsProvider.displayName = '@worldprint/wdesign-core/TabsProvider';
+TabsProvider.displayName = '@worldprinter/wdesign-core/TabsProvider';

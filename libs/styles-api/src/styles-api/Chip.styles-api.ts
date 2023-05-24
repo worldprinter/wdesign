@@ -1,4 +1,4 @@
-import { ChipStylesNames } from '@worldprint/wdesign-core';
+import { ChipStylesNames } from '@worldprinter/wdesign-core';
 
 export const Chip: Record<ChipStylesNames, string> = {
   root: 'Root element',

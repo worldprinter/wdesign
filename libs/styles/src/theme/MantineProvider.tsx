@@ -98,4 +98,4 @@ export function MantineProvider({
   );
 }
 
-MantineProvider.displayName = '@worldprint/wdesign-core/MantineProvider';
+MantineProvider.displayName = '@worldprinter/wdesign-core/MantineProvider';

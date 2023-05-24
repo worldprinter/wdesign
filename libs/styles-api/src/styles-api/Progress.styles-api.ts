@@ -1,4 +1,4 @@
-import type { ProgressStylesNames } from '@worldprint/wdesign-core';
+import type { ProgressStylesNames } from '@worldprinter/wdesign-core';
 
 export const Progress: Record<ProgressStylesNames, string> = {
   root: 'Root element',

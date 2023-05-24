@@ -4,7 +4,7 @@ import {
   CSSObject,
   useComponentDefaultProps,
   MantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import useStyles from './MediaQuery.styles';
 
 export interface MediaQueryProps {
@@ -46,4 +46,4 @@ export function MediaQuery(props: MediaQueryProps) {
   return child;
 }
 
-MediaQuery.displayName = '@worldprint/wdesign-core/MediaQuery';
+MediaQuery.displayName = '@worldprinter/wdesign-core/MediaQuery';

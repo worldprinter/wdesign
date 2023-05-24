@@ -1,7 +1,7 @@
 import React, { cloneElement } from 'react';
-import { upperFirst } from '@worldprint/wdesign-hooks';
-import { isElement } from '@worldprint/wdesign-utils';
-import { useComponentDefaultProps } from '@worldprint/wdesign-core';
+import { upperFirst } from '@worldprinter/wdesign-hooks';
+import { isElement } from '@worldprinter/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-core';
 import { DropzoneContextValue, useDropzoneContext } from './Dropzone.context';
 
 export interface DropzoneStatusProps {
@@ -27,7 +27,7 @@ function createDropzoneStatus(status: keyof DropzoneContextValue) {
     return null;
   };
 
-  Component.displayName = `@worldprint/wdesign-dropzone/${upperFirst(status)}`;
+  Component.displayName = `@worldprinter/wdesign-dropzone/${upperFirst(status)}`;
 
   return Component;
 }

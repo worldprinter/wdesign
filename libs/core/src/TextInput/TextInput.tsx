@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, MantineSize } from '@worldprint/wdesign-styles';
+import { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles';
 import {
   Input,
   InputSharedProps,
@@ -49,4 +49,4 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   }
 );
 
-TextInput.displayName = '@worldprint/wdesign-core/TextInput';
+TextInput.displayName = '@worldprinter/wdesign-core/TextInput';

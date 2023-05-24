@@ -5,7 +5,7 @@ import {
   Selectors,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Text } from '../Text';
 import { Loader } from '../Loader';
 import { CloseButton } from '../CloseButton';
@@ -120,4 +120,4 @@ export const Notification = forwardRef<HTMLDivElement, NotificationProps>(
   }
 );
 
-Notification.displayName = '@worldprint/wdesign-core/Notification';
+Notification.displayName = '@worldprinter/wdesign-core/Notification';

@@ -2,7 +2,7 @@ import type { Row } from '@tanstack/react-table';
 import { MRT_AggregationFns } from './aggregationFns';
 import { MRT_FilterFns } from './filterFns';
 import { MRT_SortingFns } from './sortingFns';
-import { BoxProps, MantineTheme } from '@worldprint/wdesign-core';
+import { BoxProps, MantineTheme } from '@worldprinter/wdesign-core';
 import type {
   MantineReactTableProps,
   MantineShade,

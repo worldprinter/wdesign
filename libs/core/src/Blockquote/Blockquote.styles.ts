@@ -1,4 +1,4 @@
-import { createStyles, MantineColor, rem } from '@worldprint/wdesign-styles';
+import { createStyles, MantineColor, rem } from '@worldprinter/wdesign-styles';
 
 export interface BlockquoteStylesParams {
   color: MantineColor;

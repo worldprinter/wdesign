@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react';
-import { isElement } from '@worldprint/wdesign-utils';
-import { useFocusTrap, useMergedRef } from '@worldprint/wdesign-hooks';
+import { isElement } from '@worldprinter/wdesign-utils';
+import { useFocusTrap, useMergedRef } from '@worldprinter/wdesign-hooks';
 
 export interface FocusTrapProps {
   /** Element at which focus should be trapped, should support ref prop */
@@ -28,4 +28,4 @@ export function FocusTrap({
   return cloneElement(children, { [refProp]: ref });
 }
 
-FocusTrap.displayName = '@worldprint/wdesign-core/FocusTrap';
+FocusTrap.displayName = '@worldprinter/wdesign-core/FocusTrap';

@@ -1,6 +1,9 @@
 export { RemoveScroll } from 'react-remove-scroll';
-export { createPolymorphicComponent, packSx } from '@worldprint/wdesign-utils';
-export * from '@worldprint/wdesign-styles';
+export {
+  createPolymorphicComponent,
+  packSx,
+} from '@worldprinter/wdesign-utils';
+export * from '@worldprinter/wdesign-styles';
 
 export * from './Accordion';
 export * from './ActionIcon';

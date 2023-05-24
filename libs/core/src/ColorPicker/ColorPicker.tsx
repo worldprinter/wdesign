@@ -1,5 +1,5 @@
 import React, { useState, useRef, forwardRef } from 'react';
-import { useDidUpdate, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineSize,
@@ -7,7 +7,7 @@ import {
   useComponentDefaultProps,
   getSize,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { ColorSwatch } from '../ColorSwatch/ColorSwatch';
 import { convertHsvaTo, isColorValid, parseColor } from './converters';
@@ -274,4 +274,4 @@ export const ColorPicker = forwardRef<HTMLDivElement, ColorPickerProps>(
   }
 );
 
-ColorPicker.displayName = '@worldprint/wdesign-core/ColorPicker';
+ColorPicker.displayName = '@worldprinter/wdesign-core/ColorPicker';

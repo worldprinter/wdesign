@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { autoUpdate } from '@floating-ui/react';
-import { useDidUpdate } from '@worldprint/wdesign-hooks';
+import { useDidUpdate } from '@worldprinter/wdesign-hooks';
 import { FloatingPosition } from './types';
 
 interface Payload {

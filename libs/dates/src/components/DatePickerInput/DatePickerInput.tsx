@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-core';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-core';
 import { useDatesInput } from '../../hooks';
 import { pickCalendarProps } from '../Calendar';
 import { DatePicker, DatePickerBaseProps } from '../DatePicker';
@@ -122,4 +122,4 @@ export const DatePickerInput: DatePickerInputComponent = forwardRef(
   }
 );
 
-DatePickerInput.displayName = '@worldprint/wdesign-dates/DatePickerInput';
+DatePickerInput.displayName = '@worldprinter/wdesign-dates/DatePickerInput';

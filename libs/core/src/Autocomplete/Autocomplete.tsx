@@ -1,7 +1,11 @@
 import React, { useState, forwardRef, useRef } from 'react';
-import { useUncontrolled, useDidUpdate, useMergedRef } from '@worldprint/wdesign-hooks';
-import { DefaultProps, getDefaultZIndex } from '@worldprint/wdesign-styles';
-import { groupOptions } from '@worldprint/wdesign-utils';
+import {
+  useUncontrolled,
+  useDidUpdate,
+  useMergedRef,
+} from '@worldprinter/wdesign-hooks';
+import { DefaultProps, getDefaultZIndex } from '@worldprinter/wdesign-styles';
+import { groupOptions } from '@worldprinter/wdesign-utils';
 import {
   Input,
   InputWrapperBaseProps,
@@ -320,4 +324,4 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
   }
 );
 
-Autocomplete.displayName = '@worldprint/wdesign-core/Autocomplete';
+Autocomplete.displayName = '@worldprinter/wdesign-core/Autocomplete';

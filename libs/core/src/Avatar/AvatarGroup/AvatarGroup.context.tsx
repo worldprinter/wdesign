@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { MantineNumberSize } from '@worldprint/wdesign-styles';
+import { MantineNumberSize } from '@worldprinter/wdesign-styles';
 
 interface ContextValue {
   spacing: MantineNumberSize;
@@ -11,8 +11,15 @@ interface AvatarGroupProviderProps extends ContextValue {
   children: React.ReactNode;
 }
 
-export function AvatarGroupProvider({ spacing, children }: AvatarGroupProviderProps) {
-  return <AvatarGroupContext.Provider value={{ spacing }}>{children}</AvatarGroupContext.Provider>;
+export function AvatarGroupProvider({
+  spacing,
+  children,
+}: AvatarGroupProviderProps) {
+  return (
+    <AvatarGroupContext.Provider value={{ spacing }}>
+      {children}
+    </AvatarGroupContext.Provider>
+  );
 }
 
 export function useAvatarGroupContext() {

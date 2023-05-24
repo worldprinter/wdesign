@@ -4,7 +4,7 @@ import {
   MantineColor,
   MantineNumberSize,
   MantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export interface TooltipStylesParams {
   color: MantineColor;

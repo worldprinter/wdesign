@@ -1,6 +1,6 @@
 import React, { forwardRef, CSSProperties } from 'react';
-import { DefaultProps, useComponentDefaultProps, SystemProp, SpacingValue } from '@worldprint/wdesign-styles';
-import { packSx } from '@worldprint/wdesign-utils';
+import { DefaultProps, useComponentDefaultProps, SystemProp, SpacingValue } from '@worldprinter/wdesign-styles';
+import { packSx } from '@worldprinter/wdesign-utils';
 import { Box, getSystemStyles } from '../Box';
 import { FLEX_SYSTEM_PROPS } from './flex-props';
 
@@ -51,4 +51,4 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>((props, ref) => {
   );
 });
 
-Flex.displayName = '@worldprint/wdesign-core/Flex';
+Flex.displayName = '@worldprinter/wdesign-core/Flex';

@@ -3,8 +3,8 @@ import {
   Selectors,
   DefaultProps,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { packSx } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { packSx } from '@worldprinter/wdesign-utils';
 import { Box } from '../../Box';
 import { useTabsContext } from '../Tabs.context';
 import useStyles from './TabsPanel.styles';
@@ -74,4 +74,4 @@ export const TabsPanel = forwardRef<HTMLDivElement, TabsPanelProps>(
   }
 );
 
-TabsPanel.displayName = '@worldprint/wdesign-core/TabsPanel';
+TabsPanel.displayName = '@worldprinter/wdesign-core/TabsPanel';

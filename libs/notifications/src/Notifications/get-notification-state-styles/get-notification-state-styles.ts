@@ -1,5 +1,5 @@
 import { TransitionStatus } from 'react-transition-group';
-import { CSSObject } from '@worldprint/wdesign-core';
+import { CSSObject } from '@worldprinter/wdesign-core';
 import { NotificationsPositioning } from '../../types';
 
 interface NotificationStateStylesProps {

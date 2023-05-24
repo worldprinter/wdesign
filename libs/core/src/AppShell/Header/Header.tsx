@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import {
   VerticalSection,
   VerticalSectionSharedProps,
@@ -31,4 +31,4 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(
   }
 );
 
-Header.displayName = '@worldprint/wdesign-core/Header';
+Header.displayName = '@worldprinter/wdesign-core/Header';

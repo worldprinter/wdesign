@@ -1,7 +1,7 @@
 import React, { cloneElement } from 'react';
-import { isElement } from '@worldprint/wdesign-utils';
-import { useMergedRef } from '@worldprint/wdesign-hooks';
-import { getDefaultZIndex, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { isElement } from '@worldprinter/wdesign-utils';
+import { useMergedRef } from '@worldprinter/wdesign-hooks';
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { OptionalPortal } from '../../Portal';
 import { TooltipBaseProps } from '../Tooltip.types';
@@ -104,4 +104,4 @@ export function TooltipFloating(props: TooltipFloatingProps) {
   );
 }
 
-TooltipFloating.displayName = '@worldprint/wdesign-core/TooltipFloating';
+TooltipFloating.displayName = '@worldprinter/wdesign-core/TooltipFloating';

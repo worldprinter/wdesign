@@ -1,4 +1,4 @@
-import type { NavLinkStylesNames } from '@worldprint/wdesign-core';
+import type { NavLinkStylesNames } from '@worldprinter/wdesign-core';
 
 export const NavLink: Record<NavLinkStylesNames, string> = {
   root: 'Root element',

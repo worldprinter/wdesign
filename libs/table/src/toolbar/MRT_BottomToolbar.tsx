@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box } from '@worldprint/wdesign-core';
-import { useMediaQuery } from '@worldprint/wdesign-hooks';
+import { Box } from '@worldprinter/wdesign-core';
+import { useMediaQuery } from '@worldprinter/wdesign-hooks';
 import { MRT_TablePagination } from './MRT_TablePagination';
 import { MRT_ToolbarAlertBanner } from './MRT_ToolbarAlertBanner';
 import { MRT_ProgressBar } from './MRT_ProgressBar';

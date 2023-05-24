@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 
 import React, { useRef, useState, useCallback } from 'react';
-import { useId, useClickOutside } from '@worldprint/wdesign-hooks';
+import { useId, useClickOutside } from '@worldprinter/wdesign-hooks';
 import {
   useMantineTheme,
   ClassNames,
@@ -10,7 +10,7 @@ import {
   MantineShadow,
   getDefaultZIndex,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { TransitionOverride } from '../Transition';
 import {
   getFloatingPosition,
@@ -297,4 +297,4 @@ export function Popover(props: PopoverProps) {
 
 Popover.Target = PopoverTarget;
 Popover.Dropdown = PopoverDropdown;
-Popover.displayName = '@worldprint/wdesign-core/Popover';
+Popover.displayName = '@worldprinter/wdesign-core/Popover';

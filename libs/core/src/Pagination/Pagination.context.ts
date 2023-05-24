@@ -1,5 +1,5 @@
-import { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprint/wdesign-styles';
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import type { PaginationStylesNames } from './PaginationRoot/PaginationRoot';
 
 interface PaginationContext {

@@ -10,8 +10,8 @@ import {
   Selectors,
   useComponentDefaultProps,
   rem,
-} from '@worldprint/wdesign-core';
-import { useDisclosure, useInputState, useWindowEvent } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDisclosure, useInputState, useWindowEvent } from '@worldprinter/wdesign-hooks';
 import {
   ControlBase,
   RichTextEditorControlBaseProps,

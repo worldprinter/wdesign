@@ -1,4 +1,4 @@
-import type { PrismStylesNames } from '@worldprint/wdesign-prism';
+import type { PrismStylesNames } from '@worldprinter/wdesign-prism';
 
 export const Prism: Record<PrismStylesNames, string> = {
   root: 'Root element',

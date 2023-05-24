@@ -39,4 +39,4 @@ export function HiddenDatesInput({ value, type, name, form }: HiddenDatesInputPr
   return <input type="hidden" value={formatValue(value, type)} name={name} form={form} />;
 }
 
-HiddenDatesInput.displayName = '@worldprint/wdesign-dates/HiddenDatesInput';
+HiddenDatesInput.displayName = '@worldprinter/wdesign-dates/HiddenDatesInput';

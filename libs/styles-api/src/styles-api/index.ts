@@ -1,4 +1,4 @@
-// @worldprint/wdesign-core
+// @worldprinter/wdesign-core
 export * from './Accordion.styles-api';
 export * from './Alert.styles-api';
 export * from './AppShell.styles-api';
@@ -53,7 +53,7 @@ export * from './Timeline.styles-api';
 export * from './Tooltip.styles-api';
 export * from './TransferList.styles-api';
 
-// @worldprint/wdesign-dates
+// @worldprinter/wdesign-dates
 export * from './Dates.styles-api';
 
 // Other packages

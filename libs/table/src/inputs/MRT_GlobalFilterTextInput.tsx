@@ -5,8 +5,8 @@ import {
   Menu,
   TextInput,
   Tooltip,
-} from '@worldprint/wdesign-core';
-import { useDebouncedValue } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDebouncedValue } from '@worldprinter/wdesign-hooks';
 import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu';
 import type { MRT_TableInstance } from '..';
 

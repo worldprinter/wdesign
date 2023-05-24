@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer, useRef } from 'react';
-import { Modal, getDefaultZIndex } from '@worldprint/wdesign-core';
-import { randomId } from '@worldprint/wdesign-hooks';
+import { Modal, getDefaultZIndex } from '@worldprinter/wdesign-core';
+import { randomId } from '@worldprinter/wdesign-hooks';
 import {
   ModalsContext,
   ModalSettings,

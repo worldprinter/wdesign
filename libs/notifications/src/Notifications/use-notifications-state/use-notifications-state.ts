@@ -1,4 +1,4 @@
-import { useQueue, randomId } from '@worldprint/wdesign-hooks';
+import { useQueue, randomId } from '@worldprinter/wdesign-hooks';
 import { NotificationProps } from '../../types';
 
 export default function useNotificationsState({ limit }: { limit: number }) {
@@ -11,7 +11,10 @@ export default function useNotificationsState({ limit }: { limit: number }) {
     const id = notification.id || randomId();
 
     update((notifications) => {
-      if (notification.id && notifications.some((n) => n.id === notification.id)) {
+      if (
+        notification.id &&
+        notifications.some((n) => n.id === notification.id)
+      ) {
         return notifications;
       }
 
@@ -39,7 +42,8 @@ export default function useNotificationsState({ limit }: { limit: number }) {
     update((notifications) =>
       notifications.filter((notification) => {
         if (notification.id === id) {
-          typeof notification.onClose === 'function' && notification.onClose(notification);
+          typeof notification.onClose === 'function' &&
+            notification.onClose(notification);
           return false;
         }
 

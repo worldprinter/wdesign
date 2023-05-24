@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultProps, MantineSize, MantineNumberSize, Selectors } from '@worldprint/wdesign-styles';
+import { DefaultProps, MantineSize, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles';
 import { CloseButton } from '../../CloseButton';
 import useStyles from './DefaultValue.styles';
 
@@ -66,4 +66,4 @@ export function DefaultValue({
   );
 }
 
-DefaultValue.displayName = '@worldprint/wdesign-core/MultiSelect/DefaultValue';
+DefaultValue.displayName = '@worldprinter/wdesign-core/MultiSelect/DefaultValue';

@@ -1,5 +1,5 @@
-import { Tabs } from '@worldprint/wdesign-core';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+import { Tabs } from '@worldprinter/wdesign-core';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { PrismTabs, PrismPanel } from './PrismTabs/PrismTabs';
 import { Prism, PrismProps } from './Prism/Prism';
 

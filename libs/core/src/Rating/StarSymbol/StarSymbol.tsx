@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineSize, MantineColor } from '@worldprint/wdesign-styles';
+import { MantineSize, MantineColor } from '@worldprinter/wdesign-styles';
 import { StarIcon } from './StarIcon';
 import useStyles from './StarSymbol.styles';
 
@@ -14,4 +14,4 @@ export function StarSymbol({ size, type, color }: StarSymbolProps) {
   return <StarIcon className={classes.icon} />;
 }
 
-StarSymbol.displayName = '@worldprint/wdesign-core/StarSymbol';
+StarSymbol.displayName = '@worldprinter/wdesign-core/StarSymbol';

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-core';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-core';
 import { useDatesState } from '../../hooks';
 import { DecadeLevelBaseSettings } from '../DecadeLevel';
 import { PickerBaseProps, DatePickerType } from '../../types';
@@ -82,4 +82,4 @@ export const YearPicker: YearPickerComponent = forwardRef(
   }
 );
 
-YearPicker.displayName = '@worldprint/wdesign-dates/YearPicker';
+YearPicker.displayName = '@worldprinter/wdesign-dates/YearPicker';

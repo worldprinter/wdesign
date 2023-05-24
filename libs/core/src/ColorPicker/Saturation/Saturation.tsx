@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useMove, clampUseMovePosition, UseMovePosition } from '@worldprint/wdesign-hooks';
-import { DefaultProps, MantineSize, Selectors } from '@worldprint/wdesign-styles';
+import { useMove, clampUseMovePosition, UseMovePosition } from '@worldprinter/wdesign-hooks';
+import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles';
 import { HsvaColor } from '../types';
 import { Thumb, ThumbStylesNames } from '../Thumb/Thumb';
 import useStyles from './Saturation.styles';
@@ -150,4 +150,4 @@ export function Saturation({
   );
 }
 
-Saturation.displayName = '@worldprint/wdesign-core/Saturation';
+Saturation.displayName = '@worldprinter/wdesign-core/Saturation';

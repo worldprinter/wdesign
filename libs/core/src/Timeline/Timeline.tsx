@@ -7,8 +7,8 @@ import {
   useComponentDefaultProps,
   rem,
   Selectors,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents, packSx } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents, packSx } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { TimelineItem, TimelineItemStylesNames } from './TimelineItem/TimelineItem';
 import useStyles from './Timeline.styles';
@@ -127,4 +127,4 @@ export const Timeline: TimelineComponent = forwardRef<HTMLDivElement, TimelinePr
 ) as any;
 
 Timeline.Item = TimelineItem;
-Timeline.displayName = '@worldprint/wdesign-core/Timeline';
+Timeline.displayName = '@worldprinter/wdesign-core/Timeline';

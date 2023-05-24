@@ -4,7 +4,7 @@ import {
   Selectors,
   DefaultProps,
   MantineColor,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { StarSymbol } from '../StarSymbol/StarSymbol';
 import useStyles from './RatingItem.styles';
@@ -106,4 +106,4 @@ export function RatingItem({
   );
 }
 
-RatingItem.displayName = '@worldprint/wdesign-core/RatingItem';
+RatingItem.displayName = '@worldprinter/wdesign-core/RatingItem';

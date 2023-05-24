@@ -1,6 +1,6 @@
 import React from 'react';
-import { EmotionCache, useEmotionCache } from '@worldprint/wdesign-core';
-import { useIsomorphicEffect } from '@worldprint/wdesign-hooks';
+import { EmotionCache, useEmotionCache } from '@worldprinter/wdesign-core';
+import { useIsomorphicEffect } from '@worldprinter/wdesign-hooks';
 
 interface ClientProviderProps {
   children: React.ReactNode;

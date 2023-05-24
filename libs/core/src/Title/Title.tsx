@@ -1,5 +1,8 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import {
+  DefaultProps,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
 import { Text, TextProps } from '../Text';
 import useStyles, { TitleStylesParams } from './Title.styles';
 
@@ -60,4 +63,4 @@ export const Title = forwardRef<HTMLHeadingElement, TitleProps>(
   }
 );
 
-Title.displayName = '@worldprint/wdesign-core/Title';
+Title.displayName = '@worldprinter/wdesign-core/Title';

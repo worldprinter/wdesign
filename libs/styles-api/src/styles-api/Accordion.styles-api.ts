@@ -1,4 +1,4 @@
-import type { AccordionStylesNames } from '@worldprint/wdesign-core';
+import type { AccordionStylesNames } from '@worldprinter/wdesign-core';
 
 export const Accordion: Record<AccordionStylesNames, string> = {
   item: 'Accordion item wrapper',

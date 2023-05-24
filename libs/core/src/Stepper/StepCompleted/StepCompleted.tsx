@@ -14,4 +14,4 @@ export function StepCompleted(
   return null;
 }
 
-StepCompleted.displayName = '@worldprint/wdesign-core/StepCompleted';
+StepCompleted.displayName = '@worldprinter/wdesign-core/StepCompleted';

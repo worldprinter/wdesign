@@ -6,7 +6,7 @@ import {
   useComponentDefaultProps,
   Variants,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import useStyles from './Divider.styles';
 import { Text } from '../Text';
 import { Box } from '../Box';
@@ -105,4 +105,4 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
   }
 );
 
-Divider.displayName = '@worldprint/wdesign-core/Divider';
+Divider.displayName = '@worldprinter/wdesign-core/Divider';

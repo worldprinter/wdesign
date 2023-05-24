@@ -5,8 +5,8 @@ import {
   useComponentDefaultProps,
   Selectors,
   rem,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles, { ColorSwatchStylesParams } from './ColorSwatch.styles';
 
@@ -72,7 +72,7 @@ export const _ColorSwatch = forwardRef<HTMLDivElement, ColorSwatchProps>(
   }
 );
 
-_ColorSwatch.displayName = '@worldprint/wdesign-core/ColorSwatch';
+_ColorSwatch.displayName = '@worldprinter/wdesign-core/ColorSwatch';
 
 export const ColorSwatch = createPolymorphicComponent<'div', ColorSwatchProps>(
   _ColorSwatch

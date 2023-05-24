@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { ChipGroupProvider } from '../ChipGroup.context';
 
 export interface ChipGroupProps<T extends boolean = false> {
@@ -59,4 +59,4 @@ export function ChipGroup<T extends boolean>(props: ChipGroupProps<T>) {
   );
 }
 
-ChipGroup.displayName = '@worldprint/wdesign-core/ChipGroup';
+ChipGroup.displayName = '@worldprinter/wdesign-core/ChipGroup';

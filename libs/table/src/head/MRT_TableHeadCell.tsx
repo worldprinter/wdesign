@@ -1,5 +1,5 @@
 import React, { DragEvent, ReactNode, useMemo } from 'react';
-import { Box, Flex, MantineTheme, useMantineTheme } from '@worldprint/wdesign-core';
+import { Box, Flex, MantineTheme, useMantineTheme } from '@worldprinter/wdesign-core';
 import { MRT_ColumnActionMenu } from '../menus/MRT_ColumnActionMenu';
 import { MRT_TableHeadCellFilterContainer } from './MRT_TableHeadCellFilterContainer';
 import { MRT_TableHeadCellFilterLabel } from './MRT_TableHeadCellFilterLabel';

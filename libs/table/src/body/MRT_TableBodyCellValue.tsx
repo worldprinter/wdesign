@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Box } from '@worldprint/wdesign-core';
+import { Box } from '@worldprinter/wdesign-core';
 import highlightWords from 'highlight-words';
 import type { MRT_Cell, MRT_TableInstance } from '..';
 

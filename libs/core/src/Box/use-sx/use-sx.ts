@@ -4,7 +4,7 @@ import {
   Sx,
   useCss,
   useMantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { getSystemStyles } from '../style-system-props/get-system-styles/get-system-styles';
 
 function extractSx(sx: Sx, theme: MantineTheme) {

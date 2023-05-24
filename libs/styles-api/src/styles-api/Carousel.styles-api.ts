@@ -1,4 +1,4 @@
-import { CarouselStylesNames } from '@worldprint/wdesign-carousel';
+import { CarouselStylesNames } from '@worldprinter/wdesign-carousel';
 
 export const Carousel: Record<CarouselStylesNames, string> = {
   root: 'Root element',

@@ -6,8 +6,8 @@ import {
   MantineNumberSize,
   useComponentDefaultProps,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { useId } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { useId } from '@worldprinter/wdesign-hooks';
 import { CloseButton } from '../CloseButton';
 import { Box } from '../Box';
 import useStyles, { AlertStylesParams } from './Alert.styles';
@@ -124,4 +124,4 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
   }
 );
 
-Alert.displayName = '@worldprint/wdesign-core/Alert';
+Alert.displayName = '@worldprinter/wdesign-core/Alert';

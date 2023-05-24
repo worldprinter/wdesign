@@ -6,7 +6,7 @@ import {
   Selectors,
   getSize,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { Marks, MarksStylesNames } from '../Marks/Marks';
 import { sizes } from '../SliderRoot/SliderRoot.styles';
@@ -94,4 +94,4 @@ export function Track({
   );
 }
 
-Track.displayName = '@worldprint/wdesign-core/SliderTrack';
+Track.displayName = '@worldprinter/wdesign-core/SliderTrack';

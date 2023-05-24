@@ -5,7 +5,7 @@ import {
   Selectors,
   getDefaultZIndex,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Transition, MantineTransition } from '../Transition';
 import { CloseButton } from '../CloseButton';
 import { Affix } from '../Affix';
@@ -147,4 +147,4 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
   }
 );
 
-Dialog.displayName = '@worldprint/wdesign-core/Dialog';
+Dialog.displayName = '@worldprinter/wdesign-core/Dialog';

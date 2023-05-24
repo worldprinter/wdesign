@@ -1,5 +1,5 @@
-import { createSafeContext } from '@worldprint/wdesign-utils';
-import type { MantineNumberSize } from '@worldprint/wdesign-styles';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles';
 
 interface GridContextValue {
   gutter: MantineNumberSize;

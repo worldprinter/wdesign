@@ -5,7 +5,7 @@ import {
   useComponentDefaultProps,
   Box,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import type { DayOfWeek } from '../../types';
 import { useDatesContext } from '../DatesProvider';
 import { getWeekdayNames } from './get-weekdays-names/get-weekdays-names';
@@ -92,4 +92,4 @@ export const WeekdaysRow = forwardRef<HTMLTableRowElement, WeekdaysRowProps>(
   }
 );
 
-WeekdaysRow.displayName = '@worldprint/wdesign-dates/WeekdaysRow';
+WeekdaysRow.displayName = '@worldprinter/wdesign-dates/WeekdaysRow';

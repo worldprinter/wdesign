@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize, rem, getSize } from '@worldprinter/wdesign-styles';
 
 interface DefaultLabelStyles {
   radius: MantineNumberSize;

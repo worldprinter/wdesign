@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse, Progress } from '@worldprint/wdesign-core';
+import { Collapse, Progress } from '@worldprinter/wdesign-core';
 import type { MRT_TableInstance } from '..';
 
 interface Props<TData extends Record<string, any> = {}> {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useComponentDefaultProps, ClassNames, Styles } from '@worldprint/wdesign-styles';
-import { useDisclosure } from '@worldprint/wdesign-hooks';
+import { useComponentDefaultProps, ClassNames, Styles } from '@worldprinter/wdesign-styles';
+import { useDisclosure } from '@worldprinter/wdesign-hooks';
 import { useDelayedHover } from '../Floating';
 import { Popover, PopoverBaseProps, PopoverStylesNames, PopoverStylesParams } from '../Popover';
 import { HoverCardContextProvider } from './HoverCard.context';
@@ -54,6 +54,6 @@ export function HoverCard(props: HoverCardProps) {
   );
 }
 
-HoverCard.displayName = '@worldprint/wdesign-core/HoverCard';
+HoverCard.displayName = '@worldprinter/wdesign-core/HoverCard';
 HoverCard.Target = HoverCardTarget;
 HoverCard.Dropdown = HoverCardDropdown;

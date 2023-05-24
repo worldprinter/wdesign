@@ -6,7 +6,7 @@ import {
   Selectors,
   useComponentDefaultProps,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import useStyles from './PickerControl.styles';
 
 export type PickerControlStylesNames = Selectors<typeof useStyles>;
@@ -91,4 +91,4 @@ export const PickerControl = forwardRef<HTMLButtonElement, PickerControlProps>(
   }
 );
 
-PickerControl.displayName = '@worldprint/wdesign-dates/PickerControl';
+PickerControl.displayName = '@worldprinter/wdesign-dates/PickerControl';

@@ -6,7 +6,7 @@ import {
   getBreakpointValue,
   getSize,
   em,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { iconSizes } from './Step/Step.styles';
 
 export interface StepperStylesParams {

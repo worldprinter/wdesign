@@ -4,7 +4,7 @@ import {
   MantineNumberSize,
   MantineColor,
   Selectors,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { Transition, MantineTransition } from '../../Transition';
 import useStyles from './Thumb.styles';
@@ -124,4 +124,4 @@ export const Thumb = forwardRef<HTMLDivElement, ThumbProps>(
   }
 );
 
-Thumb.displayName = '@worldprint/wdesign-core/SliderThumb';
+Thumb.displayName = '@worldprinter/wdesign-core/SliderThumb';

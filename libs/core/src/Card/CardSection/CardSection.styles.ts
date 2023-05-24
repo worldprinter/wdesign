@@ -1,4 +1,4 @@
-import { createStyles, getSize, rem } from '@worldprint/wdesign-styles';
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles';
 
 interface CardSectionStyles {
   padding: string | number;

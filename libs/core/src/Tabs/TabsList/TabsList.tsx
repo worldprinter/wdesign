@@ -3,7 +3,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { TabsPosition } from '../Tabs.types';
 import { useTabsContext } from '../Tabs.context';
@@ -64,4 +64,4 @@ export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
   }
 );
 
-TabsList.displayName = '@worldprint/wdesign-core/TabsList';
+TabsList.displayName = '@worldprinter/wdesign-core/TabsList';

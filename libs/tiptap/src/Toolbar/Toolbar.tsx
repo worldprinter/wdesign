@@ -4,7 +4,7 @@ import {
   DefaultProps,
   useComponentDefaultProps,
   Selectors,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { useRichTextEditorContext } from '../RichTextEditor.context';
 import useStyles from './Toolbar.styles';
 
@@ -49,4 +49,4 @@ export const Toolbar = forwardRef<HTMLDivElement, RichTextEditorToolbarProps>(
   }
 );
 
-Toolbar.displayName = '@worldprint/wdesign-tiptap/Toolbar';
+Toolbar.displayName = '@worldprinter/wdesign-tiptap/Toolbar';

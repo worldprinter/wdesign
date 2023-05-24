@@ -5,7 +5,7 @@ import {
   MantineSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import useStyles from './InputLabel.styles';
 
@@ -88,4 +88,4 @@ export const InputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
   }
 );
 
-InputLabel.displayName = '@worldprint/wdesign-core/InputLabel';
+InputLabel.displayName = '@worldprinter/wdesign-core/InputLabel';

@@ -8,7 +8,7 @@ import {
   useComponentDefaultProps,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { Bars } from './loaders/Bars';
 import { Oval } from './loaders/Oval';
@@ -71,4 +71,4 @@ export function Loader(props: LoaderProps) {
   );
 }
 
-Loader.displayName = '@worldprint/wdesign-core/Loader';
+Loader.displayName = '@worldprinter/wdesign-core/Loader';

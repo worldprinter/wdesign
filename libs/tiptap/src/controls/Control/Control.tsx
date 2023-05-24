@@ -4,7 +4,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { useRichTextEditorContext } from '../../RichTextEditor.context';
 import useStyles from './Control.styles';
 
@@ -63,4 +63,4 @@ export const Control = forwardRef<
   );
 });
 
-Control.displayName = '@worldprint/wdesign-tiptap/Control';
+Control.displayName = '@worldprinter/wdesign-tiptap/Control';

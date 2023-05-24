@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMantineTheme, MantineColor } from '@worldprint/wdesign-styles';
+import { useMantineTheme, MantineColor } from '@worldprinter/wdesign-styles';
 import { Tooltip } from '../../Tooltip';
 import { getCurveProps } from './get-curve-props';
 
@@ -47,4 +47,4 @@ export function Curve({
   );
 }
 
-Curve.displayName = '@worldprint/wdesign-core/Curve';
+Curve.displayName = '@worldprinter/wdesign-core/Curve';

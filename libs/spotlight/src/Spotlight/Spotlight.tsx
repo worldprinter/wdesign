@@ -12,9 +12,9 @@ import {
   useComponentDefaultProps,
   ScrollArea,
   ScrollAreaAutosizeProps,
-} from '@worldprint/wdesign-core';
-import { getGroupedOptions } from '@worldprint/wdesign-utils';
-import { useDidUpdate } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { getGroupedOptions } from '@worldprinter/wdesign-utils';
+import { useDidUpdate } from '@worldprinter/wdesign-hooks';
 import {
   DefaultAction,
   DefaultActionProps,
@@ -265,4 +265,4 @@ export function Spotlight(props: SpotlightProps) {
   );
 }
 
-Spotlight.displayName = '@worldprint/wdesign-spotlight/Spotlight';
+Spotlight.displayName = '@worldprinter/wdesign-spotlight/Spotlight';

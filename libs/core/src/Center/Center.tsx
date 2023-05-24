@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles from './Center.styles';
 
@@ -24,6 +24,6 @@ export const _Center = forwardRef<HTMLDivElement, CenterProps>((props, ref) => {
   return <Box ref={ref} className={cx(classes.root, className)} {...others} />;
 });
 
-_Center.displayName = '@worldprint/wdesign-core/Center';
+_Center.displayName = '@worldprinter/wdesign-core/Center';
 
 export const Center = createPolymorphicComponent<'div', CenterProps>(_Center);

@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize } from '@worldprinter/wdesign-styles';
 
 export interface BackgroundImageStylesParams {
   radius: MantineNumberSize;

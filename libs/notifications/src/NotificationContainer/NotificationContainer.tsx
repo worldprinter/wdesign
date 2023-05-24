@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Notification, DefaultProps } from '@worldprint/wdesign-core';
+import { Notification, DefaultProps } from '@worldprinter/wdesign-core';
 import getAutoClose from './get-auto-close/get-auto-close';
 import { NotificationProps } from '../types';
 
@@ -66,4 +66,4 @@ export default function NotificationContainer({
 }
 
 NotificationContainer.displayName =
-  '@worldprint/wdesign-notifications/NotificationContainer';
+  '@worldprinter/wdesign-notifications/NotificationContainer';

@@ -1,4 +1,4 @@
-import { Selectors } from '@worldprint/wdesign-styles';
+import { Selectors } from '@worldprinter/wdesign-styles';
 import useStyles from './PopoverDropdown/PopoverDropdown.styles';
 
 export type { PopoverStylesParams } from './PopoverDropdown/PopoverDropdown.styles';

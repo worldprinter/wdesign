@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { MantineNumberSize, DefaultProps, Selectors } from '@worldprint/wdesign-styles';
+import { MantineNumberSize, DefaultProps, Selectors } from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import useStyles from './SliderRoot.styles';
 
@@ -47,4 +47,4 @@ export const SliderRoot = forwardRef<HTMLDivElement, SliderRootProps>(
   }
 );
 
-SliderRoot.displayName = '@worldprint/wdesign-core/SliderRoot';
+SliderRoot.displayName = '@worldprinter/wdesign-core/SliderRoot';

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useDisclosure, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useDisclosure, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import { useSpotlightEvents } from './events';
 import { SpotlightContext } from './Spotlight.context';
 import { InnerSpotlightProps, Spotlight } from './Spotlight/Spotlight';
@@ -128,4 +128,4 @@ export function SpotlightProvider({
   );
 }
 
-SpotlightProvider.displayName = '@worldprint/wdesign-spotlight/SpotlightProvider';
+SpotlightProvider.displayName = '@worldprinter/wdesign-spotlight/SpotlightProvider';

@@ -9,7 +9,7 @@ import {
   Text,
   MantineNumberSize,
   MantineColor,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import type { SpotlightAction } from '../types';
 import useStyles from './DefaultAction.styles';
 
@@ -87,4 +87,4 @@ export function DefaultAction({
   );
 }
 
-DefaultAction.displayName = '@worldprint/wdesign-spotlight/DefaultAction';
+DefaultAction.displayName = '@worldprinter/wdesign-spotlight/DefaultAction';

@@ -4,7 +4,7 @@ import {
   MantineColor,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { QuoteIcon } from './QuoteIcon';
 import useStyles, { BlockquoteStylesParams } from './Blockquote.styles';
@@ -69,4 +69,4 @@ export const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   }
 );
 
-Blockquote.displayName = '@worldprint/wdesign-core/Blockquote';
+Blockquote.displayName = '@worldprinter/wdesign-core/Blockquote';

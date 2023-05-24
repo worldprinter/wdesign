@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionIcon, Tooltip } from '@worldprint/wdesign-core';
+import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core';
 import type { MRT_TableInstance } from '..';
 
 interface Props {

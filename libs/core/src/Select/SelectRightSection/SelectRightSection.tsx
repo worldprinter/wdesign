@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineSize } from '@worldprint/wdesign-styles';
+import { MantineSize } from '@worldprinter/wdesign-styles';
 import { CloseButton } from '../../CloseButton';
 import { ChevronIcon } from './ChevronIcon';
 
@@ -33,4 +33,4 @@ export function SelectRightSection({
   );
 }
 
-SelectRightSection.displayName = '@worldprint/wdesign-core/SelectRightSection';
+SelectRightSection.displayName = '@worldprinter/wdesign-core/SelectRightSection';

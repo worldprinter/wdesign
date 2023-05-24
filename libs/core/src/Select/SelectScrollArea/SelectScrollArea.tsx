@@ -14,4 +14,4 @@ export const SelectScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
   )
 );
 
-SelectScrollArea.displayName = '@worldprint/wdesign-core/SelectScrollArea';
+SelectScrollArea.displayName = '@worldprinter/wdesign-core/SelectScrollArea';

@@ -1,4 +1,4 @@
-import { rem } from '@worldprint/wdesign-styles';
+import { rem } from '@worldprinter/wdesign-styles';
 
 export function getSizeValue<T>(value: T) {
   return rem(value);

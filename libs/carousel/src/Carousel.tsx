@@ -7,9 +7,9 @@ import {
   Selectors,
   UnstyledButton,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
-import { clamp } from '@worldprint/wdesign-hooks';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-core';
+import { clamp } from '@worldprinter/wdesign-hooks';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import useEmblaCarousel, { EmblaPluginType } from 'embla-carousel-react';
 import React, { Children, forwardRef, useCallback, useEffect, useState } from 'react';
 import { CarouselProvider } from './Carousel.context';
@@ -366,7 +366,7 @@ export const _Carousel = forwardRef<HTMLDivElement, CarouselProps>((props, ref) 
 }) as any;
 
 _Carousel.Slide = CarouselSlide;
-_Carousel.displayName = '@worldprint/wdesign-carousel/Carousel';
+_Carousel.displayName = '@worldprinter/wdesign-carousel/Carousel';
 
 export const Carousel: ForwardRefWithStaticComponents<
   CarouselProps,

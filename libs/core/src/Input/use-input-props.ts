@@ -1,5 +1,5 @@
-import { useComponentDefaultProps, DefaultProps, MantineStyleSystemProps } from '@worldprint/wdesign-styles';
-import { useId } from '@worldprint/wdesign-hooks';
+import { useComponentDefaultProps, DefaultProps, MantineStyleSystemProps } from '@worldprinter/wdesign-styles';
+import { useId } from '@worldprinter/wdesign-hooks';
 import { extractSystemStyles } from '../Box';
 import { InputWrapperBaseProps } from './InputWrapper/InputWrapper';
 import { InputSharedProps } from './Input';

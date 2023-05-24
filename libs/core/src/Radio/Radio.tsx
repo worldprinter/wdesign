@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
-import { useId } from '@worldprint/wdesign-hooks';
+import { useId } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineSize,
   MantineColor,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { extractSystemStyles } from '../Box';
 import { RadioIcon } from './RadioIcon';
 import { useRadioGroupContext } from './RadioGroup.context';
@@ -154,5 +154,5 @@ export const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
   }
 ) as any;
 
-Radio.displayName = '@worldprint/wdesign-core/Radio';
+Radio.displayName = '@worldprinter/wdesign-core/Radio';
 Radio.Group = RadioGroup;

@@ -4,7 +4,7 @@ import {
   useComponentDefaultProps,
   Selectors,
   DefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { UnstyledButton } from '../../UnstyledButton';
 import { usePaginationContext } from '../Pagination.context';
 import useStyles from './PaginationControl.styles';
@@ -50,4 +50,4 @@ export const PaginationControl = forwardRef<
   );
 });
 
-PaginationControl.displayName = '@worldprint/wdesign-core/PaginationControl';
+PaginationControl.displayName = '@worldprinter/wdesign-core/PaginationControl';

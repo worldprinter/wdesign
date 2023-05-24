@@ -7,7 +7,7 @@ import {
   Selectors,
   useComponentDefaultProps,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import {
   PickerControl,
   PickerControlStylesNames,
@@ -177,4 +177,4 @@ export const MonthsList = forwardRef<HTMLTableElement, MonthsListProps>(
   }
 );
 
-MonthsList.displayName = '@worldprint/wdesign-dates/MonthsList';
+MonthsList.displayName = '@worldprinter/wdesign-dates/MonthsList';

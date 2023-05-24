@@ -1,4 +1,4 @@
-import type { TimelineStylesNames } from '@worldprint/wdesign-core';
+import type { TimelineStylesNames } from '@worldprinter/wdesign-core';
 
 export const Timeline: Record<TimelineStylesNames, string> = {
   root: 'Root element',

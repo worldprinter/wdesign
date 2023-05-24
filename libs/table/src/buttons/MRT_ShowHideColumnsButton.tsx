@@ -4,7 +4,7 @@ import {
   ActionIconProps,
   Menu,
   Tooltip,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { MRT_ShowHideColumnsMenu } from '../menus/MRT_ShowHideColumnsMenu';
 import type { HTMLPropsRef, MRT_TableInstance } from '..';
 

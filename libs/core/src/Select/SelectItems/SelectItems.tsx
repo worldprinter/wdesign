@@ -1,6 +1,6 @@
 import React from 'react';
-import { DefaultProps, MantineSize, Selectors } from '@worldprint/wdesign-styles';
-import { randomId } from '@worldprint/wdesign-hooks';
+import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles';
+import { randomId } from '@worldprinter/wdesign-hooks';
 import { Text } from '../../Text/Text';
 import { Divider } from '../../Divider/Divider';
 import { SelectItem } from '../types';
@@ -159,4 +159,4 @@ export function SelectItems({
   );
 }
 
-SelectItems.displayName = '@worldprint/wdesign-core/SelectItems';
+SelectItems.displayName = '@worldprinter/wdesign-core/SelectItems';

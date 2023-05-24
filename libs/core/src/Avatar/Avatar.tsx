@@ -7,8 +7,8 @@ import {
   useComponentDefaultProps,
   MantineGradient,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { AvatarPlaceholderIcon } from './AvatarPlaceholderIcon';
 import { AvatarGroup } from './AvatarGroup/AvatarGroup';
@@ -115,7 +115,7 @@ export const _Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   );
 }) as any;
 
-_Avatar.displayName = '@worldprint/wdesign-core/Avatar';
+_Avatar.displayName = '@worldprinter/wdesign-core/Avatar';
 _Avatar.Group = AvatarGroup;
 
 export const Avatar = createPolymorphicComponent<

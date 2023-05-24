@@ -6,7 +6,7 @@ import {
   getSize,
   getBreakpointValue,
   em,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export interface AppShellStylesParams {
   padding: MantineNumberSize;

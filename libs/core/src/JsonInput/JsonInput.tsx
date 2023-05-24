@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { validateJson } from './validate-json/validate-json';
 import { Textarea, TextareaProps } from '../Textarea';
 import { TextInputStylesNames } from '../TextInput';
@@ -106,4 +106,4 @@ export const JsonInput = forwardRef<HTMLTextAreaElement, JsonInputProps>((props,
   );
 });
 
-JsonInput.displayName = '@worldprint/wdesign-core/JsonInput';
+JsonInput.displayName = '@worldprinter/wdesign-core/JsonInput';

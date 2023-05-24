@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import {
   HorizontalSection,
   HorizontalSectionSharedProps,
@@ -41,4 +41,4 @@ export const Navbar: NavbarComponent = forwardRef<HTMLElement, NavbarProps>(
 ) as any;
 
 Navbar.Section = Section;
-Navbar.displayName = '@worldprint/wdesign-core/Navbar';
+Navbar.displayName = '@worldprinter/wdesign-core/Navbar';

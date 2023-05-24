@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassNames, MantineShadow, Styles, Selectors, DefaultProps, rem } from '@worldprint/wdesign-styles';
+import { ClassNames, MantineShadow, Styles, Selectors, DefaultProps, rem } from '@worldprinter/wdesign-styles';
 import { SelectScrollArea } from '../SelectScrollArea/SelectScrollArea';
 import { Popover } from '../../Popover';
 import { PortalProps } from '../../Portal';

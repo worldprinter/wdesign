@@ -3,8 +3,8 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { Col } from './Col/Col';
 import { GridProvider } from './Grid.context';
@@ -117,4 +117,4 @@ export const Grid: GridComponent = forwardRef<HTMLDivElement, GridProps>(
 ) as any;
 
 Grid.Col = Col;
-Grid.displayName = '@worldprint/wdesign-core/Grid';
+Grid.displayName = '@worldprinter/wdesign-core/Grid';

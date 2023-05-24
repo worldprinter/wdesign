@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { useReducedMotion, useDidUpdate } from '@worldprint/wdesign-hooks';
-import { useMantineTheme } from '@worldprint/wdesign-styles';
+import { useReducedMotion, useDidUpdate } from '@worldprinter/wdesign-hooks';
+import { useMantineTheme } from '@worldprinter/wdesign-styles';
 
 export type TransitionStatus =
   | 'entered'
@@ -34,8 +34,12 @@ export function useTransition({
   const theme = useMantineTheme();
   const shouldReduceMotion = useReducedMotion();
   const reduceMotion = theme.respectReducedMotion ? shouldReduceMotion : false;
-  const [transitionDuration, setTransitionDuration] = useState(reduceMotion ? 0 : duration);
-  const [transitionStatus, setStatus] = useState<TransitionStatus>(mounted ? 'entered' : 'exited');
+  const [transitionDuration, setTransitionDuration] = useState(
+    reduceMotion ? 0 : duration
+  );
+  const [transitionStatus, setStatus] = useState<TransitionStatus>(
+    mounted ? 'entered' : 'exited'
+  );
   const timeoutRef = useRef<number>(-1);
 
   const handleStateChange = (shouldMount: boolean) => {
@@ -45,7 +49,11 @@ export function useTransition({
     setStatus(shouldMount ? 'pre-entering' : 'pre-exiting');
     window.clearTimeout(timeoutRef.current);
 
-    const newTransitionDuration = reduceMotion ? 0 : shouldMount ? duration : exitDuration;
+    const newTransitionDuration = reduceMotion
+      ? 0
+      : shouldMount
+      ? duration
+      : exitDuration;
     setTransitionDuration(newTransitionDuration);
 
     if (newTransitionDuration === 0) {

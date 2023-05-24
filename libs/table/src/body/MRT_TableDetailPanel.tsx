@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Collapse } from '@worldprint/wdesign-core';
+import { Box, Collapse } from '@worldprinter/wdesign-core';
 import type { MRT_Row, MRT_TableInstance, MRT_VirtualItem } from '..';
 
 interface Props {

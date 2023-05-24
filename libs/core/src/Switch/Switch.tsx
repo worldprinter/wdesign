@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useId, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineNumberSize,
@@ -7,8 +7,8 @@ import {
   MantineColor,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { extractSystemStyles } from '../Box';
 import { SwitchGroup } from './SwitchGroup/SwitchGroup';
 import { useSwitchGroupContext } from './SwitchGroup.context';
@@ -175,5 +175,5 @@ export const Switch: SwitchComponent = forwardRef<
   );
 }) as any;
 
-Switch.displayName = '@worldprint/wdesign-core/Switch';
+Switch.displayName = '@worldprinter/wdesign-core/Switch';
 Switch.Group = SwitchGroup;

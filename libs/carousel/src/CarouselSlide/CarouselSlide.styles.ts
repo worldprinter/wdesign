@@ -5,7 +5,7 @@ import {
   rem,
   getBreakpointValue,
   getSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { CarouselOrientation, CarouselBreakpoint } from '../types';
 
 export interface CarouselSlideStylesParams {

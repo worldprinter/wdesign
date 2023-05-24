@@ -3,8 +3,8 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { isElement } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { isElement } from '@worldprinter/wdesign-utils';
 import { Text } from '../Text';
 import { Box } from '../Box';
 import useStyles from './Breadcrumbs.styles';
@@ -88,4 +88,4 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
   }
 );
 
-Breadcrumbs.displayName = '@worldprint/wdesign-core/Breadcrumbs';
+Breadcrumbs.displayName = '@worldprinter/wdesign-core/Breadcrumbs';

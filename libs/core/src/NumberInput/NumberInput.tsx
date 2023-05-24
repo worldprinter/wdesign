@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
-import { useMergedRef, assignRef, useOs, clamp } from '@worldprint/wdesign-hooks';
+import {
+  useMergedRef,
+  assignRef,
+  useOs,
+  clamp,
+} from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { TextInput } from '../TextInput';
 import { InputStylesNames, InputWrapperStylesNames } from '../Input';
 import { getInputMode } from './get-input-mode/get-input-mode';
@@ -516,4 +521,4 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   }
 );
 
-NumberInput.displayName = '@worldprint/wdesign-core/NumberInput';
+NumberInput.displayName = '@worldprinter/wdesign-core/NumberInput';

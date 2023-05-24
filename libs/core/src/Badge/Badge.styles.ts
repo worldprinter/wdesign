@@ -6,7 +6,7 @@ import {
   MantineTheme,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 const BADGE_VARIANTS = ['light', 'filled', 'outline', 'dot', 'gradient'];
 

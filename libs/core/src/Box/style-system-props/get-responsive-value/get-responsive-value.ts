@@ -1,4 +1,4 @@
-import { MantineTheme, CSSObject, getSize, getBreakpointValue } from '@worldprint/wdesign-styles';
+import { MantineTheme, CSSObject, getSize, getBreakpointValue } from '@worldprinter/wdesign-styles';
 
 function getSortedKeys(value: Record<string, any>, theme: MantineTheme) {
   const sorted = Object.keys(value)

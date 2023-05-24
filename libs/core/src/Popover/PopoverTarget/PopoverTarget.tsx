@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { cloneElement, forwardRef } from 'react';
-import { useMergedRef } from '@worldprint/wdesign-hooks';
-import { isElement } from '@worldprint/wdesign-utils';
-import { clsx, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useMergedRef } from '@worldprinter/wdesign-hooks';
+import { isElement } from '@worldprinter/wdesign-utils';
+import { clsx, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { usePopoverContext } from '../Popover.context';
 import { POPOVER_ERRORS } from '../Popover.errors';
 
@@ -59,4 +59,4 @@ export const PopoverTarget = forwardRef<HTMLElement, PopoverTargetProps>(
   }
 );
 
-PopoverTarget.displayName = '@worldprint/wdesign-core/PopoverTarget';
+PopoverTarget.displayName = '@worldprinter/wdesign-core/PopoverTarget';

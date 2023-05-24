@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { Box } from '@worldprint/wdesign-core';
+import { Box } from '@worldprinter/wdesign-core';
 import { MRT_Table } from './MRT_Table';
 import type { MRT_TableInstance } from '..';
 

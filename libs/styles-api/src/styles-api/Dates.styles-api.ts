@@ -5,7 +5,7 @@ import type {
   CalendarHeaderStylesNames,
   MonthLevelGroupStylesNames,
   DateTimePickerStylesNames,
-} from '@worldprint/wdesign-dates';
+} from '@worldprinter/wdesign-dates';
 import { TextInput } from './TextInput.styles-api';
 
 const CalendarHeader: Record<CalendarHeaderStylesNames, string> = {

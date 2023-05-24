@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-core';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-core';
 import { useDatesInput } from '../../hooks';
 import { pickCalendarProps } from '../Calendar';
 import { YearPicker, YearPickerBaseProps } from '../YearPicker';
@@ -122,4 +122,4 @@ export const YearPickerInput: YearPickerInputComponent = forwardRef(
   }
 );
 
-YearPickerInput.displayName = '@worldprint/wdesign-dates/YearPickerInput';
+YearPickerInput.displayName = '@worldprinter/wdesign-dates/YearPickerInput';

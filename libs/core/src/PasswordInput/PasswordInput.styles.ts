@@ -1,4 +1,4 @@
-import { createStyles, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, rem, getSize } from '@worldprinter/wdesign-styles';
 import { INPUT_SIZES } from '../Input';
 
 export interface PasswordInputStylesParams {
@@ -41,7 +41,10 @@ export default createStyles(
       '&:disabled': {
         cursor: 'not-allowed',
         pointerEvents: 'none',
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[6]
+            : theme.colors.gray[1],
         color: theme.colors.dark[2],
         opacity: 0.6,
 
@@ -60,7 +63,8 @@ export default createStyles(
 
         '&::placeholder': {
           opacity: 1,
-          color: theme.fn.variant({ variant: 'filled', color: 'red' }).background,
+          color: theme.fn.variant({ variant: 'filled', color: 'red' })
+            .background,
         },
       },
 

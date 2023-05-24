@@ -1,4 +1,4 @@
-import { HotkeyItem, useHotkeys } from '@worldprint/wdesign-hooks';
+import { HotkeyItem, useHotkeys } from '@worldprinter/wdesign-hooks';
 
 export function getHotkeysPayload(
   shortcuts: string | string[],

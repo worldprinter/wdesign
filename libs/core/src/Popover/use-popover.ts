@@ -1,4 +1,4 @@
-import { useDidUpdate, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   useFloating,
   shift,

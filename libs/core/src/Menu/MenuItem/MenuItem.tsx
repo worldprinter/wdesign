@@ -4,13 +4,13 @@ import {
   MantineColor,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import {
   createEventHandler,
   createPolymorphicComponent,
   createScopedKeydownHandler,
-} from '@worldprint/wdesign-utils';
-import { useMergedRef } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-utils';
+import { useMergedRef } from '@worldprinter/wdesign-hooks';
 import { Box } from '../../Box';
 import { useMenuContext } from '../Menu.context';
 import useStyles from './MenuItem.styles';
@@ -118,7 +118,7 @@ export const _MenuItem = forwardRef<HTMLButtonElement, MenuItemProps>(
   }
 );
 
-_MenuItem.displayName = '@worldprint/wdesign-core/MenuItem';
+_MenuItem.displayName = '@worldprinter/wdesign-core/MenuItem';
 
 export const MenuItem = createPolymorphicComponent<'button', MenuItemProps>(
   _MenuItem

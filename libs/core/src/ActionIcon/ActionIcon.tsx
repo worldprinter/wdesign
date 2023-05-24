@@ -7,8 +7,8 @@ import {
   useComponentDefaultProps,
   MantineGradient,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { UnstyledButton } from '../UnstyledButton';
 import useStyles, { ActionIconStylesParams } from './ActionIcon.styles';
 import { Loader, LoaderProps } from '../Loader';
@@ -109,7 +109,7 @@ export const _ActionIcon = forwardRef<HTMLButtonElement, ActionIconProps>(
   }
 );
 
-_ActionIcon.displayName = '@worldprint/wdesign-core/ActionIcon';
+_ActionIcon.displayName = '@worldprinter/wdesign-core/ActionIcon';
 
 export const ActionIcon = createPolymorphicComponent<'button', ActionIconProps>(
   _ActionIcon

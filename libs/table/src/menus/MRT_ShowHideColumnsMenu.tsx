@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Button, Divider, Flex, Menu } from '@worldprint/wdesign-core';
+import { Button, Divider, Flex, Menu } from '@worldprinter/wdesign-core';
 import { MRT_ShowHideColumnsMenuItems } from './MRT_ShowHideColumnsMenuItems';
 import { getDefaultColumnOrderIds } from '../column.utils';
 import type { MRT_Column, MRT_TableInstance } from '..';

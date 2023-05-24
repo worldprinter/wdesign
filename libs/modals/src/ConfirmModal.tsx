@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Group, Box, ButtonProps, GroupProps } from '@worldprint/wdesign-core';
+import { Button, Group, Box, ButtonProps, GroupProps } from '@worldprinter/wdesign-core';
 import { ConfirmLabels } from './context';
 import { useModals } from './use-modals/use-modals';
 

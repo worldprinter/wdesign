@@ -1,4 +1,4 @@
-import { CheckboxStylesNames } from '@worldprint/wdesign-core';
+import { CheckboxStylesNames } from '@worldprinter/wdesign-core';
 
 export const Checkbox: Record<CheckboxStylesNames, string> = {
   root: 'Root button element',

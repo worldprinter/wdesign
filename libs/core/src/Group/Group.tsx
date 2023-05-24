@@ -3,7 +3,7 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { filterFalsyChildren } from './filter-falsy-children/filter-falsy-children';
 import useStyles, { GroupPosition } from './Group.styles';
@@ -70,4 +70,4 @@ export const Group = forwardRef<HTMLDivElement, GroupProps>(
   }
 );
 
-Group.displayName = '@worldprint/wdesign-core/Group';
+Group.displayName = '@worldprinter/wdesign-core/Group';

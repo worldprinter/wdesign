@@ -8,15 +8,18 @@ import {
   Selectors,
   useComponentDefaultProps,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import useStyles, { BadgeStylesParams } from './Badge.styles';
 
 export type BadgeStylesNames = Selectors<typeof useStyles>;
-export type BadgeVariant = Variants<'light' | 'filled' | 'outline' | 'dot' | 'gradient'>;
+export type BadgeVariant = Variants<
+  'light' | 'filled' | 'outline' | 'dot' | 'gradient'
+>;
 
-export interface BadgeProps extends DefaultProps<BadgeStylesNames, BadgeStylesParams> {
+export interface BadgeProps
+  extends DefaultProps<BadgeStylesNames, BadgeStylesParams> {
   /** Key of theme.colors */
   color?: MantineColor;
 
@@ -76,13 +79,17 @@ export const _Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
 
   return (
     <Box className={cx(classes.root, className)} ref={ref} {...others}>
-      {leftSection && <span className={classes.leftSection}>{leftSection}</span>}
+      {leftSection && (
+        <span className={classes.leftSection}>{leftSection}</span>
+      )}
       <span className={classes.inner}>{children}</span>
-      {rightSection && <span className={classes.rightSection}>{rightSection}</span>}
+      {rightSection && (
+        <span className={classes.rightSection}>{rightSection}</span>
+      )}
     </Box>
   );
 });
 
-_Badge.displayName = '@worldprint/wdesign-core/Badge';
+_Badge.displayName = '@worldprinter/wdesign-core/Badge';
 
 export const Badge = createPolymorphicComponent<'div', BadgeProps>(_Badge);

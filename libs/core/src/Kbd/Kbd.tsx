@@ -1,9 +1,15 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import {
+  DefaultProps,
+  MantineSize,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles from './Kbd.styles';
 
-export interface KbdProps extends DefaultProps, React.ComponentPropsWithoutRef<'kbd'> {
+export interface KbdProps
+  extends DefaultProps,
+    React.ComponentPropsWithoutRef<'kbd'> {
   variant?: string;
 
   /** Keyboard key */
@@ -18,19 +24,26 @@ const defaultProps: Partial<KbdProps> = {
 };
 
 export const Kbd = forwardRef<HTMLElement, KbdProps>((props: KbdProps, ref) => {
-  const { className, children, unstyled, variant, size, ...others } = useComponentDefaultProps(
-    'Kbd',
-    defaultProps,
-    props
-  );
+  const { className, children, unstyled, variant, size, ...others } =
+    useComponentDefaultProps('Kbd', defaultProps, props);
 
-  const { classes, cx } = useStyles(null, { name: 'Kbd', unstyled, variant, size });
+  const { classes, cx } = useStyles(null, {
+    name: 'Kbd',
+    unstyled,
+    variant,
+    size,
+  });
 
   return (
-    <Box component="kbd" className={cx(classes.root, className)} ref={ref} {...others}>
+    <Box
+      component="kbd"
+      className={cx(classes.root, className)}
+      ref={ref}
+      {...others}
+    >
       {children}
     </Box>
   );
 });
 
-Kbd.displayName = '@worldprint/wdesign-core/Kbd';
+Kbd.displayName = '@worldprinter/wdesign-core/Kbd';

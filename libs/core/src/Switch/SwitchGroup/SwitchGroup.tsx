@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import {
   Input,
   InputWrapperBaseProps,
@@ -88,4 +88,4 @@ export const SwitchGroup = forwardRef<HTMLDivElement, SwitchGroupProps>(
   }
 );
 
-SwitchGroup.displayName = '@worldprint/wdesign-core/SwitchGroup';
+SwitchGroup.displayName = '@worldprinter/wdesign-core/SwitchGroup';

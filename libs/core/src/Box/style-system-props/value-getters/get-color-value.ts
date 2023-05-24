@@ -1,4 +1,4 @@
-import { MantineTheme } from '@worldprint/wdesign-styles';
+import { MantineTheme } from '@worldprinter/wdesign-styles';
 
 export function getColorValue(color: any, theme: MantineTheme): string {
   if (color === 'dimmed') {

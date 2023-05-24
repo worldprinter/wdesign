@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionIcon, Box, Button, Tooltip } from '@worldprint/wdesign-core';
+import { ActionIcon, Box, Button, Tooltip } from '@worldprinter/wdesign-core';
 import type { MRT_Row, MRT_TableInstance } from '..';
 
 interface Props<TData extends Record<string, any> = {}> {

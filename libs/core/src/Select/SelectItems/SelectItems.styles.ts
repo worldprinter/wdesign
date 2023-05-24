@@ -1,4 +1,4 @@
-import { createStyles, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, getSize } from '@worldprinter/wdesign-styles';
 
 export default createStyles((theme, _params, { size }) => ({
   item: {

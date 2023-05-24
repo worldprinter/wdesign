@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useId, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineNumberSize,
@@ -7,8 +7,8 @@ import {
   Selectors,
   useComponentDefaultProps,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { Box, extractSystemStyles } from '../Box';
 import { CheckIcon } from '../Checkbox';
 import { ChipGroup } from './ChipGroup/ChipGroup';
@@ -154,5 +154,5 @@ export const Chip: ChipComponent = forwardRef<HTMLInputElement, ChipProps>(
   }
 ) as any;
 
-Chip.displayName = '@worldprint/wdesign-core/Chip';
+Chip.displayName = '@worldprinter/wdesign-core/Chip';
 Chip.Group = ChipGroup;

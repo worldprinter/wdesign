@@ -4,7 +4,7 @@ import {
   MantineSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { InputLabel, InputLabelStylesNames } from '../InputLabel/InputLabel';
 import { InputError, InputErrorStylesNames } from '../InputError/InputError';
@@ -211,4 +211,4 @@ export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>(
   }
 );
 
-InputWrapper.displayName = '@worldprint/wdesign-core/InputWrapper';
+InputWrapper.displayName = '@worldprinter/wdesign-core/InputWrapper';

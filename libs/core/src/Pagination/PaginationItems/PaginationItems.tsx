@@ -33,4 +33,4 @@ export function PaginationItems({ dotsIcon }: PaginationItemsProps) {
   return <>{items}</>;
 }
 
-PaginationItems.displayName = '@worldprint/wdesign-core/PaginationItems';
+PaginationItems.displayName = '@worldprinter/wdesign-core/PaginationItems';

@@ -74,7 +74,7 @@ export function useFullscreen<T extends HTMLElement = any>() {
       setFullscreen(false);
       // eslint-disable-next-line no-console
       console.error(
-        `[@worldprint/wdesign-hooks] use-fullscreen: Error attempting full-screen mode method: ${event} (${event.target})`
+        `[@worldprinter/wdesign-hooks] use-fullscreen: Error attempting full-screen mode method: ${event} (${event.target})`
       );
     },
     [setFullscreen]

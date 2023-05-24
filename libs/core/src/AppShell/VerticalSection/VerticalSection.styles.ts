@@ -1,4 +1,4 @@
-import { createStyles, rem, em } from '@worldprint/wdesign-styles';
+import { createStyles, rem, em } from '@worldprinter/wdesign-styles';
 import { getSortedBreakpoints } from '../HorizontalSection/get-sorted-breakpoints/get-sorted-breakpoints';
 
 export type VerticalSectionHeight = number | string | Partial<Record<string, string | number>>;

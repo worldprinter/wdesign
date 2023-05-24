@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box/Box';
 import useStyles from './AspectRatio.styles';
 
@@ -30,4 +30,4 @@ export const AspectRatio = forwardRef<HTMLDivElement, AspectRatioProps>(
   }
 );
 
-AspectRatio.displayName = '@worldprint/wdesign-core/AspectRatio';
+AspectRatio.displayName = '@worldprinter/wdesign-core/AspectRatio';

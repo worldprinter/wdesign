@@ -1,5 +1,5 @@
-import { createSafeContext } from '@worldprint/wdesign-utils';
-import { MantineColor, MantineNumberSize, ClassNames, Styles } from '@worldprint/wdesign-styles';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
+import { MantineColor, MantineNumberSize, ClassNames, Styles } from '@worldprinter/wdesign-styles';
 import {
   TabsOrientation,
   TabsPlacement,

@@ -1,4 +1,4 @@
-import { createStyles, getSize } from '@worldprint/wdesign-core';
+import { createStyles, getSize } from '@worldprinter/wdesign-core';
 
 export default createStyles((theme, _, { size }) => ({
   weekdaysRow: {},

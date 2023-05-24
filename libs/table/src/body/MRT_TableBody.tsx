@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Box, Text } from '@worldprint/wdesign-core';
+import { Box, Text } from '@worldprinter/wdesign-core';
 import { Memo_MRT_TableBodyRow, MRT_TableBodyRow } from './MRT_TableBodyRow';
 import { rankGlobalFuzzy } from '../sortingFns';
 import type {

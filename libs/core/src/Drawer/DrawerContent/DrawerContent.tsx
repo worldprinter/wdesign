@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { ModalBase, ModalBaseContentProps } from '../../ModalBase';
 import { useDrawerContext, ScrollAreaComponent } from '../Drawer.context';
 

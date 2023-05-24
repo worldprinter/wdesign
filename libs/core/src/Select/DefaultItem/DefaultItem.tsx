@@ -14,4 +14,4 @@ export const DefaultItem = forwardRef<HTMLDivElement, SelectItemProps>(
   )
 );
 
-DefaultItem.displayName = '@worldprint/wdesign-core/DefaultItem';
+DefaultItem.displayName = '@worldprinter/wdesign-core/DefaultItem';

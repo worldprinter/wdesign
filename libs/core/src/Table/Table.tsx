@@ -3,7 +3,7 @@ import {
   DefaultProps,
   MantineNumberSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles, { TableStylesParams } from './Table.styles';
 
@@ -91,4 +91,4 @@ export const Table = forwardRef<HTMLTableElement, TableProps>((props, ref) => {
   );
 });
 
-Table.displayName = '@worldprint/wdesign-core/Table';
+Table.displayName = '@worldprinter/wdesign-core/Table';

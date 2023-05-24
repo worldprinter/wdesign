@@ -1,3 +1,3 @@
 export const CAROUSEL_ERRORS = {
-  context: '[@worldprint/wdesign-carousel] Carousel.Slide was rendered outside of Carousel context',
+  context: '[@worldprinter/wdesign-carousel] Carousel.Slide was rendered outside of Carousel context',
 };

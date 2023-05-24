@@ -1,4 +1,4 @@
-import type { MantineColor } from '@worldprint/wdesign-styles';
+import type { MantineColor } from '@worldprinter/wdesign-styles';
 
 interface CurveData extends React.ComponentPropsWithRef<'circle'> {
   value: number;

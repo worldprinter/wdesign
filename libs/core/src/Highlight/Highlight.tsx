@@ -4,8 +4,8 @@ import {
   MantineTheme,
   CSSObject,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Text, TextProps } from '../Text/Text';
 import { Mark } from '../Mark/Mark';
 import { highlighter } from './highlighter/highlighter';
@@ -67,7 +67,7 @@ export const _Highlight = forwardRef<HTMLDivElement, HighlightProps>(
   }
 );
 
-_Highlight.displayName = '@worldprint/wdesign-core/Highlight';
+_Highlight.displayName = '@worldprinter/wdesign-core/Highlight';
 
 export const Highlight = createPolymorphicComponent<'div', HighlightProps>(
   _Highlight

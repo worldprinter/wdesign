@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
-import { useUncontrolled, useMergedRef, useDidUpdate, useScrollIntoView } from '@worldprint/wdesign-hooks';
-import { DefaultProps, MantineSize, MantineShadow, getDefaultZIndex } from '@worldprint/wdesign-styles';
-import { groupOptions } from '@worldprint/wdesign-utils';
+import { useUncontrolled, useMergedRef, useDidUpdate, useScrollIntoView } from '@worldprinter/wdesign-hooks';
+import { DefaultProps, MantineSize, MantineShadow, getDefaultZIndex } from '@worldprinter/wdesign-styles';
+import { groupOptions } from '@worldprinter/wdesign-utils';
 import { SelectScrollArea } from './SelectScrollArea/SelectScrollArea';
 import { PortalProps } from '../Portal';
 import { Input, useInputProps } from '../Input';
@@ -647,4 +647,4 @@ export const Select = forwardRef<HTMLInputElement, SelectProps>((props, ref) => 
   );
 });
 
-Select.displayName = '@worldprint/wdesign-core/Select';
+Select.displayName = '@worldprinter/wdesign-core/Select';

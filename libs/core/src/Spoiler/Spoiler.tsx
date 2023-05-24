@@ -4,8 +4,8 @@ import {
   Selectors,
   useComponentDefaultProps,
   rem,
-} from '@worldprint/wdesign-styles';
-import { useElementSize } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { useElementSize } from '@worldprinter/wdesign-hooks';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import useStyles, { SpoilerStylesParams } from './Spoiler.styles';
@@ -105,4 +105,4 @@ export const Spoiler = forwardRef<HTMLDivElement, SpoilerProps>(
   }
 );
 
-Spoiler.displayName = '@worldprint/wdesign-core/Spoiler';
+Spoiler.displayName = '@worldprinter/wdesign-core/Spoiler';

@@ -1,8 +1,9 @@
-import type { SpotlightStylesNames } from '@worldprint/wdesign-spotlight';
+import type { SpotlightStylesNames } from '@worldprinter/wdesign-spotlight';
 
 export const SpotlightProvider: Record<SpotlightStylesNames, string> = {
   root: 'Root element',
-  inner: 'Element used to center spotlight, has fixed position, takes entire screen',
+  inner:
+    'Element used to center spotlight, has fixed position, takes entire screen',
   content: 'Spotlight content root element',
   overlay: 'Overlay displayed under the Spotlight',
   body: 'Spotlight body, displayed after header',

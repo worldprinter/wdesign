@@ -1,4 +1,4 @@
-import { createStyles, MantineSize, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineSize, getSize } from '@worldprinter/wdesign-styles';
 
 export interface ContainerStylesParams {
   fluid: boolean;

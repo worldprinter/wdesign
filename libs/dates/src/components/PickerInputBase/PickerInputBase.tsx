@@ -13,8 +13,8 @@ import {
   PopoverProps,
   ModalProps,
   CloseButton,
-} from '@worldprint/wdesign-core';
-import { useDisclosure } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDisclosure } from '@worldprinter/wdesign-hooks';
 import { HiddenDatesInput, HiddenDatesInputValue } from '../HiddenDatesInput';
 import { CalendarStylesNames } from '../Calendar';
 import useStyles from './PickerInputBase.styles';
@@ -203,4 +203,4 @@ export const PickerInputBase = forwardRef<
   );
 });
 
-PickerInputBase.displayName = '@worldprint/wdesign-dates/PickerInputBase';
+PickerInputBase.displayName = '@worldprinter/wdesign-dates/PickerInputBase';

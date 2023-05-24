@@ -1,6 +1,6 @@
 import React, { cloneElement, forwardRef } from 'react';
-import { isElement, createEventHandler } from '@worldprint/wdesign-utils';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { isElement, createEventHandler } from '@worldprinter/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { useMenuContext } from '../Menu.context';
 import { Popover } from '../../Popover';
 import { MENU_ERRORS } from '../Menu.errors';
@@ -59,4 +59,4 @@ export const MenuTarget = forwardRef<HTMLElement, MenuTargetProps>(
   }
 );
 
-MenuTarget.displayName = '@worldprint/wdesign-core/MenuTarget';
+MenuTarget.displayName = '@worldprinter/wdesign-core/MenuTarget';

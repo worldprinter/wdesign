@@ -11,8 +11,8 @@ import {
   Tooltip,
   ColorPickerProps,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-core';
-import { useDisclosure } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDisclosure } from '@worldprinter/wdesign-hooks';
 import {
   IconCircleOff,
   IconColorPicker,
@@ -185,4 +185,4 @@ export const ColorPickerControl = forwardRef<
   );
 });
 
-ColorPickerControl.displayName = '@worldprint/wdesign-tiptap/ColorPickerControl';
+ColorPickerControl.displayName = '@worldprinter/wdesign-tiptap/ColorPickerControl';

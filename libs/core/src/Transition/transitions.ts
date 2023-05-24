@@ -1,5 +1,5 @@
 import React from 'react';
-import { rem } from '@worldprint/wdesign-styles';
+import { rem } from '@worldprinter/wdesign-styles';
 
 export interface MantineTransitionStyles {
   common?: React.CSSProperties;
@@ -35,7 +35,10 @@ const popIn = {
   transitionProperty: 'transform, opacity',
 };
 
-export const transitions: Record<MantineTransitionName, MantineTransitionStyles> = {
+export const transitions: Record<
+  MantineTransitionName,
+  MantineTransitionStyles
+> = {
   fade: {
     in: { opacity: 1 },
     out: { opacity: 0 },
@@ -65,14 +68,20 @@ export const transitions: Record<MantineTransitionName, MantineTransitionStyles>
 
   'skew-up': {
     in: { opacity: 1, transform: 'translateY(0) skew(0deg, 0deg)' },
-    out: { opacity: 0, transform: `translateY(-${rem(20)}) skew(-10deg, -5deg)` },
+    out: {
+      opacity: 0,
+      transform: `translateY(-${rem(20)}) skew(-10deg, -5deg)`,
+    },
     common: { transformOrigin: 'top' },
     transitionProperty: 'transform, opacity',
   },
 
   'skew-down': {
     in: { opacity: 1, transform: 'translateY(0) skew(0deg, 0deg)' },
-    out: { opacity: 0, transform: `translateY(${rem(20)}) skew(-10deg, -5deg)` },
+    out: {
+      opacity: 0,
+      transform: `translateY(${rem(20)}) skew(-10deg, -5deg)`,
+    },
     common: { transformOrigin: 'bottom' },
     transitionProperty: 'transform, opacity',
   },

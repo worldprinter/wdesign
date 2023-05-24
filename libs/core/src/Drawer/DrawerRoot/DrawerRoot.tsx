@@ -1,5 +1,5 @@
 import React from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { MantineTransition } from '../../Transition';
 import { ModalBase, ModalBaseDefaultProps, ModalBaseSettings } from '../../ModalBase';
 import { DrawerProvider, ScrollAreaComponent } from '../Drawer.context';

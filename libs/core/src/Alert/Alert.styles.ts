@@ -5,7 +5,7 @@ import {
   MantineNumberSize,
   MantineTheme,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export type AlertVariant = 'filled' | 'outline' | 'light';
 

@@ -7,8 +7,8 @@ import {
   Selectors,
   useComponentDefaultProps,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { Box, extractSystemStyles } from '../Box';
 import { InputWrapper } from './InputWrapper/InputWrapper';
 import { InputDescription } from './InputDescription/InputDescription';
@@ -160,7 +160,7 @@ export const _Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   );
 }) as any;
 
-_Input.displayName = '@worldprint/wdesign-core/Input';
+_Input.displayName = '@worldprinter/wdesign-core/Input';
 _Input.Wrapper = InputWrapper;
 _Input.Label = InputLabel;
 _Input.Description = InputDescription;

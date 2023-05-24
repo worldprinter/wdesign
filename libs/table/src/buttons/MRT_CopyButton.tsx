@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { UnstyledButton, CopyButton, Tooltip } from '@worldprint/wdesign-core';
+import { UnstyledButton, CopyButton, Tooltip } from '@worldprinter/wdesign-core';
 import { MRT_Cell, MRT_TableInstance } from '..';
 import { getPrimaryColor } from '../column.utils';
 

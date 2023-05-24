@@ -32,4 +32,4 @@ export function CopyIcon({ copied }: CopyIconProps) {
   );
 }
 
-CopyIcon.displayName = '@worldprint/wdesign-prism/CopyIcon';
+CopyIcon.displayName = '@worldprinter/wdesign-prism/CopyIcon';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, TabsProps, TabsPanelProps } from '@worldprint/wdesign-core';
+import { Tabs, TabsProps, TabsPanelProps } from '@worldprinter/wdesign-core';
 import { Prism, PrismProps } from '../Prism/Prism';
 import useStyles from './PrismTabs.styles';
 

@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import {
   Input,
   InputWrapperBaseProps,
@@ -90,4 +90,4 @@ export const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
   }
 );
 
-CheckboxGroup.displayName = '@worldprint/wdesign-core/CheckboxGroup';
+CheckboxGroup.displayName = '@worldprinter/wdesign-core/CheckboxGroup';

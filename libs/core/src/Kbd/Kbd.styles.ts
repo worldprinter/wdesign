@@ -1,4 +1,4 @@
-import { createStyles, rem } from '@worldprint/wdesign-styles';
+import { createStyles, rem } from '@worldprinter/wdesign-styles';
 
 const sizes = {
   xs: { padding: `${rem(2)} ${rem(4)}`, fontSize: rem(10) },

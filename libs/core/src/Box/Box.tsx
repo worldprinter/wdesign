@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps } from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
+import { DefaultProps } from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
 import { extractSystemStyles } from './style-system-props/extract-system-styles/extract-system-styles';
 import { useSx } from './use-sx/use-sx';
 
@@ -23,6 +23,6 @@ export const _Box = forwardRef<HTMLDivElement, BoxProps & { component: any }>(
   }
 );
 
-_Box.displayName = '@worldprint/wdesign-core/Box';
+_Box.displayName = '@worldprinter/wdesign-core/Box';
 
 export const Box = createPolymorphicComponent<'div', BoxProps>(_Box);

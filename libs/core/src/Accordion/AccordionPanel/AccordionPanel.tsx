@@ -1,5 +1,5 @@
 import React from 'react';
-import { Selectors, DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { Selectors, DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Collapse } from '../../Collapse';
 import { useAccordionContext } from '../Accordion.context';
 import { useAccordionItemContext } from '../AccordionItem.context';
@@ -46,4 +46,4 @@ export function AccordionPanel(props: AccordionPanelProps) {
   );
 }
 
-AccordionPanel.displayName = '@worldprint/wdesign-core/AccordionPanel';
+AccordionPanel.displayName = '@worldprinter/wdesign-core/AccordionPanel';

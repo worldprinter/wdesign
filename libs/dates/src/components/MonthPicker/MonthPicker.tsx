@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-core';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-core';
 import { useDatesState } from '../../hooks';
 import { DecadeLevelBaseSettings } from '../DecadeLevel';
 import { YearLevelBaseSettings } from '../YearLevel';
@@ -95,4 +95,4 @@ export const MonthPicker: MonthPickerComponent = forwardRef(
   }
 );
 
-MonthPicker.displayName = '@worldprint/wdesign-dates/MonthPicker';
+MonthPicker.displayName = '@worldprinter/wdesign-dates/MonthPicker';

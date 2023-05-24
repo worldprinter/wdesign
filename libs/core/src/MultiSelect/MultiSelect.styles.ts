@@ -1,4 +1,4 @@
-import { createStyles, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, rem, getSize } from '@worldprinter/wdesign-styles';
 import { INPUT_SIZES } from '../Input';
 import { sizes as DEFAULT_VALUE_SIZES } from './DefaultValue/DefaultValue.styles';
 

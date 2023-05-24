@@ -1,4 +1,4 @@
-import { createStyles, rem } from '@worldprint/wdesign-core';
+import { createStyles, rem } from '@worldprinter/wdesign-core';
 
 export default createStyles((theme) => {
   const colors = theme.fn.variant({ variant: 'light' });

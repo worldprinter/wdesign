@@ -23,4 +23,4 @@ export function TooltipGroup({ children, openDelay = 0, closeDelay = 0 }: Toolti
   );
 }
 
-TooltipGroup.displayName = '@worldprint/wdesign-core/TooltipGroup';
+TooltipGroup.displayName = '@worldprinter/wdesign-core/TooltipGroup';

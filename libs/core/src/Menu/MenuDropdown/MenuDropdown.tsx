@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { createEventHandler } from '@worldprint/wdesign-utils';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { createEventHandler } from '@worldprinter/wdesign-utils';
 import { Popover } from '../../Popover';
 import { useMenuContext } from '../Menu.context';
 
@@ -62,4 +62,4 @@ export function MenuDropdown(props: MenuDropdownProps) {
   );
 }
 
-MenuDropdown.displayName = '@worldprint/wdesign-core/MenuDropdown';
+MenuDropdown.displayName = '@worldprinter/wdesign-core/MenuDropdown';

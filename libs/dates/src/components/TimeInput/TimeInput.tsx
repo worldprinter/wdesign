@@ -4,7 +4,7 @@ import {
   TextInput,
   TextInputProps,
   TextInputStylesNames,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import useStyles from './TimeInput.styles';
 
 export type TimeInputStylesNames = TextInputStylesNames;
@@ -57,4 +57,4 @@ export const TimeInput = forwardRef<HTMLInputElement, TimeInputProps>(
   }
 );
 
-TimeInput.displayName = '@worldprint/wdesign-dates/TimeInput';
+TimeInput.displayName = '@worldprinter/wdesign-dates/TimeInput';

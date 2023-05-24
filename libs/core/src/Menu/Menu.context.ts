@@ -1,5 +1,5 @@
-import { MantineNumberSize, ClassNames, Styles } from '@worldprint/wdesign-styles';
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { MantineNumberSize, ClassNames, Styles } from '@worldprinter/wdesign-styles';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import { MENU_ERRORS } from './Menu.errors';
 import { MenuTriggerEvent } from './Menu.types';
 import type { MenuStylesNames } from './Menu';

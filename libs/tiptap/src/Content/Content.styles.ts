@@ -1,4 +1,4 @@
-import { createStyles, MantineTheme, rem } from '@worldprint/wdesign-core';
+import { createStyles, MantineTheme, rem } from '@worldprinter/wdesign-core';
 
 interface ContentStylesParams {
   withCodeHighlightStyles: boolean;

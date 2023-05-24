@@ -5,8 +5,8 @@ import {
   getDefaultZIndex,
   MantineColor,
   PortalProps,
-} from '@worldprint/wdesign-core';
-import { useDidUpdate, useInterval, useReducedMotion } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDidUpdate, useInterval, useReducedMotion } from '@worldprinter/wdesign-hooks';
 import React, { useRef, useState } from 'react';
 import { useNavigationProgressEvents } from './events';
 

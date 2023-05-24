@@ -6,7 +6,7 @@ import {
   useId,
   useMergedRef,
   useIsomorphicEffect,
-} from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineNumberSize,
@@ -15,7 +15,7 @@ import {
   Selectors,
   useComponentDefaultProps,
   useMantineTheme,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles, {
   WRAPPER_PADDING,
@@ -121,7 +121,7 @@ export const SegmentedControl = forwardRef<
     (item: string | SegmentedControlItem): SegmentedControlItem =>
       typeof item === 'string' ? { label: item, value: item } : item
   );
-  const mounted = useRef<Boolean>();
+  const mounted = useRef<boolean>();
 
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [_value, handleValueChange] = useUncontrolled({
@@ -249,4 +249,4 @@ export const SegmentedControl = forwardRef<
   );
 });
 
-SegmentedControl.displayName = '@worldprint/wdesign-core/SegmentedControl';
+SegmentedControl.displayName = '@worldprinter/wdesign-core/SegmentedControl';

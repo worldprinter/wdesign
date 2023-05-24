@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import { useId } from '@worldprint/wdesign-hooks';
+import { useId } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineSize,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { extractSystemStyles } from '../Box';
 import { InputWrapperBaseProps, Input, InputSharedProps } from '../Input';
 import { TextInputStylesNames } from '../TextInput/TextInput';
@@ -139,4 +139,4 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   }
 );
 
-Textarea.displayName = '@worldprint/wdesign-core/Textarea';
+Textarea.displayName = '@worldprinter/wdesign-core/Textarea';

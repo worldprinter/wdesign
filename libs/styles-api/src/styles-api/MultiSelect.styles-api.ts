@@ -1,4 +1,4 @@
-import type { MultiSelectStylesNames } from '@worldprint/wdesign-core';
+import type { MultiSelectStylesNames } from '@worldprinter/wdesign-core';
 import { Input } from './Input.styles-api';
 import { InputWrapper } from './InputWrapper.styles-api';
 

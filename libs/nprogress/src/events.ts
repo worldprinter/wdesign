@@ -1,4 +1,4 @@
-import { createUseExternalEvents } from '@worldprint/wdesign-utils';
+import { createUseExternalEvents } from '@worldprinter/wdesign-utils';
 
 export type NavigationProgressEvents = {
   start(): void;

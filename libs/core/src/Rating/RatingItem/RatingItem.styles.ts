@@ -1,4 +1,4 @@
-import { createStyles, getStylesRef, rem } from '@worldprint/wdesign-styles';
+import { createStyles, getStylesRef, rem } from '@worldprinter/wdesign-styles';
 
 export default createStyles((theme) => ({
   input: {
@@ -14,14 +14,19 @@ export default createStyles((theme) => ({
         outline:
           theme.focusRing === 'always' || theme.focusRing === 'auto'
             ? `${rem(1)} solid ${
-                theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 7 : 5]
+                theme.colors[theme.primaryColor][
+                  theme.colorScheme === 'dark' ? 7 : 5
+                ]
               }`
             : undefined,
       },
 
       '&:focus:not(:focus-visible)': {
         [`& + .${getStylesRef('label')}`]: {
-          outline: theme.focusRing === 'auto' || theme.focusRing === 'never' ? 'none' : undefined,
+          outline:
+            theme.focusRing === 'auto' || theme.focusRing === 'never'
+              ? 'none'
+              : undefined,
         },
       },
     },

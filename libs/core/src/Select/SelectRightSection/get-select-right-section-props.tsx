@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineTheme } from '@worldprint/wdesign-styles';
+import { MantineTheme } from '@worldprinter/wdesign-styles';
 import { SelectRightSection, SelectRightSectionProps } from './SelectRightSection';
 
 interface GetRightSectionProps extends SelectRightSectionProps {

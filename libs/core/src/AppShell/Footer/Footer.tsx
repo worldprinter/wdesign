@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import {
   VerticalSection,
   VerticalSectionSharedProps,
@@ -31,4 +31,4 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(
   }
 );
 
-Footer.displayName = '@worldprint/wdesign-core/Footer';
+Footer.displayName = '@worldprinter/wdesign-core/Footer';

@@ -6,7 +6,7 @@ import {
   em,
   getBreakpointValue,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 
 export interface MediaQueryStylesParams {
   smallerThan: MantineNumberSize;

@@ -1,4 +1,4 @@
-import type { PasswordInputStylesNames } from '@worldprint/wdesign-core';
+import type { PasswordInputStylesNames } from '@worldprinter/wdesign-core';
 import { TextInput } from './TextInput.styles-api';
 
 export const PasswordInput: Record<PasswordInputStylesNames, string> = {

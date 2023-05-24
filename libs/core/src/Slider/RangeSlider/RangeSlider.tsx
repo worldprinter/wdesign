@@ -1,12 +1,12 @@
 import React, { useRef, useState, forwardRef, useEffect } from 'react';
-import { useMove, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useMove, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   MantineNumberSize,
   MantineColor,
   useMantineTheme,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { MantineTransition } from '../../Transition';
 import { getClientPosition } from '../utils/get-client-position/get-client-position';
 import { getPosition } from '../utils/get-position/get-position';
@@ -509,4 +509,4 @@ export const RangeSlider = forwardRef<HTMLDivElement, RangeSliderProps>(
   }
 );
 
-RangeSlider.displayName = '@worldprint/wdesign-core/RangeSlider';
+RangeSlider.displayName = '@worldprinter/wdesign-core/RangeSlider';

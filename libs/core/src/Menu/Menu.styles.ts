@@ -1,4 +1,4 @@
-import { createStyles, rem } from '@worldprint/wdesign-styles';
+import { createStyles, rem } from '@worldprinter/wdesign-styles';
 
 export default createStyles({
   // required to allow dropdown padding override with styles and classNames

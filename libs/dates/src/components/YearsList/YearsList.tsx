@@ -7,7 +7,7 @@ import {
   Selectors,
   useComponentDefaultProps,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import {
   PickerControl,
   PickerControlStylesNames,
@@ -178,4 +178,4 @@ export const YearsList = forwardRef<HTMLTableElement, YearsListProps>(
   }
 );
 
-YearsList.displayName = '@worldprint/wdesign-dates/YearsList';
+YearsList.displayName = '@worldprinter/wdesign-dates/YearsList';

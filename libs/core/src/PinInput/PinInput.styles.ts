@@ -1,4 +1,4 @@
-import { createStyles, getSize, rem } from '@worldprint/wdesign-styles';
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles';
 
 const sizes = {
   xs: rem(28),

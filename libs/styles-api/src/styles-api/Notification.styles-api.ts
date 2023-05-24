@@ -1,4 +1,4 @@
-import type { NotificationStylesNames } from '@worldprint/wdesign-core';
+import type { NotificationStylesNames } from '@worldprinter/wdesign-core';
 
 export const Notification: Record<NotificationStylesNames, string> = {
   root: 'Root element',

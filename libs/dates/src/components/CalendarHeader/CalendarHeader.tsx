@@ -6,7 +6,7 @@ import {
   useComponentDefaultProps,
   UnstyledButton,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { Chevron } from './Chevron';
 import useStyles from './CalendarHeader.styles';
 
@@ -194,4 +194,4 @@ export const CalendarHeader = forwardRef<HTMLDivElement, CalendarHeaderProps>(
   }
 );
 
-CalendarHeader.displayName = '@worldprint/wdesign-dates/CalendarHeader';
+CalendarHeader.displayName = '@worldprinter/wdesign-dates/CalendarHeader';

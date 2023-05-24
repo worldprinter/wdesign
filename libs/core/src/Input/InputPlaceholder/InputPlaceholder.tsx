@@ -1,6 +1,9 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { packSx } from '@worldprint/wdesign-utils';
+import {
+  DefaultProps,
+  useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles';
+import { packSx } from '@worldprinter/wdesign-utils';
 import { Box } from '../../Box';
 
 export interface InputPlaceholderProps
@@ -28,4 +31,4 @@ export const InputPlaceholder = forwardRef<
   );
 });
 
-InputPlaceholder.displayName = '@worldprint/wdesign-core/InputPlaceholder';
+InputPlaceholder.displayName = '@worldprinter/wdesign-core/InputPlaceholder';

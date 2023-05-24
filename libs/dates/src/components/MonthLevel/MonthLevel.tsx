@@ -5,7 +5,7 @@ import {
   DefaultProps,
   useComponentDefaultProps,
   Selectors,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import {
   CalendarHeader,
   CalendarHeaderStylesNames,
@@ -200,4 +200,4 @@ export const MonthLevel = forwardRef<HTMLDivElement, MonthLevelProps>(
   }
 );
 
-MonthLevel.displayName = '@worldprint/wdesign-dates/MonthLevel';
+MonthLevel.displayName = '@worldprinter/wdesign-dates/MonthLevel';

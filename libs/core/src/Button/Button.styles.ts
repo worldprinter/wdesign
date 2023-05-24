@@ -7,7 +7,7 @@ import {
   CSSObject,
   getSize,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { INPUT_SIZES } from '../Input';
 
 export const BUTTON_VARIANTS = [
@@ -38,9 +38,21 @@ export const sizes = {
   xl: { height: INPUT_SIZES.xl, paddingLeft: rem(32), paddingRight: rem(32) },
   'compact-xs': { height: rem(22), paddingLeft: rem(7), paddingRight: rem(7) },
   'compact-sm': { height: rem(26), paddingLeft: rem(8), paddingRight: rem(8) },
-  'compact-md': { height: rem(30), paddingLeft: rem(10), paddingRight: rem(10) },
-  'compact-lg': { height: rem(34), paddingLeft: rem(12), paddingRight: rem(12) },
-  'compact-xl': { height: rem(40), paddingLeft: rem(14), paddingRight: rem(14) },
+  'compact-md': {
+    height: rem(30),
+    paddingLeft: rem(10),
+    paddingRight: rem(10),
+  },
+  'compact-lg': {
+    height: rem(34),
+    paddingLeft: rem(12),
+    paddingRight: rem(12),
+  },
+  'compact-xl': {
+    height: rem(40),
+    paddingLeft: rem(14),
+    paddingRight: rem(14),
+  },
 };
 
 interface GetSizeStyles {
@@ -50,7 +62,12 @@ interface GetSizeStyles {
   withRightIcon: boolean;
 }
 
-function getSizeStyles({ compact, size, withLeftIcon, withRightIcon }: GetSizeStyles): CSSObject {
+function getSizeStyles({
+  compact,
+  size,
+  withLeftIcon,
+  withRightIcon,
+}: GetSizeStyles): CSSObject {
   if (compact) {
     return sizes[`compact-${size}`];
   }
@@ -63,8 +80,12 @@ function getSizeStyles({ compact, size, withLeftIcon, withRightIcon }: GetSizeSt
 
   return {
     ..._sizes,
-    paddingLeft: withLeftIcon ? `calc(${_sizes.paddingLeft}  / 1.5)` : _sizes.paddingLeft,
-    paddingRight: withRightIcon ? `calc(${_sizes.paddingRight}  / 1.5)` : _sizes.paddingRight,
+    paddingLeft: withLeftIcon
+      ? `calc(${_sizes.paddingLeft}  / 1.5)`
+      : _sizes.paddingLeft,
+    paddingRight: withRightIcon
+      ? `calc(${_sizes.paddingRight}  / 1.5)`
+      : _sizes.paddingRight,
   };
 }
 
@@ -80,7 +101,12 @@ interface GetVariantStyles {
   gradient: MantineGradient;
 }
 
-function getVariantStyles({ variant, theme, color, gradient }: GetVariantStyles) {
+function getVariantStyles({
+  variant,
+  theme,
+  color,
+  gradient,
+}: GetVariantStyles) {
   if (!BUTTON_VARIANTS.includes(variant)) {
     return null;
   }
@@ -136,8 +162,14 @@ export default createStyles(
 
       '&:disabled, &[data-disabled]': {
         borderColor: 'transparent',
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[5],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[4]
+            : theme.colors.gray[2],
+        color:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[6]
+            : theme.colors.gray[5],
         cursor: 'not-allowed',
         backgroundImage: 'none',
         pointerEvents: 'none',

@@ -8,8 +8,8 @@ import {
   Selectors,
   DefaultProps,
   INPUT_SIZES,
-} from '@worldprint/wdesign-core';
-import { useDisclosure, useUncontrolled, useDidUpdate } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDisclosure, useUncontrolled, useDidUpdate } from '@worldprinter/wdesign-hooks';
 import { assignTime } from '../../utils';
 import { TimeInput, TimeInputProps } from '../TimeInput';
 import {
@@ -251,4 +251,4 @@ export const DateTimePicker = forwardRef<
   );
 });
 
-DateTimePicker.displayName = '@worldprint/wdesign-dates/DateTimePicker';
+DateTimePicker.displayName = '@worldprinter/wdesign-dates/DateTimePicker';

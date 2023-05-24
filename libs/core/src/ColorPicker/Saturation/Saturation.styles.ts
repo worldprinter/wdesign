@@ -1,4 +1,4 @@
-import { createStyles, getStylesRef, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, getStylesRef, rem, getSize } from '@worldprinter/wdesign-styles';
 import { THUMB_SIZES } from '../Thumb/Thumb.styles';
 
 const SATURATION_HEIGHTS = {

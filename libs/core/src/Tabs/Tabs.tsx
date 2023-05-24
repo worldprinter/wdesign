@@ -3,8 +3,8 @@ import {
   DefaultProps,
   useComponentDefaultProps,
   Selectors,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { TabsList, TabsListStylesNames } from './TabsList/TabsList';
 import { TabsPanel, TabsPanelStylesNames } from './TabsPanel/TabsPanel';
@@ -111,4 +111,4 @@ Tabs.List = TabsList;
 Tabs.Tab = Tab;
 Tabs.Panel = TabsPanel;
 
-Tabs.displayName = '@worldprint/wdesign-core/Tabs';
+Tabs.displayName = '@worldprinter/wdesign-core/Tabs';

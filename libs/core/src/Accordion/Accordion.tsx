@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultProps, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { AccordionProviderProps, AccordionProvider } from './AccordionProvider';
 import {
@@ -99,4 +99,4 @@ export function Accordion<Multiple extends boolean = false>(
 Accordion.Item = AccordionItem;
 Accordion.Control = AccordionControl;
 Accordion.Panel = AccordionPanel;
-Accordion.displayName = '@worldprint/wdesign-core/Accordion';
+Accordion.displayName = '@worldprinter/wdesign-core/Accordion';

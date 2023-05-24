@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineNumberSize, getSize } from '@worldprint/wdesign-styles';
+import { MantineNumberSize, getSize } from '@worldprinter/wdesign-styles';
 import { sizes } from './PaginationControl/PaginationControl.styles';
 
 export function getIconSize(size: MantineNumberSize) {

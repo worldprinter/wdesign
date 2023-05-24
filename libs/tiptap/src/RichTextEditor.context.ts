@@ -1,5 +1,5 @@
-import { Styles, ClassNames } from '@worldprint/wdesign-core';
-import { createSafeContext } from '@worldprint/wdesign-utils';
+import { Styles, ClassNames } from '@worldprinter/wdesign-core';
+import { createSafeContext } from '@worldprinter/wdesign-utils';
 import { Editor } from '@tiptap/react';
 import { RichTextEditorLabels } from './labels';
 import type { RichTextEditorStylesNames } from './RichTextEditor';

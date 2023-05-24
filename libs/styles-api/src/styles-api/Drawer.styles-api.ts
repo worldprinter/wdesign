@@ -1,4 +1,4 @@
-import type { DrawerStylesNames } from '@worldprint/wdesign-core';
+import type { DrawerStylesNames } from '@worldprinter/wdesign-core';
 
 export const Drawer: Record<DrawerStylesNames, string> = {
   root: 'Root element',

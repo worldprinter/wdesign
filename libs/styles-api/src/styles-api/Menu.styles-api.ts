@@ -1,4 +1,4 @@
-import type { MenuStylesNames } from '@worldprint/wdesign-core';
+import type { MenuStylesNames } from '@worldprinter/wdesign-core';
 
 export const Menu: Record<MenuStylesNames, string> = {
   dropdown: 'Menu.Dropdown element',

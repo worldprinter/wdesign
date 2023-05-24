@@ -5,9 +5,9 @@ import {
   useComponentDefaultProps,
   DefaultProps,
   Selectors,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { Editor } from '@tiptap/react';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { RichTextEditorProvider } from './RichTextEditor.context';
 import * as controls from './controls';
 import { Content, ContentStylesNames } from './Content/Content';
@@ -182,4 +182,4 @@ RichTextEditor.Highlight = controls.HighlightControl;
 RichTextEditor.Hr = controls.HrControl;
 RichTextEditor.UnsetColor = controls.UnsetColorControl;
 
-RichTextEditor.displayName = '@worldprint/wdesign-tiptap/RichTextEditor';
+RichTextEditor.displayName = '@worldprinter/wdesign-tiptap/RichTextEditor';

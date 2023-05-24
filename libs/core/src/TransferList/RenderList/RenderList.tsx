@@ -4,9 +4,9 @@ import {
   Selectors,
   MantineNumberSize,
   rem,
-} from '@worldprint/wdesign-styles';
-import { useScrollIntoView } from '@worldprint/wdesign-hooks';
-import { groupOptions } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { useScrollIntoView } from '@worldprinter/wdesign-hooks';
+import { groupOptions } from '@worldprinter/wdesign-utils';
 import { SelectScrollArea } from '../../Select/SelectScrollArea/SelectScrollArea';
 import { UnstyledButton } from '../../UnstyledButton';
 import { ActionIcon } from '../../ActionIcon';
@@ -327,4 +327,4 @@ export function RenderList({
   );
 }
 
-RenderList.displayName = '@worldprint/wdesign-core/RenderList';
+RenderList.displayName = '@worldprinter/wdesign-core/RenderList';

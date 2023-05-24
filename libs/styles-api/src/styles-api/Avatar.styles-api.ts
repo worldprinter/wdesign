@@ -1,4 +1,4 @@
-import type { AvatarStylesNames } from '@worldprint/wdesign-core';
+import type { AvatarStylesNames } from '@worldprinter/wdesign-core';
 
 export const Avatar: Record<AvatarStylesNames, string> = {
   root: 'Root element',

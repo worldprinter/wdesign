@@ -8,9 +8,9 @@ import {
   Selectors,
   useComponentDefaultProps,
   Variants,
-} from '@worldprint/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprint/wdesign-utils';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import { UnstyledButton } from '../UnstyledButton';
 import { ChevronIcon } from '../Accordion';
 import { Collapse } from '../Collapse';
@@ -173,6 +173,6 @@ export const _NavLink = forwardRef<HTMLButtonElement, NavLinkProps>((props, ref)
   );
 });
 
-_NavLink.displayName = '@worldprint/wdesign-core/NavLink';
+_NavLink.displayName = '@worldprinter/wdesign-core/NavLink';
 
 export const NavLink = createPolymorphicComponent<'button', NavLinkProps>(_NavLink);

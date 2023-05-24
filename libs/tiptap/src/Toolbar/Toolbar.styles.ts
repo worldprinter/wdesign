@@ -1,4 +1,4 @@
-import { createStyles, rem } from '@worldprint/wdesign-core';
+import { createStyles, rem } from '@worldprinter/wdesign-core';
 
 export interface ToolbarStylesParams {
   sticky: boolean;

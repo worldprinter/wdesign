@@ -1,7 +1,7 @@
 import React from 'react';
-import { DefaultProps, useComponentDefaultProps, rem } from '@worldprint/wdesign-styles';
-import { closeOnEscape } from '@worldprint/wdesign-utils';
-import { useFocusReturn } from '@worldprint/wdesign-hooks';
+import { DefaultProps, useComponentDefaultProps, rem } from '@worldprinter/wdesign-styles';
+import { closeOnEscape } from '@worldprinter/wdesign-utils';
+import { useFocusReturn } from '@worldprinter/wdesign-hooks';
 import { FloatingArrow } from '../../Floating';
 import { Box } from '../../Box';
 import { Transition } from '../../Transition';
@@ -111,4 +111,4 @@ export function PopoverDropdown(props: PopoverDropdownProps) {
   );
 }
 
-PopoverDropdown.displayName = '@worldprint/wdesign-core/PopoverDropdown';
+PopoverDropdown.displayName = '@worldprinter/wdesign-core/PopoverDropdown';

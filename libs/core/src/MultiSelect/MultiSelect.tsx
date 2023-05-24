@@ -5,14 +5,14 @@ import {
   useDidUpdate,
   useScrollIntoView,
   useId,
-} from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   Selectors,
   getDefaultZIndex,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { groupOptions } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { groupOptions } from '@worldprinter/wdesign-utils';
 import { extractSystemStyles } from '../Box';
 import { Input } from '../Input';
 import { DefaultValue, DefaultValueStylesNames } from './DefaultValue/DefaultValue';
@@ -748,4 +748,4 @@ export const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>((props
   );
 });
 
-MultiSelect.displayName = '@worldprint/wdesign-core/MultiSelect';
+MultiSelect.displayName = '@worldprinter/wdesign-core/MultiSelect';

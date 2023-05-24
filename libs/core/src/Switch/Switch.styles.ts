@@ -1,4 +1,10 @@
-import { createStyles, MantineNumberSize, MantineColor, rem, getSize } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineNumberSize,
+  MantineColor,
+  rem,
+  getSize,
+} from '@worldprinter/wdesign-styles';
 
 export interface SwitchStylesParams {
   color: MantineColor;
@@ -48,13 +54,20 @@ const trackLabelPaddings = {
 };
 
 export default createStyles(
-  (theme, { radius, color, labelPosition, error }: SwitchStylesParams, { size }) => {
+  (
+    theme,
+    { radius, color, labelPosition, error }: SwitchStylesParams,
+    { size }
+  ) => {
     const handleSize = getSize({ size, sizes: handleSizes });
     const borderRadius = getSize({ size: radius, sizes: theme.radius });
     const colors = theme.fn.variant({ variant: 'filled', color });
     const trackWidth = getSize({ size, sizes: switchWidth });
     const trackPadding = rem(size === 'xs' ? 1 : 2);
-    const errorColor = theme.fn.variant({ variant: 'filled', color: 'red' }).background;
+    const errorColor = theme.fn.variant({
+      variant: 'filled',
+      color: 'red',
+    }).background;
 
     return {
       root: {
@@ -79,7 +92,10 @@ export default createStyles(
         WebkitTapHighlightColor: 'transparent',
         position: 'relative',
         borderRadius,
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
+        backgroundColor:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[6]
+            : theme.colors.gray[2],
         border: `${rem(1)} solid ${
           error
             ? errorColor
@@ -103,7 +119,10 @@ export default createStyles(
         userSelect: 'none',
         zIndex: 0,
         lineHeight: 0,
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
+        color:
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[1]
+            : theme.colors.gray[6],
         transition: `color 150ms ${theme.transitionTimingFunction}`,
 
         'input:checked + &': {
@@ -115,8 +134,13 @@ export default createStyles(
 
         'input:disabled + &': {
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
-          borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[2],
+          borderColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[2],
           cursor: 'not-allowed',
           pointerEvents: 'none',
         },
@@ -151,9 +175,14 @@ export default createStyles(
         },
 
         'input:disabled + * > &': {
-          borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+          borderColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[4]
+              : theme.colors.gray[2],
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[0],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[3]
+              : theme.colors.gray[0],
         },
       },
 

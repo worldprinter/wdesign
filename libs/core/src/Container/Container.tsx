@@ -5,7 +5,7 @@ import {
   useComponentDefaultProps,
   MantineSize,
   rem,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles from './Container.styles';
 
@@ -50,4 +50,4 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   }
 );
 
-Container.displayName = '@worldprint/wdesign-core/Container';
+Container.displayName = '@worldprinter/wdesign-core/Container';

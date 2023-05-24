@@ -1,5 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import { useUncontrolled, useDidUpdate, useEyeDropper } from '@worldprint/wdesign-hooks';
+import { useUncontrolled, useDidUpdate, useEyeDropper } from '@worldprinter/wdesign-hooks';
 import {
   DefaultProps,
   getDefaultZIndex,
@@ -7,8 +7,8 @@ import {
   useMantineTheme,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
-import { noop } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { noop } from '@worldprinter/wdesign-utils';
 import {
   InputWrapperBaseProps,
   InputWrapperStylesNames,
@@ -324,4 +324,4 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
   }
 );
 
-ColorInput.displayName = '@worldprint/wdesign-core/ColorInput';
+ColorInput.displayName = '@worldprinter/wdesign-core/ColorInput';

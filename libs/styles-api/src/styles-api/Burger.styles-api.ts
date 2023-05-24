@@ -1,4 +1,4 @@
-import { BurgerStylesNames } from '@worldprint/wdesign-core';
+import { BurgerStylesNames } from '@worldprinter/wdesign-core';
 
 export const Burger: Record<BurgerStylesNames, string> = {
   root: 'Root button element',

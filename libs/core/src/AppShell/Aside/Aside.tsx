@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import {
   HorizontalSection,
   HorizontalSectionSharedProps,
@@ -41,4 +41,4 @@ export const Aside: AsideComponent = forwardRef<HTMLElement, AsideProps>(
 ) as any;
 
 Aside.Section = Section;
-Aside.displayName = '@worldprint/wdesign-core/Aside';
+Aside.displayName = '@worldprinter/wdesign-core/Aside';

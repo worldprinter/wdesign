@@ -1,4 +1,4 @@
-import { createStyles, getStylesRef, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, getStylesRef, getSize } from '@worldprinter/wdesign-styles';
 import type { ListStylesParams } from '../List.styles';
 
 export default createStyles((theme, { spacing, center }: ListStylesParams) => ({

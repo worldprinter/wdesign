@@ -6,8 +6,8 @@ import {
   MantineSize,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprint/wdesign-utils';
+} from '@worldprinter/wdesign-styles';
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
 import { Box } from '../Box';
 import { Step, StepStylesNames, StepFragmentComponent } from './Step/Step';
 import { StepCompleted } from './StepCompleted/StepCompleted';
@@ -199,4 +199,4 @@ export const Stepper: StepperComponent = forwardRef<
 
 Stepper.Step = Step;
 Stepper.Completed = StepCompleted;
-Stepper.displayName = '@worldprint/wdesign-core/Stepper';
+Stepper.displayName = '@worldprinter/wdesign-core/Stepper';

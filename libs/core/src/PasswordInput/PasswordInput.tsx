@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
-import { useId, useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   Selectors,
   DefaultProps,
   useComponentDefaultProps,
   rem,
   getSize,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { extractSystemStyles } from '../Box';
 import { ActionIcon } from '../ActionIcon';
 import { TextInputProps, TextInputStylesNames } from '../TextInput';
@@ -212,4 +212,4 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   }
 );
 
-PasswordInput.displayName = '@worldprint/wdesign-core/PasswordInput';
+PasswordInput.displayName = '@worldprinter/wdesign-core/PasswordInput';

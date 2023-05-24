@@ -6,7 +6,7 @@ import {
   Global,
   rem,
   em,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../../Box';
 import { useAppShellContext } from '../AppShell.context';
 import { getSortedBreakpoints } from './get-sorted-breakpoints/get-sorted-breakpoints';
@@ -132,4 +132,4 @@ export const HorizontalSection = forwardRef<
   }
 );
 
-HorizontalSection.displayName = '@worldprint/wdesign-core/HorizontalSection';
+HorizontalSection.displayName = '@worldprinter/wdesign-core/HorizontalSection';

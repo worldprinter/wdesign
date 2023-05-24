@@ -7,8 +7,8 @@ import {
   Selectors,
   getDefaultZIndex,
   PortalProps,
-} from '@worldprint/wdesign-core';
-import { useDisclosure } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useDisclosure } from '@worldprinter/wdesign-hooks';
 import { DropzoneStylesNames, DropzoneProps, _Dropzone } from './Dropzone';
 import useFullScreenStyles from './DropzoneFullScreen.styles';
 
@@ -136,6 +136,6 @@ export function DropzoneFullScreen(props: DropzoneFullScreenProps) {
   );
 }
 
-DropzoneFullScreen.displayName = '@worldprint/wdesign-dropzone/DropzoneFullScreen';
+DropzoneFullScreen.displayName = '@worldprinter/wdesign-dropzone/DropzoneFullScreen';
 
 export type DropzoneFullScreenType = typeof DropzoneFullScreen;

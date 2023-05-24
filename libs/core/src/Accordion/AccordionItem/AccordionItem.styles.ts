@@ -1,4 +1,4 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprint/wdesign-styles';
+import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles';
 import { AccordionStylesParams } from '../Accordion.types';
 
 function getVariantStyles(

@@ -11,8 +11,8 @@ import {
   PopoverProps,
   Popover,
   CloseButton,
-} from '@worldprint/wdesign-core';
-import { useUncontrolled, useDidUpdate } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-core';
+import { useUncontrolled, useDidUpdate } from '@worldprinter/wdesign-hooks';
 import {
   Calendar,
   CalendarBaseProps,
@@ -312,4 +312,4 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
   }
 );
 
-DateInput.displayName = '@worldprint/wdesign-dates/DateInput';
+DateInput.displayName = '@worldprinter/wdesign-dates/DateInput';

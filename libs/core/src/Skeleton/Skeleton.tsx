@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprint/wdesign-styles';
+import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles, { SkeletonStylesParams } from './Skeleton.styles';
 
@@ -62,4 +62,4 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) =
   );
 });
 
-Skeleton.displayName = '@worldprint/wdesign-core/Skeleton';
+Skeleton.displayName = '@worldprinter/wdesign-core/Skeleton';

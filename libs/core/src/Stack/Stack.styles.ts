@@ -1,4 +1,4 @@
-import { createStyles, MantineNumberSize, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize, getSize } from '@worldprinter/wdesign-styles';
 
 export interface StackStylesParams {
   spacing: MantineNumberSize;

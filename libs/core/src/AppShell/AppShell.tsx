@@ -4,7 +4,7 @@ import {
   DefaultProps,
   Selectors,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import { AppShellProvider } from './AppShell.context';
 import useStyles from './AppShell.styles';
@@ -106,4 +106,4 @@ export const AppShell = forwardRef<HTMLDivElement, AppShellProps>(
   }
 );
 
-AppShell.displayName = '@worldprint/wdesign-core/AppShell';
+AppShell.displayName = '@worldprinter/wdesign-core/AppShell';

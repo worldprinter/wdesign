@@ -7,7 +7,7 @@ import {
   Box,
   useComponentDefaultProps,
   MantineSize,
-} from '@worldprint/wdesign-core';
+} from '@worldprinter/wdesign-core';
 import { useDatesContext } from '../DatesProvider';
 import { WeekdaysRow, WeekdaysRowStylesNames } from '../WeekdaysRow';
 import { Day, DayStylesNames, DayProps } from '../Day';
@@ -267,4 +267,4 @@ export const Month = forwardRef<HTMLTableElement, MonthProps>((props, ref) => {
   );
 });
 
-Month.displayName = '@worldprint/wdesign-dates/Month';
+Month.displayName = '@worldprinter/wdesign-dates/Month';

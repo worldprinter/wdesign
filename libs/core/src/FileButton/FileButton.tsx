@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { useRef, forwardRef } from 'react';
-import { useComponentDefaultProps } from '@worldprint/wdesign-styles';
-import { assignRef, useMergedRef } from '@worldprint/wdesign-hooks';
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
+import { assignRef, useMergedRef } from '@worldprinter/wdesign-hooks';
 
 export interface FileButtonProps<Multiple extends boolean = false> {
   /** Called when files are picked */
@@ -101,4 +101,4 @@ export const FileButton: FileButtonComponent = forwardRef<
   );
 }) as any;
 
-FileButton.displayName = '@worldprint/wdesign-core/FileButton';
+FileButton.displayName = '@worldprinter/wdesign-core/FileButton';

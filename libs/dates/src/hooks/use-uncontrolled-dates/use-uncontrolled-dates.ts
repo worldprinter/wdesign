@@ -1,4 +1,4 @@
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import { useRef } from 'react';
 import { DatePickerType, DatePickerValue } from '../../types';
 
@@ -44,7 +44,7 @@ export function useUncontrolledDates<Type extends DatePickerType = 'default'>({
           if (value !== null && typeof value !== 'string') {
             // eslint-disable-next-line no-console
             console.error(
-              '[@worldprint/wdesign-dates/use-uncontrolled-dates] Value must be type of `null` or `string`'
+              '[@worldprinter/wdesign-dates/use-uncontrolled-dates] Value must be type of `null` or `string`'
             );
           }
           break;
@@ -52,7 +52,7 @@ export function useUncontrolledDates<Type extends DatePickerType = 'default'>({
           if (!(value instanceof Array)) {
             // eslint-disable-next-line no-console
             console.error(
-              '[@worldprint/wdesign-dates/use-uncontrolled-dates] Value must be type of `string[]`'
+              '[@worldprinter/wdesign-dates/use-uncontrolled-dates] Value must be type of `string[]`'
             );
           }
           break;
@@ -60,7 +60,7 @@ export function useUncontrolledDates<Type extends DatePickerType = 'default'>({
           if (!(value instanceof Array) || value.length !== 2) {
             // eslint-disable-next-line no-console
             console.error(
-              '[@worldprint/wdesign-dates/use-uncontrolled-dates] Value must be type of `[string, string]`'
+              '[@worldprinter/wdesign-dates/use-uncontrolled-dates] Value must be type of `[string, string]`'
             );
           }
           break;

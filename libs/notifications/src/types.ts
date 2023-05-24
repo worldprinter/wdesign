@@ -1,4 +1,4 @@
-import type { NotificationProps as NotificationComponentProps } from '@worldprint/wdesign-core';
+import type { NotificationProps as NotificationComponentProps } from '@worldprinter/wdesign-core';
 
 export interface NotificationProps
   extends Omit<NotificationComponentProps, 'onClose'> {

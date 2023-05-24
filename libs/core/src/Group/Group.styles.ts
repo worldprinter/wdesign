@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, MantineNumberSize, rem, getSize } from '@worldprint/wdesign-styles';
+import { createStyles, MantineNumberSize, rem, getSize } from '@worldprinter/wdesign-styles';
 
 export type GroupPosition = 'right' | 'center' | 'left' | 'apart';
 

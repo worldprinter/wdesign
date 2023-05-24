@@ -3,7 +3,7 @@ import {
   DefaultProps,
   MantineColor,
   useComponentDefaultProps,
-} from '@worldprint/wdesign-styles';
+} from '@worldprinter/wdesign-styles';
 import { Box } from '../Box';
 import useStyles from './Mark.styles';
 
@@ -38,4 +38,4 @@ export const Mark = forwardRef<HTMLElement, MarkProps>((props, ref) => {
   );
 });
 
-Mark.displayName = '@worldprint/wdesign-core/Mark';
+Mark.displayName = '@worldprinter/wdesign-core/Mark';

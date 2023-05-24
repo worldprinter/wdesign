@@ -5,8 +5,8 @@ import {
   Selectors,
   useComponentDefaultProps,
   rem,
-} from '@worldprint/wdesign-styles';
-import { useDidUpdate } from '@worldprint/wdesign-hooks';
+} from '@worldprinter/wdesign-styles';
+import { useDidUpdate } from '@worldprinter/wdesign-hooks';
 import { Text } from '../Text';
 import { Box } from '../Box';
 import { ImageIcon } from './ImageIcon';
@@ -150,4 +150,4 @@ export const Image = forwardRef<HTMLDivElement, ImageProps>(
   }
 );
 
-Image.displayName = '@worldprint/wdesign-core/Image';
+Image.displayName = '@worldprinter/wdesign-core/Image';

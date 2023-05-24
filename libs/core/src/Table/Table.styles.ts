@@ -1,4 +1,9 @@
-import { createStyles, MantineNumberSize, rem, getSize } from '@worldprint/wdesign-styles';
+import {
+  createStyles,
+  MantineNumberSize,
+  rem,
+  getSize,
+} from '@worldprinter/wdesign-styles';
 
 export interface TableStylesParams {
   captionSide: 'top' | 'bottom';
@@ -31,7 +36,8 @@ export default createStyles(
         width: '100%',
         borderCollapse: 'collapse',
         captionSide,
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        color:
+          theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
         lineHeight: theme.lineHeight,
         border: withBorder ? border : undefined,
 
@@ -39,15 +45,24 @@ export default createStyles(
           marginTop: captionSide === 'top' ? 0 : theme.spacing.xs,
           marginBottom: captionSide === 'bottom' ? 0 : theme.spacing.xs,
           fontSize: theme.fontSizes.sm,
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[2]
+              : theme.colors.gray[6],
         },
 
         '& thead tr th, & tfoot tr th, & tbody tr th': {
           textAlign: 'left',
           fontWeight: 'bold',
-          color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+          color:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[0]
+              : theme.colors.gray[7],
           fontSize: getSize({ size: fontSize, sizes: theme.fontSizes }),
-          padding: `${getSize({ size: verticalSpacing, sizes: theme.spacing })} ${getSize({
+          padding: `${getSize({
+            size: verticalSpacing,
+            sizes: theme.spacing,
+          })} ${getSize({
             size: horizontalSpacing,
             sizes: theme.spacing,
           })}`,
@@ -89,12 +104,16 @@ export default createStyles(
 
         '&[data-striped] tbody tr:nth-of-type(odd)': {
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[6]
+              : theme.colors.gray[0],
         },
 
         '&[data-hover] tbody tr': theme.fn.hover({
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[5]
+              : theme.colors.gray[1],
         }),
       },
     };

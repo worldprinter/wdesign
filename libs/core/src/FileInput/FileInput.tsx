@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useRef } from 'react';
-import { DefaultProps, MantineSize, Selectors } from '@worldprint/wdesign-styles';
-import { useUncontrolled } from '@worldprint/wdesign-hooks';
+import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles';
+import { useUncontrolled } from '@worldprinter/wdesign-hooks';
 import {
   Input,
   InputSharedProps,
@@ -178,7 +178,7 @@ export const _FileInput = forwardRef<HTMLButtonElement, FileInputProps>((props, 
   );
 });
 
-_FileInput.displayName = '@worldprint/wdesign-core/FileInput';
+_FileInput.displayName = '@worldprinter/wdesign-core/FileInput';
 
 type FileInputComponent = <Multiple extends boolean = false>(
   props: FileInputProps<Multiple> & {

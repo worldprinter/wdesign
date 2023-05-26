@@ -19,7 +19,6 @@
             "@worldprinter/wdesign-core": ["libs/core/src/index.ts"],
             "@worldprinter/wdesign-dates": ["libs/dates/src/index.ts"],
             "@worldprinter/wdesign-dropzone": ["libs/dropzone/src/index.ts"],
-            "@worldprinter/wdesign-form": ["libs/form/src/index.ts"],
             "@worldprinter/wdesign-hooks": ["libs/hooks/src/index.ts"],
             "@worldprinter/wdesign-modals": ["libs/modals/src/index.ts"],
             "@worldprinter/wdesign-next": ["libs/next/src/index.ts"],

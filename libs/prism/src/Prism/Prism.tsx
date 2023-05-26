@@ -1,225 +1,228 @@
-import React, { forwardRef } from 'react';
-import Highlight, { defaultProps, Language, PrismTheme } from 'prism-react-renderer';
+import Highlight, { defaultProps, type Language, type PrismTheme } from 'prism-react-renderer'
+import React, { forwardRef } from 'react'
+
 import {
-  ActionIcon,
-  useMantineTheme,
-  Tooltip,
-  DefaultProps,
-  Selectors,
-  Box,
-  ScrollArea,
-  useComponentDefaultProps,
-  MantineColor,
-  MantineNumberSize,
-  MantineTheme,
-} from '@worldprinter/wdesign-core';
-import { useClipboard } from '@worldprinter/wdesign-hooks';
-import { CopyIcon } from './CopyIcon';
-import { getPrismTheme as defaultGetPrismTheme } from './prism-theme';
-import useStyles from './Prism.styles';
+    ActionIcon,
+    Box,
+    ScrollArea,
+    Tooltip,
+    useComponentDefaultProps,
+    useMantineTheme,
+    type DefaultProps,
+    type MantineColor,
+    type MantineNumberSize,
+    type MantineTheme,
+    type Selectors,
+} from '@worldprinter/wdesign-core'
+import { useClipboard } from '@worldprinter/wdesign-hooks'
 
-export type PrismStylesNames = Selectors<typeof useStyles>;
+import { CopyIcon } from './CopyIcon'
+import { getPrismTheme as defaultGetPrismTheme } from './prism-theme'
+import useStyles from './Prism.styles'
 
-export interface PrismProps
-  extends DefaultProps<PrismStylesNames>,
-    Omit<React.ComponentPropsWithRef<'div'>, 'children'> {
-  variant?: string;
+export type PrismStylesNames = Selectors<typeof useStyles>
 
-  /** Code which will be highlighted */
-  children: string;
+export type PrismProps = {
+    variant?: string
 
-  /** Programming language that should be highlighted */
-  language: Language;
+    /** Code which will be highlighted */
+    children: string
 
-  /** True to remove copy to clipboard button */
-  noCopy?: boolean;
+    /** Programming language that should be highlighted */
+    language: Language
 
-  /** Copy button tooltip */
-  copyLabel?: string;
+    /** True to remove copy to clipboard button */
+    noCopy?: boolean
 
-  /** Copy button tooltip in copied state */
-  copiedLabel?: string;
+    /** Copy button tooltip */
+    copyLabel?: string
 
-  /** Display line numbers */
-  withLineNumbers?: boolean;
+    /** Copy button tooltip in copied state */
+    copiedLabel?: string
 
-  /** Highlight line at given line number with color from theme.colors */
-  highlightLines?: Record<string, { color: MantineColor; label?: string }>;
+    /** Display line numbers */
+    withLineNumbers?: boolean
 
-  /** Force color scheme, defaults to theme.colorScheme */
-  colorScheme?: 'dark' | 'light';
+    /** Highlight line at given line number with color from theme.colors */
+    highlightLines?: Record<string, { color: MantineColor; label?: string }>
 
-  /** Change scroll area component */
-  scrollAreaComponent?: any;
+    /** Force color scheme, defaults to theme.colorScheme */
+    colorScheme?: 'dark' | 'light'
 
-  /** Defines whether the code should be trimmed, defaults to true */
-  trim?: boolean;
+    /** Change scroll area component */
+    scrollAreaComponent?: any
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Defines whether the code should be trimmed, defaults to true */
+    trim?: boolean
 
-  /** Provide custom color scheme */
-  getPrismTheme?(theme: MantineTheme, colorScheme: 'light' | 'dark'): PrismTheme;
-}
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
+
+    /** Provide custom color scheme */
+    getPrismTheme?(theme: MantineTheme, colorScheme: 'light' | 'dark'): PrismTheme
+} & DefaultProps<PrismStylesNames> &
+    Omit<React.ComponentPropsWithRef<'div'>, 'children'>
 
 const prismDefaultProps: Partial<PrismProps> = {
-  noCopy: false,
-  copyLabel: 'Copy code',
-  copiedLabel: 'Copied',
-  withLineNumbers: false,
-  trim: true,
-  highlightLines: {},
-  scrollAreaComponent: ScrollArea,
-  getPrismTheme: defaultGetPrismTheme,
-};
+    noCopy: false,
+    copyLabel: 'Copy code',
+    copiedLabel: 'Copied',
+    withLineNumbers: false,
+    trim: true,
+    highlightLines: {},
+    scrollAreaComponent: ScrollArea,
+    getPrismTheme: defaultGetPrismTheme,
+}
 
 export const Prism = forwardRef<HTMLDivElement, PrismProps>((props: PrismProps, ref) => {
-  const {
-    className,
-    children,
-    language,
-    noCopy,
-    classNames,
-    styles,
-    copyLabel,
-    copiedLabel,
-    withLineNumbers,
-    highlightLines,
-    scrollAreaComponent: ScrollAreaComponent,
-    colorScheme,
-    trim,
-    unstyled,
-    radius,
-    getPrismTheme,
-    variant,
-    ...others
-  } = useComponentDefaultProps('Prism', prismDefaultProps, props);
-  const code = trim && typeof children === 'string' ? children.trim() : children;
-  const maxLineSize = code.split('\n').length.toString().length;
+    const {
+        className,
+        children,
+        language,
+        noCopy,
+        classNames,
+        styles,
+        copyLabel,
+        copiedLabel,
+        withLineNumbers,
+        highlightLines,
+        scrollAreaComponent: ScrollAreaComponent,
+        colorScheme,
+        trim,
+        unstyled,
+        radius,
+        getPrismTheme,
+        variant,
+        ...others
+    } = useComponentDefaultProps('Prism', prismDefaultProps, props)
+    const code = trim && typeof children === 'string' ? children.trim() : children
+    const maxLineSize = code.split('\n').length.toString().length
 
-  const theme = useMantineTheme();
-  const clipboard = useClipboard();
-  const _colorScheme = colorScheme || theme.colorScheme;
-  const { classes, cx } = useStyles(
-    {
-      colorScheme: _colorScheme,
-      native: ScrollAreaComponent !== ScrollArea,
-      maxLineSize,
-      radius,
-    },
-    { name: 'Prism', classNames, styles, unstyled, variant }
-  );
+    const theme = useMantineTheme()
+    const clipboard = useClipboard()
+    const _colorScheme = colorScheme || theme.colorScheme
+    const { classes, cx } = useStyles(
+        {
+            colorScheme: _colorScheme,
+            native: ScrollAreaComponent !== ScrollArea,
+            maxLineSize,
+            radius,
+        },
+        { name: 'Prism', classNames, styles, unstyled, variant },
+    )
 
-  return (
-    <Box className={cx(classes.root, className)} ref={ref} {...others} translate="no">
-      {!noCopy && (
-        <Tooltip
-          label={clipboard.copied ? copiedLabel : copyLabel}
-          position="left"
-          withArrow
-          arrowSize={6}
-          offset={6}
-          color={clipboard.copied ? 'teal' : undefined}
-          unstyled={unstyled}
+    return (
+        <Box
+            className={cx(classes.root, className)}
+            ref={ref}
+            {...others}
+            translate='no'
         >
-          <ActionIcon
-            className={classes.copy}
-            aria-label={clipboard.copied ? copiedLabel : copyLabel}
-            onClick={() => clipboard.copy(code)}
-            unstyled={unstyled}
-          >
-            <CopyIcon copied={clipboard.copied} />
-          </ActionIcon>
-        </Tooltip>
-      )}
-
-      <Highlight
-        {...defaultProps}
-        theme={getPrismTheme(theme, _colorScheme)}
-        code={code}
-        language={language}
-      >
-        {({
-          className: inheritedClassName,
-          style: inheritedStyle,
-          tokens,
-          getLineProps,
-          getTokenProps,
-        }) => (
-          <ScrollAreaComponent className={classes.scrollArea} dir="ltr">
-            <pre className={cx(classes.code, inheritedClassName)} style={inheritedStyle} dir="ltr">
-              {tokens
-                .map((line, index) => {
-                  if (
-                    index === tokens.length - 1 &&
-                    line.length === 1 &&
-                    line[0].content === '\n'
-                  ) {
-                    return null;
-                  }
-
-                  const lineNumber = index + 1;
-                  const lineProps = getLineProps({ line, key: index });
-                  const shouldHighlight = lineNumber in highlightLines;
-                  const lineColor =
-                    _colorScheme === 'dark'
-                      ? theme.fn.rgba(
-                          theme.fn.themeColor(highlightLines[lineNumber]?.color, 9),
-                          0.25
-                        )
-                      : theme.fn.themeColor(highlightLines[lineNumber]?.color, 0);
-
-                  return (
-                    <div
-                      {...lineProps}
-                      className={cx(classes.line, lineProps.className)}
-                      style={{ ...(shouldHighlight ? { backgroundColor: lineColor } : null) }}
+            {!noCopy && (
+                <Tooltip
+                    label={clipboard.copied ? copiedLabel : copyLabel}
+                    position='left'
+                    withArrow
+                    arrowSize={6}
+                    offset={6}
+                    color={clipboard.copied ? 'teal' : undefined}
+                    unstyled={unstyled}
+                >
+                    <ActionIcon
+                        className={classes.copy}
+                        aria-label={clipboard.copied ? copiedLabel : copyLabel}
+                        onClick={() => clipboard.copy(code)}
+                        unstyled={unstyled}
                     >
-                      {withLineNumbers && (
-                        <div
-                          className={classes.lineNumber}
-                          style={{
-                            color: shouldHighlight
-                              ? theme.fn.themeColor(
-                                  highlightLines[lineNumber]?.color,
-                                  _colorScheme === 'dark' ? 5 : 8
-                                )
-                              : undefined,
-                          }}
+                        <CopyIcon copied={clipboard.copied} />
+                    </ActionIcon>
+                </Tooltip>
+            )}
+
+            <Highlight
+                {...defaultProps}
+                theme={getPrismTheme(theme, _colorScheme)}
+                code={code}
+                language={language}
+            >
+                {({ className: inheritedClassName, style: inheritedStyle, tokens, getLineProps, getTokenProps }) => (
+                    <ScrollAreaComponent
+                        className={classes.scrollArea}
+                        dir='ltr'
+                    >
+                        <pre
+                            className={cx(classes.code, inheritedClassName)}
+                            style={inheritedStyle}
+                            dir='ltr'
                         >
-                          {highlightLines[lineNumber]?.label || lineNumber}
-                        </div>
-                      )}
+                            {tokens
+                                .map((line, index) => {
+                                    if (index === tokens.length - 1 && line.length === 1 && line[0].content === '\n') {
+                                        return null
+                                    }
 
-                      <div className={classes.lineContent}>
-                        {line.map((token, key) => {
-                          const tokenProps = getTokenProps({ token, key });
-                          return (
-                            <span
-                              {...tokenProps}
-                              style={{
-                                ...tokenProps.style,
-                                color: shouldHighlight
-                                  ? theme.fn.themeColor(
-                                      highlightLines[lineNumber]?.color,
-                                      _colorScheme === 'dark' ? 5 : 8
+                                    const lineNumber = index + 1
+                                    const lineProps = getLineProps({ line, key: index })
+                                    const shouldHighlight = lineNumber in highlightLines
+                                    const lineColor =
+                                        _colorScheme === 'dark'
+                                            ? theme.fn.rgba(
+                                                  theme.fn.themeColor(highlightLines[lineNumber]?.color, 9),
+                                                  0.25,
+                                              )
+                                            : theme.fn.themeColor(highlightLines[lineNumber]?.color, 0)
+
+                                    return (
+                                        <div
+                                            {...lineProps}
+                                            className={cx(classes.line, lineProps.className)}
+                                            style={{ ...(shouldHighlight ? { backgroundColor: lineColor } : null) }}
+                                        >
+                                            {withLineNumbers && (
+                                                <div
+                                                    className={classes.lineNumber}
+                                                    style={{
+                                                        color: shouldHighlight
+                                                            ? theme.fn.themeColor(
+                                                                  highlightLines[lineNumber]?.color,
+                                                                  _colorScheme === 'dark' ? 5 : 8,
+                                                              )
+                                                            : undefined,
+                                                    }}
+                                                >
+                                                    {highlightLines[lineNumber]?.label || lineNumber}
+                                                </div>
+                                            )}
+
+                                            <div className={classes.lineContent}>
+                                                {line.map((token, key) => {
+                                                    const tokenProps = getTokenProps({ token, key })
+                                                    return (
+                                                        <span
+                                                            {...tokenProps}
+                                                            style={{
+                                                                ...tokenProps.style,
+                                                                color: shouldHighlight
+                                                                    ? theme.fn.themeColor(
+                                                                          highlightLines[lineNumber]?.color,
+                                                                          _colorScheme === 'dark' ? 5 : 8,
+                                                                      )
+                                                                    : (tokenProps?.style?.color as string),
+                                                            }}
+                                                        />
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
                                     )
-                                  : (tokenProps?.style?.color as string),
-                              }}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                })
-                .filter(Boolean)}
-            </pre>
-          </ScrollAreaComponent>
-        )}
-      </Highlight>
-    </Box>
-  );
-});
+                                })
+                                .filter(Boolean)}
+                        </pre>
+                    </ScrollAreaComponent>
+                )}
+            </Highlight>
+        </Box>
+    )
+})
 
-Prism.displayName = '@worldprinter/wdesign-prism/Prism';
+Prism.displayName = '@worldprinter/wdesign-prism/Prism'

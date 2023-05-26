@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/worldprinter/wdesign/compare/v0.1.0...v0.2.0) (2023-05-26)
+
+
+### Features
+
+* init version manager and deploy script ([ce5a6f6](https://github.com/worldprinter/wdesign/commit/ce5a6f603fa9913145284f75a62db637d2d37eb7))
+
 ## 0.1.0 (2023-05-26)
 
 

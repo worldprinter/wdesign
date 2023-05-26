@@ -56,6 +56,13 @@
                 "open": false,
                 "logLevel": "info"
             }
+        },
+        "deploy": {
+            "executor": "ngx-deploy-npm:deploy",
+            "options": {
+                "access": "public",
+                "buildTarget": "production"
+            }
         }
     }
 }

@@ -1,0 +1,26 @@
+diff --git a/dist/constants.mjs b/dist/constants.mjs
+index f3e816ea155af6ef44a0a119c23146df5505edd3..da6b798f5327b3cb34d65b9ef8d6032237915fd1 100644
+--- a/dist/constants.mjs
++++ b/dist/constants.mjs
+@@ -15,7 +15,7 @@ var DEFAULT_CONFIG = {
+ var OFFICIAL_THEMES = ["nextra-theme-docs", "nextra-theme-blog"];
+ var META_FILENAME = "_meta.json";
+ var DYNAMIC_META_FILENAME = "_meta.js";
+-var CWD = process.cwd();
++var CWD = process.env.NX_NEXT_DIR ?? process.cwd()
+ var MARKDOWN_EXTENSIONS = ["md", "mdx"];
+ var PUBLIC_DIR = path.join(CWD, "public");
+ var EXTERNAL_URL_REGEX = /^https?:\/\//;
+diff --git a/dist/index.js b/dist/index.js
+index 4248e28231b2dffa91d883fd39ff89203458ddd3..9a233c941b5e022a6a4638f9d91ca3a58c255aca 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -74,7 +74,7 @@ var DEFAULT_CONFIG = {
+ };
+ var META_FILENAME = "_meta.json";
+ var DYNAMIC_META_FILENAME = "_meta.js";
+-var CWD = process.cwd();
++var CWD = process.env.NX_NEXT_DIR ?? process.cwd()
+ var MARKDOWN_EXTENSIONS = ["md", "mdx"];
+ var PUBLIC_DIR = import_node_path.default.join(CWD, "public");
+ var NEXTRA_INTERNAL = Symbol.for("__nextra_internal__");

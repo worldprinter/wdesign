@@ -1,33 +1,12 @@
 {
-  "name": "@worldprinter/wdesign-prism",
-  "version": "0.1.0",
-  "private": false,
-  "description": "WDesign Prism Component",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/worldprinter/wdesign.git",
-    "directory": "libs/prism"
-  },
-  "keywords": [
-    "react",
-    "next",
-    "nextjs",
-    "ui",
-    "components",
-    "ui-kit",
-    "library",
-    "frontend",
-    "prism",
-    "slider",
-    "slick"
-  ],
-  "author": "Worldprinter <worldprinter@qingmu.me>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/worldprinter/wdesign/issues"
-  },
-  "homepage": "https://github.com/worldprinter/wdesign",
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@worldprinter/wdesign-prism",
+    "version": "0.0.1",
+    "main": "./index.js",
+    "types": "./index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./index.mjs",
+            "require": "./index.js"
+        }
+    }
 }

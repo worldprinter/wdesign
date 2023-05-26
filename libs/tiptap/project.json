@@ -1,59 +1,61 @@
 {
-  "name": "tiptap",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/tiptap/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/tiptap/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/tiptap",
-        "tsConfig": "libs/tiptap/tsconfig.lib.json",
-        "project": "libs/tiptap/package.json",
-        "entryFile": "libs/tiptap/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "tsc",
-        "assets": [
-          {
-            "glob": "libs/tiptap/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "updateBuildableProjectDepsInPackageJson": true,
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "skipTypeCheck": true
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/tiptap/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+    "name": "tiptap",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/tiptap/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "lint": {
+            "executor": "@nx/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/tiptap/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "build": {
+            "executor": "@nx/vite:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/libs/tiptap",
+                "emptyOutDir": true,
+                "sourcemap": true,
+                "minify": true,
+                "manifest": true,
+                "ssrManifest": true,
+                "ssr": true,
+                "logLevel": "info",
+                "force": true,
+                "cssCodeSplit": true,
+                "generatePackageJson": true,
+                "includeDevDependenciesInPackageJson": true
+            },
+            "configurations": {
+                "development": {
+                    "mode": "development"
+                },
+                "production": {
+                    "mode": "production"
+                }
+            }
+        },
+        "test": {
+            "executor": "@nx/vite:test",
+            "outputs": ["coverage/libs/tiptap"],
+            "options": {
+                "passWithNoTests": true,
+                "reportsDirectory": "../../coverage/libs/tiptap"
+            }
+        },
+        "static:server": {
+            "executor": "@nx/vite:preview-server",
+            "options": {
+                "buildTarget": "tiptap:build",
+                "port": 3000,
+                "host": "0.0.0.0",
+                "open": false,
+                "logLevel": "info"
+            }
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
-      }
     }
-  }
 }

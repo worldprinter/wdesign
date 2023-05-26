@@ -1,59 +1,61 @@
 {
-  "name": "prism",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/prism/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/prism/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/prism",
-        "tsConfig": "libs/prism/tsconfig.lib.json",
-        "project": "libs/prism/package.json",
-        "entryFile": "libs/prism/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "tsc",
-        "assets": [
-          {
-            "glob": "libs/prism/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ],
-        "updateBuildableProjectDepsInPackageJson": true,
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "skipTypeCheck": true
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/prism/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+    "name": "prism",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/prism/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "lint": {
+            "executor": "@nx/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/prism/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "build": {
+            "executor": "@nx/vite:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/libs/prism",
+                "emptyOutDir": true,
+                "sourcemap": true,
+                "minify": true,
+                "manifest": true,
+                "ssrManifest": true,
+                "ssr": true,
+                "logLevel": "info",
+                "force": true,
+                "cssCodeSplit": true,
+                "generatePackageJson": true,
+                "includeDevDependenciesInPackageJson": true
+            },
+            "configurations": {
+                "development": {
+                    "mode": "development"
+                },
+                "production": {
+                    "mode": "production"
+                }
+            }
+        },
+        "test": {
+            "executor": "@nx/vite:test",
+            "outputs": ["coverage/libs/prism"],
+            "options": {
+                "passWithNoTests": true,
+                "reportsDirectory": "../../coverage/libs/prism"
+            }
+        },
+        "static:server": {
+            "executor": "@nx/vite:preview-server",
+            "options": {
+                "buildTarget": "prism:build",
+                "port": 3000,
+                "host": "0.0.0.0",
+                "open": false,
+                "logLevel": "info"
+            }
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
-      }
     }
-  }
 }

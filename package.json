@@ -30,7 +30,7 @@
         "@vitejs/plugin-react": "^3.0.0",
         "@vitest/coverage-c8": "^0.31.0",
         "@vitest/ui": "^0.31.0",
-        "@worldprinter/nx-tools": "^0.1.0",
+        "@worldprinter/nx-tools": "^0.3.0",
         "eslint": "~8.15.0",
         "eslint-config-next": "13.4.1",
         "eslint-config-prettier": "8.1.0",

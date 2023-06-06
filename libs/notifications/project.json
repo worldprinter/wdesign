@@ -13,21 +13,32 @@
             }
         },
         "build": {
-            "executor": "@nx/vite:build",
+            "executor": "@nx/rollup:rollup",
             "outputs": ["{options.outputPath}"],
-            "defaultConfiguration": "production",
             "options": {
-                "outputPath": "dist/libs/notifications",
-                "generatePackageJson": true,
-                "includeDevDependenciesInPackageJson": true
-            },
-            "configurations": {
-                "development": {
-                    "mode": "development"
-                },
-                "production": {
-                    "mode": "production"
-                }
+                "tsConfig": "libs/notifications/tsconfig.lib.json",
+                "project": "libs/notifications/package.json",
+                "entryFile": "libs/notifications/src/index.ts",
+                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "compiler": "tsc",
+                "format": ["esm", "cjs"],
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "updateBuildableProjectDepsInPackageJson": true,
+                "generateExportsField": true,           "skipTypeCheck": true,
+                "assets": [
+                    {
+                        "glob": "libs/notifications/README.md",
+                        "input": ".",
+                        "output": "."
+                    },
+                    {
+                        "glob": "libs/notifications/CHANGELOG.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ],
+                "outputPath": "dist/libs/notifications"
             }
         },
         "test": {

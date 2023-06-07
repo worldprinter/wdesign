@@ -27,7 +27,7 @@ const plugins = [
     // @ts-ignore
     withNextra({
         theme: 'nextra-theme-docs',
-        themeConfig: './apps/docs/theme.config.tsx',
+        themeConfig: './theme.config.tsx',
     }),
 ]
 

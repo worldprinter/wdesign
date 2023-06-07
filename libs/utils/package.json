@@ -1,12 +1,4 @@
 {
     "name": "@worldprinter/wdesign-utils",
-    "version": "0.3.0",
-    "main": "./index.js",
-    "types": "./index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./index.mjs",
-            "require": "./index.js"
-        }
-    }
+    "version": "0.0.1"
 }

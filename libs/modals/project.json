@@ -16,53 +16,34 @@
             "executor": "@nx/rollup:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
+                "outputPath": "dist/libs/modals",
                 "tsConfig": "libs/modals/tsconfig.lib.json",
                 "project": "libs/modals/package.json",
                 "entryFile": "libs/modals/src/index.ts",
-                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "external": ["react", "react-dom", "@emotion/react/jsx-runtime"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
-                "compiler": "tsc",
-                "format": ["esm", "cjs"],
-                "buildableProjectDepsInPackageJsonType": "dependencies",
-                "updateBuildableProjectDepsInPackageJson": true,
-                "generateExportsField": true,
-                "skipTypeCheck": true,
+                "compiler": "babel",
                 "assets": [
                     {
                         "glob": "libs/modals/README.md",
                         "input": ".",
                         "output": "."
-                    },
-                    {
-                        "glob": "libs/modals/CHANGELOG.md",
-                        "input": ".",
-                        "output": "."
                     }
-                ],
-                "outputPath": "dist/libs/modals"
+                ]
             }
         },
         "test": {
-            "executor": "@nx/vite:test",
-            "outputs": ["coverage/libs/modals"],
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "passWithNoTests": true,
-                "reportsDirectory": "../../coverage/libs/modals"
-            }
-        },
-        "static:server": {
-            "executor": "@nx/vite:preview-server",
-            "options": {
-                "buildTarget": "modals:build",
-                "host": true,
-                "watch": true
-            }
-        },
-        "deploy": {
-            "executor": "ngx-deploy-npm:deploy",
-            "options": {
-                "access": "public",
-                "buildTarget": "production"
+                "jestConfig": "libs/modals/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
             }
         }
     }

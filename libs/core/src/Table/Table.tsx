@@ -1,94 +1,90 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../Box';
-import useStyles, { TableStylesParams } from './Table.styles';
+import React, { forwardRef } from 'react'
 
-export interface TableProps
-  extends DefaultProps<never, TableStylesParams>,
-    React.ComponentPropsWithoutRef<'table'> {
-  variant?: string;
+import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-  /** If true every odd row of table will have gray background color */
-  striped?: boolean;
+import { Box } from '../Box'
+import useStyles, { TableStylesParams } from './Table.styles'
 
-  /** If true row will have hover color */
-  highlightOnHover?: boolean;
+export interface TableProps extends DefaultProps<never, TableStylesParams>, React.ComponentPropsWithoutRef<'table'> {
+    variant?: string
 
-  /** Table caption position */
-  captionSide?: 'top' | 'bottom';
+    /** If true every odd row of table will have gray background color */
+    striped?: boolean
 
-  /** Horizontal cells spacing from theme.spacing or any valid CSS value */
-  horizontalSpacing?: MantineNumberSize;
+    /** If true row will have hover color */
+    highlightOnHover?: boolean
 
-  /** Vertical cells spacing from theme.spacing or any valid CSS value */
-  verticalSpacing?: MantineNumberSize;
+    /** Table caption position */
+    captionSide?: 'top' | 'bottom'
 
-  /** Sets font size of all text inside table */
-  fontSize?: MantineNumberSize;
+    /** Horizontal cells spacing from theme.spacing or any valid CSS value */
+    horizontalSpacing?: MantineNumberSize
 
-  /** Add border to table */
-  withBorder?: boolean;
+    /** Vertical cells spacing from theme.spacing or any valid CSS value */
+    verticalSpacing?: MantineNumberSize
 
-  /** Add border to columns */
-  withColumnBorders?: boolean;
+    /** Sets font size of all text inside table */
+    fontSize?: MantineNumberSize
+
+    /** Add border to table */
+    withBorder?: boolean
+
+    /** Add border to columns */
+    withColumnBorders?: boolean
 }
 
 const defaultProps: Partial<TableProps> = {
-  striped: false,
-  highlightOnHover: false,
-  captionSide: 'top',
-  horizontalSpacing: 'xs',
-  fontSize: 'sm',
-  verticalSpacing: 7,
-  withBorder: false,
-  withColumnBorders: false,
-};
+    striped: false,
+    highlightOnHover: false,
+    captionSide: 'top',
+    horizontalSpacing: 'xs',
+    fontSize: 'sm',
+    verticalSpacing: 7,
+    withBorder: false,
+    withColumnBorders: false,
+}
 
 export const Table = forwardRef<HTMLTableElement, TableProps>((props, ref) => {
-  const {
-    className,
-    children,
-    striped,
-    highlightOnHover,
-    captionSide,
-    horizontalSpacing,
-    verticalSpacing,
-    fontSize,
-    unstyled,
-    withBorder,
-    withColumnBorders,
-    variant,
-    ...others
-  } = useComponentDefaultProps('Table', defaultProps, props);
+    const {
+        className,
+        children,
+        striped,
+        highlightOnHover,
+        captionSide,
+        horizontalSpacing,
+        verticalSpacing,
+        fontSize,
+        unstyled,
+        withBorder,
+        withColumnBorders,
+        variant,
+        ...others
+    } = useComponentDefaultProps('Table', defaultProps, props)
 
-  const { classes, cx } = useStyles(
-    {
-      captionSide,
-      verticalSpacing,
-      horizontalSpacing,
-      fontSize,
-      withBorder,
-      withColumnBorders,
-    },
-    { unstyled, name: 'Table', variant }
-  );
+    const { classes, cx } = useStyles(
+        {
+            captionSide,
+            verticalSpacing,
+            horizontalSpacing,
+            fontSize,
+            withBorder,
+            withColumnBorders,
+        },
+        { unstyled, name: 'Table', variant },
+    )
 
-  return (
-    <Box
-      {...others}
-      component="table"
-      ref={ref}
-      className={cx(classes.root, className)}
-      data-striped={striped || undefined}
-      data-hover={highlightOnHover || undefined}
-    >
-      {children}
-    </Box>
-  );
-});
+    return (
+        <Box
+            {...others}
+            component='table'
+            ref={ref}
+            className={cx(classes.root, className)}
+            data-striped={striped || undefined}
+            data-hover={highlightOnHover || undefined}
+        >
+            {children}
+        </Box>
+    )
+})
 
-Table.displayName = '@worldprinter/wdesign-core/Table';
+Table.displayName = '@worldprinter/wdesign-core/Table'

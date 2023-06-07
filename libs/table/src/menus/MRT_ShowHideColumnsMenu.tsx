@@ -1,20 +1,17 @@
 import React, { useMemo, useState } from 'react'
+
 import { Button, Divider, Flex, Menu } from '@worldprinter/wdesign-core'
-import { MRT_ShowHideColumnsMenuItems } from './MRT_ShowHideColumnsMenuItems'
-import { getDefaultColumnOrderIds } from '../column.utils'
+
 import type { MRT_Column, MRT_TableInstance } from '..'
+import { getDefaultColumnOrderIds } from '../column.utils'
+import { MRT_ShowHideColumnsMenuItems } from './MRT_ShowHideColumnsMenuItems'
 
 interface Props<TData extends Record<string, any> = {}> {
     isSubMenu?: boolean
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_ShowHideColumnsMenu = <
-    TData extends Record<string, any> = {},
->({
-    isSubMenu,
-    table,
-}: Props<TData>) => {
+export const MRT_ShowHideColumnsMenu = <TData extends Record<string, any> = {}>({ isSubMenu, table }: Props<TData>) => {
     const {
         getAllColumns,
         getAllLeafColumns,
@@ -26,12 +23,7 @@ export const MRT_ShowHideColumnsMenu = <
         getRightLeafColumns,
         getState,
         toggleAllColumnsVisible,
-        options: {
-            enableColumnOrdering,
-            enableHiding,
-            enablePinning,
-            localization,
-        },
+        options: { enableColumnOrdering, enableHiding, enablePinning, localization },
     } = table
     const { columnOrder, columnPinning } = getState()
 
@@ -43,10 +35,7 @@ export const MRT_ShowHideColumnsMenu = <
 
     const allColumns = useMemo(() => {
         const columns = getAllColumns()
-        if (
-            columnOrder.length > 0 &&
-            !columns.some((col) => col.columnDef.columnDefType === 'group')
-        ) {
+        if (columnOrder.length > 0 && !columns.some((col) => col.columnDef.columnDefType === 'group')) {
             return [
                 ...getLeftLeafColumns(),
                 ...Array.from(new Set(columnOrder)).map((colId) =>
@@ -65,8 +54,7 @@ export const MRT_ShowHideColumnsMenu = <
         getRightLeafColumns(),
     ]) as MRT_Column<TData>[]
 
-    const [hoveredColumn, setHoveredColumn] =
-        useState<MRT_Column<TData> | null>(null)
+    const [hoveredColumn, setHoveredColumn] = useState<MRT_Column<TData> | null>(null)
 
     return (
         <Menu.Dropdown
@@ -93,11 +81,7 @@ export const MRT_ShowHideColumnsMenu = <
                 )}
                 {!isSubMenu && enableColumnOrdering && (
                     <Button
-                        onClick={() =>
-                            table.setColumnOrder(
-                                getDefaultColumnOrderIds(table.options as any),
-                            )
-                        }
+                        onClick={() => table.setColumnOrder(getDefaultColumnOrderIds(table.options as any))}
                         variant='subtle'
                     >
                         {localization.resetOrder}

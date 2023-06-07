@@ -1,4 +1,4 @@
-export { ActionIcon } from './ActionIcon';
+export { ActionIcon } from './ActionIcon'
 
-export type { ActionIconProps, ActionIconStylesNames } from './ActionIcon';
-export type { ActionIconStylesParams } from './ActionIcon.styles';
+export type { ActionIconProps, ActionIconStylesNames } from './ActionIcon'
+export type { ActionIconStylesParams } from './ActionIcon.styles'

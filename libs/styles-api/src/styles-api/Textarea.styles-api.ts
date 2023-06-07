@@ -1,3 +1,3 @@
-import { TextInput } from './TextInput.styles-api';
+import { TextInput } from './TextInput.styles-api'
 
-export const Textarea = TextInput;
+export const Textarea = TextInput

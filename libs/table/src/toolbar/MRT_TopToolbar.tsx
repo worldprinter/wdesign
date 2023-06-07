@@ -1,18 +1,19 @@
 import React from 'react'
+
 import { Box, Flex, MantineTheme } from '@worldprinter/wdesign-core'
 import { useMediaQuery } from '@worldprinter/wdesign-hooks'
+
+import type { MRT_TableInstance } from '..'
 import { MRT_GlobalFilterTextInput } from '../inputs/MRT_GlobalFilterTextInput'
 import { MRT_ProgressBar } from './MRT_ProgressBar'
 import { MRT_TablePagination } from './MRT_TablePagination'
 import { MRT_ToolbarAlertBanner } from './MRT_ToolbarAlertBanner'
-import { MRT_ToolbarInternalButtons } from './MRT_ToolbarInternalButtons'
 import { MRT_ToolbarDropZone } from './MRT_ToolbarDropZone'
-import type { MRT_TableInstance } from '..'
+import { MRT_ToolbarInternalButtons } from './MRT_ToolbarInternalButtons'
 
 export const commonToolbarStyles = ({ theme }: { theme: MantineTheme }) => ({
     alignItems: 'flex-start',
-    backgroundColor:
-        theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     backgroundImage: 'none',
     display: 'grid',
     flexWrap: 'wrap-reverse',
@@ -27,9 +28,7 @@ interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
-    table,
-}: Props<TData>) => {
+export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({ table }: Props<TData>) => {
     const {
         getState,
         options: {
@@ -51,12 +50,9 @@ export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
     const isMobile = useMediaQuery('(max-width: 720px)')
 
     const toolbarProps =
-        mantineTopToolbarProps instanceof Function
-            ? mantineTopToolbarProps({ table })
-            : mantineTopToolbarProps
+        mantineTopToolbarProps instanceof Function ? mantineTopToolbarProps({ table }) : mantineTopToolbarProps
 
-    const stackAlertBanner =
-        isMobile || !!renderTopToolbarCustomActions || showGlobalFilter
+    const stackAlertBanner = isMobile || !!renderTopToolbarCustomActions || showGlobalFilter
 
     return (
         <Box
@@ -74,9 +70,7 @@ export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
                     position: isFullScreen ? 'sticky' : 'relative',
                     top: isFullScreen ? '0' : undefined,
                     ...commonToolbarStyles({ theme }),
-                    ...(toolbarProps?.sx instanceof Function
-                        ? toolbarProps.sx(theme)
-                        : (toolbarProps?.sx as any)),
+                    ...(toolbarProps?.sx instanceof Function ? toolbarProps.sx(theme) : (toolbarProps?.sx as any)),
                 } as any)
             }
         >
@@ -86,9 +80,7 @@ export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
                     table={table}
                 />
             )}
-            {['both', 'top'].includes(positionToolbarDropZone ?? '') && (
-                <MRT_ToolbarDropZone table={table} />
-            )}
+            {['both', 'top'].includes(positionToolbarDropZone ?? '') && <MRT_ToolbarDropZone table={table} />}
             <Flex
                 sx={{
                     alignItems: 'flex-start',
@@ -101,9 +93,7 @@ export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
                     width: '100%',
                 }}
             >
-                {enableGlobalFilter && positionGlobalFilter === 'left' && (
-                    <MRT_GlobalFilterTextInput table={table} />
-                )}
+                {enableGlobalFilter && positionGlobalFilter === 'left' && <MRT_GlobalFilterTextInput table={table} />}
                 {renderTopToolbarCustomActions?.({ table }) ?? <span />}
                 {enableToolbarInternalActions ? (
                     <Flex
@@ -112,28 +102,24 @@ export const MRT_TopToolbar = <TData extends Record<string, any> = {}>({
                             justifyContent: 'flex-end',
                         }}
                     >
-                        {enableGlobalFilter &&
-                            positionGlobalFilter === 'right' && (
-                                <MRT_GlobalFilterTextInput table={table} />
-                            )}
+                        {enableGlobalFilter && positionGlobalFilter === 'right' && (
+                            <MRT_GlobalFilterTextInput table={table} />
+                        )}
                         <MRT_ToolbarInternalButtons table={table} />
                     </Flex>
                 ) : (
                     enableGlobalFilter &&
-                    positionGlobalFilter === 'right' && (
-                        <MRT_GlobalFilterTextInput table={table} />
-                    )
+                    positionGlobalFilter === 'right' && <MRT_GlobalFilterTextInput table={table} />
                 )}
             </Flex>
-            {enablePagination &&
-                ['top', 'both'].includes(positionPagination ?? '') && (
-                    <Flex justify='end'>
-                        <MRT_TablePagination
-                            table={table}
-                            position='top'
-                        />
-                    </Flex>
-                )}
+            {enablePagination && ['top', 'both'].includes(positionPagination ?? '') && (
+                <Flex justify='end'>
+                    <MRT_TablePagination
+                        table={table}
+                        position='top'
+                    />
+                </Flex>
+            )}
             <MRT_ProgressBar
                 isTopToolbar
                 table={table}

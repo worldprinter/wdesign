@@ -1,13 +1,13 @@
-export { NavigationProgress } from './NavigationProgress';
+export { NavigationProgress } from './NavigationProgress'
 export {
-  startNavigationProgress,
-  stopNavigationProgress,
-  resetNavigationProgress,
-  setNavigationProgress,
-  incrementNavigationProgress,
-  decrementNavigationProgress,
-  completeNavigationProgress,
-  nprogress,
-} from './events';
+    startNavigationProgress,
+    stopNavigationProgress,
+    resetNavigationProgress,
+    setNavigationProgress,
+    incrementNavigationProgress,
+    decrementNavigationProgress,
+    completeNavigationProgress,
+    nprogress,
+} from './events'
 
-export type { NavigationProgressProps } from './NavigationProgress';
+export type { NavigationProgressProps } from './NavigationProgress'

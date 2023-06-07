@@ -25,7 +25,8 @@
                 "format": ["esm", "cjs"],
                 "buildableProjectDepsInPackageJsonType": "dependencies",
                 "updateBuildableProjectDepsInPackageJson": true,
-                "generateExportsField": true,           "skipTypeCheck": true,
+                "generateExportsField": true,
+                "skipTypeCheck": true,
                 "assets": [
                     {
                         "glob": "libs/ssr/README.md",

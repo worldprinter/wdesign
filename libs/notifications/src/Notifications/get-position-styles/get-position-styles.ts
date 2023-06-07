@@ -1,19 +1,16 @@
-import { CSSObject } from '@worldprinter/wdesign-core';
-import { NotificationsPositioning } from '../../types';
+import { CSSObject } from '@worldprinter/wdesign-core'
 
-export default function getPositionStyles(
-  [vertical, horizontal]: NotificationsPositioning,
-  spacing: number | string
-) {
-  const styles: CSSObject = {};
+import { NotificationsPositioning } from '../../types'
 
-  vertical === 'top' && (styles.top = spacing);
-  vertical === 'bottom' && (styles.bottom = spacing);
+export default function getPositionStyles([vertical, horizontal]: NotificationsPositioning, spacing: number | string) {
+    const styles: CSSObject = {}
 
-  horizontal === 'left' && (styles.left = spacing);
-  horizontal === 'right' && (styles.right = spacing);
-  horizontal === 'center' &&
-    ((styles.left = '50%'), (styles.transform = 'translateX(-50%)'));
+    vertical === 'top' && (styles.top = spacing)
+    vertical === 'bottom' && (styles.bottom = spacing)
 
-  return styles;
+    horizontal === 'left' && (styles.left = spacing)
+    horizontal === 'right' && (styles.right = spacing)
+    horizontal === 'center' && ((styles.left = '50%'), (styles.transform = 'translateX(-50%)'))
+
+    return styles
 }

@@ -1,178 +1,169 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineSize,
-  MantineNumberSize,
-  MantineGradient,
-  MantineColor,
-  Selectors,
-  useComponentDefaultProps,
-  Variants,
-  getSize,
-} from '@worldprinter/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
-import { UnstyledButton } from '../UnstyledButton';
-import { Loader, LoaderProps } from '../Loader';
-import { ButtonGroup } from './ButtonGroup/ButtonGroup';
-import useStyles, { sizes, ButtonStylesParams } from './Button.styles';
+    DefaultProps,
+    getSize,
+    MantineColor,
+    MantineGradient,
+    MantineNumberSize,
+    MantineSize,
+    Selectors,
+    useComponentDefaultProps,
+    Variants,
+} from '@worldprinter/wdesign-styles'
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-export type ButtonStylesNames = Selectors<typeof useStyles>;
+import { Loader, LoaderProps } from '../Loader'
+import { UnstyledButton } from '../UnstyledButton'
+import useStyles, { ButtonStylesParams, sizes } from './Button.styles'
+import { ButtonGroup } from './ButtonGroup/ButtonGroup'
 
-export interface ButtonProps
-  extends DefaultProps<ButtonStylesNames, ButtonStylesParams> {
-  /** Predefined button size */
-  size?: MantineSize;
+export type ButtonStylesNames = Selectors<typeof useStyles>
 
-  /** Button type attribute */
-  type?: 'submit' | 'button' | 'reset';
+export interface ButtonProps extends DefaultProps<ButtonStylesNames, ButtonStylesParams> {
+    /** Predefined button size */
+    size?: MantineSize
 
-  /** Button color from theme */
-  color?: MantineColor;
+    /** Button type attribute */
+    type?: 'submit' | 'button' | 'reset'
 
-  /** Adds icon before button label  */
-  leftIcon?: React.ReactNode;
+    /** Button color from theme */
+    color?: MantineColor
 
-  /** Adds icon after button label  */
-  rightIcon?: React.ReactNode;
+    /** Adds icon before button label  */
+    leftIcon?: React.ReactNode
 
-  /** Sets button width to 100% of parent element */
-  fullWidth?: boolean;
+    /** Adds icon after button label  */
+    rightIcon?: React.ReactNode
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Sets button width to 100% of parent element */
+    fullWidth?: boolean
 
-  /** Controls button appearance */
-  variant?: Variants<
-    'filled' | 'outline' | 'light' | 'white' | 'default' | 'subtle' | 'gradient'
-  >;
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
 
-  /** Controls gradient settings in gradient variant only */
-  gradient?: MantineGradient;
+    /** Controls button appearance */
+    variant?: Variants<'filled' | 'outline' | 'light' | 'white' | 'default' | 'subtle' | 'gradient'>
 
-  /** Set text-transform to uppercase */
-  uppercase?: boolean;
+    /** Controls gradient settings in gradient variant only */
+    gradient?: MantineGradient
 
-  /** Reduces vertical and horizontal spacing */
-  compact?: boolean;
+    /** Set text-transform to uppercase */
+    uppercase?: boolean
 
-  /** Indicate loading state */
-  loading?: boolean;
+    /** Reduces vertical and horizontal spacing */
+    compact?: boolean
 
-  /** Props spread to Loader component */
-  loaderProps?: LoaderProps;
+    /** Indicate loading state */
+    loading?: boolean
 
-  /** Loader position relative to button label */
-  loaderPosition?: 'left' | 'right' | 'center';
+    /** Props spread to Loader component */
+    loaderProps?: LoaderProps
 
-  /** Button label */
-  children?: React.ReactNode;
+    /** Loader position relative to button label */
+    loaderPosition?: 'left' | 'right' | 'center'
 
-  /** Disabled state */
-  disabled?: boolean;
+    /** Button label */
+    children?: React.ReactNode
+
+    /** Disabled state */
+    disabled?: boolean
 }
 
 const defaultProps: Partial<ButtonProps> = {
-  size: 'sm',
-  type: 'button',
-  variant: 'filled',
-  loaderPosition: 'left',
-};
+    size: 'sm',
+    type: 'button',
+    variant: 'filled',
+    loaderPosition: 'left',
+}
 
-export const _Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (props, ref) => {
+export const _Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     const {
-      className,
-      size,
-      color,
-      type,
-      disabled,
-      children,
-      leftIcon,
-      rightIcon,
-      fullWidth,
-      variant,
-      radius,
-      uppercase,
-      compact,
-      loading,
-      loaderPosition,
-      loaderProps,
-      gradient,
-      classNames,
-      styles,
-      unstyled,
-      ...others
-    } = useComponentDefaultProps('Button', defaultProps, props);
+        className,
+        size,
+        color,
+        type,
+        disabled,
+        children,
+        leftIcon,
+        rightIcon,
+        fullWidth,
+        variant,
+        radius,
+        uppercase,
+        compact,
+        loading,
+        loaderPosition,
+        loaderProps,
+        gradient,
+        classNames,
+        styles,
+        unstyled,
+        ...others
+    } = useComponentDefaultProps('Button', defaultProps, props)
 
     const { classes, cx, theme } = useStyles(
-      {
-        radius,
-        color,
-        fullWidth,
-        compact,
-        gradient,
-        withLeftIcon: !!leftIcon,
-        withRightIcon: !!rightIcon,
-      },
-      { name: 'Button', unstyled, classNames, styles, variant, size }
-    );
+        {
+            radius,
+            color,
+            fullWidth,
+            compact,
+            gradient,
+            withLeftIcon: !!leftIcon,
+            withRightIcon: !!rightIcon,
+        },
+        { name: 'Button', unstyled, classNames, styles, variant, size },
+    )
 
-    const colors = theme.fn.variant({ color, variant });
+    const colors = theme.fn.variant({ color, variant })
 
     const loader = (
-      <Loader
-        color={colors.color}
-        size={`calc(${(getSize({ size, sizes }) as any).height} / 2)`}
-        {...loaderProps}
-      />
-    );
+        <Loader
+            color={colors.color}
+            size={`calc(${(getSize({ size, sizes }) as any).height} / 2)`}
+            {...loaderProps}
+        />
+    )
 
     return (
-      <UnstyledButton
-        className={cx(classes.root, className)}
-        type={type}
-        disabled={disabled}
-        data-button
-        data-disabled={disabled || undefined}
-        data-loading={loading || undefined}
-        ref={ref}
-        unstyled={unstyled}
-        {...others}
-      >
-        <div className={classes.inner}>
-          {(leftIcon || (loading && loaderPosition === 'left')) && (
-            <span className={cx(classes.icon, classes.leftIcon)}>
-              {loading && loaderPosition === 'left' ? loader : leftIcon}
-            </span>
-          )}
+        <UnstyledButton
+            className={cx(classes.root, className)}
+            type={type}
+            disabled={disabled}
+            data-button
+            data-disabled={disabled || undefined}
+            data-loading={loading || undefined}
+            ref={ref}
+            unstyled={unstyled}
+            {...others}
+        >
+            <div className={classes.inner}>
+                {(leftIcon || (loading && loaderPosition === 'left')) && (
+                    <span className={cx(classes.icon, classes.leftIcon)}>
+                        {loading && loaderPosition === 'left' ? loader : leftIcon}
+                    </span>
+                )}
 
-          {loading && loaderPosition === 'center' && (
-            <span className={classes.centerLoader}>{loader}</span>
-          )}
+                {loading && loaderPosition === 'center' && <span className={classes.centerLoader}>{loader}</span>}
 
-          <span
-            className={classes.label}
-            style={{ textTransform: uppercase ? 'uppercase' : undefined }}
-          >
-            {children}
-          </span>
+                <span
+                    className={classes.label}
+                    style={{ textTransform: uppercase ? 'uppercase' : undefined }}
+                >
+                    {children}
+                </span>
 
-          {(rightIcon || (loading && loaderPosition === 'right')) && (
-            <span className={cx(classes.icon, classes.rightIcon)}>
-              {loading && loaderPosition === 'right' ? loader : rightIcon}
-            </span>
-          )}
-        </div>
-      </UnstyledButton>
-    );
-  }
-) as any;
+                {(rightIcon || (loading && loaderPosition === 'right')) && (
+                    <span className={cx(classes.icon, classes.rightIcon)}>
+                        {loading && loaderPosition === 'right' ? loader : rightIcon}
+                    </span>
+                )}
+            </div>
+        </UnstyledButton>
+    )
+}) as any
 
-_Button.displayName = '@worldprinter/wdesign-core/Button';
-_Button.Group = ButtonGroup;
+_Button.displayName = '@worldprinter/wdesign-core/Button'
+_Button.Group = ButtonGroup
 
-export const Button = createPolymorphicComponent<
-  'button',
-  ButtonProps,
-  { Group: typeof ButtonGroup }
->(_Button);
+export const Button = createPolymorphicComponent<'button', ButtonProps, { Group: typeof ButtonGroup }>(_Button)

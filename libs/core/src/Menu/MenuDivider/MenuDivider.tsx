@@ -1,41 +1,35 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import { useMenuContext } from '../Menu.context';
-import useStyles from './MenuDivider.styles';
+import React, { forwardRef } from 'react'
 
-export type MenuDividerStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface MenuDividerProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {}
+import { Box } from '../../Box'
+import { useMenuContext } from '../Menu.context'
+import useStyles from './MenuDivider.styles'
 
-const defaultProps: Partial<MenuDividerProps> = {};
+export type MenuDividerStylesNames = Selectors<typeof useStyles>
 
-export const MenuDivider = forwardRef<HTMLDivElement, MenuDividerProps>(
-  (props, ref) => {
-    const { children, className, ...others } = useComponentDefaultProps(
-      'MenuDivider',
-      defaultProps,
-      props
-    );
+export interface MenuDividerProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {}
 
-    const { classNames, styles, unstyled, variant } = useMenuContext();
+const defaultProps: Partial<MenuDividerProps> = {}
+
+export const MenuDivider = forwardRef<HTMLDivElement, MenuDividerProps>((props, ref) => {
+    const { children, className, ...others } = useComponentDefaultProps('MenuDivider', defaultProps, props)
+
+    const { classNames, styles, unstyled, variant } = useMenuContext()
     const { classes, cx } = useStyles(null, {
-      name: 'Menu',
-      classNames,
-      styles,
-      unstyled,
-      variant,
-    });
+        name: 'Menu',
+        classNames,
+        styles,
+        unstyled,
+        variant,
+    })
     return (
-      <Box className={cx(classes.divider, className)} ref={ref} {...others} />
-    );
-  }
-);
+        <Box
+            className={cx(classes.divider, className)}
+            ref={ref}
+            {...others}
+        />
+    )
+})
 
-MenuDivider.displayName = '@worldprinter/wdesign-core/MenuDivider';
+MenuDivider.displayName = '@worldprinter/wdesign-core/MenuDivider'

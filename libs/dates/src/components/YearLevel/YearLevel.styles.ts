@@ -1,9 +1,9 @@
-import { createStyles } from '@worldprinter/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core'
 
 export default createStyles((theme) => ({
-  yearLevel: {},
+    yearLevel: {},
 
-  calendarHeader: {
-    marginBottom: theme.spacing.xs,
-  },
-}));
+    calendarHeader: {
+        marginBottom: theme.spacing.xs,
+    },
+}))

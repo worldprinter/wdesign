@@ -1,24 +1,24 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
 interface GetDefaultClampedDate {
-  minDate: Date;
-  maxDate: Date;
+    minDate: Date
+    maxDate: Date
 }
 
 export function getDefaultClampedDate({ minDate, maxDate }: GetDefaultClampedDate) {
-  const today = new Date();
+    const today = new Date()
 
-  if (!minDate && !maxDate) {
-    return today;
-  }
+    if (!minDate && !maxDate) {
+        return today
+    }
 
-  if (dayjs(today).isBefore(minDate)) {
-    return minDate;
-  }
+    if (dayjs(today).isBefore(minDate)) {
+        return minDate
+    }
 
-  if (dayjs(today).isAfter(maxDate)) {
-    return maxDate;
-  }
+    if (dayjs(today).isAfter(maxDate)) {
+        return maxDate
+    }
 
-  return today;
+    return today
 }

@@ -1,62 +1,60 @@
-import React, { cloneElement, forwardRef } from 'react';
-import { isElement, createEventHandler } from '@worldprinter/wdesign-utils';
-import { useComponentDefaultProps } from '@worldprinter/wdesign-styles';
-import { useMenuContext } from '../Menu.context';
-import { Popover } from '../../Popover';
-import { MENU_ERRORS } from '../Menu.errors';
+import React, { cloneElement, forwardRef } from 'react'
+
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { createEventHandler, isElement } from '@worldprinter/wdesign-utils'
+
+import { Popover } from '../../Popover'
+import { useMenuContext } from '../Menu.context'
+import { MENU_ERRORS } from '../Menu.errors'
 
 export interface MenuTargetProps {
-  /** Target element */
-  children: React.ReactNode;
+    /** Target element */
+    children: React.ReactNode
 
-  /** Key of the prop that should be used to get element ref */
-  refProp?: string;
+    /** Key of the prop that should be used to get element ref */
+    refProp?: string
 }
 
 const defaultProps: Partial<MenuTargetProps> = {
-  refProp: 'ref',
-};
+    refProp: 'ref',
+}
 
-export const MenuTarget = forwardRef<HTMLElement, MenuTargetProps>(
-  (props, ref) => {
-    const { children, refProp, ...others } = useComponentDefaultProps(
-      'MenuTarget',
-      defaultProps,
-      props
-    );
+export const MenuTarget = forwardRef<HTMLElement, MenuTargetProps>((props, ref) => {
+    const { children, refProp, ...others } = useComponentDefaultProps('MenuTarget', defaultProps, props)
 
     if (!isElement(children)) {
-      throw new Error(MENU_ERRORS.children);
+        throw new Error(MENU_ERRORS.children)
     }
 
-    const ctx = useMenuContext();
+    const ctx = useMenuContext()
 
-    const onClick = createEventHandler(
-      children.props.onClick,
-      () => ctx.trigger === 'click' && ctx.toggleDropdown()
-    );
+    const onClick = createEventHandler(children.props.onClick, () => ctx.trigger === 'click' && ctx.toggleDropdown())
 
     const onMouseEnter = createEventHandler(
-      children.props.onMouseEnter,
-      () => ctx.trigger === 'hover' && ctx.openDropdown()
-    );
+        children.props.onMouseEnter,
+        () => ctx.trigger === 'hover' && ctx.openDropdown(),
+    )
 
     const onMouseLeave = createEventHandler(
-      children.props.onMouseLeave,
-      () => ctx.trigger === 'hover' && ctx.closeDropdown()
-    );
+        children.props.onMouseLeave,
+        () => ctx.trigger === 'hover' && ctx.closeDropdown(),
+    )
 
     return (
-      <Popover.Target refProp={refProp} popupType="menu" ref={ref} {...others}>
-        {cloneElement(children, {
-          onClick,
-          onMouseEnter,
-          onMouseLeave,
-          'data-expanded': ctx.opened ? true : undefined,
-        })}
-      </Popover.Target>
-    );
-  }
-);
+        <Popover.Target
+            refProp={refProp}
+            popupType='menu'
+            ref={ref}
+            {...others}
+        >
+            {cloneElement(children, {
+                onClick,
+                onMouseEnter,
+                onMouseLeave,
+                'data-expanded': ctx.opened ? true : undefined,
+            })}
+        </Popover.Target>
+    )
+})
 
-MenuTarget.displayName = '@worldprinter/wdesign-core/MenuTarget';
+MenuTarget.displayName = '@worldprinter/wdesign-core/MenuTarget'

@@ -1,128 +1,124 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineNumberSize,
-  getDefaultZIndex,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Overlay } from '../Overlay';
-import { Transition } from '../Transition';
-import { Loader, LoaderProps } from '../Loader';
-import { Box } from '../Box';
-import useStyles from './LoadingOverlay.styles';
+    DefaultProps,
+    getDefaultZIndex,
+    MantineNumberSize,
+    useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles'
 
-export interface LoadingOverlayProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {
-  variant?: string;
+import { Box } from '../Box'
+import { Loader, LoaderProps } from '../Loader'
+import { Overlay } from '../Overlay'
+import { Transition } from '../Transition'
+import useStyles from './LoadingOverlay.styles'
 
-  /** If set loading overlay will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
-  keepMounted?: boolean;
+export interface LoadingOverlayProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+    variant?: string
 
-  /** Provide custom loader */
-  loader?: React.ReactNode;
+    /** If set loading overlay will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
+    keepMounted?: boolean
 
-  /** Loader component props */
-  loaderProps?: LoaderProps;
+    /** Provide custom loader */
+    loader?: React.ReactNode
 
-  /** Sets overlay opacity */
-  overlayOpacity?: number;
+    /** Loader component props */
+    loaderProps?: LoaderProps
 
-  /** Sets overlay color, defaults to theme.white in light theme and to theme.colors.dark[5] in dark theme */
-  overlayColor?: string;
+    /** Sets overlay opacity */
+    overlayOpacity?: number
 
-  /** Sets overlay blur */
-  overlayBlur?: number | string;
+    /** Sets overlay color, defaults to theme.white in light theme and to theme.colors.dark[5] in dark theme */
+    overlayColor?: string
 
-  /** Loading overlay z-index */
-  zIndex?: React.CSSProperties['zIndex'];
+    /** Sets overlay blur */
+    overlayBlur?: number | string
 
-  /** If visible overlay will take 100% width and height of first parent with relative position and overlay all of its content */
-  visible: boolean;
+    /** Loading overlay z-index */
+    zIndex?: React.CSSProperties['zIndex']
 
-  /** Animation duration in ms */
-  transitionDuration?: number;
+    /** If visible overlay will take 100% width and height of first parent with relative position and overlay all of its content */
+    visible: boolean
 
-  /** Exit transition duration in ms */
-  exitTransitionDuration?: number;
+    /** Animation duration in ms */
+    transitionDuration?: number
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
-  radius?: MantineNumberSize;
+    /** Exit transition duration in ms */
+    exitTransitionDuration?: number
+
+    /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
+    radius?: MantineNumberSize
 }
 
 const defaultProps: Partial<LoadingOverlayProps> = {
-  overlayOpacity: 0.75,
-  transitionDuration: 0,
-  radius: 0,
-  zIndex: getDefaultZIndex('overlay'),
-};
+    overlayOpacity: 0.75,
+    transitionDuration: 0,
+    radius: 0,
+    zIndex: getDefaultZIndex('overlay'),
+}
 
-export const LoadingOverlay = forwardRef<HTMLDivElement, LoadingOverlayProps>(
-  (props, ref) => {
+export const LoadingOverlay = forwardRef<HTMLDivElement, LoadingOverlayProps>((props, ref) => {
     const {
-      className,
-      visible,
-      loaderProps,
-      overlayOpacity,
-      overlayColor,
-      transitionDuration,
-      exitTransitionDuration,
-      zIndex,
-      style,
-      loader,
-      radius,
-      overlayBlur,
-      unstyled,
-      variant,
-      keepMounted,
-      ...others
-    } = useComponentDefaultProps('LoadingOverlay', defaultProps, props);
+        className,
+        visible,
+        loaderProps,
+        overlayOpacity,
+        overlayColor,
+        transitionDuration,
+        exitTransitionDuration,
+        zIndex,
+        style,
+        loader,
+        radius,
+        overlayBlur,
+        unstyled,
+        variant,
+        keepMounted,
+        ...others
+    } = useComponentDefaultProps('LoadingOverlay', defaultProps, props)
     const { classes, cx, theme } = useStyles(null, {
-      name: 'LoadingOverlay',
-      unstyled,
-      variant,
-    });
-    const _zIndex = `calc(${zIndex} + 1)` as any;
+        name: 'LoadingOverlay',
+        unstyled,
+        variant,
+    })
+    const _zIndex = `calc(${zIndex} + 1)` as any
 
     return (
-      <Transition
-        keepMounted={keepMounted}
-        duration={transitionDuration}
-        exitDuration={exitTransitionDuration}
-        mounted={visible}
-        transition="fade"
-      >
-        {(transitionStyles) => (
-          <Box
-            className={cx(classes.root, className)}
-            style={{ ...transitionStyles, ...style, zIndex }}
-            ref={ref}
-            {...others}
-          >
-            {loader ? (
-              <div style={{ zIndex: _zIndex }}>{loader}</div>
-            ) : (
-              <Loader style={{ zIndex: _zIndex }} {...loaderProps} />
+        <Transition
+            keepMounted={keepMounted}
+            duration={transitionDuration}
+            exitDuration={exitTransitionDuration}
+            mounted={visible}
+            transition='fade'
+        >
+            {(transitionStyles) => (
+                <Box
+                    className={cx(classes.root, className)}
+                    style={{ ...transitionStyles, ...style, zIndex }}
+                    ref={ref}
+                    {...others}
+                >
+                    {loader ? (
+                        <div style={{ zIndex: _zIndex }}>{loader}</div>
+                    ) : (
+                        <Loader
+                            style={{ zIndex: _zIndex }}
+                            {...loaderProps}
+                        />
+                    )}
+
+                    <Overlay
+                        opacity={overlayOpacity}
+                        zIndex={zIndex}
+                        radius={radius}
+                        blur={overlayBlur}
+                        unstyled={unstyled}
+                        color={overlayColor || (theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.white)}
+                    />
+                </Box>
             )}
+        </Transition>
+    )
+})
 
-            <Overlay
-              opacity={overlayOpacity}
-              zIndex={zIndex}
-              radius={radius}
-              blur={overlayBlur}
-              unstyled={unstyled}
-              color={
-                overlayColor ||
-                (theme.colorScheme === 'dark'
-                  ? theme.colors.dark[5]
-                  : theme.white)
-              }
-            />
-          </Box>
-        )}
-      </Transition>
-    );
-  }
-);
-
-LoadingOverlay.displayName = '@worldprinter/wdesign-core/LoadingOverlay';
+LoadingOverlay.displayName = '@worldprinter/wdesign-core/LoadingOverlay'

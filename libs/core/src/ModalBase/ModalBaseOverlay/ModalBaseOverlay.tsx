@@ -1,55 +1,57 @@
-import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
-import React, { forwardRef } from 'react';
-import { Transition, TransitionOverride } from '../../Transition';
-import { Overlay, OverlayProps } from '../../Overlay';
-import { useModalBaseContext } from '../ModalBase.context';
-import useStyles from './ModalBaseOverlay.styles';
+import React, { forwardRef } from 'react'
 
-export type ModalBaseOverlayStylesNames = Selectors<typeof useStyles>;
+import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+
+import { Overlay, OverlayProps } from '../../Overlay'
+import { Transition, TransitionOverride } from '../../Transition'
+import { useModalBaseContext } from '../ModalBase.context'
+import useStyles from './ModalBaseOverlay.styles'
+
+export type ModalBaseOverlayStylesNames = Selectors<typeof useStyles>
 
 export interface ModalBaseOverlayProps
-  extends OverlayProps,
-    Omit<React.ComponentPropsWithoutRef<'div'>, keyof OverlayProps> {
-  /** Props added to Transition component */
-  transitionProps?: TransitionOverride;
+    extends OverlayProps,
+        Omit<React.ComponentPropsWithoutRef<'div'>, keyof OverlayProps> {
+    /** Props added to Transition component */
+    transitionProps?: TransitionOverride
 }
 
-const defaultProps: Partial<ModalBaseOverlayProps> = {};
+const defaultProps: Partial<ModalBaseOverlayProps> = {}
 
 export const ModalBaseOverlay = forwardRef<HTMLDivElement, ModalBaseOverlayProps>((props, ref) => {
-  const ctx = useModalBaseContext();
+    const ctx = useModalBaseContext()
 
-  const { onClick, transitionProps, style, className, ...others } = useComponentDefaultProps(
-    `${ctx.__staticSelector}Overlay`,
-    defaultProps,
-    props
-  );
+    const { onClick, transitionProps, style, className, ...others } = useComponentDefaultProps(
+        `${ctx.__staticSelector}Overlay`,
+        defaultProps,
+        props,
+    )
 
-  const { classes, cx } = useStyles(null, ctx.stylesApi);
+    const { classes, cx } = useStyles(null, ctx.stylesApi)
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    onClick?.(event);
-    ctx.closeOnClickOutside && ctx.onClose();
-  };
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        onClick?.(event)
+        ctx.closeOnClickOutside && ctx.onClose()
+    }
 
-  return (
-    <Transition
-      mounted={ctx.opened}
-      {...ctx.transitionProps}
-      {...transitionProps}
-      transition="fade"
-    >
-      {(transitionStyles) => (
-        <Overlay
-          ref={ref}
-          onClick={handleClick}
-          fixed
-          style={{ ...style, ...transitionStyles }}
-          className={cx(classes.overlay, className)}
-          zIndex={ctx.zIndex}
-          {...others}
-        />
-      )}
-    </Transition>
-  );
-});
+    return (
+        <Transition
+            mounted={ctx.opened}
+            {...ctx.transitionProps}
+            {...transitionProps}
+            transition='fade'
+        >
+            {(transitionStyles) => (
+                <Overlay
+                    ref={ref}
+                    onClick={handleClick}
+                    fixed
+                    style={{ ...style, ...transitionStyles }}
+                    className={cx(classes.overlay, className)}
+                    zIndex={ctx.zIndex}
+                    {...others}
+                />
+            )}
+        </Transition>
+    )
+})

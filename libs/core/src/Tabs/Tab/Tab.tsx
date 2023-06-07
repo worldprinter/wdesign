@@ -1,119 +1,97 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  Selectors,
-  MantineColor,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils';
-import { UnstyledButton } from '../../UnstyledButton';
-import { useTabsContext } from '../Tabs.context';
-import useStyles from './Tab.styles';
+import React, { forwardRef } from 'react'
 
-export type TabStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, MantineColor, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
-export interface TabProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'button'> {
-  /** Value that is used to connect Tab with associated panel */
-  value: string;
+import { UnstyledButton } from '../../UnstyledButton'
+import { useTabsContext } from '../Tabs.context'
+import useStyles from './Tab.styles'
 
-  /** Tab label */
-  children?: React.ReactNode;
+export type TabStylesNames = Selectors<typeof useStyles>
 
-  /** Section of content displayed after label */
-  rightSection?: React.ReactNode;
+export interface TabProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+    /** Value that is used to connect Tab with associated panel */
+    value: string
 
-  /** Section of content displayed before label */
-  icon?: React.ReactNode;
+    /** Tab label */
+    children?: React.ReactNode
 
-  /** Key of theme.colors */
-  color?: MantineColor;
+    /** Section of content displayed after label */
+    rightSection?: React.ReactNode
+
+    /** Section of content displayed before label */
+    icon?: React.ReactNode
+
+    /** Key of theme.colors */
+    color?: MantineColor
 }
 
-const defaultProps: Partial<TabProps> = {};
+const defaultProps: Partial<TabProps> = {}
 
 export const Tab = forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
-  const {
-    value,
-    children,
-    onKeyDown,
-    onClick,
-    className,
-    icon,
-    rightSection,
-    color,
-    ...others
-  } = useComponentDefaultProps('TabsTab', defaultProps, props);
-  const ctx = useTabsContext();
+    const { value, children, onKeyDown, onClick, className, icon, rightSection, color, ...others } =
+        useComponentDefaultProps('TabsTab', defaultProps, props)
+    const ctx = useTabsContext()
 
-  const hasIcon = !!icon;
-  const hasRightSection = !!rightSection;
+    const hasIcon = !!icon
+    const hasRightSection = !!rightSection
 
-  const { theme, classes, cx } = useStyles(
-    {
-      withIcon: hasIcon || (hasRightSection && !children),
-      withRightSection: hasRightSection || (hasIcon && !children),
-      orientation: ctx.orientation,
-      color: color || ctx.color,
-      radius: ctx.radius,
-      inverted: ctx.inverted,
-      placement: ctx.placement,
-    },
-    {
-      name: 'Tabs',
-      unstyled: ctx.unstyled,
-      classNames: ctx.classNames,
-      styles: ctx.styles,
-      variant: ctx.variant,
+    const { theme, classes, cx } = useStyles(
+        {
+            withIcon: hasIcon || (hasRightSection && !children),
+            withRightSection: hasRightSection || (hasIcon && !children),
+            orientation: ctx.orientation,
+            color: color || ctx.color,
+            radius: ctx.radius,
+            inverted: ctx.inverted,
+            placement: ctx.placement,
+        },
+        {
+            name: 'Tabs',
+            unstyled: ctx.unstyled,
+            classNames: ctx.classNames,
+            styles: ctx.styles,
+            variant: ctx.variant,
+        },
+    )
+
+    const isActive = value === ctx.value
+    const panelId = ctx.getPanelId(value)
+    const ariaControls = ctx.mountedPanelIds.includes(value) ? panelId : undefined
+    const activateTab = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        ctx.onTabChange(ctx.allowTabDeactivation ? (value === ctx.value ? null : value) : value)
+        onClick?.(event)
     }
-  );
 
-  const isActive = value === ctx.value;
-  const panelId = ctx.getPanelId(value);
-  const ariaControls = ctx.mountedPanelIds.includes(value)
-    ? panelId
-    : undefined;
-  const activateTab = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    ctx.onTabChange(
-      ctx.allowTabDeactivation ? (value === ctx.value ? null : value) : value
-    );
-    onClick?.(event);
-  };
+    return (
+        <UnstyledButton<'button'>
+            {...others}
+            unstyled={ctx.unstyled}
+            className={cx(classes.tab, className)}
+            data-active={isActive || undefined}
+            ref={ref}
+            type='button'
+            role='tab'
+            id={ctx.getTabId(value)}
+            aria-selected={isActive}
+            tabIndex={isActive || ctx.value === null ? 0 : -1}
+            aria-controls={ariaControls}
+            onClick={activateTab}
+            onKeyDown={createScopedKeydownHandler({
+                siblingSelector: '[role="tab"]',
+                parentSelector: '[role="tablist"]',
+                activateOnFocus: ctx.activateTabWithKeyboard,
+                loop: ctx.loop,
+                dir: theme.dir,
+                orientation: ctx.orientation,
+                onKeyDown,
+            })}
+        >
+            {icon && <span className={classes.tabIcon}>{icon}</span>}
+            {children && <span className={classes.tabLabel}>{children}</span>}
+            {rightSection && <span className={classes.tabRightSection}>{rightSection}</span>}
+        </UnstyledButton>
+    )
+})
 
-  return (
-    <UnstyledButton<'button'>
-      {...others}
-      unstyled={ctx.unstyled}
-      className={cx(classes.tab, className)}
-      data-active={isActive || undefined}
-      ref={ref}
-      type="button"
-      role="tab"
-      id={ctx.getTabId(value)}
-      aria-selected={isActive}
-      tabIndex={isActive || ctx.value === null ? 0 : -1}
-      aria-controls={ariaControls}
-      onClick={activateTab}
-      onKeyDown={createScopedKeydownHandler({
-        siblingSelector: '[role="tab"]',
-        parentSelector: '[role="tablist"]',
-        activateOnFocus: ctx.activateTabWithKeyboard,
-        loop: ctx.loop,
-        dir: theme.dir,
-        orientation: ctx.orientation,
-        onKeyDown,
-      })}
-    >
-      {icon && <span className={classes.tabIcon}>{icon}</span>}
-      {children && <span className={classes.tabLabel}>{children}</span>}
-      {rightSection && (
-        <span className={classes.tabRightSection}>{rightSection}</span>
-      )}
-    </UnstyledButton>
-  );
-});
-
-Tab.displayName = '@worldprinter/wdesign-core/Tab';
+Tab.displayName = '@worldprinter/wdesign-core/Tab'

@@ -1,7 +1,7 @@
-import { createStyles } from '@worldprinter/wdesign-styles';
+import { createStyles } from '@worldprinter/wdesign-styles'
 
 export default createStyles(() => ({
-  wrapper: {
-    position: 'relative',
-  },
-}));
+    wrapper: {
+        position: 'relative',
+    },
+}))

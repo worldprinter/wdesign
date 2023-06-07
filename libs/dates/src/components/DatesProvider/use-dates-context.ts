@@ -1,30 +1,31 @@
-import { useContext, useCallback } from 'react';
-import { DayOfWeek } from '../../types';
-import { DatesProviderContext } from './DatesProvider';
+import { useCallback, useContext } from 'react'
+
+import { DayOfWeek } from '../../types'
+import { DatesProviderContext } from './DatesProvider'
 
 export function useDatesContext() {
-  const ctx = useContext(DatesProviderContext);
-  const getLocale = useCallback((input?: string) => input || ctx.locale, [ctx.locale]);
-  const getFirstDayOfWeek = useCallback(
-    (input?: DayOfWeek) => (typeof input === 'number' ? input : ctx.firstDayOfWeek),
-    [ctx.firstDayOfWeek]
-  );
+    const ctx = useContext(DatesProviderContext)
+    const getLocale = useCallback((input?: string) => input || ctx.locale, [ctx.locale])
+    const getFirstDayOfWeek = useCallback(
+        (input?: DayOfWeek) => (typeof input === 'number' ? input : ctx.firstDayOfWeek),
+        [ctx.firstDayOfWeek],
+    )
 
-  const getWeekendDays = useCallback(
-    (input?: DayOfWeek[]) => (Array.isArray(input) ? input : ctx.weekendDays),
-    [ctx.weekendDays]
-  );
+    const getWeekendDays = useCallback(
+        (input?: DayOfWeek[]) => (Array.isArray(input) ? input : ctx.weekendDays),
+        [ctx.weekendDays],
+    )
 
-  const getLabelSeparator = useCallback(
-    (input?: string) => (typeof input === 'string' ? input : ctx.labelSeparator),
-    [ctx.labelSeparator]
-  );
+    const getLabelSeparator = useCallback(
+        (input?: string) => (typeof input === 'string' ? input : ctx.labelSeparator),
+        [ctx.labelSeparator],
+    )
 
-  return {
-    ...ctx,
-    getLocale,
-    getFirstDayOfWeek,
-    getWeekendDays,
-    getLabelSeparator,
-  };
+    return {
+        ...ctx,
+        getLocale,
+        getFirstDayOfWeek,
+        getWeekendDays,
+        getLabelSeparator,
+    }
 }

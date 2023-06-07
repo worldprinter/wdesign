@@ -1,11 +1,11 @@
-import { createStyles, getSize } from '@worldprinter/wdesign-core';
+import { createStyles, getSize } from '@worldprinter/wdesign-core'
 
 export default createStyles((theme, _, { size }) => ({
-  yearLevelGroup: {
-    display: 'flex',
+    yearLevelGroup: {
+        display: 'flex',
 
-    '& [data-year-level]:not(:last-of-type)': {
-      marginRight: getSize({ size, sizes: theme.spacing }),
+        '& [data-year-level]:not(:last-of-type)': {
+            marginRight: getSize({ size, sizes: theme.spacing }),
+        },
     },
-  },
-}));
+}))

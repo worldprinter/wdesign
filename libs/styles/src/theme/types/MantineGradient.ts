@@ -1,5 +1,5 @@
 export interface MantineGradient {
-  from: string;
-  to: string;
-  deg?: number;
+    from: string
+    to: string
+    deg?: number
 }

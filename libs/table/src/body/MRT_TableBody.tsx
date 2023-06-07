@@ -1,14 +1,11 @@
-import React, { memo, useMemo } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
+import React, { memo, useMemo } from 'react'
+
 import { Box, Text } from '@worldprinter/wdesign-core'
-import { Memo_MRT_TableBodyRow, MRT_TableBodyRow } from './MRT_TableBodyRow'
+
+import type { MRT_Row, MRT_TableInstance, MRT_VirtualItem, MRT_Virtualizer } from '..'
 import { rankGlobalFuzzy } from '../sortingFns'
-import type {
-    MRT_Row,
-    MRT_TableInstance,
-    MRT_VirtualItem,
-    MRT_Virtualizer,
-} from '..'
+import { Memo_MRT_TableBodyRow, MRT_TableBodyRow } from './MRT_TableBodyRow'
 
 interface Props {
     columnVirtualizer?: MRT_Virtualizer<HTMLDivElement, HTMLTableCellElement>
@@ -52,25 +49,12 @@ export const MRT_TableBody = ({
         },
         refs: { tableContainerRef, tablePaperRef },
     } = table
-    const {
-        columnFilters,
-        density,
-        expanded,
-        globalFilter,
-        globalFilterFn,
-        pagination,
-        sorting,
-    } = getState()
+    const { columnFilters, density, expanded, globalFilter, globalFilterFn, pagination, sorting } = getState()
 
     const tableBodyProps =
-        mantineTableBodyProps instanceof Function
-            ? mantineTableBodyProps({ table })
-            : mantineTableBodyProps
+        mantineTableBodyProps instanceof Function ? mantineTableBodyProps({ table }) : mantineTableBodyProps
 
-    const vProps =
-        rowVirtualizerProps instanceof Function
-            ? rowVirtualizerProps({ table })
-            : rowVirtualizerProps
+    const vProps = rowVirtualizerProps instanceof Function ? rowVirtualizerProps({ table }) : rowVirtualizerProps
 
     const shouldRankResults = useMemo(
         () =>
@@ -98,9 +82,7 @@ export const MRT_TableBody = ({
 
     const rows = useMemo(() => {
         if (!shouldRankResults) return getRowModel().rows
-        const rankedRows = getPrePaginationRowModel().rows.sort((a, b) =>
-            rankGlobalFuzzy(a, b),
-        )
+        const rankedRows = getPrePaginationRowModel().rows.sort((a, b) => rankGlobalFuzzy(a, b))
         if (enablePagination && !manualPagination) {
             const start = pagination.pageIndex * pagination.pageSize
             return rankedRows.slice(start, start + pagination.pageSize)
@@ -108,16 +90,12 @@ export const MRT_TableBody = ({
         return rankedRows
     }, [
         shouldRankResults,
-        shouldRankResults
-            ? getPrePaginationRowModel().rows
-            : getRowModel().rows,
+        shouldRankResults ? getPrePaginationRowModel().rows : getRowModel().rows,
         pagination.pageIndex,
         pagination.pageSize,
     ])
 
-    const rowVirtualizer:
-        | MRT_Virtualizer<HTMLDivElement, HTMLTableRowElement>
-        | undefined = enableRowVirtualization
+    const rowVirtualizer: MRT_Virtualizer<HTMLDivElement, HTMLTableRowElement> | undefined = enableRowVirtualization
         ? useVirtualizer({
               count: rows.length,
               estimateSize: () =>
@@ -132,8 +110,7 @@ export const MRT_TableBody = ({
                       : 70.7,
               getScrollElement: () => tableContainerRef.current,
               measureElement:
-                  typeof window !== 'undefined' &&
-                  navigator.userAgent.indexOf('Firefox') === -1
+                  typeof window !== 'undefined' && navigator.userAgent.indexOf('Firefox') === -1
                       ? (element) => element?.getBoundingClientRect().height
                       : undefined,
               overscan: 4,
@@ -145,9 +122,7 @@ export const MRT_TableBody = ({
         rowVirtualizerInstanceRef.current = rowVirtualizer
     }
 
-    const virtualRows = rowVirtualizer
-        ? rowVirtualizer.getVirtualItems()
-        : undefined
+    const virtualRows = rowVirtualizer ? rowVirtualizer.getVirtualItems() : undefined
 
     return (
         <Box
@@ -155,14 +130,10 @@ export const MRT_TableBody = ({
             {...tableBodyProps}
             sx={(theme) => ({
                 display: layoutMode === 'grid' ? 'grid' : 'table-row-group',
-                height: rowVirtualizer
-                    ? `${rowVirtualizer.getTotalSize()}px`
-                    : 'inherit',
+                height: rowVirtualizer ? `${rowVirtualizer.getTotalSize()}px` : 'inherit',
                 minHeight: !rows.length ? '100px' : undefined,
                 position: 'relative',
-                ...(tableBodyProps?.sx instanceof Function
-                    ? tableBodyProps?.sx(theme)
-                    : (tableBodyProps?.sx as any)),
+                ...(tableBodyProps?.sx instanceof Function ? tableBodyProps?.sx(theme) : (tableBodyProps?.sx as any)),
             })}
         >
             {!rows.length ? (
@@ -174,8 +145,7 @@ export const MRT_TableBody = ({
                     <td
                         colSpan={table.getVisibleLeafColumns().length}
                         style={{
-                            display:
-                                layoutMode === 'grid' ? 'grid' : 'table-cell',
+                            display: layoutMode === 'grid' ? 'grid' : 'table-cell',
                         }}
                     >
                         {renderEmptyRowsFallback?.({ table }) ?? (
@@ -183,10 +153,7 @@ export const MRT_TableBody = ({
                                 sx={{
                                     color: 'gray',
                                     fontStyle: 'italic',
-                                    maxWidth: `min(100vw, ${
-                                        tablePaperRef.current?.clientWidth ??
-                                        360
-                                    }px)`,
+                                    maxWidth: `min(100vw, ${tablePaperRef.current?.clientWidth ?? 360}px)`,
                                     paddingTop: '2rem',
                                     paddingBottom: '2rem',
                                     textAlign: 'center',
@@ -203,9 +170,7 @@ export const MRT_TableBody = ({
             ) : (
                 <>
                     {(virtualRows ?? rows).map((rowOrVirtualRow, rowIndex) => {
-                        const row = rowVirtualizer
-                            ? rows[rowOrVirtualRow.index]
-                            : (rowOrVirtualRow as MRT_Row)
+                        const row = rowVirtualizer ? rows[rowOrVirtualRow.index] : (rowOrVirtualRow as MRT_Row)
                         const props = {
                             columnVirtualizer,
                             enableHover,
@@ -214,16 +179,12 @@ export const MRT_TableBody = ({
                             measureElement: rowVirtualizer?.measureElement,
                             numRows: rows.length,
                             row,
-                            rowIndex: rowVirtualizer
-                                ? rowOrVirtualRow.index
-                                : rowIndex,
+                            rowIndex: rowVirtualizer ? rowOrVirtualRow.index : rowIndex,
                             table,
                             virtualColumns,
                             virtualPaddingLeft,
                             virtualPaddingRight,
-                            virtualRow: rowVirtualizer
-                                ? (rowOrVirtualRow as MRT_VirtualItem)
-                                : undefined,
+                            virtualRow: rowVirtualizer ? (rowOrVirtualRow as MRT_VirtualItem) : undefined,
                         }
                         return memoMode === 'rows' ? (
                             <Memo_MRT_TableBodyRow {...props} />

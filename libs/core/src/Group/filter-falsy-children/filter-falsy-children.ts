@@ -1,5 +1,5 @@
-import { Children, ReactElement, ReactNode } from 'react';
+import { Children, ReactElement, ReactNode } from 'react'
 
 export function filterFalsyChildren(children: ReactNode) {
-  return (Children.toArray(children) as ReactElement[]).filter(Boolean);
+    return (Children.toArray(children) as ReactElement[]).filter(Boolean)
 }

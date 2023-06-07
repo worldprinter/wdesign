@@ -1,2 +1,2 @@
-export { MonthPicker } from './MonthPicker';
-export type { MonthPickerBaseProps, MonthPickerProps } from './MonthPicker';
+export { MonthPicker } from './MonthPicker'
+export type { MonthPickerBaseProps, MonthPickerProps } from './MonthPicker'

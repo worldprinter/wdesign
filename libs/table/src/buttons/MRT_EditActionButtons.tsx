@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { ActionIcon, Box, Button, Tooltip } from '@worldprinter/wdesign-core'
+
 import type { MRT_Row, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}> {
@@ -34,10 +36,7 @@ export const MRT_EditActionButtons = <TData extends Record<string, any> = {}>({
     const handleSave = () => {
         //look for auto-filled input values
         Object.values(editInputRefs?.current)?.forEach((input) => {
-            if (
-                input.value !== undefined &&
-                Object.hasOwn(editingRow?._valuesCache as object, input.name)
-            ) {
+            if (input.value !== undefined && Object.hasOwn(editingRow?._valuesCache as object, input.name)) {
                 // @ts-ignore
                 editingRow._valuesCache[input.name] = input.value
             }

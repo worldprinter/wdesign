@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import { Box } from '@worldprinter/wdesign-core'
-import { MRT_Table } from './MRT_Table'
-import type { MRT_TableInstance } from '..'
 
-const useIsomorphicLayoutEffect =
-    typeof window !== 'undefined' ? useLayoutEffect : useEffect
+import { Box } from '@worldprinter/wdesign-core'
+
+import type { MRT_TableInstance } from '..'
+import { MRT_Table } from './MRT_Table'
+
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 interface Props {
     table: MRT_TableInstance
@@ -26,15 +27,9 @@ export const MRT_TableContainer = ({ table }: Props) => {
             : mantineTableContainerProps
 
     useIsomorphicLayoutEffect(() => {
-        const topToolbarHeight =
-            typeof document !== 'undefined'
-                ? topToolbarRef.current?.offsetHeight ?? 0
-                : 0
+        const topToolbarHeight = typeof document !== 'undefined' ? topToolbarRef.current?.offsetHeight ?? 0 : 0
 
-        const bottomToolbarHeight =
-            typeof document !== 'undefined'
-                ? bottomToolbarRef?.current?.offsetHeight ?? 0
-                : 0
+        const bottomToolbarHeight = typeof document !== 'undefined' ? bottomToolbarRef?.current?.offsetHeight ?? 0 : 0
 
         setTotalToolbarHeight(topToolbarHeight + bottomToolbarHeight)
     })
@@ -62,9 +57,7 @@ export const MRT_TableContainer = ({ table }: Props) => {
                     : (tableContainerProps?.sx as any)),
             })}
             style={{
-                maxHeight: isFullScreen
-                    ? `calc(100vh - ${totalToolbarHeight}px)`
-                    : undefined,
+                maxHeight: isFullScreen ? `calc(100vh - ${totalToolbarHeight}px)` : undefined,
                 ...tableContainerProps?.style,
             }}
         >

@@ -1,2 +1,2 @@
-export { convertHsvaTo } from './converters';
-export { parseColor, isColorValid } from './parsers';
+export { convertHsvaTo } from './converters'
+export { parseColor, isColorValid } from './parsers'

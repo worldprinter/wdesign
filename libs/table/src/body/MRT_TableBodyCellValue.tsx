@@ -1,6 +1,8 @@
-import React, { ReactNode } from 'react'
-import { Box } from '@worldprinter/wdesign-core'
 import highlightWords from 'highlight-words'
+import React, { ReactNode } from 'react'
+
+import { Box } from '@worldprinter/wdesign-core'
+
 import type { MRT_Cell, MRT_TableInstance } from '..'
 
 const allowedTypes = ['string', 'number']
@@ -50,19 +52,13 @@ export const MRT_TableBodyCellValue = ({ cell, table }: Props) => {
         columnDef.enableFilterMatchHighlighting !== false &&
         renderedCellValue &&
         allowedTypes.includes(typeof renderedCellValue) &&
-        ((filterValue &&
-            allowedTypes.includes(typeof filterValue) &&
-            columnDef.filterVariant === 'text') ||
-            (globalFilter &&
-                allowedTypes.includes(typeof globalFilter) &&
-                column.getCanGlobalFilter()))
+        ((filterValue && allowedTypes.includes(typeof filterValue) && columnDef.filterVariant === 'text') ||
+            (globalFilter && allowedTypes.includes(typeof globalFilter) && column.getCanGlobalFilter()))
     ) {
         const chunks = highlightWords?.({
             text: renderedCellValue?.toString() as string,
             query: (column.getFilterValue() ?? globalFilter ?? '').toString(),
-            matchExactly:
-                (filterValue ? columnDef._filterFn : globalFilterFn) !==
-                'fuzzy',
+            matchExactly: (filterValue ? columnDef._filterFn : globalFilterFn) !== 'fuzzy',
         })
         if (chunks?.length > 1 || chunks?.[0]?.match) {
             renderedCellValue = (
@@ -78,17 +74,9 @@ export const MRT_TableBodyCellValue = ({ cell, table }: Props) => {
                             sx={
                                 match
                                     ? (theme) => ({
-                                          backgroundColor:
-                                              theme.colors.yellow[
-                                                  theme.colorScheme === 'dark'
-                                                      ? 9
-                                                      : 5
-                                              ],
+                                          backgroundColor: theme.colors.yellow[theme.colorScheme === 'dark' ? 9 : 5],
                                           borderRadius: '2px',
-                                          color:
-                                              theme.colorScheme === 'dark'
-                                                  ? theme.white
-                                                  : theme.black,
+                                          color: theme.colorScheme === 'dark' ? theme.white : theme.black,
                                           p: '2px 1px',
                                       })
                                     : undefined

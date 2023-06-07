@@ -1,22 +1,21 @@
-import { MantineNumberSize, Styles, ClassNames } from '@worldprinter/wdesign-core';
-import { createSafeContext } from '@worldprinter/wdesign-utils';
-import { CAROUSEL_ERRORS } from './Carousel.errors';
-import { CarouselOrientation, Embla, CarouselBreakpoint } from './types';
-import type { CarouselStylesNames } from './Carousel';
+import { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-core'
+import { createSafeContext } from '@worldprinter/wdesign-utils'
+
+import type { CarouselStylesNames } from './Carousel'
+import { CAROUSEL_ERRORS } from './Carousel.errors'
+import { CarouselBreakpoint, CarouselOrientation, Embla } from './types'
 
 interface CarouselContext {
-  embla: Embla;
-  slideSize: string | number;
-  slideGap: MantineNumberSize;
-  orientation: CarouselOrientation;
-  includeGapInSize: boolean;
-  breakpoints: CarouselBreakpoint[];
-  classNames: ClassNames<CarouselStylesNames>;
-  styles: Styles<CarouselStylesNames>;
-  unstyled: boolean;
-  variant: string;
+    embla: Embla
+    slideSize: string | number
+    slideGap: MantineNumberSize
+    orientation: CarouselOrientation
+    includeGapInSize: boolean
+    breakpoints: CarouselBreakpoint[]
+    classNames: ClassNames<CarouselStylesNames>
+    styles: Styles<CarouselStylesNames>
+    unstyled: boolean
+    variant: string
 }
 
-export const [CarouselProvider, useCarouselContext] = createSafeContext<CarouselContext>(
-  CAROUSEL_ERRORS.context
-);
+export const [CarouselProvider, useCarouselContext] = createSafeContext<CarouselContext>(CAROUSEL_ERRORS.context)

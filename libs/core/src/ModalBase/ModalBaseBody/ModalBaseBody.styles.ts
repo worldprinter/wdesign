@@ -1,15 +1,15 @@
-import { createStyles, MantineNumberSize, getSize } from '@worldprinter/wdesign-styles';
+import { createStyles, getSize, MantineNumberSize } from '@worldprinter/wdesign-styles'
 
 interface ModalBaseBodyStylesParams {
-  padding: MantineNumberSize;
+    padding: MantineNumberSize
 }
 
 export default createStyles((theme, { padding }: ModalBaseBodyStylesParams) => ({
-  body: {
-    padding: getSize({ size: padding, sizes: theme.spacing }),
+    body: {
+        padding: getSize({ size: padding, sizes: theme.spacing }),
 
-    '&:not(:only-child)': {
-      paddingTop: 0,
+        '&:not(:only-child)': {
+            paddingTop: 0,
+        },
     },
-  },
-}));
+}))

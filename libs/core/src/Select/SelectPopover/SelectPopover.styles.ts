@@ -1,12 +1,12 @@
-import { createStyles, rem } from '@worldprinter/wdesign-styles';
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export default createStyles(() => ({
-  dropdown: {},
+    dropdown: {},
 
-  itemsWrapper: {
-    padding: rem(4),
-    display: 'flex',
-    width: '100%',
-    boxSizing: 'border-box',
-  },
-}));
+    itemsWrapper: {
+        padding: rem(4),
+        display: 'flex',
+        width: '100%',
+        boxSizing: 'border-box',
+    },
+}))

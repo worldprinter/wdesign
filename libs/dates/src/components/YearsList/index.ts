@@ -1,2 +1,2 @@
-export { YearsList } from './YearsList';
-export type { YearsListProps, YearsListSettings, YearsListStylesNames } from './YearsList';
+export { YearsList } from './YearsList'
+export type { YearsListProps, YearsListSettings, YearsListStylesNames } from './YearsList'

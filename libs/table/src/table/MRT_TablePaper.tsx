@@ -1,9 +1,11 @@
 import React from 'react'
+
 import { Paper } from '@worldprinter/wdesign-core'
-import { MRT_TopToolbar } from '../toolbar/MRT_TopToolbar'
-import { MRT_BottomToolbar } from '../toolbar/MRT_BottomToolbar'
-import { MRT_TableContainer } from './MRT_TableContainer'
+
 import type { MRT_TableInstance } from '..'
+import { MRT_BottomToolbar } from '../toolbar/MRT_BottomToolbar'
+import { MRT_TopToolbar } from '../toolbar/MRT_TopToolbar'
+import { MRT_TableContainer } from './MRT_TableContainer'
 
 interface Props {
     table: MRT_TableInstance
@@ -12,21 +14,12 @@ interface Props {
 export const MRT_TablePaper = ({ table }: Props) => {
     const {
         getState,
-        options: {
-            enableBottomToolbar,
-            enableTopToolbar,
-            mantinePaperProps,
-            renderBottomToolbar,
-            renderTopToolbar,
-        },
+        options: { enableBottomToolbar, enableTopToolbar, mantinePaperProps, renderBottomToolbar, renderTopToolbar },
         refs: { tablePaperRef },
     } = table
     const { isFullScreen } = getState()
 
-    const tablePaperProps =
-        mantinePaperProps instanceof Function
-            ? mantinePaperProps({ table })
-            : mantinePaperProps
+    const tablePaperProps = mantinePaperProps instanceof Function ? mantinePaperProps({ table }) : mantinePaperProps
 
     return (
         <Paper
@@ -75,9 +68,7 @@ export const MRT_TablePaper = ({ table }: Props) => {
             {enableBottomToolbar &&
                 (renderBottomToolbar instanceof Function
                     ? renderBottomToolbar({ table })
-                    : renderBottomToolbar ?? (
-                          <MRT_BottomToolbar table={table} />
-                      ))}
+                    : renderBottomToolbar ?? <MRT_BottomToolbar table={table} />)}
         </Paper>
     )
 }

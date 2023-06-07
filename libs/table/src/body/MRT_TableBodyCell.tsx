@@ -1,24 +1,13 @@
-import React, {
-    DragEvent,
-    memo,
-    MouseEvent,
-    RefObject,
-    useEffect,
-    useMemo,
-    useState,
-} from 'react'
+import React, { DragEvent, memo, MouseEvent, RefObject, useEffect, useMemo, useState } from 'react'
+
 import { Box, Skeleton, useMantineTheme } from '@worldprinter/wdesign-core'
-import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput'
-import { MRT_CopyButton } from '../buttons/MRT_CopyButton'
-import { MRT_TableBodyRowGrabHandle } from './MRT_TableBodyRowGrabHandle'
-import { MRT_TableBodyCellValue } from './MRT_TableBodyCellValue'
-import {
-    getCommonCellStyles,
-    getIsFirstColumn,
-    getIsLastColumn,
-    getPrimaryColor,
-} from '../column.utils'
+
 import type { MRT_Cell, MRT_TableInstance, MRT_VirtualItem } from '..'
+import { MRT_CopyButton } from '../buttons/MRT_CopyButton'
+import { getCommonCellStyles, getIsFirstColumn, getIsLastColumn, getPrimaryColor } from '../column.utils'
+import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput'
+import { MRT_TableBodyCellValue } from './MRT_TableBodyCellValue'
+import { MRT_TableBodyRowGrabHandle } from './MRT_TableBodyRowGrabHandle'
 
 interface Props {
     cell: MRT_Cell
@@ -102,11 +91,7 @@ export const MRT_TableBodyCell = ({
                 isLoading || showSkeletons
                     ? columnDefType === 'display'
                         ? column.getSize() / 2
-                        : Math.round(
-                              Math.random() *
-                                  (column.getSize() - column.getSize() / 3) +
-                                  column.getSize() / 3,
-                          )
+                        : Math.round(Math.random() * (column.getSize() - column.getSize() / 3) + column.getSize() / 3)
                     : 100,
             ),
         [],
@@ -131,41 +116,27 @@ export const MRT_TableBodyCell = ({
         return borderStyle
             ? {
                   borderLeft:
-                      isDraggingColumn ||
-                      isHoveredColumn ||
-                      ((isDraggingRow || isHoveredRow) && isFirstColumn)
+                      isDraggingColumn || isHoveredColumn || ((isDraggingRow || isHoveredRow) && isFirstColumn)
                           ? borderStyle
                           : undefined,
                   borderRight:
-                      isDraggingColumn ||
-                      isHoveredColumn ||
-                      ((isDraggingRow || isHoveredRow) && isLastColumn)
+                      isDraggingColumn || isHoveredColumn || ((isDraggingRow || isHoveredRow) && isLastColumn)
                           ? borderStyle
                           : undefined,
-                  borderBottom:
-                      isDraggingRow || isHoveredRow || isLastRow
-                          ? borderStyle
-                          : undefined,
-                  borderTop:
-                      isDraggingRow || isHoveredRow ? borderStyle : undefined,
+                  borderBottom: isDraggingRow || isHoveredRow || isLastRow ? borderStyle : undefined,
+                  borderTop: isDraggingRow || isHoveredRow ? borderStyle : undefined,
               }
             : undefined
     }, [draggingColumn, draggingRow, hoveredColumn, hoveredRow, rowIndex])
 
     const isEditable =
-        (enableEditing instanceof Function
-            ? enableEditing(row)
-            : enableEditing) &&
-        (columnDef.enableEditing instanceof Function
-            ? columnDef.enableEditing(row)
-            : columnDef.enableEditing) !== false
+        (enableEditing instanceof Function ? enableEditing(row) : enableEditing) &&
+        (columnDef.enableEditing instanceof Function ? columnDef.enableEditing(row) : columnDef.enableEditing) !== false
 
     const isEditing =
         isEditable &&
         editingMode !== 'modal' &&
-        (editingMode === 'table' ||
-            editingRow?.id === row.id ||
-            editingCell?.id === cell.id) &&
+        (editingMode === 'table' || editingRow?.id === row.id || editingCell?.id === cell.id) &&
         !row.getIsGrouped()
 
     const handleDoubleClick = (event: MouseEvent<HTMLTableCellElement>) => {
@@ -188,9 +159,7 @@ export const MRT_TableBodyCell = ({
             setHoveredColumn(null)
         }
         if (enableColumnOrdering && draggingColumn) {
-            setHoveredColumn(
-                columnDef.enableColumnOrdering !== false ? column : null,
-            )
+            setHoveredColumn(columnDef.enableColumnOrdering !== false ? column : null)
         }
     }
 
@@ -208,26 +177,13 @@ export const MRT_TableBodyCell = ({
             onDoubleClick={handleDoubleClick}
             sx={(theme) => ({
                 alignItems: layoutMode === 'grid' ? 'center' : undefined,
-                cursor:
-                    isEditable && editingMode === 'cell'
-                        ? 'pointer'
-                        : 'inherit',
-                justifyContent:
-                    layoutMode === 'grid' ? tableCellProps.align : undefined,
+                cursor: isEditable && editingMode === 'cell' ? 'pointer' : 'inherit',
+                justifyContent: layoutMode === 'grid' ? tableCellProps.align : undefined,
                 overflow: 'hidden',
-                paddingLeft:
-                    column.id === 'mrt-row-expand'
-                        ? `${row.depth + 1}rem !important`
-                        : undefined,
-                textOverflow:
-                    columnDefType !== 'display' ? 'ellipsis' : undefined,
+                paddingLeft: column.id === 'mrt-row-expand' ? `${row.depth + 1}rem !important` : undefined,
+                textOverflow: columnDefType !== 'display' ? 'ellipsis' : undefined,
                 whiteSpace: density === 'xs' ? 'nowrap' : 'normal',
-                zIndex:
-                    draggingColumn?.id === column.id
-                        ? 2
-                        : column.getIsPinned()
-                        ? 1
-                        : 0,
+                zIndex: draggingColumn?.id === column.id ? 2 : column.getIsPinned() ? 1 : 0,
                 '&:hover': {
                     outline: ['table', 'cell'].includes(editingMode ?? '')
                         ? `1px solid ${theme.colors.gray[7]}`
@@ -248,17 +204,14 @@ export const MRT_TableBodyCell = ({
         >
             <>
                 {cell.getIsPlaceholder() ? (
-                    columnDef.PlaceholderCell?.({ cell, column, row, table }) ??
-                    null
+                    columnDef.PlaceholderCell?.({ cell, column, row, table }) ?? null
                 ) : isLoading || showSkeletons ? (
                     <Skeleton
                         height={20}
                         width={skeletonWidth}
                         {...skeletonProps}
                     />
-                ) : enableRowNumbers &&
-                  rowNumberMode === 'static' &&
-                  column.id === 'mrt-row-numbers' ? (
+                ) : enableRowNumbers && rowNumberMode === 'static' && column.id === 'mrt-row-numbers' ? (
                     rowIndex + 1
                 ) : column.id === 'mrt-row-drag' ? (
                     <MRT_TableBodyRowGrabHandle
@@ -267,9 +220,7 @@ export const MRT_TableBodyCell = ({
                         table={table}
                     />
                 ) : columnDefType === 'display' &&
-                  (column.id === 'mrt-row-select' ||
-                      column.id === 'mrt-row-expand' ||
-                      !row.getIsGrouped()) ? (
+                  (column.id === 'mrt-row-select' || column.id === 'mrt-row-expand' || !row.getIsGrouped()) ? (
                     columnDef.Cell?.({
                         cell,
                         column,
@@ -282,8 +233,7 @@ export const MRT_TableBodyCell = ({
                         cell={cell}
                         table={table}
                     />
-                ) : (enableClickToCopy || columnDef.enableClickToCopy) &&
-                  columnDef.enableClickToCopy !== false ? (
+                ) : (enableClickToCopy || columnDef.enableClickToCopy) && columnDef.enableClickToCopy !== false ? (
                     <MRT_CopyButton
                         cell={cell}
                         table={table}
@@ -300,14 +250,9 @@ export const MRT_TableBodyCell = ({
                     />
                 )}
             </>
-            {cell.getIsGrouped() && !columnDef.GroupedCell && (
-                <> ({row.subRows?.length})</>
-            )}
+            {cell.getIsGrouped() && !columnDef.GroupedCell && <> ({row.subRows?.length})</>}
         </Box>
     )
 }
 
-export const Memo_MRT_TableBodyCell = memo(
-    MRT_TableBodyCell,
-    (prev, next) => next.cell === prev.cell,
-)
+export const Memo_MRT_TableBodyCell = memo(MRT_TableBodyCell, (prev, next) => next.cell === prev.cell)

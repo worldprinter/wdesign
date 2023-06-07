@@ -1,10 +1,10 @@
-export { Calendar } from './Calendar';
-export { pickCalendarProps } from './pick-calendar-levels-props/pick-calendar-levels-props';
+export { Calendar } from './Calendar'
+export { pickCalendarProps } from './pick-calendar-levels-props/pick-calendar-levels-props'
 export type {
-  CalendarSettings,
-  CalendarAriaLabels,
-  CalendarProps,
-  CalendarStylesNames,
-  CalendarBaseProps,
-  CalendarSystemProps,
-} from './Calendar';
+    CalendarSettings,
+    CalendarAriaLabels,
+    CalendarProps,
+    CalendarStylesNames,
+    CalendarBaseProps,
+    CalendarSystemProps,
+} from './Calendar'

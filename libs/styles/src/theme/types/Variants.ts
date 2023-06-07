@@ -1,1 +1,1 @@
-export type Variants<T> = T | (string & {});
+export type Variants<T> = T | (string & {})

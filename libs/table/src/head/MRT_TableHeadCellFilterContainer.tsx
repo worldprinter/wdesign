@@ -1,18 +1,13 @@
-import React from 'react'
-import {
-    ActionIcon,
-    Collapse,
-    Flex,
-    Menu,
-    Text,
-    Tooltip,
-} from '@worldprinter/wdesign-core'
 import { IconFilter } from '@tabler/icons-react'
+import React from 'react'
+
+import { ActionIcon, Collapse, Flex, Menu, Text, Tooltip } from '@worldprinter/wdesign-core'
+
+import type { MRT_Header, MRT_TableInstance } from '..'
+import { MRT_FilterCheckbox } from '../inputs/MRT_FilterCheckbox'
 import { MRT_FilterRangeFields } from '../inputs/MRT_FilterRangeFields'
 import { MRT_FilterTextInput } from '../inputs/MRT_FilterTextInput'
-import { MRT_FilterCheckbox } from '../inputs/MRT_FilterCheckbox'
 import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu'
-import type { MRT_Header, MRT_TableInstance } from '..'
 
 interface Props {
     header: MRT_Header
@@ -22,24 +17,18 @@ interface Props {
 export const MRT_TableHeadCellFilterContainer = ({ header, table }: Props) => {
     const {
         getState,
-        options: {
-            enableColumnFilterModes,
-            columnFilterModeOptions,
-            localization,
-        },
+        options: { enableColumnFilterModes, columnFilterModeOptions, localization },
     } = table
     const { showColumnFilters } = getState()
     const { column } = header
     const { columnDef } = column
 
     const currentFilterOption = columnDef._filterFn
-    const allowedColumnFilterOptions =
-        columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
+    const allowedColumnFilterOptions = columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
     const showChangeModeButton =
         enableColumnFilterModes &&
         columnDef.enableColumnFilterModes !== false &&
-        (allowedColumnFilterOptions === undefined ||
-            !!allowedColumnFilterOptions?.length)
+        (allowedColumnFilterOptions === undefined || !!allowedColumnFilterOptions?.length)
 
     return (
         <Collapse in={showColumnFilters}>
@@ -52,9 +41,7 @@ export const MRT_TableHeadCellFilterContainer = ({ header, table }: Props) => {
                         />
                     ) : columnDef.filterVariant === 'range' ||
                       columnDef.filterVariant === 'date-range' ||
-                      ['between', 'betweenInclusive', 'inNumberRange'].includes(
-                          columnDef._filterFn,
-                      ) ? (
+                      ['between', 'betweenInclusive', 'inNumberRange'].includes(columnDef._filterFn) ? (
                         <MRT_FilterRangeFields
                             header={header}
                             table={table}
@@ -75,9 +62,7 @@ export const MRT_TableHeadCellFilterContainer = ({ header, table }: Props) => {
                             >
                                 <Menu.Target>
                                     <ActionIcon
-                                        aria-label={
-                                            localization.changeFilterMode
-                                        }
+                                        aria-label={localization.changeFilterMode}
                                         size='md'
                                         sx={{ transform: 'translateY(-2px)' }}
                                     >
@@ -106,12 +91,7 @@ export const MRT_TableHeadCellFilterContainer = ({ header, table }: Props) => {
                             '{filterType}',
                             // @ts-ignore
                             localization[
-                                `filter${
-                                    currentFilterOption
-                                        ?.charAt(0)
-                                        ?.toUpperCase() +
-                                    currentFilterOption?.slice(1)
-                                }`
+                                `filter${currentFilterOption?.charAt(0)?.toUpperCase() + currentFilterOption?.slice(1)}`
                             ],
                         )}
                     </Text>

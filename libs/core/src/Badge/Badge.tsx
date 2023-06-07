@@ -1,95 +1,94 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineSize,
-  MantineNumberSize,
-  MantineGradient,
-  MantineColor,
-  Selectors,
-  useComponentDefaultProps,
-  Variants,
-} from '@worldprinter/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
-import { Box } from '../Box';
-import useStyles, { BadgeStylesParams } from './Badge.styles';
+    DefaultProps,
+    MantineColor,
+    MantineGradient,
+    MantineNumberSize,
+    MantineSize,
+    Selectors,
+    useComponentDefaultProps,
+    Variants,
+} from '@worldprinter/wdesign-styles'
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-export type BadgeStylesNames = Selectors<typeof useStyles>;
-export type BadgeVariant = Variants<
-  'light' | 'filled' | 'outline' | 'dot' | 'gradient'
->;
+import { Box } from '../Box'
+import useStyles, { BadgeStylesParams } from './Badge.styles'
 
-export interface BadgeProps
-  extends DefaultProps<BadgeStylesNames, BadgeStylesParams> {
-  /** Key of theme.colors */
-  color?: MantineColor;
+export type BadgeStylesNames = Selectors<typeof useStyles>
+export type BadgeVariant = Variants<'light' | 'filled' | 'outline' | 'dot' | 'gradient'>
 
-  /** Controls appearance */
-  variant?: BadgeVariant;
+export interface BadgeProps extends DefaultProps<BadgeStylesNames, BadgeStylesParams> {
+    /** Key of theme.colors */
+    color?: MantineColor
 
-  /** Controls gradient, applied to gradient variant only */
-  gradient?: MantineGradient;
+    /** Controls appearance */
+    variant?: BadgeVariant
 
-  /** Badge height and font size */
-  size?: MantineSize;
+    /** Controls gradient, applied to gradient variant only */
+    gradient?: MantineGradient
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-  radius?: MantineNumberSize;
+    /** Badge height and font size */
+    size?: MantineSize
 
-  /** Sets badge width to 100% of parent element, hides overflow text with text-overflow: ellipsis */
-  fullWidth?: boolean;
+    /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
+    radius?: MantineNumberSize
 
-  /** Section rendered on the left side of label */
-  leftSection?: React.ReactNode;
+    /** Sets badge width to 100% of parent element, hides overflow text with text-overflow: ellipsis */
+    fullWidth?: boolean
 
-  /** Section rendered on the right side of label */
-  rightSection?: React.ReactNode;
+    /** Section rendered on the left side of label */
+    leftSection?: React.ReactNode
 
-  /** Badge label */
-  children?: React.ReactNode;
+    /** Section rendered on the right side of label */
+    rightSection?: React.ReactNode
+
+    /** Badge label */
+    children?: React.ReactNode
 }
 
 const defaultProps: Partial<BadgeProps> = {
-  variant: 'light',
-  size: 'md',
-  radius: 'xl',
-};
+    variant: 'light',
+    size: 'md',
+    radius: 'xl',
+}
 
 export const _Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
-  const {
-    className,
-    color,
-    variant,
-    fullWidth,
-    children,
-    size,
-    leftSection,
-    rightSection,
-    radius,
-    gradient,
-    classNames,
-    styles,
-    unstyled,
-    ...others
-  } = useComponentDefaultProps('Badge', defaultProps, props);
+    const {
+        className,
+        color,
+        variant,
+        fullWidth,
+        children,
+        size,
+        leftSection,
+        rightSection,
+        radius,
+        gradient,
+        classNames,
+        styles,
+        unstyled,
+        ...others
+    } = useComponentDefaultProps('Badge', defaultProps, props)
 
-  const { classes, cx } = useStyles(
-    { fullWidth, color, radius, gradient },
-    { classNames, styles, name: 'Badge', unstyled, variant, size }
-  );
+    const { classes, cx } = useStyles(
+        { fullWidth, color, radius, gradient },
+        { classNames, styles, name: 'Badge', unstyled, variant, size },
+    )
 
-  return (
-    <Box className={cx(classes.root, className)} ref={ref} {...others}>
-      {leftSection && (
-        <span className={classes.leftSection}>{leftSection}</span>
-      )}
-      <span className={classes.inner}>{children}</span>
-      {rightSection && (
-        <span className={classes.rightSection}>{rightSection}</span>
-      )}
-    </Box>
-  );
-});
+    return (
+        <Box
+            className={cx(classes.root, className)}
+            ref={ref}
+            {...others}
+        >
+            {leftSection && <span className={classes.leftSection}>{leftSection}</span>}
+            <span className={classes.inner}>{children}</span>
+            {rightSection && <span className={classes.rightSection}>{rightSection}</span>}
+        </Box>
+    )
+})
 
-_Badge.displayName = '@worldprinter/wdesign-core/Badge';
+_Badge.displayName = '@worldprinter/wdesign-core/Badge'
 
-export const Badge = createPolymorphicComponent<'div', BadgeProps>(_Badge);
+export const Badge = createPolymorphicComponent<'div', BadgeProps>(_Badge)

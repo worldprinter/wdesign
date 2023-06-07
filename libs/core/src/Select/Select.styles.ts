@@ -1,13 +1,13 @@
-import { createStyles } from '@worldprinter/wdesign-styles';
+import { createStyles } from '@worldprinter/wdesign-styles'
 
 export default createStyles(() => ({
-  input: {
-    '&:not(:disabled)': {
-      cursor: 'pointer',
+    input: {
+        '&:not(:disabled)': {
+            cursor: 'pointer',
 
-      '&::selection': {
-        backgroundColor: 'transparent',
-      },
+            '&::selection': {
+                backgroundColor: 'transparent',
+            },
+        },
     },
-  },
-}));
+}))

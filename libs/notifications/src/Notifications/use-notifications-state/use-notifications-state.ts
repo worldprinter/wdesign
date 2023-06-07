@@ -1,65 +1,62 @@
-import { useQueue, randomId } from '@worldprinter/wdesign-hooks';
-import { NotificationProps } from '../../types';
+import { randomId, useQueue } from '@worldprinter/wdesign-hooks'
+
+import { NotificationProps } from '../../types'
 
 export default function useNotificationsState({ limit }: { limit: number }) {
-  const { state, queue, update, cleanQueue } = useQueue<NotificationProps>({
-    initialValues: [],
-    limit,
-  });
+    const { state, queue, update, cleanQueue } = useQueue<NotificationProps>({
+        initialValues: [],
+        limit,
+    })
 
-  const showNotification = (notification: NotificationProps) => {
-    const id = notification.id || randomId();
+    const showNotification = (notification: NotificationProps) => {
+        const id = notification.id || randomId()
 
-    update((notifications) => {
-      if (
-        notification.id &&
-        notifications.some((n) => n.id === notification.id)
-      ) {
-        return notifications;
-      }
+        update((notifications) => {
+            if (notification.id && notifications.some((n) => n.id === notification.id)) {
+                return notifications
+            }
 
-      return [...notifications, { ...notification, id }];
-    });
+            return [...notifications, { ...notification, id }]
+        })
 
-    return id;
-  };
+        return id
+    }
 
-  const updateNotification = (notification: NotificationProps) =>
-    update((notifications) => {
-      const index = notifications.findIndex((n) => n.id === notification.id);
+    const updateNotification = (notification: NotificationProps) =>
+        update((notifications) => {
+            const index = notifications.findIndex((n) => n.id === notification.id)
 
-      if (index === -1) {
-        return notifications;
-      }
+            if (index === -1) {
+                return notifications
+            }
 
-      const newNotifications = [...notifications];
-      newNotifications[index] = notification;
+            const newNotifications = [...notifications]
+            newNotifications[index] = notification
 
-      return newNotifications;
-    });
+            return newNotifications
+        })
 
-  const hideNotification = (id: string) =>
-    update((notifications) =>
-      notifications.filter((notification) => {
-        if (notification.id === id) {
-          typeof notification.onClose === 'function' &&
-            notification.onClose(notification);
-          return false;
-        }
+    const hideNotification = (id: string) =>
+        update((notifications) =>
+            notifications.filter((notification) => {
+                if (notification.id === id) {
+                    typeof notification.onClose === 'function' && notification.onClose(notification)
+                    return false
+                }
 
-        return true;
-      })
-    );
+                return true
+            }),
+        )
 
-  const clean = () => update(() => []);
+    const clean = () => update(() => [])
 
-  return {
-    notifications: state,
-    queue,
-    showNotification,
-    updateNotification,
-    hideNotification,
-    cleanQueue,
-    clean,
-  };
+    return {
+        notifications: state,
+        queue,
+        showNotification,
+        updateNotification,
+        hideNotification,
+        cleanQueue,
+        clean,
+    }
 }

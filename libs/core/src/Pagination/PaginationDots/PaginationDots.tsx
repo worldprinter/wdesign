@@ -1,48 +1,40 @@
-import React, { forwardRef } from 'react';
-import {
-  Selectors,
-  useComponentDefaultProps,
-  DefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import {
-  PaginationDotsIcon,
-  PaginationIconProps,
-  getIconSize,
-} from '../Pagination.icons';
-import useStyles from './PaginationDots.styles';
-import { usePaginationContext } from '../Pagination.context';
+import React, { forwardRef } from 'react'
 
-export type PaginationDotsStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+
+import { Box } from '../../Box'
+import { usePaginationContext } from '../Pagination.context'
+import { getIconSize, PaginationDotsIcon, PaginationIconProps } from '../Pagination.icons'
+import useStyles from './PaginationDots.styles'
+
+export type PaginationDotsStylesNames = Selectors<typeof useStyles>
 
 export interface PaginationDotsProps
-  extends DefaultProps<PaginationDotsStylesNames>,
-    React.ComponentPropsWithoutRef<'div'> {
-  /** Custom dots icon component, must accept svg element props and size prop */
-  icon?: React.FC<PaginationIconProps>;
+    extends DefaultProps<PaginationDotsStylesNames>,
+        React.ComponentPropsWithoutRef<'div'> {
+    /** Custom dots icon component, must accept svg element props and size prop */
+    icon?: React.FC<PaginationIconProps>
 }
 
 const defaultProps: Partial<PaginationDotsProps> = {
-  icon: PaginationDotsIcon,
-};
+    icon: PaginationDotsIcon,
+}
 
-export const PaginationDots = forwardRef<HTMLDivElement, PaginationDotsProps>(
-  (props, ref) => {
-    const {
-      className,
-      icon: Icon,
-      ...others
-    } = useComponentDefaultProps('PaginationDots', defaultProps, props);
+export const PaginationDots = forwardRef<HTMLDivElement, PaginationDotsProps>((props, ref) => {
+    const { className, icon: Icon, ...others } = useComponentDefaultProps('PaginationDots', defaultProps, props)
 
-    const ctx = usePaginationContext();
-    const { classes, cx } = useStyles(null, ctx.stylesApi);
+    const ctx = usePaginationContext()
+    const { classes, cx } = useStyles(null, ctx.stylesApi)
 
     return (
-      <Box ref={ref} className={cx(classes.dots, className)} {...others}>
-        <Icon size={getIconSize(ctx.stylesApi.size)} />
-      </Box>
-    );
-  }
-);
+        <Box
+            ref={ref}
+            className={cx(classes.dots, className)}
+            {...others}
+        >
+            <Icon size={getIconSize(ctx.stylesApi.size)} />
+        </Box>
+    )
+})
 
-PaginationDots.displayName = '@worldprinter/wdesign-core/PaginationDots';
+PaginationDots.displayName = '@worldprinter/wdesign-core/PaginationDots'

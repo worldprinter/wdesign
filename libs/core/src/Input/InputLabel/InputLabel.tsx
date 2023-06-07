@@ -1,91 +1,87 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineSize,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import useStyles from './InputLabel.styles';
+import React, { forwardRef } from 'react'
 
-export type InputLabelStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface InputLabelProps
-  extends DefaultProps<InputLabelStylesNames>,
-    React.ComponentPropsWithoutRef<'label'> {
-  variant?: string;
+import { Box } from '../../Box'
+import useStyles from './InputLabel.styles'
 
-  /** Label content */
-  children?: React.ReactNode;
+export type InputLabelStylesNames = Selectors<typeof useStyles>
 
-  /** Label root element */
-  labelElement?: 'label' | 'div';
+export interface InputLabelProps extends DefaultProps<InputLabelStylesNames>, React.ComponentPropsWithoutRef<'label'> {
+    variant?: string
 
-  /** Determines whether required asterisk should be displayed */
-  required?: boolean;
+    /** Label content */
+    children?: React.ReactNode
 
-  /** Predefined label size */
-  size?: MantineSize;
+    /** Label root element */
+    labelElement?: 'label' | 'div'
 
-  __staticSelector?: string;
+    /** Determines whether required asterisk should be displayed */
+    required?: boolean
+
+    /** Predefined label size */
+    size?: MantineSize
+
+    __staticSelector?: string
 }
 
 const defaultProps: Partial<InputLabelProps> = {
-  labelElement: 'label',
-  size: 'sm',
-};
+    labelElement: 'label',
+    size: 'sm',
+}
 
-export const InputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
-  (props, ref) => {
+export const InputLabel = forwardRef<HTMLLabelElement, InputLabelProps>((props, ref) => {
     const {
-      labelElement,
-      children,
-      required,
-      size,
-      classNames,
-      styles,
-      unstyled,
-      className,
-      htmlFor,
-      __staticSelector,
-      variant,
-      onMouseDown,
-      ...others
-    } = useComponentDefaultProps('InputLabel', defaultProps, props);
+        labelElement,
+        children,
+        required,
+        size,
+        classNames,
+        styles,
+        unstyled,
+        className,
+        htmlFor,
+        __staticSelector,
+        variant,
+        onMouseDown,
+        ...others
+    } = useComponentDefaultProps('InputLabel', defaultProps, props)
 
     const { classes, cx } = useStyles(null, {
-      name: ['InputWrapper', __staticSelector],
-      classNames,
-      styles,
-      unstyled,
-      variant,
-      size,
-    });
+        name: ['InputWrapper', __staticSelector],
+        classNames,
+        styles,
+        unstyled,
+        variant,
+        size,
+    })
 
     return (
-      <Box<'label'>
-        component={labelElement as 'label'}
-        ref={ref}
-        className={cx(classes.label, className)}
-        htmlFor={labelElement === 'label' ? htmlFor : undefined}
-        onMouseDown={(event) => {
-          onMouseDown?.(event);
-          if (!event.defaultPrevented && event.detail > 1) {
-            event.preventDefault();
-          }
-        }}
-        {...others}
-      >
-        {children}
-        {required && (
-          <span className={classes.required} aria-hidden>
-            {' *'}
-          </span>
-        )}
-      </Box>
-    );
-  }
-);
+        <Box<'label'>
+            component={labelElement as 'label'}
+            ref={ref}
+            className={cx(classes.label, className)}
+            htmlFor={labelElement === 'label' ? htmlFor : undefined}
+            onMouseDown={(event) => {
+                onMouseDown?.(event)
+                if (!event.defaultPrevented && event.detail > 1) {
+                    event.preventDefault()
+                }
+            }}
+            {...others}
+        >
+            {children}
+            {required && (
+                <span
+                    className={classes.required}
+                    aria-hidden
+                >
+                    {' *'}
+                </span>
+            )}
+        </Box>
+    )
+})
 
-InputLabel.displayName = '@worldprinter/wdesign-core/InputLabel';
+InputLabel.displayName = '@worldprinter/wdesign-core/InputLabel'

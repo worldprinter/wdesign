@@ -1,2 +1,2 @@
-export { InlineInput } from './InlineInput';
-export type { InlineInputProps, InlineInputStylesNames } from './InlineInput';
+export { InlineInput } from './InlineInput'
+export type { InlineInputProps, InlineInputStylesNames } from './InlineInput'

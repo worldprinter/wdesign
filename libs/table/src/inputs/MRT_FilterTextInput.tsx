@@ -1,15 +1,8 @@
 import React, { MouseEvent, useEffect, useRef, useState } from 'react'
-import {
-    ActionIcon,
-    Box,
-    Chip,
-    MantineTheme,
-    MultiSelect,
-    packSx,
-    Select,
-    TextInput,
-} from '@worldprinter/wdesign-core'
+
+import { ActionIcon, Box, Chip, MantineTheme, MultiSelect, packSx, Select, TextInput } from '@worldprinter/wdesign-core'
 import { useDebouncedValue } from '@worldprinter/wdesign-hooks'
+
 import type { MRT_Header, MRT_TableInstance } from '..'
 
 interface Props {
@@ -18,11 +11,7 @@ interface Props {
     table: MRT_TableInstance
 }
 
-export const MRT_FilterTextInput = ({
-    header,
-    rangeFilterIndex,
-    table,
-}: Props) => {
+export const MRT_FilterTextInput = ({ header, rangeFilterIndex, table }: Props) => {
     const {
         options: {
             columnFilterModeOptions,
@@ -107,25 +96,15 @@ export const MRT_FilterTextInput = ({
     const isSelectFilter = columnDef.filterVariant === 'select'
     const isMultiSelectFilter = columnDef.filterVariant === 'multi-select'
     const isDateFilter = columnDef.filterVariant === 'date'
-    const allowedColumnFilterOptions =
-        columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
+    const allowedColumnFilterOptions = columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
 
     const currentFilterOption = columnDef._filterFn
     const filterChipLabel = ['empty', 'notEmpty'].includes(currentFilterOption)
         ? //@ts-ignore
-          localization[
-              `filter${
-                  currentFilterOption?.charAt?.(0)?.toUpperCase() +
-                  currentFilterOption?.slice(1)
-              }`
-          ]
+          localization[`filter${currentFilterOption?.charAt?.(0)?.toUpperCase() + currentFilterOption?.slice(1)}`]
         : ''
     const filterPlaceholder = !isRangeFilter
-        ? textInputProps?.placeholder ??
-          localization.filterByColumn?.replace(
-              '{column}',
-              String(columnDef.header),
-          )
+        ? textInputProps?.placeholder ?? localization.filterByColumn?.replace('{column}', String(columnDef.header))
         : rangeFilterIndex === 0
         ? localization.min
         : rangeFilterIndex === 1
@@ -138,16 +117,11 @@ export const MRT_FilterTextInput = ({
         isMultiSelectFilter
             ? (column.getFilterValue() as string[]) || []
             : isRangeFilter
-            ? (column.getFilterValue() as [string, string])?.[
-                  rangeFilterIndex as number
-              ] || []
+            ? (column.getFilterValue() as [string, string])?.[rangeFilterIndex as number] || []
             : (column.getFilterValue() as string) ?? '',
     )
 
-    const [debouncedFilterValue] = useDebouncedValue(
-        filterValue,
-        manualFiltering ? 400 : 200,
-    )
+    const [debouncedFilterValue] = useDebouncedValue(filterValue, manualFiltering ? 400 : 200)
 
     //send deboundedFilterValue to table instance
     useEffect(() => {
@@ -155,8 +129,7 @@ export const MRT_FilterTextInput = ({
         if (isRangeFilter) {
             column.setFilterValue((old: [string, string]) => {
                 const newFilterValues = Array.isArray(old) ? old : ['', '']
-                newFilterValues[rangeFilterIndex as number] =
-                    debouncedFilterValue as string
+                newFilterValues[rangeFilterIndex as number] = debouncedFilterValue as string
                 return newFilterValues
             })
         } else {
@@ -174,9 +147,7 @@ export const MRT_FilterTextInput = ({
         if (tableFilterValue === undefined) {
             handleClear()
         } else if (isRangeFilter && rangeFilterIndex !== undefined) {
-            setFilterValue(
-                (tableFilterValue as [string, string])[rangeFilterIndex],
-            )
+            setFilterValue((tableFilterValue as [string, string])[rangeFilterIndex])
         } else {
             setFilterValue(tableFilterValue as string)
         }
@@ -188,13 +159,11 @@ export const MRT_FilterTextInput = ({
             column.setFilterValue([])
         } else if (isRangeFilter) {
             setFilterValue('')
-            column.setFilterValue(
-                (old: [string | undefined, string | undefined]) => {
-                    const newFilterValues = old ?? ['', '']
-                    newFilterValues[rangeFilterIndex as number] = undefined
-                    return newFilterValues
-                },
-            )
+            column.setFilterValue((old: [string | undefined, string | undefined]) => {
+                const newFilterValues = old ?? ['', '']
+                newFilterValues[rangeFilterIndex as number] = undefined
+                return newFilterValues
+            })
         } else {
             setFilterValue('')
             column.setFilterValue(undefined)
@@ -227,31 +196,20 @@ export const MRT_FilterTextInput = ({
         disabled: !!filterChipLabel,
         placeholder: filterPlaceholder,
         title: filterPlaceholder,
-        onClick: (event: MouseEvent<HTMLInputElement>) =>
-            event.stopPropagation(),
+        onClick: (event: MouseEvent<HTMLInputElement>) => event.stopPropagation(),
         onChange: setFilterValue,
         value: filterValue,
         variant: 'unstyled',
         sx: (theme: MantineTheme) => ({
-            borderBottom: `2px solid ${
-                theme.colors.gray[theme.colorScheme === 'dark' ? 7 : 3]
-            }`,
-            minWidth: isRangeFilter
-                ? '80px'
-                : !filterChipLabel
-                ? '100px'
-                : 'auto',
+            borderBottom: `2px solid ${theme.colors.gray[theme.colorScheme === 'dark' ? 7 : 3]}`,
+            minWidth: isRangeFilter ? '80px' : !filterChipLabel ? '100px' : 'auto',
             width: '100%',
             '& .mantine-TextInput-input': {
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
             },
             ...(packSx(
-                isMultiSelectFilter
-                    ? multiSelectProps.sx
-                    : isSelectFilter
-                    ? selectProps.sx
-                    : textInputProps?.sx,
+                isMultiSelectFilter ? multiSelectProps.sx : isSelectFilter ? selectProps.sx : textInputProps?.sx,
             ) as any),
         }),
     } as const
@@ -309,9 +267,7 @@ export const MRT_FilterTextInput = ({
             {...textInputProps}
             ref={(node) => {
                 if (node) {
-                    filterInputRefs.current[
-                        `${column.id}-${rangeFilterIndex ?? 0}`
-                    ] = node
+                    filterInputRefs.current[`${column.id}-${rangeFilterIndex ?? 0}`] = node
                     if (textInputProps.ref) {
                         textInputProps.ref.current = node
                     }

@@ -1,12 +1,9 @@
 import React from 'react'
+
 import { Box } from '@worldprinter/wdesign-core'
+
+import type { MRT_Header, MRT_HeaderGroup, MRT_TableInstance, MRT_VirtualItem } from '..'
 import { MRT_TableHeadCell } from './MRT_TableHeadCell'
-import type {
-    MRT_Header,
-    MRT_HeaderGroup,
-    MRT_TableInstance,
-    MRT_VirtualItem,
-} from '..'
 
 interface Props {
     headerGroup: MRT_HeaderGroup
@@ -41,40 +38,29 @@ export const MRT_TableHeadRow = ({
             component='tr'
             {...tableRowProps}
             sx={(theme) => ({
-                backgroundColor:
-                    theme.colorScheme === 'dark'
-                        ? theme.colors.dark[7]
-                        : theme.white,
+                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
                 boxShadow: `4px 0 8px ${theme.fn.rgba(theme.black, 0.1)}`,
                 display: layoutMode === 'grid' ? 'flex' : 'table-row',
                 top: stickyHeader ? 0 : undefined,
-                ...(tableRowProps?.sx instanceof Function
-                    ? tableRowProps?.sx(theme)
-                    : (tableRowProps?.sx as any)),
+                ...(tableRowProps?.sx instanceof Function ? tableRowProps?.sx(theme) : (tableRowProps?.sx as any)),
                 position: stickyHeader ? 'sticky' : undefined,
             })}
         >
-            {virtualPaddingLeft ? (
-                <th style={{ display: 'flex', width: virtualPaddingLeft }} />
-            ) : null}
-            {(virtualColumns ?? headerGroup.headers).map(
-                (headerOrVirtualHeader) => {
-                    const header = virtualColumns
-                        ? headerGroup.headers[headerOrVirtualHeader.index]
-                        : (headerOrVirtualHeader as MRT_Header)
+            {virtualPaddingLeft ? <th style={{ display: 'flex', width: virtualPaddingLeft }} /> : null}
+            {(virtualColumns ?? headerGroup.headers).map((headerOrVirtualHeader) => {
+                const header = virtualColumns
+                    ? headerGroup.headers[headerOrVirtualHeader.index]
+                    : (headerOrVirtualHeader as MRT_Header)
 
-                    return (
-                        <MRT_TableHeadCell
-                            header={header}
-                            key={header.id}
-                            table={table}
-                        />
-                    )
-                },
-            )}
-            {virtualPaddingRight ? (
-                <th style={{ display: 'flex', width: virtualPaddingRight }} />
-            ) : null}
+                return (
+                    <MRT_TableHeadCell
+                        header={header}
+                        key={header.id}
+                        table={table}
+                    />
+                )
+            })}
+            {virtualPaddingRight ? <th style={{ display: 'flex', width: virtualPaddingRight }} /> : null}
         </Box>
     )
 }

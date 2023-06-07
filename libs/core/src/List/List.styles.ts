@@ -1,27 +1,21 @@
-import {
-  createStyles,
-  MantineNumberSize,
-  getSize,
-} from '@worldprinter/wdesign-styles';
+import { createStyles, getSize, MantineNumberSize } from '@worldprinter/wdesign-styles'
 
 export interface ListStylesParams {
-  withPadding: boolean;
-  listStyleType: string;
-  spacing: MantineNumberSize;
-  center: boolean;
+    withPadding: boolean
+    listStyleType: string
+    spacing: MantineNumberSize
+    center: boolean
 }
 
-export default createStyles(
-  (theme, { withPadding, listStyleType }: ListStylesParams, { size }) => ({
+export default createStyles((theme, { withPadding, listStyleType }: ListStylesParams, { size }) => ({
     root: {
-      ...theme.fn.fontStyles(),
-      listStyleType,
-      color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-      fontSize: getSize({ size, sizes: theme.fontSizes }),
-      lineHeight: theme.lineHeight,
-      margin: 0,
-      paddingLeft: withPadding ? theme.spacing.xl : 0,
-      listStylePosition: 'inside',
+        ...theme.fn.fontStyles(),
+        listStyleType,
+        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        fontSize: getSize({ size, sizes: theme.fontSizes }),
+        lineHeight: theme.lineHeight,
+        margin: 0,
+        paddingLeft: withPadding ? theme.spacing.xl : 0,
+        listStylePosition: 'inside',
     },
-  })
-);
+}))

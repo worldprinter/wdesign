@@ -1,103 +1,96 @@
-import {
-  createStyles,
-  MantineColor,
-  MantineNumberSize,
-  MantineTheme,
-  rem,
-  getSize,
-} from '@worldprinter/wdesign-styles';
+import { createStyles, getSize, MantineColor, MantineNumberSize, MantineTheme, rem } from '@worldprinter/wdesign-styles'
 
 export interface NavLinkStylesParams {
-  color: MantineColor;
-  noWrap: boolean;
-  childrenOffset: MantineNumberSize;
-  alignIcon: 'top' | 'center';
+    color: MantineColor
+    noWrap: boolean
+    childrenOffset: MantineNumberSize
+    alignIcon: 'top' | 'center'
 }
 
-const NAV_LINK_VARIANTS = ['filled', 'light', 'subtle'];
+const NAV_LINK_VARIANTS = ['filled', 'light', 'subtle']
 
 interface GetVariantStylesInput {
-  theme: MantineTheme;
-  variant: string;
-  color: MantineColor;
+    theme: MantineTheme
+    variant: string
+    color: MantineColor
 }
 
 function getVariantStyles({ theme, variant, color }: GetVariantStylesInput) {
-  if (!NAV_LINK_VARIANTS.includes(variant)) {
-    return null;
-  }
+    if (!NAV_LINK_VARIANTS.includes(variant)) {
+        return null
+    }
 
-  const colors = theme.fn.variant({ variant, color });
+    const colors = theme.fn.variant({ variant, color })
 
-  return {
-    '&[data-active]': {
-      backgroundColor: colors.background,
-      color: colors.color,
-      ...theme.fn.hover({ backgroundColor: colors.hover }),
-    },
-  };
+    return {
+        '&[data-active]': {
+            backgroundColor: colors.background,
+            color: colors.color,
+            ...theme.fn.hover({ backgroundColor: colors.hover }),
+        },
+    }
 }
 
 export default createStyles(
-  (theme, { noWrap, childrenOffset, alignIcon, color }: NavLinkStylesParams, { variant }) => ({
-    root: {
-      display: 'flex',
-      alignItems: 'center',
-      width: '100%',
-      padding: `${rem(8)} ${theme.spacing.sm}`,
-      userSelect: 'none',
-      ...getVariantStyles({ theme, variant, color }),
+    (theme, { noWrap, childrenOffset, alignIcon, color }: NavLinkStylesParams, { variant }) => ({
+        root: {
+            display: 'flex',
+            alignItems: 'center',
+            width: '100%',
+            padding: `${rem(8)} ${theme.spacing.sm}`,
+            userSelect: 'none',
+            ...getVariantStyles({ theme, variant, color }),
 
-      ...theme.fn.hover({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-      }),
+            ...theme.fn.hover({
+                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            }),
 
-      '&[data-disabled]': {
-        opacity: 0.4,
-        pointerEvents: 'none',
-      },
-    },
+            '&[data-disabled]': {
+                opacity: 0.4,
+                pointerEvents: 'none',
+            },
+        },
 
-    icon: {
-      marginRight: theme.spacing.sm,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: alignIcon === 'center' ? 'center' : 'flex-start',
-      paddingTop: alignIcon === 'center' ? undefined : rem(4),
-    },
+        icon: {
+            marginRight: theme.spacing.sm,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignSelf: alignIcon === 'center' ? 'center' : 'flex-start',
+            paddingTop: alignIcon === 'center' ? undefined : rem(4),
+        },
 
-    rightSection: {
-      marginLeft: theme.spacing.sm,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      transition: `transform 150ms ${theme.transitionTimingFunction}`,
+        rightSection: {
+            marginLeft: theme.spacing.sm,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            transition: `transform 150ms ${theme.transitionTimingFunction}`,
 
-      '&[data-rotate]': {
-        transform: 'rotate(90deg)',
-      },
-    },
+            '&[data-rotate]': {
+                transform: 'rotate(90deg)',
+            },
+        },
 
-    body: {
-      flex: 1,
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: noWrap ? 'nowrap' : undefined,
-    },
+        body: {
+            flex: 1,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: noWrap ? 'nowrap' : undefined,
+        },
 
-    label: {},
+        label: {},
 
-    description: {
-      display: 'block',
+        description: {
+            display: 'block',
 
-      '&[data-active]': {
-        color: 'inherit',
-      },
-    },
+            '&[data-active]': {
+                color: 'inherit',
+            },
+        },
 
-    children: {
-      paddingLeft: getSize({ size: childrenOffset, sizes: theme.spacing }),
-    },
-  })
-);
+        children: {
+            paddingLeft: getSize({ size: childrenOffset, sizes: theme.spacing }),
+        },
+    }),
+)

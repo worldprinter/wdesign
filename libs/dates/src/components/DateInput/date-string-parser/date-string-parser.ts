@@ -1,9 +1,9 @@
 export function dateStringParser(dateString: string) {
-  const date = new Date(dateString);
+    const date = new Date(dateString)
 
-  if (Number.isNaN(date.getTime()) || !dateString) {
-    return null;
-  }
+    if (Number.isNaN(date.getTime()) || !dateString) {
+        return null
+    }
 
-  return date;
+    return date
 }

@@ -1,108 +1,103 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineNumberSize,
-  MantineColor,
-  useComponentDefaultProps,
-  Variants,
-  rem,
-} from '@worldprinter/wdesign-styles';
-import useStyles from './Divider.styles';
-import { Text } from '../Text';
-import { Box } from '../Box';
+    DefaultProps,
+    MantineColor,
+    MantineNumberSize,
+    rem,
+    useComponentDefaultProps,
+    Variants,
+} from '@worldprinter/wdesign-styles'
 
-export type DividerStylesNames = 'label';
+import { Box } from '../Box'
+import { Text } from '../Text'
+import useStyles from './Divider.styles'
 
-export interface DividerProps
-  extends DefaultProps<DividerStylesNames>,
-    React.ComponentPropsWithoutRef<'div'> {
-  /** Key of theme.colors, defaults to "gray" in light color scheme and to "dark" in dark color scheme */
-  color?: MantineColor;
+export type DividerStylesNames = 'label'
 
-  /** Divider orientation */
-  orientation?: 'horizontal' | 'vertical';
+export interface DividerProps extends DefaultProps<DividerStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+    /** Key of theme.colors, defaults to "gray" in light color scheme and to "dark" in dark color scheme */
+    color?: MantineColor
 
-  /** Sets height when orientation="horizontal" and width when orientation="vertical" */
-  size?: MantineNumberSize;
+    /** Divider orientation */
+    orientation?: 'horizontal' | 'vertical'
 
-  /** Text inside the divider, only applicable when orientation="horizontal" */
-  label?: React.ReactNode;
+    /** Sets height when orientation="horizontal" and width when orientation="vertical" */
+    size?: MantineNumberSize
 
-  /** Label position, only applicable when orientation="horizontal" */
-  labelPosition?: 'left' | 'center' | 'right';
+    /** Text inside the divider, only applicable when orientation="horizontal" */
+    label?: React.ReactNode
 
-  /** Props added to the label element */
-  labelProps?: Record<string, any>;
+    /** Label position, only applicable when orientation="horizontal" */
+    labelPosition?: 'left' | 'center' | 'right'
 
-  /** Controls appearance */
-  variant?: Variants<'solid' | 'dashed' | 'dotted'>;
+    /** Props added to the label element */
+    labelProps?: Record<string, any>
+
+    /** Controls appearance */
+    variant?: Variants<'solid' | 'dashed' | 'dotted'>
 }
 
 const defaultProps: Partial<DividerProps> = {
-  orientation: 'horizontal',
-  size: 'xs',
-  labelPosition: 'left',
-  variant: 'solid',
-};
+    orientation: 'horizontal',
+    size: 'xs',
+    labelPosition: 'left',
+    variant: 'solid',
+}
 
-export const Divider = forwardRef<HTMLDivElement, DividerProps>(
-  (props: DividerProps, ref) => {
+export const Divider = forwardRef<HTMLDivElement, DividerProps>((props: DividerProps, ref) => {
     const {
-      className,
-      color,
-      orientation,
-      size,
-      label,
-      labelPosition,
-      labelProps,
-      variant,
-      styles,
-      classNames,
-      unstyled,
-      ...others
-    } = useComponentDefaultProps('Divider', defaultProps, props);
+        className,
+        color,
+        orientation,
+        size,
+        label,
+        labelPosition,
+        labelProps,
+        variant,
+        styles,
+        classNames,
+        unstyled,
+        ...others
+    } = useComponentDefaultProps('Divider', defaultProps, props)
 
-    const { classes, cx } = useStyles(
-      { color },
-      { classNames, styles, unstyled, name: 'Divider', variant, size }
-    );
+    const { classes, cx } = useStyles({ color }, { classNames, styles, unstyled, name: 'Divider', variant, size })
 
-    const vertical = orientation === 'vertical';
-    const horizontal = orientation === 'horizontal';
-    const withLabel = !!label && horizontal;
+    const vertical = orientation === 'vertical'
+    const horizontal = orientation === 'horizontal'
+    const withLabel = !!label && horizontal
 
-    const useLabelDefaultStyles = !labelProps?.color;
+    const useLabelDefaultStyles = !labelProps?.color
 
     return (
-      <Box
-        ref={ref}
-        className={cx(
-          classes.root,
-          {
-            [classes.vertical]: vertical,
-            [classes.horizontal]: horizontal,
-            [classes.withLabel]: withLabel,
-          },
-          className
-        )}
-        role="separator"
-        {...others}
-      >
-        {withLabel && (
-          <Text
-            {...labelProps}
-            size={labelProps?.size || 'xs'}
-            mt={rem(2)}
-            className={cx(classes.label, classes[labelPosition], {
-              [classes.labelDefaultStyles]: useLabelDefaultStyles,
-            })}
-          >
-            {label}
-          </Text>
-        )}
-      </Box>
-    );
-  }
-);
+        <Box
+            ref={ref}
+            className={cx(
+                classes.root,
+                {
+                    [classes.vertical]: vertical,
+                    [classes.horizontal]: horizontal,
+                    [classes.withLabel]: withLabel,
+                },
+                className,
+            )}
+            role='separator'
+            {...others}
+        >
+            {withLabel && (
+                <Text
+                    {...labelProps}
+                    size={labelProps?.size || 'xs'}
+                    mt={rem(2)}
+                    className={cx(classes.label, classes[labelPosition], {
+                        [classes.labelDefaultStyles]: useLabelDefaultStyles,
+                    })}
+                >
+                    {label}
+                </Text>
+            )}
+        </Box>
+    )
+})
 
-Divider.displayName = '@worldprinter/wdesign-core/Divider';
+Divider.displayName = '@worldprinter/wdesign-core/Divider'

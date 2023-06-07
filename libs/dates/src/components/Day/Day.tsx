@@ -1,122 +1,124 @@
-import React, { forwardRef } from 'react';
-import {
-  UnstyledButton,
-  DefaultProps,
-  useComponentDefaultProps,
-  MantineNumberSize,
-  Selectors,
-  MantineSize,
-} from '@worldprinter/wdesign-core';
-import dayjs from 'dayjs';
-import useStyles, { DayStylesParams } from './Day.styles';
+import dayjs from 'dayjs'
+import React, { forwardRef } from 'react'
 
-export type DayStylesNames = Selectors<typeof useStyles>;
+import {
+    DefaultProps,
+    MantineNumberSize,
+    MantineSize,
+    Selectors,
+    UnstyledButton,
+    useComponentDefaultProps,
+} from '@worldprinter/wdesign-core'
+
+import useStyles, { DayStylesParams } from './Day.styles'
+
+export type DayStylesNames = Selectors<typeof useStyles>
 
 export interface DayProps
-  extends DefaultProps<DayStylesNames, DayStylesParams>,
-    Omit<React.ComponentPropsWithoutRef<'button'>, 'type'> {
-  variant?: string;
-  __staticSelector?: string;
+    extends DefaultProps<DayStylesNames, DayStylesParams>,
+        Omit<React.ComponentPropsWithoutRef<'button'>, 'type'> {
+    variant?: string
+    __staticSelector?: string
 
-  /** Determines which element should be used as root, button by default, div if static prop is set */
-  static?: boolean;
+    /** Determines which element should be used as root, button by default, div if static prop is set */
+    static?: boolean
 
-  /** Date that should be displayed */
-  date: Date;
+    /** Date that should be displayed */
+    date: Date
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
 
-  /** Day size */
-  size?: MantineSize;
+    /** Day size */
+    size?: MantineSize
 
-  /** Determines whether the day should be considered to be a weekend */
-  weekend?: boolean;
+    /** Determines whether the day should be considered to be a weekend */
+    weekend?: boolean
 
-  /** Determines whether the day is outside of current month */
-  outside?: boolean;
+    /** Determines whether the day is outside of current month */
+    outside?: boolean
 
-  /** Determines whether the day is selected */
-  selected?: boolean;
+    /** Determines whether the day is selected */
+    selected?: boolean
 
-  /** Determines whether the day should not de displayed */
-  hidden?: boolean;
+    /** Determines whether the day should not de displayed */
+    hidden?: boolean
 
-  /** Determines whether day is selected in range */
-  inRange?: boolean;
+    /** Determines whether day is selected in range */
+    inRange?: boolean
 
-  /** Determines whether day is first in range selection */
-  firstInRange?: boolean;
+    /** Determines whether day is first in range selection */
+    firstInRange?: boolean
 
-  /** Determines whether day is last in range selection */
-  lastInRange?: boolean;
+    /** Determines whether day is last in range selection */
+    lastInRange?: boolean
 
-  /** Controls day value rendering */
-  renderDay?(date: Date): React.ReactNode;
+    /** Controls day value rendering */
+    renderDay?(date: Date): React.ReactNode
 }
 
 const defaultProps: Partial<DayProps> = {
-  tabIndex: 0,
-  size: 'sm',
-};
+    tabIndex: 0,
+    size: 'sm',
+}
 
 export const Day = forwardRef<HTMLButtonElement, DayProps>((props, ref) => {
-  const {
-    className,
-    date,
-    radius,
-    disabled,
-    styles,
-    classNames,
-    unstyled,
-    __staticSelector,
-    weekend,
-    outside,
-    selected,
-    renderDay,
-    inRange,
-    firstInRange,
-    lastInRange,
-    hidden,
-    static: isStatic,
-    variant,
-    size,
-    ...others
-  } = useComponentDefaultProps('Day', defaultProps, props);
+    const {
+        className,
+        date,
+        radius,
+        disabled,
+        styles,
+        classNames,
+        unstyled,
+        __staticSelector,
+        weekend,
+        outside,
+        selected,
+        renderDay,
+        inRange,
+        firstInRange,
+        lastInRange,
+        hidden,
+        static: isStatic,
+        variant,
+        size,
+        ...others
+    } = useComponentDefaultProps('Day', defaultProps, props)
 
-  const { classes, cx } = useStyles(
-    { radius, isStatic },
-    {
-      name: ['Day', __staticSelector],
-      classNames,
-      styles,
-      unstyled,
-      variant,
-      size,
-    }
-  );
+    const { classes, cx } = useStyles(
+        { radius, isStatic },
+        {
+            name: ['Day', __staticSelector],
+            classNames,
+            styles,
+            unstyled,
+            variant,
+            size,
+        },
+    )
 
-  return (
-    <UnstyledButton<any>
-      component={isStatic ? 'div' : 'button'}
-      ref={ref}
-      className={cx(classes.day, className)}
-      disabled={disabled}
-      data-today={dayjs(date).isSame(new Date(), 'day') || undefined}
-      data-hidden={hidden || undefined}
-      data-disabled={disabled || undefined}
-      data-weekend={(!disabled && !outside && weekend) || undefined}
-      data-outside={(!disabled && outside) || undefined}
-      data-selected={(!disabled && selected) || undefined}
-      data-in-range={(inRange && !disabled) || undefined}
-      data-first-in-range={(firstInRange && !disabled) || undefined}
-      data-last-in-range={(lastInRange && !disabled) || undefined}
-      unstyled={unstyled}
-      {...others}
-    >
-      {renderDay?.(date) || date.getDate()}
-    </UnstyledButton>
-  );
-});
+    return (
+        <UnstyledButton<any>
+            component={isStatic ? 'div' : 'button'}
+            ref={ref}
+            className={cx(classes.day, className)}
+            disabled={disabled}
+            data-today={dayjs(date).isSame(new Date(), 'day') || undefined}
+            data-hidden={hidden || undefined}
+            data-disabled={disabled || undefined}
+            data-weekend={(!disabled && !outside && weekend) || undefined}
+            data-outside={(!disabled && outside) || undefined}
+            data-selected={(!disabled && selected) || undefined}
+            data-in-range={(inRange && !disabled) || undefined}
+            data-first-in-range={(firstInRange && !disabled) || undefined}
+            data-last-in-range={(lastInRange && !disabled) || undefined}
+            unstyled={unstyled}
+            {...others}
+        >
+            {renderDay?.(date) || date.getDate()}
+        </UnstyledButton>
+    )
+})
 
-Day.displayName = '@worldprinter/wdesign-dates/Day';
+Day.displayName = '@worldprinter/wdesign-dates/Day'

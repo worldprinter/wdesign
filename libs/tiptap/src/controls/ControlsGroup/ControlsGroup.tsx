@@ -1,44 +1,40 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  Box,
-  useComponentDefaultProps,
-  Selectors,
-} from '@worldprinter/wdesign-core';
-import { useRichTextEditorContext } from '../../RichTextEditor.context';
-import useStyles from './ControlsGroup.styles';
+import React, { forwardRef } from 'react'
 
-export type ControlsGroupStylesNames = Selectors<typeof useStyles>;
+import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-export interface RichTextEditorControlsGroupProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {}
+import { useRichTextEditorContext } from '../../RichTextEditor.context'
+import useStyles from './ControlsGroup.styles'
 
-const defaultProps: Partial<RichTextEditorControlsGroupProps> = {};
+export type ControlsGroupStylesNames = Selectors<typeof useStyles>
 
-export const ControlsGroup = forwardRef<
-  HTMLDivElement,
-  RichTextEditorControlsGroupProps
->((props, ref) => {
-  const { className, children, ...others } = useComponentDefaultProps(
-    'RichTextEditorControlsGroup',
-    defaultProps,
-    props
-  );
+export interface RichTextEditorControlsGroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {}
 
-  const { classNames, styles, unstyled } = useRichTextEditorContext();
-  const { classes, cx } = useStyles(null, {
-    name: 'RichTextEditor',
-    classNames,
-    styles,
-    unstyled,
-  });
+const defaultProps: Partial<RichTextEditorControlsGroupProps> = {}
 
-  return (
-    <Box className={cx(classes.controlsGroup, className)} ref={ref} {...others}>
-      {children}
-    </Box>
-  );
-});
+export const ControlsGroup = forwardRef<HTMLDivElement, RichTextEditorControlsGroupProps>((props, ref) => {
+    const { className, children, ...others } = useComponentDefaultProps(
+        'RichTextEditorControlsGroup',
+        defaultProps,
+        props,
+    )
 
-ControlsGroup.displayName = '@worldprinter/wdesign-tiptap/ControlsGroup';
+    const { classNames, styles, unstyled } = useRichTextEditorContext()
+    const { classes, cx } = useStyles(null, {
+        name: 'RichTextEditor',
+        classNames,
+        styles,
+        unstyled,
+    })
+
+    return (
+        <Box
+            className={cx(classes.controlsGroup, className)}
+            ref={ref}
+            {...others}
+        >
+            {children}
+        </Box>
+    )
+})
+
+ControlsGroup.displayName = '@worldprinter/wdesign-tiptap/ControlsGroup'

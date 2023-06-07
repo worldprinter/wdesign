@@ -1,7 +1,9 @@
 import React from 'react'
+
 import { Box } from '@worldprinter/wdesign-core'
-import { MRT_FilterTextInput } from './MRT_FilterTextInput'
+
 import { MRT_Header, MRT_TableInstance } from '..'
+import { MRT_FilterTextInput } from './MRT_FilterTextInput'
 
 interface Props {
     header: MRT_Header

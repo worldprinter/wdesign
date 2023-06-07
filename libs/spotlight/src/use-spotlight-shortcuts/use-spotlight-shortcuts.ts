@@ -1,25 +1,22 @@
-import { HotkeyItem, useHotkeys } from '@worldprinter/wdesign-hooks';
+import { HotkeyItem, useHotkeys } from '@worldprinter/wdesign-hooks'
 
-export function getHotkeysPayload(
-  shortcuts: string | string[],
-  onToggle: () => void
-): HotkeyItem[] {
-  if (shortcuts === null) {
-    return [];
-  }
+export function getHotkeysPayload(shortcuts: string | string[], onToggle: () => void): HotkeyItem[] {
+    if (shortcuts === null) {
+        return []
+    }
 
-  if (Array.isArray(shortcuts)) {
-    return shortcuts.map((shortcut) => [shortcut, onToggle]);
-  }
+    if (Array.isArray(shortcuts)) {
+        return shortcuts.map((shortcut) => [shortcut, onToggle])
+    }
 
-  return [[shortcuts, onToggle]];
+    return [[shortcuts, onToggle]]
 }
 
 export function useSpotlightShortcuts(
-  shortcuts: string | string[],
-  onToggle: () => void,
-  tagsToIgnore?: string[],
-  triggerOnContentEditable?: boolean
+    shortcuts: string | string[],
+    onToggle: () => void,
+    tagsToIgnore?: string[],
+    triggerOnContentEditable?: boolean,
 ) {
-  useHotkeys(getHotkeysPayload(shortcuts, onToggle), tagsToIgnore, triggerOnContentEditable);
+    useHotkeys(getHotkeysPayload(shortcuts, onToggle), tagsToIgnore, triggerOnContentEditable)
 }

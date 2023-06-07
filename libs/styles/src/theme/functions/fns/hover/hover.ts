@@ -1,12 +1,12 @@
-import type { CSSObject } from '../../../../tss';
+import type { CSSObject } from '../../../../tss'
 
 export function hover(hoverStyle: CSSObject) {
-  return {
-    '@media (hover: hover)': {
-      '&:hover': hoverStyle,
-    },
-    '@media (hover: none)': {
-      '&:active': hoverStyle,
-    },
-  };
+    return {
+        '@media (hover: hover)': {
+            '&:hover': hoverStyle,
+        },
+        '@media (hover: none)': {
+            '&:active': hoverStyle,
+        },
+    }
 }

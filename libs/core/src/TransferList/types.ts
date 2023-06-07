@@ -1,18 +1,18 @@
-import { MantineNumberSize } from '@worldprinter/wdesign-styles';
+import { MantineNumberSize } from '@worldprinter/wdesign-styles'
 
 export interface TransferListItem {
-  value: string;
-  label: string;
-  group?: string;
-  [key: string]: any;
+    value: string
+    label: string
+    group?: string
+    [key: string]: any
 }
 
-export type TransferListData = [TransferListItem[], TransferListItem[]];
+export type TransferListData = [TransferListItem[], TransferListItem[]]
 
 export interface TransferListItemComponentProps {
-  data: TransferListItem;
-  selected: boolean;
-  radius: MantineNumberSize;
+    data: TransferListItem
+    selected: boolean
+    radius: MantineNumberSize
 }
 
-export type TransferListItemComponent = React.FC<TransferListItemComponentProps>;
+export type TransferListItemComponent = React.FC<TransferListItemComponentProps>

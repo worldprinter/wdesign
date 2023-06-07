@@ -1,50 +1,45 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import { AvatarGroupProvider } from './AvatarGroup.context';
-import useStyles from './AvatarGroup.styles';
+import React, { forwardRef } from 'react'
 
-export interface AvatarGroupProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {
-  variant?: string;
+import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-  /** Avatar components */
-  children: React.ReactNode;
+import { Box } from '../../Box'
+import { AvatarGroupProvider } from './AvatarGroup.context'
+import useStyles from './AvatarGroup.styles'
 
-  /** Negative space between Avatars */
-  spacing?: MantineNumberSize;
+export interface AvatarGroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+    variant?: string
+
+    /** Avatar components */
+    children: React.ReactNode
+
+    /** Negative space between Avatars */
+    spacing?: MantineNumberSize
 }
 
-const defaultProps: Partial<AvatarGroupProps> = {};
+const defaultProps: Partial<AvatarGroupProps> = {}
 
-export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
-  (props, ref) => {
+export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>((props, ref) => {
     const {
-      children,
-      spacing = 'sm',
-      unstyled,
-      className,
-      variant,
-      ...others
-    } = useComponentDefaultProps('AvatarGroup', defaultProps, props);
-    const { classes, cx } = useStyles(
-      { spacing },
-      { name: 'AvatarGroup', unstyled, variant }
-    );
+        children,
+        spacing = 'sm',
+        unstyled,
+        className,
+        variant,
+        ...others
+    } = useComponentDefaultProps('AvatarGroup', defaultProps, props)
+    const { classes, cx } = useStyles({ spacing }, { name: 'AvatarGroup', unstyled, variant })
 
     return (
-      <AvatarGroupProvider spacing={spacing}>
-        <Box ref={ref} className={cx(classes.root, className)} {...others}>
-          {children}
-        </Box>
-      </AvatarGroupProvider>
-    );
-  }
-);
+        <AvatarGroupProvider spacing={spacing}>
+            <Box
+                ref={ref}
+                className={cx(classes.root, className)}
+                {...others}
+            >
+                {children}
+            </Box>
+        </AvatarGroupProvider>
+    )
+})
 
-AvatarGroup.displayName = '@worldprinter/wdesign-core/AvatarGroup';
+AvatarGroup.displayName = '@worldprinter/wdesign-core/AvatarGroup'

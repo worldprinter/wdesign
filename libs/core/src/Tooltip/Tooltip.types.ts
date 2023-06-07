@@ -1,46 +1,47 @@
-import { DefaultProps, Selectors, MantineNumberSize, MantineColor } from '@worldprinter/wdesign-styles';
-import { FloatingPosition } from '../Floating';
-import { PortalProps } from '../Portal';
-import useStyles, { TooltipStylesParams } from './Tooltip.styles';
+import { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
-export type TooltipStylesNames = Selectors<typeof useStyles>;
+import { FloatingPosition } from '../Floating'
+import { PortalProps } from '../Portal'
+import useStyles, { TooltipStylesParams } from './Tooltip.styles'
+
+export type TooltipStylesNames = Selectors<typeof useStyles>
 
 export interface TooltipBaseProps
-  extends DefaultProps<TooltipStylesNames, TooltipStylesParams>,
-    React.ComponentPropsWithoutRef<'div'> {
-  /** Target element */
-  children: React.ReactNode;
+    extends DefaultProps<TooltipStylesNames, TooltipStylesParams>,
+        React.ComponentPropsWithoutRef<'div'> {
+    /** Target element */
+    children: React.ReactNode
 
-  /** Tooltip position relative to target element (default) or mouse (floating) */
-  position?: FloatingPosition;
+    /** Tooltip position relative to target element (default) or mouse (floating) */
+    position?: FloatingPosition
 
-  /** Key of the prop that should be used to get element ref */
-  refProp?: string;
+    /** Key of the prop that should be used to get element ref */
+    refProp?: string
 
-  /** Tooltip label */
-  label: React.ReactNode;
+    /** Tooltip label */
+    label: React.ReactNode
 
-  /** Determines whether tooltip should be rendered within Portal */
-  withinPortal?: boolean;
+    /** Determines whether tooltip should be rendered within Portal */
+    withinPortal?: boolean
 
-  /** Props to pass down to the portal when withinPortal is true */
-  portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>;
+    /** Props to pass down to the portal when withinPortal is true */
+    portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
 
-  /** Key of theme.colors */
-  color?: MantineColor;
+    /** Key of theme.colors */
+    color?: MantineColor
 
-  /** Defines whether content should be wrapped on to the next line */
-  multiline?: boolean;
+    /** Defines whether content should be wrapped on to the next line */
+    multiline?: boolean
 
-  /** Tooltip width */
-  width?: number | 'auto';
+    /** Tooltip width */
+    width?: number | 'auto'
 
-  /** Tooltip z-index */
-  zIndex?: React.CSSProperties['zIndex'];
+    /** Tooltip z-index */
+    zIndex?: React.CSSProperties['zIndex']
 
-  /** Disables tooltip */
-  disabled?: boolean;
+    /** Disables tooltip */
+    disabled?: boolean
 }

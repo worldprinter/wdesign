@@ -1,107 +1,112 @@
-import React, { cloneElement } from 'react';
-import { isElement } from '@worldprinter/wdesign-utils';
-import { useMergedRef } from '@worldprinter/wdesign-hooks';
-import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import { OptionalPortal } from '../../Portal';
-import { TooltipBaseProps } from '../Tooltip.types';
-import useStyles from '../Tooltip.styles';
-import { TOOLTIP_ERRORS } from '../Tooltip.errors';
-import { useFloatingTooltip } from './use-floating-tooltip';
+import React, { cloneElement } from 'react'
+
+import { useMergedRef } from '@worldprinter/wdesign-hooks'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { isElement } from '@worldprinter/wdesign-utils'
+
+import { Box } from '../../Box'
+import { OptionalPortal } from '../../Portal'
+import { TOOLTIP_ERRORS } from '../Tooltip.errors'
+import useStyles from '../Tooltip.styles'
+import { TooltipBaseProps } from '../Tooltip.types'
+import { useFloatingTooltip } from './use-floating-tooltip'
 
 export interface TooltipFloatingProps extends TooltipBaseProps {
-  variant?: string;
+    variant?: string
 
-  /** Offset from mouse */
-  offset?: number;
+    /** Offset from mouse */
+    offset?: number
 }
 
 const defaultProps: Partial<TooltipFloatingProps> = {
-  refProp: 'ref',
-  withinPortal: true,
-  offset: 10,
-  position: 'right',
-  zIndex: getDefaultZIndex('popover'),
-};
-
-export function TooltipFloating(props: TooltipFloatingProps) {
-  const {
-    children,
-    refProp,
-    withinPortal,
-    portalProps,
-    style,
-    className,
-    classNames,
-    styles,
-    unstyled,
-    radius,
-    color,
-    label,
-    offset,
-    position,
-    multiline,
-    width,
-    zIndex,
-    disabled,
-    variant,
-    ...others
-  } = useComponentDefaultProps('TooltipFloating', defaultProps, props);
-
-  const { handleMouseMove, x, y, opened, boundaryRef, floating, setOpened } = useFloatingTooltip({
-    offset,
-    position,
-  });
-
-  const { classes, cx } = useStyles(
-    { radius, color, multiline, width },
-    { name: 'TooltipFloating', classNames, styles, unstyled, variant }
-  );
-
-  if (!isElement(children)) {
-    throw new Error(TOOLTIP_ERRORS.children);
-  }
-
-  const targetRef = useMergedRef(boundaryRef, (children as any).ref);
-
-  const onMouseEnter = (event: React.MouseEvent<unknown, MouseEvent>) => {
-    children.props.onMouseEnter?.(event);
-    handleMouseMove(event);
-    setOpened(true);
-  };
-
-  const onMouseLeave = (event: React.MouseEvent<unknown, MouseEvent>) => {
-    children.props.onMouseLeave?.(event);
-    setOpened(false);
-  };
-
-  return (
-    <>
-      <OptionalPortal {...portalProps} withinPortal={withinPortal}>
-        <Box
-          {...others}
-          ref={floating}
-          className={cx(classes.tooltip, className)}
-          style={{
-            ...style,
-            zIndex,
-            display: !disabled && opened ? 'block' : 'none',
-            top: y ?? '',
-            left: Math.round(x) ?? '',
-          }}
-        >
-          {label}
-        </Box>
-      </OptionalPortal>
-
-      {cloneElement(children, {
-        ...children.props,
-        [refProp]: targetRef,
-        onMouseEnter,
-        onMouseLeave,
-      })}
-    </>
-  );
+    refProp: 'ref',
+    withinPortal: true,
+    offset: 10,
+    position: 'right',
+    zIndex: getDefaultZIndex('popover'),
 }
 
-TooltipFloating.displayName = '@worldprinter/wdesign-core/TooltipFloating';
+export function TooltipFloating(props: TooltipFloatingProps) {
+    const {
+        children,
+        refProp,
+        withinPortal,
+        portalProps,
+        style,
+        className,
+        classNames,
+        styles,
+        unstyled,
+        radius,
+        color,
+        label,
+        offset,
+        position,
+        multiline,
+        width,
+        zIndex,
+        disabled,
+        variant,
+        ...others
+    } = useComponentDefaultProps('TooltipFloating', defaultProps, props)
+
+    const { handleMouseMove, x, y, opened, boundaryRef, floating, setOpened } = useFloatingTooltip({
+        offset,
+        position,
+    })
+
+    const { classes, cx } = useStyles(
+        { radius, color, multiline, width },
+        { name: 'TooltipFloating', classNames, styles, unstyled, variant },
+    )
+
+    if (!isElement(children)) {
+        throw new Error(TOOLTIP_ERRORS.children)
+    }
+
+    const targetRef = useMergedRef(boundaryRef, (children as any).ref)
+
+    const onMouseEnter = (event: React.MouseEvent<unknown, MouseEvent>) => {
+        children.props.onMouseEnter?.(event)
+        handleMouseMove(event)
+        setOpened(true)
+    }
+
+    const onMouseLeave = (event: React.MouseEvent<unknown, MouseEvent>) => {
+        children.props.onMouseLeave?.(event)
+        setOpened(false)
+    }
+
+    return (
+        <>
+            <OptionalPortal
+                {...portalProps}
+                withinPortal={withinPortal}
+            >
+                <Box
+                    {...others}
+                    ref={floating}
+                    className={cx(classes.tooltip, className)}
+                    style={{
+                        ...style,
+                        zIndex,
+                        display: !disabled && opened ? 'block' : 'none',
+                        top: y ?? '',
+                        left: Math.round(x) ?? '',
+                    }}
+                >
+                    {label}
+                </Box>
+            </OptionalPortal>
+
+            {cloneElement(children, {
+                ...children.props,
+                [refProp]: targetRef,
+                onMouseEnter,
+                onMouseLeave,
+            })}
+        </>
+    )
+}
+
+TooltipFloating.displayName = '@worldprinter/wdesign-core/TooltipFloating'

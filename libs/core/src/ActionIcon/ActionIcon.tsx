@@ -1,116 +1,105 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineNumberSize,
-  MantineColor,
-  Selectors,
-  useComponentDefaultProps,
-  MantineGradient,
-  Variants,
-} from '@worldprinter/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
-import { UnstyledButton } from '../UnstyledButton';
-import useStyles, { ActionIconStylesParams } from './ActionIcon.styles';
-import { Loader, LoaderProps } from '../Loader';
+    DefaultProps,
+    MantineColor,
+    MantineGradient,
+    MantineNumberSize,
+    Selectors,
+    useComponentDefaultProps,
+    Variants,
+} from '@worldprinter/wdesign-styles'
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-export type ActionIconStylesNames = Selectors<typeof useStyles>;
+import { Loader, LoaderProps } from '../Loader'
+import { UnstyledButton } from '../UnstyledButton'
+import useStyles, { ActionIconStylesParams } from './ActionIcon.styles'
 
-export interface ActionIconProps
-  extends DefaultProps<ActionIconStylesNames, ActionIconStylesParams> {
-  __staticSelector?: string;
+export type ActionIconStylesNames = Selectors<typeof useStyles>
 
-  /** Icon */
-  children?: React.ReactNode;
+export interface ActionIconProps extends DefaultProps<ActionIconStylesNames, ActionIconStylesParams> {
+    __staticSelector?: string
 
-  /** Controls appearance, subtle by default */
-  variant?: Variants<
-    | 'subtle'
-    | 'filled'
-    | 'outline'
-    | 'light'
-    | 'default'
-    | 'transparent'
-    | 'gradient'
-  >;
+    /** Icon */
+    children?: React.ReactNode
 
-  /** Key of theme.colors */
-  color?: MantineColor;
+    /** Controls appearance, subtle by default */
+    variant?: Variants<'subtle' | 'filled' | 'outline' | 'light' | 'default' | 'transparent' | 'gradient'>
 
-  /** Gradient input, only used when variant="gradient", theme.defaultGradient by default */
-  gradient?: MantineGradient;
+    /** Key of theme.colors */
+    color?: MantineColor
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Gradient input, only used when variant="gradient", theme.defaultGradient by default */
+    gradient?: MantineGradient
 
-  /** Predefined button size or any valid CSS value to set width and height */
-  size?: MantineNumberSize;
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
 
-  /** Props added to Loader component (only visible when `loading` prop is set) */
-  loaderProps?: LoaderProps;
+    /** Predefined button size or any valid CSS value to set width and height */
+    size?: MantineNumberSize
 
-  /** Indicates loading state */
-  loading?: boolean;
+    /** Props added to Loader component (only visible when `loading` prop is set) */
+    loaderProps?: LoaderProps
 
-  /** Indicates disabled state */
-  disabled?: boolean;
+    /** Indicates loading state */
+    loading?: boolean
+
+    /** Indicates disabled state */
+    disabled?: boolean
 }
 
 const defaultProps: Partial<ActionIconProps> = {
-  color: 'gray',
-  size: 'md',
-  variant: 'subtle',
-};
+    color: 'gray',
+    size: 'md',
+    variant: 'subtle',
+}
 
-export const _ActionIcon = forwardRef<HTMLButtonElement, ActionIconProps>(
-  (props, ref) => {
+export const _ActionIcon = forwardRef<HTMLButtonElement, ActionIconProps>((props, ref) => {
     const {
-      className,
-      color,
-      children,
-      radius,
-      size,
-      variant,
-      gradient,
-      disabled,
-      loaderProps,
-      loading,
-      unstyled,
-      __staticSelector,
-      ...others
-    } = useComponentDefaultProps('ActionIcon', defaultProps, props);
+        className,
+        color,
+        children,
+        radius,
+        size,
+        variant,
+        gradient,
+        disabled,
+        loaderProps,
+        loading,
+        unstyled,
+        __staticSelector,
+        ...others
+    } = useComponentDefaultProps('ActionIcon', defaultProps, props)
 
     const { classes, cx, theme } = useStyles(
-      { radius, color, gradient },
-      { name: ['ActionIcon', __staticSelector], unstyled, size, variant }
-    );
+        { radius, color, gradient },
+        { name: ['ActionIcon', __staticSelector], unstyled, size, variant },
+    )
 
     const loader = (
-      <Loader
-        color={theme.fn.variant({ color, variant }).color}
-        size="100%"
-        data-action-icon-loader
-        {...loaderProps}
-      />
-    );
+        <Loader
+            color={theme.fn.variant({ color, variant }).color}
+            size='100%'
+            data-action-icon-loader
+            {...loaderProps}
+        />
+    )
 
     return (
-      <UnstyledButton
-        className={cx(classes.root, className)}
-        ref={ref}
-        disabled={disabled}
-        data-disabled={disabled || undefined}
-        data-loading={loading || undefined}
-        unstyled={unstyled}
-        {...others}
-      >
-        {loading ? loader : children}
-      </UnstyledButton>
-    );
-  }
-);
+        <UnstyledButton
+            className={cx(classes.root, className)}
+            ref={ref}
+            disabled={disabled}
+            data-disabled={disabled || undefined}
+            data-loading={loading || undefined}
+            unstyled={unstyled}
+            {...others}
+        >
+            {loading ? loader : children}
+        </UnstyledButton>
+    )
+})
 
-_ActionIcon.displayName = '@worldprinter/wdesign-core/ActionIcon';
+_ActionIcon.displayName = '@worldprinter/wdesign-core/ActionIcon'
 
-export const ActionIcon = createPolymorphicComponent<'button', ActionIconProps>(
-  _ActionIcon
-);
+export const ActionIcon = createPolymorphicComponent<'button', ActionIconProps>(_ActionIcon)

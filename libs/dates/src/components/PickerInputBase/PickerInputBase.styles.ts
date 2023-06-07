@@ -1,14 +1,14 @@
-import { createStyles } from '@worldprinter/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core'
 
 export default createStyles(() => ({
-  placeholder: {},
+    placeholder: {},
 
-  input: {
-    cursor: 'pointer',
-    lineHeight: 'unset',
+    input: {
+        cursor: 'pointer',
+        lineHeight: 'unset',
 
-    '&[data-read-only]': {
-      cursor: 'default',
+        '&[data-read-only]': {
+            cursor: 'default',
+        },
     },
-  },
-}));
+}))

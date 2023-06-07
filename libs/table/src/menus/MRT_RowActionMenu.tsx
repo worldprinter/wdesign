@@ -1,5 +1,7 @@
 import React, { MouseEvent } from 'react'
+
 import { ActionIcon, Menu, Tooltip } from '@worldprinter/wdesign-core'
+
 import type { MRT_Row, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}> {
@@ -8,11 +10,7 @@ interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_RowActionMenu = <TData extends Record<string, any> = {}>({
-    handleEdit,
-    row,
-    table,
-}: Props<TData>) => {
+export const MRT_RowActionMenu = <TData extends Record<string, any> = {}>({ handleEdit, row, table }: Props<TData>) => {
     const {
         options: {
             icons: { IconEdit, IconDots },

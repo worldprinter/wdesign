@@ -1,69 +1,54 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineSize,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Text } from '../../Text';
-import useStyles from './InputDescription.styles';
+import React, { forwardRef } from 'react'
 
-export type InputDescriptionStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+
+import { Text } from '../../Text'
+import useStyles from './InputDescription.styles'
+
+export type InputDescriptionStylesNames = Selectors<typeof useStyles>
 
 export interface InputDescriptionProps
-  extends DefaultProps<InputDescriptionStylesNames>,
-    React.ComponentPropsWithoutRef<'div'> {
-  variant?: string;
+    extends DefaultProps<InputDescriptionStylesNames>,
+        React.ComponentPropsWithoutRef<'div'> {
+    variant?: string
 
-  /** Description content */
-  children?: React.ReactNode;
+    /** Description content */
+    children?: React.ReactNode
 
-  /** Predefined size */
-  size?: MantineSize;
+    /** Predefined size */
+    size?: MantineSize
 
-  __staticSelector?: string;
+    __staticSelector?: string
 }
 
 const defaultProps: Partial<InputDescriptionProps> = {
-  size: 'sm',
-};
+    size: 'sm',
+}
 
-export const InputDescription = forwardRef<
-  HTMLDivElement,
-  InputDescriptionProps
->((props, ref) => {
-  const {
-    children,
-    className,
-    classNames,
-    styles,
-    unstyled,
-    size,
-    __staticSelector,
-    variant,
-    ...others
-  } = useComponentDefaultProps('InputDescription', defaultProps, props);
+export const InputDescription = forwardRef<HTMLDivElement, InputDescriptionProps>((props, ref) => {
+    const { children, className, classNames, styles, unstyled, size, __staticSelector, variant, ...others } =
+        useComponentDefaultProps('InputDescription', defaultProps, props)
 
-  const { classes, cx } = useStyles(null, {
-    name: ['InputWrapper', __staticSelector],
-    classNames,
-    styles,
-    unstyled,
-    variant,
-    size,
-  });
+    const { classes, cx } = useStyles(null, {
+        name: ['InputWrapper', __staticSelector],
+        classNames,
+        styles,
+        unstyled,
+        variant,
+        size,
+    })
 
-  return (
-    <Text
-      color="dimmed"
-      className={cx(classes.description, className)}
-      ref={ref}
-      unstyled={unstyled}
-      {...others}
-    >
-      {children}
-    </Text>
-  );
-});
+    return (
+        <Text
+            color='dimmed'
+            className={cx(classes.description, className)}
+            ref={ref}
+            unstyled={unstyled}
+            {...others}
+        >
+            {children}
+        </Text>
+    )
+})
 
-InputDescription.displayName = '@worldprinter/wdesign-core/InputDescription';
+InputDescription.displayName = '@worldprinter/wdesign-core/InputDescription'

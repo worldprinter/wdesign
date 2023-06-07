@@ -1,5 +1,5 @@
-import { createStyles } from '@worldprinter/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core'
 
 export default createStyles(() => ({
-  calendar: {},
-}));
+    calendar: {},
+}))

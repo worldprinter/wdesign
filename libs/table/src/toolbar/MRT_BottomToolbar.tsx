@@ -1,20 +1,20 @@
 import React from 'react'
+
 import { Box } from '@worldprinter/wdesign-core'
 import { useMediaQuery } from '@worldprinter/wdesign-hooks'
+
+import type { MRT_TableInstance } from '..'
+import { MRT_ProgressBar } from './MRT_ProgressBar'
 import { MRT_TablePagination } from './MRT_TablePagination'
 import { MRT_ToolbarAlertBanner } from './MRT_ToolbarAlertBanner'
-import { MRT_ProgressBar } from './MRT_ProgressBar'
-import { commonToolbarStyles } from './MRT_TopToolbar'
 import { MRT_ToolbarDropZone } from './MRT_ToolbarDropZone'
-import type { MRT_TableInstance } from '..'
+import { commonToolbarStyles } from './MRT_TopToolbar'
 
 interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
-    table,
-}: Props<TData>) => {
+export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({ table }: Props<TData>) => {
     const {
         getState,
         options: {
@@ -32,9 +32,7 @@ export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
     const isMobile = useMediaQuery('(max-width: 720px)')
 
     const toolbarProps =
-        mantineBottomToolbarProps instanceof Function
-            ? mantineBottomToolbarProps({ table })
-            : mantineBottomToolbarProps
+        mantineBottomToolbarProps instanceof Function ? mantineBottomToolbarProps({ table }) : mantineBottomToolbarProps
 
     const stackAlertBanner = isMobile || !!renderBottomToolbarCustomActions
 
@@ -53,16 +51,11 @@ export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
                 ({
                     ...commonToolbarStyles({ theme }),
                     bottom: isFullScreen ? '0' : undefined,
-                    boxShadow: `0 1px 2px -1px ${theme.fn.rgba(
-                        theme.black,
-                        0.1,
-                    )} inset`,
+                    boxShadow: `0 1px 2px -1px ${theme.fn.rgba(theme.black, 0.1)} inset`,
                     left: 0,
                     position: isFullScreen ? 'fixed' : 'relative',
                     right: 0,
-                    ...(toolbarProps?.sx instanceof Function
-                        ? toolbarProps.sx(theme)
-                        : (toolbarProps?.sx as any)),
+                    ...(toolbarProps?.sx instanceof Function ? toolbarProps.sx(theme) : (toolbarProps?.sx as any)),
                 } as any)
             }
         >
@@ -76,9 +69,7 @@ export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
                     table={table}
                 />
             )}
-            {['both', 'bottom'].includes(positionToolbarDropZone ?? '') && (
-                <MRT_ToolbarDropZone table={table} />
-            )}
+            {['both', 'bottom'].includes(positionToolbarDropZone ?? '') && <MRT_ToolbarDropZone table={table} />}
             <Box
                 sx={{
                     alignItems: 'center',
@@ -89,11 +80,7 @@ export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
                     width: '100%',
                 }}
             >
-                {renderBottomToolbarCustomActions ? (
-                    renderBottomToolbarCustomActions({ table })
-                ) : (
-                    <span />
-                )}
+                {renderBottomToolbarCustomActions ? renderBottomToolbarCustomActions({ table }) : <span />}
                 <Box
                     sx={{
                         display: 'flex',
@@ -103,15 +90,12 @@ export const MRT_BottomToolbar = <TData extends Record<string, any> = {}>({
                         top: 0,
                     }}
                 >
-                    {enablePagination &&
-                        ['bottom', 'both'].includes(
-                            positionPagination ?? '',
-                        ) && (
-                            <MRT_TablePagination
-                                table={table}
-                                position='bottom'
-                            />
-                        )}
+                    {enablePagination && ['bottom', 'both'].includes(positionPagination ?? '') && (
+                        <MRT_TablePagination
+                            table={table}
+                            position='bottom'
+                        />
+                    )}
                 </Box>
             </Box>
         </Box>

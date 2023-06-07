@@ -1,14 +1,15 @@
-import { Selectors } from '@worldprinter/wdesign-styles';
-import useStyles from './PopoverDropdown/PopoverDropdown.styles';
+import { Selectors } from '@worldprinter/wdesign-styles'
 
-export type { PopoverStylesParams } from './PopoverDropdown/PopoverDropdown.styles';
+import useStyles from './PopoverDropdown/PopoverDropdown.styles'
 
-export type PopoverStylesNames = Selectors<typeof useStyles>;
+export type { PopoverStylesParams } from './PopoverDropdown/PopoverDropdown.styles'
 
-export type PopoverWidth = 'target' | React.CSSProperties['width'];
+export type PopoverStylesNames = Selectors<typeof useStyles>
+
+export type PopoverWidth = 'target' | React.CSSProperties['width']
 
 export interface PopoverMiddlewares {
-  shift: boolean;
-  flip: boolean;
-  inline?: boolean;
+    shift: boolean
+    flip: boolean
+    inline?: boolean
 }

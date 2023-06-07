@@ -1,11 +1,11 @@
-import { createSafeContext } from '@worldprinter/wdesign-utils';
+import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-export type ScrollAreaComponent = React.FC<any>;
+export type ScrollAreaComponent = React.FC<any>
 
 interface DrawerContext {
-  scrollAreaComponent: ScrollAreaComponent;
+    scrollAreaComponent: ScrollAreaComponent
 }
 
 export const [DrawerProvider, useDrawerContext] = createSafeContext<DrawerContext>(
-  'Drawer component was not found in tree'
-);
+    'Drawer component was not found in tree',
+)

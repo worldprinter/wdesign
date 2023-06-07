@@ -1,65 +1,59 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineColor,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../Box';
-import useStyles, { CodeStylesParams } from './Code.styles';
+import React, { forwardRef } from 'react'
 
-export interface CodeProps
-  extends DefaultProps<never, CodeStylesParams>,
-    React.ComponentPropsWithoutRef<'code'> {
-  variant?: string;
+import { DefaultProps, MantineColor, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-  /** Code content */
-  children: React.ReactNode;
+import { Box } from '../Box'
+import useStyles, { CodeStylesParams } from './Code.styles'
 
-  /** Code color and background from theme, defaults to gray in light theme and to dark in dark theme */
-  color?: MantineColor;
+export interface CodeProps extends DefaultProps<never, CodeStylesParams>, React.ComponentPropsWithoutRef<'code'> {
+    variant?: string
 
-  /** True for code block, false for inline code */
-  block?: boolean;
+    /** Code content */
+    children: React.ReactNode
+
+    /** Code color and background from theme, defaults to gray in light theme and to dark in dark theme */
+    color?: MantineColor
+
+    /** True for code block, false for inline code */
+    block?: boolean
 }
 
-const defaultProps: Partial<CodeProps> = {};
+const defaultProps: Partial<CodeProps> = {}
 
-export const Code = forwardRef<HTMLElement, CodeProps>(
-  (props: CodeProps, ref) => {
-    const { className, children, block, color, unstyled, variant, ...others } =
-      useComponentDefaultProps('Code', defaultProps, props);
+export const Code = forwardRef<HTMLElement, CodeProps>((props: CodeProps, ref) => {
+    const { className, children, block, color, unstyled, variant, ...others } = useComponentDefaultProps(
+        'Code',
+        defaultProps,
+        props,
+    )
 
-    const { classes, cx } = useStyles(
-      { color },
-      { name: 'Code', unstyled, variant }
-    );
+    const { classes, cx } = useStyles({ color }, { name: 'Code', unstyled, variant })
 
     if (block) {
-      return (
-        <Box
-          component="pre"
-          dir="ltr"
-          className={cx(classes.root, classes.block, className)}
-          ref={ref as any}
-          {...others}
-        >
-          {children}
-        </Box>
-      );
+        return (
+            <Box
+                component='pre'
+                dir='ltr'
+                className={cx(classes.root, classes.block, className)}
+                ref={ref as any}
+                {...others}
+            >
+                {children}
+            </Box>
+        )
     }
 
     return (
-      <Box
-        component="code"
-        className={cx(classes.root, className)}
-        ref={ref}
-        dir="ltr"
-        {...others}
-      >
-        {children}
-      </Box>
-    );
-  }
-);
+        <Box
+            component='code'
+            className={cx(classes.root, className)}
+            ref={ref}
+            dir='ltr'
+            {...others}
+        >
+            {children}
+        </Box>
+    )
+})
 
-Code.displayName = '@worldprinter/wdesign-core/Code';
+Code.displayName = '@worldprinter/wdesign-core/Code'

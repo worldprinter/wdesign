@@ -1,150 +1,153 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
+
 import {
-  useMantineTheme,
-  DefaultProps,
-  Selectors,
-  getDefaultZIndex,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Transition, MantineTransition } from '../Transition';
-import { CloseButton } from '../CloseButton';
-import { Affix } from '../Affix';
-import { Paper, PaperProps } from '../Paper';
-import useStyles from './Dialog.styles';
+    DefaultProps,
+    getDefaultZIndex,
+    Selectors,
+    useComponentDefaultProps,
+    useMantineTheme,
+} from '@worldprinter/wdesign-styles'
 
-export type DialogStylesNames = Selectors<typeof useStyles>;
+import { Affix } from '../Affix'
+import { CloseButton } from '../CloseButton'
+import { Paper, PaperProps } from '../Paper'
+import { MantineTransition, Transition } from '../Transition'
+import useStyles from './Dialog.styles'
 
-export interface DialogProps
-  extends DefaultProps<DialogStylesNames>,
-    Omit<PaperProps, 'classNames' | 'styles'> {
-  variant?: string;
+export type DialogStylesNames = Selectors<typeof useStyles>
 
-  /** If set dialog will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
-  keepMounted?: boolean;
+export interface DialogProps extends DefaultProps<DialogStylesNames>, Omit<PaperProps, 'classNames' | 'styles'> {
+    variant?: string
 
-  /** Display close button at the top right corner */
-  withCloseButton?: boolean;
+    /** If set dialog will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
+    keepMounted?: boolean
 
-  /** Called when close button is clicked */
-  onClose?(): void;
+    /** Display close button at the top right corner */
+    withCloseButton?: boolean
 
-  /** Dialog position (fixed in viewport) */
-  position?: {
-    top?: string | number;
-    left?: string | number;
-    bottom?: string | number;
-    right?: string | number;
-  };
+    /** Called when close button is clicked */
+    onClose?(): void
 
-  /** Dialog content */
-  children?: React.ReactNode;
+    /** Dialog position (fixed in viewport) */
+    position?: {
+        top?: string | number
+        left?: string | number
+        bottom?: string | number
+        right?: string | number
+    }
 
-  /** Dialog container z-index */
-  zIndex?: React.CSSProperties['zIndex'];
+    /** Dialog content */
+    children?: React.ReactNode
 
-  /** Opened state */
-  opened: boolean;
+    /** Dialog container z-index */
+    zIndex?: React.CSSProperties['zIndex']
 
-  /** Appear/disappear transition */
-  transition?: MantineTransition;
+    /** Opened state */
+    opened: boolean
 
-  /** Duration in ms of modal transitions, set to 0 to disable all animations */
-  transitionDuration?: number;
+    /** Appear/disappear transition */
+    transition?: MantineTransition
 
-  /** Transition timing function, defaults to theme.transitionTimingFunction */
-  transitionTimingFunction?: string;
+    /** Duration in ms of modal transitions, set to 0 to disable all animations */
+    transitionDuration?: number
 
-  /** Dialog width */
-  size?: string | number;
+    /** Transition timing function, defaults to theme.transitionTimingFunction */
+    transitionTimingFunction?: string
+
+    /** Dialog width */
+    size?: string | number
 }
 
 const defaultProps: Partial<DialogProps> = {
-  shadow: 'md',
-  p: 'md',
-  withBorder: false,
-  size: 'md',
-  transition: 'pop-top-right',
-  transitionDuration: 200,
-};
+    shadow: 'md',
+    p: 'md',
+    withBorder: false,
+    size: 'md',
+    transition: 'pop-top-right',
+    transitionDuration: 200,
+}
 
 export function DialogBody(props: DialogProps) {
-  const {
-    withCloseButton,
-    onClose,
-    position,
-    shadow,
-    children,
-    className,
-    style,
-    classNames,
-    styles,
-    opened,
-    withBorder,
-    size,
-    transition,
-    transitionDuration,
-    transitionTimingFunction,
-    unstyled,
-    variant,
-    keepMounted,
-    ...others
-  } = useComponentDefaultProps('Dialog', defaultProps, props);
+    const {
+        withCloseButton,
+        onClose,
+        position,
+        shadow,
+        children,
+        className,
+        style,
+        classNames,
+        styles,
+        opened,
+        withBorder,
+        size,
+        transition,
+        transitionDuration,
+        transitionTimingFunction,
+        unstyled,
+        variant,
+        keepMounted,
+        ...others
+    } = useComponentDefaultProps('Dialog', defaultProps, props)
 
-  const { classes, cx } = useStyles(null, {
-    classNames,
-    styles,
-    unstyled,
-    name: 'Dialog',
-    variant,
-    size,
-  });
+    const { classes, cx } = useStyles(null, {
+        classNames,
+        styles,
+        unstyled,
+        name: 'Dialog',
+        variant,
+        size,
+    })
 
-  return (
-    <Transition
-      keepMounted={keepMounted}
-      mounted={opened}
-      transition={transition}
-      duration={transitionDuration}
-      timingFunction={transitionTimingFunction}
-    >
-      {(transitionStyles) => (
-        <Paper
-          className={cx(classes.root, className)}
-          style={{ ...style, ...transitionStyles }}
-          shadow={shadow}
-          withBorder={withBorder}
-          unstyled={unstyled}
-          {...others}
+    return (
+        <Transition
+            keepMounted={keepMounted}
+            mounted={opened}
+            transition={transition}
+            duration={transitionDuration}
+            timingFunction={transitionTimingFunction}
         >
-          {withCloseButton && (
-            <CloseButton onClick={onClose} className={classes.closeButton} />
-          )}
-          {children}
-        </Paper>
-      )}
-    </Transition>
-  );
+            {(transitionStyles) => (
+                <Paper
+                    className={cx(classes.root, className)}
+                    style={{ ...style, ...transitionStyles }}
+                    shadow={shadow}
+                    withBorder={withBorder}
+                    unstyled={unstyled}
+                    {...others}
+                >
+                    {withCloseButton && (
+                        <CloseButton
+                            onClick={onClose}
+                            className={classes.closeButton}
+                        />
+                    )}
+                    {children}
+                </Paper>
+            )}
+        </Transition>
+    )
 }
 
 export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
-  ({ zIndex = getDefaultZIndex('modal'), ...props }: DialogProps, ref) => {
-    const theme = useMantineTheme();
+    ({ zIndex = getDefaultZIndex('modal'), ...props }: DialogProps, ref) => {
+        const theme = useMantineTheme()
 
-    return (
-      <Affix
-        zIndex={zIndex}
-        position={
-          props.position || {
-            bottom: theme.spacing.xl,
-            right: theme.spacing.xl,
-          }
-        }
-        ref={ref}
-      >
-        <DialogBody {...props} />
-      </Affix>
-    );
-  }
-);
+        return (
+            <Affix
+                zIndex={zIndex}
+                position={
+                    props.position || {
+                        bottom: theme.spacing.xl,
+                        right: theme.spacing.xl,
+                    }
+                }
+                ref={ref}
+            >
+                <DialogBody {...props} />
+            </Affix>
+        )
+    },
+)
 
-Dialog.displayName = '@worldprinter/wdesign-core/Dialog';
+Dialog.displayName = '@worldprinter/wdesign-core/Dialog'

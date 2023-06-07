@@ -1,120 +1,115 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
-import { Box } from '../Box';
-import { Col } from './Col/Col';
-import { GridProvider } from './Grid.context';
-import useStyles from './Grid.styles';
+import React, { forwardRef } from 'react'
 
-export interface GridProps
-  extends DefaultProps,
-    React.ComponentPropsWithRef<'div'> {
-  variant?: string;
+import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-  /** <Col /> components only */
-  children: React.ReactNode;
+import { Box } from '../Box'
+import { Col } from './Col/Col'
+import { GridProvider } from './Grid.context'
+import useStyles from './Grid.styles'
 
-  /** Spacing between columns, key of theme.spacing or number for value */
-  gutter?: MantineNumberSize;
+export interface GridProps extends DefaultProps, React.ComponentPropsWithRef<'div'> {
+    variant?: string
 
-  /** Gutter when screen size is larger than theme.breakpoints.xs */
-  gutterXs?: MantineNumberSize;
+    /** <Col /> components only */
+    children: React.ReactNode
 
-  /** Gutter when screen size is larger than theme.breakpoints.sm */
-  gutterSm?: MantineNumberSize;
+    /** Spacing between columns, key of theme.spacing or number for value */
+    gutter?: MantineNumberSize
 
-  /** Gutter when screen size is larger than theme.breakpoints.md */
-  gutterMd?: MantineNumberSize;
+    /** Gutter when screen size is larger than theme.breakpoints.xs */
+    gutterXs?: MantineNumberSize
 
-  /** Gutter when screen size is larger than theme.breakpoints.lg */
-  gutterLg?: MantineNumberSize;
+    /** Gutter when screen size is larger than theme.breakpoints.sm */
+    gutterSm?: MantineNumberSize
 
-  /** Gutter when screen size is larger than theme.breakpoints.xl */
-  gutterXl?: MantineNumberSize;
+    /** Gutter when screen size is larger than theme.breakpoints.md */
+    gutterMd?: MantineNumberSize
 
-  /** Should columns in the last row take 100% of grid width */
-  grow?: boolean;
+    /** Gutter when screen size is larger than theme.breakpoints.lg */
+    gutterLg?: MantineNumberSize
 
-  /** Set grid justify-content property */
-  justify?: React.CSSProperties['justifyContent'];
+    /** Gutter when screen size is larger than theme.breakpoints.xl */
+    gutterXl?: MantineNumberSize
 
-  /** Set grid align-content property */
-  align?: React.CSSProperties['alignContent'];
+    /** Should columns in the last row take 100% of grid width */
+    grow?: boolean
 
-  /** Amount of columns in each row */
-  columns?: number;
+    /** Set grid justify-content property */
+    justify?: React.CSSProperties['justifyContent']
+
+    /** Set grid align-content property */
+    align?: React.CSSProperties['alignContent']
+
+    /** Amount of columns in each row */
+    columns?: number
 }
 
-type GridComponent = ForwardRefWithStaticComponents<
-  GridProps,
-  { Col: typeof Col }
->;
+type GridComponent = ForwardRefWithStaticComponents<GridProps, { Col: typeof Col }>
 
 const defaultProps: Partial<GridProps> = {
-  gutter: 'md',
-  justify: 'flex-start',
-  align: 'stretch',
-  columns: 12,
-};
+    gutter: 'md',
+    justify: 'flex-start',
+    align: 'stretch',
+    columns: 12,
+}
 
-export const Grid: GridComponent = forwardRef<HTMLDivElement, GridProps>(
-  (props, ref) => {
+export const Grid: GridComponent = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
     const {
-      gutter,
-      gutterXs,
-      gutterSm,
-      gutterMd,
-      gutterLg,
-      gutterXl,
-      children,
-      grow,
-      justify,
-      align,
-      columns,
-      className,
-      id,
-      unstyled,
-      variant,
-      ...others
-    } = useComponentDefaultProps('Grid', defaultProps, props);
-    const { classes, cx } = useStyles(
-      {
         gutter,
-        justify,
-        align,
         gutterXs,
         gutterSm,
         gutterMd,
         gutterLg,
         gutterXl,
-      },
-      { unstyled, name: 'Grid', variant }
-    );
+        children,
+        grow,
+        justify,
+        align,
+        columns,
+        className,
+        id,
+        unstyled,
+        variant,
+        ...others
+    } = useComponentDefaultProps('Grid', defaultProps, props)
+    const { classes, cx } = useStyles(
+        {
+            gutter,
+            justify,
+            align,
+            gutterXs,
+            gutterSm,
+            gutterMd,
+            gutterLg,
+            gutterXl,
+        },
+        { unstyled, name: 'Grid', variant },
+    )
 
     return (
-      <GridProvider
-        value={{
-          gutter,
-          gutterXs,
-          gutterSm,
-          gutterMd,
-          gutterLg,
-          gutterXl,
-          grow,
-          columns,
-        }}
-      >
-        <Box className={cx(classes.root, className)} ref={ref} {...others}>
-          {children}
-        </Box>
-      </GridProvider>
-    );
-  }
-) as any;
+        <GridProvider
+            value={{
+                gutter,
+                gutterXs,
+                gutterSm,
+                gutterMd,
+                gutterLg,
+                gutterXl,
+                grow,
+                columns,
+            }}
+        >
+            <Box
+                className={cx(classes.root, className)}
+                ref={ref}
+                {...others}
+            >
+                {children}
+            </Box>
+        </GridProvider>
+    )
+}) as any
 
-Grid.Col = Col;
-Grid.displayName = '@worldprinter/wdesign-core/Grid';
+Grid.Col = Col
+Grid.displayName = '@worldprinter/wdesign-core/Grid'

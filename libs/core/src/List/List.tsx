@@ -1,110 +1,100 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
-import { Box } from '../Box';
-import { ListItem, ListItemStylesNames } from './ListItem/ListItem';
-import { ListProvider } from './List.context';
-import useStyles from './List.styles';
+import React, { forwardRef } from 'react'
 
-export type ListStylesNames = ListItemStylesNames | Selectors<typeof useStyles>;
+import { DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-export interface ListProps
-  extends DefaultProps<ListStylesNames>,
-    Omit<React.ComponentPropsWithRef<'ol'>, 'type'> {
-  variant?: string;
+import { Box } from '../Box'
+import { ListProvider } from './List.context'
+import useStyles from './List.styles'
+import { ListItem, ListItemStylesNames } from './ListItem/ListItem'
 
-  /** <List.Item /> components only */
-  children: React.ReactNode;
+export type ListStylesNames = ListItemStylesNames | Selectors<typeof useStyles>
 
-  /** List type: ol or ul */
-  type?: 'ordered' | 'unordered';
+export interface ListProps extends DefaultProps<ListStylesNames>, Omit<React.ComponentPropsWithRef<'ol'>, 'type'> {
+    variant?: string
 
-  /** Include padding-left to offset list from main content */
-  withPadding?: boolean;
+    /** <List.Item /> components only */
+    children: React.ReactNode
 
-  /** Font size from theme or number to set value */
-  size?: MantineNumberSize;
+    /** List type: ol or ul */
+    type?: 'ordered' | 'unordered'
 
-  /** Icon that should replace list item dot */
-  icon?: React.ReactNode;
+    /** Include padding-left to offset list from main content */
+    withPadding?: boolean
 
-  /** Spacing between items from theme or number to set value */
-  spacing?: MantineNumberSize;
+    /** Font size from theme or number to set value */
+    size?: MantineNumberSize
 
-  /** Center items with icon */
-  center?: boolean;
+    /** Icon that should replace list item dot */
+    icon?: React.ReactNode
 
-  /** List style */
-  listStyleType?: React.CSSProperties['listStyleType'];
+    /** Spacing between items from theme or number to set value */
+    spacing?: MantineNumberSize
+
+    /** Center items with icon */
+    center?: boolean
+
+    /** List style */
+    listStyleType?: React.CSSProperties['listStyleType']
 }
 
-type ListComponent = ForwardRefWithStaticComponents<
-  ListProps,
-  { Item: typeof ListItem }
->;
+type ListComponent = ForwardRefWithStaticComponents<ListProps, { Item: typeof ListItem }>
 
 const defaultProps: Partial<ListProps> = {
-  type: 'unordered',
-  size: 'md',
-  spacing: 0,
-};
+    type: 'unordered',
+    size: 'md',
+    spacing: 0,
+}
 
-export const List: ListComponent = forwardRef<HTMLUListElement, ListProps>(
-  (props: ListProps, ref) => {
+export const List: ListComponent = forwardRef<HTMLUListElement, ListProps>((props: ListProps, ref) => {
     const {
-      children,
-      type,
-      size,
-      listStyleType,
-      withPadding,
-      center,
-      spacing,
-      icon,
-      className,
-      styles,
-      classNames,
-      unstyled,
-      variant,
-      ...others
-    } = useComponentDefaultProps('List', defaultProps, props);
+        children,
+        type,
+        size,
+        listStyleType,
+        withPadding,
+        center,
+        spacing,
+        icon,
+        className,
+        styles,
+        classNames,
+        unstyled,
+        variant,
+        ...others
+    } = useComponentDefaultProps('List', defaultProps, props)
 
     const { classes, cx } = useStyles(
-      { withPadding, listStyleType, center, spacing },
-      { classNames, styles, name: 'List', unstyled, size, variant }
-    );
+        { withPadding, listStyleType, center, spacing },
+        { classNames, styles, name: 'List', unstyled, size, variant },
+    )
 
     return (
-      <ListProvider
-        value={{
-          spacing,
-          center,
-          icon,
-          listStyleType,
-          size,
-          withPadding,
-          classNames,
-          styles,
-          unstyled,
-          variant,
-        }}
-      >
-        <Box<any>
-          component={type === 'unordered' ? 'ul' : 'ol'}
-          className={cx(classes.root, className)}
-          ref={ref}
-          {...others}
+        <ListProvider
+            value={{
+                spacing,
+                center,
+                icon,
+                listStyleType,
+                size,
+                withPadding,
+                classNames,
+                styles,
+                unstyled,
+                variant,
+            }}
         >
-          {children}
-        </Box>
-      </ListProvider>
-    );
-  }
-) as any;
+            <Box<any>
+                component={type === 'unordered' ? 'ul' : 'ol'}
+                className={cx(classes.root, className)}
+                ref={ref}
+                {...others}
+            >
+                {children}
+            </Box>
+        </ListProvider>
+    )
+}) as any
 
-List.Item = ListItem;
-List.displayName = '@worldprinter/wdesign-core/List';
+List.Item = ListItem
+List.displayName = '@worldprinter/wdesign-core/List'

@@ -1,38 +1,38 @@
-import React from 'react';
-import { MantineTheme } from '@worldprinter/wdesign-styles';
-import { SelectRightSection, SelectRightSectionProps } from './SelectRightSection';
+import React from 'react'
+
+import { MantineTheme } from '@worldprinter/wdesign-styles'
+
+import { SelectRightSection, SelectRightSectionProps } from './SelectRightSection'
 
 interface GetRightSectionProps extends SelectRightSectionProps {
-  rightSection?: React.ReactNode;
-  rightSectionWidth?: string | number;
-  styles: Record<string, any>;
-  theme: MantineTheme;
-  readOnly: boolean;
+    rightSection?: React.ReactNode
+    rightSectionWidth?: string | number
+    styles: Record<string, any>
+    theme: MantineTheme
+    readOnly: boolean
 }
 
 export function getSelectRightSectionProps({
-  styles,
-  rightSection,
-  rightSectionWidth,
-  theme,
-  ...props
+    styles,
+    rightSection,
+    rightSectionWidth,
+    theme,
+    ...props
 }: GetRightSectionProps) {
-  if (rightSection) {
-    return { rightSection, rightSectionWidth, styles };
-  }
+    if (rightSection) {
+        return { rightSection, rightSectionWidth, styles }
+    }
 
-  const _styles = typeof styles === 'function' ? styles(theme) : styles;
+    const _styles = typeof styles === 'function' ? styles(theme) : styles
 
-  return {
-    rightSection: !props.readOnly && !(props.disabled && props.shouldClear) && (
-      <SelectRightSection {...props} />
-    ),
-    styles: {
-      ..._styles,
-      rightSection: {
-        ..._styles?.rightSection,
-        pointerEvents: props.shouldClear ? undefined : 'none',
-      },
-    },
-  };
+    return {
+        rightSection: !props.readOnly && !(props.disabled && props.shouldClear) && <SelectRightSection {...props} />,
+        styles: {
+            ..._styles,
+            rightSection: {
+                ..._styles?.rightSection,
+                pointerEvents: props.shouldClear ? undefined : 'none',
+            },
+        },
+    }
 }

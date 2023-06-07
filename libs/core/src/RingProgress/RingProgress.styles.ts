@@ -1,13 +1,13 @@
-import { createStyles } from '@worldprinter/wdesign-styles';
+import { createStyles } from '@worldprinter/wdesign-styles'
 
 export default createStyles({
-  root: {
-    position: 'relative',
-  },
+    root: {
+        position: 'relative',
+    },
 
-  label: {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-  },
-});
+    label: {
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+    },
+})

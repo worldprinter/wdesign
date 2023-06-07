@@ -1,25 +1,26 @@
-import { useState, useEffect } from 'react';
-import { useWindowEvent } from '../use-window-event/use-window-event';
+import { useEffect, useState } from 'react'
+
+import { useWindowEvent } from '../use-window-event/use-window-event'
 
 export function useHash() {
-  const [hash, setHashValue] = useState<string>('');
+    const [hash, setHashValue] = useState<string>('')
 
-  const setHash = (value: string) => {
-    const valueWithHash = value.startsWith('#') ? value : `#${value}`;
-    window.location.hash = valueWithHash;
-    setHashValue(valueWithHash);
-  };
-
-  useWindowEvent('hashchange', () => {
-    const newHash = window.location.hash;
-    if (hash !== newHash) {
-      setHashValue(newHash);
+    const setHash = (value: string) => {
+        const valueWithHash = value.startsWith('#') ? value : `#${value}`
+        window.location.hash = valueWithHash
+        setHashValue(valueWithHash)
     }
-  });
 
-  useEffect(() => {
-    setHashValue(window.location.hash);
-  }, []);
+    useWindowEvent('hashchange', () => {
+        const newHash = window.location.hash
+        if (hash !== newHash) {
+            setHashValue(newHash)
+        }
+    })
 
-  return [hash, setHash] as const;
+    useEffect(() => {
+        setHashValue(window.location.hash)
+    }, [])
+
+    return [hash, setHash] as const
 }

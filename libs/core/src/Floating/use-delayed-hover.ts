@@ -1,42 +1,42 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react'
 
 interface UseDelayedHoverInput {
-  open(): void;
-  close(): void;
-  openDelay: number;
-  closeDelay: number;
+    open(): void
+    close(): void
+    openDelay: number
+    closeDelay: number
 }
 
 export function useDelayedHover({ open, close, openDelay, closeDelay }: UseDelayedHoverInput) {
-  const openTimeout = useRef(-1);
-  const closeTimeout = useRef(-1);
+    const openTimeout = useRef(-1)
+    const closeTimeout = useRef(-1)
 
-  const clearTimeouts = () => {
-    window.clearTimeout(openTimeout.current);
-    window.clearTimeout(closeTimeout.current);
-  };
-
-  const openDropdown = () => {
-    clearTimeouts();
-
-    if (openDelay === 0) {
-      open();
-    } else {
-      openTimeout.current = window.setTimeout(open, openDelay);
+    const clearTimeouts = () => {
+        window.clearTimeout(openTimeout.current)
+        window.clearTimeout(closeTimeout.current)
     }
-  };
 
-  const closeDropdown = () => {
-    clearTimeouts();
+    const openDropdown = () => {
+        clearTimeouts()
 
-    if (closeDelay === 0) {
-      close();
-    } else {
-      closeTimeout.current = window.setTimeout(close, closeDelay);
+        if (openDelay === 0) {
+            open()
+        } else {
+            openTimeout.current = window.setTimeout(open, openDelay)
+        }
     }
-  };
 
-  useEffect(() => clearTimeouts, []);
+    const closeDropdown = () => {
+        clearTimeouts()
 
-  return { openDropdown, closeDropdown };
+        if (closeDelay === 0) {
+            close()
+        } else {
+            closeTimeout.current = window.setTimeout(close, closeDelay)
+        }
+    }
+
+    useEffect(() => clearTimeouts, [])
+
+    return { openDropdown, closeDropdown }
 }

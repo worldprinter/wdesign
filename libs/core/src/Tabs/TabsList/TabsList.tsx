@@ -1,67 +1,50 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import { TabsPosition } from '../Tabs.types';
-import { useTabsContext } from '../Tabs.context';
-import useStyles from './TabsList.styles';
+import React, { forwardRef } from 'react'
 
-export type TabsListStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface TabsListProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {
-  /** <Tabs.Tab /> components */
-  children: React.ReactNode;
+import { Box } from '../../Box'
+import { useTabsContext } from '../Tabs.context'
+import { TabsPosition } from '../Tabs.types'
+import useStyles from './TabsList.styles'
 
-  /** Determines whether tabs should take the whole space */
-  grow?: boolean;
+export type TabsListStylesNames = Selectors<typeof useStyles>
 
-  /** Tabs alignment */
-  position?: TabsPosition;
+export interface TabsListProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+    /** <Tabs.Tab /> components */
+    children: React.ReactNode
+
+    /** Determines whether tabs should take the whole space */
+    grow?: boolean
+
+    /** Tabs alignment */
+    position?: TabsPosition
 }
 
 const defaultProps: Partial<TabsListProps> = {
-  grow: false,
-  position: 'left',
-};
+    grow: false,
+    position: 'left',
+}
 
-export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
-  (props, ref) => {
-    const { children, className, grow, position, ...others } =
-      useComponentDefaultProps('TabsList', defaultProps, props);
+export const TabsList = forwardRef<HTMLDivElement, TabsListProps>((props, ref) => {
+    const { children, className, grow, position, ...others } = useComponentDefaultProps('TabsList', defaultProps, props)
 
-    const {
-      orientation,
-      variant,
-      color,
-      radius,
-      inverted,
-      placement,
-      classNames,
-      styles,
-      unstyled,
-    } = useTabsContext();
+    const { orientation, variant, color, radius, inverted, placement, classNames, styles, unstyled } = useTabsContext()
     const { classes, cx } = useStyles(
-      { orientation, grow, color, position, radius, inverted, placement },
-      { name: 'Tabs', unstyled, classNames, styles, variant }
-    );
+        { orientation, grow, color, position, radius, inverted, placement },
+        { name: 'Tabs', unstyled, classNames, styles, variant },
+    )
 
     return (
-      <Box
-        {...others}
-        className={cx(classes.tabsList, className)}
-        ref={ref}
-        role="tablist"
-        aria-orientation={orientation}
-      >
-        {children}
-      </Box>
-    );
-  }
-);
+        <Box
+            {...others}
+            className={cx(classes.tabsList, className)}
+            ref={ref}
+            role='tablist'
+            aria-orientation={orientation}
+        >
+            {children}
+        </Box>
+    )
+})
 
-TabsList.displayName = '@worldprinter/wdesign-core/TabsList';
+TabsList.displayName = '@worldprinter/wdesign-core/TabsList'

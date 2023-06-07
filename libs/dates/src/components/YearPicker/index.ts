@@ -1,2 +1,2 @@
-export { YearPicker } from './YearPicker';
-export type { YearPickerProps, YearPickerBaseProps } from './YearPicker';
+export { YearPicker } from './YearPicker'
+export type { YearPickerProps, YearPickerBaseProps } from './YearPicker'

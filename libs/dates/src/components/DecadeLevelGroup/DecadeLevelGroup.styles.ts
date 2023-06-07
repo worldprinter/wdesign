@@ -1,8 +1,8 @@
-import { createStyles } from '@worldprinter/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core'
 
 export default createStyles((theme) => ({
-  decadeLevelGroup: {
-    display: 'flex',
-    gap: theme.spacing.md,
-  },
-}));
+    decadeLevelGroup: {
+        display: 'flex',
+        gap: theme.spacing.md,
+    },
+}))

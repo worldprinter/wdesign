@@ -1,8 +1,10 @@
 import React from 'react'
+
 import { Flex, Modal, Stack, Text } from '@worldprinter/wdesign-core'
+
+import type { MRT_Row, MRT_TableInstance } from '..'
 import { MRT_EditActionButtons } from '../buttons/MRT_EditActionButtons'
 import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput'
-import type { MRT_Row, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}> {
     open: boolean
@@ -10,11 +12,7 @@ interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_EditRowModal = <TData extends Record<string, any> = {}>({
-    open,
-    row,
-    table,
-}: Props<TData>) => {
+export const MRT_EditRowModal = <TData extends Record<string, any> = {}>({ open, row, table }: Props<TData>) => {
     const {
         options: { localization, onEditingRowCancel },
         setEditingRow,
@@ -41,10 +39,7 @@ export const MRT_EditRowModal = <TData extends Record<string, any> = {}>({
                 >
                     {row
                         .getAllCells()
-                        .filter(
-                            (cell) =>
-                                cell.column.columnDef.columnDefType === 'data',
-                        )
+                        .filter((cell) => cell.column.columnDef.columnDefType === 'data')
                         .map((cell) => (
                             <MRT_EditCellTextInput
                                 cell={cell as any}

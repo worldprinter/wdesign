@@ -1,16 +1,10 @@
 import React, { Fragment, useMemo } from 'react'
-import { Flex, Menu } from '@worldprinter/wdesign-core'
-import type {
-    MRT_FilterOption,
-    MRT_Header,
-    MRT_InternalFilterOption,
-    MRT_Localization,
-    MRT_TableInstance,
-} from '..'
 
-export const mrtFilterOptions = (
-    localization: MRT_Localization,
-): MRT_InternalFilterOption[] => [
+import { Flex, Menu } from '@worldprinter/wdesign-core'
+
+import type { MRT_FilterOption, MRT_Header, MRT_InternalFilterOption, MRT_Localization, MRT_TableInstance } from '..'
+
+export const mrtFilterOptions = (localization: MRT_Localization): MRT_InternalFilterOption[] => [
     {
         option: 'fuzzy',
         symbol: '≈',
@@ -129,8 +123,7 @@ export const MRT_FilterOptionMenu = <TData extends Record<string, any> = {}>({
     const { columnDef } = column ?? {}
     const currentFilterValue = column?.getFilterValue()
 
-    const allowedColumnFilterOptions =
-        columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
+    const allowedColumnFilterOptions = columnDef?.columnFilterModeOptions ?? columnFilterModeOptions
 
     const internalFilterOptions = useMemo(
         () =>
@@ -138,13 +131,8 @@ export const MRT_FilterOptionMenu = <TData extends Record<string, any> = {}>({
                 columnDef
                     ? allowedColumnFilterOptions === undefined ||
                       allowedColumnFilterOptions?.includes(filterOption.option)
-                    : (!globalFilterModeOptions ||
-                          globalFilterModeOptions.includes(
-                              filterOption.option,
-                          )) &&
-                      ['fuzzy', 'contains', 'startsWith'].includes(
-                          filterOption.option,
-                      ),
+                    : (!globalFilterModeOptions || globalFilterModeOptions.includes(filterOption.option)) &&
+                      ['fuzzy', 'contains', 'startsWith'].includes(filterOption.option),
             ),
         [],
     )
@@ -164,37 +152,23 @@ export const MRT_FilterOptionMenu = <TData extends Record<string, any> = {}>({
             // reset filter value and/or perform new filter render
             if (emptyModes.includes(option)) {
                 // will now be empty/notEmpty filter mode
-                if (
-                    currentFilterValue !== ' ' &&
-                    !emptyModes.includes(prevFilterMode)
-                ) {
+                if (currentFilterValue !== ' ' && !emptyModes.includes(prevFilterMode)) {
                     column.setFilterValue(' ')
                 } else if (currentFilterValue) {
                     column.setFilterValue(currentFilterValue) // perform new filter render
                 }
-            } else if (
-                columnDef?.filterVariant === 'multi-select' ||
-                arrModes.includes(option as string)
-            ) {
+            } else if (columnDef?.filterVariant === 'multi-select' || arrModes.includes(option as string)) {
                 // will now be array filter mode
-                if (
-                    currentFilterValue instanceof String ||
-                    (currentFilterValue as Array<any>)?.length
-                ) {
+                if (currentFilterValue instanceof String || (currentFilterValue as Array<any>)?.length) {
                     column.setFilterValue([])
                 } else if (currentFilterValue) {
                     column.setFilterValue(currentFilterValue) // perform new filter render
                 }
-            } else if (
-                columnDef?.filterVariant === 'range' ||
-                rangeModes.includes(option as MRT_FilterOption)
-            ) {
+            } else if (columnDef?.filterVariant === 'range' || rangeModes.includes(option as MRT_FilterOption)) {
                 // will now be range filter mode
                 if (
                     !Array.isArray(currentFilterValue) ||
-                    (!(currentFilterValue as Array<any>)?.every(
-                        (v) => v === '',
-                    ) &&
+                    (!(currentFilterValue as Array<any>)?.every((v) => v === '') &&
                         !rangeModes.includes(prevFilterMode))
                 ) {
                     column.setFilterValue(['', ''])
@@ -213,8 +187,7 @@ export const MRT_FilterOptionMenu = <TData extends Record<string, any> = {}>({
         onSelect?.()
     }
 
-    const filterOption =
-        !!header && columnDef ? columnDef._filterFn : globalFilterFn
+    const filterOption = !!header && columnDef ? columnDef._filterFn : globalFilterFn
 
     return (
         <Menu.Dropdown>
@@ -236,42 +209,34 @@ export const MRT_FilterOptionMenu = <TData extends Record<string, any> = {}>({
                       onSelectFilterMode: handleSelectFilterMode,
                       table,
                   })) ??
-                internalFilterOptions.map(
-                    ({ option, label, divider, symbol }, index) => (
-                        <Fragment key={index}>
-                            <Menu.Item
-                                onClick={() =>
-                                    handleSelectFilterMode(
-                                        option as MRT_FilterOption,
-                                    )
-                                }
-                                color={
-                                    option === filterOption ? 'blue' : undefined
-                                }
+                internalFilterOptions.map(({ option, label, divider, symbol }, index) => (
+                    <Fragment key={index}>
+                        <Menu.Item
+                            onClick={() => handleSelectFilterMode(option as MRT_FilterOption)}
+                            color={option === filterOption ? 'blue' : undefined}
+                            sx={{
+                                '& > .mantine-Menu-itemLabel': {
+                                    display: 'flex',
+                                    flexWrap: 'nowrap',
+                                    gap: '1ch',
+                                },
+                            }}
+                            value={option}
+                        >
+                            <Flex
                                 sx={{
-                                    '& > .mantine-Menu-itemLabel': {
-                                        display: 'flex',
-                                        flexWrap: 'nowrap',
-                                        gap: '1ch',
-                                    },
+                                    fontSize: '20px',
+                                    transform: 'translateY(-2px)',
+                                    width: '2ch',
                                 }}
-                                value={option}
                             >
-                                <Flex
-                                    sx={{
-                                        fontSize: '20px',
-                                        transform: 'translateY(-2px)',
-                                        width: '2ch',
-                                    }}
-                                >
-                                    {symbol}
-                                </Flex>
-                                <Flex align='center'>{label}</Flex>
-                            </Menu.Item>
-                            {divider && <Menu.Divider />}
-                        </Fragment>
-                    ),
-                )}
+                                {symbol}
+                            </Flex>
+                            <Flex align='center'>{label}</Flex>
+                        </Menu.Item>
+                        {divider && <Menu.Divider />}
+                    </Fragment>
+                ))}
         </Menu.Dropdown>
     )
 }

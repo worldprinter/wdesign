@@ -1,73 +1,61 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../Box';
-import { filterFalsyChildren } from './filter-falsy-children/filter-falsy-children';
-import useStyles, { GroupPosition } from './Group.styles';
+import React, { forwardRef } from 'react'
 
-export interface GroupProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'div'> {
-  variant?: string;
+import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-  /** Defines justify-content property */
-  position?: GroupPosition;
+import { Box } from '../Box'
+import { filterFalsyChildren } from './filter-falsy-children/filter-falsy-children'
+import useStyles, { GroupPosition } from './Group.styles'
 
-  /** Defined flex-wrap property */
-  noWrap?: boolean;
+export interface GroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+    variant?: string
 
-  /** Defines flex-grow property for each element, true -> 1, false -> 0 */
-  grow?: boolean;
+    /** Defines justify-content property */
+    position?: GroupPosition
 
-  /** Space between elements */
-  spacing?: MantineNumberSize;
+    /** Defined flex-wrap property */
+    noWrap?: boolean
 
-  /** Defines align-items css property */
-  align?: React.CSSProperties['alignItems'];
+    /** Defines flex-grow property for each element, true -> 1, false -> 0 */
+    grow?: boolean
+
+    /** Space between elements */
+    spacing?: MantineNumberSize
+
+    /** Defines align-items css property */
+    align?: React.CSSProperties['alignItems']
 }
 
 const defaultProps: Partial<GroupProps> = {
-  position: 'left',
-  spacing: 'md',
-};
+    position: 'left',
+    spacing: 'md',
+}
 
-export const Group = forwardRef<HTMLDivElement, GroupProps>(
-  (props: GroupProps, ref) => {
-    const {
-      className,
-      position,
-      align,
-      children,
-      noWrap,
-      grow,
-      spacing,
-      unstyled,
-      variant,
-      ...others
-    } = useComponentDefaultProps('Group', defaultProps, props);
+export const Group = forwardRef<HTMLDivElement, GroupProps>((props: GroupProps, ref) => {
+    const { className, position, align, children, noWrap, grow, spacing, unstyled, variant, ...others } =
+        useComponentDefaultProps('Group', defaultProps, props)
 
-    const filteredChildren = filterFalsyChildren(children);
+    const filteredChildren = filterFalsyChildren(children)
     const { classes, cx } = useStyles(
-      {
-        align,
-        grow,
-        noWrap,
-        spacing,
-        position,
-        count: filteredChildren.length,
-      },
-      { unstyled, name: 'Group', variant }
-    );
+        {
+            align,
+            grow,
+            noWrap,
+            spacing,
+            position,
+            count: filteredChildren.length,
+        },
+        { unstyled, name: 'Group', variant },
+    )
 
     return (
-      <Box className={cx(classes.root, className)} ref={ref} {...others}>
-        {filteredChildren}
-      </Box>
-    );
-  }
-);
+        <Box
+            className={cx(classes.root, className)}
+            ref={ref}
+            {...others}
+        >
+            {filteredChildren}
+        </Box>
+    )
+})
 
-Group.displayName = '@worldprinter/wdesign-core/Group';
+Group.displayName = '@worldprinter/wdesign-core/Group'

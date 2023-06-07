@@ -1,26 +1,26 @@
-import { createStyles } from '@worldprinter/wdesign-styles';
+import { createStyles } from '@worldprinter/wdesign-styles'
 
 export interface SpoilerStylesParams {
-  transitionDuration: number;
+    transitionDuration: number
 }
 
 export default createStyles((theme, { transitionDuration }: SpoilerStylesParams) => ({
-  control: {},
+    control: {},
 
-  root: {
-    position: 'relative',
-  },
-
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-    transitionProperty: 'max-height',
-    transitionTimingFunction: theme.transitionTimingFunction,
-    transitionDuration: `${transitionDuration}ms`,
-
-    '@media (prefers-reduced-motion)': {
-      transitionDuration: theme.respectReducedMotion ? '0ms' : undefined,
+    root: {
+        position: 'relative',
     },
-  },
-}));
+
+    content: {
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        transitionProperty: 'max-height',
+        transitionTimingFunction: theme.transitionTimingFunction,
+        transitionDuration: `${transitionDuration}ms`,
+
+        '@media (prefers-reduced-motion)': {
+            transitionDuration: theme.respectReducedMotion ? '0ms' : undefined,
+        },
+    },
+}))

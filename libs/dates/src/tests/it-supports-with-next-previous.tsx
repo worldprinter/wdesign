@@ -1,28 +1,45 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
+import React from 'react'
 
 export interface HeaderTestProps {
-  withNext?: boolean;
-  withPrevious?: boolean;
+    withNext?: boolean
+    withPrevious?: boolean
 }
 
-export function itSupportsWithNextPrevious(
-  Component: React.FC<HeaderTestProps>,
-  requiredProps?: Record<string, any>
-) {
-  it('supports withNext prop', () => {
-    const { rerender } = render(<Component {...requiredProps} withNext />);
-    expect(screen.getByLabelText('next')).toBeInTheDocument();
+export function itSupportsWithNextPrevious(Component: React.FC<HeaderTestProps>, requiredProps?: Record<string, any>) {
+    it('supports withNext prop', () => {
+        const { rerender } = render(
+            <Component
+                {...requiredProps}
+                withNext
+            />,
+        )
+        expect(screen.getByLabelText('next')).toBeInTheDocument()
 
-    rerender(<Component {...requiredProps} withNext={false} />);
-    expect(screen.queryAllByLabelText('next')).toHaveLength(0);
-  });
+        rerender(
+            <Component
+                {...requiredProps}
+                withNext={false}
+            />,
+        )
+        expect(screen.queryAllByLabelText('next')).toHaveLength(0)
+    })
 
-  it('supports withPrevious prop', () => {
-    const { rerender } = render(<Component {...requiredProps} withPrevious />);
-    expect(screen.getByLabelText('prev')).toBeInTheDocument();
+    it('supports withPrevious prop', () => {
+        const { rerender } = render(
+            <Component
+                {...requiredProps}
+                withPrevious
+            />,
+        )
+        expect(screen.getByLabelText('prev')).toBeInTheDocument()
 
-    rerender(<Component {...requiredProps} withPrevious={false} />);
-    expect(screen.queryAllByLabelText('prev')).toHaveLength(0);
-  });
+        rerender(
+            <Component
+                {...requiredProps}
+                withPrevious={false}
+            />,
+        )
+        expect(screen.queryAllByLabelText('prev')).toHaveLength(0)
+    })
 }

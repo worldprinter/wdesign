@@ -1,1 +1,1 @@
-export type MenuTriggerEvent = 'click' | 'hover';
+export type MenuTriggerEvent = 'click' | 'hover'

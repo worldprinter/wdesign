@@ -1,11 +1,11 @@
-import { createSafeContext } from '@worldprinter/wdesign-utils';
+import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 export interface DropzoneContextValue {
-  idle: boolean;
-  accept: boolean;
-  reject: boolean;
+    idle: boolean
+    accept: boolean
+    reject: boolean
 }
 
 export const [DropzoneProvider, useDropzoneContext] = createSafeContext<DropzoneContextValue>(
-  'Dropzone component was not found in tree'
-);
+    'Dropzone component was not found in tree',
+)

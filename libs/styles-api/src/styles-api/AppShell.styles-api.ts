@@ -1,7 +1,7 @@
-import type { AppShellStylesNames } from '@worldprinter/wdesign-core';
+import type { AppShellStylesNames } from '@worldprinter/wdesign-core'
 
 export const AppShell: Record<AppShellStylesNames, string> = {
-  root: 'Root element, wraps Navbar, Header and content',
-  body: 'AppShell body, contains Navbar and main element',
-  main: 'AppShell main element, contains content',
-};
+    root: 'Root element, wraps Navbar, Header and content',
+    body: 'AppShell body, contains Navbar and main element',
+    main: 'AppShell main element, contains content',
+}

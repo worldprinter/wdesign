@@ -1,180 +1,183 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineNumberSize,
-  MantineSize,
-  rem,
-  Selectors,
-  useComponentDefaultProps,
-  Variants,
-} from '@worldprinter/wdesign-styles';
-import { createPolymorphicComponent } from '@worldprinter/wdesign-utils';
-import { Box, extractSystemStyles } from '../Box';
-import { InputWrapper } from './InputWrapper/InputWrapper';
-import { InputDescription } from './InputDescription/InputDescription';
-import { InputLabel } from './InputLabel/InputLabel';
-import { InputError } from './InputError/InputError';
-import { InputPlaceholder } from './InputPlaceholder/InputPlaceholder';
-import { useInputWrapperContext } from './InputWrapper.context';
-import useStyles from './Input.styles';
+import React, { forwardRef } from 'react'
 
-export type InputStylesNames = Selectors<typeof useStyles>;
+import {
+    DefaultProps,
+    MantineNumberSize,
+    MantineSize,
+    rem,
+    Selectors,
+    useComponentDefaultProps,
+    Variants,
+} from '@worldprinter/wdesign-styles'
+import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
+
+import { Box, extractSystemStyles } from '../Box'
+import useStyles from './Input.styles'
+import { InputDescription } from './InputDescription/InputDescription'
+import { InputError } from './InputError/InputError'
+import { InputLabel } from './InputLabel/InputLabel'
+import { InputPlaceholder } from './InputPlaceholder/InputPlaceholder'
+import { useInputWrapperContext } from './InputWrapper.context'
+import { InputWrapper } from './InputWrapper/InputWrapper'
+
+export type InputStylesNames = Selectors<typeof useStyles>
 
 export interface InputSharedProps {
-  /** Adds icon on the left side of input */
-  icon?: React.ReactNode;
+    /** Adds icon on the left side of input */
+    icon?: React.ReactNode
 
-  /** Width of icon section */
-  iconWidth?: React.CSSProperties['width'];
+    /** Width of icon section */
+    iconWidth?: React.CSSProperties['width']
 
-  /** Right section of input, similar to icon but on the right */
-  rightSection?: React.ReactNode;
+    /** Right section of input, similar to icon but on the right */
+    rightSection?: React.ReactNode
 
-  /** Width of right section, is used to calculate input padding-right */
-  rightSectionWidth?: React.CSSProperties['width'];
+    /** Width of right section, is used to calculate input padding-right */
+    rightSectionWidth?: React.CSSProperties['width']
 
-  /** Props spread to rightSection div element */
-  rightSectionProps?: Record<string, any>;
+    /** Props spread to rightSection div element */
+    rightSectionProps?: Record<string, any>
 
-  /** Properties spread to root element */
-  wrapperProps?: Record<string, any>;
+    /** Properties spread to root element */
+    wrapperProps?: Record<string, any>
 
-  /** Sets required on input element */
-  required?: boolean;
+    /** Sets required on input element */
+    required?: boolean
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-  radius?: MantineNumberSize;
+    /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
+    radius?: MantineNumberSize
 
-  /** Defines input appearance, defaults to default in light color scheme and filled in dark */
-  variant?: Variants<'default' | 'filled' | 'unstyled'>;
+    /** Defines input appearance, defaults to default in light color scheme and filled in dark */
+    variant?: Variants<'default' | 'filled' | 'unstyled'>
 
-  /** Disabled input state */
-  disabled?: boolean;
+    /** Disabled input state */
+    disabled?: boolean
 
-  /** Input size */
-  size?: MantineSize;
+    /** Input size */
+    size?: MantineSize
 }
 
-export interface InputProps
-  extends InputSharedProps,
-    DefaultProps<InputStylesNames> {
-  /** Static css selector base */
-  __staticSelector?: string;
+export interface InputProps extends InputSharedProps, DefaultProps<InputStylesNames> {
+    /** Static css selector base */
+    __staticSelector?: string
 
-  /** Determines whether input has error styles */
-  error?: React.ReactNode;
+    /** Determines whether input has error styles */
+    error?: React.ReactNode
 
-  /** Will input have multiple lines? */
-  multiline?: boolean;
+    /** Will input have multiple lines? */
+    multiline?: boolean
 
-  /** Determines whether cursor on input should be pointer */
-  pointer?: boolean;
+    /** Determines whether cursor on input should be pointer */
+    pointer?: boolean
 }
 
 const defaultProps: Partial<InputProps> = {
-  size: 'sm',
-  variant: 'default',
-};
+    size: 'sm',
+    variant: 'default',
+}
 
 export const _Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const {
-    className,
-    error,
-    required,
-    disabled,
-    variant,
-    icon,
-    style,
-    rightSectionWidth,
-    iconWidth,
-    rightSection,
-    rightSectionProps,
-    radius,
-    size,
-    wrapperProps,
-    classNames,
-    styles,
-    __staticSelector,
-    multiline,
-    sx,
-    unstyled,
-    pointer,
-    ...others
-  } = useComponentDefaultProps('Input', defaultProps, props);
-  const { offsetBottom, offsetTop, describedBy } = useInputWrapperContext();
+    const {
+        className,
+        error,
+        required,
+        disabled,
+        variant,
+        icon,
+        style,
+        rightSectionWidth,
+        iconWidth,
+        rightSection,
+        rightSectionProps,
+        radius,
+        size,
+        wrapperProps,
+        classNames,
+        styles,
+        __staticSelector,
+        multiline,
+        sx,
+        unstyled,
+        pointer,
+        ...others
+    } = useComponentDefaultProps('Input', defaultProps, props)
+    const { offsetBottom, offsetTop, describedBy } = useInputWrapperContext()
 
-  const { classes, cx } = useStyles(
-    {
-      radius,
-      multiline,
-      invalid: !!error,
-      rightSectionWidth: rightSectionWidth ? rem(rightSectionWidth) : undefined,
-      iconWidth,
-      withRightSection: !!rightSection,
-      offsetBottom,
-      offsetTop,
-      pointer,
-    },
-    {
-      classNames,
-      styles,
-      name: ['Input', __staticSelector],
-      unstyled,
-      variant,
-      size,
-    }
-  );
+    const { classes, cx } = useStyles(
+        {
+            radius,
+            multiline,
+            invalid: !!error,
+            rightSectionWidth: rightSectionWidth ? rem(rightSectionWidth) : undefined,
+            iconWidth,
+            withRightSection: !!rightSection,
+            offsetBottom,
+            offsetTop,
+            pointer,
+        },
+        {
+            classNames,
+            styles,
+            name: ['Input', __staticSelector],
+            unstyled,
+            variant,
+            size,
+        },
+    )
 
-  const { systemStyles, rest } = extractSystemStyles(others);
+    const { systemStyles, rest } = extractSystemStyles(others)
 
-  return (
-    <Box
-      className={cx(classes.wrapper, className)}
-      sx={sx}
-      style={style}
-      {...systemStyles}
-      {...wrapperProps}
-    >
-      {icon && <div className={classes.icon}>{icon}</div>}
+    return (
+        <Box
+            className={cx(classes.wrapper, className)}
+            sx={sx}
+            style={style}
+            {...systemStyles}
+            {...wrapperProps}
+        >
+            {icon && <div className={classes.icon}>{icon}</div>}
 
-      <Box
-        component="input"
-        {...rest}
-        ref={ref}
-        required={required}
-        aria-invalid={!!error}
-        aria-describedby={describedBy}
-        disabled={disabled}
-        data-disabled={disabled || undefined}
-        data-with-icon={!!icon || undefined}
-        data-invalid={!!error || undefined}
-        className={classes.input}
-      />
+            <Box
+                component='input'
+                {...rest}
+                ref={ref}
+                required={required}
+                aria-invalid={!!error}
+                aria-describedby={describedBy}
+                disabled={disabled}
+                data-disabled={disabled || undefined}
+                data-with-icon={!!icon || undefined}
+                data-invalid={!!error || undefined}
+                className={classes.input}
+            />
 
-      {rightSection && (
-        <div {...rightSectionProps} className={classes.rightSection}>
-          {rightSection}
-        </div>
-      )}
-    </Box>
-  );
-}) as any;
+            {rightSection && (
+                <div
+                    {...rightSectionProps}
+                    className={classes.rightSection}
+                >
+                    {rightSection}
+                </div>
+            )}
+        </Box>
+    )
+}) as any
 
-_Input.displayName = '@worldprinter/wdesign-core/Input';
-_Input.Wrapper = InputWrapper;
-_Input.Label = InputLabel;
-_Input.Description = InputDescription;
-_Input.Error = InputError;
-_Input.Placeholder = InputPlaceholder;
+_Input.displayName = '@worldprinter/wdesign-core/Input'
+_Input.Wrapper = InputWrapper
+_Input.Label = InputLabel
+_Input.Description = InputDescription
+_Input.Error = InputError
+_Input.Placeholder = InputPlaceholder
 
 export const Input = createPolymorphicComponent<
-  'input',
-  InputProps,
-  {
-    Wrapper: typeof InputWrapper;
-    Label: typeof InputLabel;
-    Description: typeof InputDescription;
-    Error: typeof InputError;
-    Placeholder: typeof InputPlaceholder;
-  }
->(_Input);
+    'input',
+    InputProps,
+    {
+        Wrapper: typeof InputWrapper
+        Label: typeof InputLabel
+        Description: typeof InputDescription
+        Error: typeof InputError
+        Placeholder: typeof InputPlaceholder
+    }
+>(_Input)

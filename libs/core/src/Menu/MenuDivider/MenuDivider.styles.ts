@@ -1,11 +1,9 @@
-import { createStyles, rem } from '@worldprinter/wdesign-styles';
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export default createStyles((theme) => ({
-  divider: {
-    marginTop: rem(4),
-    marginBottom: rem(4),
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
-    }`,
-  },
-}));
+    divider: {
+        marginTop: rem(4),
+        marginBottom: rem(4),
+        borderTop: `${rem(1)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+    },
+}))

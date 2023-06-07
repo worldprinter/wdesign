@@ -1,26 +1,23 @@
-import { MantineSize, MantineTheme, getSize, getBreakpointValue } from '@worldprinter/wdesign-styles';
+import { getBreakpointValue, getSize, MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
 
-type Breakpoints<T> = Partial<Record<MantineSize | (string & {}), T>>;
+type Breakpoints<T> = Partial<Record<MantineSize | (string & {}), T>>
 
-export function getSortedBreakpoints<T>(
-  breakpoints: Breakpoints<T>,
-  theme: MantineTheme
-): [string, T][] {
-  if (!breakpoints) {
-    return [];
-  }
+export function getSortedBreakpoints<T>(breakpoints: Breakpoints<T>, theme: MantineTheme): [string, T][] {
+    if (!breakpoints) {
+        return []
+    }
 
-  const values = Object.keys(breakpoints)
-    .filter((breakpoint) => breakpoint !== 'base')
-    .map(
-      (breakpoint) =>
-        [
-          getSize({ size: breakpoint, sizes: theme.breakpoints, units: 'em' }),
-          breakpoints[breakpoint],
-        ] as const
-    );
+    const values = Object.keys(breakpoints)
+        .filter((breakpoint) => breakpoint !== 'base')
+        .map(
+            (breakpoint) =>
+                [
+                    getSize({ size: breakpoint, sizes: theme.breakpoints, units: 'em' }),
+                    breakpoints[breakpoint],
+                ] as const,
+        )
 
-  values.sort((a, b) => getBreakpointValue(a[0]) - getBreakpointValue(b[0]));
+    values.sort((a, b) => getBreakpointValue(a[0]) - getBreakpointValue(b[0]))
 
-  return values as [string, T][];
+    return values as [string, T][]
 }

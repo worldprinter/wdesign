@@ -1,11 +1,7 @@
 import React, { MouseEvent } from 'react'
-import {
-    Checkbox,
-    CheckboxProps,
-    Radio,
-    RadioProps,
-    Tooltip,
-} from '@worldprinter/wdesign-core'
+
+import { Checkbox, CheckboxProps, Radio, RadioProps, Tooltip } from '@worldprinter/wdesign-core'
+
 import type { MRT_Row, MRT_TableInstance } from '..'
 
 interface Props {
@@ -42,9 +38,7 @@ export const MRT_SelectCheckbox = ({ row, selectAll, table }: Props) => {
         : undefined
 
     const commonProps = {
-        'aria-label': selectAll
-            ? localization.toggleSelectAll
-            : localization.toggleSelectRow,
+        'aria-label': selectAll ? localization.toggleSelectAll : localization.toggleSelectRow,
         checked: selectAll ? allRowsSelected : row?.getIsSelected(),
         disabled: isLoading || (row && !row.getCanSelect()),
         onChange: row
@@ -66,21 +60,14 @@ export const MRT_SelectCheckbox = ({ row, selectAll, table }: Props) => {
             withinPortal
             withArrow
             openDelay={1000}
-            label={
-                checkboxProps?.title ??
-                (selectAll
-                    ? localization.toggleSelectAll
-                    : localization.toggleSelectRow)
-            }
+            label={checkboxProps?.title ?? (selectAll ? localization.toggleSelectAll : localization.toggleSelectRow)}
         >
             {enableMultiRowSelection === false ? (
                 <Radio {...commonProps} />
             ) : (
                 <Checkbox
                     indeterminate={
-                        selectAll
-                            ? table.getIsSomeRowsSelected() && !allRowsSelected
-                            : row?.getIsSomeSelected()
+                        selectAll ? table.getIsSomeRowsSelected() && !allRowsSelected : row?.getIsSomeSelected()
                     }
                     {...commonProps}
                 />

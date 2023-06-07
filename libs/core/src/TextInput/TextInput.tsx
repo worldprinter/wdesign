@@ -1,52 +1,52 @@
-import React, { forwardRef } from 'react';
-import { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles';
-import {
-  Input,
-  InputSharedProps,
-  InputStylesNames,
-  useInputProps,
-  InputWrapperBaseProps,
-  InputWrapperStylesNames,
-} from '../Input';
+import React, { forwardRef } from 'react'
 
-export type TextInputStylesNames = InputStylesNames | InputWrapperStylesNames;
+import { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+
+import {
+    Input,
+    InputSharedProps,
+    InputStylesNames,
+    InputWrapperBaseProps,
+    InputWrapperStylesNames,
+    useInputProps,
+} from '../Input'
+
+export type TextInputStylesNames = InputStylesNames | InputWrapperStylesNames
 
 export interface TextInputProps
-  extends DefaultProps<TextInputStylesNames>,
-    InputSharedProps,
-    InputWrapperBaseProps,
-    Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> {
-  /** Input element type */
-  type?: React.HTMLInputTypeAttribute;
+    extends DefaultProps<TextInputStylesNames>,
+        InputSharedProps,
+        InputWrapperBaseProps,
+        Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> {
+    /** Input element type */
+    type?: React.HTMLInputTypeAttribute
 
-  /** Props passed to root element (InputWrapper component) */
-  wrapperProps?: Record<string, any>;
+    /** Props passed to root element (InputWrapper component) */
+    wrapperProps?: Record<string, any>
 
-  /** Input size */
-  size?: MantineSize;
+    /** Input size */
+    size?: MantineSize
 
-  __staticSelector?: string;
+    __staticSelector?: string
 }
 
 const defaultProps: Partial<TextInputProps> = {
-  type: 'text',
-  size: 'sm',
-  __staticSelector: 'TextInput',
-};
+    type: 'text',
+    size: 'sm',
+    __staticSelector: 'TextInput',
+}
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  (props, ref) => {
-    const { inputProps, wrapperProps, ...others } = useInputProps(
-      'TextInput',
-      defaultProps,
-      props
-    );
+export const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
+    const { inputProps, wrapperProps, ...others } = useInputProps('TextInput', defaultProps, props)
     return (
-      <Input.Wrapper {...wrapperProps}>
-        <Input {...inputProps} {...others} ref={ref} />
-      </Input.Wrapper>
-    );
-  }
-);
+        <Input.Wrapper {...wrapperProps}>
+            <Input
+                {...inputProps}
+                {...others}
+                ref={ref}
+            />
+        </Input.Wrapper>
+    )
+})
 
-TextInput.displayName = '@worldprinter/wdesign-core/TextInput';
+TextInput.displayName = '@worldprinter/wdesign-core/TextInput'

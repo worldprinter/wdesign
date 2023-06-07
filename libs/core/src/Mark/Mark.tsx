@@ -1,41 +1,33 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  MantineColor,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../Box';
-import useStyles from './Mark.styles';
+import React, { forwardRef } from 'react'
 
-export interface MarkProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'mark'> {
-  variant?: string;
+import { DefaultProps, MantineColor, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-  /** Background color from theme.colors */
-  color?: MantineColor;
+import { Box } from '../Box'
+import useStyles from './Mark.styles'
+
+export interface MarkProps extends DefaultProps, React.ComponentPropsWithoutRef<'mark'> {
+    variant?: string
+
+    /** Background color from theme.colors */
+    color?: MantineColor
 }
 
 const defaultProps: Partial<MarkProps> = {
-  color: 'yellow',
-};
+    color: 'yellow',
+}
 
 export const Mark = forwardRef<HTMLElement, MarkProps>((props, ref) => {
-  const { color, className, unstyled, variant, ...others } =
-    useComponentDefaultProps('Mark', defaultProps, props);
+    const { color, className, unstyled, variant, ...others } = useComponentDefaultProps('Mark', defaultProps, props)
 
-  const { classes, cx } = useStyles(
-    { color },
-    { unstyled, name: 'Mark', variant }
-  );
-  return (
-    <Box
-      component="mark"
-      ref={ref}
-      className={cx(classes.root, className)}
-      {...others}
-    />
-  );
-});
+    const { classes, cx } = useStyles({ color }, { unstyled, name: 'Mark', variant })
+    return (
+        <Box
+            component='mark'
+            ref={ref}
+            className={cx(classes.root, className)}
+            {...others}
+        />
+    )
+})
 
-Mark.displayName = '@worldprinter/wdesign-core/Mark';
+Mark.displayName = '@worldprinter/wdesign-core/Mark'

@@ -1,16 +1,16 @@
-import { createStyles } from '@worldprinter/wdesign-core';
+import { createStyles } from '@worldprinter/wdesign-core'
 
 export default createStyles((theme) => ({
-  wrapper: {
-    ...theme.fn.cover(0),
-    position: 'fixed',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-    display: 'flex',
-    padding: theme.spacing.xs,
-    transition: 'opacity 100ms ease',
-  },
+    wrapper: {
+        ...theme.fn.cover(0),
+        position: 'fixed',
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+        display: 'flex',
+        padding: theme.spacing.xs,
+        transition: 'opacity 100ms ease',
+    },
 
-  dropzone: {
-    flex: 1,
-  },
-}));
+    dropzone: {
+        flex: 1,
+    },
+}))

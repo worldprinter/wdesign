@@ -1,130 +1,122 @@
-import React, { forwardRef, Children } from 'react';
+import React, { Children, forwardRef } from 'react'
+
 import {
-  DefaultProps,
-  MantineColor,
-  MantineNumberSize,
-  CSSObject,
-  useComponentDefaultProps,
-  rem,
-  Selectors,
-} from '@worldprinter/wdesign-styles';
-import { ForwardRefWithStaticComponents, packSx } from '@worldprinter/wdesign-utils';
-import { Box } from '../Box';
-import { TimelineItem, TimelineItemStylesNames } from './TimelineItem/TimelineItem';
-import useStyles from './Timeline.styles';
+    CSSObject,
+    DefaultProps,
+    MantineColor,
+    MantineNumberSize,
+    rem,
+    Selectors,
+    useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles'
+import { ForwardRefWithStaticComponents, packSx } from '@worldprinter/wdesign-utils'
 
-export type TimelineStylesNames = Selectors<typeof useStyles> | TimelineItemStylesNames;
+import { Box } from '../Box'
+import useStyles from './Timeline.styles'
+import { TimelineItem, TimelineItemStylesNames } from './TimelineItem/TimelineItem'
 
-export interface TimelineProps
-  extends DefaultProps<TimelineStylesNames>,
-    React.ComponentPropsWithRef<'div'> {
-  variant?: string;
+export type TimelineStylesNames = Selectors<typeof useStyles> | TimelineItemStylesNames
 
-  /** <Timeline.Item /> components only */
-  children: React.ReactNode;
+export interface TimelineProps extends DefaultProps<TimelineStylesNames>, React.ComponentPropsWithRef<'div'> {
+    variant?: string
 
-  /** Index of active element */
-  active?: number;
+    /** <Timeline.Item /> components only */
+    children: React.ReactNode
 
-  /** Active color from theme */
-  color?: MantineColor;
+    /** Index of active element */
+    active?: number
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-  radius?: MantineNumberSize;
+    /** Active color from theme */
+    color?: MantineColor
 
-  /** Bullet size */
-  bulletSize?: number | string;
+    /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
+    radius?: MantineNumberSize
 
-  /** Timeline alignment */
-  align?: 'right' | 'left';
+    /** Bullet size */
+    bulletSize?: number | string
 
-  /** Line width */
-  lineWidth?: number | string;
+    /** Timeline alignment */
+    align?: 'right' | 'left'
 
-  /** Reverse active direction without reversing items */
-  reverseActive?: boolean;
+    /** Line width */
+    lineWidth?: number | string
+
+    /** Reverse active direction without reversing items */
+    reverseActive?: boolean
 }
 
-type TimelineComponent = ForwardRefWithStaticComponents<
-  TimelineProps,
-  { Item: typeof TimelineItem }
->;
+type TimelineComponent = ForwardRefWithStaticComponents<TimelineProps, { Item: typeof TimelineItem }>
 
 const defaultProps: Partial<TimelineProps> = {
-  active: -1,
-  radius: 'xl',
-  bulletSize: 20,
-  align: 'left',
-  lineWidth: 4,
-  reverseActive: false,
-};
+    active: -1,
+    radius: 'xl',
+    bulletSize: 20,
+    align: 'left',
+    lineWidth: 4,
+    reverseActive: false,
+}
 
-export const Timeline: TimelineComponent = forwardRef<HTMLDivElement, TimelineProps>(
-  (props, ref) => {
+export const Timeline: TimelineComponent = forwardRef<HTMLDivElement, TimelineProps>((props, ref) => {
     const {
-      className,
-      children,
-      active,
-      color,
-      radius,
-      bulletSize,
-      align,
-      lineWidth,
-      classNames,
-      styles,
-      sx,
-      reverseActive,
-      unstyled,
-      variant,
-      ...others
-    } = useComponentDefaultProps('Timeline', defaultProps, props);
-
-    const { classes, cx } = useStyles(null, {
-      name: 'Timeline',
-      classNames,
-      styles,
-      unstyled,
-      variant,
-    });
-
-    const _children = Children.toArray(children);
-    const items = _children.map((item: React.ReactElement, index) =>
-      React.cloneElement(item, {
-        variant,
-        classNames,
-        styles,
+        className,
+        children,
+        active,
+        color,
+        radius,
+        bulletSize,
         align,
         lineWidth,
-        radius: item.props.radius || radius,
-        color: item.props.color || color,
-        bulletSize: item.props.bulletSize || bulletSize,
+        classNames,
+        styles,
+        sx,
+        reverseActive,
         unstyled,
-        active:
-          item.props.active ||
-          (reverseActive ? active >= _children.length - index - 1 : active >= index),
-        lineActive:
-          item.props.lineActive ||
-          (reverseActive ? active >= _children.length - index - 1 : active - 1 >= index),
-      })
-    );
+        variant,
+        ...others
+    } = useComponentDefaultProps('Timeline', defaultProps, props)
+
+    const { classes, cx } = useStyles(null, {
+        name: 'Timeline',
+        classNames,
+        styles,
+        unstyled,
+        variant,
+    })
+
+    const _children = Children.toArray(children)
+    const items = _children.map((item: React.ReactElement, index) =>
+        React.cloneElement(item, {
+            variant,
+            classNames,
+            styles,
+            align,
+            lineWidth,
+            radius: item.props.radius || radius,
+            color: item.props.color || color,
+            bulletSize: item.props.bulletSize || bulletSize,
+            unstyled,
+            active: item.props.active || (reverseActive ? active >= _children.length - index - 1 : active >= index),
+            lineActive:
+                item.props.lineActive || (reverseActive ? active >= _children.length - index - 1 : active - 1 >= index),
+        }),
+    )
 
     const offset: CSSObject =
-      align === 'left'
-        ? { paddingLeft: `calc(${rem(bulletSize)} / 2 + ${rem(lineWidth)} / 2)` }
-        : { paddingRight: `calc(${rem(bulletSize)} / 2 + ${rem(lineWidth)} / 2)` };
+        align === 'left'
+            ? { paddingLeft: `calc(${rem(bulletSize)} / 2 + ${rem(lineWidth)} / 2)` }
+            : { paddingRight: `calc(${rem(bulletSize)} / 2 + ${rem(lineWidth)} / 2)` }
 
     return (
-      <Box
-        className={cx(classes.root, className)}
-        ref={ref}
-        sx={[offset, ...packSx(sx)]}
-        {...others}
-      >
-        {items}
-      </Box>
-    );
-  }
-) as any;
+        <Box
+            className={cx(classes.root, className)}
+            ref={ref}
+            sx={[offset, ...packSx(sx)]}
+            {...others}
+        >
+            {items}
+        </Box>
+    )
+}) as any
 
-Timeline.Item = TimelineItem;
-Timeline.displayName = '@worldprinter/wdesign-core/Timeline';
+Timeline.Item = TimelineItem
+Timeline.displayName = '@worldprinter/wdesign-core/Timeline'

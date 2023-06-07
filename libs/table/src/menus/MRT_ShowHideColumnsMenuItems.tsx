@@ -1,15 +1,11 @@
-import React, {
-    Dispatch,
-    DragEvent,
-    SetStateAction,
-    useRef,
-    useState,
-} from 'react'
-import { Box, Menu, Switch, Tooltip, Text } from '@worldprinter/wdesign-core'
+import React, { Dispatch, DragEvent, SetStateAction, useRef, useState } from 'react'
+
+import { Box, Menu, Switch, Text, Tooltip } from '@worldprinter/wdesign-core'
+
+import type { MRT_Column, MRT_TableInstance } from '..'
 import { MRT_ColumnPinningButtons } from '../buttons/MRT_ColumnPinningButtons'
 import { MRT_GrabHandleButton } from '../buttons/MRT_GrabHandleButton'
 import { getPrimaryColor, reorderColumn } from '../column.utils'
-import type { MRT_Column, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}> {
     allColumns: MRT_Column<TData>[]
@@ -20,9 +16,7 @@ interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_ShowHideColumnsMenuItems = <
-    TData extends Record<string, any> = {},
->({
+export const MRT_ShowHideColumnsMenuItems = <TData extends Record<string, any> = {}>({
     allColumns,
     hoveredColumn,
     setHoveredColumn,
@@ -32,12 +26,7 @@ export const MRT_ShowHideColumnsMenuItems = <
 }: Props<TData>) => {
     const {
         getState,
-        options: {
-            enableColumnOrdering,
-            enableHiding,
-            enablePinning,
-            localization,
-        },
+        options: { enableColumnOrdering, enableHiding, enablePinning, localization },
         setColumnOrder,
     } = table
     const { columnOrder } = getState()
@@ -46,8 +35,7 @@ export const MRT_ShowHideColumnsMenuItems = <
 
     const switchChecked =
         (columnDefType !== 'group' && column.getIsVisible()) ||
-        (columnDefType === 'group' &&
-            column.getLeafColumns().some((col) => col.getIsVisible()))
+        (columnDefType === 'group' && column.getLeafColumns().some((col) => col.getIsVisible()))
 
     const handleToggleColumnHidden = (column: MRT_Column<TData>) => {
         if (columnDefType === 'group') {
@@ -113,9 +101,7 @@ export const MRT_ShowHideColumnsMenuItems = <
                     {!isSubMenu &&
                         columnDefType !== 'group' &&
                         enableColumnOrdering &&
-                        !allColumns.some(
-                            (col) => col.columnDef.columnDefType === 'group',
-                        ) &&
+                        !allColumns.some((col) => col.columnDef.columnDefType === 'group') &&
                         (columnDef.enableColumnOrdering !== false ? (
                             <MRT_GrabHandleButton
                                 onDragEnd={handleDragEnd}
@@ -144,23 +130,16 @@ export const MRT_ShowHideColumnsMenuItems = <
                         >
                             <Switch
                                 checked={switchChecked}
-                                disabled={
-                                    (isSubMenu && switchChecked) ||
-                                    !column.getCanHide()
-                                }
+                                disabled={(isSubMenu && switchChecked) || !column.getCanHide()}
                                 label={columnDef.header}
-                                onChange={() =>
-                                    handleToggleColumnHidden(column)
-                                }
+                                onChange={() => handleToggleColumnHidden(column)}
                                 sx={{
                                     cursor: 'pointer !important',
                                 }}
                             />
                         </Tooltip>
                     ) : (
-                        <Text sx={{ alignSelf: 'center' }}>
-                            {columnDef.header}
-                        </Text>
+                        <Text sx={{ alignSelf: 'center' }}>{columnDef.header}</Text>
                     )}
                 </Box>
             </Menu.Item>

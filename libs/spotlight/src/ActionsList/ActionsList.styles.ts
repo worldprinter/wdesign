@@ -1,18 +1,18 @@
-import { createStyles, rem } from '@worldprinter/wdesign-core';
+import { createStyles, rem } from '@worldprinter/wdesign-core'
 
 export default createStyles((theme) => ({
-  nothingFound: {},
+    nothingFound: {},
 
-  actions: {
-    padding: `calc(${theme.spacing.xs} / 2)`,
-  },
+    actions: {
+        padding: `calc(${theme.spacing.xs} / 2)`,
+    },
 
-  actionsGroup: {
-    textTransform: 'uppercase',
-    fontSize: theme.spacing.xs,
-    fontWeight: 700,
-    padding: `${rem(10)} ${rem(12)}`,
-    paddingBottom: 0,
-    paddingTop: theme.spacing.md,
-  },
-}));
+    actionsGroup: {
+        textTransform: 'uppercase',
+        fontSize: theme.spacing.xs,
+        fontWeight: 700,
+        padding: `${rem(10)} ${rem(12)}`,
+        paddingBottom: 0,
+        paddingTop: theme.spacing.md,
+    },
+}))

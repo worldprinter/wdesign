@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { ActionIcon, Menu, Tooltip } from '@worldprinter/wdesign-core'
+
 import type { MRT_Header, MRT_TableInstance } from '..'
 
 export const commonListItemStyles = {
@@ -105,10 +107,7 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
 
     const handleFilterByColumn = () => {
         setShowColumnFilters(true)
-        setTimeout(
-            () => filterInputRefs.current[`${column.id}-0`]?.focus(),
-            100,
-        )
+        setTimeout(() => filterInputRefs.current[`${column.id}-0`]?.focus(), 100)
     }
 
     const handleShowAllColumns = () => {
@@ -169,32 +168,20 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                                         </Menu.Item>
                                     )}
                                     <Menu.Item
-                                        disabled={
-                                            column.getIsSorted() === 'asc'
-                                        }
+                                        disabled={column.getIsSorted() === 'asc'}
                                         icon={<IconSortAscending />}
                                         onClick={handleSortAsc}
                                     >
-                                        {localization.sortByColumnAsc?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                        {localization.sortByColumnAsc?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
                                     <Menu.Item
                                         icon={<IconSortDescending />}
-                                        disabled={
-                                            column.getIsSorted() === 'desc'
-                                        }
+                                        disabled={column.getIsSorted() === 'desc'}
                                         onClick={handleSortDesc}
                                     >
-                                        {localization.sortByColumnDesc?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                        {localization.sortByColumnDesc?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
-                                    {(enableColumnFilters ||
-                                        enableGrouping ||
-                                        enableHiding) && (
+                                    {(enableColumnFilters || enableGrouping || enableHiding) && (
                                         <Menu.Divider key={3} />
                                     )}
                                 </>
@@ -212,14 +199,9 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                                         icon={<IconFilter />}
                                         onClick={handleFilterByColumn}
                                     >
-                                        {localization.filterByColumn?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                        {localization.filterByColumn?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
-                                    {(enableGrouping || enableHiding) && (
-                                        <Menu.Divider key={2} />
-                                    )}
+                                    {(enableGrouping || enableHiding) && <Menu.Divider key={2} />}
                                 </>
                             )}
                             {enableGrouping && column.getCanGroup() && (
@@ -229,13 +211,8 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                                         onClick={handleGroupByColumn}
                                     >
                                         {localization[
-                                            column.getIsGrouped()
-                                                ? 'ungroupByColumn'
-                                                : 'groupByColumn'
-                                        ]?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                            column.getIsGrouped() ? 'ungroupByColumn' : 'groupByColumn'
+                                        ]?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
                                     {enablePinning && <Menu.Divider />}
                                 </>
@@ -243,10 +220,7 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                             {enablePinning && column.getCanPin() && (
                                 <>
                                     <Menu.Item
-                                        disabled={
-                                            column.getIsPinned() === 'left' ||
-                                            !column.getCanPin()
-                                        }
+                                        disabled={column.getIsPinned() === 'left' || !column.getCanPin()}
                                         icon={
                                             <IconPinned
                                                 style={{
@@ -259,10 +233,7 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                                         {localization.pinToLeft}
                                     </Menu.Item>
                                     <Menu.Item
-                                        disabled={
-                                            column.getIsPinned() === 'right' ||
-                                            !column.getCanPin()
-                                        }
+                                        disabled={column.getIsPinned() === 'right' || !column.getCanPin()}
                                         icon={
                                             <IconPinned
                                                 style={{
@@ -302,26 +273,15 @@ export const MRT_ColumnActionMenu = ({ header, table }: Props) => {
                                         key={0}
                                         onClick={handleHideColumn}
                                     >
-                                        {localization.hideColumn?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                        {localization.hideColumn?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
                                     <Menu.Item
-                                        disabled={
-                                            !Object.values(
-                                                columnVisibility,
-                                            ).filter((visible) => !visible)
-                                                .length
-                                        }
+                                        disabled={!Object.values(columnVisibility).filter((visible) => !visible).length}
                                         icon={<IconColumns />}
                                         key={1}
                                         onClick={handleShowAllColumns}
                                     >
-                                        {localization.showAllColumns?.replace(
-                                            '{column}',
-                                            String(columnDef.header),
-                                        )}
+                                        {localization.showAllColumns?.replace('{column}', String(columnDef.header))}
                                     </Menu.Item>
                                 </>
                             )}

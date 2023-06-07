@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { ActionIcon, Flex, Tooltip } from '@worldprinter/wdesign-core'
+
 import type { MRT_Column, MRT_TableInstance } from '..'
 
 interface Props<TData extends Record<string, any> = {}> {
@@ -7,12 +9,7 @@ interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_ColumnPinningButtons = <
-    TData extends Record<string, any> = {},
->({
-    column,
-    table,
-}: Props<TData>) => {
+export const MRT_ColumnPinningButtons = <TData extends Record<string, any> = {}>({ column, table }: Props<TData>) => {
     const {
         options: {
             icons: { IconPinned, IconPinnedOff },

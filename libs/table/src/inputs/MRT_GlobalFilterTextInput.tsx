@@ -1,24 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
-import {
-    ActionIcon,
-    Collapse,
-    Menu,
-    TextInput,
-    Tooltip,
-} from '@worldprinter/wdesign-core'
+
+import { ActionIcon, Collapse, Menu, TextInput, Tooltip } from '@worldprinter/wdesign-core'
 import { useDebouncedValue } from '@worldprinter/wdesign-hooks'
-import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu'
+
 import type { MRT_TableInstance } from '..'
+import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu'
 
 interface Props<TData extends Record<string, any> = {}> {
     table: MRT_TableInstance<TData>
 }
 
-export const MRT_GlobalFilterTextInput = <
-    TData extends Record<string, any> = {},
->({
-    table,
-}: Props<TData>) => {
+export const MRT_GlobalFilterTextInput = <TData extends Record<string, any> = {}>({ table }: Props<TData>) => {
     const {
         getState,
         setGlobalFilter,
@@ -41,10 +33,7 @@ export const MRT_GlobalFilterTextInput = <
     const isMounted = useRef(false)
     const [searchValue, setSearchValue] = useState(globalFilter ?? '')
 
-    const [debouncedSearchValue] = useDebouncedValue(
-        searchValue,
-        manualFiltering ? 500 : 250,
-    )
+    const [debouncedSearchValue] = useDebouncedValue(searchValue, manualFiltering ? 500 : 250)
 
     useEffect(() => {
         setGlobalFilter(debouncedSearchValue || undefined)

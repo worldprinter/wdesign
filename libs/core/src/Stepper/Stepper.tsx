@@ -1,202 +1,193 @@
-import React, { forwardRef, Children, cloneElement } from 'react';
+import React, { Children, cloneElement, forwardRef } from 'react'
+
 import {
-  MantineColor,
-  DefaultProps,
-  MantineNumberSize,
-  MantineSize,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils';
-import { Box } from '../Box';
-import { Step, StepStylesNames, StepFragmentComponent } from './Step/Step';
-import { StepCompleted } from './StepCompleted/StepCompleted';
-import useStyles from './Stepper.styles';
+    DefaultProps,
+    MantineColor,
+    MantineNumberSize,
+    MantineSize,
+    Selectors,
+    useComponentDefaultProps,
+} from '@worldprinter/wdesign-styles'
+import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-export type StepperStylesNames = Selectors<typeof useStyles> | StepStylesNames;
+import { Box } from '../Box'
+import { Step, StepFragmentComponent, StepStylesNames } from './Step/Step'
+import { StepCompleted } from './StepCompleted/StepCompleted'
+import useStyles from './Stepper.styles'
 
-export interface StepperProps
-  extends DefaultProps<StepperStylesNames>,
-    React.ComponentPropsWithRef<'div'> {
-  variant?: string;
+export type StepperStylesNames = Selectors<typeof useStyles> | StepStylesNames
 
-  /** <Stepper.Step /> components only */
-  children: React.ReactNode;
+export interface StepperProps extends DefaultProps<StepperStylesNames>, React.ComponentPropsWithRef<'div'> {
+    variant?: string
 
-  /** Called when step is clicked */
-  onStepClick?(stepIndex: number): void;
+    /** <Stepper.Step /> components only */
+    children: React.ReactNode
 
-  /** Active step index */
-  active: number;
+    /** Called when step is clicked */
+    onStepClick?(stepIndex: number): void
 
-  /** Step icon, defaults to step index + 1 when rendered within Stepper */
-  icon?: React.ReactNode | StepFragmentComponent;
+    /** Active step index */
+    active: number
 
-  /** Step icon displayed when step is completed */
-  completedIcon?: React.ReactNode | StepFragmentComponent;
+    /** Step icon, defaults to step index + 1 when rendered within Stepper */
+    icon?: React.ReactNode | StepFragmentComponent
 
-  /** Step icon displayed when step is in progress */
-  progressIcon?: React.ReactNode | StepFragmentComponent;
+    /** Step icon displayed when step is completed */
+    completedIcon?: React.ReactNode | StepFragmentComponent
 
-  /** Active and progress Step colors from theme.colors */
-  color?: MantineColor;
+    /** Step icon displayed when step is in progress */
+    progressIcon?: React.ReactNode | StepFragmentComponent
 
-  /** Step icon size */
-  iconSize?: number;
+    /** Active and progress Step colors from theme.colors */
+    color?: MantineColor
 
-  /** Key of theme.spacing or any valid CSS value to set content padding-top */
-  contentPadding?: MantineNumberSize;
+    /** Step icon size */
+    iconSize?: number
 
-  /** Component orientation */
-  orientation?: 'vertical' | 'horizontal';
+    /** Key of theme.spacing or any valid CSS value to set content padding-top */
+    contentPadding?: MantineNumberSize
 
-  /** Icon position relative to step body */
-  iconPosition?: 'right' | 'left';
+    /** Component orientation */
+    orientation?: 'vertical' | 'horizontal'
 
-  /** Component size */
-  size?: MantineSize;
+    /** Icon position relative to step body */
+    iconPosition?: 'right' | 'left'
 
-  /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-  radius?: MantineNumberSize;
+    /** Component size */
+    size?: MantineSize
 
-  /** Breakpoint at which orientation will change from horizontal to vertical */
-  breakpoint?: MantineNumberSize;
+    /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
+    radius?: MantineNumberSize
 
-  /** Whether to enable click on upcoming steps by default. Defaults to true **/
-  allowNextStepsSelect?: boolean;
+    /** Breakpoint at which orientation will change from horizontal to vertical */
+    breakpoint?: MantineNumberSize
+
+    /** Whether to enable click on upcoming steps by default. Defaults to true **/
+    allowNextStepsSelect?: boolean
 }
 
 type StepperComponent = ForwardRefWithStaticComponents<
-  StepperProps,
-  {
-    Step: typeof Step;
-    Completed: typeof StepCompleted;
-  }
->;
+    StepperProps,
+    {
+        Step: typeof Step
+        Completed: typeof StepCompleted
+    }
+>
 
 const defaultProps: Partial<StepperProps> = {
-  contentPadding: 'md',
-  size: 'md',
-  radius: 'xl',
-  orientation: 'horizontal',
-  iconPosition: 'left',
-  allowNextStepsSelect: true,
-};
+    contentPadding: 'md',
+    size: 'md',
+    radius: 'xl',
+    orientation: 'horizontal',
+    iconPosition: 'left',
+    allowNextStepsSelect: true,
+}
 
-export const Stepper: StepperComponent = forwardRef<
-  HTMLDivElement,
-  StepperProps
->((props, ref) => {
-  const {
-    className,
-    children,
-    onStepClick,
-    active,
-    icon,
-    completedIcon,
-    progressIcon,
-    color,
-    iconSize,
-    contentPadding,
-    size,
-    radius,
-    orientation,
-    breakpoint,
-    iconPosition,
-    allowNextStepsSelect,
-    classNames,
-    styles,
-    unstyled,
-    variant,
-    ...others
-  } = useComponentDefaultProps('Stepper', defaultProps, props);
-
-  const { classes, cx } = useStyles(
-    { contentPadding, color, orientation, iconPosition, iconSize, breakpoint },
-    { name: 'Stepper', classNames, styles, unstyled, variant, size }
-  );
-
-  const convertedChildren = Children.toArray(children) as React.ReactElement[];
-  const _children = convertedChildren.filter(
-    (child) => child.type !== StepCompleted
-  );
-  const completedStep = convertedChildren.find(
-    (item) => item.type === StepCompleted
-  );
-
-  const items = _children.reduce<React.ReactElement[]>((acc, item, index) => {
-    const state =
-      active === index
-        ? 'stepProgress'
-        : active > index
-        ? 'stepCompleted'
-        : 'stepInactive';
-
-    const shouldAllowSelect = () => {
-      if (typeof onStepClick !== 'function') {
-        return false;
-      }
-
-      if (typeof item.props.allowStepSelect === 'boolean') {
-        return item.props.allowStepSelect;
-      }
-
-      return state === 'stepCompleted' || allowNextStepsSelect;
-    };
-
-    const isStepSelectionEnabled = shouldAllowSelect();
-
-    acc.push(
-      cloneElement(item, {
-        __staticSelector: 'Stepper',
-        icon: item.props.icon || icon || index + 1,
-        key: index,
-        step: index,
-        variant,
-        state,
-        onClick: () => isStepSelectionEnabled && onStepClick(index),
-        allowStepClick: isStepSelectionEnabled,
-        completedIcon: item.props.completedIcon || completedIcon,
-        progressIcon: item.props.progressIcon || progressIcon,
-        color: item.props.color || color,
+export const Stepper: StepperComponent = forwardRef<HTMLDivElement, StepperProps>((props, ref) => {
+    const {
+        className,
+        children,
+        onStepClick,
+        active,
+        icon,
+        completedIcon,
+        progressIcon,
+        color,
         iconSize,
+        contentPadding,
         size,
         radius,
+        orientation,
+        breakpoint,
+        iconPosition,
+        allowNextStepsSelect,
         classNames,
         styles,
-        iconPosition: item.props.iconPosition || iconPosition,
-        orientation,
         unstyled,
-      })
-    );
+        variant,
+        ...others
+    } = useComponentDefaultProps('Stepper', defaultProps, props)
 
-    if (orientation === 'horizontal' && index !== _children.length - 1) {
-      acc.push(
-        <div
-          className={cx(classes.separator, {
-            [classes.separatorActive]: index < active,
-          })}
-          key={`separator-${index}`}
-        />
-      );
-    }
+    const { classes, cx } = useStyles(
+        { contentPadding, color, orientation, iconPosition, iconSize, breakpoint },
+        { name: 'Stepper', classNames, styles, unstyled, variant, size },
+    )
 
-    return acc;
-  }, []);
+    const convertedChildren = Children.toArray(children) as React.ReactElement[]
+    const _children = convertedChildren.filter((child) => child.type !== StepCompleted)
+    const completedStep = convertedChildren.find((item) => item.type === StepCompleted)
 
-  const stepContent = _children[active]?.props?.children;
-  const completedContent = completedStep?.props?.children;
-  const content =
-    active > _children.length - 1 ? completedContent : stepContent;
+    const items = _children.reduce<React.ReactElement[]>((acc, item, index) => {
+        const state = active === index ? 'stepProgress' : active > index ? 'stepCompleted' : 'stepInactive'
 
-  return (
-    <Box className={cx(classes.root, className)} ref={ref} {...others}>
-      <div className={classes.steps}>{items}</div>
-      {content && <div className={classes.content}>{content}</div>}
-    </Box>
-  );
-}) as any;
+        const shouldAllowSelect = () => {
+            if (typeof onStepClick !== 'function') {
+                return false
+            }
 
-Stepper.Step = Step;
-Stepper.Completed = StepCompleted;
-Stepper.displayName = '@worldprinter/wdesign-core/Stepper';
+            if (typeof item.props.allowStepSelect === 'boolean') {
+                return item.props.allowStepSelect
+            }
+
+            return state === 'stepCompleted' || allowNextStepsSelect
+        }
+
+        const isStepSelectionEnabled = shouldAllowSelect()
+
+        acc.push(
+            cloneElement(item, {
+                __staticSelector: 'Stepper',
+                icon: item.props.icon || icon || index + 1,
+                key: index,
+                step: index,
+                variant,
+                state,
+                onClick: () => isStepSelectionEnabled && onStepClick(index),
+                allowStepClick: isStepSelectionEnabled,
+                completedIcon: item.props.completedIcon || completedIcon,
+                progressIcon: item.props.progressIcon || progressIcon,
+                color: item.props.color || color,
+                iconSize,
+                size,
+                radius,
+                classNames,
+                styles,
+                iconPosition: item.props.iconPosition || iconPosition,
+                orientation,
+                unstyled,
+            }),
+        )
+
+        if (orientation === 'horizontal' && index !== _children.length - 1) {
+            acc.push(
+                <div
+                    className={cx(classes.separator, {
+                        [classes.separatorActive]: index < active,
+                    })}
+                    key={`separator-${index}`}
+                />,
+            )
+        }
+
+        return acc
+    }, [])
+
+    const stepContent = _children[active]?.props?.children
+    const completedContent = completedStep?.props?.children
+    const content = active > _children.length - 1 ? completedContent : stepContent
+
+    return (
+        <Box
+            className={cx(classes.root, className)}
+            ref={ref}
+            {...others}
+        >
+            <div className={classes.steps}>{items}</div>
+            {content && <div className={classes.content}>{content}</div>}
+        </Box>
+    )
+}) as any
+
+Stepper.Step = Step
+Stepper.Completed = StepCompleted
+Stepper.displayName = '@worldprinter/wdesign-core/Stepper'

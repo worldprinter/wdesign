@@ -1,69 +1,59 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  Selectors,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { Box } from '../../Box';
-import { useListContext } from '../List.context';
-import useStyles from './ListItem.styles';
+import React, { forwardRef } from 'react'
 
-export type ListItemStylesNames = Selectors<typeof useStyles>;
+import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface ListItemProps
-  extends DefaultProps<ListItemStylesNames>,
-    React.ComponentPropsWithoutRef<'li'> {
-  /** Icon to replace bullet */
-  icon?: React.ReactNode;
+import { Box } from '../../Box'
+import { useListContext } from '../List.context'
+import useStyles from './ListItem.styles'
 
-  /** Item content */
-  children: React.ReactNode;
+export type ListItemStylesNames = Selectors<typeof useStyles>
+
+export interface ListItemProps extends DefaultProps<ListItemStylesNames>, React.ComponentPropsWithoutRef<'li'> {
+    /** Icon to replace bullet */
+    icon?: React.ReactNode
+
+    /** Item content */
+    children: React.ReactNode
 }
 
-const defaultProps: Partial<ListItemProps> = {};
+const defaultProps: Partial<ListItemProps> = {}
 
-export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
-  (props, ref) => {
-    const { className, children, icon, ...others } = useComponentDefaultProps(
-      'ListItem',
-      defaultProps,
-      props
-    );
+export const ListItem = forwardRef<HTMLLIElement, ListItemProps>((props, ref) => {
+    const { className, children, icon, ...others } = useComponentDefaultProps('ListItem', defaultProps, props)
 
     const {
-      icon: ctxIcon,
-      spacing,
-      center,
-      listStyleType,
-      size,
-      withPadding,
-      classNames,
-      styles,
-      unstyled,
-      variant,
-    } = useListContext();
+        icon: ctxIcon,
+        spacing,
+        center,
+        listStyleType,
+        size,
+        withPadding,
+        classNames,
+        styles,
+        unstyled,
+        variant,
+    } = useListContext()
 
-    const _icon = icon || ctxIcon;
+    const _icon = icon || ctxIcon
     const { classes, cx } = useStyles(
-      { withPadding, listStyleType, center, spacing },
-      { classNames, styles, unstyled, name: 'List', variant, size }
-    );
+        { withPadding, listStyleType, center, spacing },
+        { classNames, styles, unstyled, name: 'List', variant, size },
+    )
 
     return (
-      <Box
-        component="li"
-        className={cx(classes.item, className)}
-        data-with-icon={!!_icon || undefined}
-        ref={ref}
-        {...others}
-      >
-        <div className={classes.itemWrapper}>
-          {_icon && <span className={classes.itemIcon}>{_icon}</span>}
-          <span>{children}</span>
-        </div>
-      </Box>
-    );
-  }
-);
+        <Box
+            component='li'
+            className={cx(classes.item, className)}
+            data-with-icon={!!_icon || undefined}
+            ref={ref}
+            {...others}
+        >
+            <div className={classes.itemWrapper}>
+                {_icon && <span className={classes.itemIcon}>{_icon}</span>}
+                <span>{children}</span>
+            </div>
+        </Box>
+    )
+})
 
-ListItem.displayName = '@worldprinter/wdesign-core/ListItem';
+ListItem.displayName = '@worldprinter/wdesign-core/ListItem'

@@ -1,34 +1,24 @@
-import React, { forwardRef } from 'react';
-import {
-  DefaultProps,
-  useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles';
-import { packSx } from '@worldprinter/wdesign-utils';
-import { Box } from '../../Box';
+import React, { forwardRef } from 'react'
 
-export interface InputPlaceholderProps
-  extends DefaultProps,
-    React.ComponentPropsWithoutRef<'span'> {}
+import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import { packSx } from '@worldprinter/wdesign-utils'
 
-const defaultProps: Partial<InputPlaceholderProps> = {};
+import { Box } from '../../Box'
 
-export const InputPlaceholder = forwardRef<
-  HTMLSpanElement,
-  InputPlaceholderProps
->((props, ref) => {
-  const { sx, ...others } = useComponentDefaultProps(
-    'InputPlaceholder',
-    defaultProps,
-    props
-  );
-  return (
-    <Box
-      component="span"
-      sx={[(theme) => theme.fn.placeholderStyles(), ...packSx(sx)]}
-      ref={ref}
-      {...others}
-    />
-  );
-});
+export interface InputPlaceholderProps extends DefaultProps, React.ComponentPropsWithoutRef<'span'> {}
 
-InputPlaceholder.displayName = '@worldprinter/wdesign-core/InputPlaceholder';
+const defaultProps: Partial<InputPlaceholderProps> = {}
+
+export const InputPlaceholder = forwardRef<HTMLSpanElement, InputPlaceholderProps>((props, ref) => {
+    const { sx, ...others } = useComponentDefaultProps('InputPlaceholder', defaultProps, props)
+    return (
+        <Box
+            component='span'
+            sx={[(theme) => theme.fn.placeholderStyles(), ...packSx(sx)]}
+            ref={ref}
+            {...others}
+        />
+    )
+})
+
+InputPlaceholder.displayName = '@worldprinter/wdesign-core/InputPlaceholder'

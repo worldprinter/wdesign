@@ -1,69 +1,66 @@
-import React, { useEffect, useRef } from 'react';
-import { Notification, DefaultProps } from '@worldprinter/wdesign-core';
-import getAutoClose from './get-auto-close/get-auto-close';
-import { NotificationProps } from '../types';
+import React, { useEffect, useRef } from 'react'
+
+import { DefaultProps, Notification } from '@worldprinter/wdesign-core'
+
+import { NotificationProps } from '../types'
+import getAutoClose from './get-auto-close/get-auto-close'
 
 export interface NotificationContainerProps extends DefaultProps {
-  notification: NotificationProps;
-  onHide(id: string): void;
-  autoClose: false | number;
-  innerRef: React.ForwardedRef<HTMLDivElement>;
+    notification: NotificationProps
+    onHide(id: string): void
+    autoClose: false | number
+    innerRef: React.ForwardedRef<HTMLDivElement>
 }
 
 export default function NotificationContainer({
-  notification,
-  autoClose,
-  onHide,
-  innerRef,
-  ...others
+    notification,
+    autoClose,
+    onHide,
+    innerRef,
+    ...others
 }: NotificationContainerProps) {
-  const {
-    autoClose: notificationAutoClose,
-    message,
-    ...notificationProps
-  } = notification;
-  const autoCloseTimeout = getAutoClose(autoClose, notificationAutoClose);
-  const hideTimeout = useRef<number>();
+    const { autoClose: notificationAutoClose, message, ...notificationProps } = notification
+    const autoCloseTimeout = getAutoClose(autoClose, notificationAutoClose)
+    const hideTimeout = useRef<number>()
 
-  const handleHide = () => {
-    onHide(notification.id);
-    window.clearTimeout(hideTimeout.current);
-  };
-
-  const cancelDelayedHide = () => {
-    clearTimeout(hideTimeout.current);
-  };
-
-  const handleDelayedHide = () => {
-    if (typeof autoCloseTimeout === 'number') {
-      hideTimeout.current = window.setTimeout(handleHide, autoCloseTimeout);
+    const handleHide = () => {
+        onHide(notification.id)
+        window.clearTimeout(hideTimeout.current)
     }
-  };
 
-  useEffect(() => {
-    if (typeof notification.onOpen === 'function') {
-      notification.onOpen(notification);
+    const cancelDelayedHide = () => {
+        clearTimeout(hideTimeout.current)
     }
-  }, []);
 
-  useEffect(() => {
-    handleDelayedHide();
-    return cancelDelayedHide;
-  }, [autoClose, notification.autoClose]);
+    const handleDelayedHide = () => {
+        if (typeof autoCloseTimeout === 'number') {
+            hideTimeout.current = window.setTimeout(handleHide, autoCloseTimeout)
+        }
+    }
 
-  return (
-    <Notification
-      {...notificationProps}
-      {...others}
-      onClose={handleHide}
-      onMouseEnter={cancelDelayedHide}
-      onMouseLeave={handleDelayedHide}
-      ref={innerRef}
-    >
-      {message}
-    </Notification>
-  );
+    useEffect(() => {
+        if (typeof notification.onOpen === 'function') {
+            notification.onOpen(notification)
+        }
+    }, [])
+
+    useEffect(() => {
+        handleDelayedHide()
+        return cancelDelayedHide
+    }, [autoClose, notification.autoClose])
+
+    return (
+        <Notification
+            {...notificationProps}
+            {...others}
+            onClose={handleHide}
+            onMouseEnter={cancelDelayedHide}
+            onMouseLeave={handleDelayedHide}
+            ref={innerRef}
+        >
+            {message}
+        </Notification>
+    )
 }
 
-NotificationContainer.displayName =
-  '@worldprinter/wdesign-notifications/NotificationContainer';
+NotificationContainer.displayName = '@worldprinter/wdesign-notifications/NotificationContainer'

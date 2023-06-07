@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/worldprinter/wdesign/compare/v0.3.0...v0.4.0) (2023-06-07)
+
+
+### Bug Fixes
+
+* fixed unresolved theme config ([a1cb513](https://github.com/worldprinter/wdesign/commit/a1cb5133feb77befe80c91b8d516a3c6ab7fbe28))
+
 ## [0.3.0](https://github.com/worldprinter/wdesign/compare/v0.2.0...v0.3.0) (2023-05-26)
 
 ### Features

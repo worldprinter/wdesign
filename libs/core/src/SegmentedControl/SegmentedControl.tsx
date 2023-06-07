@@ -8,20 +8,20 @@ import {
     useResizeObserver,
     useUncontrolled,
 } from '@worldprinter/wdesign-hooks'
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
-    useMantineTheme,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { SegmentedControlStylesParams, WRAPPER_PADDING } from './SegmentedControl.styles'
+import type { SegmentedControlStylesParams } from './SegmentedControl.styles'
+import useStyles, { WRAPPER_PADDING } from './SegmentedControl.styles'
 
-export interface SegmentedControlItem {
+export type SegmentedControlItem = {
     value: string
     label: React.ReactNode
     disabled?: boolean
@@ -29,9 +29,7 @@ export interface SegmentedControlItem {
 
 export type SegmentedControlStylesNames = Selectors<typeof useStyles>
 
-export interface SegmentedControlProps
-    extends DefaultProps<SegmentedControlStylesNames, SegmentedControlStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'> {
+export type SegmentedControlProps = {
     variant?: string
 
     /** Segments to render */
@@ -75,7 +73,8 @@ export interface SegmentedControlProps
 
     /** Determines whether the user can change value */
     readOnly?: boolean
-}
+} & DefaultProps<SegmentedControlStylesNames, SegmentedControlStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'>
 
 const defaultProps = {
     disabled: false,

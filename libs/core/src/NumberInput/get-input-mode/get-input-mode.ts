@@ -1,4 +1,4 @@
-import { OS } from '@worldprinter/wdesign-hooks'
+import type { OS } from '@worldprinter/wdesign-hooks'
 
 export const getInputMode = (
     step: number,

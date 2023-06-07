@@ -1,12 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { Text } from '../../Text'
@@ -14,9 +9,7 @@ import useStyles from './TimelineItem.styles'
 
 export type TimelineItemStylesNames = Selectors<typeof useStyles>
 
-export interface TimelineItemProps
-    extends DefaultProps<TimelineItemStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
+export type TimelineItemProps = {
     variant?: string
 
     /** Item title, rendered next to bullet */
@@ -51,7 +44,8 @@ export interface TimelineItemProps
 
     /** Line border width, controlled by Timeline component */
     lineWidth?: number
-}
+} & DefaultProps<TimelineItemStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'title'>
 
 const defaultProps: Partial<TimelineItemProps> = {
     bulletSize: 20,

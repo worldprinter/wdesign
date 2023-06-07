@@ -1,19 +1,17 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useMove, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    useComponentDefaultProps,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { MantineTransition } from '../../Transition'
-import { MarksStylesNames } from '../Marks/Marks'
-import { SliderRoot, SliderRootStylesNames } from '../SliderRoot/SliderRoot'
-import { Thumb, ThumbStylesNames } from '../Thumb/Thumb'
-import { Track, TrackStylesNames } from '../Track/Track'
+import type { MantineTransition } from '../../Transition'
+import type { MarksStylesNames } from '../Marks/Marks'
+import type { SliderRootStylesNames } from '../SliderRoot/SliderRoot'
+import { SliderRoot } from '../SliderRoot/SliderRoot'
+import type { ThumbStylesNames } from '../Thumb/Thumb'
+import { Thumb } from '../Thumb/Thumb'
+import type { TrackStylesNames } from '../Track/Track'
+import { Track } from '../Track/Track'
 import { getChangeValue } from '../utils/get-change-value/get-change-value'
 import { getClientPosition } from '../utils/get-client-position/get-client-position'
 import { getPosition } from '../utils/get-position/get-position'
@@ -22,9 +20,7 @@ export type RangeSliderStylesNames = SliderRootStylesNames | ThumbStylesNames | 
 
 type Value = [number, number]
 
-export interface RangeSliderProps
-    extends DefaultProps<RangeSliderStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'defaultValue'> {
+export type RangeSliderProps = {
     variant?: string
 
     /** Color from theme.colors */
@@ -110,7 +106,8 @@ export interface RangeSliderProps
 
     /** Allows the track to be inverted */
     inverted?: boolean
-}
+} & DefaultProps<RangeSliderStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'defaultValue'>
 
 const defaultProps: Partial<RangeSliderProps> = {
     size: 'md',

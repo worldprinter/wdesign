@@ -1,8 +1,8 @@
 import type { EmotionCache } from '@emotion/cache'
 
-import { useMantineProviderStyles } from '../../../theme/MantineProvider'
+import type { useMantineProviderStyles } from '../../../theme/MantineProvider'
 
-interface Input<T extends Record<string, string>> {
+type Input<T extends Record<string, string>> = {
     cx(...classNames: any): string
     classes: T
     context: ReturnType<typeof useMantineProviderStyles>

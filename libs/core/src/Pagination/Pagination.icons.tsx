@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { getSize, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { getSize } from '@worldprinter/wdesign-styles'
 
 import { sizes } from './PaginationControl/PaginationControl.styles'
 
@@ -8,10 +9,10 @@ export function getIconSize(size: MantineNumberSize) {
     return `calc(${getSize({ size, sizes })} / 2)`
 }
 
-interface _PaginationIconProps extends React.ComponentPropsWithoutRef<'svg'> {
+type _PaginationIconProps = {
     size?: string
     path: string
-}
+} & React.ComponentPropsWithoutRef<'svg'>
 
 export type PaginationIconProps = Omit<_PaginationIconProps, 'path'>
 export type PaginationIcon = React.FC<PaginationIconProps>

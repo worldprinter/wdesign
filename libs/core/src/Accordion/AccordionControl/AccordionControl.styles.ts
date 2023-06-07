@@ -1,12 +1,13 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-import { AccordionChevronPosition, AccordionStylesParams } from '../Accordion.types'
+import type { AccordionChevronPosition, AccordionStylesParams } from '../Accordion.types'
 
-export interface AccordionControlStylesParams extends AccordionStylesParams {
+export type AccordionControlStylesParams = {
     chevronPosition: AccordionChevronPosition
     transitionDuration: number
     chevronSize: number | string
-}
+} & AccordionStylesParams
 
 function getVariantStyles(theme: MantineTheme, variant: string): CSSObject {
     if (variant === 'default' || variant === 'contained') {

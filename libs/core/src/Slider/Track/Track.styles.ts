@@ -1,8 +1,9 @@
-import { createStyles, getSize, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { sizes } from '../SliderRoot/SliderRoot.styles'
 
-interface TrackStyles {
+type TrackStyles = {
     radius: MantineNumberSize
     color: MantineColor
     disabled: boolean

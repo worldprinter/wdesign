@@ -9,7 +9,7 @@ import { MRT_FilterRangeFields } from '../inputs/MRT_FilterRangeFields'
 import { MRT_FilterTextInput } from '../inputs/MRT_FilterTextInput'
 import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu'
 
-interface Props {
+type Props = {
     header: MRT_Header
     table: MRT_TableInstance
 }

@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../Box'
@@ -9,13 +10,14 @@ import useStyles from './TabsPanel.styles'
 
 export type TabsPanelStylesNames = Selectors<typeof useStyles>
 
-export interface TabsPanelProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type TabsPanelProps = {
     /** Panel content */
     children: React.ReactNode
 
     /** Value of associated control */
     value: string
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<TabsPanelProps> = {}
 

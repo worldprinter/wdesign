@@ -1,27 +1,22 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { extractSystemStyles } from '../Box'
-import { InlineInput, InlineInputStylesNames } from '../InlineInput'
-import useStyles, { RadioStylesParams } from './Radio.styles'
+import type { InlineInputStylesNames } from '../InlineInput'
+import { InlineInput } from '../InlineInput'
+import type { RadioStylesParams } from './Radio.styles'
+import useStyles from './Radio.styles'
 import { useRadioGroupContext } from './RadioGroup.context'
 import { RadioGroup } from './RadioGroup/RadioGroup'
 import { RadioIcon } from './RadioIcon'
 
 export type RadioStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames
 
-export interface RadioProps
-    extends DefaultProps<RadioStylesNames, RadioStylesParams>,
-        Omit<React.ComponentPropsWithRef<'input'>, 'size'> {
+export type RadioProps = {
     variant?: string
 
     /** Radio label */
@@ -50,7 +45,8 @@ export interface RadioProps
 
     /** Displays error message after input */
     error?: React.ReactNode
-}
+} & DefaultProps<RadioStylesNames, RadioStylesParams> &
+    Omit<React.ComponentPropsWithRef<'input'>, 'size'>
 
 const defaultProps: Partial<RadioProps> = {
     icon: RadioIcon,

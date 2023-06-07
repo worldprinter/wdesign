@@ -1,5 +1,6 @@
 import highlightWords from 'highlight-words'
-import React, { ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import React from 'react'
 
 import { Box } from '@worldprinter/wdesign-core'
 
@@ -7,7 +8,7 @@ import type { MRT_Cell, MRT_TableInstance } from '..'
 
 const allowedTypes = ['string', 'number']
 
-interface Props {
+type Props = {
     cell: MRT_Cell
     table: MRT_TableInstance
 }

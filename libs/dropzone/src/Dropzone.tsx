@@ -1,16 +1,11 @@
 import React from 'react'
-import { Accept, DropEvent, FileError, FileRejection, FileWithPath, useDropzone } from 'react-dropzone'
+import type { Accept, DropEvent, FileError, FileRejection, FileWithPath } from 'react-dropzone'
+import { useDropzone } from 'react-dropzone'
 
-import {
-    Box,
-    DefaultProps,
-    LoadingOverlay,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, LoadingOverlay, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { assignRef } from '@worldprinter/wdesign-hooks'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { DropzoneProvider } from './Dropzone.context'
 import useStyles from './Dropzone.styles'
@@ -19,9 +14,7 @@ import { DropzoneAccept, DropzoneIdle, DropzoneReject } from './DropzoneStatus'
 
 export type DropzoneStylesNames = Selectors<typeof useStyles>
 
-export interface DropzoneProps
-    extends DefaultProps<DropzoneStylesNames>,
-        Omit<React.ComponentPropsWithRef<'div'>, 'onDrop'> {
+export type DropzoneProps = {
     variant?: string
 
     /** Padding from theme.spacing, or any valid CSS value to set padding */
@@ -107,7 +100,8 @@ export interface DropzoneProps
 
     /** Custom validation function. It must return null if there's no errors. */
     validator?: <T extends File>(file: T) => FileError | FileError[] | null
-}
+} & DefaultProps<DropzoneStylesNames> &
+    Omit<React.ComponentPropsWithRef<'div'>, 'onDrop'>
 
 export const defaultProps: Partial<DropzoneProps> = {
     padding: 'md',

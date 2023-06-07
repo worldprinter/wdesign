@@ -1,16 +1,18 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineColor, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import useStyles from './Mark.styles'
 
-export interface MarkProps extends DefaultProps, React.ComponentPropsWithoutRef<'mark'> {
+export type MarkProps = {
     variant?: string
 
     /** Background color from theme.colors */
     color?: MantineColor
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'mark'>
 
 const defaultProps: Partial<MarkProps> = {
     color: 'yellow',

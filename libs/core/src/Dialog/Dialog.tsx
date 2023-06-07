@@ -1,22 +1,19 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    getDefaultZIndex,
-    Selectors,
-    useComponentDefaultProps,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { Affix } from '../Affix'
 import { CloseButton } from '../CloseButton'
-import { Paper, PaperProps } from '../Paper'
-import { MantineTransition, Transition } from '../Transition'
+import type { PaperProps } from '../Paper'
+import { Paper } from '../Paper'
+import type { MantineTransition } from '../Transition'
+import { Transition } from '../Transition'
 import useStyles from './Dialog.styles'
 
 export type DialogStylesNames = Selectors<typeof useStyles>
 
-export interface DialogProps extends DefaultProps<DialogStylesNames>, Omit<PaperProps, 'classNames' | 'styles'> {
+export type DialogProps = {
     variant?: string
 
     /** If set dialog will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
@@ -56,7 +53,8 @@ export interface DialogProps extends DefaultProps<DialogStylesNames>, Omit<Paper
 
     /** Dialog width */
     size?: string | number
-}
+} & DefaultProps<DialogStylesNames> &
+    Omit<PaperProps, 'classNames' | 'styles'>
 
 const defaultProps: Partial<DialogProps> = {
     shadow: 'md',

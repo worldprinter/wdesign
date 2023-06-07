@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { AvatarGroupProvider } from './AvatarGroup.context'
 import useStyles from './AvatarGroup.styles'
 
-export interface AvatarGroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type AvatarGroupProps = {
     variant?: string
 
     /** Avatar components */
@@ -14,7 +15,8 @@ export interface AvatarGroupProps extends DefaultProps, React.ComponentPropsWith
 
     /** Negative space between Avatars */
     spacing?: MantineNumberSize
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<AvatarGroupProps> = {}
 

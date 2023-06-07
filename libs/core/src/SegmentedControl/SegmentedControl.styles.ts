@@ -1,8 +1,9 @@
-import { createStyles, getStylesRef, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 export const WRAPPER_PADDING = 4
 
-export interface SegmentedControlStylesParams {
+export type SegmentedControlStylesParams = {
     fullWidth: boolean
     color: MantineColor
     radius: MantineNumberSize

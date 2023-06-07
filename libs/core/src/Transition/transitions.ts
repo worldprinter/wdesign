@@ -1,8 +1,8 @@
-import React from 'react'
+import type React from 'react'
 
 import { rem } from '@worldprinter/wdesign-styles'
 
-export interface MantineTransitionStyles {
+export type MantineTransitionStyles = {
     common?: React.CSSProperties
     in: React.CSSProperties
     out: React.CSSProperties

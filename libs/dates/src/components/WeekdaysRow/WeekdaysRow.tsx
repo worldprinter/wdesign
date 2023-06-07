@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { DayOfWeek } from '../../types'
 import { useDatesContext } from '../DatesProvider'
@@ -9,7 +10,7 @@ import useStyles from './WeekdaysRow.styles'
 
 export type WeekdaysRowStylesNames = Selectors<typeof useStyles>
 
-export interface WeekdaysRowProps extends DefaultProps<WeekdaysRowStylesNames>, React.ComponentPropsWithoutRef<'tr'> {
+export type WeekdaysRowProps = {
     variant?: string
     __staticSelector?: string
 
@@ -27,7 +28,8 @@ export interface WeekdaysRowProps extends DefaultProps<WeekdaysRowStylesNames>, 
 
     /** Choose cell type that will be used to render weekdays, defaults to th */
     cellComponent?: 'td' | 'th'
-}
+} & DefaultProps<WeekdaysRowStylesNames> &
+    React.ComponentPropsWithoutRef<'tr'>
 
 const defaultProps: Partial<WeekdaysRowProps> = {
     weekdayFormat: 'dd',

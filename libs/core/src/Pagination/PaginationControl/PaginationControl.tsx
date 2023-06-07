@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { UnstyledButton } from '../../UnstyledButton'
 import { usePaginationContext } from '../Pagination.context'
@@ -9,13 +10,14 @@ import useStyles from './PaginationControl.styles'
 
 export type PaginationControlStylesNames = Selectors<typeof useStyles>
 
-export interface PaginationControlProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type PaginationControlProps = {
     /** Determines whether control should have active styles */
     active?: boolean
 
     /** Determines whether control should have padding, true by default */
     withPadding?: boolean
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<PaginationControlProps> = {
     withPadding: true,

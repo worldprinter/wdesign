@@ -1,17 +1,18 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
-import { clampUseMovePosition, useDidUpdate, useMergedRef, useMove, UseMovePosition } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, rem, Selectors } from '@worldprinter/wdesign-styles'
+import type { UseMovePosition } from '@worldprinter/wdesign-hooks'
+import { clampUseMovePosition, useDidUpdate, useMergedRef, useMove } from '@worldprinter/wdesign-hooks'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import { Thumb, ThumbStylesNames } from '../Thumb/Thumb'
+import type { ThumbStylesNames } from '../Thumb/Thumb'
+import { Thumb } from '../Thumb/Thumb'
 import useStyles from './ColorSlider.styles'
 
 export type ColorSliderStylesNames = Exclude<Selectors<typeof useStyles>, 'sliderThumb'> | ThumbStylesNames
 
-export interface BaseColorSliderProps
-    extends DefaultProps<ColorSliderStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'> {
+export type BaseColorSliderProps = {
     variant?: string
     value: number
     onChange(value: number): void
@@ -19,14 +20,15 @@ export interface BaseColorSliderProps
     size?: MantineSize
     focusable?: boolean
     __staticSelector?: string
-}
+} & DefaultProps<ColorSliderStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'>
 
-export interface ColorSliderProps extends BaseColorSliderProps {
+export type ColorSliderProps = {
     maxValue: number
     overlays: React.CSSProperties[]
     round: boolean
     thumbColor?: string
-}
+} & BaseColorSliderProps
 
 export const ColorSlider = forwardRef<HTMLDivElement, ColorSliderProps>(
     (

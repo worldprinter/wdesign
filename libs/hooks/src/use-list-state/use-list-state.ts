@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import type React from 'react'
+import { useState } from 'react'
 
-export interface UseListStateHandlers<T> {
+export type UseListStateHandlers<T> = {
     setState: React.Dispatch<React.SetStateAction<T[]>>
     append: (...items: T[]) => void
     prepend: (...items: T[]) => void

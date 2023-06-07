@@ -1,11 +1,13 @@
-import React, { MouseEvent, useEffect, useRef, useState } from 'react'
+import type { MouseEvent } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { ActionIcon, Box, Chip, MantineTheme, MultiSelect, packSx, Select, TextInput } from '@worldprinter/wdesign-core'
+import type { MantineTheme } from '@worldprinter/wdesign-core'
+import { ActionIcon, Box, Chip, MultiSelect, packSx, Select, TextInput } from '@worldprinter/wdesign-core'
 import { useDebouncedValue } from '@worldprinter/wdesign-hooks'
 
 import type { MRT_Header, MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     header: MRT_Header
     rangeFilterIndex?: number
     table: MRT_TableInstance

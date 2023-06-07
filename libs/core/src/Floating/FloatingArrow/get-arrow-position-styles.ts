@@ -1,4 +1,5 @@
-import { CSSObject, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject } from '@worldprinter/wdesign-styles'
+import { rem } from '@worldprinter/wdesign-styles'
 
 import type { ArrowPosition, FloatingPlacement, FloatingPosition, FloatingSide } from '../types'
 

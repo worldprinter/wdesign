@@ -10,7 +10,7 @@ import { MRT_ToolbarAlertBanner } from './MRT_ToolbarAlertBanner'
 import { MRT_ToolbarDropZone } from './MRT_ToolbarDropZone'
 import { commonToolbarStyles } from './MRT_TopToolbar'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
 }
 

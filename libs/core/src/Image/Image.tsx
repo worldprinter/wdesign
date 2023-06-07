@@ -1,18 +1,18 @@
 import React, { forwardRef, useState } from 'react'
 
 import { useDidUpdate } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineNumberSize, rem, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
-import useStyles, { ImageStylesParams } from './Image.styles'
+import type { ImageStylesParams } from './Image.styles'
+import useStyles from './Image.styles'
 import { ImageIcon } from './ImageIcon'
 
 export type ImageStylesNames = Selectors<typeof useStyles>
 
-export interface ImageProps
-    extends DefaultProps<ImageStylesNames, ImageStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'placeholder'> {
+export type ImageProps = {
     variant?: string
 
     /** Image src */
@@ -47,7 +47,8 @@ export interface ImageProps
 
     /** Image figcaption, displayed below image */
     caption?: React.ReactNode
-}
+} & DefaultProps<ImageStylesNames, ImageStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'placeholder'>
 
 const defaultProps: Partial<ImageProps> = {
     fit: 'cover',

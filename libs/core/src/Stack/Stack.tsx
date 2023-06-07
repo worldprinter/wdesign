@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { StackStylesParams } from './Stack.styles'
+import type { StackStylesParams } from './Stack.styles'
+import useStyles from './Stack.styles'
 
-export interface StackProps extends DefaultProps<never, StackStylesParams>, React.ComponentPropsWithoutRef<'div'> {
+export type StackProps = {
     variant?: string
 
     /** Key of theme.spacing or any valid CSS value to set gap */
@@ -17,7 +19,8 @@ export interface StackProps extends DefaultProps<never, StackStylesParams>, Reac
 
     /** justify-content CSS property */
     justify?: React.CSSProperties['justifyContent']
-}
+} & DefaultProps<never, StackStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<StackProps> = {
     spacing: 'md',

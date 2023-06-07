@@ -3,13 +3,14 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import { Text, TextProps } from '../Text/Text'
+import type { TextProps } from '../Text/Text'
+import { Text } from '../Text/Text'
 import useStyles from './Anchor.styles'
 
-export interface AnchorProps extends Omit<TextProps, 'variant'> {
+export type AnchorProps = {
     variant?: string
     children?: React.ReactNode
-}
+} & Omit<TextProps, 'variant'>
 
 const defaultProps: Partial<AnchorProps> = {
     underline: true,

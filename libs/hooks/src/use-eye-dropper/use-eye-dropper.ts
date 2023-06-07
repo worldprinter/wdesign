@@ -2,11 +2,11 @@ import { useCallback, useState } from 'react'
 
 import { useIsomorphicEffect } from '../use-isomorphic-effect/use-isomorphic-effect'
 
-interface EyeDropperOpenOptions {
+type EyeDropperOpenOptions = {
     signal?: AbortSignal
 }
 
-export interface EyeDropperOpenReturnType {
+export type EyeDropperOpenReturnType = {
     sRGBHex: string
 }
 

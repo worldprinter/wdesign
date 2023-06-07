@@ -1,16 +1,16 @@
 import React from 'react'
 
 import { randomId } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Divider } from '../../Divider/Divider'
 import { Text } from '../../Text/Text'
-import { SelectItem } from '../types'
+import type { SelectItem } from '../types'
 import useStyles from './SelectItems.styles'
 
 export type SelectItemsStylesNames = Selectors<typeof useStyles>
 
-export interface SelectItemsProps extends DefaultProps<SelectItemsStylesNames> {
+export type SelectItemsProps = {
     data: SelectItem[]
     hovered: number
     __staticSelector: string
@@ -25,7 +25,7 @@ export interface SelectItemsProps extends DefaultProps<SelectItemsStylesNames> {
     creatable?: boolean
     createLabel?: React.ReactNode
     variant: string
-}
+} & DefaultProps<SelectItemsStylesNames>
 
 export function SelectItems({
     data,

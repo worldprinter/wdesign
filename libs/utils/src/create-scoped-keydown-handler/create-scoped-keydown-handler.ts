@@ -41,7 +41,7 @@ function onSameLevel(target: HTMLButtonElement, sibling: HTMLButtonElement, pare
     return findElementAncestor(target, parentSelector) === findElementAncestor(sibling, parentSelector)
 }
 
-interface GetElementsSiblingsInput {
+type GetElementsSiblingsInput = {
     /** Selector used to find parent node, e.g. '[role="tablist"]', '.mantine-Text-root' */
     parentSelector: string
 

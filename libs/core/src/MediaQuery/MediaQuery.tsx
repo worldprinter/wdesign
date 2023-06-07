@@ -1,10 +1,11 @@
 import React, { Children } from 'react'
 
-import { CSSObject, MantineNumberSize, MantineTheme, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import useStyles from './MediaQuery.styles'
 
-export interface MediaQueryProps {
+export type MediaQueryProps = {
     className?: string
 
     /** Child that should be shown at given breakpoint, it must accept className prop */

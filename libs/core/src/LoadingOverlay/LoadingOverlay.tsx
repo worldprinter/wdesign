@@ -1,19 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    getDefaultZIndex,
-    MantineNumberSize,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import { Loader, LoaderProps } from '../Loader'
+import type { LoaderProps } from '../Loader'
+import { Loader } from '../Loader'
 import { Overlay } from '../Overlay'
 import { Transition } from '../Transition'
 import useStyles from './LoadingOverlay.styles'
 
-export interface LoadingOverlayProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type LoadingOverlayProps = {
     variant?: string
 
     /** If set loading overlay will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
@@ -48,7 +45,8 @@ export interface LoadingOverlayProps extends DefaultProps, React.ComponentPropsW
 
     /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
     radius?: MantineNumberSize
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<LoadingOverlayProps> = {
     overlayOpacity: 0.75,

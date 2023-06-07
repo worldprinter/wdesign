@@ -1,17 +1,16 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { Input, InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
+import type { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
+import { Input } from '../../Input'
 import { SwitchGroupProvider } from '../SwitchGroup.context'
 
 export type SwitchGroupStylesNames = InputWrapperStylesNames
 
-export interface SwitchGroupProps
-    extends DefaultProps<SwitchGroupStylesNames>,
-        InputWrapperBaseProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export type SwitchGroupProps = {
     /** <Switch /> components only */
     children: React.ReactNode
 
@@ -29,7 +28,9 @@ export interface SwitchGroupProps
 
     /** Props spread to InputWrapper */
     wrapperProps?: Record<string, any>
-}
+} & DefaultProps<SwitchGroupStylesNames> &
+    InputWrapperBaseProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 
 const defaultProps: Partial<SwitchGroupProps> = {
     size: 'sm',

@@ -1,30 +1,24 @@
 /* eslint-disable react/no-unused-prop-types */
-import useEmblaCarousel, { EmblaPluginType } from 'embla-carousel-react'
+import type { EmblaPluginType } from 'embla-carousel-react'
+import useEmblaCarousel from 'embla-carousel-react'
 import React, { Children, forwardRef, useCallback, useEffect, useState } from 'react'
 
-import {
-    Box,
-    ChevronIcon,
-    DefaultProps,
-    MantineNumberSize,
-    Selectors,
-    UnstyledButton,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, ChevronIcon, UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { clamp } from '@worldprinter/wdesign-hooks'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { CarouselProvider } from './Carousel.context'
-import useStyles, { CarouselStylesParams } from './Carousel.styles'
-import { CarouselSlide, CarouselSlideStylesNames } from './CarouselSlide/CarouselSlide'
+import type { CarouselStylesParams } from './Carousel.styles'
+import useStyles from './Carousel.styles'
+import type { CarouselSlideStylesNames } from './CarouselSlide/CarouselSlide'
+import { CarouselSlide } from './CarouselSlide/CarouselSlide'
 import { getChevronRotation } from './get-chevron-rotation'
-import { CarouselBreakpoint, CarouselOrientation, Embla } from './types'
+import type { CarouselBreakpoint, CarouselOrientation, Embla } from './types'
 
 export type CarouselStylesNames = CarouselSlideStylesNames | Selectors<typeof useStyles>
 
-export interface CarouselProps
-    extends DefaultProps<CarouselStylesNames, CarouselStylesParams>,
-        React.ComponentPropsWithRef<'div'> {
+export type CarouselProps = {
     variant?: string
 
     /** <Carousel.Slide /> components */
@@ -119,7 +113,8 @@ export interface CarouselProps
 
     /** Determines whether arrow key should switch slides, true by default */
     withKeyboardEvents?: boolean
-}
+} & DefaultProps<CarouselStylesNames, CarouselStylesParams> &
+    React.ComponentPropsWithRef<'div'>
 
 const defaultProps: Partial<CarouselProps> = {
     controlSize: 26,

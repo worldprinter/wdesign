@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineColor, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface BurgerStylesParams {
+export type BurgerStylesParams = {
     color: MantineColor
     transitionDuration: number
 }

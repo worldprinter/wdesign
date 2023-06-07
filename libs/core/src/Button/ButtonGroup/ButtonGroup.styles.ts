@@ -1,6 +1,6 @@
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-export interface ButtonGroupStylesParams {
+export type ButtonGroupStylesParams = {
     orientation: 'vertical' | 'horizontal'
     buttonBorderWidth: number | string
 }

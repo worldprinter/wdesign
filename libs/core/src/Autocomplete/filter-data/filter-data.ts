@@ -1,6 +1,6 @@
 import type { AutocompleteItem } from '../Autocomplete'
 
-interface FilterData {
+type FilterData = {
     data: AutocompleteItem[]
     limit: number
     value: string

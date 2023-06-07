@@ -1,6 +1,6 @@
 import type { SelectItem } from '../types'
 
-interface FilterData {
+type FilterData = {
     data: SelectItem[]
     limit: number
     searchable: boolean

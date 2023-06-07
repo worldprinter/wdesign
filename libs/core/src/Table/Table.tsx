@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { TableStylesParams } from './Table.styles'
+import type { TableStylesParams } from './Table.styles'
+import useStyles from './Table.styles'
 
-export interface TableProps extends DefaultProps<never, TableStylesParams>, React.ComponentPropsWithoutRef<'table'> {
+export type TableProps = {
     variant?: string
 
     /** If true every odd row of table will have gray background color */
@@ -31,7 +33,8 @@ export interface TableProps extends DefaultProps<never, TableStylesParams>, Reac
 
     /** Add border to columns */
     withColumnBorders?: boolean
-}
+} & DefaultProps<never, TableStylesParams> &
+    React.ComponentPropsWithoutRef<'table'>
 
 const defaultProps: Partial<TableProps> = {
     striped: false,

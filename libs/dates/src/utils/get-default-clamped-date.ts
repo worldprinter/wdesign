@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-interface GetDefaultClampedDate {
+type GetDefaultClampedDate = {
     minDate: Date
     maxDate: Date
 }

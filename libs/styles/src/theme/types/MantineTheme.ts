@@ -12,7 +12,7 @@ export type LoaderType = 'bars' | 'oval' | 'dots'
 export type MantineThemeOther = Record<string, any>
 export type MantineThemeComponents = Record<string, ThemeComponent>
 
-export interface HeadingStyle {
+export type HeadingStyle = {
     fontSize: string
     fontWeight: CSSProperties['fontWeight']
     lineHeight: CSSProperties['lineHeight']
@@ -20,18 +20,18 @@ export interface HeadingStyle {
 
 type Shade = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-export interface MantinePrimaryShade {
+export type MantinePrimaryShade = {
     light: Shade
     dark: Shade
 }
 
-interface MantineFocusRingStyles {
+type MantineFocusRingStyles = {
     styles(theme: MantineThemeBase): CSSObject
     resetStyles(theme: MantineThemeBase): CSSObject
     inputStyles(theme: MantineThemeBase): CSSObject
 }
 
-interface MantineThemeFunctions {
+type MantineThemeFunctions = {
     fontStyles(): any
     focusStyles(selector?: string): any
     cover(offset?: number | string): any
@@ -53,7 +53,7 @@ interface MantineThemeFunctions {
     dimmed(): string
 }
 
-export interface MantineTheme {
+export type MantineTheme = {
     dir: 'ltr' | 'rtl'
     primaryShade: Shade | MantinePrimaryShade
     focusRing: 'auto' | 'always' | 'never'
@@ -100,12 +100,12 @@ export interface MantineTheme {
     focusRingStyles: MantineFocusRingStyles
 }
 
-export interface ContextStylesParams {
+export type ContextStylesParams = {
     variant?: string
     size?: string | number
 }
 
-interface ThemeComponent {
+type ThemeComponent = {
     defaultProps?: Record<string, any> | ((theme: MantineTheme) => Record<string, any>)
     classNames?: Record<string, string>
     styles?:

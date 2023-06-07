@@ -1,4 +1,4 @@
-import { RefObject } from 'react'
+import type { RefObject } from 'react'
 
 type ControlsRef = RefObject<HTMLButtonElement[][][]>
 type Direction = 'up' | 'down' | 'left' | 'right'
@@ -101,7 +101,7 @@ function getNextIndex({ direction, levelIndex, rowIndex, cellIndex, size }: Next
     }
 }
 
-interface ShiftFocusInput {
+type ShiftFocusInput = {
     controlsRef: ControlsRef
     direction: Direction
     levelIndex: number
@@ -167,7 +167,7 @@ function getControlsSize(controlsRef: ControlsRef) {
     return controlsRef.current.map((column) => column.map((row) => row.length))
 }
 
-interface HandleControlKeyDownInput {
+type HandleControlKeyDownInput = {
     controlsRef: ControlsRef
     levelIndex: number
     rowIndex: number

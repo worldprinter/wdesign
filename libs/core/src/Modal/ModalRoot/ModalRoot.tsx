@@ -1,12 +1,15 @@
 import React from 'react'
 
-import { MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { ModalBase, ModalBaseDefaultProps, ModalBaseSettings } from '../../ModalBase'
-import { ModalProvider, ScrollAreaComponent } from '../Modal.context'
+import type { ModalBaseSettings } from '../../ModalBase'
+import { ModalBase, ModalBaseDefaultProps } from '../../ModalBase'
+import type { ScrollAreaComponent } from '../Modal.context'
+import { ModalProvider } from '../Modal.context'
 import useStyles from './ModalRoot.styles'
 
-export interface ModalRootProps extends ModalBaseSettings {
+export type ModalRootProps = {
     /** Top/bottom modal offset, 5vh by default */
     yOffset?: React.CSSProperties['marginTop']
 
@@ -24,7 +27,7 @@ export interface ModalRootProps extends ModalBaseSettings {
 
     /** Determines whether the modal should take the entire screen */
     fullScreen?: boolean
-}
+} & ModalBaseSettings
 
 const defaultProps: Partial<ModalRootProps> = {
     ...ModalBaseDefaultProps,

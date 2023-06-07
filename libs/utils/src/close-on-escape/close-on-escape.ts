@@ -1,8 +1,8 @@
-import React from 'react'
+import type React from 'react'
 
 import { noop } from '../noop/noop'
 
-interface Options {
+type Options = {
     active: boolean
     onTrigger?(): void
     onKeyDown?(event: React.KeyboardEvent<any>): void

@@ -1,17 +1,13 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { clamp, useId, useMergedRef, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import useStyles from './Rating.styles'
-import { RatingItem, RatingItemStylesNames } from './RatingItem/RatingItem'
+import type { RatingItemStylesNames } from './RatingItem/RatingItem'
+import { RatingItem } from './RatingItem/RatingItem'
 
 function roundValueTo(value: number, to: number) {
     const rounded = Math.round(value / to) * to
@@ -21,9 +17,7 @@ function roundValueTo(value: number, to: number) {
 
 export type RatingStylesNames = Selectors<typeof useStyles> | RatingItemStylesNames
 
-export interface RatingProps
-    extends DefaultProps<RatingStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export type RatingProps = {
     variant?: string
 
     /** Default value for uncontrolled component */
@@ -67,7 +61,8 @@ export interface RatingProps
 
     /** Key of theme.colors or any CSS color value, yellow by default */
     color?: MantineColor
-}
+} & DefaultProps<RatingStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 
 const defaultProps: Partial<RatingProps> = {
     size: 'sm',

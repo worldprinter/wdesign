@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Portal, PortalProps } from './Portal'
+import type { PortalProps } from './Portal'
+import { Portal } from './Portal'
 
-export interface OptionalPortalProps extends PortalProps {
+export type OptionalPortalProps = {
     /** Determines if children should be rendered in Portal */
     withinPortal?: boolean
-}
+} & PortalProps
 
 export function OptionalPortal({ withinPortal = true, children, ...others }: OptionalPortalProps) {
     if (withinPortal) {

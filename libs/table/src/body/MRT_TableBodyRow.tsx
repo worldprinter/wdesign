@@ -1,4 +1,5 @@
-import React, { DragEvent, memo, useRef } from 'react'
+import type { DragEvent } from 'react'
+import React, { memo, useRef } from 'react'
 
 import { Box } from '@worldprinter/wdesign-core'
 
@@ -7,7 +8,7 @@ import { getPrimaryColor } from '../column.utils'
 import { Memo_MRT_TableBodyCell, MRT_TableBodyCell } from './MRT_TableBodyCell'
 import { MRT_TableDetailPanel } from './MRT_TableDetailPanel'
 
-interface Props {
+type Props = {
     columnVirtualizer?: MRT_Virtualizer<HTMLDivElement, HTMLTableCellElement>
     enableHover?: boolean
     isStriped?: boolean

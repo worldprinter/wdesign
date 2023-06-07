@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { filterFalsyChildren } from './filter-falsy-children/filter-falsy-children'
-import useStyles, { GroupPosition } from './Group.styles'
+import type { GroupPosition } from './Group.styles'
+import useStyles from './Group.styles'
 
-export interface GroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type GroupProps = {
     variant?: string
 
     /** Defines justify-content property */
@@ -23,7 +25,8 @@ export interface GroupProps extends DefaultProps, React.ComponentPropsWithoutRef
 
     /** Defines align-items css property */
     align?: React.CSSProperties['alignItems']
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<GroupProps> = {
     position: 'left',

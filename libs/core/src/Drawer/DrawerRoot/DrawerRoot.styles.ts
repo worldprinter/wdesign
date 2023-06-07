@@ -8,7 +8,7 @@ const sizes = {
     xl: rem(780),
 }
 
-interface DrawerRootStylesParams {
+type DrawerRootStylesParams = {
     position: 'bottom' | 'left' | 'right' | 'top'
 }
 

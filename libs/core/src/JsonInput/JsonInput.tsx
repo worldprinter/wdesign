@@ -1,16 +1,18 @@
 import React, { forwardRef, useState } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { Textarea, TextareaProps } from '../Textarea'
-import { TextInputStylesNames } from '../TextInput'
+import type { TextareaProps } from '../Textarea'
+import { Textarea } from '../Textarea'
+import type { TextInputStylesNames } from '../TextInput'
 import useStyles from './JsonInput.styles'
 import { validateJson } from './validate-json/validate-json'
 
 export type JsonInputStylesNames = TextInputStylesNames
 
-export interface JsonInputProps extends DefaultProps<JsonInputStylesNames>, Omit<TextareaProps, 'onChange'> {
+export type JsonInputProps = {
     /** Value for controlled input */
     value?: string
 
@@ -31,7 +33,8 @@ export interface JsonInputProps extends DefaultProps<JsonInputStylesNames>, Omit
 
     /** Function to deserialize string value, used for value formatting and input JSON validation, must throw error if string cannot be processed, JSON.parse by default */
     deserialize?: typeof JSON.parse
-}
+} & DefaultProps<JsonInputStylesNames> &
+    Omit<TextareaProps, 'onChange'>
 
 const defaultProps: Partial<JsonInputProps> = {
     formatOnBlur: false,

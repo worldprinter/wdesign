@@ -1,16 +1,16 @@
 import React, { createContext, useContext } from 'react'
 
-import { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
 
-interface ContextValue {
+type ContextValue = {
     spacing: MantineNumberSize
 }
 
 const AvatarGroupContext = createContext<ContextValue>(null)
 
-interface AvatarGroupProviderProps extends ContextValue {
+type AvatarGroupProviderProps = {
     children: React.ReactNode
-}
+} & ContextValue
 
 export function AvatarGroupProvider({ spacing, children }: AvatarGroupProviderProps) {
     return <AvatarGroupContext.Provider value={{ spacing }}>{children}</AvatarGroupContext.Provider>

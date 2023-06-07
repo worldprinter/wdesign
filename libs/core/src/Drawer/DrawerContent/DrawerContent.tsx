@@ -2,13 +2,15 @@ import React, { forwardRef } from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { ModalBase, ModalBaseContentProps } from '../../ModalBase'
-import { ScrollAreaComponent, useDrawerContext } from '../Drawer.context'
+import type { ModalBaseContentProps } from '../../ModalBase'
+import { ModalBase } from '../../ModalBase'
+import type { ScrollAreaComponent } from '../Drawer.context'
+import { useDrawerContext } from '../Drawer.context'
 
-export interface DrawerContentProps extends ModalBaseContentProps {
+export type DrawerContentProps = {
     /** Component used as scroll area, ScrollArea.Autosize by default */
     scrollAreaComponent?: ScrollAreaComponent
-}
+} & ModalBaseContentProps
 
 const defaultProps: Partial<DrawerContentProps> = {
     shadow: 'xl',

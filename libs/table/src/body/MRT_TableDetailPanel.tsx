@@ -4,7 +4,7 @@ import { Box, Collapse } from '@worldprinter/wdesign-core'
 
 import type { MRT_Row, MRT_TableInstance, MRT_VirtualItem } from '..'
 
-interface Props {
+type Props = {
     parentRowRef: React.RefObject<HTMLTableRowElement>
     row: MRT_Row
     rowIndex: number

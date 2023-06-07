@@ -1,18 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { clampUseMovePosition, useMove, UseMovePosition } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { UseMovePosition } from '@worldprinter/wdesign-hooks'
+import { clampUseMovePosition, useMove } from '@worldprinter/wdesign-hooks'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { convertHsvaTo } from '../converters'
-import { Thumb, ThumbStylesNames } from '../Thumb/Thumb'
-import { HsvaColor } from '../types'
+import type { ThumbStylesNames } from '../Thumb/Thumb'
+import { Thumb } from '../Thumb/Thumb'
+import type { HsvaColor } from '../types'
 import useStyles from './Saturation.styles'
 
 export type SaturationStylesNames =
     | Exclude<Selectors<typeof useStyles>, 'saturationOverlay' | 'saturationThumb'>
     | ThumbStylesNames
 
-interface SaturationProps extends DefaultProps<SaturationStylesNames> {
+type SaturationProps = {
     variant?: string
     value: HsvaColor
     onChange(color: Partial<HsvaColor>): void
@@ -22,7 +24,7 @@ interface SaturationProps extends DefaultProps<SaturationStylesNames> {
     color: string
     focusable?: boolean
     __staticSelector?: string
-}
+} & DefaultProps<SaturationStylesNames>
 
 export function Saturation({
     value,

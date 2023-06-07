@@ -1,6 +1,6 @@
 import { createStyles, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
-export interface ScrollAreaStylesParams {
+export type ScrollAreaStylesParams = {
     scrollbarSize: number | string
     offsetScrollbars: boolean
     scrollbarHovered: boolean

@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-styles'
 
-export interface CenterStylesParams {
+export type CenterStylesParams = {
     inline: boolean
 }
 

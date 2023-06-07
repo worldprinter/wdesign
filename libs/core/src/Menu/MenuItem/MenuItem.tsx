@@ -1,7 +1,8 @@
 import React, { forwardRef, useRef } from 'react'
 
 import { useMergedRef } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineColor, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler, createPolymorphicComponent, createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../Box'
@@ -10,7 +11,7 @@ import useStyles from './MenuItem.styles'
 
 export type MenuItemStylesNames = Selectors<typeof useStyles>
 
-export interface MenuItemProps extends DefaultProps {
+export type MenuItemProps = {
     /** Item label */
     children?: React.ReactNode
 
@@ -25,7 +26,7 @@ export interface MenuItemProps extends DefaultProps {
 
     /** Section rendered on the right side of the label */
     rightSection?: React.ReactNode
-}
+} & DefaultProps
 
 const defaultProps: Partial<DefaultProps> = {}
 

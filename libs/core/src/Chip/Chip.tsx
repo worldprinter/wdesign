@@ -1,27 +1,20 @@
 import React, { forwardRef } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-    Variants,
-} from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { Box, extractSystemStyles } from '../Box'
 import { CheckIcon } from '../Checkbox'
-import useStyles, { ChipStylesParams } from './Chip.styles'
+import type { ChipStylesParams } from './Chip.styles'
+import useStyles from './Chip.styles'
 import { useChipGroup } from './ChipGroup.context'
 import { ChipGroup } from './ChipGroup/ChipGroup'
 
 export type ChipStylesNames = Selectors<typeof useStyles>
 
-export interface ChipProps
-    extends DefaultProps<ChipStylesNames, ChipStylesParams>,
-        Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'onChange'> {
+export type ChipProps = {
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
     radius?: MantineNumberSize
 
@@ -54,7 +47,8 @@ export interface ChipProps
 
     /** Props spread to wrapper element */
     wrapperProps?: Record<string, any>
-}
+} & DefaultProps<ChipStylesNames, ChipStylesParams> &
+    Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'onChange'>
 
 const defaultProps: Partial<ChipProps> = {
     type: 'checkbox',

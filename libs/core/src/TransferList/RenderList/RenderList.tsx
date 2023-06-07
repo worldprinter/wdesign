@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 
 import { useScrollIntoView } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineNumberSize, rem, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { rem } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
 import { ActionIcon } from '../../ActionIcon'
@@ -16,12 +17,12 @@ import { SelectScrollArea } from '../../Select/SelectScrollArea/SelectScrollArea
 import { Text } from '../../Text'
 import { TextInput } from '../../TextInput'
 import { UnstyledButton } from '../../UnstyledButton'
-import { TransferListItem, TransferListItemComponent } from '../types'
+import type { TransferListItem, TransferListItemComponent } from '../types'
 import useStyles from './RenderList.styles'
 
 export type RenderListStylesNames = Selectors<typeof useStyles>
 
-export interface RenderListProps extends DefaultProps<RenderListStylesNames> {
+export type RenderListProps = {
     variant: string
     data: TransferListItem[]
     onSelect(value: string): void
@@ -45,7 +46,7 @@ export interface RenderListProps extends DefaultProps<RenderListStylesNames> {
     transferIcon?: React.FunctionComponent<{ reversed }>
     transferAllIcon?: React.FunctionComponent<{ reversed }>
     transferAllMatchingFilter: boolean
-}
+} & DefaultProps<RenderListStylesNames>
 
 const icons = {
     Prev: PaginationPreviousIcon,

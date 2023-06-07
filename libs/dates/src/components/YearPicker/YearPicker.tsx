@@ -3,18 +3,17 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useDatesState } from '../../hooks'
-import { DatePickerType, PickerBaseProps } from '../../types'
-import { Calendar, CalendarBaseProps, CalendarSystemProps } from '../Calendar'
-import { DecadeLevelBaseSettings } from '../DecadeLevel'
+import type { DatePickerType, PickerBaseProps } from '../../types'
+import type { CalendarBaseProps, CalendarSystemProps } from '../Calendar'
+import { Calendar } from '../Calendar'
+import type { DecadeLevelBaseSettings } from '../DecadeLevel'
 
-export interface YearPickerBaseProps<Type extends DatePickerType = 'default'>
-    extends PickerBaseProps<Type>,
-        DecadeLevelBaseSettings,
-        Omit<CalendarBaseProps, 'onNextYear' | 'onPreviousYear' | 'onNextMonth' | 'onPreviousMonth'> {}
+export type YearPickerBaseProps<Type extends DatePickerType = 'default'> = {} & PickerBaseProps<Type> &
+    DecadeLevelBaseSettings &
+    Omit<CalendarBaseProps, 'onNextYear' | 'onPreviousYear' | 'onNextMonth' | 'onPreviousMonth'>
 
-export interface YearPickerProps<Type extends DatePickerType = 'default'>
-    extends YearPickerBaseProps<Type>,
-        CalendarSystemProps {}
+export type YearPickerProps<Type extends DatePickerType = 'default'> = {} & YearPickerBaseProps<Type> &
+    CalendarSystemProps
 
 const defaultProps: Partial<YearPickerProps> = {
     type: 'default',

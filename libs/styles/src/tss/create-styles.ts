@@ -6,7 +6,7 @@ import { mergeClassNames } from './utils/merge-class-names/merge-class-names'
 
 type ContextStyles = ReturnType<typeof useMantineProviderStyles>
 
-export interface UseStylesOptions<Key extends string> {
+export type UseStylesOptions<Key extends string> = {
     classNames?: Partial<Record<Key, string>>
     styles?:
         | Partial<Record<Key, CSSObject>>
@@ -49,7 +49,7 @@ function getStyles<Key extends string>(
     return extractStyles(styles)
 }
 
-interface GetContextVariations {
+type GetContextVariations = {
     ctx: ContextStyles
     theme: MantineTheme
     params: Record<string, any>
@@ -71,7 +71,7 @@ function getContextVariation({ ctx, theme, params, variant, size }: GetContextVa
     }, {})
 }
 
-interface Variations {
+type Variations = {
     variant?: string
     size: string | number
 }

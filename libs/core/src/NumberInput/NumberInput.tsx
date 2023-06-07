@@ -1,9 +1,10 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { assignRef, clamp, useMergedRef, useOs } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, getSize, rem, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { getSize, rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { InputStylesNames, InputWrapperStylesNames } from '../Input'
+import type { InputStylesNames, InputWrapperStylesNames } from '../Input'
 import { TextInput } from '../TextInput'
 import { Chevron } from './Chevron'
 import { getInputMode } from './get-input-mode/get-input-mode'
@@ -12,7 +13,7 @@ import useStyles, { CONTROL_SIZES } from './NumberInput.styles'
 export type InnerNumberInputStylesNames = Selectors<typeof useStyles>
 export type NumberInputStylesNames = InputStylesNames | InputWrapperStylesNames | InnerNumberInputStylesNames
 
-export interface NumberInputHandlers {
+export type NumberInputHandlers = {
     increment(): void
     decrement(): void
 }
@@ -20,12 +21,7 @@ export interface NumberInputHandlers {
 type Formatter = (value: string | '') => string
 type Parser = (value: string | '') => string
 
-export interface NumberInputProps
-    extends DefaultProps<NumberInputStylesNames>,
-        Omit<
-            React.ComponentPropsWithoutRef<typeof TextInput>,
-            'onChange' | 'value' | 'classNames' | 'styles' | 'type'
-        > {
+export type NumberInputProps = {
     /** Called when value changes */
     onChange?(value: number | ''): void
 
@@ -82,7 +78,8 @@ export interface NumberInputProps
 
     /** Input type, defaults to text */
     type?: 'text' | 'number'
-}
+} & DefaultProps<NumberInputStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<typeof TextInput>, 'onChange' | 'value' | 'classNames' | 'styles' | 'type'>
 
 const defaultFormatter: Formatter = (value) => value || ''
 const defaultParser: Parser = (num) => {

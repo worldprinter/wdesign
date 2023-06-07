@@ -1,10 +1,11 @@
-import React from 'react'
+import type React from 'react'
 
-import { createStyles, getSize, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type GroupPosition = 'right' | 'center' | 'left' | 'apart'
 
-export interface GroupStylesParams {
+export type GroupStylesParams = {
     position: GroupPosition
     noWrap: boolean
     grow: boolean

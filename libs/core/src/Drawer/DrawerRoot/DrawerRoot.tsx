@@ -2,20 +2,22 @@ import React from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { ModalBase, ModalBaseDefaultProps, ModalBaseSettings } from '../../ModalBase'
-import { MantineTransition } from '../../Transition'
-import { DrawerProvider, ScrollAreaComponent } from '../Drawer.context'
+import type { ModalBaseSettings } from '../../ModalBase'
+import { ModalBase, ModalBaseDefaultProps } from '../../ModalBase'
+import type { MantineTransition } from '../../Transition'
+import type { ScrollAreaComponent } from '../Drawer.context'
+import { DrawerProvider } from '../Drawer.context'
 import useStyles from './DrawerRoot.styles'
 
 export type DrawerPosition = 'bottom' | 'left' | 'right' | 'top'
 
-export interface DrawerRootProps extends ModalBaseSettings {
+export type DrawerRootProps = {
     /** Scroll area component, ScrollArea.Autosize by default */
     scrollAreaComponent?: ScrollAreaComponent
 
     /** Side of the screen where drawer will be opened, 'left' by default */
     position?: 'bottom' | 'left' | 'right' | 'top'
-}
+} & ModalBaseSettings
 
 const transitions: Record<DrawerPosition, MantineTransition> = {
     top: 'slide-down',

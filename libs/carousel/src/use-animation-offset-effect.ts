@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { Embla } from './types'
+import type { Embla } from './types'
 
 export function useAnimationOffsetEffect(embla: Embla | null | undefined, transitionDuration: number) {
     useEffect(() => {

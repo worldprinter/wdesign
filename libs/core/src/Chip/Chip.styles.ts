@@ -1,12 +1,5 @@
-import {
-    createStyles,
-    getSize,
-    getStylesRef,
-    MantineColor,
-    MantineNumberSize,
-    MantineTheme,
-    rem,
-} from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 export const sizes = {
     xs: rem(24),
@@ -40,7 +33,7 @@ const checkedPadding = {
     xl: rem(15),
 }
 
-export interface ChipStylesParams {
+export type ChipStylesParams = {
     radius: MantineNumberSize
     color: MantineColor
 }

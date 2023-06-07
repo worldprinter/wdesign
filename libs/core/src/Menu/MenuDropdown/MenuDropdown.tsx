@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler } from '@worldprinter/wdesign-utils'
 
 import { Popover } from '../../Popover'
 import { useMenuContext } from '../Menu.context'
 
-export interface MenuDropdownProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type MenuDropdownProps = {
     /** Item label */
     children?: React.ReactNode
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<MenuDropdownProps> = {}
 

@@ -1,11 +1,11 @@
-import { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { AccordionStylesNames } from './Accordion'
 import { ACCORDION_ERRORS } from './Accordion.errors'
-import { AccordionChevronPosition, AccordionHeadingOrder, AccordionVariant } from './Accordion.types'
+import type { AccordionChevronPosition, AccordionHeadingOrder, AccordionVariant } from './Accordion.types'
 
-interface AccordionContext {
+type AccordionContext = {
     loop: boolean
     transitionDuration: number
     disableChevronRotation: boolean

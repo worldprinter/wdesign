@@ -1,6 +1,7 @@
-import { createStyles, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles } from '@worldprinter/wdesign-styles'
 
-interface MenuItemStylesParams {
+type MenuItemStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
 }

@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import useStyles from './Center.styles'
 
-export interface CenterProps extends DefaultProps {
+export type CenterProps = {
     variant?: string
 
     /** Content that should be centered vertically and horizontally */
@@ -14,7 +15,7 @@ export interface CenterProps extends DefaultProps {
 
     /** Set to true to use inline-flex instead of flex */
     inline?: boolean
-}
+} & DefaultProps
 
 export const _Center = forwardRef<HTMLDivElement, CenterProps>((props, ref) => {
     const { inline, className, unstyled, variant, ...others } = useComponentDefaultProps('Center', {}, props)

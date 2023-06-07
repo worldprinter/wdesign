@@ -1,15 +1,9 @@
-import {
-    createStyles,
-    getBreakpointValue,
-    getSize,
-    getSortedBreakpoints,
-    MantineNumberSize,
-    rem,
-} from '@worldprinter/wdesign-core'
+import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import { createStyles, getBreakpointValue, getSize, getSortedBreakpoints, rem } from '@worldprinter/wdesign-core'
 
-import { CarouselBreakpoint } from './types'
+import type { CarouselBreakpoint } from './types'
 
-export interface CarouselStylesParams {
+export type CarouselStylesParams = {
     controlSize: number | string
     controlsOffset: MantineNumberSize
     orientation: 'vertical' | 'horizontal'

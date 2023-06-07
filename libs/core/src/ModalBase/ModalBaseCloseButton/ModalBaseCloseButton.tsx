@@ -1,16 +1,17 @@
 import React, { forwardRef } from 'react'
 
-import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { CloseButton, CloseButtonProps } from '../../CloseButton'
+import type { CloseButtonProps } from '../../CloseButton'
+import { CloseButton } from '../../CloseButton'
 import { useModalBaseContext } from '../ModalBase.context'
 import useStyles from './ModalBaseCloseButton.styles'
 
 export type ModalBaseCloseButtonStylesNames = Selectors<typeof useStyles>
 
-export interface ModalBaseCloseButtonProps
-    extends CloseButtonProps,
-        Omit<React.ComponentPropsWithoutRef<'button'>, keyof CloseButtonProps> {}
+export type ModalBaseCloseButtonProps = {} & CloseButtonProps &
+    Omit<React.ComponentPropsWithoutRef<'button'>, keyof CloseButtonProps>
 
 const defaultProps: Partial<ModalBaseCloseButtonProps> = {
     size: 'sm',

@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 
 import { useDidUpdate } from '@worldprinter/wdesign-hooks'
 
-import { FloatingPosition } from './types'
+import type { FloatingPosition } from './types'
 
-interface Payload {
+type Payload = {
     opened: boolean
     floating: {
         update(): void

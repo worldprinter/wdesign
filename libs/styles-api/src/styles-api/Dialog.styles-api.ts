@@ -1,4 +1,4 @@
-import { DialogStylesNames } from '@worldprinter/wdesign-core'
+import type { DialogStylesNames } from '@worldprinter/wdesign-core'
 
 export const Dialog: Record<DialogStylesNames, string> = {
     root: 'Root element',

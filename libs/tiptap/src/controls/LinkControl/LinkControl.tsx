@@ -1,12 +1,11 @@
 import { IconExternalLink, IconLink } from '@tabler/icons-react'
 import React, { forwardRef, useState } from 'react'
 
+import type { PopoverProps, Selectors } from '@worldprinter/wdesign-core'
 import {
     Button,
     Popover,
-    PopoverProps,
     rem,
-    Selectors,
     TextInput,
     Tooltip,
     UnstyledButton,
@@ -15,18 +14,19 @@ import {
 import { useDisclosure, useInputState, useWindowEvent } from '@worldprinter/wdesign-hooks'
 
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
-import { ControlBase, RichTextEditorControlBaseProps } from '../ControlBase/ControlBase'
+import type { RichTextEditorControlBaseProps } from '../ControlBase/ControlBase'
+import { ControlBase } from '../ControlBase/ControlBase'
 import useStyles from './LinkControl.styles'
 
 export type LinkControlStylesNames = Selectors<typeof useStyles>
 
-export interface RichTextEditorLinkControlProps extends Partial<RichTextEditorControlBaseProps> {
+export type RichTextEditorLinkControlProps = {
     /** Props added to Popover component */
     popoverProps?: Partial<PopoverProps>
 
     /** Determines whether external link control tooltip should be disabled */
     disableTooltips?: boolean
-}
+} & Partial<RichTextEditorControlBaseProps>
 
 const LinkIcon: RichTextEditorControlBaseProps['icon'] = ({ size, ...others }) => (
     <IconLink

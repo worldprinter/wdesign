@@ -1,27 +1,23 @@
 import React, { forwardRef, useCallback, useRef, useState } from 'react'
 
 import { clamp, useMergedRef, useMove, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    useComponentDefaultProps,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { MantineTransition } from '../../Transition'
-import { MarksStylesNames } from '../Marks/Marks'
-import { SliderRoot, SliderRootStylesNames } from '../SliderRoot/SliderRoot'
-import { Thumb, ThumbStylesNames } from '../Thumb/Thumb'
-import { Track, TrackStylesNames } from '../Track/Track'
+import type { MantineTransition } from '../../Transition'
+import type { MarksStylesNames } from '../Marks/Marks'
+import type { SliderRootStylesNames } from '../SliderRoot/SliderRoot'
+import { SliderRoot } from '../SliderRoot/SliderRoot'
+import type { ThumbStylesNames } from '../Thumb/Thumb'
+import { Thumb } from '../Thumb/Thumb'
+import type { TrackStylesNames } from '../Track/Track'
+import { Track } from '../Track/Track'
 import { getChangeValue } from '../utils/get-change-value/get-change-value'
 import { getPosition } from '../utils/get-position/get-position'
 
 export type SliderStylesNames = SliderRootStylesNames | ThumbStylesNames | TrackStylesNames | MarksStylesNames
 
-export interface SliderProps
-    extends DefaultProps<SliderStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'> {
+export type SliderProps = {
     variant?: string
 
     /** Color from theme.colors */
@@ -98,7 +94,8 @@ export interface SliderProps
 
     /** Allows the track to be inverted */
     inverted?: boolean
-}
+} & DefaultProps<SliderStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'>
 
 const defaultProps: Partial<SliderProps> = {
     size: 'md',

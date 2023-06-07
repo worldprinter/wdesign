@@ -1,14 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { extractSystemStyles } from './style-system-props/extract-system-styles/extract-system-styles'
 import { useSx } from './use-sx/use-sx'
 
-export interface BoxProps extends DefaultProps {
+export type BoxProps = {
     children?: React.ReactNode
-}
+} & DefaultProps
 
 export const _Box = forwardRef<HTMLDivElement, BoxProps & { component: any }>(
     ({ className, component, style, sx, ...others }, ref) => {

@@ -35,7 +35,7 @@ import {
     IconX,
 } from '@tabler/icons-react'
 
-export interface MRT_Icons {
+export type MRT_Icons = {
     IconArrowAutofitContent: any
     IconArrowDown: any
     IconArrowsSort: any

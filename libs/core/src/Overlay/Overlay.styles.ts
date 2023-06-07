@@ -1,6 +1,7 @@
-import { createStyles, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-export interface OverlayStylesParams {
+export type OverlayStylesParams = {
     color: string
     opacity: number
     blur: number | string

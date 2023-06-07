@@ -1,13 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Text } from '../../Text'
 import useStyles from './InputError.styles'
 
 export type InputErrorStylesNames = Selectors<typeof useStyles>
 
-export interface InputErrorProps extends DefaultProps<InputErrorStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type InputErrorProps = {
     variant?: string
 
     /** Error content */
@@ -17,7 +18,8 @@ export interface InputErrorProps extends DefaultProps<InputErrorStylesNames>, Re
     size?: MantineSize
 
     __staticSelector?: string
-}
+} & DefaultProps<InputErrorStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<InputErrorProps> = {
     size: 'sm',

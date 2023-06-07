@@ -1,4 +1,4 @@
-import { BreadcrumbsStylesNames } from '@worldprinter/wdesign-core'
+import type { BreadcrumbsStylesNames } from '@worldprinter/wdesign-core'
 
 export const Breadcrumbs: Record<BreadcrumbsStylesNames, string> = {
     root: 'Root element',

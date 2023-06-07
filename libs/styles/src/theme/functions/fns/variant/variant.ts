@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 
 import type { MantineColor, MantineGradient, MantineThemeBase } from '../../../types'
 import { gradient } from '../gradient/gradient'
@@ -6,21 +6,21 @@ import { primaryShade } from '../primary-shade/primary-shade'
 import { rgba } from '../rgba/rgba'
 import { themeColor } from '../theme-color/theme-color'
 
-export interface VariantInput {
+export type VariantInput = {
     variant: string
     color?: MantineColor
     gradient?: MantineGradient
     primaryFallback?: boolean
 }
 
-export interface VariantOutput {
+export type VariantOutput = {
     border: CSSProperties['borderColor']
     background: CSSProperties['backgroundColor']
     color: CSSProperties['color']
     hover: CSSProperties['backgroundColor']
 }
 
-interface ColorInfo {
+type ColorInfo = {
     isSplittedColor: boolean
     key?: string
     shade?: number

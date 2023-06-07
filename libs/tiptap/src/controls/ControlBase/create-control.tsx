@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
 
-import { RichTextEditorLabels } from '../../labels'
+import type { RichTextEditorLabels } from '../../labels'
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
-import { PremadeControlProps } from '../Control/Control'
+import type { PremadeControlProps } from '../Control/Control'
 import { ControlBase } from './ControlBase'
 
-interface CreateControlProps {
+type CreateControlProps = {
     label: keyof RichTextEditorLabels
     icon: React.FC<{ size: number }>
     isActive?: { name: string; attributes?: Record<string, any> | string }

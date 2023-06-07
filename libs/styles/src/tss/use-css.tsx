@@ -1,5 +1,6 @@
 import type { EmotionCache } from '@emotion/cache'
-import { RegisteredCache, serializeStyles } from '@emotion/serialize'
+import type { RegisteredCache } from '@emotion/serialize'
+import { serializeStyles } from '@emotion/serialize'
 import { getRegisteredStyles, insertStyles } from '@emotion/utils'
 import clsx from 'clsx'
 

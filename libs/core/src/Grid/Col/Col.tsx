@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { useGridContext } from '../Grid.context'
-import useStyles, { ColSpan } from './Col.styles'
+import type { ColSpan } from './Col.styles'
+import useStyles from './Col.styles'
 
-export interface ColProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type ColProps = {
     variant?: string
 
     /** Default col span */
@@ -62,7 +64,8 @@ export interface ColProps extends DefaultProps, React.ComponentPropsWithoutRef<'
 
     /** Col span at (min-width: theme.breakpoints.xl) */
     xl?: ColSpan
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<ColProps> = {}
 

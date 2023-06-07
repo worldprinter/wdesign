@@ -1,6 +1,7 @@
-import { createStyles, keyframes, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, keyframes, rem } from '@worldprinter/wdesign-styles'
 
-export interface SkeletonStylesParams {
+export type SkeletonStylesParams = {
     height: number | string
     width: number | string
     circle: boolean

@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-styles'
 
-export interface SpoilerStylesParams {
+export type SpoilerStylesParams = {
     transitionDuration: number
 }
 

@@ -1,24 +1,25 @@
 import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { BadgeStylesParams } from './Badge.styles'
+import type { BadgeStylesParams } from './Badge.styles'
+import useStyles from './Badge.styles'
 
 export type BadgeStylesNames = Selectors<typeof useStyles>
 export type BadgeVariant = Variants<'light' | 'filled' | 'outline' | 'dot' | 'gradient'>
 
-export interface BadgeProps extends DefaultProps<BadgeStylesNames, BadgeStylesParams> {
+export type BadgeProps = {
     /** Key of theme.colors */
     color?: MantineColor
 
@@ -45,7 +46,7 @@ export interface BadgeProps extends DefaultProps<BadgeStylesNames, BadgeStylesPa
 
     /** Badge label */
     children?: React.ReactNode
-}
+} & DefaultProps<BadgeStylesNames, BadgeStylesParams>
 
 const defaultProps: Partial<BadgeProps> = {
     variant: 'light',

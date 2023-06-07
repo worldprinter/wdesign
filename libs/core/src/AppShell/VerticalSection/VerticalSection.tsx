@@ -1,13 +1,15 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, em, getDefaultZIndex, Global, rem } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { em, getDefaultZIndex, Global, rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { useAppShellContext } from '../AppShell.context'
 import { getSortedBreakpoints } from '../HorizontalSection/get-sorted-breakpoints/get-sorted-breakpoints'
-import useStyles, { VerticalSectionHeight, VerticalSectionPosition } from './VerticalSection.styles'
+import type { VerticalSectionHeight, VerticalSectionPosition } from './VerticalSection.styles'
+import useStyles from './VerticalSection.styles'
 
-export interface VerticalSectionSharedProps extends DefaultProps {
+export type VerticalSectionSharedProps = {
     variant?: string
 
     /** Section content */
@@ -27,14 +29,13 @@ export interface VerticalSectionSharedProps extends DefaultProps {
 
     /** z-index */
     zIndex?: React.CSSProperties['zIndex']
-}
+} & DefaultProps
 
-interface VerticalSectionProps
-    extends VerticalSectionSharedProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
+type VerticalSectionProps = {
     section: 'header' | 'footer'
     __staticSelector: string
-}
+} & VerticalSectionSharedProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'children'>
 
 export const VerticalSection = forwardRef<HTMLElement, VerticalSectionProps>(
     (

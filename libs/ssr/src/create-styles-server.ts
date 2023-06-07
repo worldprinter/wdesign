@@ -1,4 +1,4 @@
-import { EmotionCache } from '@emotion/cache'
+import type { EmotionCache } from '@emotion/cache'
 import createEmotionServer from '@emotion/server/create-instance'
 
 import { defaultMantineEmotionCache } from '@worldprinter/wdesign-styles'

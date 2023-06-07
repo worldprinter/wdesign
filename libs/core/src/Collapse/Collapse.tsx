@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react'
 
 import { useReducedMotion } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { Box, extractSystemStyles } from '../Box'
 import { useCollapse } from './use-collapse'
 
-export interface CollapseProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type CollapseProps = {
     /** Content that should be collapsed */
     children: React.ReactNode
 
@@ -24,7 +25,8 @@ export interface CollapseProps extends DefaultProps, React.ComponentPropsWithout
 
     /** Should opacity be animated */
     animateOpacity?: boolean
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<CollapseProps> = {
     transitionDuration: 200,

@@ -1,10 +1,12 @@
-import React, { MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
+import React from 'react'
 
-import { Checkbox, CheckboxProps, Radio, RadioProps, Tooltip } from '@worldprinter/wdesign-core'
+import type { CheckboxProps, RadioProps } from '@worldprinter/wdesign-core'
+import { Checkbox, Radio, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { MRT_Row, MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     row?: MRT_Row
     selectAll?: boolean
     table: MRT_TableInstance

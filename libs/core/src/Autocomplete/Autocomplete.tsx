@@ -1,13 +1,15 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { useDidUpdate, useMergedRef, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, getDefaultZIndex } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
-import { Input, InputSharedProps, InputWrapperBaseProps, useInputProps } from '../Input'
-import { SelectStylesNames } from '../Select'
+import type { InputSharedProps, InputWrapperBaseProps } from '../Input'
+import { Input, useInputProps } from '../Input'
+import type { SelectStylesNames } from '../Select'
 import { DefaultItem } from '../Select/DefaultItem/DefaultItem'
-import { SelectSharedProps } from '../Select/Select'
+import type { SelectSharedProps } from '../Select/Select'
 import { SelectItems } from '../Select/SelectItems/SelectItems'
 import { SelectPopover } from '../Select/SelectPopover/SelectPopover'
 import { SelectScrollArea } from '../Select/SelectScrollArea/SelectScrollArea'
@@ -16,17 +18,12 @@ import { filterData } from './filter-data/filter-data'
 
 export type AutocompleteStylesNames = SelectStylesNames
 
-export interface AutocompleteItem {
+export type AutocompleteItem = {
     value: string
     [key: string]: any
 }
 
-export interface AutocompleteProps
-    extends DefaultProps<AutocompleteStylesNames>,
-        InputSharedProps,
-        InputWrapperBaseProps,
-        SelectSharedProps<AutocompleteItem, string>,
-        Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'onChange' | 'value' | 'defaultValue'> {
+export type AutocompleteProps = {
     /** Maximum dropdown height */
     maxDropdownHeight?: number | string
 
@@ -38,7 +35,11 @@ export interface AutocompleteProps
 
     /** Hovers the first result when input changes */
     hoverOnSearchChange?: boolean
-}
+} & DefaultProps<AutocompleteStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps &
+    SelectSharedProps<AutocompleteItem, string> &
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'onChange' | 'value' | 'defaultValue'>
 
 export function defaultFilter(value: string, item: AutocompleteItem) {
     return item.value.toLowerCase().trim().includes(value.toLowerCase().trim())

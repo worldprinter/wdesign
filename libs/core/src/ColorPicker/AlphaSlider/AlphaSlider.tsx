@@ -2,12 +2,13 @@ import React, { forwardRef } from 'react'
 
 import { rem, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { BaseColorSliderProps, ColorSlider } from '../ColorSlider/ColorSlider'
+import type { BaseColorSliderProps } from '../ColorSlider/ColorSlider'
+import { ColorSlider } from '../ColorSlider/ColorSlider'
 import { round } from '../converters/parsers'
 
-export interface AlphaSliderProps extends BaseColorSliderProps {
+export type AlphaSliderProps = {
     color: string
-}
+} & BaseColorSliderProps
 
 const defaultProps: Partial<AlphaSliderProps> = {}
 

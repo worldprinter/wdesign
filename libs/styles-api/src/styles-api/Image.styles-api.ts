@@ -1,4 +1,4 @@
-import { ImageStylesNames } from '@worldprinter/wdesign-core'
+import type { ImageStylesNames } from '@worldprinter/wdesign-core'
 
 export const Image: Record<ImageStylesNames, string> = {
     root: 'Root element',

@@ -1,18 +1,19 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import useStyles from './SliderRoot.styles'
 
 export type SliderRootStylesNames = Selectors<typeof useStyles>
 
-export interface SliderRootProps extends DefaultProps<SliderRootStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type SliderRootProps = {
     size: MantineNumberSize
     children: React.ReactNode
     disabled: boolean
     variant: string
-}
+} & DefaultProps<SliderRootStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 export const SliderRoot = forwardRef<HTMLDivElement, SliderRootProps>(
     ({ className, size, classNames, styles, disabled, unstyled, variant, ...others }: SliderRootProps, ref) => {

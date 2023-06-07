@@ -7,12 +7,12 @@ import { getRelativePosition } from './utils/get-relative-position'
 import { getScrollStart } from './utils/get-scroll-start'
 import { setScrollParam } from './utils/set-scroll-param'
 
-interface ScrollIntoViewAnimation {
+type ScrollIntoViewAnimation = {
     /** target element alignment relatively to parent based on current axis */
     alignment?: 'start' | 'end' | 'center'
 }
 
-interface ScrollIntoViewParams {
+type ScrollIntoViewParams = {
     /** callback fired after scroll */
     onScrollFinish?: () => void
 

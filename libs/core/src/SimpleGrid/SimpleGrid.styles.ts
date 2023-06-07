@@ -1,8 +1,9 @@
-import { createStyles, em, getBreakpointValue, getSize, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, em, getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
 import { getSortedBreakpoints } from './get-sorted-breakpoints/get-sorted-breakpoints'
 
-export interface SimpleGridBreakpoint {
+export type SimpleGridBreakpoint = {
     maxWidth?: MantineNumberSize
     minWidth?: MantineNumberSize
     cols: number
@@ -10,7 +11,7 @@ export interface SimpleGridBreakpoint {
     verticalSpacing?: MantineNumberSize
 }
 
-export interface SimpleGridStylesParams {
+export type SimpleGridStylesParams = {
     spacing: MantineNumberSize
     verticalSpacing: MantineNumberSize
     breakpoints: SimpleGridBreakpoint[]

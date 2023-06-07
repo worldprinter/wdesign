@@ -1,4 +1,4 @@
-import { InputStylesNames } from '@worldprinter/wdesign-core'
+import type { InputStylesNames } from '@worldprinter/wdesign-core'
 
 export const Input: Record<InputStylesNames, string> = {
     wrapper: 'Root Input element',

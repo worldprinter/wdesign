@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-styles'
 
-interface ModalBaseContentStylesParams {
+type ModalBaseContentStylesParams = {
     zIndex: number
 }
 

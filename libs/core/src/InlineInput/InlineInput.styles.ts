@@ -8,7 +8,7 @@ const sizes = {
     xl: rem(36),
 }
 
-export interface InlineInputStylesParams {
+export type InlineInputStylesParams = {
     labelPosition: 'left' | 'right'
 }
 

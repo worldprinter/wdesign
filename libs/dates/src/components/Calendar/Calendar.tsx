@@ -2,16 +2,20 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
 
-import { CalendarLevel } from '../../types'
-import { DecadeLevelSettings } from '../DecadeLevel'
-import { DecadeLevelGroup, DecadeLevelGroupStylesNames } from '../DecadeLevelGroup'
-import { MonthLevelSettings } from '../MonthLevel'
-import { MonthLevelGroup, MonthLevelGroupStylesNames } from '../MonthLevelGroup'
-import { YearLevelSettings } from '../YearLevel'
-import { YearLevelGroup, YearLevelGroupStylesNames } from '../YearLevelGroup'
+import type { CalendarLevel } from '../../types'
+import type { DecadeLevelSettings } from '../DecadeLevel'
+import type { DecadeLevelGroupStylesNames } from '../DecadeLevelGroup'
+import { DecadeLevelGroup } from '../DecadeLevelGroup'
+import type { MonthLevelSettings } from '../MonthLevel'
+import type { MonthLevelGroupStylesNames } from '../MonthLevelGroup'
+import { MonthLevelGroup } from '../MonthLevelGroup'
+import type { YearLevelSettings } from '../YearLevel'
+import type { YearLevelGroupStylesNames } from '../YearLevelGroup'
+import { YearLevelGroup } from '../YearLevelGroup'
 import useStyles from './Calendar.styles'
 import { clampLevel } from './clamp-level/clamp-level'
 
@@ -21,7 +25,7 @@ export type CalendarStylesNames =
     | YearLevelGroupStylesNames
     | MonthLevelGroupStylesNames
 
-export interface CalendarAriaLabels {
+export type CalendarAriaLabels = {
     monthLevelControl?: string
     yearLevelControl?: string
 
@@ -35,10 +39,7 @@ export interface CalendarAriaLabels {
     previousDecade?: string
 }
 
-export interface CalendarSettings
-    extends Omit<DecadeLevelSettings, 'onNext' | 'onPrevious'>,
-        Omit<YearLevelSettings, 'onNext' | 'onPrevious'>,
-        Omit<MonthLevelSettings, 'onNext' | 'onPrevious'> {
+export type CalendarSettings = {
     /** Initial level displayed to the user (decade, year, month), used for uncontrolled component */
     defaultLevel?: CalendarLevel
 
@@ -59,15 +60,16 @@ export interface CalendarSettings
 
     /** Called when mouse enters month control */
     onMonthMouseEnter?(event: React.MouseEvent<HTMLButtonElement>, date: Date): void
-}
+} & Omit<DecadeLevelSettings, 'onNext' | 'onPrevious'> &
+    Omit<YearLevelSettings, 'onNext' | 'onPrevious'> &
+    Omit<MonthLevelSettings, 'onNext' | 'onPrevious'>
 
-export interface CalendarSystemProps
-    extends DefaultProps<CalendarStylesNames>,
-        Omit<React.ComponentPropsWithRef<'div'>, 'value' | 'defaultValue' | 'onChange'> {
+export type CalendarSystemProps = {
     variant?: string
-}
+} & DefaultProps<CalendarStylesNames> &
+    Omit<React.ComponentPropsWithRef<'div'>, 'value' | 'defaultValue' | 'onChange'>
 
-export interface CalendarBaseProps {
+export type CalendarBaseProps = {
     __staticSelector?: string
 
     /** Prevents focus shift when buttons are clicked */
@@ -116,7 +118,7 @@ export interface CalendarBaseProps {
     onPreviousMonth?(date: Date): void
 }
 
-export interface CalendarProps extends CalendarSettings, CalendarBaseProps, CalendarSystemProps {
+export type CalendarProps = {
     /** Max level that user can go up to (decade, year, month), defaults to decade */
     maxLevel?: CalendarLevel
 
@@ -125,7 +127,9 @@ export interface CalendarProps extends CalendarSettings, CalendarBaseProps, Cale
 
     /** Determines whether days should be static, static days can be used to display month if it is not expected that user will interact with the component in any way  */
     static?: boolean
-}
+} & CalendarSettings &
+    CalendarBaseProps &
+    CalendarSystemProps
 
 const defaultProps: Partial<CalendarProps> = {
     maxLevel: 'decade',

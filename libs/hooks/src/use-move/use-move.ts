@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { clamp } from '../utils'
 
-export interface UseMovePosition {
+export type UseMovePosition = {
     x: number
     y: number
 }
@@ -13,7 +13,7 @@ export const clampUseMovePosition = (position: UseMovePosition) => ({
     y: clamp(position.y, 0, 1),
 })
 
-interface useMoveHandlers {
+type useMoveHandlers = {
     onScrubStart?(): void
     onScrubEnd?(): void
 }

@@ -1,20 +1,15 @@
 import { EditorContent } from '@tiptap/react'
 import React, { forwardRef } from 'react'
 
-import {
-    Box,
-    DefaultProps,
-    Selectors,
-    TypographyStylesProvider,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, TypographyStylesProvider, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useRichTextEditorContext } from '../RichTextEditor.context'
 import useStyles from './Content.styles'
 
 export type ContentStylesNames = Selectors<typeof useStyles>
 
-export interface RichTextEditorContentProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {}
+export type RichTextEditorContentProps = {} & DefaultProps & React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<RichTextEditorContentProps> = {}
 

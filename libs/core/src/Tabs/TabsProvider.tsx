@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { getSafeId } from '@worldprinter/wdesign-utils'
 
 import type { TabsStylesNames } from './Tabs'
 import { TabsContextProvider } from './Tabs.context'
 import { TABS_ERRORS } from './Tabs.errors'
-import { TabsOrientation, TabsPlacement, TabsStylesParams, TabsValue, TabsVariant } from './Tabs.types'
+import type { TabsOrientation, TabsPlacement, TabsStylesParams, TabsValue, TabsVariant } from './Tabs.types'
 
-export interface TabsProviderProps {
+export type TabsProviderProps = {
     /** Default value for uncontrolled component */
     defaultValue?: TabsValue
 
@@ -56,11 +56,11 @@ export interface TabsProviderProps {
     keepMounted?: boolean
 }
 
-interface _TabsProviderProps extends TabsProviderProps {
+type _TabsProviderProps = {
     classNames?: ClassNames<TabsStylesNames>
     styles?: Styles<TabsStylesNames, TabsStylesParams>
     unstyled?: boolean
-}
+} & TabsProviderProps
 
 export function TabsProvider({
     defaultValue,

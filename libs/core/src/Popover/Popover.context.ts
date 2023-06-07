@@ -1,15 +1,15 @@
-import { ReferenceType } from '@floating-ui/react'
+import type { ReferenceType } from '@floating-ui/react'
 
-import { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-import { ArrowPosition, FloatingPosition } from '../Floating'
-import { PortalProps } from '../Portal'
-import { TransitionOverride } from '../Transition'
+import type { ArrowPosition, FloatingPosition } from '../Floating'
+import type { PortalProps } from '../Portal'
+import type { TransitionOverride } from '../Transition'
 import { POPOVER_ERRORS } from './Popover.errors'
-import { PopoverStylesNames, PopoverStylesParams, PopoverWidth } from './Popover.types'
+import type { PopoverStylesNames, PopoverStylesParams, PopoverWidth } from './Popover.types'
 
-interface PopoverContext {
+type PopoverContext = {
     x: number
     y: number
     arrowX: number

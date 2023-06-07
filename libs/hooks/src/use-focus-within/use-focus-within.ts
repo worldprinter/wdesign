@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export interface UseFocusWithinOptions {
+export type UseFocusWithinOptions = {
     onFocus?(event: FocusEvent): void
     onBlur?(event: FocusEvent): void
 }

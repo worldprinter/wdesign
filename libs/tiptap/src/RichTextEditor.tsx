@@ -1,19 +1,25 @@
 /* eslint-disable react/no-unused-prop-types */
-import { Editor } from '@tiptap/react'
+import type { Editor } from '@tiptap/react'
 import React, { forwardRef, useMemo } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-import { Content, ContentStylesNames } from './Content/Content'
+import type { ContentStylesNames } from './Content/Content'
+import { Content } from './Content/Content'
 import * as controls from './controls'
-import { Control, ControlStylesNames } from './controls/Control/Control'
-import { ControlsGroup, ControlsGroupStylesNames } from './controls/ControlsGroup/ControlsGroup'
-import { LinkControlStylesNames } from './controls/LinkControl/LinkControl'
-import { DEFAULT_LABELS, RichTextEditorLabels } from './labels'
+import type { ControlStylesNames } from './controls/Control/Control'
+import { Control } from './controls/Control/Control'
+import type { ControlsGroupStylesNames } from './controls/ControlsGroup/ControlsGroup'
+import { ControlsGroup } from './controls/ControlsGroup/ControlsGroup'
+import type { LinkControlStylesNames } from './controls/LinkControl/LinkControl'
+import type { RichTextEditorLabels } from './labels'
+import { DEFAULT_LABELS } from './labels'
 import { RichTextEditorProvider } from './RichTextEditor.context'
 import useStyles from './RichTextEditor.styles'
-import { Toolbar, ToolbarStylesNames } from './Toolbar/Toolbar'
+import type { ToolbarStylesNames } from './Toolbar/Toolbar'
+import { Toolbar } from './Toolbar/Toolbar'
 
 export type RichTextEditorStylesNames =
     | Selectors<typeof useStyles>
@@ -23,9 +29,7 @@ export type RichTextEditorStylesNames =
     | ToolbarStylesNames
     | LinkControlStylesNames
 
-export interface RichTextEditorProps
-    extends DefaultProps<RichTextEditorStylesNames>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type RichTextEditorProps = {
     variant?: string
 
     /** Tiptap editor instance */
@@ -42,7 +46,8 @@ export interface RichTextEditorProps
 
     /** Child editor components */
     children: React.ReactNode
-}
+} & DefaultProps<RichTextEditorStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<RichTextEditorProps> = {
     withCodeHighlightStyles: true,

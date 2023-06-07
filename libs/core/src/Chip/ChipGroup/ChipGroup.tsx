@@ -6,7 +6,7 @@ import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { ChipGroupProvider } from '../ChipGroup.context'
 
-export interface ChipGroupProps<T extends boolean = false> {
+export type ChipGroupProps<T extends boolean = false> = {
     /** Allow multiple values to be selected at a time */
     multiple?: T
 

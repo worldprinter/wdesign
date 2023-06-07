@@ -1,16 +1,9 @@
-import {
-    createStyles,
-    em,
-    getSize,
-    MANTINE_SIZES,
-    MantineNumberSize,
-    MantineSize,
-    MantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize, MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, em, getSize, MANTINE_SIZES } from '@worldprinter/wdesign-styles'
 
 export type ColSpan = number | 'auto' | 'content'
 
-interface ColStyles {
+type ColStyles = {
     gutter: MantineNumberSize
     gutterXs: MantineNumberSize
     gutterSm: MantineNumberSize

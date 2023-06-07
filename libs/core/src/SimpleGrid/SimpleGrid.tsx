@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { SimpleGridBreakpoint, SimpleGridStylesParams } from './SimpleGrid.styles'
+import type { SimpleGridBreakpoint, SimpleGridStylesParams } from './SimpleGrid.styles'
+import useStyles from './SimpleGrid.styles'
 
-export interface SimpleGridProps
-    extends DefaultProps<never, SimpleGridStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type SimpleGridProps = {
     variant?: string
 
     /** Breakpoints data to change items per row and spacing based on max-width */
@@ -21,7 +21,8 @@ export interface SimpleGridProps
 
     /** Vertical spacing between columns, used when none of breakpoints can be applied  */
     verticalSpacing?: MantineNumberSize
-}
+} & DefaultProps<never, SimpleGridStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<SimpleGridProps> = {
     breakpoints: [],

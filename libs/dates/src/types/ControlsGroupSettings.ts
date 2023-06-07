@@ -1,6 +1,6 @@
 import type { ControlKeydownPayload } from './GeneralTypes'
 
-export interface ControlsGroupSettings {
+export type ControlsGroupSettings = {
     /** Called when control is clicked with event and date */
     __onControlClick?(event: React.MouseEvent<HTMLButtonElement>, date: Date): void
 

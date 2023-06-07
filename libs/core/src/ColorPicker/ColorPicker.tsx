@@ -1,26 +1,22 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    getSize,
-    MantineSize,
-    rem,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { getSize, rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { ColorSwatch } from '../ColorSwatch/ColorSwatch'
 import { AlphaSlider } from './AlphaSlider/AlphaSlider'
 import useStyles from './ColorPicker.styles'
-import { ColorSliderStylesNames } from './ColorSlider/ColorSlider'
+import type { ColorSliderStylesNames } from './ColorSlider/ColorSlider'
 import { convertHsvaTo, isColorValid, parseColor } from './converters'
 import { HueSlider } from './HueSlider/HueSlider'
-import { Saturation, SaturationStylesNames } from './Saturation/Saturation'
-import { Swatches, SwatchesStylesNames } from './Swatches/Swatches'
-import { ThumbStylesNames } from './Thumb/Thumb'
-import { ColorFormat, HsvaColor } from './types'
+import type { SaturationStylesNames } from './Saturation/Saturation'
+import { Saturation } from './Saturation/Saturation'
+import type { SwatchesStylesNames } from './Swatches/Swatches'
+import { Swatches } from './Swatches/Swatches'
+import type { ThumbStylesNames } from './Thumb/Thumb'
+import type { ColorFormat, HsvaColor } from './types'
 
 export type ColorPickerStylesNames =
     | Selectors<typeof useStyles>
@@ -29,7 +25,7 @@ export type ColorPickerStylesNames =
     | SaturationStylesNames
     | ThumbStylesNames
 
-export interface ColorPickerBaseProps {
+export type ColorPickerBaseProps = {
     /** Controlled component value */
     value?: string
 
@@ -58,10 +54,7 @@ export interface ColorPickerBaseProps {
     size?: MantineSize
 }
 
-export interface ColorPickerProps
-    extends DefaultProps<ColorPickerStylesNames>,
-        ColorPickerBaseProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange' | 'value' | 'defaultValue'> {
+export type ColorPickerProps = {
     variant?: string
 
     /** Force picker to take 100% width of its container */
@@ -84,7 +77,9 @@ export interface ColorPickerProps
 
     /** Called when color swatch is clicked */
     onColorSwatchClick?(color: string): void
-}
+} & DefaultProps<ColorPickerStylesNames> &
+    ColorPickerBaseProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange' | 'value' | 'defaultValue'>
 
 const SWATCH_SIZES = {
     xs: 26,

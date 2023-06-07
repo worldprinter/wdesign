@@ -5,7 +5,7 @@ import { Box } from '@worldprinter/wdesign-core'
 import type { MRT_TableInstance, MRT_VirtualItem } from '..'
 import { MRT_TableFooterRow } from './MRT_TableFooterRow'
 
-interface Props {
+type Props = {
     table: MRT_TableInstance
     virtualColumns?: MRT_VirtualItem[]
     virtualPaddingLeft?: number

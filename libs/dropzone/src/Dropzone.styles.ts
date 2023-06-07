@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineNumberSize, rem } from '@worldprinter/wdesign-core'
+import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-core'
 
-export interface DropzoneStylesParams {
+export type DropzoneStylesParams = {
     padding: MantineNumberSize
     radius: MantineNumberSize
 }

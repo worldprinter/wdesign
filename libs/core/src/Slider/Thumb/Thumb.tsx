@@ -1,14 +1,15 @@
 import React, { forwardRef, useState } from 'react'
 
-import { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import { MantineTransition, Transition } from '../../Transition'
+import type { MantineTransition } from '../../Transition'
+import { Transition } from '../../Transition'
 import useStyles from './Thumb.styles'
 
 export type ThumbStylesNames = Selectors<typeof useStyles>
 
-export interface ThumbProps extends DefaultProps<ThumbStylesNames> {
+export type ThumbProps = {
     max: number
     min: number
     value: number
@@ -32,7 +33,7 @@ export interface ThumbProps extends DefaultProps<ThumbStylesNames> {
     disabled: boolean
     thumbSize: number
     variant: string
-}
+} & DefaultProps<ThumbStylesNames>
 
 export const Thumb = forwardRef<HTMLDivElement, ThumbProps>(
     (

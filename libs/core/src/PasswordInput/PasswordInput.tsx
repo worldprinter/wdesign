@@ -1,20 +1,19 @@
 import React, { forwardRef } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, getSize, rem, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { getSize, rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { ActionIcon } from '../ActionIcon'
 import { extractSystemStyles } from '../Box'
 import { Input } from '../Input'
-import { TextInputProps, TextInputStylesNames } from '../TextInput'
+import type { TextInputProps, TextInputStylesNames } from '../TextInput'
 import useStyles from './PasswordInput.styles'
 import { PasswordToggleIcon } from './PasswordToggleIcon'
 
 export type PasswordInputStylesNames = Selectors<typeof useStyles> | TextInputStylesNames
 
-export interface PasswordInputProps
-    extends DefaultProps<PasswordInputStylesNames>,
-        Omit<TextInputProps, 'classNames' | 'styles'> {
+export type PasswordInputProps = {
     /** Toggle button tabIndex, set to 0 to make button focusable with tab key */
     toggleTabIndex?: -1 | 0
 
@@ -32,7 +31,8 @@ export interface PasswordInputProps
 
     /** Called when visibility changes */
     onVisibilityChange?(visible: boolean): void
-}
+} & DefaultProps<PasswordInputStylesNames> &
+    Omit<TextInputProps, 'classNames' | 'styles'>
 
 const buttonSizes = {
     xs: rem(22),

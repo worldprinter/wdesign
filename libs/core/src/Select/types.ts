@@ -2,7 +2,7 @@ import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWr
 import type { SelectItemsStylesNames } from './SelectItems/SelectItems'
 import type { SelectPopoverStylesNames } from './SelectPopover/SelectPopover'
 
-export interface SelectItem {
+export type SelectItem = {
     value: string
     label?: string
     selected?: boolean

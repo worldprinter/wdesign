@@ -1,14 +1,14 @@
 import type { NotificationProps as NotificationComponentProps } from '@worldprinter/wdesign-core'
 
-export interface NotificationProps extends Omit<NotificationComponentProps, 'onClose'> {
+export type NotificationProps = {
     id?: string
     message: React.ReactNode
     autoClose?: boolean | number
     onClose?(props: NotificationProps): void
     onOpen?(props: NotificationProps): void
-}
+} & Omit<NotificationComponentProps, 'onClose'>
 
-export interface NotificationsContextProps {
+export type NotificationsContextProps = {
     notifications: NotificationProps[]
     queue: NotificationProps[]
 }

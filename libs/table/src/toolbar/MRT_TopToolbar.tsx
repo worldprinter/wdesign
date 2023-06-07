@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Box, Flex, MantineTheme } from '@worldprinter/wdesign-core'
+import type { MantineTheme } from '@worldprinter/wdesign-core'
+import { Box, Flex } from '@worldprinter/wdesign-core'
 import { useMediaQuery } from '@worldprinter/wdesign-hooks'
 
 import type { MRT_TableInstance } from '..'
@@ -24,7 +25,7 @@ export const commonToolbarStyles = ({ theme }: { theme: MantineTheme }) => ({
     zIndex: 3,
 })
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
 }
 

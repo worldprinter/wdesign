@@ -4,7 +4,7 @@ import React from 'react'
 
 import { getSSRStyles } from './get-ssr-styles'
 
-interface ServerStylesProps {
+type ServerStylesProps = {
     html: string
     server: EmotionServer
 }

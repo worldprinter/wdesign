@@ -1,31 +1,21 @@
 import React, { forwardRef, useEffect, useState } from 'react'
 
 import { useDidUpdate, useEyeDropper, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    getDefaultZIndex,
-    getSize,
-    MantineShadow,
-    rem,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineShadow } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, getSize, rem, useMantineTheme } from '@worldprinter/wdesign-styles'
 import { noop } from '@worldprinter/wdesign-utils'
 
 import { ActionIcon } from '../ActionIcon'
-import { ColorPicker, ColorPickerBaseProps, ColorPickerStylesNames } from '../ColorPicker/ColorPicker'
+import type { ColorPickerBaseProps, ColorPickerStylesNames } from '../ColorPicker/ColorPicker'
+import { ColorPicker } from '../ColorPicker/ColorPicker'
 import { convertHsvaTo, isColorValid, parseColor } from '../ColorPicker/converters'
 import { ColorSwatch } from '../ColorSwatch'
-import {
-    Input,
-    InputSharedProps,
-    InputStylesNames,
-    InputWrapperBaseProps,
-    InputWrapperStylesNames,
-    useInputProps,
-} from '../Input'
-import { Popover, PopoverStylesNames } from '../Popover'
-import { PortalProps } from '../Portal'
-import { TransitionOverride } from '../Transition'
+import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
+import { Input, useInputProps } from '../Input'
+import type { PopoverStylesNames } from '../Popover'
+import { Popover } from '../Popover'
+import type { PortalProps } from '../Portal'
+import type { TransitionOverride } from '../Transition'
 import { EyeDropperIcon } from './EyeDropperIcon'
 
 export type ColorInputStylesNames =
@@ -34,12 +24,7 @@ export type ColorInputStylesNames =
     | ColorPickerStylesNames
     | PopoverStylesNames
 
-export interface ColorInputProps
-    extends InputWrapperBaseProps,
-        InputSharedProps,
-        ColorPickerBaseProps,
-        DefaultProps<ColorInputStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'onChange' | 'defaultValue' | 'value'> {
+export type ColorInputProps = {
     /** Disallow free input */
     disallowInput?: boolean
 
@@ -75,7 +60,11 @@ export interface ColorInputProps
 
     /** aria-label for eye dropper button */
     eyeDropperLabel?: string
-}
+} & InputWrapperBaseProps &
+    InputSharedProps &
+    ColorPickerBaseProps &
+    DefaultProps<ColorInputStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'onChange' | 'defaultValue' | 'value'>
 
 const SWATCH_SIZES = {
     xs: rem(16),

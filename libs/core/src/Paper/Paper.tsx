@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, MantineShadow, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, MantineShadow } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { PaperStylesParams } from './Paper.styles'
+import type { PaperStylesParams } from './Paper.styles'
+import useStyles from './Paper.styles'
 
-export interface PaperProps extends DefaultProps<never, PaperStylesParams> {
+export type PaperProps = {
     variant?: string
 
     /** Predefined box-shadow from theme.shadows (xs, sm, md, lg, xl) or any valid css box-shadow property */
@@ -20,7 +22,7 @@ export interface PaperProps extends DefaultProps<never, PaperStylesParams> {
 
     /** Paper children */
     children?: React.ReactNode
-}
+} & DefaultProps<never, PaperStylesParams>
 
 const defaultProps: Partial<PaperProps> = {}
 

@@ -7,7 +7,7 @@ import type { MRT_Row, MRT_TableInstance, MRT_VirtualItem, MRT_Virtualizer } fro
 import { rankGlobalFuzzy } from '../sortingFns'
 import { Memo_MRT_TableBodyRow, MRT_TableBodyRow } from './MRT_TableBodyRow'
 
-interface Props {
+type Props = {
     columnVirtualizer?: MRT_Virtualizer<HTMLDivElement, HTMLTableCellElement>
     enableHover?: boolean
     isStriped?: boolean

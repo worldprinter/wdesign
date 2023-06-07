@@ -1,10 +1,10 @@
-import { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-import { TransitionOverride } from '../Transition'
+import type { TransitionOverride } from '../Transition'
 import type { ModalBaseStylesNames } from './ModalBase'
 
-interface ModalBaseContext {
+type ModalBaseContext = {
     __staticSelector: string
     opened: boolean
     onClose(): void

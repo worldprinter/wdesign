@@ -1,23 +1,18 @@
 import React, { Children, forwardRef } from 'react'
 
-import {
-    CSSObject,
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    rem,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents, packSx } from '@worldprinter/wdesign-utils'
+import type { CSSObject, DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import useStyles from './Timeline.styles'
-import { TimelineItem, TimelineItemStylesNames } from './TimelineItem/TimelineItem'
+import type { TimelineItemStylesNames } from './TimelineItem/TimelineItem'
+import { TimelineItem } from './TimelineItem/TimelineItem'
 
 export type TimelineStylesNames = Selectors<typeof useStyles> | TimelineItemStylesNames
 
-export interface TimelineProps extends DefaultProps<TimelineStylesNames>, React.ComponentPropsWithRef<'div'> {
+export type TimelineProps = {
     variant?: string
 
     /** <Timeline.Item /> components only */
@@ -43,7 +38,8 @@ export interface TimelineProps extends DefaultProps<TimelineStylesNames>, React.
 
     /** Reverse active direction without reversing items */
     reverseActive?: boolean
-}
+} & DefaultProps<TimelineStylesNames> &
+    React.ComponentPropsWithRef<'div'>
 
 type TimelineComponent = ForwardRefWithStaticComponents<TimelineProps, { Item: typeof TimelineItem }>
 

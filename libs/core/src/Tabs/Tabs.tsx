@@ -1,22 +1,26 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import { Tab, TabStylesNames } from './Tab/Tab'
+import type { TabStylesNames } from './Tab/Tab'
+import { Tab } from './Tab/Tab'
 import useStyles from './Tabs.styles'
-import { TabsStylesParams } from './Tabs.types'
-import { TabsList, TabsListStylesNames } from './TabsList/TabsList'
-import { TabsPanel, TabsPanelStylesNames } from './TabsPanel/TabsPanel'
-import { TabsProvider, TabsProviderProps } from './TabsProvider'
+import type { TabsStylesParams } from './Tabs.types'
+import type { TabsListStylesNames } from './TabsList/TabsList'
+import { TabsList } from './TabsList/TabsList'
+import type { TabsPanelStylesNames } from './TabsPanel/TabsPanel'
+import { TabsPanel } from './TabsPanel/TabsPanel'
+import type { TabsProviderProps } from './TabsProvider'
+import { TabsProvider } from './TabsProvider'
 
 export type TabsStylesNames = Selectors<typeof useStyles> | TabsListStylesNames | TabsPanelStylesNames | TabStylesNames
 
-export interface TabsProps
-    extends TabsProviderProps,
-        DefaultProps<TabsStylesNames, TabsStylesParams>,
-        Omit<React.ComponentPropsWithRef<'div'>, keyof TabsProviderProps> {}
+export type TabsProps = {} & TabsProviderProps &
+    DefaultProps<TabsStylesNames, TabsStylesParams> &
+    Omit<React.ComponentPropsWithRef<'div'>, keyof TabsProviderProps>
 
 type TabsComponent = ForwardRefWithStaticComponents<
     TabsProps,

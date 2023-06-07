@@ -1,6 +1,7 @@
-import { createStyles, getSize, getStylesRef, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
-export interface StepStylesParams {
+export type StepStylesParams = {
     color: MantineColor
     iconSize: number
     radius: MantineNumberSize

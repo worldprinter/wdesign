@@ -1,6 +1,7 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-import { AccordionStylesParams } from '../Accordion.types'
+import type { AccordionStylesParams } from '../Accordion.types'
 
 function getVariantStyles(theme: MantineTheme, variant: string, { radius }: AccordionStylesParams): CSSObject {
     const borderColor = theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]

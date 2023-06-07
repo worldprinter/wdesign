@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-import { DayProps } from '../../Day'
+import type { DayProps } from '../../Day'
 import { isAfterMinDate } from '../is-after-min-date/is-after-min-date'
 import { isBeforeMaxDate } from '../is-before-max-date/is-before-max-date'
 import { isSameMonth } from '../is-same-month/is-same-month'

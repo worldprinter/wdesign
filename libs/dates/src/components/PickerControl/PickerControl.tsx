@@ -1,21 +1,14 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineSize,
-    Selectors,
-    UnstyledButton,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import useStyles from './PickerControl.styles'
 
 export type PickerControlStylesNames = Selectors<typeof useStyles>
 
-export interface PickerControlProps
-    extends DefaultProps<PickerControlStylesNames>,
-        React.ComponentPropsWithoutRef<'button'> {
+export type PickerControlProps = {
     variant?: string
     __staticSelector?: string
 
@@ -39,7 +32,8 @@ export interface PickerControlProps
 
     /** Component size */
     size?: MantineSize
-}
+} & DefaultProps<PickerControlStylesNames> &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<PickerControlProps> = {
     size: 'sm',

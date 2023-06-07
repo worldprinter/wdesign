@@ -1,17 +1,17 @@
 import React, { forwardRef, useEffect, useState } from 'react'
 
 import { useElementSize } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, rem, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Anchor } from '../Anchor'
 import { Box } from '../Box'
-import useStyles, { SpoilerStylesParams } from './Spoiler.styles'
+import type { SpoilerStylesParams } from './Spoiler.styles'
+import useStyles from './Spoiler.styles'
 
 export type SpoilerStylesNames = Selectors<typeof useStyles>
 
-export interface SpoilerProps
-    extends DefaultProps<SpoilerStylesNames, SpoilerStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type SpoilerProps = {
     variant?: string
 
     /** Max height of visible content, when this point is reached spoiler appears */
@@ -31,7 +31,8 @@ export interface SpoilerProps
 
     /** Spoiler reveal transition duration in ms, 0 or null to turn off animation */
     transitionDuration?: number
-}
+} & DefaultProps<SpoilerStylesNames, SpoilerStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<SpoilerProps> = {
     maxHeight: 100,

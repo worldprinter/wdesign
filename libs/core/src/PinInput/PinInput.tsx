@@ -1,16 +1,12 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineNumberSize,
-    MantineSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Group } from '../Group'
-import { Input, InputSharedProps, InputStylesNames } from '../Input'
+import type { InputSharedProps, InputStylesNames } from '../Input'
+import { Input } from '../Input'
 import { createPinArray } from './create-pin-array/create-pin-array'
 import useStyles from './PinInput.styles'
 
@@ -21,10 +17,7 @@ const regex = {
 
 export type PinInputStylesNames = Selectors<typeof useStyles> | InputStylesNames
 
-export interface PinInputProps
-    extends DefaultProps<PinInputStylesNames>,
-        InputSharedProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export type PinInputProps = {
     /** Hidden input name attribute */
     name?: string
 
@@ -90,7 +83,9 @@ export interface PinInputProps
 
     /** inputmode attr, inferred from type prop if not specified */
     inputMode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' | undefined
-}
+} & DefaultProps<PinInputStylesNames> &
+    InputSharedProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 
 const defaultProps: Partial<PinInputProps> = {
     spacing: 'sm',

@@ -1,21 +1,23 @@
 import React, { forwardRef } from 'react'
 
-import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { FocusTrap } from '../../FocusTrap'
-import { Paper, PaperProps } from '../../Paper'
-import { Transition, TransitionOverride } from '../../Transition'
+import type { PaperProps } from '../../Paper'
+import { Paper } from '../../Paper'
+import type { TransitionOverride } from '../../Transition'
+import { Transition } from '../../Transition'
 import { useModalBaseContext } from '../ModalBase.context'
 import useStyles from './ModalBaseContent.styles'
 
 export type ModalBaseContentStylesNames = Selectors<typeof useStyles>
 
-export interface ModalBaseContentProps
-    extends PaperProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, keyof PaperProps> {
+export type ModalBaseContentProps = {
     /** Props added to Transition component */
     transitionProps?: TransitionOverride
-}
+} & PaperProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, keyof PaperProps>
 
 const defaultProps: Partial<ModalBaseContentProps> = {}
 

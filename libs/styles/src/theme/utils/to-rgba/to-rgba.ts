@@ -1,6 +1,6 @@
 /* eslint-disable no-bitwise */
 
-interface RGBA {
+type RGBA = {
     r: number
     g: number
     b: number

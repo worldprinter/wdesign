@@ -1,4 +1,4 @@
-import { JsonInputStylesNames } from '@worldprinter/wdesign-core'
+import type { JsonInputStylesNames } from '@worldprinter/wdesign-core'
 
 import { Input } from './Input.styles-api'
 import { InputWrapper } from './InputWrapper.styles-api'

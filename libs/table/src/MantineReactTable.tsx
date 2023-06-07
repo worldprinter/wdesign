@@ -27,7 +27,8 @@ import type {
     VisibilityState,
 } from '@tanstack/react-table'
 import type { VirtualItem, Virtualizer, VirtualizerOptions } from '@tanstack/react-virtual'
-import React, { Dispatch, HTMLProps, MutableRefObject, ReactNode, SetStateAction, useMemo } from 'react'
+import type { Dispatch, HTMLProps, MutableRefObject, ReactNode, SetStateAction } from 'react'
+import React, { useMemo } from 'react'
 
 import type {
     ActionIconProps,
@@ -51,7 +52,8 @@ import { MRT_Localization_EN } from './_locales/en'
 import { MRT_AggregationFns } from './aggregationFns'
 import { MRT_DefaultColumn, MRT_DefaultDisplayColumn } from './column.utils'
 import { MRT_FilterFns } from './filterFns'
-import { MRT_Default_Icons, MRT_Icons } from './icons'
+import type { MRT_Icons } from './icons'
+import { MRT_Default_Icons } from './icons'
 import { MRT_SortingFns } from './sortingFns'
 import { MRT_TableRoot } from './table/MRT_TableRoot'
 
@@ -73,7 +75,7 @@ export type MantineShade = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 export type ColumnAlignment = { align?: 'left' | 'center' | 'right' }
 
-export interface MRT_PaginationProps {
+export type MRT_PaginationProps = {
     rowsPerPageOptions?: string[]
     showFirstLastPageButtons?: boolean
     showRowsPerPage?: boolean
@@ -101,7 +103,7 @@ export type {
     VisibilityState as MRT_VisibilityState,
 }
 
-export interface MRT_Localization {
+export type MRT_Localization = {
     actions: string
     and: string
     cancel: string
@@ -193,7 +195,7 @@ export interface MRT_Localization {
     unsorted: string
 }
 
-export interface MRT_RowModel<TData extends Record<string, any> = {}> {
+export type MRT_RowModel<TData extends Record<string, any> = {}> = {
     flatRows: MRT_Row<TData>[]
     rows: MRT_Row<TData>[]
     rowsById: { [key: string]: MRT_Row<TData> }

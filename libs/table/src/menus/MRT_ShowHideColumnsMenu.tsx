@@ -6,7 +6,7 @@ import type { MRT_Column, MRT_TableInstance } from '..'
 import { getDefaultColumnOrderIds } from '../column.utils'
 import { MRT_ShowHideColumnsMenuItems } from './MRT_ShowHideColumnsMenuItems'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     isSubMenu?: boolean
     table: MRT_TableInstance<TData>
 }

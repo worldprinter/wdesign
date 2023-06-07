@@ -4,7 +4,7 @@ import React, { forwardRef, useRef } from 'react'
 import { assignRef, useMergedRef } from '@worldprinter/wdesign-hooks'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface FileButtonProps<Multiple extends boolean = false> {
+export type FileButtonProps<Multiple extends boolean = false> = {
     /** Called when files are picked */
     onChange(payload: Multiple extends true ? File[] : File | null): void
 

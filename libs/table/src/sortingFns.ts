@@ -1,7 +1,9 @@
-import { compareItems, RankingInfo } from '@tanstack/match-sorter-utils'
-import { Row, sortingFns } from '@tanstack/react-table'
+import type { RankingInfo } from '@tanstack/match-sorter-utils'
+import { compareItems } from '@tanstack/match-sorter-utils'
+import type { Row } from '@tanstack/react-table'
+import { sortingFns } from '@tanstack/react-table'
 
-import { MRT_Row } from '.'
+import type { MRT_Row } from '.'
 
 const fuzzy = <TData extends Record<string, any> = {}>(rowA: Row<TData>, rowB: Row<TData>, columnId: string) => {
     let dir = 0

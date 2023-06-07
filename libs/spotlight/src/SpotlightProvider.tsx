@@ -4,12 +4,13 @@ import { useDisclosure, useUncontrolled } from '@worldprinter/wdesign-hooks'
 
 import { useSpotlightEvents } from './events'
 import { SpotlightContext } from './Spotlight.context'
-import { InnerSpotlightProps, Spotlight } from './Spotlight/Spotlight'
+import type { InnerSpotlightProps } from './Spotlight/Spotlight'
+import { Spotlight } from './Spotlight/Spotlight'
 import type { SpotlightAction } from './types'
 import { useActionsState } from './use-actions-state/use-actions-state'
 import { useSpotlightShortcuts } from './use-spotlight-shortcuts/use-spotlight-shortcuts'
 
-export interface SpotlightProviderProps extends InnerSpotlightProps {
+export type SpotlightProviderProps = {
     /** Actions list */
     actions: SpotlightAction[]
 
@@ -45,7 +46,7 @@ export interface SpotlightProviderProps extends InnerSpotlightProps {
 
     /** Whether shortcuts should trigger based on contentEditable. */
     triggerOnContentEditable?: boolean
-}
+} & InnerSpotlightProps
 
 export function SpotlightProvider({
     actions,

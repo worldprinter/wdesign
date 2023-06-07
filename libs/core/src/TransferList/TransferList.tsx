@@ -1,20 +1,21 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { SelectScrollArea } from '../Select/SelectScrollArea/SelectScrollArea'
 import { SimpleGrid } from '../SimpleGrid'
 import { DefaultItem } from './DefaultItem/DefaultItem'
-import { RenderList, RenderListStylesNames } from './RenderList/RenderList'
-import { TransferListData, TransferListItem, TransferListItemComponent } from './types'
-import { Selection, useSelectionState } from './use-selection-state/use-selection-state'
+import type { RenderListStylesNames } from './RenderList/RenderList'
+import { RenderList } from './RenderList/RenderList'
+import type { TransferListData, TransferListItem, TransferListItemComponent } from './types'
+import type { Selection } from './use-selection-state/use-selection-state'
+import { useSelectionState } from './use-selection-state/use-selection-state'
 
 export type TransferListStylesNames = RenderListStylesNames
 
-export interface TransferListProps
-    extends DefaultProps<TransferListStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'placeholder'> {
+export type TransferListProps = {
     variant?: string
 
     /** Current value */
@@ -76,7 +77,8 @@ export interface TransferListProps
 
     /** Whether to transfer only items matching {@link filter} when clicking the transfer all control */
     transferAllMatchingFilter?: boolean
-}
+} & DefaultProps<TransferListStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'placeholder'>
 
 export function defaultFilter(query: string, item: TransferListItem) {
     return item.label.toLowerCase().trim().includes(query.toLowerCase().trim())

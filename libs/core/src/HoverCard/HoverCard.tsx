@@ -1,15 +1,17 @@
 import React from 'react'
 
 import { useDisclosure } from '@worldprinter/wdesign-hooks'
-import { ClassNames, Styles, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { useDelayedHover } from '../Floating'
-import { Popover, PopoverBaseProps, PopoverStylesNames, PopoverStylesParams } from '../Popover'
+import type { PopoverBaseProps, PopoverStylesNames, PopoverStylesParams } from '../Popover'
+import { Popover } from '../Popover'
 import { HoverCardContextProvider } from './HoverCard.context'
 import { HoverCardDropdown } from './HoverCardDropdown/HoverCardDropdown'
 import { HoverCardTarget } from './HoverCardTarget/HoverCardTarget'
 
-export interface HoverCardProps extends PopoverBaseProps {
+export type HoverCardProps = {
     variant?: string
 
     /** HoverCard.Target and HoverCard.Dropdown components */
@@ -33,7 +35,7 @@ export interface HoverCardProps extends PopoverBaseProps {
     unstyled?: boolean
     classNames?: ClassNames<PopoverStylesNames>
     styles?: Styles<PopoverStylesNames, PopoverStylesParams>
-}
+} & PopoverBaseProps
 
 const defaultProps: Partial<HoverCardProps> = {
     openDelay: 0,

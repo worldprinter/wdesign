@@ -1,4 +1,4 @@
-import { Tuple } from './Tuple'
+import type { Tuple } from './Tuple'
 
 export type DefaultMantineColor =
     | 'dark'

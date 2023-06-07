@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { useListContext } from '../List.context'
@@ -8,13 +9,14 @@ import useStyles from './ListItem.styles'
 
 export type ListItemStylesNames = Selectors<typeof useStyles>
 
-export interface ListItemProps extends DefaultProps<ListItemStylesNames>, React.ComponentPropsWithoutRef<'li'> {
+export type ListItemProps = {
     /** Icon to replace bullet */
     icon?: React.ReactNode
 
     /** Item content */
     children: React.ReactNode
-}
+} & DefaultProps<ListItemStylesNames> &
+    React.ComponentPropsWithoutRef<'li'>
 
 const defaultProps: Partial<ListItemProps> = {}
 

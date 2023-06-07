@@ -2,11 +2,13 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { ControlsGroupSettings } from '../../types'
+import type { ControlsGroupSettings } from '../../types'
 import { useDatesContext } from '../DatesProvider'
-import { PickerControl, PickerControlProps, PickerControlStylesNames } from '../PickerControl'
+import type { PickerControlProps, PickerControlStylesNames } from '../PickerControl'
+import { PickerControl } from '../PickerControl'
 import { getYearInTabOrder } from './get-year-in-tab-order/get-year-in-tab-order'
 import { getYearsData } from './get-years-data/get-years-data'
 import { isYearDisabled } from './is-year-disabled/is-year-disabled'
@@ -14,7 +16,7 @@ import useStyles from './YearsList.styles'
 
 export type YearsListStylesNames = PickerControlStylesNames | Selectors<typeof useStyles>
 
-export interface YearsListSettings extends ControlsGroupSettings {
+export type YearsListSettings = {
     /** Prevents focus shift when buttons are clicked */
     __preventFocus?: boolean
 
@@ -32,18 +34,17 @@ export interface YearsListSettings extends ControlsGroupSettings {
 
     /** Determines whether controls should be separated by spacing, true by default */
     withCellSpacing?: boolean
-}
+} & ControlsGroupSettings
 
-export interface YearsListProps
-    extends DefaultProps<YearsListStylesNames>,
-        YearsListSettings,
-        React.ComponentPropsWithoutRef<'table'> {
+export type YearsListProps = {
     variant?: string
     __staticSelector?: string
 
     /** Decade for which years list should be displayed */
     decade: Date
-}
+} & DefaultProps<YearsListStylesNames> &
+    YearsListSettings &
+    React.ComponentPropsWithoutRef<'table'>
 
 const defaultProps: Partial<YearsListProps> = {
     yearsListFormat: 'YYYY',

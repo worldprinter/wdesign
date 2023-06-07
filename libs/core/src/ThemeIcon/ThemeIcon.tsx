@@ -1,22 +1,21 @@
 import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { ThemeIconStylesParams } from './ThemeIcon.styles'
+import type { ThemeIconStylesParams } from './ThemeIcon.styles'
+import useStyles from './ThemeIcon.styles'
 
 export type ThemeIconVariant = Variants<'filled' | 'light' | 'gradient' | 'outline' | 'default'>
 
-export interface ThemeIconProps
-    extends DefaultProps<never, ThemeIconStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type ThemeIconProps = {
     /** Icon */
     children: React.ReactNode
 
@@ -34,7 +33,8 @@ export interface ThemeIconProps
 
     /** Controls gradient settings in gradient variant only */
     gradient?: MantineGradient
-}
+} & DefaultProps<never, ThemeIconStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<ThemeIconProps> = {
     size: 'md',

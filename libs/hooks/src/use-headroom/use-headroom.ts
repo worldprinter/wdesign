@@ -8,7 +8,7 @@ export const isPinned = (current: number, previous: number) => current <= previo
 export const isReleased = (current: number, previous: number, fixedAt: number) =>
     !isPinned(current, previous) && !isFixed(current, fixedAt)
 
-interface UseHeadroomInput {
+type UseHeadroomInput = {
     /** Number in px at which element should be fixed */
     fixedAt?: number
 

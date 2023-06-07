@@ -3,7 +3,7 @@ import React from 'react'
 
 import { TooltipGroupProvider } from './TooltipGroup.context'
 
-export interface TooltipGroupProps {
+export type TooltipGroupProps = {
     /** <Tooltip /> components */
     children: React.ReactNode
 

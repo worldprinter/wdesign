@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
-import React from 'react'
+import type React from 'react'
 
-export interface StepCompletedProps {
+export type StepCompletedProps = {
     /** Label content */
     children: React.ReactNode
 }

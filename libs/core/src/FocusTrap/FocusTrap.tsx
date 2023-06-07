@@ -1,9 +1,10 @@
-import React, { cloneElement } from 'react'
+import type React from 'react'
+import { cloneElement } from 'react'
 
 import { useFocusTrap, useMergedRef } from '@worldprinter/wdesign-hooks'
 import { isElement } from '@worldprinter/wdesign-utils'
 
-export interface FocusTrapProps {
+export type FocusTrapProps = {
     /** Element at which focus should be trapped, should support ref prop */
     children: any
 

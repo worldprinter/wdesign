@@ -1,4 +1,4 @@
-import { MantineNumberSize } from '../../types'
+import type { MantineNumberSize } from '../../types'
 import { em, rem } from '../rem/rem'
 
 export function getSize<Sizes extends Record<string, any>, Key extends keyof Sizes, Size extends MantineNumberSize>({

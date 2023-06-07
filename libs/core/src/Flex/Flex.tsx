@@ -1,12 +1,14 @@
-import React, { CSSProperties, forwardRef } from 'react'
+import type { CSSProperties } from 'react'
+import React, { forwardRef } from 'react'
 
-import { DefaultProps, SpacingValue, SystemProp, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, SpacingValue, SystemProp } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box, getSystemStyles } from '../Box'
 import { FLEX_SYSTEM_PROPS } from './flex-props'
 
-export interface FlexProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type FlexProps = {
     /** gap CSS property */
     gap?: SystemProp<SpacingValue>
 
@@ -27,7 +29,8 @@ export interface FlexProps extends DefaultProps, React.ComponentPropsWithoutRef<
 
     /** flex-direction CSS property */
     direction?: SystemProp<CSSProperties['flexDirection']>
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<FlexProps> = {}
 

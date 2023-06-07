@@ -1,10 +1,12 @@
-import React, { ChangeEvent, FocusEvent, KeyboardEvent, useState } from 'react'
+import type { ChangeEvent, FocusEvent, KeyboardEvent } from 'react'
+import React, { useState } from 'react'
 
-import { TextInput, TextInputProps } from '@worldprinter/wdesign-core'
+import type { TextInputProps } from '@worldprinter/wdesign-core'
+import { TextInput } from '@worldprinter/wdesign-core'
 
 import type { MRT_Cell, MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     cell: MRT_Cell<TData>
     table: MRT_TableInstance<TData>
     showLabel?: boolean

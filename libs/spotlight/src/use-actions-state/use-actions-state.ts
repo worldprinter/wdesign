@@ -25,7 +25,7 @@ function prepareActions(initialActions: SpotlightAction[]) {
     return filterDuplicateActions(initialActions.map((action) => prepareAction(action)))
 }
 
-interface UseActionsState {
+type UseActionsState = {
     actions: SpotlightAction[]
     onActionsChange: (actions: SpotlightAction[]) => void
 }

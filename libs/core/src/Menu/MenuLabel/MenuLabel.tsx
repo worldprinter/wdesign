@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Text } from '../../Text'
 import { useMenuContext } from '../Menu.context'
@@ -8,10 +9,11 @@ import useStyles from './MenuLabel.styles'
 
 export type MenuLabelStylesName = Selectors<typeof useStyles>
 
-export interface MenuLabelProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type MenuLabelProps = {
     /** Label content */
     children?: React.ReactNode
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<MenuLabelProps> = {}
 

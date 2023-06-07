@@ -1,24 +1,17 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    getDefaultZIndex,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { IndicatorStylesParams } from './Indicator.styles'
-import { IndicatorPosition } from './Indicator.types'
+import type { IndicatorStylesParams } from './Indicator.styles'
+import useStyles from './Indicator.styles'
+import type { IndicatorPosition } from './Indicator.types'
 
 export type IndicatorStylesNames = Selectors<typeof useStyles>
 
-export interface IndicatorProps
-    extends DefaultProps<IndicatorStylesNames, IndicatorStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type IndicatorProps = {
     variant?: string
 
     /** Element that should have an indicator */
@@ -56,7 +49,8 @@ export interface IndicatorProps
 
     /** Indicator z-index */
     zIndex?: React.CSSProperties['zIndex']
-}
+} & DefaultProps<IndicatorStylesNames, IndicatorStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<IndicatorProps> = {
     position: 'top-end',

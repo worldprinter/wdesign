@@ -1,13 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { usePaginationContext } from '../Pagination.context'
+import type { PaginationIconProps } from '../Pagination.icons'
 import {
     getIconSize,
     PaginationFirstIcon,
-    PaginationIconProps,
     PaginationLastIcon,
     PaginationNextIcon,
     PaginationPreviousIcon,
@@ -15,16 +16,16 @@ import {
 import { PaginationControl } from '../PaginationControl/PaginationControl'
 import useStyles from './PaginationEdges.styles'
 
-export interface CreateEdgeComponent {
+export type CreateEdgeComponent = {
     icon: React.FC<PaginationIconProps>
     name: string
     action: 'onNext' | 'onPrevious' | 'onFirst' | 'onLast'
     type: 'next' | 'previous'
 }
 
-export interface PaginationEdgeProps extends DefaultProps {
+export type PaginationEdgeProps = {
     icon?: React.FC<PaginationIconProps>
-}
+} & DefaultProps
 
 export function createEdgeComponent({ icon, name, action, type }: CreateEdgeComponent) {
     const defaultProps: Partial<PaginationEdgeProps> = { icon }

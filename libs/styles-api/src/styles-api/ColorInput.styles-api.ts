@@ -1,4 +1,4 @@
-import { ColorInputStylesNames } from '@worldprinter/wdesign-core'
+import type { ColorInputStylesNames } from '@worldprinter/wdesign-core'
 
 import { ColorPicker } from './ColorPicker.styles-api'
 import { Input } from './Input.styles-api'

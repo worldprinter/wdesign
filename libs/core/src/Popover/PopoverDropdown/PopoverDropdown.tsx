@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { useFocusReturn } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { closeOnEscape } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../Box'
@@ -12,10 +13,11 @@ import { Transition } from '../../Transition'
 import { usePopoverContext } from '../Popover.context'
 import useStyles from './PopoverDropdown.styles'
 
-export interface PopoverDropdownProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type PopoverDropdownProps = {
     /** Dropdown content */
     children?: React.ReactNode
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<PopoverDropdownProps> = {}
 

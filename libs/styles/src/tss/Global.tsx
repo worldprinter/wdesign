@@ -7,7 +7,7 @@ import type { CSSObject } from './types'
 
 type EmotionStyles = CSSObject | CSSObject[]
 
-interface GlobalStylesProps {
+type GlobalStylesProps = {
     styles: EmotionStyles | ((theme: MantineTheme) => EmotionStyles)
 }
 

@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react'
 
 import { useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { ArrowPosition, FloatingPosition } from '../types'
+import type { ArrowPosition, FloatingPosition } from '../types'
 import { getArrowPositionStyles } from './get-arrow-position-styles'
 
-interface FloatingArrowProps extends React.ComponentPropsWithoutRef<'div'> {
+type FloatingArrowProps = {
     position: FloatingPosition
     arrowSize: number
     arrowOffset: number
@@ -14,7 +14,7 @@ interface FloatingArrowProps extends React.ComponentPropsWithoutRef<'div'> {
     arrowX: number
     arrowY: number
     visible: boolean
-}
+} & React.ComponentPropsWithoutRef<'div'>
 
 export const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
     ({ position, arrowSize, arrowOffset, arrowRadius, arrowPosition, visible, arrowX, arrowY, ...others }, ref) => {

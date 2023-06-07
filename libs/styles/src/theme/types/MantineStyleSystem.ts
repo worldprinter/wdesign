@@ -1,13 +1,13 @@
-import { CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 
-import { MantineColor } from './MantineColor'
+import type { MantineColor } from './MantineColor'
 import type { MantineNumberSize, MantineSize } from './MantineSize'
 
 export type SystemProp<Value> = Value | Partial<Record<MantineSize | (string & {}), Value>>
 
 export type SpacingValue = MantineNumberSize | (string & {})
 
-export interface MantineStyleSystemProps {
+export type MantineStyleSystemProps = {
     m?: SystemProp<SpacingValue>
     my?: SystemProp<SpacingValue>
     mx?: SystemProp<SpacingValue>

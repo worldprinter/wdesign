@@ -9,7 +9,7 @@ import { MRT_ToggleFiltersButton } from '../buttons/MRT_ToggleFiltersButton'
 import { MRT_ToggleFullScreenButton } from '../buttons/MRT_ToggleFullScreenButton'
 import { MRT_ToggleGlobalFilterButton } from '../buttons/MRT_ToggleGlobalFilterButton'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
 }
 

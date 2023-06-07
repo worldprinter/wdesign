@@ -1,10 +1,11 @@
-import React, { MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
+import React from 'react'
 
 import { ActionIcon, Box, Tooltip, Transition } from '@worldprinter/wdesign-core'
 
-import { MRT_Header, MRT_TableInstance } from '..'
+import type { MRT_Header, MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     header: MRT_Header
     table: MRT_TableInstance
 }

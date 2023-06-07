@@ -33,7 +33,7 @@ function getOS(): OS {
     return 'undetermined'
 }
 
-interface UseOsOptions {
+type UseOsOptions = {
     getValueInEffect: boolean
 }
 

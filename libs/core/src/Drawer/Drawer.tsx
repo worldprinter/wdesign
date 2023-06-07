@@ -2,11 +2,13 @@ import React from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { ModalBase, ModalBaseCloseButtonProps, ModalBaseDefaultProps, ModalBaseOverlayProps } from '../ModalBase'
+import type { ModalBaseCloseButtonProps, ModalBaseOverlayProps } from '../ModalBase'
+import { ModalBase, ModalBaseDefaultProps } from '../ModalBase'
 import { DrawerContent } from './DrawerContent/DrawerContent'
-import { DrawerRoot, DrawerRootProps } from './DrawerRoot/DrawerRoot'
+import type { DrawerRootProps } from './DrawerRoot/DrawerRoot'
+import { DrawerRoot } from './DrawerRoot/DrawerRoot'
 
-export interface DrawerProps extends Omit<DrawerRootProps, 'title'> {
+export type DrawerProps = {
     /** Modal title */
     title?: React.ReactNode
 
@@ -24,7 +26,7 @@ export interface DrawerProps extends Omit<DrawerRootProps, 'title'> {
 
     /** Props added to close button */
     closeButtonProps?: ModalBaseCloseButtonProps
-}
+} & Omit<DrawerRootProps, 'title'>
 
 const defaultProps: Partial<DrawerProps> = {
     ...ModalBaseDefaultProps,

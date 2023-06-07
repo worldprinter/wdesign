@@ -1,4 +1,5 @@
-import React, { Dispatch, DragEvent, SetStateAction, useRef, useState } from 'react'
+import type { Dispatch, DragEvent, SetStateAction } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { Box, Menu, Switch, Text, Tooltip } from '@worldprinter/wdesign-core'
 
@@ -7,7 +8,7 @@ import { MRT_ColumnPinningButtons } from '../buttons/MRT_ColumnPinningButtons'
 import { MRT_GrabHandleButton } from '../buttons/MRT_GrabHandleButton'
 import { getPrimaryColor, reorderColumn } from '../column.utils'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     allColumns: MRT_Column<TData>[]
     column: MRT_Column<TData>
     hoveredColumn: MRT_Column<TData> | null

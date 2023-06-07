@@ -1,7 +1,8 @@
 import { Tabs } from '@worldprinter/wdesign-core'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-import { Prism, PrismProps } from './Prism/Prism'
+import type { PrismProps } from './Prism/Prism'
+import { Prism } from './Prism/Prism'
 import { PrismPanel, PrismTabs } from './PrismTabs/PrismTabs'
 
 export type { PrismTheme } from 'prism-react-renderer'

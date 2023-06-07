@@ -1,4 +1,4 @@
-import { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { MantineTheme } from '@worldprinter/wdesign-styles'
 
 import { getResponsiveValue } from '../get-responsive-value/get-responsive-value'
 import { SYSTEM_PROPS } from '../system-props/system-props'

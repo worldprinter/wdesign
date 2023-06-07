@@ -1,4 +1,5 @@
-import { createStyles, getSize, keyframes, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, keyframes, rem } from '@worldprinter/wdesign-styles'
 
 const sizes = {
     xs: rem(3),
@@ -8,7 +9,7 @@ const sizes = {
     xl: rem(16),
 }
 
-export interface ProgressStylesParams {
+export type ProgressStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
 }

@@ -1,13 +1,15 @@
 import React, { forwardRef } from 'react'
 
-import { CSSObject, MantineColor, MantineTheme, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Mark } from '../Mark/Mark'
-import { Text, TextProps } from '../Text/Text'
+import type { TextProps } from '../Text/Text'
+import { Text } from '../Text/Text'
 import { highlighter } from './highlighter/highlighter'
 
-export interface HighlightProps extends TextProps {
+export type HighlightProps = {
     /** Substring or an array of substrings to highlight in children */
     highlight: string | string[]
 
@@ -19,7 +21,7 @@ export interface HighlightProps extends TextProps {
 
     /** Full string part of which will be highlighted */
     children: string
-}
+} & TextProps
 
 const defaultProps: Partial<HighlightProps> = {
     highlightColor: 'yellow',

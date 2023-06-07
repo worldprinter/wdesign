@@ -1,16 +1,18 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import { ListProvider } from './List.context'
 import useStyles from './List.styles'
-import { ListItem, ListItemStylesNames } from './ListItem/ListItem'
+import type { ListItemStylesNames } from './ListItem/ListItem'
+import { ListItem } from './ListItem/ListItem'
 
 export type ListStylesNames = ListItemStylesNames | Selectors<typeof useStyles>
 
-export interface ListProps extends DefaultProps<ListStylesNames>, Omit<React.ComponentPropsWithRef<'ol'>, 'type'> {
+export type ListProps = {
     variant?: string
 
     /** <List.Item /> components only */
@@ -36,7 +38,8 @@ export interface ListProps extends DefaultProps<ListStylesNames>, Omit<React.Com
 
     /** List style */
     listStyleType?: React.CSSProperties['listStyleType']
-}
+} & DefaultProps<ListStylesNames> &
+    Omit<React.ComponentPropsWithRef<'ol'>, 'type'>
 
 type ListComponent = ForwardRefWithStaticComponents<ListProps, { Item: typeof ListItem }>
 

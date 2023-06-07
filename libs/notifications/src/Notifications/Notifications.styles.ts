@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-core'
 
-interface NotificationsStylesParams {
+type NotificationsStylesParams = {
     zIndex: React.CSSProperties['zIndex']
 }
 

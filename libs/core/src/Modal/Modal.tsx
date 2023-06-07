@@ -2,11 +2,13 @@ import React from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { ModalBase, ModalBaseCloseButtonProps, ModalBaseDefaultProps, ModalBaseOverlayProps } from '../ModalBase'
+import type { ModalBaseCloseButtonProps, ModalBaseOverlayProps } from '../ModalBase'
+import { ModalBase, ModalBaseDefaultProps } from '../ModalBase'
 import { ModalContent } from './ModalContent/ModalContent'
-import { ModalRoot, ModalRootProps } from './ModalRoot/ModalRoot'
+import type { ModalRootProps } from './ModalRoot/ModalRoot'
+import { ModalRoot } from './ModalRoot/ModalRoot'
 
-export interface ModalProps extends Omit<ModalRootProps, 'title'> {
+export type ModalProps = {
     /** Modal title */
     title?: React.ReactNode
 
@@ -24,7 +26,7 @@ export interface ModalProps extends Omit<ModalRootProps, 'title'> {
 
     /** Props added to close button */
     closeButtonProps?: ModalBaseCloseButtonProps
-}
+} & Omit<ModalRootProps, 'title'>
 
 const defaultProps: Partial<ModalProps> = {
     ...ModalBaseDefaultProps,

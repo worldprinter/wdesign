@@ -1,17 +1,17 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { Text, TextProps } from '../Text'
-import useStyles, { TitleStylesParams } from './Title.styles'
+import type { TextProps } from '../Text'
+import { Text } from '../Text'
+import type { TitleStylesParams } from './Title.styles'
+import useStyles from './Title.styles'
 
 export type TitleOrder = 1 | 2 | 3 | 4 | 5 | 6
 export type TitleSize = `h${TitleOrder}` | React.CSSProperties['fontSize']
 
-export interface TitleProps
-    extends Omit<TextProps, 'size' | 'styles' | 'classNames' | 'span'>,
-        DefaultProps<never, TitleStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'h1'>, 'color'> {
+export type TitleProps = {
     variant?: string
 
     /** Defines component and styles which will be used */
@@ -19,7 +19,9 @@ export interface TitleProps
 
     /** Title font-size: h1-h6 or any valid CSS font-size value */
     size?: TitleSize
-}
+} & Omit<TextProps, 'size' | 'styles' | 'classNames' | 'span'> &
+    DefaultProps<never, TitleStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'h1'>, 'color'>
 
 const defaultProps: Partial<TitleProps> = {
     order: 1,

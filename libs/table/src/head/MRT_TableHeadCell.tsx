@@ -1,6 +1,8 @@
-import React, { DragEvent, ReactNode, useMemo } from 'react'
+import type { DragEvent, ReactNode } from 'react'
+import React, { useMemo } from 'react'
 
-import { Box, Flex, MantineTheme, useMantineTheme } from '@worldprinter/wdesign-core'
+import type { MantineTheme } from '@worldprinter/wdesign-core'
+import { Box, Flex, useMantineTheme } from '@worldprinter/wdesign-core'
 
 import type { MRT_Header, MRT_TableInstance } from '..'
 import { getCommonCellStyles, getPrimaryColor } from '../column.utils'
@@ -11,7 +13,7 @@ import { MRT_TableHeadCellGrabHandle } from './MRT_TableHeadCellGrabHandle'
 import { MRT_TableHeadCellResizeHandle } from './MRT_TableHeadCellResizeHandle'
 import { MRT_TableHeadCellSortLabel } from './MRT_TableHeadCellSortLabel'
 
-interface Props {
+type Props = {
     header: MRT_Header
     table: MRT_TableInstance
 }

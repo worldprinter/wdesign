@@ -2,15 +2,17 @@ import React from 'react'
 
 import { getSize, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { Group, GroupProps } from '../Group'
-import { PaginationIcon } from './Pagination.icons'
+import type { GroupProps } from '../Group'
+import { Group } from '../Group'
+import type { PaginationIcon } from './Pagination.icons'
 import { PaginationControl } from './PaginationControl/PaginationControl'
 import { PaginationDots } from './PaginationDots/PaginationDots'
 import { PaginationFirst, PaginationLast, PaginationNext, PaginationPrevious } from './PaginationEdges/PaginationEdges'
 import { PaginationItems } from './PaginationItems/PaginationItems'
-import { PaginationRoot, PaginationRootSettings } from './PaginationRoot/PaginationRoot'
+import type { PaginationRootSettings } from './PaginationRoot/PaginationRoot'
+import { PaginationRoot } from './PaginationRoot/PaginationRoot'
 
-export interface PaginationProps extends PaginationRootSettings, Omit<GroupProps, keyof PaginationRootSettings> {
+export type PaginationProps = {
     /** Determines whether first/last controls should be rendered, false by default */
     withEdges?: boolean
 
@@ -34,7 +36,8 @@ export interface PaginationProps extends PaginationRootSettings, Omit<GroupProps
 
     /** Dots icon component */
     dotsIcon?: PaginationIcon
-}
+} & PaginationRootSettings &
+    Omit<GroupProps, keyof PaginationRootSettings>
 
 const defaultProps: Partial<PaginationProps> = {
     withControls: true,

@@ -1,9 +1,9 @@
-import { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { PaginationStylesNames } from './PaginationRoot/PaginationRoot'
 
-interface PaginationContext {
+type PaginationContext = {
     total: number
     range: (number | 'dots')[]
     active: number

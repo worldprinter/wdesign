@@ -3,13 +3,14 @@ import React from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler } from '@worldprinter/wdesign-utils'
 
-import { Popover, PopoverDropdownProps } from '../../Popover'
+import type { PopoverDropdownProps } from '../../Popover'
+import { Popover } from '../../Popover'
 import { useHoverCardContext } from '../HoverCard.context'
 
-export interface HoverCardDropdownProps extends PopoverDropdownProps {
+export type HoverCardDropdownProps = {
     /** Dropdown content */
     children?: React.ReactNode
-}
+} & PopoverDropdownProps
 
 const defaultProps: Partial<HoverCardDropdownProps> = {}
 

@@ -1,13 +1,14 @@
 import React, { forwardRef, useCallback } from 'react'
 
-import { Box, DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box } from '@worldprinter/wdesign-core'
 
 import { useCarouselContext } from '../Carousel.context'
 import useStyles from './CarouselSlide.styles'
 
 export type CarouselSlideStylesNames = Selectors<typeof useStyles>
 
-export interface CarouselSlideProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type CarouselSlideProps = {
     /** Slide content */
     children?: React.ReactNode
 
@@ -16,7 +17,8 @@ export interface CarouselSlideProps extends DefaultProps, React.ComponentPropsWi
 
     /** Key of theme.spacing or number to set gap between slides */
     gap?: MantineNumberSize
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 export const CarouselSlide = forwardRef<HTMLDivElement, CarouselSlideProps>(
     ({ children, className, size, gap, onClick, ...others }, ref) => {

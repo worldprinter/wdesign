@@ -75,7 +75,7 @@ export function getHotkeyMatcher(hotkey: string): CheckHotkeyMatch {
     return (event) => isExactHotkey(parseHotkey(hotkey), event)
 }
 
-export interface HotkeyItemOptions {
+export type HotkeyItemOptions = {
     preventDefault?: boolean
 }
 

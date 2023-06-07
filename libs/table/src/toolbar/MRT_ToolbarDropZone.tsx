@@ -1,11 +1,12 @@
-import React, { DragEvent, useEffect } from 'react'
+import type { DragEvent } from 'react'
+import React, { useEffect } from 'react'
 
 import { Flex, Text, Transition } from '@worldprinter/wdesign-core'
 
 import type { MRT_TableInstance } from '..'
 import { getPrimaryColor } from '../column.utils'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
 }
 

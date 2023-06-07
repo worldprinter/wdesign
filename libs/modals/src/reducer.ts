@@ -1,6 +1,6 @@
-import { ModalState } from './context'
+import type { ModalState } from './context'
 
-interface ModalsState {
+type ModalsState = {
     modals: ModalState[]
 
     /**
@@ -10,18 +10,18 @@ interface ModalsState {
     current: ModalState | null
 }
 
-interface OpenAction {
+type OpenAction = {
     type: 'OPEN'
     modal: ModalState
 }
 
-interface CloseAction {
+type CloseAction = {
     type: 'CLOSE'
     modalId: string
     canceled?: boolean
 }
 
-interface CloseAllAction {
+type CloseAllAction = {
     type: 'CLOSE_ALL'
     canceled?: boolean
 }

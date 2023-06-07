@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
 import { UnstyledButton } from '../../UnstyledButton'
@@ -10,7 +11,7 @@ import useStyles from './AccordionControl.styles'
 
 export type AccordionControlStylesNames = Selectors<typeof useStyles>
 
-export interface AccordionControlProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type AccordionControlProps = {
     /** Disables control button */
     disabled?: boolean
 
@@ -22,7 +23,8 @@ export interface AccordionControlProps extends DefaultProps, React.ComponentProp
 
     /** Icon rendered next to label */
     icon?: React.ReactNode
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<AccordionControlProps> = {}
 

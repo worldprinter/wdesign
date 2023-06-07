@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { useWindowEvent } from '../use-window-event/use-window-event'
 
-interface NetworkStatus {
+type NetworkStatus = {
     downlink?: number
     downlinkMax?: number
     effectiveType?: 'slow-2g' | '2g' | '3g' | '4g'

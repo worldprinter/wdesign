@@ -1,6 +1,7 @@
-import { createStyles, CSSObject, MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles } from '@worldprinter/wdesign-styles'
 
-export interface TooltipStylesParams {
+export type TooltipStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
     width: number | 'auto'

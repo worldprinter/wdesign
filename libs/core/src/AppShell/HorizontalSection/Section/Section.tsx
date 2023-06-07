@@ -1,17 +1,17 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent, packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../../Box'
 
-export interface SectionProps extends DefaultProps {
+export type SectionProps = {
     /** Section children */
     children: React.ReactNode
 
     /** Force section to take all available height */
     grow?: boolean
-}
+} & DefaultProps
 
 export const _Section = forwardRef<HTMLDivElement, SectionProps>(({ children, grow = false, sx, ...others }, ref) => (
     <Box

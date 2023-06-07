@@ -3,20 +3,21 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useDatesInput } from '../../hooks'
-import { DatePickerType } from '../../types'
+import type { DatePickerType } from '../../types'
 import { getDefaultClampedDate } from '../../utils'
 import { pickCalendarProps } from '../Calendar'
-import { MonthPicker, MonthPickerBaseProps } from '../MonthPicker'
-import { DateInputSharedProps, PickerInputBase, PickerInputBaseStylesNames } from '../PickerInputBase'
+import type { MonthPickerBaseProps } from '../MonthPicker'
+import { MonthPicker } from '../MonthPicker'
+import type { DateInputSharedProps, PickerInputBaseStylesNames } from '../PickerInputBase'
+import { PickerInputBase } from '../PickerInputBase'
 
 export type MonthPickerInputStylesNames = PickerInputBaseStylesNames
 
-export interface MonthPickerInputProps<Type extends DatePickerType = 'default'>
-    extends DateInputSharedProps,
-        MonthPickerBaseProps<Type> {
+export type MonthPickerInputProps<Type extends DatePickerType = 'default'> = {
     /** Dayjs format to display input value, "MMMM YYYY" by default  */
     valueFormat?: string
-}
+} & DateInputSharedProps &
+    MonthPickerBaseProps<Type>
 
 type MonthPickerInputComponent = (<Type extends DatePickerType = 'default'>(
     props: MonthPickerInputProps<Type>,

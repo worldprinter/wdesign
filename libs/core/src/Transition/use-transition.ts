@@ -5,7 +5,7 @@ import { useMantineTheme } from '@worldprinter/wdesign-styles'
 
 export type TransitionStatus = 'entered' | 'exited' | 'entering' | 'exiting' | 'pre-exiting' | 'pre-entering'
 
-interface UseTransition {
+type UseTransition = {
     duration: number
     exitDuration: number
     timingFunction: string

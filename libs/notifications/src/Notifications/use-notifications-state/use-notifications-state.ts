@@ -1,6 +1,6 @@
 import { randomId, useQueue } from '@worldprinter/wdesign-hooks'
 
-import { NotificationProps } from '../../types'
+import type { NotificationProps } from '../../types'
 
 export default function useNotificationsState({ limit }: { limit: number }) {
     const { state, queue, update, cleanQueue } = useQueue<NotificationProps>({

@@ -1,10 +1,11 @@
-import React, { DragEvent, RefObject } from 'react'
+import type { DragEvent, RefObject } from 'react'
+import React from 'react'
 
 import type { MRT_Column, MRT_TableInstance } from '..'
 import { MRT_GrabHandleButton } from '../buttons/MRT_GrabHandleButton'
 import { reorderColumn } from '../column.utils'
 
-interface Props {
+type Props = {
     column: MRT_Column
     table: MRT_TableInstance
     tableHeadCellRef: RefObject<HTMLTableCellElement>

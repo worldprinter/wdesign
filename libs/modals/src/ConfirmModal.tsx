@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Box, Button, ButtonProps, Group, GroupProps } from '@worldprinter/wdesign-core'
+import type { ButtonProps, GroupProps } from '@worldprinter/wdesign-core'
+import { Box, Button, Group } from '@worldprinter/wdesign-core'
 
-import { ConfirmLabels } from './context'
+import type { ConfirmLabels } from './context'
 import { useModals } from './use-modals/use-modals'
 
-export interface ConfirmModalProps {
+export type ConfirmModalProps = {
     id?: string
     children?: React.ReactNode
     onCancel?(): void

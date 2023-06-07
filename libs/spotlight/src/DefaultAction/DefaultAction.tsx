@@ -1,25 +1,14 @@
 import React from 'react'
 
-import {
-    Center,
-    DefaultProps,
-    Group,
-    Highlight,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    Text,
-    UnstyledButton,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import { Center, Group, Highlight, Text, UnstyledButton } from '@worldprinter/wdesign-core'
 
 import type { SpotlightAction } from '../types'
 import useStyles from './DefaultAction.styles'
 
 export type DefaultActionStylesNames = Selectors<typeof useStyles>
 
-export interface DefaultActionProps
-    extends DefaultProps<DefaultActionStylesNames>,
-        React.ComponentPropsWithoutRef<'button'> {
+export type DefaultActionProps = {
     action: SpotlightAction
     hovered: boolean
     onTrigger(): void
@@ -27,7 +16,8 @@ export interface DefaultActionProps
     highlightColor: MantineColor
     query: string
     radius: MantineNumberSize
-}
+} & DefaultProps<DefaultActionStylesNames> &
+    React.ComponentPropsWithoutRef<'button'>
 
 export function DefaultAction({
     action,

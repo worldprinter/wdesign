@@ -1,14 +1,7 @@
-import {
-    createStyles,
-    getSize,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineTheme,
-    rem,
-} from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineGradient, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface ThemeIconStylesParams {
+export type ThemeIconStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
     variant: string
@@ -25,7 +18,7 @@ const sizes = {
 
 const THEME_ICON_VARIANTS = ['filled', 'light', 'gradient', 'outline', 'default']
 
-interface GetVariantStylesInput {
+type GetVariantStylesInput = {
     theme: MantineTheme
     variant: string
     color: MantineColor

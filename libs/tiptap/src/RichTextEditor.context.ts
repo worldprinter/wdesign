@@ -1,12 +1,12 @@
-import { Editor } from '@tiptap/react'
+import type { Editor } from '@tiptap/react'
 
-import { ClassNames, Styles } from '@worldprinter/wdesign-core'
+import type { ClassNames, Styles } from '@worldprinter/wdesign-core'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-import { RichTextEditorLabels } from './labels'
+import type { RichTextEditorLabels } from './labels'
 import type { RichTextEditorStylesNames } from './RichTextEditor'
 
-interface RichTextEditorContext {
+type RichTextEditorContext = {
     editor: Editor
     labels: RichTextEditorLabels
     withCodeHighlightStyles: boolean

@@ -1,25 +1,21 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import {
-    Input,
-    InputSharedProps,
-    InputStylesNames,
-    InputWrapperBaseProps,
-    InputWrapperStylesNames,
-    useInputProps,
-} from '../Input'
+import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
+import { Input, useInputProps } from '../Input'
 
 export type InputBaseStylesNames = InputStylesNames | InputWrapperStylesNames
 
-export interface InputBaseProps extends DefaultProps<InputBaseStylesNames>, InputSharedProps, InputWrapperBaseProps {
+export type InputBaseProps = {
     /** Props passed to root element (InputWrapper component) */
     wrapperProps?: Record<string, any>
 
     __staticSelector?: string
-}
+} & DefaultProps<InputBaseStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps
 
 const defaultProps: Partial<InputBaseProps> = {
     size: 'sm',

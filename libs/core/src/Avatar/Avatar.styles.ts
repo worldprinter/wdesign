@@ -1,17 +1,15 @@
-import {
-    createStyles,
+import type {
     CSSObject,
-    getSize,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     MantineTheme,
-    rem,
 } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export const AVATAR_VARIANTS = ['filled', 'light', 'gradient', 'outline']
 
-export interface AvatarStylesParams {
+export type AvatarStylesParams = {
     radius: MantineNumberSize
     color: MantineColor
     withinGroup: boolean
@@ -27,7 +25,7 @@ export const sizes = {
     xl: rem(84),
 }
 
-interface GetGroupStylesInput {
+type GetGroupStylesInput = {
     withinGroup: boolean
     spacing: MantineNumberSize
     theme: MantineTheme
@@ -48,7 +46,7 @@ function getGroupStyles({ withinGroup, spacing, theme }: GetGroupStylesInput): C
     }
 }
 
-interface GetVariantStylesInput {
+type GetVariantStylesInput = {
     theme: MantineTheme
     variant: string
     color: MantineColor

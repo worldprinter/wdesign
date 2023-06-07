@@ -1,4 +1,5 @@
-import React, { DragEvent, memo, MouseEvent, RefObject, useEffect, useMemo, useState } from 'react'
+import type { DragEvent, MouseEvent, RefObject } from 'react'
+import React, { memo, useEffect, useMemo, useState } from 'react'
 
 import { Box, Skeleton, useMantineTheme } from '@worldprinter/wdesign-core'
 
@@ -9,7 +10,7 @@ import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput'
 import { MRT_TableBodyCellValue } from './MRT_TableBodyCellValue'
 import { MRT_TableBodyRowGrabHandle } from './MRT_TableBodyRowGrabHandle'
 
-interface Props {
+type Props = {
     cell: MRT_Cell
     isStriped?: boolean
     measureElement?: (element: HTMLTableCellElement) => void

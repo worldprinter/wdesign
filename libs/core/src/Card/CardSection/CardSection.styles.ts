@@ -1,6 +1,6 @@
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-interface CardSectionStyles {
+type CardSectionStyles = {
     padding: string | number
     withBorder: boolean
     inheritPadding: boolean

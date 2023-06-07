@@ -1,23 +1,24 @@
 import React, { Children, cloneElement, forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
 } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import { Step, StepFragmentComponent, StepStylesNames } from './Step/Step'
+import type { StepFragmentComponent, StepStylesNames } from './Step/Step'
+import { Step } from './Step/Step'
 import { StepCompleted } from './StepCompleted/StepCompleted'
 import useStyles from './Stepper.styles'
 
 export type StepperStylesNames = Selectors<typeof useStyles> | StepStylesNames
 
-export interface StepperProps extends DefaultProps<StepperStylesNames>, React.ComponentPropsWithRef<'div'> {
+export type StepperProps = {
     variant?: string
 
     /** <Stepper.Step /> components only */
@@ -64,7 +65,8 @@ export interface StepperProps extends DefaultProps<StepperStylesNames>, React.Co
 
     /** Whether to enable click on upcoming steps by default. Defaults to true **/
     allowNextStepsSelect?: boolean
-}
+} & DefaultProps<StepperStylesNames> &
+    React.ComponentPropsWithRef<'div'>
 
 type StepperComponent = ForwardRefWithStaticComponents<
     StepperProps,

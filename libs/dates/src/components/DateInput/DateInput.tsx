@@ -1,42 +1,32 @@
 import dayjs from 'dayjs'
 import React, { forwardRef, useEffect, useState } from 'react'
 
-import {
-    CloseButton,
+import type {
     DefaultProps,
-    Input,
     InputSharedProps,
     InputStylesNames,
     InputWrapperBaseProps,
     InputWrapperStylesNames,
-    Popover,
     PopoverProps,
-    useInputProps,
 } from '@worldprinter/wdesign-core'
+import { CloseButton, Input, Popover, useInputProps } from '@worldprinter/wdesign-core'
 import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks'
 
-import { CalendarLevel, DateValue } from '../../types'
+import type { CalendarLevel, DateValue } from '../../types'
 import { assignTime } from '../../utils'
-import { Calendar, CalendarBaseProps, CalendarStylesNames, pickCalendarProps } from '../Calendar'
+import type { CalendarBaseProps, CalendarStylesNames } from '../Calendar'
+import { Calendar, pickCalendarProps } from '../Calendar'
 import { useDatesContext } from '../DatesProvider'
-import { DecadeLevelSettings } from '../DecadeLevel'
+import type { DecadeLevelSettings } from '../DecadeLevel'
 import { HiddenDatesInput } from '../HiddenDatesInput'
-import { MonthLevelSettings } from '../MonthLevel'
-import { YearLevelSettings } from '../YearLevel'
+import type { MonthLevelSettings } from '../MonthLevel'
+import type { YearLevelSettings } from '../YearLevel'
 import { dateStringParser } from './date-string-parser/date-string-parser'
 import { isDateValid } from './is-date-valid/is-date-valid'
 
 export type DateInputStylesNames = CalendarStylesNames | InputStylesNames | InputWrapperStylesNames
 
-export interface DateInputProps
-    extends DefaultProps<DateInputStylesNames>,
-        InputSharedProps,
-        InputWrapperBaseProps,
-        CalendarBaseProps,
-        DecadeLevelSettings,
-        YearLevelSettings,
-        MonthLevelSettings,
-        Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'value' | 'defaultValue' | 'onChange'> {
+export type DateInputProps = {
     /** Parses user input to convert it to Date object */
     dateParser?: (value: string) => Date | null
 
@@ -81,7 +71,14 @@ export interface DateInputProps
 
     /** Called when level changes */
     onLevelChange?(level: CalendarLevel): void
-}
+} & DefaultProps<DateInputStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps &
+    CalendarBaseProps &
+    DecadeLevelSettings &
+    YearLevelSettings &
+    MonthLevelSettings &
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'value' | 'defaultValue' | 'onChange'>
 
 const defaultProps: Partial<DateInputProps> = {
     valueFormat: 'MMMM D, YYYY',

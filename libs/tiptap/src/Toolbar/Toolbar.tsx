@@ -1,19 +1,21 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Group, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Group, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useRichTextEditorContext } from '../RichTextEditor.context'
 import useStyles from './Toolbar.styles'
 
 export type ToolbarStylesNames = Selectors<typeof useStyles>
 
-export interface RichTextEditorToolbarProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type RichTextEditorToolbarProps = {
     /** Determines whether position: sticky styles should be added to the toolbar, false by default */
     sticky?: boolean
 
     /** Sets top style to offset elements with fixed position, 0 by default */
     stickyOffset?: React.CSSProperties['top']
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<RichTextEditorToolbarProps> = {
     stickyOffset: 0,

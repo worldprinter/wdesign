@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-import { PickerControlProps } from '../../PickerControl'
+import type { PickerControlProps } from '../../PickerControl'
 import { isMonthDisabled } from '../is-month-disabled/is-month-disabled'
 
 export function getMonthInTabOrder(

@@ -1,4 +1,4 @@
-import { AutocompleteStylesNames } from '@worldprinter/wdesign-core'
+import type { AutocompleteStylesNames } from '@worldprinter/wdesign-core'
 
 import { Input } from './Input.styles-api'
 import { InputWrapper } from './InputWrapper.styles-api'

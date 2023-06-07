@@ -1,7 +1,7 @@
 import type { StyleProperty } from '../get-responsive-value/get-responsive-value'
 import type { SystemValueType } from '../value-getters/value-getters'
 
-export interface SystemPropData {
+export type SystemPropData = {
     type: SystemValueType
     property: StyleProperty
 }

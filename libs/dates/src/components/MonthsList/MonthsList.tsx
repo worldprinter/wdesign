@@ -2,11 +2,13 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { ControlsGroupSettings } from '../../types'
+import type { ControlsGroupSettings } from '../../types'
 import { useDatesContext } from '../DatesProvider'
-import { PickerControl, PickerControlProps, PickerControlStylesNames } from '../PickerControl'
+import type { PickerControlProps, PickerControlStylesNames } from '../PickerControl'
+import { PickerControl } from '../PickerControl'
 import { getMonthInTabOrder } from './get-month-in-tab-order/get-month-in-tab-order'
 import { getMonthsData } from './get-months-data/get-months-data'
 import { isMonthDisabled } from './is-month-disabled/is-month-disabled'
@@ -14,7 +16,7 @@ import useStyles from './MonthsList.styles'
 
 export type MonthsListStylesNames = PickerControlStylesNames | Selectors<typeof useStyles>
 
-export interface MonthsListSettings extends ControlsGroupSettings {
+export type MonthsListSettings = {
     /** dayjs format for months list  */
     monthsListFormat?: string
 
@@ -26,12 +28,9 @@ export interface MonthsListSettings extends ControlsGroupSettings {
 
     /** Determines whether controls should be separated by spacing, true by default */
     withCellSpacing?: boolean
-}
+} & ControlsGroupSettings
 
-export interface MonthsListProps
-    extends DefaultProps<MonthsListStylesNames>,
-        MonthsListSettings,
-        React.ComponentPropsWithoutRef<'table'> {
+export type MonthsListProps = {
     variant?: string
     __staticSelector?: string
 
@@ -43,7 +42,9 @@ export interface MonthsListProps
 
     /** Component size */
     size?: MantineSize
-}
+} & DefaultProps<MonthsListStylesNames> &
+    MonthsListSettings &
+    React.ComponentPropsWithoutRef<'table'>
 
 const defaultProps: Partial<MonthsListProps> = {
     monthsListFormat: 'MMM',

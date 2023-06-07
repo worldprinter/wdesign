@@ -1,6 +1,6 @@
 import type { Row } from '@tanstack/react-table'
 
-import { BoxProps, MantineTheme } from '@worldprinter/wdesign-core'
+import type { BoxProps, MantineTheme } from '@worldprinter/wdesign-core'
 
 import type {
     MantineReactTableProps,
@@ -16,9 +16,9 @@ import type {
     MRT_Row,
     MRT_TableInstance,
 } from '.'
-import { MRT_AggregationFns } from './aggregationFns'
-import { MRT_FilterFns } from './filterFns'
-import { MRT_SortingFns } from './sortingFns'
+import type { MRT_AggregationFns } from './aggregationFns'
+import type { MRT_FilterFns } from './filterFns'
+import type { MRT_SortingFns } from './sortingFns'
 
 export const getColumnId = <TData extends Record<string, any> = {}>(columnDef: MRT_ColumnDef<TData>): string =>
     columnDef.id ?? columnDef.accessorKey?.toString?.() ?? columnDef.header

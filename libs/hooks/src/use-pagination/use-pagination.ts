@@ -5,7 +5,7 @@ import { range } from '../utils'
 
 export const DOTS = 'dots'
 
-export interface PaginationParams {
+export type PaginationParams = {
     /** Page selected on initial render, defaults to 1 */
     initialPage?: number
 

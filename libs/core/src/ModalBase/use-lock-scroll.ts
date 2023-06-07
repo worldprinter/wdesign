@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { useReducedMotion } from '@worldprinter/wdesign-hooks'
 
-interface UseScrollLock {
+type UseScrollLock = {
     opened: boolean
     transitionDuration: number
 }

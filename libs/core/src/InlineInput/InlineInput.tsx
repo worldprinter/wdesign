@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Input } from '../Input'
@@ -8,7 +8,7 @@ import useStyles from './InlineInput.styles'
 
 export type InlineInputStylesNames = Selectors<typeof useStyles>
 
-export interface InlineInputProps extends DefaultProps<InlineInputStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type InlineInputProps = {
     variant?: string
     __staticSelector: string
     label: React.ReactNode
@@ -18,7 +18,8 @@ export interface InlineInputProps extends DefaultProps<InlineInputStylesNames>, 
     error: React.ReactNode
     size: MantineNumberSize
     labelPosition: 'left' | 'right'
-}
+} & DefaultProps<InlineInputStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 export const InlineInput = forwardRef<HTMLDivElement, InlineInputProps>(
     (

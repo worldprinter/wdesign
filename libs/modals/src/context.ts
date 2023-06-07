@@ -1,6 +1,7 @@
-import { createContext, ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { createContext } from 'react'
 
-import { ModalProps } from '@worldprinter/wdesign-core'
+import type { ModalProps } from '@worldprinter/wdesign-core'
 
 import type { ConfirmModalProps } from './ConfirmModal'
 
@@ -10,12 +11,12 @@ export type ModalSettings = Partial<Omit<ModalProps, 'opened'>> & {
 
 export type ConfirmLabels = Record<'confirm' | 'cancel', ReactNode>
 
-export interface OpenConfirmModal extends ModalSettings, ConfirmModalProps {}
-export interface OpenContextModal<CustomProps extends Record<string, any> = {}> extends ModalSettings {
+export type OpenConfirmModal = {} & ModalSettings & ConfirmModalProps
+export type OpenContextModal<CustomProps extends Record<string, any> = {}> = {
     innerProps: CustomProps
-}
+} & ModalSettings
 
-export interface ContextModalProps<T extends Record<string, any> = {}> {
+export type ContextModalProps<T extends Record<string, any> = {}> = {
     context: ModalsContextProps
     innerProps: T
     id: string
@@ -26,7 +27,7 @@ export type ModalState =
     | { id: string; props: OpenConfirmModal; type: 'confirm' }
     | { id: string; props: OpenContextModal; type: 'context'; ctx: string }
 
-export interface ModalsContextProps {
+export type ModalsContextProps = {
     modals: ModalState[]
     openModal: (props: ModalSettings) => string
     openConfirmModal: (props: OpenConfirmModal) => string

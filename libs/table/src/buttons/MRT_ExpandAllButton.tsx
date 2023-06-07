@@ -4,7 +4,7 @@ import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     table: MRT_TableInstance
 }
 

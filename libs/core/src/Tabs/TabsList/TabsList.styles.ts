@@ -1,12 +1,13 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 import { GROUP_POSITIONS } from '../../Group/Group.styles'
-import { TabsPosition, TabsStylesParams } from '../Tabs.types'
+import type { TabsPosition, TabsStylesParams } from '../Tabs.types'
 
-interface TabsListStylesParams extends TabsStylesParams {
+type TabsListStylesParams = {
     grow: boolean
     position: TabsPosition
-}
+} & TabsStylesParams
 
 function getVariantStyles(
     { orientation, inverted, placement }: TabsListStylesParams,

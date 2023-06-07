@@ -1,26 +1,26 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { CalendarHeader, CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import type { CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import { CalendarHeader } from '../CalendarHeader'
 import { useDatesContext } from '../DatesProvider'
-import { MonthsList, MonthsListSettings, MonthsListStylesNames } from '../MonthsList'
+import type { MonthsListSettings, MonthsListStylesNames } from '../MonthsList'
+import { MonthsList } from '../MonthsList'
 import useStyles from './YearLevel.styles'
 
 export type YearLevelStylesNames = Selectors<typeof useStyles> | MonthsListStylesNames | CalendarHeaderStylesNames
 
-export interface YearLevelBaseSettings extends MonthsListSettings {
+export type YearLevelBaseSettings = {
     /** dayjs label format to display year label or a function that returns year label based on year value, defaults to "YYYY" */
     yearLabelFormat?: string | ((year: Date) => React.ReactNode)
-}
+} & MonthsListSettings
 
-export interface YearLevelSettings extends YearLevelBaseSettings, CalendarHeaderSettings {}
+export type YearLevelSettings = {} & YearLevelBaseSettings & CalendarHeaderSettings
 
-export interface YearLevelProps
-    extends DefaultProps<YearLevelStylesNames>,
-        YearLevelSettings,
-        React.ComponentPropsWithoutRef<'div'> {
+export type YearLevelProps = {
     variant?: string
     __staticSelector?: string
 
@@ -29,7 +29,9 @@ export interface YearLevelProps
 
     /** aria-label for change level control */
     levelControlAriaLabel?: string
-}
+} & DefaultProps<YearLevelStylesNames> &
+    YearLevelSettings &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<YearLevelProps> = {
     yearLabelFormat: 'YYYY',

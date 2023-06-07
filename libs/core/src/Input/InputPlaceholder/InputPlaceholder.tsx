@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../Box'
 
-export interface InputPlaceholderProps extends DefaultProps, React.ComponentPropsWithoutRef<'span'> {}
+export type InputPlaceholderProps = {} & DefaultProps & React.ComponentPropsWithoutRef<'span'>
 
 const defaultProps: Partial<InputPlaceholderProps> = {}
 

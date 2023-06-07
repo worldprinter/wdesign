@@ -16,20 +16,30 @@
             "executor": "@nx/rollup:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/prism",
                 "tsConfig": "libs/prism/tsconfig.lib.json",
                 "project": "libs/prism/package.json",
                 "entryFile": "libs/prism/src/index.ts",
-                "external": ["react", "react-dom", "@emotion/react/jsx-runtime"],
+                "external": ["react", "react-dom", "react/jsx-runtime"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
-                "compiler": "babel",
+                "compiler": "tsc",
+                "format": ["esm", "cjs"],
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "updateBuildableProjectDepsInPackageJson": true,
+                "generateExportsField": true,
                 "assets": [
                     {
                         "glob": "libs/prism/README.md",
                         "input": ".",
                         "output": "."
+                    },
+                    {
+                        "glob": "libs/prism/CHANGELOG.md",
+                        "input": ".",
+                        "output": "."
                     }
-                ]
+                ],
+                "outputPath": "dist/libs/prism",
+                "skipTypeCheck": true
             }
         },
         "test": {
@@ -44,6 +54,16 @@
                     "ci": true,
                     "codeCoverage": true
                 }
+            }
+        },
+        "static:server": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "pnpm nx run prism:build --watch",
+                    "http-server dist/libs/prism -p 4509 -d -i -g -b --cors -c-1 --log-ip --utc-time"
+                ],
+                "parallel": true
             }
         }
     }

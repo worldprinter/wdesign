@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineColor, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface DividerStylesParams {
+export type DividerStylesParams = {
     color: MantineColor
 }
 

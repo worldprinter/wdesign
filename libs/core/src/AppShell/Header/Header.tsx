@@ -2,12 +2,14 @@ import React, { forwardRef } from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { VerticalSection, VerticalSectionSharedProps } from '../VerticalSection/VerticalSection'
+import type { VerticalSectionSharedProps } from '../VerticalSection/VerticalSection'
+import { VerticalSection } from '../VerticalSection/VerticalSection'
 
-export interface HeaderProps extends VerticalSectionSharedProps, React.ComponentPropsWithoutRef<'nav'> {
+export type HeaderProps = {
     /** Header content */
     children: React.ReactNode
-}
+} & VerticalSectionSharedProps &
+    React.ComponentPropsWithoutRef<'nav'>
 
 const defaultProps: Partial<HeaderProps> = {
     fixed: false,

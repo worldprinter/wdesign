@@ -1,24 +1,18 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { CloseButton } from '../CloseButton'
 import { Loader } from '../Loader'
 import { Text } from '../Text'
-import useStyles, { NotificationStylesParams } from './Notification.styles'
+import type { NotificationStylesParams } from './Notification.styles'
+import useStyles from './Notification.styles'
 
 export type NotificationStylesNames = Selectors<typeof useStyles>
 
-export interface NotificationProps
-    extends DefaultProps<NotificationStylesNames, NotificationStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
+export type NotificationProps = {
     variant?: string
 
     /** Called when close button is clicked */
@@ -50,7 +44,8 @@ export interface NotificationProps
 
     /** Props spread to close button */
     closeButtonProps?: Record<string, any>
-}
+} & DefaultProps<NotificationStylesNames, NotificationStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'title'>
 
 const defaultProps: Partial<NotificationProps> = {
     withCloseButton: true,

@@ -2,9 +2,9 @@ import { useRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
 
-import { DatePickerType, DatePickerValue } from '../../types'
+import type { DatePickerType, DatePickerValue } from '../../types'
 
-interface UseUncontrolledDates<Type extends DatePickerType = 'default'> {
+type UseUncontrolledDates<Type extends DatePickerType = 'default'> = {
     type: Type
     value: DatePickerValue<Type>
     defaultValue: DatePickerValue<Type>

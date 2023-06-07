@@ -1,15 +1,20 @@
 import React from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { getSafeId } from '@worldprinter/wdesign-utils'
 
 import type { AccordionStylesNames } from './Accordion'
 import { AccordionContextProvider } from './Accordion.context'
 import { ACCORDION_ERRORS } from './Accordion.errors'
-import { AccordionChevronPosition, AccordionHeadingOrder, AccordionValue, AccordionVariant } from './Accordion.types'
+import type {
+    AccordionChevronPosition,
+    AccordionHeadingOrder,
+    AccordionValue,
+    AccordionVariant,
+} from './Accordion.types'
 
-export interface AccordionProviderProps<Multiple extends boolean = false> {
+export type AccordionProviderProps<Multiple extends boolean = false> = {
     /** Base id, used to generate ids that connect labels with controls, by default generated randomly */
     id?: string
 
@@ -56,11 +61,11 @@ export interface AccordionProviderProps<Multiple extends boolean = false> {
     radius?: MantineNumberSize
 }
 
-interface _AccordionProviderProps<Multiple extends boolean = false> extends AccordionProviderProps<Multiple> {
+type _AccordionProviderProps<Multiple extends boolean = false> = {
     classNames?: ClassNames<AccordionStylesNames>
     styles?: Styles<AccordionStylesNames>
     unstyled?: boolean
-}
+} & AccordionProviderProps<Multiple>
 
 export function AccordionProvider<Multiple extends boolean = false>({
     children,

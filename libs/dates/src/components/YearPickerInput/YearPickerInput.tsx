@@ -3,20 +3,21 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useDatesInput } from '../../hooks'
-import { DatePickerType } from '../../types'
+import type { DatePickerType } from '../../types'
 import { getDefaultClampedDate } from '../../utils'
 import { pickCalendarProps } from '../Calendar'
-import { DateInputSharedProps, PickerInputBase, PickerInputBaseStylesNames } from '../PickerInputBase'
-import { YearPicker, YearPickerBaseProps } from '../YearPicker'
+import type { DateInputSharedProps, PickerInputBaseStylesNames } from '../PickerInputBase'
+import { PickerInputBase } from '../PickerInputBase'
+import type { YearPickerBaseProps } from '../YearPicker'
+import { YearPicker } from '../YearPicker'
 
 export type YearPickerInputStylesNames = PickerInputBaseStylesNames
 
-export interface YearPickerInputProps<Type extends DatePickerType = 'default'>
-    extends DateInputSharedProps,
-        YearPickerBaseProps<Type> {
+export type YearPickerInputProps<Type extends DatePickerType = 'default'> = {
     /** Dayjs format to display input value, "YYYY" by default  */
     valueFormat?: string
-}
+} & DateInputSharedProps &
+    YearPickerBaseProps<Type>
 
 type YearPickerInputComponent = (<Type extends DatePickerType = 'default'>(
     props: YearPickerInputProps<Type>,

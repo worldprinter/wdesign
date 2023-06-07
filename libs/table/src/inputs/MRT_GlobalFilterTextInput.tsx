@@ -6,7 +6,7 @@ import { useDebouncedValue } from '@worldprinter/wdesign-hooks'
 import type { MRT_TableInstance } from '..'
 import { MRT_FilterOptionMenu } from '../menus/MRT_FilterOptionMenu'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
 }
 

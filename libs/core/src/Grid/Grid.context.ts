@@ -1,7 +1,7 @@
 import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-interface GridContextValue {
+type GridContextValue = {
     gutter: MantineNumberSize
     gutterXs: MantineNumberSize
     gutterSm: MantineNumberSize

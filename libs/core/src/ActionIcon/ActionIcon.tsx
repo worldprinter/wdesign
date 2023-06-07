@@ -1,23 +1,25 @@
 import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     Selectors,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import { Loader, LoaderProps } from '../Loader'
+import type { LoaderProps } from '../Loader'
+import { Loader } from '../Loader'
 import { UnstyledButton } from '../UnstyledButton'
-import useStyles, { ActionIconStylesParams } from './ActionIcon.styles'
+import type { ActionIconStylesParams } from './ActionIcon.styles'
+import useStyles from './ActionIcon.styles'
 
 export type ActionIconStylesNames = Selectors<typeof useStyles>
 
-export interface ActionIconProps extends DefaultProps<ActionIconStylesNames, ActionIconStylesParams> {
+export type ActionIconProps = {
     __staticSelector?: string
 
     /** Icon */
@@ -46,7 +48,7 @@ export interface ActionIconProps extends DefaultProps<ActionIconStylesNames, Act
 
     /** Indicates disabled state */
     disabled?: boolean
-}
+} & DefaultProps<ActionIconStylesNames, ActionIconStylesParams>
 
 const defaultProps: Partial<ActionIconProps> = {
     color: 'gray',

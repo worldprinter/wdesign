@@ -1,33 +1,25 @@
 import dayjs from 'dayjs'
 import React, { forwardRef, useRef, useState } from 'react'
 
-import {
-    ActionIcon,
-    ActionIconProps,
-    CheckIcon,
-    DefaultProps,
-    INPUT_SIZES,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { ActionIconProps, DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { ActionIcon, CheckIcon, INPUT_SIZES, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { useDidUpdate, useDisclosure, useUncontrolled } from '@worldprinter/wdesign-hooks'
 
-import { DateValue } from '../../types'
+import type { DateValue } from '../../types'
 import { assignTime } from '../../utils'
-import { CalendarBaseProps, CalendarSettings, pickCalendarProps } from '../Calendar'
+import type { CalendarBaseProps, CalendarSettings } from '../Calendar'
+import { pickCalendarProps } from '../Calendar'
 import { DatePicker } from '../DatePicker'
 import { useDatesContext } from '../DatesProvider'
-import { DateInputSharedProps, PickerInputBase, PickerInputBaseStylesNames } from '../PickerInputBase'
-import { TimeInput, TimeInputProps } from '../TimeInput'
+import type { DateInputSharedProps, PickerInputBaseStylesNames } from '../PickerInputBase'
+import { PickerInputBase } from '../PickerInputBase'
+import type { TimeInputProps } from '../TimeInput'
+import { TimeInput } from '../TimeInput'
 import useStyles from './DateTimePicker.styles'
 
 export type DateTimePickerStylesNames = PickerInputBaseStylesNames | Selectors<typeof useStyles>
 
-export interface DateTimePickerProps
-    extends DefaultProps<DateTimePickerStylesNames>,
-        Omit<DateInputSharedProps, 'classNames' | 'styles' | 'closeOnChange'>,
-        Omit<CalendarBaseProps, 'defaultDate'>,
-        Omit<CalendarSettings, 'onYearMouseEnter' | 'onMonthMouseEnter'> {
+export type DateTimePickerProps = {
     /** Dayjs format to display input value, "DD/MM/YYYY HH:mm" by default  */
     valueFormat?: string
 
@@ -48,7 +40,10 @@ export interface DateTimePickerProps
 
     /** Determines whether seconds input should be rendered */
     withSeconds?: boolean
-}
+} & DefaultProps<DateTimePickerStylesNames> &
+    Omit<DateInputSharedProps, 'classNames' | 'styles' | 'closeOnChange'> &
+    Omit<CalendarBaseProps, 'defaultDate'> &
+    Omit<CalendarSettings, 'onYearMouseEnter' | 'onMonthMouseEnter'>
 
 const defaultProps: Partial<DateTimePickerProps> = {
     size: 'sm',

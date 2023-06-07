@@ -1,11 +1,11 @@
 import { useDisclosure } from '@worldprinter/wdesign-hooks'
 
 import { useDatesContext } from '../../components/DatesProvider'
-import { DatePickerType, DatePickerValue } from '../../types'
+import type { DatePickerType, DatePickerValue } from '../../types'
 import { getFormattedDate } from '../../utils'
 import { useUncontrolledDates } from '../use-uncontrolled-dates/use-uncontrolled-dates'
 
-interface UseDatesInput<Type extends DatePickerType = 'default'> {
+type UseDatesInput<Type extends DatePickerType = 'default'> = {
     type: Type
     value: DatePickerValue<Type>
     defaultValue: DatePickerValue<Type>

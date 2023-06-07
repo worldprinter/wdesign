@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import useStyles from './Kbd.styles'
 
-export interface KbdProps extends DefaultProps, React.ComponentPropsWithoutRef<'kbd'> {
+export type KbdProps = {
     variant?: string
 
     /** Keyboard key */
@@ -13,7 +14,8 @@ export interface KbdProps extends DefaultProps, React.ComponentPropsWithoutRef<'
 
     /** Controls component size, 'sm' by default */
     size?: MantineSize
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'kbd'>
 
 const defaultProps: Partial<KbdProps> = {
     size: 'sm',

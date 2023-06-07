@@ -1,4 +1,5 @@
-import { createStyles, getSize, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export const sizes = {
     xs: rem(22),
@@ -8,7 +9,7 @@ export const sizes = {
     xl: rem(44),
 }
 
-interface PaginationControlStylesParams {
+type PaginationControlStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
     withPadding: boolean

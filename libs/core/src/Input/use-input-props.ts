@@ -1,14 +1,17 @@
 import { useId } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineStyleSystemProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineStyleSystemProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { extractSystemStyles } from '../Box'
-import { InputSharedProps } from './Input'
-import { InputWrapperBaseProps } from './InputWrapper/InputWrapper'
+import type { InputSharedProps } from './Input'
+import type { InputWrapperBaseProps } from './InputWrapper/InputWrapper'
 
-interface BaseProps extends InputWrapperBaseProps, InputSharedProps, DefaultProps {
+type BaseProps = {
     __staticSelector?: string
     id?: string
-}
+} & InputWrapperBaseProps &
+    InputSharedProps &
+    DefaultProps
 
 export function useInputProps<T extends BaseProps, U extends Partial<T>>(component: string, defaultProps: U, props: T) {
     const {

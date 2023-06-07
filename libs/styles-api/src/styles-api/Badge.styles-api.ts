@@ -1,4 +1,4 @@
-import { BadgeStylesNames } from '@worldprinter/wdesign-core'
+import type { BadgeStylesNames } from '@worldprinter/wdesign-core'
 
 export const Badge: Record<BadgeStylesNames, string> = {
     root: 'Root element',

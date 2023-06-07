@@ -16,20 +16,30 @@
             "executor": "@nx/rollup:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/dropzone",
                 "tsConfig": "libs/dropzone/tsconfig.lib.json",
                 "project": "libs/dropzone/package.json",
                 "entryFile": "libs/dropzone/src/index.ts",
-                "external": ["react", "react-dom", "@emotion/react/jsx-runtime"],
+                "external": ["react", "react-dom", "react/jsx-runtime"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
-                "compiler": "babel",
+                "compiler": "tsc",
+                "format": ["esm", "cjs"],
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "updateBuildableProjectDepsInPackageJson": true,
+                "generateExportsField": true,
                 "assets": [
                     {
                         "glob": "libs/dropzone/README.md",
                         "input": ".",
                         "output": "."
+                    },
+                    {
+                        "glob": "libs/dropzone/CHANGELOG.md",
+                        "input": ".",
+                        "output": "."
                     }
-                ]
+                ],
+                "outputPath": "dist/libs/dropzone",
+                "skipTypeCheck": true
             }
         },
         "test": {
@@ -44,6 +54,16 @@
                     "ci": true,
                     "codeCoverage": true
                 }
+            }
+        },
+        "static:server": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "pnpm nx run dropzone:build --watch",
+                    "http-server dist/libs/dropzone -p 4503 -d -i -g -b --cors -c-1 --log-ip --utc-time"
+                ],
+                "parallel": true
             }
         }
     }

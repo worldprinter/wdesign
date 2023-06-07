@@ -1,18 +1,17 @@
 import dayjs from 'dayjs'
 import React, { forwardRef, useRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { handleControlKeyDown } from '../../utils'
-import { DecadeLevel, DecadeLevelSettings, DecadeLevelStylesNames } from '../DecadeLevel'
+import type { DecadeLevelSettings, DecadeLevelStylesNames } from '../DecadeLevel'
+import { DecadeLevel } from '../DecadeLevel'
 import useStyles from './DecadeLevelGroup.styles'
 
 export type DecadeLevelGroupStylesNames = Selectors<typeof useStyles> | DecadeLevelStylesNames
 
-export interface DecadeLevelGroupProps
-    extends DefaultProps<DecadeLevelGroupStylesNames>,
-        Omit<DecadeLevelSettings, 'withPrevious' | 'withNext' | '__onControlKeyDown' | '__getControlRef'>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type DecadeLevelGroupProps = {
     variant?: string
     __staticSelector?: string
 
@@ -24,7 +23,9 @@ export interface DecadeLevelGroupProps
 
     /** Function that returns level control aria-label based on year date */
     levelControlAriaLabel?: ((decade: Date) => string) | string
-}
+} & DefaultProps<DecadeLevelGroupStylesNames> &
+    Omit<DecadeLevelSettings, 'withPrevious' | 'withNext' | '__onControlKeyDown' | '__getControlRef'> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<DecadeLevelGroupProps> = {
     numberOfColumns: 1,

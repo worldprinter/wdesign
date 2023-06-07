@@ -16,20 +16,30 @@
             "executor": "@nx/rollup:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/core",
                 "tsConfig": "libs/core/tsconfig.lib.json",
                 "project": "libs/core/package.json",
                 "entryFile": "libs/core/src/index.ts",
-                "external": ["react", "react-dom", "@emotion/react/jsx-runtime"],
+                "external": ["react", "react-dom", "react/jsx-runtime"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
-                "compiler": "babel",
+                "compiler": "tsc",
+                "format": ["esm", "cjs"],
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "updateBuildableProjectDepsInPackageJson": true,
+                "generateExportsField": true,
                 "assets": [
                     {
                         "glob": "libs/core/README.md",
                         "input": ".",
                         "output": "."
+                    },
+                    {
+                        "glob": "libs/core/CHANGELOG.md",
+                        "input": ".",
+                        "output": "."
                     }
-                ]
+                ],
+                "outputPath": "dist/libs/core",
+                "skipTypeCheck": true
             }
         },
         "test": {
@@ -44,6 +54,16 @@
                     "ci": true,
                     "codeCoverage": true
                 }
+            }
+        },
+        "static:server": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "pnpm nx run core:build --watch",
+                    "http-server dist/libs/core -p 4501 -d -i -g -b --cors -c-1 --log-ip --utc-time"
+                ],
+                "parallel": true
             }
         }
     }

@@ -1,15 +1,13 @@
 import React from 'react'
 
-import { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
 
 import { ColorSwatch } from '../../ColorSwatch/ColorSwatch'
 import useStyles from './Swatches.styles'
 
 export type SwatchesStylesNames = Selectors<typeof useStyles>
 
-export interface SwatchesProps
-    extends DefaultProps<SwatchesStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onSelect'> {
+export type SwatchesProps = {
     size?: string | number
     variant?: string
     data: string[]
@@ -18,7 +16,8 @@ export interface SwatchesProps
     onChangeEnd?: (color: string) => void
     __staticSelector?: string
     setValue(value: string): void
-}
+} & DefaultProps<SwatchesStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onSelect'>
 
 export function Swatches({
     data,

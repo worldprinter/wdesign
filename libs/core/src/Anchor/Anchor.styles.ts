@@ -1,11 +1,12 @@
-import { createStyles, MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles } from '@worldprinter/wdesign-styles'
 
-export interface AnchorStylesParams {
+export type AnchorStylesParams = {
     color: MantineColor
     underline: boolean
 }
 
-interface GetAnchorColor {
+type GetAnchorColor = {
     theme: MantineTheme
     color: 'dimmed' | MantineColor
 }

@@ -1,6 +1,6 @@
 import { DEFAULT_COLORS } from './default-colors'
 import { attachFunctions } from './functions/attach-functions'
-import { MantineThemeBase } from './types'
+import type { MantineThemeBase } from './types'
 
 export const MANTINE_COLORS = Object.keys(DEFAULT_COLORS)
 export const MANTINE_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const

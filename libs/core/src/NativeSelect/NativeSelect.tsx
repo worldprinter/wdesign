@@ -1,25 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import { useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import {
-    Input,
-    InputSharedProps,
-    InputStylesNames,
-    InputWrapperBaseProps,
-    InputWrapperStylesNames,
-    useInputProps,
-} from '../Input'
+import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
+import { Input, useInputProps } from '../Input'
 import { getSelectRightSectionProps } from '../Select/SelectRightSection/get-select-right-section-props'
-import { SelectItem } from '../Select/types'
+import type { SelectItem } from '../Select/types'
 
 export type NativeSelectStylesNames = InputStylesNames | InputWrapperStylesNames
 
-export interface NativeSelectProps
-    extends DefaultProps<NativeSelectStylesNames>,
-        InputWrapperBaseProps,
-        InputSharedProps,
-        Omit<React.ComponentPropsWithoutRef<'select'>, 'size'> {
+export type NativeSelectProps = {
     /** id is used to bind input and label, if not passed unique id will be generated for each input */
     id?: string
 
@@ -31,7 +22,10 @@ export interface NativeSelectProps
 
     /** Input size */
     size?: MantineSize
-}
+} & DefaultProps<NativeSelectStylesNames> &
+    InputWrapperBaseProps &
+    InputSharedProps &
+    Omit<React.ComponentPropsWithoutRef<'select'>, 'size'>
 
 const defaultProps: Partial<NativeSelectProps> = {
     size: 'sm',

@@ -1,16 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineColor, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { BlockquoteStylesParams } from './Blockquote.styles'
+import type { BlockquoteStylesParams } from './Blockquote.styles'
+import useStyles from './Blockquote.styles'
 import { QuoteIcon } from './QuoteIcon'
 
 export type BlockquoteStylesNames = Selectors<typeof useStyles>
 
-export interface BlockquoteProps
-    extends DefaultProps<BlockquoteStylesNames, BlockquoteStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'blockquote'>, 'cite'> {
+export type BlockquoteProps = {
     variant?: string
 
     /** Icon color from theme */
@@ -21,7 +21,8 @@ export interface BlockquoteProps
 
     /** Describe a reference to a cited quote */
     cite?: React.ReactNode
-}
+} & DefaultProps<BlockquoteStylesNames, BlockquoteStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'blockquote'>, 'cite'>
 
 const defaultProps: Partial<BlockquoteProps> = {
     color: 'gray',

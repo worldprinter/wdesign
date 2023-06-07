@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface TableStylesParams {
+export type TableStylesParams = {
     captionSide: 'top' | 'bottom'
     horizontalSpacing: MantineNumberSize
     verticalSpacing: MantineNumberSize

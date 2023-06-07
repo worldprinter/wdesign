@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
-export interface StackStylesParams {
+export type StackStylesParams = {
     spacing: MantineNumberSize
     align: React.CSSProperties['alignItems']
     justify: React.CSSProperties['justifyContent']

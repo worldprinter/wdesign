@@ -1,15 +1,17 @@
 import React, { forwardRef } from 'react'
 
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
-import { HorizontalSection, HorizontalSectionSharedProps } from '../HorizontalSection/HorizontalSection'
+import type { HorizontalSectionSharedProps } from '../HorizontalSection/HorizontalSection'
+import { HorizontalSection } from '../HorizontalSection/HorizontalSection'
 import { Section } from '../HorizontalSection/Section/Section'
 
-export interface AsideProps extends HorizontalSectionSharedProps, React.ComponentPropsWithRef<'nav'> {
+export type AsideProps = {
     /** Aside content */
     children: React.ReactNode
-}
+} & HorizontalSectionSharedProps &
+    React.ComponentPropsWithRef<'nav'>
 
 type AsideComponent = ForwardRefWithStaticComponents<AsideProps, { Section: typeof Section }>
 

@@ -1,6 +1,6 @@
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-interface SwatchesStyles {
+type SwatchesStyles = {
     swatchesPerRow: number
 }
 

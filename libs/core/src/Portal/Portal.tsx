@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { ReactPortal, useRef, useState } from 'react'
+import type { ReactPortal } from 'react'
+import React, { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { useIsomorphicEffect } from '@worldprinter/wdesign-hooks'
 import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-export interface PortalProps extends React.ComponentPropsWithoutRef<'div'> {
+export type PortalProps = {
     /** Portal children, for example, modal or popover */
     children: React.ReactNode
 
@@ -17,7 +18,7 @@ export interface PortalProps extends React.ComponentPropsWithoutRef<'div'> {
 
     /** Root element ref */
     innerRef?: React.MutableRefObject<HTMLDivElement>
-}
+} & React.ComponentPropsWithoutRef<'div'>
 
 export function Portal(props: PortalProps): ReactPortal {
     const { children, target, className, innerRef, ...others } = useComponentDefaultProps('Portal', {}, props)

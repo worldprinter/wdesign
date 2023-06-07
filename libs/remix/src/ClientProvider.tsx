@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { EmotionCache, useEmotionCache } from '@worldprinter/wdesign-core'
+import type { EmotionCache } from '@worldprinter/wdesign-core'
+import { useEmotionCache } from '@worldprinter/wdesign-core'
 import { useIsomorphicEffect } from '@worldprinter/wdesign-hooks'
 
-interface ClientProviderProps {
+type ClientProviderProps = {
     children: React.ReactNode
     emotionCache?: EmotionCache
 }

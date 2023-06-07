@@ -1,4 +1,5 @@
-import React, { MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
+import React from 'react'
 
 import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core'
 
@@ -6,7 +7,7 @@ import type { MRT_Cell, MRT_Row, MRT_TableInstance } from '..'
 import { MRT_RowActionMenu } from '../menus/MRT_RowActionMenu'
 import { MRT_EditActionButtons } from './MRT_EditActionButtons'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     cell: MRT_Cell<TData>
     row: MRT_Row<TData>
     table: MRT_TableInstance<TData>

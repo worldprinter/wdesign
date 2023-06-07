@@ -1,6 +1,6 @@
-import { CarouselOrientation } from './types'
+import type { CarouselOrientation } from './types'
 
-interface Options {
+type Options = {
     dir: 'rtl' | 'ltr'
     orientation: CarouselOrientation
     direction: 'next' | 'previous'

@@ -3,19 +3,14 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useDatesState } from '../../hooks'
-import { CalendarLevel, DatePickerType, PickerBaseProps } from '../../types'
-import { Calendar, CalendarBaseProps, CalendarSettings, CalendarSystemProps } from '../Calendar'
-import { DecadeLevelBaseSettings } from '../DecadeLevel'
-import { MonthLevelBaseSettings } from '../MonthLevel'
-import { YearLevelBaseSettings } from '../YearLevel'
+import type { CalendarLevel, DatePickerType, PickerBaseProps } from '../../types'
+import type { CalendarBaseProps, CalendarSettings, CalendarSystemProps } from '../Calendar'
+import { Calendar } from '../Calendar'
+import type { DecadeLevelBaseSettings } from '../DecadeLevel'
+import type { MonthLevelBaseSettings } from '../MonthLevel'
+import type { YearLevelBaseSettings } from '../YearLevel'
 
-export interface DatePickerBaseProps<Type extends DatePickerType = 'default'>
-    extends PickerBaseProps<Type>,
-        DecadeLevelBaseSettings,
-        YearLevelBaseSettings,
-        MonthLevelBaseSettings,
-        CalendarBaseProps,
-        CalendarSettings {
+export type DatePickerBaseProps<Type extends DatePickerType = 'default'> = {
     /** Max level that user can go up to (decade, year, month), defaults to decade */
     maxLevel?: CalendarLevel
 
@@ -27,11 +22,15 @@ export interface DatePickerBaseProps<Type extends DatePickerType = 'default'>
 
     /** Called when level changes */
     onLevelChange?(level: CalendarLevel): void
-}
+} & PickerBaseProps<Type> &
+    DecadeLevelBaseSettings &
+    YearLevelBaseSettings &
+    MonthLevelBaseSettings &
+    CalendarBaseProps &
+    CalendarSettings
 
-export interface DatePickerProps<Type extends DatePickerType = 'default'>
-    extends DatePickerBaseProps<Type>,
-        CalendarSystemProps {}
+export type DatePickerProps<Type extends DatePickerType = 'default'> = {} & DatePickerBaseProps<Type> &
+    CalendarSystemProps
 
 const defaultProps: Partial<DatePickerProps> = {
     type: 'default',

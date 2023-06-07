@@ -1,9 +1,9 @@
 import { getOverflowAncestors, shift, useFloating } from '@floating-ui/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { FloatingPosition } from '../../Floating'
+import type { FloatingPosition } from '../../Floating'
 
-interface UseFloatingTooltip {
+type UseFloatingTooltip = {
     offset: number
     position: FloatingPosition
 }

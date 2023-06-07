@@ -1,11 +1,11 @@
-import { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { TabsStylesNames } from './Tabs'
 import { TABS_ERRORS } from './Tabs.errors'
-import { TabsOrientation, TabsPlacement, TabsStylesParams, TabsValue, TabsVariant } from './Tabs.types'
+import type { TabsOrientation, TabsPlacement, TabsStylesParams, TabsValue, TabsVariant } from './Tabs.types'
 
-interface TabsContext {
+type TabsContext = {
     id: string
     value: TabsValue
     orientation: TabsOrientation

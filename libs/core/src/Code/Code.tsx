@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineColor, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { CodeStylesParams } from './Code.styles'
+import type { CodeStylesParams } from './Code.styles'
+import useStyles from './Code.styles'
 
-export interface CodeProps extends DefaultProps<never, CodeStylesParams>, React.ComponentPropsWithoutRef<'code'> {
+export type CodeProps = {
     variant?: string
 
     /** Code content */
@@ -16,7 +18,8 @@ export interface CodeProps extends DefaultProps<never, CodeStylesParams>, React.
 
     /** True for code block, false for inline code */
     block?: boolean
-}
+} & DefaultProps<never, CodeStylesParams> &
+    React.ComponentPropsWithoutRef<'code'>
 
 const defaultProps: Partial<CodeProps> = {}
 

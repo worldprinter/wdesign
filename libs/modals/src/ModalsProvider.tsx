@@ -4,19 +4,19 @@ import { getDefaultZIndex, Modal } from '@worldprinter/wdesign-core'
 import { randomId } from '@worldprinter/wdesign-hooks'
 
 import { ConfirmModal } from './ConfirmModal'
-import {
+import type {
     ConfirmLabels,
     ContextModalProps,
-    ModalsContext,
     ModalsContextProps,
     ModalSettings,
     OpenConfirmModal,
     OpenContextModal,
 } from './context'
+import { ModalsContext } from './context'
 import { useModalsEvents } from './events'
 import { modalsReducer } from './reducer'
 
-export interface ModalsProviderProps {
+export type ModalsProviderProps = {
     /** Your app */
     children: React.ReactNode
 

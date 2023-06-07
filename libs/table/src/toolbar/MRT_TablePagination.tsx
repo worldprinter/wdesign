@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { ActionIcon, Flex, Select, Sx, Text } from '@worldprinter/wdesign-core'
+import type { Sx } from '@worldprinter/wdesign-core'
+import { ActionIcon, Flex, Select, Text } from '@worldprinter/wdesign-core'
 
 import type { MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     position?: 'top' | 'bottom'
     table: MRT_TableInstance<TData>
 }

@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import type React from 'react'
+import { useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
 import { mergeRefs, useDidUpdate } from '@worldprinter/wdesign-hooks'
@@ -17,14 +18,14 @@ export function getElementHeight(el: React.RefObject<HTMLElement> | { current?: 
 
 const raf = typeof window !== 'undefined' && window.requestAnimationFrame
 
-interface UseCollapse {
+type UseCollapse = {
     opened: boolean
     transitionDuration?: number
     transitionTimingFunction?: string
     onTransitionEnd?: () => void
 }
 
-interface GetCollapseProps {
+type GetCollapseProps = {
     [key: string]: unknown
     style?: React.CSSProperties
     onTransitionEnd?: (e: TransitionEvent) => void

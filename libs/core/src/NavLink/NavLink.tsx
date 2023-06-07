@@ -2,26 +2,20 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    rem,
-    Selectors,
-    useComponentDefaultProps,
-    Variants,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { ChevronIcon } from '../Accordion'
 import { Collapse } from '../Collapse'
 import { Text } from '../Text'
 import { UnstyledButton } from '../UnstyledButton'
-import useStyles, { NavLinkStylesParams } from './NavLink.styles'
+import type { NavLinkStylesParams } from './NavLink.styles'
+import useStyles from './NavLink.styles'
 
 export type NavLinkStylesNames = Selectors<typeof useStyles>
 
-export interface NavLinkProps extends DefaultProps<NavLinkStylesNames, NavLinkStylesParams> {
+export type NavLinkProps = {
     /** Main link content */
     label?: React.ReactNode
 
@@ -66,7 +60,7 @@ export interface NavLinkProps extends DefaultProps<NavLinkStylesNames, NavLinkSt
 
     /** Adds disabled styles to root element */
     disabled?: boolean
-}
+} & DefaultProps<NavLinkStylesNames, NavLinkStylesParams>
 
 const defaultProps: Partial<NavLinkProps> = {
     variant: 'light',

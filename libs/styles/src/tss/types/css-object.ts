@@ -1,6 +1,6 @@
-import * as CSS from 'csstype'
+import type * as CSS from 'csstype'
 
-export interface CSSObject extends CSSPropertiesWithMultiValues, CSSPseudos, CSSOthersObject, CSSTssSpecials {}
+export type CSSObject = {} & CSSPropertiesWithMultiValues & CSSPseudos & CSSOthersObject & CSSTssSpecials
 
 export type CSSTssSpecials = {
     ref?: string
@@ -13,9 +13,9 @@ export type CSSPropertiesWithMultiValues = {
 
 export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject }
 
-export interface ArrayCSSInterpolation extends Array<CSSInterpolation> {}
+export type ArrayCSSInterpolation = {} & Array<CSSInterpolation>
 
-export interface ComponentSelector {
+export type ComponentSelector = {
     __emotion_styles: any
 }
 
@@ -26,7 +26,7 @@ export type Keyframes = {
     toString: () => string
 } & string
 
-export interface SerializedStyles {
+export type SerializedStyles = {
     name: string
     styles: string
     map?: string
@@ -46,6 +46,6 @@ export type InterpolationPrimitive =
 
 export type CSSInterpolation = InterpolationPrimitive | ArrayCSSInterpolation
 
-export interface CSSOthersObject {
+export type CSSOthersObject = {
     [propertiesName: string]: CSSInterpolation
 }

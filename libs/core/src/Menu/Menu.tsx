@@ -1,23 +1,28 @@
 import React from 'react'
 
 import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { ClassNames, Styles, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { getContextItemIndex, useHovered } from '@worldprinter/wdesign-utils'
 
 import { useDelayedHover } from '../Floating'
-import { Popover, PopoverBaseProps, PopoverStylesNames } from '../Popover'
+import type { PopoverBaseProps, PopoverStylesNames } from '../Popover'
+import { Popover } from '../Popover'
 import { MenuContextProvider } from './Menu.context'
 import useStyles from './Menu.styles'
-import { MenuTriggerEvent } from './Menu.types'
-import { MenuDivider, MenuDividerStylesNames } from './MenuDivider/MenuDivider'
+import type { MenuTriggerEvent } from './Menu.types'
+import type { MenuDividerStylesNames } from './MenuDivider/MenuDivider'
+import { MenuDivider } from './MenuDivider/MenuDivider'
 import { MenuDropdown } from './MenuDropdown/MenuDropdown'
-import { MenuItem, MenuItemStylesNames } from './MenuItem/MenuItem'
-import { MenuLabel, MenuLabelStylesName } from './MenuLabel/MenuLabel'
+import type { MenuItemStylesNames } from './MenuItem/MenuItem'
+import { MenuItem } from './MenuItem/MenuItem'
+import type { MenuLabelStylesName } from './MenuLabel/MenuLabel'
+import { MenuLabel } from './MenuLabel/MenuLabel'
 import { MenuTarget } from './MenuTarget/MenuTarget'
 
 export type MenuStylesNames = MenuItemStylesNames | MenuLabelStylesName | MenuDividerStylesNames | PopoverStylesNames
 
-export interface MenuProps extends PopoverBaseProps {
+export type MenuProps = {
     variant?: string
 
     /** Menu content */
@@ -68,7 +73,7 @@ export interface MenuProps extends PopoverBaseProps {
     unstyled?: boolean
     classNames?: ClassNames<MenuStylesNames>
     styles?: Styles<MenuStylesNames>
-}
+} & PopoverBaseProps
 
 const defaultProps: Partial<MenuProps> = {
     closeOnItemClick: true,

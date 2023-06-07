@@ -5,7 +5,7 @@ import { Box } from '@worldprinter/wdesign-core'
 import type { MRT_Header, MRT_TableInstance } from '..'
 import { getCommonCellStyles } from '../column.utils'
 
-interface Props {
+type Props = {
     footer: MRT_Header
     table: MRT_TableInstance
 }

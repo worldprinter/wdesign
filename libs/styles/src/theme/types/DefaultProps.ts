@@ -15,14 +15,14 @@ export type Styles<StylesNames extends string, StylesParams extends Record<strin
           context: ContextStylesParams,
       ) => Partial<Record<StylesNames, CSSObject>>)
 
-export interface DefaultProps<
+export type DefaultProps<
     StylesNames extends string = never,
     StylesParams extends Record<string, any> = Record<string, any>,
-> extends MantineStyleSystemProps {
+> = {
     className?: string
     style?: CSSProperties
     sx?: Sx | (Sx | undefined)[]
     classNames?: ClassNames<StylesNames>
     styles?: Styles<StylesNames, StylesParams>
     unstyled?: boolean
-}
+} & MantineStyleSystemProps

@@ -1,10 +1,11 @@
-import React, { MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
+import React from 'react'
 
 import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { MRT_Row, MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     row: MRT_Row
     table: MRT_TableInstance
 }

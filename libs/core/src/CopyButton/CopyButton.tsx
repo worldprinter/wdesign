@@ -4,7 +4,7 @@ import React from 'react'
 import { useClipboard } from '@worldprinter/wdesign-hooks'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-export interface CopyButtonProps {
+export type CopyButtonProps = {
     /** Function called with current status */
     children(payload: { copied: boolean; copy(): void }): React.ReactNode
 

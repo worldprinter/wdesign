@@ -2,7 +2,7 @@ import React from 'react'
 
 import { rem } from '@worldprinter/wdesign-styles'
 
-interface ChevronProps {
+type ChevronProps = {
     size: number | string
     direction: 'up' | 'down'
 }

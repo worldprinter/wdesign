@@ -1,11 +1,12 @@
-import { createStyles, CSSObject, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-import { TabsStylesParams } from '../Tabs.types'
+import type { TabsStylesParams } from '../Tabs.types'
 
-interface TabStylesParams extends TabsStylesParams {
+type TabStylesParams = {
     withIcon: boolean
     withRightSection: boolean
-}
+} & TabsStylesParams
 
 function getVariantStyles(
     theme: MantineTheme,

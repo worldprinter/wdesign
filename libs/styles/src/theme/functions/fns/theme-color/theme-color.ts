@@ -4,7 +4,7 @@ import { primaryShade } from '../primary-shade/primary-shade'
 export function themeColor(theme: MantineThemeBase) {
     const getPrimaryShade = primaryShade(theme)
 
-    return (color: string, shade?: number, primaryFallback: boolean = true, useSplittedShade: boolean = true) => {
+    return (color: string, shade?: number, primaryFallback = true, useSplittedShade = true) => {
         if (typeof color === 'string' && color.includes('.')) {
             const [splitterColor, _splittedShade] = color.split('.')
             const splittedShade = parseInt(_splittedShade, 10)

@@ -1,27 +1,22 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { extractSystemStyles } from '../Box'
-import { InlineInput, InlineInputStylesNames } from '../InlineInput'
-import useStyles, { CheckboxStylesParams } from './Checkbox.styles'
+import type { InlineInputStylesNames } from '../InlineInput'
+import { InlineInput } from '../InlineInput'
+import type { CheckboxStylesParams } from './Checkbox.styles'
+import useStyles from './Checkbox.styles'
 import { useCheckboxGroupContext } from './CheckboxGroup.context'
 import { CheckboxGroup } from './CheckboxGroup/CheckboxGroup'
 import { CheckboxIcon } from './CheckboxIcon'
 
 export type CheckboxStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames
 
-export interface CheckboxProps
-    extends DefaultProps<CheckboxStylesNames, CheckboxStylesParams>,
-        Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'> {
+export type CheckboxProps = {
     variant?: string
 
     /** Key of theme.colors */
@@ -56,7 +51,8 @@ export interface CheckboxProps
 
     /** Error message displayed after the input */
     error?: React.ReactNode
-}
+} & DefaultProps<CheckboxStylesNames, CheckboxStylesParams> &
+    Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'>
 
 const defaultProps: Partial<CheckboxProps> = {
     size: 'sm',

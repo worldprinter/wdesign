@@ -1,10 +1,12 @@
-import React, { DragEventHandler } from 'react'
+import type { DragEventHandler } from 'react'
+import React from 'react'
 
-import { ActionIcon, ActionIconProps, Tooltip } from '@worldprinter/wdesign-core'
+import type { ActionIconProps } from '@worldprinter/wdesign-core'
+import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { HTMLPropsRef, MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     actionIconProps?: ActionIconProps & HTMLPropsRef<HTMLButtonElement>
     onDragStart: DragEventHandler<HTMLButtonElement>
     onDragEnd: DragEventHandler<HTMLButtonElement>

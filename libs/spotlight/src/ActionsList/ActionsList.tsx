@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { DefaultProps, MantineColor, MantineNumberSize, Selectors, Text } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import { Text } from '@worldprinter/wdesign-core'
 
 import type { DefaultActionProps, DefaultActionStylesNames } from '../DefaultAction/DefaultAction'
 import type { SpotlightAction } from '../types'
@@ -14,7 +15,7 @@ type GetGroupOptionsItem<T extends any[]> = {
 }
 type GetGroupOptionsLabel = { type: 'label'; label: string }
 
-export interface ActionsListProps extends DefaultProps<ActionsListStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type ActionsListProps = {
     actions: (GetGroupOptionsItem<SpotlightAction[]> | GetGroupOptionsLabel)[]
     actionComponent?: React.FC<DefaultActionProps>
     hovered: number
@@ -25,7 +26,8 @@ export interface ActionsListProps extends DefaultProps<ActionsListStylesNames>, 
     highlightColor: MantineColor
     radius: MantineNumberSize
     variant: string
-}
+} & DefaultProps<ActionsListStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 export function ActionsList({
     actions,

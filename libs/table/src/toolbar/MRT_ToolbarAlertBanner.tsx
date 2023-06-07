@@ -4,7 +4,7 @@ import { Alert, Box, Chip, Collapse, Flex } from '@worldprinter/wdesign-core'
 
 import type { MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     stackAlertBanner: boolean
     table: MRT_TableInstance<TData>
 }

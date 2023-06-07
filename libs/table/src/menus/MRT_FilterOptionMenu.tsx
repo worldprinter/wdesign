@@ -95,7 +95,7 @@ const rangeModes = ['between', 'betweenInclusive', 'inNumberRange']
 const emptyModes = ['empty', 'notEmpty']
 const arrModes = ['arrIncludesSome', 'arrIncludesAll', 'arrIncludes']
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     header?: MRT_Header<TData>
     onSelect?: () => void
     table: MRT_TableInstance<TData>

@@ -1,19 +1,21 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { useDidUpdate, useId, useMergedRef, useScrollIntoView, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, getDefaultZIndex, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
 import { extractSystemStyles } from '../Box'
 import { Input } from '../Input'
 import { DefaultItem } from '../Select/DefaultItem/DefaultItem'
-import { SelectSharedProps } from '../Select/Select'
+import type { SelectSharedProps } from '../Select/Select'
 import { SelectItems } from '../Select/SelectItems/SelectItems'
 import { SelectPopover } from '../Select/SelectPopover/SelectPopover'
 import { getSelectRightSectionProps } from '../Select/SelectRightSection/get-select-right-section-props'
 import { SelectScrollArea } from '../Select/SelectScrollArea/SelectScrollArea'
-import { BaseSelectProps, BaseSelectStylesNames, SelectItem } from '../Select/types'
-import { DefaultValue, DefaultValueStylesNames } from './DefaultValue/DefaultValue'
+import type { BaseSelectProps, BaseSelectStylesNames, SelectItem } from '../Select/types'
+import type { DefaultValueStylesNames } from './DefaultValue/DefaultValue'
+import { DefaultValue } from './DefaultValue/DefaultValue'
 import { filterData } from './filter-data/filter-data'
 import useStyles from './MultiSelect.styles'
 
@@ -22,10 +24,7 @@ export type MultiSelectStylesNames =
     | Exclude<Selectors<typeof useStyles>, 'searchInputEmpty' | 'searchInputInputHidden' | 'searchInputPointer'>
     | Exclude<BaseSelectStylesNames, 'selected'>
 
-export interface MultiSelectProps
-    extends DefaultProps<MultiSelectStylesNames>,
-        BaseSelectProps,
-        Omit<SelectSharedProps<SelectItem, string[]>, 'filter'> {
+export type MultiSelectProps = {
     /** Component used to render values */
     valueComponent?: React.FC<any>
 
@@ -82,7 +81,9 @@ export interface MultiSelectProps
 
     /** Props added to clear button */
     clearButtonProps?: React.ComponentPropsWithoutRef<'button'>
-}
+} & DefaultProps<MultiSelectStylesNames> &
+    BaseSelectProps &
+    Omit<SelectSharedProps<SelectItem, string[]>, 'filter'>
 
 export function defaultFilter(value: string, selected: boolean, item: SelectItem) {
     if (selected) {

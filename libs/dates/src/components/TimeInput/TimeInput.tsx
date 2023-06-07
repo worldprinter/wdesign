@@ -1,15 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { TextInput, TextInputProps, TextInputStylesNames, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { TextInputProps, TextInputStylesNames } from '@worldprinter/wdesign-core'
+import { TextInput, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import useStyles from './TimeInput.styles'
 
 export type TimeInputStylesNames = TextInputStylesNames
 
-export interface TimeInputProps extends TextInputProps {
+export type TimeInputProps = {
     /** Determines whether seconds input should be rendered */
     withSeconds?: boolean
-}
+} & TextInputProps
 
 const defaultProps: Partial<TimeInputProps> = {}
 

@@ -2,7 +2,7 @@ import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import { HOVER_CARD_ERRORS } from './HoverCard.errors'
 
-interface HoverCardContext {
+type HoverCardContext = {
     openDropdown(): void
     closeDropdown(): void
 }

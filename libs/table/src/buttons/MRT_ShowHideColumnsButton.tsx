@@ -1,13 +1,15 @@
 import React from 'react'
 
-import { ActionIcon, ActionIconProps, Menu, Tooltip } from '@worldprinter/wdesign-core'
+import type { ActionIconProps } from '@worldprinter/wdesign-core'
+import { ActionIcon, Menu, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { HTMLPropsRef, MRT_TableInstance } from '..'
 import { MRT_ShowHideColumnsMenu } from '../menus/MRT_ShowHideColumnsMenu'
 
-interface Props<TData extends Record<string, any> = {}> extends ActionIconProps, HTMLPropsRef<HTMLButtonElement> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
-}
+} & ActionIconProps &
+    HTMLPropsRef<HTMLButtonElement>
 
 export const MRT_ShowHideColumnsButton = <TData extends Record<string, any> = {}>({ table, ...rest }: Props<TData>) => {
     const {

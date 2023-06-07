@@ -3,15 +3,15 @@ import React, { forwardRef } from 'react'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import { ActionIcon, ActionIconProps } from '../ActionIcon/ActionIcon'
+import type { ActionIconProps } from '../ActionIcon/ActionIcon'
+import { ActionIcon } from '../ActionIcon/ActionIcon'
 import { CloseIcon } from './CloseIcon'
 
-export interface CloseButtonProps
-    extends Omit<ActionIconProps, 'children'>,
-        Omit<React.ComponentPropsWithoutRef<'button'>, 'color'> {
+export type CloseButtonProps = {
     /** Width and height of X icon */
     iconSize?: number | string
-}
+} & Omit<ActionIconProps, 'children'> &
+    Omit<React.ComponentPropsWithoutRef<'button'>, 'color'>
 
 const iconSizes = {
     xs: rem(12),

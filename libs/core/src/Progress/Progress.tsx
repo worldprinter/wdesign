@@ -1,30 +1,24 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Tooltip } from '../Tooltip'
-import useStyles, { ProgressStylesParams } from './Progress.styles'
+import type { ProgressStylesParams } from './Progress.styles'
+import useStyles from './Progress.styles'
 
 export type ProgressStylesNames = Selectors<typeof useStyles>
 
-interface ProgressSection extends React.ComponentPropsWithRef<'div'> {
+type ProgressSection = {
     value: number
     color: MantineColor
     label?: string
     tooltip?: React.ReactNode
-}
+} & React.ComponentPropsWithRef<'div'>
 
-export interface ProgressProps
-    extends DefaultProps<ProgressStylesNames, ProgressStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type ProgressProps = {
     variant?: string
 
     /** Percent of filled bar (0-100) */
@@ -50,7 +44,8 @@ export interface ProgressProps
 
     /** Replaces value if present, renders multiple sections instead of single one */
     sections?: ProgressSection[]
-}
+} & DefaultProps<ProgressStylesNames, ProgressStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 function getCumulativeSections(sections: ProgressSection[]): (ProgressSection & { accumulated: number })[] {
     return sections.reduce(

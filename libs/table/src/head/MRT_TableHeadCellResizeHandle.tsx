@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Box, Divider } from '@worldprinter/wdesign-core'
 
-import { MRT_Header, MRT_TableInstance } from '..'
+import type { MRT_Header, MRT_TableInstance } from '..'
 import { getPrimaryColor } from '../column.utils'
 
-interface Props {
+type Props = {
     header: MRT_Header
     table: MRT_TableInstance
 }

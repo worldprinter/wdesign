@@ -1,20 +1,21 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { usePaginationContext } from '../Pagination.context'
-import { getIconSize, PaginationDotsIcon, PaginationIconProps } from '../Pagination.icons'
+import type { PaginationIconProps } from '../Pagination.icons'
+import { getIconSize, PaginationDotsIcon } from '../Pagination.icons'
 import useStyles from './PaginationDots.styles'
 
 export type PaginationDotsStylesNames = Selectors<typeof useStyles>
 
-export interface PaginationDotsProps
-    extends DefaultProps<PaginationDotsStylesNames>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type PaginationDotsProps = {
     /** Custom dots icon component, must accept svg element props and size prop */
     icon?: React.FC<PaginationIconProps>
-}
+} & DefaultProps<PaginationDotsStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<PaginationDotsProps> = {
     icon: PaginationDotsIcon,

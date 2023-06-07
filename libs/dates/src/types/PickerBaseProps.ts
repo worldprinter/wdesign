@@ -1,6 +1,6 @@
 import type { DatePickerType, DatePickerValue } from './DatePickerValue'
 
-export interface PickerBaseProps<Type extends DatePickerType = 'default'> {
+export type PickerBaseProps<Type extends DatePickerType = 'default'> = {
     /** Picker type: range, multiple or default */
     type?: DatePickerType | Type
 

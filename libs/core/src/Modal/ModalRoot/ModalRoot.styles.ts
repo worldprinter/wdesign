@@ -8,7 +8,7 @@ const sizes = {
     xl: rem(780),
 }
 
-interface ModalRootStylesParams {
+type ModalRootStylesParams = {
     yOffset: number | string
     xOffset: number | string
     centered: boolean

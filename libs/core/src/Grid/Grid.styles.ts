@@ -1,13 +1,7 @@
-import {
-    createStyles,
-    getSize,
-    MANTINE_SIZES,
-    MantineNumberSize,
-    MantineSize,
-    MantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize, MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, MANTINE_SIZES } from '@worldprinter/wdesign-styles'
 
-export interface GridStylesParams {
+export type GridStylesParams = {
     gutter: MantineNumberSize
     gutterXs: MantineNumberSize
     gutterSm: MantineNumberSize

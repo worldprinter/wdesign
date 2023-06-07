@@ -1,12 +1,13 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useDidUpdate, useMergedRef, useScrollIntoView, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, getDefaultZIndex, MantineShadow, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineShadow, MantineSize } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
 import { Input, useInputProps } from '../Input'
-import { PortalProps } from '../Portal'
-import { TransitionOverride } from '../Transition'
+import type { PortalProps } from '../Portal'
+import type { TransitionOverride } from '../Transition'
 import { DefaultItem } from './DefaultItem/DefaultItem'
 import { filterData } from './filter-data/filter-data'
 import useStyles from './Select.styles'
@@ -14,9 +15,9 @@ import { SelectItems } from './SelectItems/SelectItems'
 import { SelectPopover } from './SelectPopover/SelectPopover'
 import { getSelectRightSectionProps } from './SelectRightSection/get-select-right-section-props'
 import { SelectScrollArea } from './SelectScrollArea/SelectScrollArea'
-import { BaseSelectProps, BaseSelectStylesNames, SelectItem } from './types'
+import type { BaseSelectProps, BaseSelectStylesNames, SelectItem } from './types'
 
-export interface SelectSharedProps<Item, Value> {
+export type SelectSharedProps<Item, Value> = {
     /** Select data used to render items in dropdown */
     data: ReadonlyArray<string | Item>
 
@@ -78,10 +79,7 @@ export interface SelectSharedProps<Item, Value> {
     positionDependencies?: any[]
 }
 
-export interface SelectProps
-    extends DefaultProps<BaseSelectStylesNames>,
-        BaseSelectProps,
-        SelectSharedProps<SelectItem, string | null> {
+export type SelectProps = {
     /** Maximum dropdown height */
     maxDropdownHeight?: number
 
@@ -126,7 +124,9 @@ export interface SelectProps
 
     /** Props added to clear button */
     clearButtonProps?: React.ComponentPropsWithoutRef<'button'>
-}
+} & DefaultProps<BaseSelectStylesNames> &
+    BaseSelectProps &
+    SelectSharedProps<SelectItem, string | null>
 
 export function defaultFilter(value: string, item: SelectItem) {
     return item.label.toLowerCase().trim().includes(value.toLowerCase().trim())

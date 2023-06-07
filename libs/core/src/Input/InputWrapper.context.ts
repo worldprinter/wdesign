@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-interface InputWrapperContextValue {
+type InputWrapperContextValue = {
     offsetTop: boolean
     offsetBottom: boolean
     describedBy: string

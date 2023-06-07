@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { useWindowEvent } from '../use-window-event/use-window-event'
 
-interface ScrollPosition {
+type ScrollPosition = {
     x: number
     y: number
 }

@@ -4,14 +4,14 @@ import { getSortedBreakpoints } from '../HorizontalSection/get-sorted-breakpoint
 
 export type VerticalSectionHeight = number | string | Partial<Record<string, string | number>>
 
-export interface VerticalSectionPosition {
+export type VerticalSectionPosition = {
     top?: number
     left?: number
     bottom?: number
     right?: number
 }
 
-interface VerticalSectionStyles {
+type VerticalSectionStyles = {
     height: VerticalSectionHeight
     fixed: boolean
     position: VerticalSectionPosition

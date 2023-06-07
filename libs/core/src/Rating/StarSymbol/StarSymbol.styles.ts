@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineColor, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface StarSymbolStylesParams {
+export type StarSymbolStylesParams = {
     type: 'empty' | 'full'
     color: MantineColor
 }

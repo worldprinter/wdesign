@@ -1,11 +1,15 @@
 import React, { forwardRef, Fragment } from 'react'
 
-import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import { InputDescription, InputDescriptionStylesNames } from '../InputDescription/InputDescription'
-import { InputError, InputErrorStylesNames } from '../InputError/InputError'
-import { InputLabel, InputLabelStylesNames } from '../InputLabel/InputLabel'
+import type { InputDescriptionStylesNames } from '../InputDescription/InputDescription'
+import { InputDescription } from '../InputDescription/InputDescription'
+import type { InputErrorStylesNames } from '../InputError/InputError'
+import { InputError } from '../InputError/InputError'
+import type { InputLabelStylesNames } from '../InputLabel/InputLabel'
+import { InputLabel } from '../InputLabel/InputLabel'
 import { InputWrapperProvider } from '../InputWrapper.context'
 import { getInputOffsets } from './get-input-offsets'
 import useStyles from './InputWrapper.styles'
@@ -16,7 +20,7 @@ export type InputWrapperStylesNames =
     | InputErrorStylesNames
     | InputDescriptionStylesNames
 
-export interface InputWrapperBaseProps {
+export type InputWrapperBaseProps = {
     /** Input label, displayed before input */
     label?: React.ReactNode
 
@@ -48,10 +52,7 @@ export interface InputWrapperBaseProps {
     inputWrapperOrder?: ('label' | 'input' | 'description' | 'error')[]
 }
 
-export interface InputWrapperProps
-    extends DefaultProps<InputWrapperStylesNames>,
-        InputWrapperBaseProps,
-        React.ComponentPropsWithoutRef<'div'> {
+export type InputWrapperProps = {
     variant?: string
 
     /** Input that should be wrapped */
@@ -68,7 +69,9 @@ export interface InputWrapperProps
 
     /** Static css selector base */
     __staticSelector?: string
-}
+} & DefaultProps<InputWrapperStylesNames> &
+    InputWrapperBaseProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<InputWrapperProps> = {
     labelElement: 'label',

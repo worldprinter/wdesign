@@ -1,6 +1,6 @@
-import { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
 
-export interface TransferListItem {
+export type TransferListItem = {
     value: string
     label: string
     group?: string
@@ -9,7 +9,7 @@ export interface TransferListItem {
 
 export type TransferListData = [TransferListItem[], TransferListItem[]]
 
-export interface TransferListItemComponentProps {
+export type TransferListItemComponentProps = {
     data: TransferListItem
     selected: boolean
     radius: MantineNumberSize

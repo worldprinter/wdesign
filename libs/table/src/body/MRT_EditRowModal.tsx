@@ -6,7 +6,7 @@ import type { MRT_Row, MRT_TableInstance } from '..'
 import { MRT_EditActionButtons } from '../buttons/MRT_EditActionButtons'
 import { MRT_EditCellTextInput } from '../inputs/MRT_EditCellTextInput'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     open: boolean
     row: MRT_Row<TData>
     table: MRT_TableInstance<TData>

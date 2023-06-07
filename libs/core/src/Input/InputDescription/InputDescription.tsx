@@ -1,15 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Text } from '../../Text'
 import useStyles from './InputDescription.styles'
 
 export type InputDescriptionStylesNames = Selectors<typeof useStyles>
 
-export interface InputDescriptionProps
-    extends DefaultProps<InputDescriptionStylesNames>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type InputDescriptionProps = {
     variant?: string
 
     /** Description content */
@@ -19,7 +18,8 @@ export interface InputDescriptionProps
     size?: MantineSize
 
     __staticSelector?: string
-}
+} & DefaultProps<InputDescriptionStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<InputDescriptionProps> = {
     size: 'sm',

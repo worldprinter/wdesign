@@ -1,25 +1,26 @@
 import React, { forwardRef, useEffect, useState } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     Selectors,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { AvatarStylesParams } from './Avatar.styles'
+import type { AvatarStylesParams } from './Avatar.styles'
+import useStyles from './Avatar.styles'
 import { AvatarGroup } from './AvatarGroup/AvatarGroup'
 import { useAvatarGroupContext } from './AvatarGroup/AvatarGroup.context'
 import { AvatarPlaceholderIcon } from './AvatarPlaceholderIcon'
 
 export type AvatarStylesNames = Selectors<typeof useStyles>
 
-export interface AvatarProps extends DefaultProps<AvatarStylesNames, AvatarStylesParams> {
+export type AvatarProps = {
     /** Image url */
     src?: string | null
 
@@ -46,7 +47,7 @@ export interface AvatarProps extends DefaultProps<AvatarStylesNames, AvatarStyle
 
     /** Custom placeholder */
     children?: React.ReactNode
-}
+} & DefaultProps<AvatarStylesNames, AvatarStylesParams>
 
 const defaultProps: Partial<AvatarProps> = {
     size: 'md',

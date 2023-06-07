@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { MantineColor, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { Tooltip } from '../../Tooltip'
 import { getCurveProps } from './get-curve-props'
 
-interface CurveProps extends React.ComponentPropsWithRef<'circle'> {
+type CurveProps = {
     value?: number
     size: number
     offset: number
@@ -15,7 +16,7 @@ interface CurveProps extends React.ComponentPropsWithRef<'circle'> {
     root?: boolean
     color?: MantineColor
     tooltip?: React.ReactNode
-}
+} & React.ComponentPropsWithRef<'circle'>
 
 export function Curve({
     size,

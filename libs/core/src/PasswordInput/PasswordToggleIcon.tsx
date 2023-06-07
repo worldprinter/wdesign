@@ -1,6 +1,6 @@
 import React from 'react'
 
-export interface PasswordToggleIconProps {
+export type PasswordToggleIconProps = {
     reveal: boolean
     size: number | string
 }

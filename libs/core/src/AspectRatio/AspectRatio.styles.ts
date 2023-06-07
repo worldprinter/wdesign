@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-styles'
 
-export interface AspectRatioStylesParams {
+export type AspectRatioStylesParams = {
     ratio: number
 }
 

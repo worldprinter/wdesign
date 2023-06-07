@@ -2,18 +2,16 @@ import React, { forwardRef } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { extractSystemStyles } from '../Box'
-import { Input, InputSharedProps, InputWrapperBaseProps } from '../Input'
-import { TextInputStylesNames } from '../TextInput/TextInput'
+import type { InputSharedProps, InputWrapperBaseProps } from '../Input'
+import { Input } from '../Input'
+import type { TextInputStylesNames } from '../TextInput/TextInput'
 import useStyles from './Textarea.styles'
 
-export interface TextareaProps
-    extends DefaultProps<TextInputStylesNames>,
-        InputWrapperBaseProps,
-        InputSharedProps,
-        React.ComponentPropsWithoutRef<'textarea'> {
+export type TextareaProps = {
     /** Id is used to bind input and label, if not passed unique id will be generated for each input */
     id?: string
 
@@ -34,7 +32,10 @@ export interface TextareaProps
 
     /** Static selectors base */
     __staticSelector?: string
-}
+} & DefaultProps<TextInputStylesNames> &
+    InputWrapperBaseProps &
+    InputSharedProps &
+    React.ComponentPropsWithoutRef<'textarea'>
 
 const defaultProps: Partial<TextareaProps> = {
     autosize: false,

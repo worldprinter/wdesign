@@ -2,7 +2,7 @@ import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import { ACCORDION_ERRORS } from './Accordion.errors'
 
-interface AccordionItemContext {
+type AccordionItemContext = {
     value: string
 }
 

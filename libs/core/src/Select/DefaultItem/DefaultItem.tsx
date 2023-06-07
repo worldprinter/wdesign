@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
 
-export interface SelectItemProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'value'> {
+export type SelectItemProps = {
     label: React.ReactNode
     value?: string
-}
+} & Omit<React.ComponentPropsWithoutRef<'div'>, 'value'>
 
 export const DefaultItem = forwardRef<HTMLDivElement, SelectItemProps>(
     ({ label, value, ...others }: SelectItemProps, ref) => (

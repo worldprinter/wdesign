@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { cloneElement, forwardRef } from 'react'
+import type React from 'react'
+import { cloneElement, forwardRef } from 'react'
 
 import { useMergedRef } from '@worldprinter/wdesign-hooks'
 import { clsx, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
@@ -8,7 +9,7 @@ import { isElement } from '@worldprinter/wdesign-utils'
 import { usePopoverContext } from '../Popover.context'
 import { POPOVER_ERRORS } from '../Popover.errors'
 
-export interface PopoverTargetProps {
+export type PopoverTargetProps = {
     /** Target element */
     children: React.ReactNode
 

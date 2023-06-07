@@ -1,6 +1,6 @@
 import type { CSSInterpolation } from './css-object'
 
-export interface CSS {
+export type CSS = {
     (template: TemplateStringsArray, ...args: CSSInterpolation[]): string
     (...args: CSSInterpolation[]): string
 }

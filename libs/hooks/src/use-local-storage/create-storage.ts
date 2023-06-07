@@ -4,7 +4,7 @@ import { useWindowEvent } from '../use-window-event/use-window-event'
 
 export type StorageType = 'localStorage' | 'sessionStorage'
 
-export interface IStorageProperties<T> {
+export type IStorageProperties<T> = {
     /** Storage key */
     key: string
 

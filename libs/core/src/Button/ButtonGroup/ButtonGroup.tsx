@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import useStyles, { ButtonGroupStylesParams } from './ButtonGroup.styles'
+import type { ButtonGroupStylesParams } from './ButtonGroup.styles'
+import useStyles from './ButtonGroup.styles'
 
-export interface ButtonGroupProps
-    extends DefaultProps<never, ButtonGroupStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type ButtonGroupProps = {
     /** <Button /> components */
     children?: React.ReactNode
 
@@ -17,7 +17,8 @@ export interface ButtonGroupProps
 
     /** Child <Button /> border width */
     buttonBorderWidth?: number | string
-}
+} & DefaultProps<never, ButtonGroupStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<ButtonGroupProps> = {
     orientation: 'horizontal',

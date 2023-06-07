@@ -1,14 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineNumberSize,
-    MantineSize,
-    rem,
-    Selectors,
-    useComponentDefaultProps,
-    Variants,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, MantineSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box, extractSystemStyles } from '../Box'
@@ -22,7 +15,7 @@ import { InputWrapper } from './InputWrapper/InputWrapper'
 
 export type InputStylesNames = Selectors<typeof useStyles>
 
-export interface InputSharedProps {
+export type InputSharedProps = {
     /** Adds icon on the left side of input */
     icon?: React.ReactNode
 
@@ -57,7 +50,7 @@ export interface InputSharedProps {
     size?: MantineSize
 }
 
-export interface InputProps extends InputSharedProps, DefaultProps<InputStylesNames> {
+export type InputProps = {
     /** Static css selector base */
     __staticSelector?: string
 
@@ -69,7 +62,8 @@ export interface InputProps extends InputSharedProps, DefaultProps<InputStylesNa
 
     /** Determines whether cursor on input should be pointer */
     pointer?: boolean
-}
+} & InputSharedProps &
+    DefaultProps<InputStylesNames>
 
 const defaultProps: Partial<InputProps> = {
     size: 'sm',

@@ -1,4 +1,5 @@
-import { HotkeyItem, useHotkeys } from '@worldprinter/wdesign-hooks'
+import type { HotkeyItem } from '@worldprinter/wdesign-hooks'
+import { useHotkeys } from '@worldprinter/wdesign-hooks'
 
 export function getHotkeysPayload(shortcuts: string | string[], onToggle: () => void): HotkeyItem[] {
     if (shortcuts === null) {

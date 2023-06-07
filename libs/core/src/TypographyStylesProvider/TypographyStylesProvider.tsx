@@ -1,16 +1,18 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import useStyles from './TypographyStylesProvider.styles'
 
-export interface TypographyStylesProviderProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type TypographyStylesProviderProps = {
     variant?: string
 
     /** Render any content to add Mantine typography styles */
     children: React.ReactNode
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 export const TypographyStylesProvider = forwardRef<HTMLDivElement, TypographyStylesProviderProps>((props, ref) => {
     const { className, unstyled, variant, ...others } = useComponentDefaultProps('TypographyStylesProvider', {}, props)

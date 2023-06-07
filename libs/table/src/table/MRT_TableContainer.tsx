@@ -7,7 +7,7 @@ import { MRT_Table } from './MRT_Table'
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
-interface Props {
+type Props = {
     table: MRT_TableInstance
 }
 

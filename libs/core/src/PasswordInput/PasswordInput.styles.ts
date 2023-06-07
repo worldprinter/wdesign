@@ -2,7 +2,7 @@ import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { INPUT_SIZES } from '../Input'
 
-export interface PasswordInputStylesParams {
+export type PasswordInputStylesParams = {
     rightSectionWidth: number | string
 }
 

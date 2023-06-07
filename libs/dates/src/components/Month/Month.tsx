@@ -2,12 +2,15 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { ControlKeydownPayload, DayOfWeek } from '../../types'
+import type { ControlKeydownPayload, DayOfWeek } from '../../types'
 import { useDatesContext } from '../DatesProvider'
-import { Day, DayProps, DayStylesNames } from '../Day'
-import { WeekdaysRow, WeekdaysRowStylesNames } from '../WeekdaysRow'
+import type { DayProps, DayStylesNames } from '../Day'
+import { Day } from '../Day'
+import type { WeekdaysRowStylesNames } from '../WeekdaysRow'
+import { WeekdaysRow } from '../WeekdaysRow'
 import { getDateInTabOrder } from './get-date-in-tab-order/get-date-in-tab-order'
 import { getMonthDays } from './get-month-days/get-month-days'
 import { isAfterMinDate } from './is-after-min-date/is-after-min-date'
@@ -17,7 +20,7 @@ import useStyles from './Month.styles'
 
 export type MonthStylesNames = Selectors<typeof useStyles> | WeekdaysRowStylesNames | DayStylesNames
 
-export interface MonthSettings {
+export type MonthSettings = {
     /** Determines whether propagation for Escape key should be stopped */
     __stopPropagation?: boolean
 
@@ -79,10 +82,7 @@ export interface MonthSettings {
     withCellSpacing?: boolean
 }
 
-export interface MonthProps
-    extends DefaultProps<MonthStylesNames>,
-        MonthSettings,
-        React.ComponentPropsWithoutRef<'table'> {
+export type MonthProps = {
     variant?: string
     __staticSelector?: string
 
@@ -91,7 +91,9 @@ export interface MonthProps
 
     /** Determines whether days should be static, static days can be used to display month if it is not expected that user will interact with the component in any way  */
     static?: boolean
-}
+} & DefaultProps<MonthStylesNames> &
+    MonthSettings &
+    React.ComponentPropsWithoutRef<'table'>
 
 const defaultProps: Partial<MonthProps> = {
     size: 'sm',

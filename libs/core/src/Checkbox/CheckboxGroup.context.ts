@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react'
 
-import { MantineSize } from '@worldprinter/wdesign-styles'
+import type { MantineSize } from '@worldprinter/wdesign-styles'
 
-interface CheckboxGroupContextValue {
+type CheckboxGroupContextValue = {
     value: string[]
     onChange(event: React.ChangeEvent<HTMLInputElement>): void
     size: MantineSize

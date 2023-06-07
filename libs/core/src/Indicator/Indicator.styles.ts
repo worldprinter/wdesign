@@ -1,8 +1,9 @@
-import { createStyles, CSSObject, keyframes, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, keyframes, rem } from '@worldprinter/wdesign-styles'
 
-import { IndicatorPosition } from './Indicator.types'
+import type { IndicatorPosition } from './Indicator.types'
 
-export interface IndicatorStylesParams {
+export type IndicatorStylesParams = {
     radius: MantineNumberSize
     color: MantineColor
     position: IndicatorPosition

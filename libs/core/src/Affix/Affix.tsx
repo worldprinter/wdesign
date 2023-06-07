@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import { OptionalPortal, PortalProps } from '../Portal'
+import type { PortalProps } from '../Portal'
+import { OptionalPortal } from '../Portal'
 
-export interface AffixProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type AffixProps = {
     /** Element where portal should be rendered, by default new div element is created and appended to document.body */
     target?: HTMLDivElement
 
@@ -26,7 +28,8 @@ export interface AffixProps extends DefaultProps, React.ComponentPropsWithoutRef
         bottom?: string | number
         right?: string | number
     }
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<AffixProps> = {
     position: { bottom: 0, right: 0 },

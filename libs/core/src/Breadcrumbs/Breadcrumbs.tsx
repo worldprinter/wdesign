@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { isElement } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
@@ -9,7 +10,7 @@ import useStyles from './Breadcrumbs.styles'
 
 export type BreadcrumbsStylesNames = Selectors<typeof useStyles>
 
-export interface BreadcrumbsProps extends DefaultProps<BreadcrumbsStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type BreadcrumbsProps = {
     variant?: string
 
     /** Separator between breadcrumbs */
@@ -17,7 +18,8 @@ export interface BreadcrumbsProps extends DefaultProps<BreadcrumbsStylesNames>, 
 
     /** React nodes that should be separated */
     children: React.ReactNode
-}
+} & DefaultProps<BreadcrumbsStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<BreadcrumbsProps> = {
     separator: '/',

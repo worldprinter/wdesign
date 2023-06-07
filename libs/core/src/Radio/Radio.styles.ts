@@ -1,6 +1,7 @@
-import { createStyles, getSize, getStylesRef, MantineColor, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
-export interface RadioStylesParams {
+export type RadioStylesParams = {
     color: MantineColor
     transitionDuration: number
     labelPosition: 'left' | 'right'

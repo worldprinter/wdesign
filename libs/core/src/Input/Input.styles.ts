@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineNumberSize, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface InputStylesParams {
+export type InputStylesParams = {
     radius: MantineNumberSize
     multiline: boolean
     invalid: boolean
@@ -22,7 +23,7 @@ export const sizes = {
 
 const INPUT_VARIANTS = ['default', 'filled', 'unstyled']
 
-interface GetVariantStylesInput {
+type GetVariantStylesInput = {
     theme: MantineTheme
     variant: string
 }

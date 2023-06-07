@@ -1,8 +1,9 @@
-import { createStyles, getSize, MantineColor, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { sizes } from '../SliderRoot/SliderRoot.styles'
 
-interface ThumbStyles {
+type ThumbStyles = {
     color: MantineColor
     disabled: boolean
     thumbSize: number | string

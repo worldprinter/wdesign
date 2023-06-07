@@ -8,15 +8,15 @@ import { Box } from '../../Box'
 import { OptionalPortal } from '../../Portal'
 import { TOOLTIP_ERRORS } from '../Tooltip.errors'
 import useStyles from '../Tooltip.styles'
-import { TooltipBaseProps } from '../Tooltip.types'
+import type { TooltipBaseProps } from '../Tooltip.types'
 import { useFloatingTooltip } from './use-floating-tooltip'
 
-export interface TooltipFloatingProps extends TooltipBaseProps {
+export type TooltipFloatingProps = {
     variant?: string
 
     /** Offset from mouse */
     offset?: number
-}
+} & TooltipBaseProps
 
 const defaultProps: Partial<TooltipFloatingProps> = {
     refProp: 'ref',

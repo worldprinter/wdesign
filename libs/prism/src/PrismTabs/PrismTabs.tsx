@@ -1,8 +1,10 @@
 import React from 'react'
 
-import { Tabs, TabsPanelProps, TabsProps } from '@worldprinter/wdesign-core'
+import type { TabsPanelProps, TabsProps } from '@worldprinter/wdesign-core'
+import { Tabs } from '@worldprinter/wdesign-core'
 
-import { Prism, PrismProps } from '../Prism/Prism'
+import type { PrismProps } from '../Prism/Prism'
+import { Prism } from '../Prism/Prism'
 import useStyles from './PrismTabs.styles'
 
 export function PrismTabs(props: TabsProps) {

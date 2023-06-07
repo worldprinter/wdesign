@@ -2,7 +2,8 @@ import React, { forwardRef } from 'react'
 
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { BaseColorSliderProps, ColorSlider } from '../ColorSlider/ColorSlider'
+import type { BaseColorSliderProps } from '../ColorSlider/ColorSlider'
+import { ColorSlider } from '../ColorSlider/ColorSlider'
 
 export type HueSliderProps = BaseColorSliderProps
 

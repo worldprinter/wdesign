@@ -4,7 +4,7 @@ import { ActionIcon, Flex, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { MRT_Column, MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     column: MRT_Column<TData>
     table: MRT_TableInstance<TData>
 }

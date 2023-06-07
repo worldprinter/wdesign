@@ -1,18 +1,12 @@
 import React, { useRef, useState } from 'react'
 
-import {
-    getDefaultZIndex,
-    MantineColor,
-    OptionalPortal,
-    PortalProps,
-    Progress,
-    useMantineTheme,
-} from '@worldprinter/wdesign-core'
+import type { MantineColor, PortalProps } from '@worldprinter/wdesign-core'
+import { getDefaultZIndex, OptionalPortal, Progress, useMantineTheme } from '@worldprinter/wdesign-core'
 import { useDidUpdate, useInterval, useReducedMotion } from '@worldprinter/wdesign-hooks'
 
 import { useNavigationProgressEvents } from './events'
 
-export interface NavigationProgressProps {
+export type NavigationProgressProps = {
     /** The default progress */
     initialProgress?: number
 

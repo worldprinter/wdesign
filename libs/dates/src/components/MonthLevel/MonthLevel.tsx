@@ -1,26 +1,26 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { CalendarHeader, CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import type { CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import { CalendarHeader } from '../CalendarHeader'
 import { useDatesContext } from '../DatesProvider'
-import { Month, MonthSettings, MonthStylesNames } from '../Month'
+import type { MonthSettings, MonthStylesNames } from '../Month'
+import { Month } from '../Month'
 import useStyles from './MonthLevel.styles'
 
 export type MonthLevelStylesNames = Selectors<typeof useStyles> | MonthStylesNames | CalendarHeaderStylesNames
 
-export interface MonthLevelBaseSettings extends MonthSettings {
+export type MonthLevelBaseSettings = {
     /** dayjs label format to display month label or a function that returns month label based on month value, defaults to "MMMM YYYY" */
     monthLabelFormat?: string | ((month: Date) => React.ReactNode)
-}
+} & MonthSettings
 
-export interface MonthLevelSettings extends MonthLevelBaseSettings, CalendarHeaderSettings {}
+export type MonthLevelSettings = {} & MonthLevelBaseSettings & CalendarHeaderSettings
 
-export interface MonthLevelProps
-    extends DefaultProps<MonthLevelStylesNames>,
-        MonthLevelSettings,
-        React.ComponentPropsWithoutRef<'div'> {
+export type MonthLevelProps = {
     variant?: string
     __staticSelector?: string
 
@@ -32,7 +32,9 @@ export interface MonthLevelProps
 
     /** Determines whether days should be static, static days can be used to display month if it is not expected that user will interact with the component in any way  */
     static?: boolean
-}
+} & DefaultProps<MonthLevelStylesNames> &
+    MonthLevelSettings &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<MonthLevelProps> = {
     monthLabelFormat: 'MMMM YYYY',

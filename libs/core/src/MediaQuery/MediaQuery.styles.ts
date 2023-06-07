@@ -1,14 +1,7 @@
-import {
-    createStyles,
-    CSSObject,
-    em,
-    getBreakpointValue,
-    getSize,
-    MantineNumberSize,
-    MantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, em, getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
-export interface MediaQueryStylesParams {
+export type MediaQueryStylesParams = {
     smallerThan: MantineNumberSize
     largerThan: MantineNumberSize
     styles: CSSObject | ((theme: MantineTheme) => CSSObject)

@@ -2,7 +2,7 @@ import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 export type ScrollAreaComponent = React.FC<any>
 
-interface DrawerContext {
+type DrawerContext = {
     scrollAreaComponent: ScrollAreaComponent
 }
 

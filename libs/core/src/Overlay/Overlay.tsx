@@ -1,17 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    getDefaultZIndex,
-    MantineNumberSize,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { OverlayStylesParams } from './Overlay.styles'
+import type { OverlayStylesParams } from './Overlay.styles'
+import useStyles from './Overlay.styles'
 
-export interface OverlayProps extends DefaultProps<never, OverlayStylesParams> {
+export type OverlayProps = {
     variant?: string
 
     /** Overlay background-color opacity 0–1, disregarded when gradient prop is set, 0.6 by default */
@@ -40,7 +37,7 @@ export interface OverlayProps extends DefaultProps<never, OverlayStylesParams> {
 
     /** Determines whether overlay should have fixed position instead of absolute, false by default */
     fixed?: boolean
-}
+} & DefaultProps<never, OverlayStylesParams>
 
 const defaultProps: Partial<OverlayProps> = {
     opacity: 0.6,

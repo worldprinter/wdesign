@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import useStyles, { SkeletonStylesParams } from './Skeleton.styles'
+import type { SkeletonStylesParams } from './Skeleton.styles'
+import useStyles from './Skeleton.styles'
 
-export interface SkeletonProps
-    extends DefaultProps<never, SkeletonStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type SkeletonProps = {
     variant?: string
 
     /** Should skeleton overlay be displayed */
@@ -27,7 +27,8 @@ export interface SkeletonProps
 
     /** Whether to show the animation effect */
     animate?: boolean
-}
+} & DefaultProps<never, SkeletonStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<SkeletonProps> = {
     height: 'auto',

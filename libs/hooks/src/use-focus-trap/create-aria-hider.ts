@@ -5,7 +5,7 @@ type Value = {
     ariaHidden: string
 }
 
-export function createAriaHider(containerNode: HTMLElement, selector: string = 'body > :not(script)') {
+export function createAriaHider(containerNode: HTMLElement, selector = 'body > :not(script)') {
     const id = randomId()
 
     const rootNodes: Value[] = Array.from<HTMLElement>(document.querySelectorAll(selector)).map((node) => {

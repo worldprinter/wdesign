@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LoaderProps } from './loader-props'
+import type { LoaderProps } from './loader-props'
 
 export function Oval({ size, color, ...others }: LoaderProps) {
     return (

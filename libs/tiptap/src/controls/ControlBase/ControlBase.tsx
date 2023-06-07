@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react'
 
-import { Control, RichTextEditorControlProps } from '../Control/Control'
+import type { RichTextEditorControlProps } from '../Control/Control'
+import { Control } from '../Control/Control'
 
-export interface RichTextEditorControlBaseProps extends RichTextEditorControlProps {
+export type RichTextEditorControlBaseProps = {
     icon: React.FC<{ size: number | string }>
-}
+} & RichTextEditorControlProps
 
 export const ControlBase = forwardRef<HTMLButtonElement, RichTextEditorControlBaseProps>(
     ({ className, active, icon: Icon, ...others }, ref) => (

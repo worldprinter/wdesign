@@ -1,24 +1,26 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
 import useStyles from './Control.styles'
 
 export type ControlStylesNames = Selectors<typeof useStyles>
 
-export interface PremadeControlProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type PremadeControlProps = {
     /** Icon component, should support size prop */
     icon?: React.FC<{ size: number | string }>
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
-export interface RichTextEditorControlProps extends PremadeControlProps {
+export type RichTextEditorControlProps = {
     /** Determines whether the control should have active state, false by default */
     active?: boolean
 
     /** Determines whether the control can be interacted with, set false to make the control to act as a label */
     interactive?: boolean
-}
+} & PremadeControlProps
 
 const defaultProps: Partial<RichTextEditorControlProps> = {
     interactive: true,

@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { useModalBaseContext } from '../ModalBase.context'
@@ -8,7 +9,7 @@ import useStyles from './ModalBaseHeader.styles'
 
 export type ModalBaseHeaderStylesNames = Selectors<typeof useStyles>
 
-export interface ModalBaseHeaderProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {}
+export type ModalBaseHeaderProps = {} & DefaultProps & React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<ModalBaseHeaderProps> = {}
 

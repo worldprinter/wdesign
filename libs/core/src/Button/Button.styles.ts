@@ -1,19 +1,17 @@
-import {
-    createStyles,
+import type {
     CSSObject,
-    getSize,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     MantineTheme,
-    rem,
 } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { INPUT_SIZES } from '../Input'
 
 export const BUTTON_VARIANTS = ['filled', 'outline', 'light', 'white', 'default', 'subtle', 'gradient']
 
-export interface ButtonStylesParams {
+export type ButtonStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
     fullWidth: boolean
@@ -48,7 +46,7 @@ export const sizes = {
     },
 }
 
-interface GetSizeStyles {
+type GetSizeStyles = {
     compact: boolean
     size: string | number
     withLeftIcon: boolean
@@ -60,7 +58,7 @@ function getSizeStyles({ compact, size, withLeftIcon, withRightIcon }: GetSizeSt
         return sizes[`compact-${size}`]
     }
 
-    const _sizes: typeof sizes[keyof typeof sizes] = sizes[size]
+    const _sizes: (typeof sizes)[keyof typeof sizes] = sizes[size]
 
     if (!_sizes) {
         return {}
@@ -78,7 +76,7 @@ const getWidthStyles = (fullWidth: boolean) => ({
     width: fullWidth ? '100%' : 'auto',
 })
 
-interface GetVariantStyles {
+type GetVariantStyles = {
     theme: MantineTheme
     color: MantineColor
     variant: string

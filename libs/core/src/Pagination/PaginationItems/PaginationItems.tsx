@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { usePaginationContext } from '../Pagination.context'
-import { PaginationIcon } from '../Pagination.icons'
+import type { PaginationIcon } from '../Pagination.icons'
 import { PaginationControl } from '../PaginationControl/PaginationControl'
 import { PaginationDots } from '../PaginationDots/PaginationDots'
 
-export interface PaginationItemsProps {
+export type PaginationItemsProps = {
     /** Dots icon component */
     dotsIcon?: PaginationIcon
 }

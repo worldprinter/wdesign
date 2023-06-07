@@ -10,7 +10,7 @@ import type { MantineTheme, MantineThemeOverride } from './types'
 import { filterProps } from './utils/filter-props/filter-props'
 import { mergeThemeWithFunctions } from './utils/merge-theme/merge-theme'
 
-interface MantineProviderContextType {
+type MantineProviderContextType = {
     theme: MantineTheme
     emotionCache?: EmotionCache
 }
@@ -58,7 +58,7 @@ export function useComponentDefaultProps<T extends Record<string, any>, U extend
     return { ...defaultProps, ...contextProps, ...filterProps(props) }
 }
 
-export interface MantineProviderProps {
+export type MantineProviderProps = {
     theme?: MantineThemeOverride
     emotionCache?: EmotionCache
     withNormalizeCSS?: boolean

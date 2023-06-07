@@ -1,4 +1,5 @@
-import { getSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import { getSize } from '@worldprinter/wdesign-styles'
 
 const NEGATIVE_VALUES = ['-xs', '-sm', '-md', '-lg', '-xl']
 

@@ -1,11 +1,11 @@
-import { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { MenuStylesNames } from './Menu'
 import { MENU_ERRORS } from './Menu.errors'
-import { MenuTriggerEvent } from './Menu.types'
+import type { MenuTriggerEvent } from './Menu.types'
 
-interface MenuContext {
+type MenuContext = {
     toggleDropdown(): void
     closeDropdownImmediately(): void
     closeDropdown(): void

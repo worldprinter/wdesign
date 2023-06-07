@@ -1,22 +1,15 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineNumberSize,
-    MantineSize,
-    Selectors,
-    UnstyledButton,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineNumberSize, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import useStyles, { DayStylesParams } from './Day.styles'
+import type { DayStylesParams } from './Day.styles'
+import useStyles from './Day.styles'
 
 export type DayStylesNames = Selectors<typeof useStyles>
 
-export interface DayProps
-    extends DefaultProps<DayStylesNames, DayStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'button'>, 'type'> {
+export type DayProps = {
     variant?: string
     __staticSelector?: string
 
@@ -55,7 +48,8 @@ export interface DayProps
 
     /** Controls day value rendering */
     renderDay?(date: Date): React.ReactNode
-}
+} & DefaultProps<DayStylesNames, DayStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'button'>, 'type'>
 
 const defaultProps: Partial<DayProps> = {
     tabIndex: 0,

@@ -1,14 +1,13 @@
-import { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
-import { FloatingPosition } from '../Floating'
-import { PortalProps } from '../Portal'
-import useStyles, { TooltipStylesParams } from './Tooltip.styles'
+import type { FloatingPosition } from '../Floating'
+import type { PortalProps } from '../Portal'
+import type { TooltipStylesParams } from './Tooltip.styles'
+import type useStyles from './Tooltip.styles'
 
 export type TooltipStylesNames = Selectors<typeof useStyles>
 
-export interface TooltipBaseProps
-    extends DefaultProps<TooltipStylesNames, TooltipStylesParams>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type TooltipBaseProps = {
     /** Target element */
     children: React.ReactNode
 
@@ -44,4 +43,5 @@ export interface TooltipBaseProps
 
     /** Disables tooltip */
     disabled?: boolean
-}
+} & DefaultProps<TooltipStylesNames, TooltipStylesParams> &
+    React.ComponentPropsWithoutRef<'div'>

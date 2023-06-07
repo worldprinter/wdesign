@@ -1,27 +1,27 @@
 import React, { forwardRef } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
 } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { extractSystemStyles } from '../Box'
-import { InlineInput, InlineInputStylesNames } from '../InlineInput'
-import useStyles, { SwitchStylesParams } from './Switch.styles'
+import type { InlineInputStylesNames } from '../InlineInput'
+import { InlineInput } from '../InlineInput'
+import type { SwitchStylesParams } from './Switch.styles'
+import useStyles from './Switch.styles'
 import { useSwitchGroupContext } from './SwitchGroup.context'
 import { SwitchGroup } from './SwitchGroup/SwitchGroup'
 
 export type SwitchStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames
 
-export interface SwitchProps
-    extends DefaultProps<SwitchStylesNames, SwitchStylesParams>,
-        Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'> {
+export type SwitchProps = {
     variant?: string
 
     /** Id is used to bind input and label, if not passed unique id will be generated for each input */
@@ -59,7 +59,8 @@ export interface SwitchProps
 
     /** Displays error message after input */
     error?: React.ReactNode
-}
+} & DefaultProps<SwitchStylesNames, SwitchStylesParams> &
+    Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'>
 
 const defaultProps: Partial<SwitchProps> = {
     offLabel: '',

@@ -1,13 +1,15 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, em, getDefaultZIndex, Global, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { em, getDefaultZIndex, Global, rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { useAppShellContext } from '../AppShell.context'
 import { getSortedBreakpoints } from './get-sorted-breakpoints/get-sorted-breakpoints'
-import useStyles, { HorizontalSectionPosition, HorizontalSectionWidth } from './HorizontalSection.styles'
+import type { HorizontalSectionPosition, HorizontalSectionWidth } from './HorizontalSection.styles'
+import useStyles from './HorizontalSection.styles'
 
-export interface HorizontalSectionSharedProps extends DefaultProps {
+export type HorizontalSectionSharedProps = {
     variant?: string
 
     /** Component width with breakpoints */
@@ -36,14 +38,13 @@ export interface HorizontalSectionSharedProps extends DefaultProps {
 
     /** z-index */
     zIndex?: React.CSSProperties['zIndex']
-}
+} & DefaultProps
 
-export interface HorizontalSectionProps
-    extends HorizontalSectionSharedProps,
-        Omit<React.ComponentPropsWithRef<'nav'>, 'children'> {
+export type HorizontalSectionProps = {
     section: 'navbar' | 'aside'
     __staticSelector: string
-}
+} & HorizontalSectionSharedProps &
+    Omit<React.ComponentPropsWithRef<'nav'>, 'children'>
 
 export const HorizontalSection = forwardRef<HTMLElement, HorizontalSectionProps>(
     (

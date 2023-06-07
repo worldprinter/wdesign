@@ -1,18 +1,17 @@
 import dayjs from 'dayjs'
 import React, { forwardRef, useRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { handleControlKeyDown } from '../../utils'
-import { MonthLevel, MonthLevelSettings, MonthLevelStylesNames } from '../MonthLevel'
+import type { MonthLevelSettings, MonthLevelStylesNames } from '../MonthLevel'
+import { MonthLevel } from '../MonthLevel'
 import useStyles from './MonthLevelGroup.styles'
 
 export type MonthLevelGroupStylesNames = Selectors<typeof useStyles> | MonthLevelStylesNames
 
-export interface MonthLevelGroupProps
-    extends DefaultProps<MonthLevelGroupStylesNames>,
-        Omit<MonthLevelSettings, 'withPrevious' | 'withNext' | '__onDayKeyDown' | '__getDayRef'>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type MonthLevelGroupProps = {
     variant?: string
     __staticSelector?: string
 
@@ -27,7 +26,9 @@ export interface MonthLevelGroupProps
 
     /** Determines whether days should be static, static days can be used to display month if it is not expected that user will interact with the component in any way  */
     static?: boolean
-}
+} & DefaultProps<MonthLevelGroupStylesNames> &
+    Omit<MonthLevelSettings, 'withPrevious' | 'withNext' | '__onDayKeyDown' | '__getDayRef'> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<MonthLevelGroupProps> = {
     numberOfColumns: 1,

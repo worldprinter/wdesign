@@ -1,8 +1,8 @@
 import React, { createContext, useContext } from 'react'
 
-import { ColorScheme } from './types'
+import type { ColorScheme } from './types'
 
-interface ColorSchemeContextProps {
+type ColorSchemeContextProps = {
     colorScheme: ColorScheme
     toggleColorScheme(colorScheme?: ColorScheme): void
 }
@@ -21,9 +21,9 @@ export function useMantineColorScheme() {
     return ctx
 }
 
-interface ColorSchemeProviderProps extends ColorSchemeContextProps {
+type ColorSchemeProviderProps = {
     children: React.ReactNode
-}
+} & ColorSchemeContextProps
 
 export function ColorSchemeProvider({ colorScheme, toggleColorScheme, children }: ColorSchemeProviderProps) {
     return (

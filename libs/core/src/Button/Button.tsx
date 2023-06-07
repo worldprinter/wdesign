@@ -1,26 +1,27 @@
 import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
-    getSize,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { getSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import { Loader, LoaderProps } from '../Loader'
+import type { LoaderProps } from '../Loader'
+import { Loader } from '../Loader'
 import { UnstyledButton } from '../UnstyledButton'
-import useStyles, { ButtonStylesParams, sizes } from './Button.styles'
+import type { ButtonStylesParams } from './Button.styles'
+import useStyles, { sizes } from './Button.styles'
 import { ButtonGroup } from './ButtonGroup/ButtonGroup'
 
 export type ButtonStylesNames = Selectors<typeof useStyles>
 
-export interface ButtonProps extends DefaultProps<ButtonStylesNames, ButtonStylesParams> {
+export type ButtonProps = {
     /** Predefined button size */
     size?: MantineSize
 
@@ -68,7 +69,7 @@ export interface ButtonProps extends DefaultProps<ButtonStylesNames, ButtonStyle
 
     /** Disabled state */
     disabled?: boolean
-}
+} & DefaultProps<ButtonStylesNames, ButtonStylesParams>
 
 const defaultProps: Partial<ButtonProps> = {
     size: 'sm',

@@ -3,28 +3,34 @@ import React, { useState } from 'react'
 import { RemoveScroll } from 'react-remove-scroll'
 
 import { useFocusReturn, useId, useWindowEvent } from '@worldprinter/wdesign-hooks'
-import {
+import type {
     ClassNames,
     DefaultProps,
-    getDefaultZIndex,
     MantineNumberSize,
     MantineShadow,
     Selectors,
     Styles,
-    useComponentDefaultProps,
 } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import { OptionalPortal, PortalProps } from '../Portal'
-import { TransitionOverride } from '../Transition'
+import type { PortalProps } from '../Portal'
+import { OptionalPortal } from '../Portal'
+import type { TransitionOverride } from '../Transition'
 import { ModalBaseProvider } from './ModalBase.context'
 import useStyles from './ModalBase.styles'
-import { ModalBaseBody, ModalBaseBodyStylesNames } from './ModalBaseBody/ModalBaseBody'
-import { ModalBaseCloseButton, ModalBaseCloseButtonStylesNames } from './ModalBaseCloseButton/ModalBaseCloseButton'
-import { ModalBaseContent, ModalBaseContentStylesNames } from './ModalBaseContent/ModalBaseContent'
-import { ModalBaseHeader, ModalBaseHeaderStylesNames } from './ModalBaseHeader/ModalBaseHeader'
-import { ModalBaseOverlay, ModalBaseOverlayStylesNames } from './ModalBaseOverlay/ModalBaseOverlay'
-import { ModalBaseTitle, ModalBaseTitleStylesNames } from './ModalBaseTitle/ModalBaseTitle'
+import type { ModalBaseBodyStylesNames } from './ModalBaseBody/ModalBaseBody'
+import { ModalBaseBody } from './ModalBaseBody/ModalBaseBody'
+import type { ModalBaseCloseButtonStylesNames } from './ModalBaseCloseButton/ModalBaseCloseButton'
+import { ModalBaseCloseButton } from './ModalBaseCloseButton/ModalBaseCloseButton'
+import type { ModalBaseContentStylesNames } from './ModalBaseContent/ModalBaseContent'
+import { ModalBaseContent } from './ModalBaseContent/ModalBaseContent'
+import type { ModalBaseHeaderStylesNames } from './ModalBaseHeader/ModalBaseHeader'
+import { ModalBaseHeader } from './ModalBaseHeader/ModalBaseHeader'
+import type { ModalBaseOverlayStylesNames } from './ModalBaseOverlay/ModalBaseOverlay'
+import { ModalBaseOverlay } from './ModalBaseOverlay/ModalBaseOverlay'
+import type { ModalBaseTitleStylesNames } from './ModalBaseTitle/ModalBaseTitle'
+import { ModalBaseTitle } from './ModalBaseTitle/ModalBaseTitle'
 import { NativeScrollArea } from './NativeScrollArea/NativeScrollArea'
 import { useLockScroll } from './use-lock-scroll'
 
@@ -37,7 +43,7 @@ export type ModalBaseStylesNames =
     | ModalBaseTitleStylesNames
     | ModalBaseBodyStylesNames
 
-export interface ModalBaseSettings extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type ModalBaseSettings = {
     variant?: string
     classNames?: ClassNames<ModalBaseStylesNames>
     styles?: Styles<ModalBaseStylesNames>
@@ -96,12 +102,13 @@ export interface ModalBaseSettings extends DefaultProps, React.ComponentPropsWit
 
     /** Key of theme.shadows or any valid css box-shadow value, 'xl' by default */
     shadow?: MantineShadow
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
-export interface ModalBaseProps extends ModalBaseSettings {
+export type ModalBaseProps = {
     /** Base component name for styles and components default props */
     __staticSelector: string
-}
+} & ModalBaseSettings
 
 export const ModalBaseDefaultProps: Partial<ModalBaseProps> = {
     closeOnClickOutside: true,

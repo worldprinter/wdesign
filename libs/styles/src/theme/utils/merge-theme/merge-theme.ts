@@ -1,6 +1,6 @@
 import { attachFunctions } from '../../functions/attach-functions'
 import { getBreakpointValue } from '../../functions/fns/breakpoints/breakpoints'
-import { MantineTheme, MantineThemeBase, MantineThemeOverride } from '../../types'
+import type { MantineTheme, MantineThemeBase, MantineThemeOverride } from '../../types'
 
 export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: MantineThemeOverride): MantineThemeBase {
     if (!themeOverride) {

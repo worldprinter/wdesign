@@ -1,6 +1,6 @@
 import { createStyles, rem } from '@worldprinter/wdesign-core'
 
-export interface ToolbarStylesParams {
+export type ToolbarStylesParams = {
     sticky: boolean
     stickyOffset: React.CSSProperties['top']
 }

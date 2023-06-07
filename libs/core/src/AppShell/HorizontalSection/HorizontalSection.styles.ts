@@ -1,17 +1,18 @@
-import { createStyles, em, getBreakpointValue, getSize, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, em, getBreakpointValue, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { getSortedBreakpoints } from './get-sorted-breakpoints/get-sorted-breakpoints'
 
 export type HorizontalSectionWidth = Partial<Record<string, string | number>>
 
-export interface HorizontalSectionPosition {
+export type HorizontalSectionPosition = {
     top?: number
     left?: number
     bottom?: number
     right?: number
 }
 
-interface HorizontalSectionStyles {
+type HorizontalSectionStyles = {
     width: Partial<Record<string, string | number>>
     height: string | number
     position: HorizontalSectionPosition

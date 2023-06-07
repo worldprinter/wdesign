@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { ActionIcon, ActionIconProps, Tooltip } from '@worldprinter/wdesign-core'
+import type { ActionIconProps } from '@worldprinter/wdesign-core'
+import { ActionIcon, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { HTMLPropsRef, MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> extends ActionIconProps, HTMLPropsRef<HTMLButtonElement> {
+type Props<TData extends Record<string, any> = {}> = {
     table: MRT_TableInstance<TData>
-}
+} & ActionIconProps &
+    HTMLPropsRef<HTMLButtonElement>
 
 export const MRT_ToggleFiltersButton = <TData extends Record<string, any> = {}>({ table, ...rest }: Props<TData>) => {
     const {

@@ -1,6 +1,6 @@
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface ColorPickerStylesParams {
+export type ColorPickerStylesParams = {
     fullWidth: boolean
 }
 

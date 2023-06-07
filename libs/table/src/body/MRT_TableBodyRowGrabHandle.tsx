@@ -1,9 +1,10 @@
-import React, { DragEvent, RefObject } from 'react'
+import type { DragEvent, RefObject } from 'react'
+import React from 'react'
 
-import { MRT_Cell, MRT_TableInstance } from '..'
+import type { MRT_Cell, MRT_TableInstance } from '..'
 import { MRT_GrabHandleButton } from '../buttons/MRT_GrabHandleButton'
 
-interface Props {
+type Props = {
     cell: MRT_Cell
     rowRef: RefObject<HTMLTableRowElement>
     table: MRT_TableInstance

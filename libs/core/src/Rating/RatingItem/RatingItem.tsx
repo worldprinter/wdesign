@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { StarSymbol } from '../StarSymbol/StarSymbol'
@@ -8,9 +8,7 @@ import useStyles from './RatingItem.styles'
 
 export type RatingItemStylesNames = Selectors<typeof useStyles>
 
-export interface RatingItemProps
-    extends DefaultProps<RatingItemStylesNames>,
-        Omit<React.ComponentPropsWithoutRef<'input'>, 'value' | 'size'> {
+export type RatingItemProps = {
     variant: string
     size: MantineSize
     getSymbolLabel: (value: number) => string
@@ -23,7 +21,8 @@ export interface RatingItemProps
     value: number
     id: string
     onChange(event: React.ChangeEvent<HTMLInputElement> | number): void
-}
+} & DefaultProps<RatingItemStylesNames> &
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'value' | 'size'>
 
 export function RatingItem({
     size,

@@ -4,7 +4,7 @@ import { Collapse, Progress } from '@worldprinter/wdesign-core'
 
 import type { MRT_TableInstance } from '..'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     isTopToolbar: boolean
     table: MRT_TableInstance<TData>
 }

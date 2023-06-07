@@ -1,17 +1,12 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineNumberSize,
-    MantineSize,
-    rem,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, MantineSize } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import useStyles from './Container.styles'
 
-export interface ContainerProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {
+export type ContainerProps = {
     variant?: string
 
     /** Predefined container max-width or number for max-width */
@@ -22,7 +17,8 @@ export interface ContainerProps extends DefaultProps, React.ComponentPropsWithou
 
     /** Container sizes */
     sizes?: Record<MantineSize, number | string>
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<ContainerProps> = {
     sizes: {

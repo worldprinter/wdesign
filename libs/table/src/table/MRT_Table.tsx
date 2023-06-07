@@ -1,4 +1,5 @@
-import { defaultRangeExtractor, Range, useVirtualizer } from '@tanstack/react-virtual'
+import type { Range } from '@tanstack/react-virtual'
+import { defaultRangeExtractor, useVirtualizer } from '@tanstack/react-virtual'
 import React, { useCallback, useMemo } from 'react'
 
 import { Table } from '@worldprinter/wdesign-core'
@@ -9,7 +10,7 @@ import { parseCSSVarId } from '../column.utils'
 import { MRT_TableFooter } from '../footer/MRT_TableFooter'
 import { MRT_TableHead } from '../head/MRT_TableHead'
 
-interface Props {
+type Props = {
     table: MRT_TableInstance
 }
 

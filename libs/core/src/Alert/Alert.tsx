@@ -1,24 +1,17 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    Selectors,
-    useComponentDefaultProps,
-    Variants,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { CloseButton } from '../CloseButton'
-import useStyles, { AlertStylesParams } from './Alert.styles'
+import type { AlertStylesParams } from './Alert.styles'
+import useStyles from './Alert.styles'
 
 export type AlertStylesNames = Selectors<typeof useStyles>
 
-export interface AlertProps
-    extends DefaultProps<AlertStylesNames, AlertStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
+export type AlertProps = {
     /** Alert title */
     title?: React.ReactNode
 
@@ -45,7 +38,8 @@ export interface AlertProps
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
     radius?: MantineNumberSize
-}
+} & DefaultProps<AlertStylesNames, AlertStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'title'>
 
 const defaultProps: Partial<AlertProps> = {
     variant: 'light',

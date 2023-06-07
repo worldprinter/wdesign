@@ -1,13 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../../Box'
 import { useCardPadding } from '../Card.context'
 import useStyles from './CardSection.styles'
 
-export interface CardSectionProps extends DefaultProps {
+export type CardSectionProps = {
     variant?: string
 
     /** Determines whether section should have border */
@@ -15,7 +16,7 @@ export interface CardSectionProps extends DefaultProps {
 
     /** Determines whether section from inherit padding from Card */
     inheritPadding?: boolean
-}
+} & DefaultProps
 
 const defaultProps: Partial<CardSectionProps> = {
     withBorder: false,

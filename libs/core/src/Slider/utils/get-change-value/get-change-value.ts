@@ -1,4 +1,4 @@
-interface GetChangeValue {
+type GetChangeValue = {
     value: number
     containerWidth?: number
     min: number

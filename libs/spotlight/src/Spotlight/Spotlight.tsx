@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 
-import {
+import type {
     DefaultProps,
-    getDefaultZIndex,
     MantineColor,
-    Modal,
     ModalProps,
     ModalStylesNames,
-    ScrollArea,
     ScrollAreaAutosizeProps,
     Selectors,
-    TextInput,
     TextInputProps,
-    useComponentDefaultProps,
 } from '@worldprinter/wdesign-core'
+import { getDefaultZIndex, Modal, ScrollArea, TextInput, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { useDidUpdate } from '@worldprinter/wdesign-hooks'
 import { getGroupedOptions } from '@worldprinter/wdesign-utils'
 
-import { ActionsList, ActionsListStylesNames } from '../ActionsList/ActionsList'
-import { DefaultAction, DefaultActionProps } from '../DefaultAction/DefaultAction'
+import type { ActionsListStylesNames } from '../ActionsList/ActionsList'
+import { ActionsList } from '../ActionsList/ActionsList'
+import type { DefaultActionProps } from '../DefaultAction/DefaultAction'
+import { DefaultAction } from '../DefaultAction/DefaultAction'
 import type { SpotlightAction } from '../types'
 import { filterActions } from './filter-actions/filter-actions'
 import useStyles from './Spotlight.styles'
@@ -37,10 +35,7 @@ export type SpotlightStylesNames =
     | Exclude<ModalStylesNames, 'close' | 'header' | 'title'>
     | ActionsListStylesNames
 
-export interface InnerSpotlightProps
-    extends Omit<ModalProps, 'styles' | 'classNames' | 'title' | 'withCloseButton' | 'opened' | 'onClose'>,
-        DefaultProps<SpotlightStylesNames>,
-        React.ComponentPropsWithoutRef<'div'> {
+export type InnerSpotlightProps = {
     variant?: string
 
     /** Search input placeholder */
@@ -78,15 +73,17 @@ export interface InnerSpotlightProps
 
     /** Component used as scrollable container for actions list, defaults to ScrollArea.Autosize */
     scrollAreaComponent?: React.FC<{ children: React.ReactNode }>
-}
+} & Omit<ModalProps, 'styles' | 'classNames' | 'title' | 'withCloseButton' | 'opened' | 'onClose'> &
+    DefaultProps<SpotlightStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
-interface SpotlightProps extends InnerSpotlightProps {
+type SpotlightProps = {
     actions: SpotlightAction[]
     onClose(): void
     opened: boolean
     query: string
     onQueryChange(query: string): void
-}
+} & InnerSpotlightProps
 
 const defaultProps: Partial<SpotlightProps> = {
     closeOnActionTrigger: true,

@@ -1,14 +1,15 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import { Col } from './Col/Col'
 import { GridProvider } from './Grid.context'
 import useStyles from './Grid.styles'
 
-export interface GridProps extends DefaultProps, React.ComponentPropsWithRef<'div'> {
+export type GridProps = {
     variant?: string
 
     /** <Col /> components only */
@@ -43,7 +44,8 @@ export interface GridProps extends DefaultProps, React.ComponentPropsWithRef<'di
 
     /** Amount of columns in each row */
     columns?: number
-}
+} & DefaultProps &
+    React.ComponentPropsWithRef<'div'>
 
 type GridComponent = ForwardRefWithStaticComponents<GridProps, { Col: typeof Col }>
 

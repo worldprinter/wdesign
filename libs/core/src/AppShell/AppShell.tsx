@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { AppShellProvider } from './AppShell.context'
@@ -8,7 +9,7 @@ import useStyles from './AppShell.styles'
 
 export type AppShellStylesNames = Selectors<typeof useStyles>
 
-export interface AppShellProps extends DefaultProps<AppShellStylesNames> {
+export type AppShellProps = {
     variant?: string
 
     /** Determines how Navbar and Aside components are positioned relative to Header and Footer components */
@@ -46,7 +47,7 @@ export interface AppShellProps extends DefaultProps<AppShellStylesNames> {
 
     /** Breakpoint at which Aside component should no longer be offset with padding-right, applicable only for fixed position */
     asideOffsetBreakpoint?: MantineNumberSize
-}
+} & DefaultProps<AppShellStylesNames>
 
 const defaultProps: Partial<AppShellProps> = {
     fixed: true,

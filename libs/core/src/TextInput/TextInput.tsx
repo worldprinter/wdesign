@@ -1,23 +1,13 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
 
-import {
-    Input,
-    InputSharedProps,
-    InputStylesNames,
-    InputWrapperBaseProps,
-    InputWrapperStylesNames,
-    useInputProps,
-} from '../Input'
+import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
+import { Input, useInputProps } from '../Input'
 
 export type TextInputStylesNames = InputStylesNames | InputWrapperStylesNames
 
-export interface TextInputProps
-    extends DefaultProps<TextInputStylesNames>,
-        InputSharedProps,
-        InputWrapperBaseProps,
-        Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> {
+export type TextInputProps = {
     /** Input element type */
     type?: React.HTMLInputTypeAttribute
 
@@ -28,7 +18,10 @@ export interface TextInputProps
     size?: MantineSize
 
     __staticSelector?: string
-}
+} & DefaultProps<TextInputStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps &
+    Omit<React.ComponentPropsWithoutRef<'input'>, 'size'>
 
 const defaultProps: Partial<TextInputProps> = {
     type: 'text',

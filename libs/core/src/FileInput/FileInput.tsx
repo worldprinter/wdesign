@@ -1,28 +1,18 @@
 import React, { forwardRef, useEffect, useRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { CloseButton } from '../CloseButton'
 import { FileButton } from '../FileButton'
-import {
-    Input,
-    InputSharedProps,
-    InputStylesNames,
-    InputWrapperBaseProps,
-    InputWrapperStylesNames,
-    useInputProps,
-} from '../Input'
+import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
+import { Input, useInputProps } from '../Input'
 import { Text } from '../Text'
 import useStyles from './FileInput.styles'
 
 export type FileInputStylesNames = InputStylesNames | InputWrapperStylesNames | Selectors<typeof useStyles>
 
-export interface FileInputProps<Multiple extends boolean = false>
-    extends DefaultProps<FileInputStylesNames>,
-        InputSharedProps,
-        InputWrapperBaseProps,
-        Omit<React.ComponentPropsWithoutRef<'button'>, 'size' | 'onChange' | 'value' | 'defaultValue'> {
+export type FileInputProps<Multiple extends boolean = false> = {
     /** Props passed to root element (InputWrapper component) */
     wrapperProps?: Record<string, any>
 
@@ -67,7 +57,10 @@ export interface FileInputProps<Multiple extends boolean = false>
 
     /** Spreads props to input element used to capture files */
     fileInputProps?: React.ComponentPropsWithoutRef<'input'>
-}
+} & DefaultProps<FileInputStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps &
+    Omit<React.ComponentPropsWithoutRef<'button'>, 'size' | 'onChange' | 'value' | 'defaultValue'>
 
 const DefaultValue: FileInputProps['valueComponent'] = ({ value }) => (
     <Text sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>

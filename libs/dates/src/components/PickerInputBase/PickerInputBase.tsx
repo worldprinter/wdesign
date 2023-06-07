@@ -1,25 +1,22 @@
 import React, { forwardRef } from 'react'
 
-import {
-    CloseButton,
+import type {
     DefaultProps,
-    Input,
     InputSharedProps,
     InputStylesNames,
     InputWrapperBaseProps,
     InputWrapperStylesNames,
-    Modal,
     ModalProps,
-    Popover,
     PopoverProps,
     Selectors,
-    useInputProps,
 } from '@worldprinter/wdesign-core'
-import { useDisclosure } from '@worldprinter/wdesign-hooks'
+import { CloseButton, Input, Modal, Popover, useInputProps } from '@worldprinter/wdesign-core'
+import type { useDisclosure } from '@worldprinter/wdesign-hooks'
 
-import { DatePickerType } from '../../types'
-import { CalendarStylesNames } from '../Calendar'
-import { HiddenDatesInput, HiddenDatesInputValue } from '../HiddenDatesInput'
+import type { DatePickerType } from '../../types'
+import type { CalendarStylesNames } from '../Calendar'
+import type { HiddenDatesInputValue } from '../HiddenDatesInput'
+import { HiddenDatesInput } from '../HiddenDatesInput'
 import useStyles from './PickerInputBase.styles'
 
 export type PickerInputBaseStylesNames =
@@ -28,11 +25,7 @@ export type PickerInputBaseStylesNames =
     | InputWrapperStylesNames
     | Selectors<typeof useStyles>
 
-export interface DateInputSharedProps
-    extends DefaultProps<PickerInputBaseStylesNames>,
-        InputSharedProps,
-        InputWrapperBaseProps,
-        Omit<React.ComponentPropsWithRef<'button'>, 'defaultValue' | 'value' | 'onChange' | 'type'> {
+export type DateInputSharedProps = {
     /** Determines whether dropdown should be closed when date is selected, not applicable when type="multiple", true by default */
     closeOnChange?: boolean
 
@@ -59,9 +52,12 @@ export interface DateInputSharedProps
 
     /** Separator between range value */
     labelSeparator?: string
-}
+} & DefaultProps<PickerInputBaseStylesNames> &
+    InputSharedProps &
+    InputWrapperBaseProps &
+    Omit<React.ComponentPropsWithRef<'button'>, 'defaultValue' | 'value' | 'onChange' | 'type'>
 
-export interface PickerInputBaseProps extends DateInputSharedProps {
+export type PickerInputBaseProps = {
     __staticSelector: string
     children: React.ReactNode
     formattedValue: string
@@ -71,7 +67,7 @@ export interface PickerInputBaseProps extends DateInputSharedProps {
     shouldClear: boolean
     value: HiddenDatesInputValue
     type: DatePickerType
-}
+} & DateInputSharedProps
 
 const defaultProps: Partial<PickerInputBaseProps> = {}
 

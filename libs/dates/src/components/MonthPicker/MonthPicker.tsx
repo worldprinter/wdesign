@@ -3,18 +3,15 @@ import React, { forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useDatesState } from '../../hooks'
-import { CalendarLevel, DatePickerType, PickerBaseProps } from '../../types'
-import { Calendar, CalendarBaseProps, CalendarSystemProps } from '../Calendar'
-import { DecadeLevelBaseSettings } from '../DecadeLevel'
-import { YearLevelBaseSettings } from '../YearLevel'
+import type { CalendarLevel, DatePickerType, PickerBaseProps } from '../../types'
+import type { CalendarBaseProps, CalendarSystemProps } from '../Calendar'
+import { Calendar } from '../Calendar'
+import type { DecadeLevelBaseSettings } from '../DecadeLevel'
+import type { YearLevelBaseSettings } from '../YearLevel'
 
 type MonthPickerLevel = Exclude<CalendarLevel, 'month'>
 
-export interface MonthPickerBaseProps<Type extends DatePickerType = 'default'>
-    extends PickerBaseProps<Type>,
-        DecadeLevelBaseSettings,
-        YearLevelBaseSettings,
-        Omit<CalendarBaseProps, 'onNextMonth' | 'onPreviousMonth'> {
+export type MonthPickerBaseProps<Type extends DatePickerType = 'default'> = {
     /** Max level that user can go up to (decade, year), defaults to decade */
     maxLevel?: MonthPickerLevel
 
@@ -26,11 +23,13 @@ export interface MonthPickerBaseProps<Type extends DatePickerType = 'default'>
 
     /** Called when level changes */
     onLevelChange?(level: MonthPickerLevel): void
-}
+} & PickerBaseProps<Type> &
+    DecadeLevelBaseSettings &
+    YearLevelBaseSettings &
+    Omit<CalendarBaseProps, 'onNextMonth' | 'onPreviousMonth'>
 
-export interface MonthPickerProps<Type extends DatePickerType = 'default'>
-    extends MonthPickerBaseProps<Type>,
-        CalendarSystemProps {}
+export type MonthPickerProps<Type extends DatePickerType = 'default'> = {} & MonthPickerBaseProps<Type> &
+    CalendarSystemProps
 
 const defaultProps: Partial<MonthPickerProps> = {
     type: 'default',

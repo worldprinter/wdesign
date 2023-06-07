@@ -4,9 +4,10 @@ import { useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { upperFirst } from '@worldprinter/wdesign-hooks'
 import { isElement } from '@worldprinter/wdesign-utils'
 
-import { DropzoneContextValue, useDropzoneContext } from './Dropzone.context'
+import type { DropzoneContextValue } from './Dropzone.context'
+import { useDropzoneContext } from './Dropzone.context'
 
-export interface DropzoneStatusProps {
+export type DropzoneStatusProps = {
     // eslint-disable-next-line react/no-unused-prop-types
     children: React.ReactNode
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Collapse } from '../../Collapse'
 import { useAccordionContext } from '../Accordion.context'
@@ -9,12 +10,11 @@ import useStyles from './AccordionPanel.styles'
 
 export type AccordionPanelStylesNames = Selectors<typeof useStyles>
 
-export interface AccordionPanelProps
-    extends DefaultProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onTransitionEnd'> {
+export type AccordionPanelProps = {
     /** Panel content */
     children?: React.ReactNode
-}
+} & DefaultProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onTransitionEnd'>
 
 const defaultProps: Partial<AccordionPanelProps> = {}
 

@@ -1,4 +1,4 @@
-import { ColorFormat, HsvaColor, RgbaColor } from '../types'
+import type { ColorFormat, HsvaColor, RgbaColor } from '../types'
 import { round } from './parsers'
 
 export function hsvaToRgbaObject({ h, s, v, a }: HsvaColor): RgbaColor {

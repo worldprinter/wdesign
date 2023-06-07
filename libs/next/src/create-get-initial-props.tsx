@@ -1,8 +1,9 @@
-import NextDocument, { DocumentContext } from 'next/document'
+import type { DocumentContext } from 'next/document'
+import NextDocument from 'next/document'
 import React from 'react'
 
 import { createStylesServer, ServerStyles } from '@worldprinter/wdesign-ssr'
-import { EmotionCache } from '@worldprinter/wdesign-styles'
+import type { EmotionCache } from '@worldprinter/wdesign-styles'
 
 export function createGetInitialProps(cache?: EmotionCache): (ctx: DocumentContext) => any {
     const stylesServer = createStylesServer(cache)

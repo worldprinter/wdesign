@@ -1,4 +1,5 @@
-import { createStyles, getSize, getStylesRef, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 const sizes = {
     xs: rem(16),
@@ -8,7 +9,7 @@ const sizes = {
     xl: rem(36),
 }
 
-export interface CheckboxStylesParams {
+export type CheckboxStylesParams = {
     radius: MantineNumberSize
     color: MantineColor
     transitionDuration: number

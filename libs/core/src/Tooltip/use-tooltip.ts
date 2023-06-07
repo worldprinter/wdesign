@@ -17,10 +17,11 @@ import { useCallback, useState } from 'react'
 
 import { useDidUpdate, useId } from '@worldprinter/wdesign-hooks'
 
-import { FloatingPosition, useFloatingAutoUpdate } from '../Floating'
+import type { FloatingPosition } from '../Floating'
+import { useFloatingAutoUpdate } from '../Floating'
 import { useTooltipGroupContext } from './TooltipGroup/TooltipGroup.context'
 
-interface UseTooltip {
+type UseTooltip = {
     position: FloatingPosition
     closeDelay: number
     openDelay: number

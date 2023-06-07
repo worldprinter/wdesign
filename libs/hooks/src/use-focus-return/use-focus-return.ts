@@ -2,7 +2,7 @@ import { useRef } from 'react'
 
 import { useDidUpdate } from '../use-did-update/use-did-update'
 
-interface UseFocusReturn {
+type UseFocusReturn = {
     opened: boolean
     shouldReturnFocus?: boolean
 }

@@ -1,6 +1,6 @@
-import { CSSObject } from '@worldprinter/wdesign-core'
+import type { CSSObject } from '@worldprinter/wdesign-core'
 
-import { NotificationsPositioning } from '../../types'
+import type { NotificationsPositioning } from '../../types'
 
 export default function getPositionStyles([vertical, horizontal]: NotificationsPositioning, spacing: number | string) {
     const styles: CSSObject = {}

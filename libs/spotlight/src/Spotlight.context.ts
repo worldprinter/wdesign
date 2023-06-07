@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react'
 
 import type { SpotlightAction } from './types'
 
-export interface SpotlightContextValue {
+export type SpotlightContextValue = {
     /** Opens spotlight */
     openSpotlight(): void
 

@@ -1,19 +1,19 @@
 import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
     MantineColor,
     MantineGradient,
     MantineNumberSize,
-    useComponentDefaultProps,
     Variants,
 } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import useStyles from './Text.styles'
 
-export interface TextProps extends DefaultProps {
+export type TextProps = {
     __staticSelector?: string
 
     /** Text content */
@@ -63,7 +63,7 @@ export interface TextProps extends DefaultProps {
 
     /** Shorthand for component="span" */
     span?: boolean
-}
+} & DefaultProps
 
 const defaultProps: Partial<TextProps> = {
     variant: 'text',

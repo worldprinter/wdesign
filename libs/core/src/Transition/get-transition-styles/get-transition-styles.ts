@@ -1,4 +1,5 @@
-import { MantineTransition, transitions } from '../transitions'
+import type { MantineTransition } from '../transitions'
+import { transitions } from '../transitions'
 
 const transitionStatuses = {
     entering: 'in',

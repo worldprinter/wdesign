@@ -1,6 +1,7 @@
-import { createStyles, MantineNumberSize, rem } from '@worldprinter/wdesign-core'
+import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import { createStyles, rem } from '@worldprinter/wdesign-core'
 
-export interface PrismStylesParams {
+export type PrismStylesParams = {
     colorScheme: 'light' | 'dark'
     native: boolean
     maxLineSize: number | string

@@ -1,6 +1,7 @@
-import { createStyles, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-interface RenderListStyles {
+type RenderListStyles = {
     reversed: boolean
     native: boolean
     radius: MantineNumberSize

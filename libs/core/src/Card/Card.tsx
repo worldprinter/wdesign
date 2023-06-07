@@ -1,14 +1,16 @@
 import React, { Children, cloneElement, forwardRef } from 'react'
 
-import { MantineNumberSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
-import { Paper, PaperProps } from '../Paper/Paper'
+import type { PaperProps } from '../Paper/Paper'
+import { Paper } from '../Paper/Paper'
 import { CardProvider } from './Card.context'
 import useStyles from './Card.styles'
 import { CardSection } from './CardSection/CardSection'
 
-export interface CardProps extends PaperProps {
+export type CardProps = {
     variant?: string
 
     /** Card padding used to offset Card.Section, use it instead of p prop */
@@ -16,7 +18,7 @@ export interface CardProps extends PaperProps {
 
     /** Card content */
     children: React.ReactNode
-}
+} & PaperProps
 
 const defaultProps: Partial<CardProps> = {
     padding: 'md',

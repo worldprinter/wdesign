@@ -1,10 +1,10 @@
-import { TransitionStatus } from 'react-transition-group'
+import type { TransitionStatus } from 'react-transition-group'
 
-import { CSSObject } from '@worldprinter/wdesign-core'
+import type { CSSObject } from '@worldprinter/wdesign-core'
 
-import { NotificationsPositioning } from '../../types'
+import type { NotificationsPositioning } from '../../types'
 
-interface NotificationStateStylesProps {
+type NotificationStateStylesProps = {
     state: TransitionStatus
     maxHeight: number | string
     positioning: NotificationsPositioning

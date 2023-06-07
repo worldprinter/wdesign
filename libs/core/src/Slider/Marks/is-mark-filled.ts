@@ -1,4 +1,4 @@
-interface IsMarkFilled {
+type IsMarkFilled = {
     mark: { value: number; label?: any }
     offset?: number
     value: number

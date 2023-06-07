@@ -1,11 +1,12 @@
-import React, { ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import React from 'react'
 
 import { CopyButton, Tooltip, UnstyledButton } from '@worldprinter/wdesign-core'
 
-import { MRT_Cell, MRT_TableInstance } from '..'
+import type { MRT_Cell, MRT_TableInstance } from '..'
 import { getPrimaryColor } from '../column.utils'
 
-interface Props<TData extends Record<string, any> = {}> {
+type Props<TData extends Record<string, any> = {}> = {
     cell: MRT_Cell<TData>
     children: ReactNode
     table: MRT_TableInstance<TData>

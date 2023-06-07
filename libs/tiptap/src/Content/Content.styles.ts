@@ -1,6 +1,7 @@
-import { createStyles, MantineTheme, rem } from '@worldprinter/wdesign-core'
+import type { MantineTheme } from '@worldprinter/wdesign-core'
+import { createStyles, rem } from '@worldprinter/wdesign-core'
 
-interface ContentStylesParams {
+type ContentStylesParams = {
     withCodeHighlightStyles: boolean
     withTypographyStyles: boolean
 }

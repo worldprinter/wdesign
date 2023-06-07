@@ -1,6 +1,6 @@
 import { createUseExternalEvents } from '@worldprinter/wdesign-utils'
 
-import { MantineModal, MantineModals, ModalSettings, OpenConfirmModal, OpenContextModal } from './context'
+import type { MantineModal, MantineModals, ModalSettings, OpenConfirmModal, OpenContextModal } from './context'
 
 type ModalsEvents = {
     openModal(payload: ModalSettings): void

@@ -1,15 +1,17 @@
 import React from 'react'
 
-import { DefaultProps, getSize, MantineColor, MantineNumberSize, rem, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import { Marks, MarksStylesNames } from '../Marks/Marks'
+import type { MarksStylesNames } from '../Marks/Marks'
+import { Marks } from '../Marks/Marks'
 import { sizes } from '../SliderRoot/SliderRoot.styles'
 import useStyles from './Track.styles'
 
 export type TrackStylesNames = Selectors<typeof useStyles> | MarksStylesNames
 
-export interface TrackProps extends DefaultProps<TrackStylesNames> {
+export type TrackProps = {
     filled: number
     offset?: number
     marksOffset?: number
@@ -27,7 +29,7 @@ export interface TrackProps extends DefaultProps<TrackStylesNames> {
     inverted?: boolean
     variant: string
     containerProps?: React.PropsWithRef<React.ComponentProps<'div'>>
-}
+} & DefaultProps<TrackStylesNames>
 
 export function Track({
     filled,

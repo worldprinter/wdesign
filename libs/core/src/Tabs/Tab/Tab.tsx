@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineColor, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
 import { UnstyledButton } from '../../UnstyledButton'
@@ -9,7 +10,7 @@ import useStyles from './Tab.styles'
 
 export type TabStylesNames = Selectors<typeof useStyles>
 
-export interface TabProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type TabProps = {
     /** Value that is used to connect Tab with associated panel */
     value: string
 
@@ -24,7 +25,8 @@ export interface TabProps extends DefaultProps, React.ComponentPropsWithoutRef<'
 
     /** Key of theme.colors */
     color?: MantineColor
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<TabProps> = {}
 

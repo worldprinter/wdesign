@@ -1,4 +1,4 @@
-import { DayOfWeek } from '../../../types'
+import type { DayOfWeek } from '../../../types'
 import { getEndOfWeek } from '../get-end-of-week/get-end-of-week'
 import { getStartOfWeek } from '../get-start-of-week/get-start-of-week'
 

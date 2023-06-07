@@ -1,26 +1,18 @@
 import React, { useEffect } from 'react'
 
-import {
-    Box,
-    DefaultProps,
-    getDefaultZIndex,
-    OptionalPortal,
-    PortalProps,
-    Selectors,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, PortalProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, getDefaultZIndex, OptionalPortal, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { useDisclosure } from '@worldprinter/wdesign-hooks'
 
-import { _Dropzone, DropzoneProps, DropzoneStylesNames } from './Dropzone'
+import type { DropzoneProps, DropzoneStylesNames } from './Dropzone'
+import { _Dropzone } from './Dropzone'
 import useFullScreenStyles from './DropzoneFullScreen.styles'
 
 export type DropzoneFullScreenStylesName =
     | DropzoneStylesNames
     | Exclude<Selectors<typeof useFullScreenStyles>, 'dropzone'>
 
-export interface DropzoneFullScreenProps
-    extends Omit<DropzoneProps, 'styles' | 'classNames'>,
-        DefaultProps<DropzoneFullScreenStylesName> {
+export type DropzoneFullScreenProps = {
     /** Determines whether user can drop files to browser window, true by default */
     active?: boolean
 
@@ -32,7 +24,8 @@ export interface DropzoneFullScreenProps
 
     /** Props to pass down to the portal when withinPortal is true */
     portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
-}
+} & Omit<DropzoneProps, 'styles' | 'classNames'> &
+    DefaultProps<DropzoneFullScreenStylesName>
 
 const fullScreenDefaultProps: Partial<DropzoneFullScreenProps> = {
     padding: 'md',

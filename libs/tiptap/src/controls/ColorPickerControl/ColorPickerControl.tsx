@@ -1,15 +1,13 @@
 import { IconCheck, IconCircleOff, IconColorPicker, IconPalette, IconX } from '@tabler/icons-react'
 import React, { forwardRef, useState } from 'react'
 
+import type { ColorPickerProps, DefaultProps, PopoverProps } from '@worldprinter/wdesign-core'
 import {
     ActionIcon,
     ColorPicker,
-    ColorPickerProps,
     ColorSwatch,
-    DefaultProps,
     Group,
     Popover,
-    PopoverProps,
     SimpleGrid,
     Tooltip,
     useComponentDefaultProps,
@@ -19,7 +17,7 @@ import { useDisclosure } from '@worldprinter/wdesign-hooks'
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
 import { Control } from '../Control/Control'
 
-export interface ColorPickerControlProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type ColorPickerControlProps = {
     /** Props added to Popover component */
     popoverProps?: Partial<PopoverProps>
 
@@ -28,7 +26,8 @@ export interface ColorPickerControlProps extends DefaultProps, React.ComponentPr
 
     /** List of colors that the user can choose from */
     colors: string[]
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<ColorPickerControlProps> = {}
 

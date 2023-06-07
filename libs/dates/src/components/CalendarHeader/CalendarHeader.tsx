@@ -1,20 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import {
-    Box,
-    DefaultProps,
-    MantineSize,
-    Selectors,
-    UnstyledButton,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-core'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import { Box, UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import useStyles from './CalendarHeader.styles'
 import { Chevron } from './Chevron'
 
 export type CalendarHeaderStylesNames = Selectors<typeof useStyles>
 
-export interface CalendarHeaderSettings {
+export type CalendarHeaderSettings = {
     __preventFocus?: boolean
 
     /** Determines whether propagation for Escape key should be stopped */
@@ -60,10 +54,7 @@ export interface CalendarHeaderSettings {
     size?: MantineSize
 }
 
-export interface CalendarHeaderProps
-    extends DefaultProps<CalendarHeaderStylesNames>,
-        CalendarHeaderSettings,
-        React.ComponentPropsWithoutRef<'div'> {
+export type CalendarHeaderProps = {
     variant?: string
     __staticSelector?: string
 
@@ -72,7 +63,9 @@ export interface CalendarHeaderProps
 
     /** aria-label for level control */
     levelControlAriaLabel?: string
-}
+} & DefaultProps<CalendarHeaderStylesNames> &
+    CalendarHeaderSettings &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<CalendarHeaderProps> = {
     nextDisabled: false,

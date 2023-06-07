@@ -1,21 +1,25 @@
 import React from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
-import { AccordionStylesParams } from './Accordion.types'
-import { AccordionControl, AccordionControlStylesNames } from './AccordionControl/AccordionControl'
-import { AccordionItem, AccordionItemStylesNames } from './AccordionItem/AccordionItem'
-import { AccordionPanel, AccordionPanelStylesNames } from './AccordionPanel/AccordionPanel'
-import { AccordionProvider, AccordionProviderProps } from './AccordionProvider'
+import type { AccordionStylesParams } from './Accordion.types'
+import type { AccordionControlStylesNames } from './AccordionControl/AccordionControl'
+import { AccordionControl } from './AccordionControl/AccordionControl'
+import type { AccordionItemStylesNames } from './AccordionItem/AccordionItem'
+import { AccordionItem } from './AccordionItem/AccordionItem'
+import type { AccordionPanelStylesNames } from './AccordionPanel/AccordionPanel'
+import { AccordionPanel } from './AccordionPanel/AccordionPanel'
+import type { AccordionProviderProps } from './AccordionProvider'
+import { AccordionProvider } from './AccordionProvider'
 import { ChevronIcon } from './ChevronIcon'
 
 export type AccordionStylesNames = AccordionItemStylesNames | AccordionPanelStylesNames | AccordionControlStylesNames
 
-export interface AccordionProps<Multiple extends boolean = false>
-    extends AccordionProviderProps<Multiple>,
-        DefaultProps<AccordionStylesNames, AccordionStylesParams>,
-        Omit<React.ComponentPropsWithoutRef<'div'>, keyof AccordionProviderProps<Multiple>> {}
+export type AccordionProps<Multiple extends boolean = false> = {} & AccordionProviderProps<Multiple> &
+    DefaultProps<AccordionStylesNames, AccordionStylesParams> &
+    Omit<React.ComponentPropsWithoutRef<'div'>, keyof AccordionProviderProps<Multiple>>
 
 const defaultProps: Partial<AccordionProps> = {
     multiple: false,

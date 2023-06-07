@@ -1,6 +1,7 @@
-import React, { createContext, useContext } from 'react'
+import type React from 'react'
+import { createContext, useContext } from 'react'
 
-interface ChipGroupContextValue {
+type ChipGroupContextValue = {
     isChipSelected(value: string): boolean
     onChange(event: React.ChangeEvent<HTMLInputElement>): void
     multiple: boolean

@@ -1,14 +1,15 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import useStyles from './InputLabel.styles'
 
 export type InputLabelStylesNames = Selectors<typeof useStyles>
 
-export interface InputLabelProps extends DefaultProps<InputLabelStylesNames>, React.ComponentPropsWithoutRef<'label'> {
+export type InputLabelProps = {
     variant?: string
 
     /** Label content */
@@ -24,7 +25,8 @@ export interface InputLabelProps extends DefaultProps<InputLabelStylesNames>, Re
     size?: MantineSize
 
     __staticSelector?: string
-}
+} & DefaultProps<InputLabelStylesNames> &
+    React.ComponentPropsWithoutRef<'label'>
 
 const defaultProps: Partial<InputLabelProps> = {
     labelElement: 'label',

@@ -1,13 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import {
-    DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    rem,
-    useComponentDefaultProps,
-    Variants,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Variants } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -15,7 +9,7 @@ import useStyles from './Divider.styles'
 
 export type DividerStylesNames = 'label'
 
-export interface DividerProps extends DefaultProps<DividerStylesNames>, React.ComponentPropsWithoutRef<'div'> {
+export type DividerProps = {
     /** Key of theme.colors, defaults to "gray" in light color scheme and to "dark" in dark color scheme */
     color?: MantineColor
 
@@ -36,7 +30,8 @@ export interface DividerProps extends DefaultProps<DividerStylesNames>, React.Co
 
     /** Controls appearance */
     variant?: Variants<'solid' | 'dashed' | 'dotted'>
-}
+} & DefaultProps<DividerStylesNames> &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<DividerProps> = {
     orientation: 'horizontal',

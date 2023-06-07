@@ -1,17 +1,18 @@
 import React from 'react'
 
-import { ClassNames, DefaultProps, MantineShadow, rem, Selectors, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, DefaultProps, MantineShadow, Selectors, Styles } from '@worldprinter/wdesign-styles'
+import { rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { Popover } from '../../Popover'
-import { PortalProps } from '../../Portal'
-import { TransitionOverride } from '../../Transition'
+import type { PortalProps } from '../../Portal'
+import type { TransitionOverride } from '../../Transition'
 import { SelectScrollArea } from '../SelectScrollArea/SelectScrollArea'
 import useStyles from './SelectPopover.styles'
 
 export type SelectPopoverStylesNames = Selectors<typeof useStyles>
 
-interface SelectPopoverDropdownProps extends DefaultProps<SelectPopoverStylesNames> {
+type SelectPopoverDropdownProps = {
     children: React.ReactNode
     id: string
     component?: any
@@ -19,7 +20,7 @@ interface SelectPopoverDropdownProps extends DefaultProps<SelectPopoverStylesNam
     direction?: React.CSSProperties['flexDirection']
     innerRef?: React.MutableRefObject<HTMLDivElement>
     __staticSelector?: string
-}
+} & DefaultProps<SelectPopoverStylesNames>
 
 function SelectPopoverDropdown({
     children,
@@ -66,7 +67,7 @@ function SelectPopoverDropdown({
     )
 }
 
-interface SelectPopoverProps {
+type SelectPopoverProps = {
     opened: boolean
     transitionProps: TransitionOverride
     shadow?: MantineShadow

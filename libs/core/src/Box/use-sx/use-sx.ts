@@ -1,4 +1,5 @@
-import { MantineStyleSystemProps, MantineTheme, Sx, useCss, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { MantineStyleSystemProps, MantineTheme, Sx } from '@worldprinter/wdesign-styles'
+import { useCss, useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { getSystemStyles } from '../style-system-props/get-system-styles/get-system-styles'
 

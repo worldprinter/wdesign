@@ -1,6 +1,6 @@
 import { createStyles } from '@worldprinter/wdesign-styles'
 
-import { AccordionStylesParams } from '../Accordion.types'
+import type { AccordionStylesParams } from '../Accordion.types'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default createStyles((theme, _params: AccordionStylesParams) => ({

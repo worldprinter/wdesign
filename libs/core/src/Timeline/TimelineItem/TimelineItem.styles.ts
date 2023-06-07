@@ -1,6 +1,7 @@
-import { createStyles, MantineColor, MantineNumberSize, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-interface TimelineItemStyles {
+type TimelineItemStyles = {
     bulletSize: number
     color: MantineColor
     radius: MantineNumberSize

@@ -1,6 +1,7 @@
-import { createStyles, getSize, MantineColor, MantineNumberSize, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
-export interface NavLinkStylesParams {
+export type NavLinkStylesParams = {
     color: MantineColor
     noWrap: boolean
     childrenOffset: MantineNumberSize
@@ -9,7 +10,7 @@ export interface NavLinkStylesParams {
 
 const NAV_LINK_VARIANTS = ['filled', 'light', 'subtle']
 
-interface GetVariantStylesInput {
+type GetVariantStylesInput = {
     theme: MantineTheme
     variant: string
     color: MantineColor

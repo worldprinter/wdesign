@@ -1,6 +1,7 @@
-import { createStyles, MantineColor, rem } from '@worldprinter/wdesign-styles'
+import type { MantineColor } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
-export interface CodeStylesParams {
+export type CodeStylesParams = {
     color: MantineColor
 }
 

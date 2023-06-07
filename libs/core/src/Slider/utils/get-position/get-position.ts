@@ -1,4 +1,4 @@
-interface GetPosition {
+type GetPosition = {
     value: number
     min: number
     max: number

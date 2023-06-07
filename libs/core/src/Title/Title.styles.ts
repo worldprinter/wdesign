@@ -1,10 +1,11 @@
-import { createStyles, MantineTheme, rem } from '@worldprinter/wdesign-styles'
+import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 import type { TitleSize } from './Title'
 
 type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-export interface TitleStylesParams {
+export type TitleStylesParams = {
     element: HeadingElement
     weight: React.CSSProperties['fontWeight']
     inline: boolean

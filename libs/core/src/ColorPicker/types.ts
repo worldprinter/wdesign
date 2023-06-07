@@ -1,13 +1,13 @@
 export type ColorFormat = 'hex' | 'hexa' | 'rgba' | 'rgb' | 'hsl' | 'hsla'
 
-export interface HsvaColor {
+export type HsvaColor = {
     h: number
     s: number
     v: number
     a: number
 }
 
-export interface RgbaColor {
+export type RgbaColor = {
     r: number
     g: number
     b: number

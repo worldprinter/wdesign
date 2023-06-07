@@ -1,15 +1,15 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { UnstyledButton } from '../UnstyledButton'
-import useStyles, { BurgerStylesParams } from './Burger.styles'
+import type { BurgerStylesParams } from './Burger.styles'
+import useStyles from './Burger.styles'
 
 export type BurgerStylesNames = Selectors<typeof useStyles>
 
-export interface BurgerProps
-    extends DefaultProps<BurgerStylesNames, BurgerStylesParams>,
-        React.ComponentPropsWithoutRef<'button'> {
+export type BurgerProps = {
     variant?: string
 
     /** Burger state: true for cross, false for burger */
@@ -23,7 +23,8 @@ export interface BurgerProps
 
     /** Transition duration in ms */
     transitionDuration?: number
-}
+} & DefaultProps<BurgerStylesNames, BurgerStylesParams> &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<BurgerProps> = {
     size: 'md',

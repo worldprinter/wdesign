@@ -2,20 +2,23 @@ import React, { cloneElement, forwardRef, useRef } from 'react'
 
 import { useMergedRef } from '@worldprinter/wdesign-hooks'
 import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents, isElement } from '@worldprinter/wdesign-utils'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import { isElement } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import { ArrowPosition, FloatingArrow, FloatingPosition, getFloatingPosition } from '../Floating'
+import type { ArrowPosition, FloatingPosition } from '../Floating'
+import { FloatingArrow, getFloatingPosition } from '../Floating'
 import { OptionalPortal } from '../Portal'
-import { Transition, TransitionOverride } from '../Transition'
+import type { TransitionOverride } from '../Transition'
+import { Transition } from '../Transition'
 import { TOOLTIP_ERRORS } from './Tooltip.errors'
 import useStyles from './Tooltip.styles'
-import { TooltipBaseProps } from './Tooltip.types'
+import type { TooltipBaseProps } from './Tooltip.types'
 import { TooltipFloating } from './TooltipFloating/TooltipFloating'
 import { TooltipGroup } from './TooltipGroup/TooltipGroup'
 import { useTooltip } from './use-tooltip'
 
-export interface TooltipProps extends TooltipBaseProps {
+export type TooltipProps = {
     variant?: string
 
     /** Called when tooltip position changes */
@@ -62,7 +65,7 @@ export interface TooltipProps extends TooltipBaseProps {
 
     /** If set tooltip will not be unmounted from the DOM when it is hidden, display: none styles will be added instead */
     keepMounted?: boolean
-}
+} & TooltipBaseProps
 
 const defaultProps: Partial<TooltipProps> = {
     position: 'top',

@@ -1,4 +1,4 @@
-export interface RichTextEditorLabels {
+export type RichTextEditorLabels = {
     /** RichTextEditor.Bold control aria-label */
     boldControlLabel: string
 

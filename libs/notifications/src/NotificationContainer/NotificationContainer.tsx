@@ -1,16 +1,17 @@
 import React, { useEffect, useRef } from 'react'
 
-import { DefaultProps, Notification } from '@worldprinter/wdesign-core'
+import type { DefaultProps } from '@worldprinter/wdesign-core'
+import { Notification } from '@worldprinter/wdesign-core'
 
-import { NotificationProps } from '../types'
+import type { NotificationProps } from '../types'
 import getAutoClose from './get-auto-close/get-auto-close'
 
-export interface NotificationContainerProps extends DefaultProps {
+export type NotificationContainerProps = {
     notification: NotificationProps
     onHide(id: string): void
     autoClose: false | number
     innerRef: React.ForwardedRef<HTMLDivElement>
-}
+} & DefaultProps
 
 export default function NotificationContainer({
     notification,

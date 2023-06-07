@@ -9,7 +9,7 @@ export const commonListItemStyles = {
     alignItems: 'center',
 }
 
-interface Props {
+type Props = {
     header: MRT_Header
     table: MRT_TableInstance
 }

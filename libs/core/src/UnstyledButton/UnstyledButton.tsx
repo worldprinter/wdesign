@@ -1,15 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
 import useStyles from './UnstyledButton.styles'
 
-export interface UnstyledButtonProps extends DefaultProps {
+export type UnstyledButtonProps = {
     variant?: string
     children?: React.ReactNode
-}
+} & DefaultProps
 
 export const _UnstyledButton = forwardRef<HTMLDivElement, UnstyledButtonProps & { component?: any }>((props, ref) => {
     const {

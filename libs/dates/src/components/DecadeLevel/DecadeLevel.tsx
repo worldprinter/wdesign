@@ -1,29 +1,28 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
-import { CalendarHeader, CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import type { CalendarHeaderSettings, CalendarHeaderStylesNames } from '../CalendarHeader'
+import { CalendarHeader } from '../CalendarHeader'
 import { useDatesContext } from '../DatesProvider'
-import { YearsList, YearsListSettings, YearsListStylesNames } from '../YearsList'
+import type { YearsListSettings, YearsListStylesNames } from '../YearsList'
+import { YearsList } from '../YearsList'
 import useStyles from './DecadeLevel.styles'
 import { getDecadeRange } from './get-decade-range/get-decade-range'
 
 export type DecadeLevelStylesNames = Selectors<typeof useStyles> | YearsListStylesNames | CalendarHeaderStylesNames
 
-export interface DecadeLevelBaseSettings extends YearsListSettings {
+export type DecadeLevelBaseSettings = {
     /** dayjs label format to display decade label or a function that returns decade label based on date value, defaults to "YYYY" */
     decadeLabelFormat?: string | ((startOfDecade: Date, endOfDecade: Date) => React.ReactNode)
-}
+} & YearsListSettings
 
-export interface DecadeLevelSettings
-    extends DecadeLevelBaseSettings,
-        Omit<CalendarHeaderSettings, 'onLevelClick' | 'hasNextLevel'> {}
+export type DecadeLevelSettings = {} & DecadeLevelBaseSettings &
+    Omit<CalendarHeaderSettings, 'onLevelClick' | 'hasNextLevel'>
 
-export interface DecadeLevelProps
-    extends DefaultProps<DecadeLevelStylesNames>,
-        DecadeLevelSettings,
-        React.ComponentPropsWithoutRef<'div'> {
+export type DecadeLevelProps = {
     variant?: string
     __staticSelector?: string
 
@@ -32,7 +31,9 @@ export interface DecadeLevelProps
 
     /** aria-label for change level control */
     levelControlAriaLabel?: string
-}
+} & DefaultProps<DecadeLevelStylesNames> &
+    DecadeLevelSettings &
+    React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<DecadeLevelProps> = {
     decadeLabelFormat: 'YYYY',

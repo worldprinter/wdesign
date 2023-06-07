@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { MantineSize } from '@worldprinter/wdesign-styles'
+import type { MantineSize } from '@worldprinter/wdesign-styles'
 
 import { CloseButton } from '../../CloseButton'
 import { ChevronIcon } from './ChevronIcon'
 
-export interface SelectRightSectionProps {
+export type SelectRightSectionProps = {
     shouldClear: boolean
     clearButtonProps?: React.ComponentPropsWithoutRef<'button'>
     onClear?: () => void

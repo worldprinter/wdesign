@@ -1,4 +1,4 @@
-import { BlockquoteStylesNames } from '@worldprinter/wdesign-core'
+import type { BlockquoteStylesNames } from '@worldprinter/wdesign-core'
 
 export const Blockquote: Record<BlockquoteStylesNames, string> = {
     root: 'Root element',

@@ -1,12 +1,14 @@
 import React, { useRef } from 'react'
 import { Transition, TransitionGroup } from 'react-transition-group'
 
-import { Box, DefaultProps, getDefaultZIndex, Portal, PortalProps, rem } from '@worldprinter/wdesign-core'
+import type { DefaultProps, PortalProps } from '@worldprinter/wdesign-core'
+import { Box, getDefaultZIndex, Portal, rem } from '@worldprinter/wdesign-core'
 import { useDidUpdate, useForceUpdate, useReducedMotion } from '@worldprinter/wdesign-hooks'
 
-import { notifications as GlobalNotifications, NotificationsEvents, useNotificationsEvents } from '../events'
+import type { NotificationsEvents } from '../events'
+import { notifications as GlobalNotifications, useNotificationsEvents } from '../events'
 import NotificationContainer from '../NotificationContainer/NotificationContainer'
-import { NotificationsPositioning } from '../types'
+import type { NotificationsPositioning } from '../types'
 import getNotificationStateStyles from './get-notification-state-styles/get-notification-state-styles'
 import getPositionStyles from './get-position-styles/get-position-styles'
 import useStyles from './Notifications.styles'
@@ -16,7 +18,7 @@ const POSITIONS = ['top-left', 'top-right', 'top-center', 'bottom-left', 'bottom
 
 type NotificationsStaticMethods = NotificationsEvents
 
-export interface NotificationsProps extends Omit<DefaultProps, 'style'>, React.ComponentPropsWithoutRef<'div'> {
+export type NotificationsProps = {
     /** Notifications position */
     position?: 'top-left' | 'top-right' | 'top-center' | 'bottom-left' | 'bottom-right' | 'bottom-center'
 
@@ -40,7 +42,8 @@ export interface NotificationsProps extends Omit<DefaultProps, 'style'>, React.C
 
     /** Target element of Portal component */
     target?: PortalProps['target']
-}
+} & Omit<DefaultProps, 'style'> &
+    React.ComponentPropsWithoutRef<'div'>
 
 export const Notifications: React.FC<NotificationsProps> & NotificationsStaticMethods = ({
     className,

@@ -1,20 +1,14 @@
-import {
-    createStyles,
-    CSSObject,
-    MantineColor,
-    MantineNumberSize,
-    MantineTheme,
-    rem,
-} from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export type AlertVariant = 'filled' | 'outline' | 'light'
 
-export interface AlertStylesParams {
+export type AlertStylesParams = {
     color: MantineColor
     radius: MantineNumberSize
 }
 
-interface GetVariantStylesInput {
+type GetVariantStylesInput = {
     variant: string
     color: MantineColor
     theme: MantineTheme

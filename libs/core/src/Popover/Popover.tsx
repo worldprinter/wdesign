@@ -3,26 +3,20 @@
 import React, { useCallback, useRef, useState } from 'react'
 
 import { useClickOutside, useId } from '@worldprinter/wdesign-hooks'
-import {
-    ClassNames,
-    getDefaultZIndex,
-    MantineNumberSize,
-    MantineShadow,
-    Styles,
-    useComponentDefaultProps,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
-import { ArrowPosition, FloatingAxesOffsets, FloatingPosition, getFloatingPosition } from '../Floating'
-import { PortalProps } from '../Portal'
-import { TransitionOverride } from '../Transition'
+import type { ArrowPosition, FloatingAxesOffsets, FloatingPosition } from '../Floating'
+import { getFloatingPosition } from '../Floating'
+import type { PortalProps } from '../Portal'
+import type { TransitionOverride } from '../Transition'
 import { PopoverContextProvider } from './Popover.context'
-import { PopoverMiddlewares, PopoverStylesNames, PopoverStylesParams, PopoverWidth } from './Popover.types'
+import type { PopoverMiddlewares, PopoverStylesNames, PopoverStylesParams, PopoverWidth } from './Popover.types'
 import { PopoverDropdown } from './PopoverDropdown/PopoverDropdown'
 import { PopoverTarget } from './PopoverTarget/PopoverTarget'
 import { usePopover } from './use-popover'
 
-export interface PopoverBaseProps {
+export type PopoverBaseProps = {
     /** Dropdown position relative to target */
     position?: FloatingPosition
 
@@ -90,7 +84,7 @@ export interface PopoverBaseProps {
     returnFocus?: boolean
 }
 
-export interface PopoverProps extends PopoverBaseProps {
+export type PopoverProps = {
     /** Popover.Target and Popover.Dropdown components */
     children: React.ReactNode
 
@@ -126,7 +120,7 @@ export interface PopoverProps extends PopoverBaseProps {
     classNames?: ClassNames<PopoverStylesNames>
     styles?: Styles<PopoverStylesNames, PopoverStylesParams>
     __staticSelector?: string
-}
+} & PopoverBaseProps
 
 const defaultProps: Partial<PopoverProps> = {
     position: 'bottom',

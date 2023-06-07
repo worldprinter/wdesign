@@ -3,7 +3,8 @@ import React, { cloneElement, forwardRef } from 'react'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler, isElement } from '@worldprinter/wdesign-utils'
 
-import { Popover, PopoverTargetProps } from '../../Popover'
+import type { PopoverTargetProps } from '../../Popover'
+import { Popover } from '../../Popover'
 import { useHoverCardContext } from '../HoverCard.context'
 import { HOVER_CARD_ERRORS } from '../HoverCard.errors'
 

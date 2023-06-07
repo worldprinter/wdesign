@@ -1,6 +1,6 @@
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
-export interface DropzoneContextValue {
+export type DropzoneContextValue = {
     idle: boolean
     accept: boolean
     reject: boolean

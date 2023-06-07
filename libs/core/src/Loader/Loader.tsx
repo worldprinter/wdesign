@@ -1,15 +1,7 @@
 import React from 'react'
 
-import {
-    DefaultProps,
-    getSize,
-    MantineColor,
-    MantineNumberSize,
-    MantineTheme,
-    rem,
-    useComponentDefaultProps,
-    useMantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import { getSize, rem, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Bars } from './loaders/Bars'
@@ -30,7 +22,7 @@ const sizes = {
     xl: rem(58),
 }
 
-export interface LoaderProps extends DefaultProps, Omit<React.ComponentPropsWithoutRef<'svg'>, 'display' | 'opacity'> {
+export type LoaderProps = {
     /** Defines width of loader */
     size?: MantineNumberSize
 
@@ -39,7 +31,8 @@ export interface LoaderProps extends DefaultProps, Omit<React.ComponentPropsWith
 
     /** Loader appearance */
     variant?: MantineTheme['loader']
-}
+} & DefaultProps &
+    Omit<React.ComponentPropsWithoutRef<'svg'>, 'display' | 'opacity'>
 
 const defaultProps: Partial<LoaderProps> = {
     size: 'md',

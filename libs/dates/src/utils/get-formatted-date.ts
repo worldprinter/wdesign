@@ -1,8 +1,8 @@
 import dayjs from 'dayjs'
 
-import { DatePickerType, DatePickerValue } from '../types'
+import type { DatePickerType, DatePickerValue } from '../types'
 
-interface GetFormattedDate<Type extends DatePickerType = 'default'> {
+type GetFormattedDate<Type extends DatePickerType = 'default'> = {
     type: Type
     date: DatePickerValue<Type>
     locale: string

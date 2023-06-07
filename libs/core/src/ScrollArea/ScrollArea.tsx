@@ -1,17 +1,18 @@
 import * as RadixScrollArea from '@radix-ui/react-scroll-area'
 import React, { forwardRef, useState } from 'react'
 
-import { DefaultProps, Selectors, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
-import { ForwardRefWithStaticComponents, packSx } from '@worldprinter/wdesign-utils'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
+import { packSx } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { ScrollAreaStylesParams } from './ScrollArea.styles'
+import type { ScrollAreaStylesParams } from './ScrollArea.styles'
+import useStyles from './ScrollArea.styles'
 
 export type ScrollAreaStylesNames = Selectors<typeof useStyles>
 
-export interface ScrollAreaProps
-    extends DefaultProps<ScrollAreaStylesNames, ScrollAreaStylesParams>,
-        React.ComponentPropsWithRef<'div'> {
+export type ScrollAreaProps = {
     variant?: string
 
     /** Scrollbar size */
@@ -37,7 +38,8 @@ export interface ScrollAreaProps
 
     /** Subscribe to scroll position changes */
     onScrollPositionChange?(position: { x: number; y: number }): void
-}
+} & DefaultProps<ScrollAreaStylesNames, ScrollAreaStylesParams> &
+    React.ComponentPropsWithRef<'div'>
 
 const defaultProps: Partial<ScrollAreaProps> = {
     scrollbarSize: 12,

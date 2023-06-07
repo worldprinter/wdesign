@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-interface IsDateValid {
+type IsDateValid = {
     date: Date
     maxDate: Date
     minDate: Date

@@ -1,4 +1,4 @@
-interface GetCurveProps {
+type GetCurveProps = {
     size: number
     thickness: number
     sum: number

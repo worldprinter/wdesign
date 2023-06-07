@@ -1,14 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { DefaultProps, MantineNumberSize, rem, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
 import { Box } from '../Box'
-import useStyles, { ColorSwatchStylesParams } from './ColorSwatch.styles'
+import type { ColorSwatchStylesParams } from './ColorSwatch.styles'
+import useStyles from './ColorSwatch.styles'
 
 export type ColorSwatchStylesNames = Selectors<typeof useStyles>
 
-export interface ColorSwatchProps extends DefaultProps<ColorSwatchStylesNames, ColorSwatchStylesParams> {
+export type ColorSwatchProps = {
     variant?: string
 
     /** Swatch background-color in any css valid format (hex, rgb, etc.) */
@@ -25,7 +27,7 @@ export interface ColorSwatchProps extends DefaultProps<ColorSwatchStylesNames, C
 
     /** Determines whether swatch should have inner shadow */
     withShadow?: boolean
-}
+} & DefaultProps<ColorSwatchStylesNames, ColorSwatchStylesParams>
 
 const defaultProps: Partial<ColorSwatchProps> = {
     size: rem(25),

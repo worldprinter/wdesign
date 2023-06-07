@@ -5,7 +5,7 @@ import { Box } from '@worldprinter/wdesign-core'
 import type { MRT_Header, MRT_HeaderGroup, MRT_TableInstance, MRT_VirtualItem } from '..'
 import { MRT_TableHeadCell } from './MRT_TableHeadCell'
 
-interface Props {
+type Props = {
     headerGroup: MRT_HeaderGroup
     table: MRT_TableInstance
     virtualColumns?: MRT_VirtualItem[]

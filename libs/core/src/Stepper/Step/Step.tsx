@@ -1,14 +1,14 @@
-import React, { forwardRef, FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
+import React, { forwardRef } from 'react'
 
-import {
+import type {
     DefaultProps,
-    getSize,
     MantineColor,
     MantineNumberSize,
     MantineSize,
     Selectors,
-    useComponentDefaultProps,
 } from '@worldprinter/wdesign-styles'
+import { getSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { CheckboxIcon } from '../../Checkbox'
 import { Loader } from '../../Loader'
@@ -21,7 +21,7 @@ export type StepStylesNames = Selectors<typeof useStyles>
 
 export type StepFragmentComponent = FunctionComponent<{ step: number }>
 
-export interface StepProps extends DefaultProps<StepStylesNames>, React.ComponentPropsWithoutRef<'button'> {
+export type StepProps = {
     variant?: string
 
     /** Step index, controlled by Steps component **/
@@ -77,7 +77,8 @@ export interface StepProps extends DefaultProps<StepStylesNames>, React.Componen
 
     /** Component orientation */
     orientation?: 'vertical' | 'horizontal'
-}
+} & DefaultProps<StepStylesNames> &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultIconSizes = {
     xs: 16,

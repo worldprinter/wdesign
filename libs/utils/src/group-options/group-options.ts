@@ -1,4 +1,4 @@
-interface GroupData {
+type GroupData = {
     data: { group?: string }[]
 }
 

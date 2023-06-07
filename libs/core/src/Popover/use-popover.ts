@@ -1,11 +1,13 @@
-import { arrow, flip, inline, limitShift, Middleware, offset, shift, size, useFloating } from '@floating-ui/react'
+import type { Middleware } from '@floating-ui/react'
+import { arrow, flip, inline, limitShift, offset, shift, size, useFloating } from '@floating-ui/react'
 
 import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks'
 
-import { FloatingAxesOffsets, FloatingPosition, useFloatingAutoUpdate } from '../Floating'
-import { PopoverMiddlewares, PopoverWidth } from './Popover.types'
+import type { FloatingAxesOffsets, FloatingPosition } from '../Floating'
+import { useFloatingAutoUpdate } from '../Floating'
+import type { PopoverMiddlewares, PopoverWidth } from './Popover.types'
 
-interface UsePopoverOptions {
+type UsePopoverOptions = {
     offset: number | FloatingAxesOffsets
     position: FloatingPosition
     positionDependencies: any[]

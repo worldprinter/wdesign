@@ -1,20 +1,22 @@
 import React, { forwardRef } from 'react'
 
-import { Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { Selectors } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { Overlay, OverlayProps } from '../../Overlay'
-import { Transition, TransitionOverride } from '../../Transition'
+import type { OverlayProps } from '../../Overlay'
+import { Overlay } from '../../Overlay'
+import type { TransitionOverride } from '../../Transition'
+import { Transition } from '../../Transition'
 import { useModalBaseContext } from '../ModalBase.context'
 import useStyles from './ModalBaseOverlay.styles'
 
 export type ModalBaseOverlayStylesNames = Selectors<typeof useStyles>
 
-export interface ModalBaseOverlayProps
-    extends OverlayProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, keyof OverlayProps> {
+export type ModalBaseOverlayProps = {
     /** Props added to Transition component */
     transitionProps?: TransitionOverride
-}
+} & OverlayProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, keyof OverlayProps>
 
 const defaultProps: Partial<ModalBaseOverlayProps> = {}
 

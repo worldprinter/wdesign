@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 
-import { ScrollArea, ScrollAreaProps } from '../../ScrollArea'
+import type { ScrollAreaProps } from '../../ScrollArea'
+import { ScrollArea } from '../../ScrollArea'
 
 export const SelectScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
     ({ style, ...others }: ScrollAreaProps, ref) => (

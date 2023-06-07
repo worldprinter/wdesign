@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-interface AppShellContextValue {
+type AppShellContextValue = {
     zIndex: React.CSSProperties['zIndex']
     fixed: boolean
     layout: 'default' | 'alt'

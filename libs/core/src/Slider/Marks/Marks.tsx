@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { getPosition } from '../utils/get-position/get-position'
@@ -9,7 +9,7 @@ import useStyles from './Marks.styles'
 
 export type MarksStylesNames = Selectors<typeof useStyles>
 
-export interface MarksProps extends DefaultProps<MarksStylesNames> {
+export type MarksProps = {
     marks: { value: number; label?: React.ReactNode }[]
     size: MantineNumberSize
     thumbSize?: number
@@ -22,7 +22,7 @@ export interface MarksProps extends DefaultProps<MarksStylesNames> {
     disabled: boolean
     inverted?: boolean
     variant: string
-}
+} & DefaultProps<MarksStylesNames>
 
 export function Marks({
     marks,

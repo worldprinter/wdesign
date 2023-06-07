@@ -1,17 +1,16 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import { DefaultProps, MantineSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
-import { Input, InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
+import type { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
+import { Input } from '../../Input'
 import { CheckboxGroupProvider } from '../CheckboxGroup.context'
 
 export type CheckboxGroupStylesNames = InputWrapperStylesNames
 
-export interface CheckboxGroupProps
-    extends DefaultProps<CheckboxGroupStylesNames>,
-        InputWrapperBaseProps,
-        Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export type CheckboxGroupProps = {
     variant?: string
 
     /** <Checkbox /> components */
@@ -31,7 +30,9 @@ export interface CheckboxGroupProps
 
     /** Props added to Input.Wrapper component (root element) */
     wrapperProps?: Record<string, any>
-}
+} & DefaultProps<CheckboxGroupStylesNames> &
+    InputWrapperBaseProps &
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 
 const defaultProps: Partial<CheckboxGroupProps> = {
     size: 'sm',

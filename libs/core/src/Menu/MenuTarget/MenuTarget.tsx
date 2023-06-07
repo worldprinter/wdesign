@@ -7,7 +7,7 @@ import { Popover } from '../../Popover'
 import { useMenuContext } from '../Menu.context'
 import { MENU_ERRORS } from '../Menu.errors'
 
-export interface MenuTargetProps {
+export type MenuTargetProps = {
     /** Target element */
     children: React.ReactNode
 

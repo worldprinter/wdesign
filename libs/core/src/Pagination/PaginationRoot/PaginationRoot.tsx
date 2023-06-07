@@ -2,13 +2,8 @@
 import React from 'react'
 
 import { usePagination } from '@worldprinter/wdesign-hooks'
-import {
-    ClassNames,
-    MantineColor,
-    MantineNumberSize,
-    Styles,
-    useComponentDefaultProps,
-} from '@worldprinter/wdesign-styles'
+import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler } from '@worldprinter/wdesign-utils'
 
 import { PaginationProvider } from '../Pagination.context'
@@ -17,7 +12,7 @@ import type { PaginationDotsStylesNames } from '../PaginationDots/PaginationDots
 
 export type PaginationStylesNames = PaginationControlStylesNames | PaginationDotsStylesNames
 
-export interface PaginationRootSettings {
+export type PaginationRootSettings = {
     classNames?: ClassNames<PaginationStylesNames>
     styles?: Styles<PaginationStylesNames>
     unstyled?: boolean
@@ -69,10 +64,10 @@ export interface PaginationRootSettings {
     getItemProps?(page: number): Record<string, any>
 }
 
-export interface PaginationRootProps extends PaginationRootSettings {
+export type PaginationRootProps = {
     /** Pagination content */
     children?: React.ReactNode
-}
+} & PaginationRootSettings
 
 const defaultProps: Partial<PaginationRootProps> = {
     siblings: 1,

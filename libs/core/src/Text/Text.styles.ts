@@ -1,13 +1,7 @@
-import {
-    createStyles,
-    CSSObject,
-    getSize,
-    MantineColor,
-    MantineGradient,
-    MantineTheme,
-} from '@worldprinter/wdesign-styles'
+import type { CSSObject, MantineColor, MantineGradient, MantineTheme } from '@worldprinter/wdesign-styles'
+import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
-export interface TextStylesParams {
+export type TextStylesParams = {
     color: 'dimmed' | MantineColor
     lineClamp: number
     truncate: 'end' | 'start' | boolean
@@ -22,11 +16,11 @@ export interface TextStylesParams {
     weight: React.CSSProperties['fontWeight']
 }
 
-interface GetTextColor {
+type GetTextColor = {
     theme: MantineTheme
     color: 'dimmed' | MantineColor
 }
-interface GetTruncate {
+type GetTruncate = {
     truncate: 'end' | 'start' | boolean
     theme: MantineTheme
 }

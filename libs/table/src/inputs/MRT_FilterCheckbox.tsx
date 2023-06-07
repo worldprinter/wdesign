@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { Checkbox, CheckboxProps, Tooltip } from '@worldprinter/wdesign-core'
+import type { CheckboxProps } from '@worldprinter/wdesign-core'
+import { Checkbox, Tooltip } from '@worldprinter/wdesign-core'
 
 import type { MRT_Column, MRT_TableInstance } from '..'
 
-interface Props {
+type Props = {
     column: MRT_Column
     table: MRT_TableInstance
 }

@@ -1,8 +1,8 @@
 import React, { createContext } from 'react'
 
-import { DayOfWeek } from '../../types'
+import type { DayOfWeek } from '../../types'
 
-export interface DatesProviderValue {
+export type DatesProviderValue = {
     locale: string
     firstDayOfWeek: DayOfWeek
     weekendDays: DayOfWeek[]
@@ -20,7 +20,7 @@ export const DATES_PROVIDER_DEFAULT_SETTINGS: DatesProviderValue = {
 
 export const DatesProviderContext = createContext(DATES_PROVIDER_DEFAULT_SETTINGS)
 
-export interface DatesProviderProps {
+export type DatesProviderProps = {
     settings: DatesProviderSettings
     children: React.ReactNode
 }

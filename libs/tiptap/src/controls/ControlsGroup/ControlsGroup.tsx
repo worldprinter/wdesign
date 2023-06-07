@@ -1,13 +1,14 @@
 import React, { forwardRef } from 'react'
 
-import { Box, DefaultProps, Selectors, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors } from '@worldprinter/wdesign-core'
+import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
 import useStyles from './ControlsGroup.styles'
 
 export type ControlsGroupStylesNames = Selectors<typeof useStyles>
 
-export interface RichTextEditorControlsGroupProps extends DefaultProps, React.ComponentPropsWithoutRef<'div'> {}
+export type RichTextEditorControlsGroupProps = {} & DefaultProps & React.ComponentPropsWithoutRef<'div'>
 
 const defaultProps: Partial<RichTextEditorControlsGroupProps> = {}
 

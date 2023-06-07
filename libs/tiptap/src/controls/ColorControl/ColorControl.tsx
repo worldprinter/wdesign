@@ -1,14 +1,16 @@
 import React, { forwardRef } from 'react'
 
-import { ColorSwatch, DefaultProps, useComponentDefaultProps } from '@worldprinter/wdesign-core'
+import type { DefaultProps } from '@worldprinter/wdesign-core'
+import { ColorSwatch, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import { useRichTextEditorContext } from '../../RichTextEditor.context'
 import { Control } from '../Control/Control'
 
-export interface RichTextEditorColorControlProps extends DefaultProps, React.ComponentPropsWithoutRef<'button'> {
+export type RichTextEditorColorControlProps = {
     /** Color that will be set as text color, for example #ef457e */
     color: string
-}
+} & DefaultProps &
+    React.ComponentPropsWithoutRef<'button'>
 
 const defaultProps: Partial<RichTextEditorColorControlProps> = {}
 

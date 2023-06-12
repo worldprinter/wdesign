@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/worldprinter/wdesign/compare/v0.5.0...v0.6.0) (2023-06-12)
+
+
+### Features
+
+* change ssr get next ([2f7df69](https://github.com/worldprinter/wdesign/commit/2f7df69b132b74afd386b1227ce2b0fbea1032cc))
+
 ## [0.5.0](https://github.com/worldprinter/wdesign/compare/v0.4.0...v0.5.0) (2023-06-12)
 
 

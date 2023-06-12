@@ -1,12 +1,11 @@
 {
   "name": "@worldprinter/wdesign-table",
-  "version": "0.0.1",
+  "version": "0.7.0",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "@emotion/react": ">=11.9.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

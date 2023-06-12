@@ -1,6 +1,6 @@
 {
     "name": "@worldprinter/wdesign-carousel",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "peerDependencies": {
         "embla-carousel-react": "^7.0.0",
         "react": ">=16.8.0"

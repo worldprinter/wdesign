@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
@@ -16,22 +16,22 @@ export type GridProps = {
     children: React.ReactNode
 
     /** Spacing between columns, key of theme.spacing or number for value */
-    gutter?: MantineNumberSize
+    gutter?: WDesignNumberSize
 
     /** Gutter when screen size is larger than theme.breakpoints.xs */
-    gutterXs?: MantineNumberSize
+    gutterXs?: WDesignNumberSize
 
     /** Gutter when screen size is larger than theme.breakpoints.sm */
-    gutterSm?: MantineNumberSize
+    gutterSm?: WDesignNumberSize
 
     /** Gutter when screen size is larger than theme.breakpoints.md */
-    gutterMd?: MantineNumberSize
+    gutterMd?: WDesignNumberSize
 
     /** Gutter when screen size is larger than theme.breakpoints.lg */
-    gutterLg?: MantineNumberSize
+    gutterLg?: WDesignNumberSize
 
     /** Gutter when screen size is larger than theme.breakpoints.xl */
-    gutterXl?: MantineNumberSize
+    gutterXl?: WDesignNumberSize
 
     /** Should columns in the last row take 100% of grid width */
     grow?: boolean

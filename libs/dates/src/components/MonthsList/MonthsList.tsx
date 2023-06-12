@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { ControlsGroupSettings } from '../../types'
@@ -41,7 +41,7 @@ export type MonthsListProps = {
     year: Date
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 } & DefaultProps<MonthsListStylesNames> &
     MonthsListSettings &
     React.ComponentPropsWithoutRef<'table'>
@@ -108,7 +108,7 @@ export const MonthsList = forwardRef<HTMLTableElement, MonthsListProps>((props, 
                         styles={styles}
                         unstyled={unstyled}
                         __staticSelector={__staticSelector || 'MonthsList'}
-                        data-mantine-stop-propagation={__stopPropagation || undefined}
+                        data-wdesign-stop-propagation={__stopPropagation || undefined}
                         disabled={isMonthDisabled(month, minDate, maxDate)}
                         ref={(node) => __getControlRef?.(rowIndex, cellIndex, node)}
                         {...controlProps}

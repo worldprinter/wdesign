@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import type { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
@@ -26,7 +26,7 @@ export type CheckboxGroupProps = {
     onChange?(value: string[]): void
 
     /** Controls label font-size and checkbox width and height */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Props added to Input.Wrapper component (root element) */
     wrapperProps?: Record<string, any>

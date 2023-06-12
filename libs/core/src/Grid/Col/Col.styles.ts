@@ -1,15 +1,15 @@
-import type { MantineNumberSize, MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize, WDesignSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, em, getSize, MANTINE_SIZES } from '@worldprinter/wdesign-styles'
 
 export type ColSpan = number | 'auto' | 'content'
 
 type ColStyles = {
-    gutter: MantineNumberSize
-    gutterXs: MantineNumberSize
-    gutterSm: MantineNumberSize
-    gutterMd: MantineNumberSize
-    gutterLg: MantineNumberSize
-    gutterXl: MantineNumberSize
+    gutter: WDesignNumberSize
+    gutterXs: WDesignNumberSize
+    gutterSm: WDesignNumberSize
+    gutterMd: WDesignNumberSize
+    gutterLg: WDesignNumberSize
+    gutterXl: WDesignNumberSize
     columns: number
     grow: boolean
     offset: number
@@ -60,7 +60,7 @@ const getColumnFlexGrow = (colSpan: ColSpan, grow: boolean) => {
 const getColumnOffset = (offset: number, columns: number) =>
     offset === 0 ? 0 : offset ? `${100 / (columns / offset)}%` : undefined
 
-const getGutterSize = (gutter: MantineNumberSize, theme: MantineTheme) =>
+const getGutterSize = (gutter: WDesignNumberSize, theme: WDesignTheme) =>
     typeof gutter !== 'undefined' ? `calc(${getSize({ size: gutter, sizes: theme.spacing })} / 2)` : undefined
 
 function getBreakpointsStyles({
@@ -72,12 +72,12 @@ function getBreakpointsStyles({
     gutters,
     grow,
 }: {
-    sizes: Record<MantineSize, ColSpan>
-    offsets: Record<MantineSize, number>
-    orders: Record<MantineSize, React.CSSProperties['order']>
-    gutters: Record<MantineSize, MantineNumberSize>
+    sizes: Record<WDesignSize, ColSpan>
+    offsets: Record<WDesignSize, number>
+    orders: Record<WDesignSize, React.CSSProperties['order']>
+    gutters: Record<WDesignSize, WDesignNumberSize>
     grow: boolean
-    theme: MantineTheme
+    theme: WDesignTheme
     columns: number
 }) {
     return MANTINE_SIZES.reduce((acc, size) => {

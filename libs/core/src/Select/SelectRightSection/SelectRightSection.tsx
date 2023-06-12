@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { MantineSize } from '@worldprinter/wdesign-styles'
+import type { WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { CloseButton } from '../../CloseButton'
 import { ChevronIcon } from './ChevronIcon'
@@ -9,7 +9,7 @@ export type SelectRightSectionProps = {
     shouldClear: boolean
     clearButtonProps?: React.ComponentPropsWithoutRef<'button'>
     onClear?: () => void
-    size: MantineSize
+    size: WDesignSize
     error?: any
     // eslint-disable-next-line react/no-unused-prop-types
     disabled?: boolean

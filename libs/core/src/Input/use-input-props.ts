@@ -1,5 +1,5 @@
 import { useId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineStyleSystemProps } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignStyleSystemProps } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { extractSystemStyles } from '../Box'
@@ -75,7 +75,7 @@ export function useInputProps<T extends BaseProps, U extends Partial<T>>(compone
         wrapperProps: {
             ...wrapperProps,
             ...systemStyles,
-        } as typeof wrapperProps & MantineStyleSystemProps,
+        } as typeof wrapperProps & WDesignStyleSystemProps,
         inputProps: {
             required,
             classNames,

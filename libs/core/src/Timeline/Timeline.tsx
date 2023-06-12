@@ -1,6 +1,6 @@
 import React, { Children, forwardRef } from 'react'
 
-import type { CSSObject, DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { CSSObject, DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 import { packSx } from '@worldprinter/wdesign-utils'
@@ -22,10 +22,10 @@ export type TimelineProps = {
     active?: number
 
     /** Active color from theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Bullet size */
     bulletSize?: number | string

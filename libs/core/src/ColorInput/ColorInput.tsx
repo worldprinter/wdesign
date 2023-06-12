@@ -1,8 +1,8 @@
 import React, { forwardRef, useEffect, useState } from 'react'
 
 import { useDidUpdate, useEyeDropper, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineShadow } from '@worldprinter/wdesign-styles'
-import { getDefaultZIndex, getSize, rem, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignShadow } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, getSize, rem, useWDesignTheme } from '@worldprinter/wdesign-styles'
 import { noop } from '@worldprinter/wdesign-utils'
 
 import { ActionIcon } from '../ActionIcon'
@@ -47,7 +47,7 @@ export type ColorInputProps = {
     portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
 
     /** Dropdown box-shadow, key of theme.shadows */
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
 
     /** Determines whether eye dropper button should be displayed in the right section, true by default */
     withEyeDropper?: boolean
@@ -133,7 +133,7 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>((props, 
         ...others
     } = useInputProps('ColorInput', defaultProps, props)
 
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const [dropdownOpened, setDropdownOpened] = useState(false)
     const [lastValidValue, setLastValidValue] = useState('')
     const [_value, setValue] = useUncontrolled({

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -17,10 +17,10 @@ export type SimpleGridProps = {
     cols?: number
 
     /** Spacing between columns, used when none of breakpoints can be applied */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 
     /** Vertical spacing between columns, used when none of breakpoints can be applied  */
-    verticalSpacing?: MantineNumberSize
+    verticalSpacing?: WDesignNumberSize
 } & DefaultProps<never, SimpleGridStylesParams> &
     React.ComponentPropsWithoutRef<'div'>
 

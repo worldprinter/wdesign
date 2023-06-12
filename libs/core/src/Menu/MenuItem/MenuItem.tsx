@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef } from 'react'
 
 import { useMergedRef } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler, createPolymorphicComponent, createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
@@ -16,7 +16,7 @@ export type MenuItemProps = {
     children?: React.ReactNode
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Determines whether menu should be closed when item is clicked, overrides closeOnItemClick prop on Menu component */
     closeMenuOnClick?: boolean

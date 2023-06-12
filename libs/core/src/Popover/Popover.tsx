@@ -3,8 +3,8 @@
 import React, { useCallback, useRef, useState } from 'react'
 
 import { useClickOutside, useId } from '@worldprinter/wdesign-hooks'
-import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
-import { getDefaultZIndex, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize, WDesignShadow } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import type { ArrowPosition, FloatingAxesOffsets, FloatingPosition } from '../Floating'
 import { getFloatingPosition } from '../Floating'
@@ -72,10 +72,10 @@ export type PopoverBaseProps = {
     zIndex?: React.CSSProperties['zIndex']
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Key of theme.shadow or any other valid css box-shadow value */
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
 
     /** If set, popover dropdown will not render */
     disabled?: boolean
@@ -191,7 +191,7 @@ export function Popover(props: PopoverProps) {
     const [dropdownNode, setDropdownNode] = useState<HTMLElement>(null)
 
     const uid = useId(id)
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const popover = usePopover({
         middlewares,
         width,

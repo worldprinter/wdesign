@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Text } from '../../Text'
@@ -15,7 +15,7 @@ export type InputDescriptionProps = {
     children?: React.ReactNode
 
     /** Predefined size */
-    size?: MantineSize
+    size?: WDesignSize
 
     __staticSelector?: string
 } & DefaultProps<InputDescriptionStylesNames> &

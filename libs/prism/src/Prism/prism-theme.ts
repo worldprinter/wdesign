@@ -1,8 +1,8 @@
 import type { PrismTheme } from 'prism-react-renderer'
 
-import type { MantineTheme } from '@worldprinter/wdesign-core'
+import type { WDesignTheme } from '@worldprinter/wdesign-core'
 
-export const dark = (theme: MantineTheme): PrismTheme => ({
+export const dark = (theme: WDesignTheme): PrismTheme => ({
     plain: {
         color: theme.colors.gray[4],
         backgroundColor: theme.colors.dark[8],
@@ -90,7 +90,7 @@ export const dark = (theme: MantineTheme): PrismTheme => ({
     ],
 })
 
-export const light = (theme: MantineTheme): PrismTheme => ({
+export const light = (theme: WDesignTheme): PrismTheme => ({
     plain: {
         color: theme.colors.gray[9],
         backgroundColor: theme.fn.rgba(theme.colors.gray[0], 0.65),
@@ -184,5 +184,5 @@ export const light = (theme: MantineTheme): PrismTheme => ({
     ],
 })
 
-export const getPrismTheme = (theme: MantineTheme, colorScheme: 'light' | 'dark') =>
+export const getPrismTheme = (theme: WDesignTheme, colorScheme: 'light' | 'dark') =>
     colorScheme === 'dark' ? dark(theme) : light(theme)

@@ -1,4 +1,4 @@
-import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 import type { AccordionChevronPosition, AccordionStylesParams } from '../Accordion.types'
@@ -9,7 +9,7 @@ export type AccordionControlStylesParams = {
     chevronSize: number | string
 } & AccordionStylesParams
 
-function getVariantStyles(theme: MantineTheme, variant: string): CSSObject {
+function getVariantStyles(theme: WDesignTheme, variant: string): CSSObject {
     if (variant === 'default' || variant === 'contained') {
         return theme.fn.hover({
             backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],

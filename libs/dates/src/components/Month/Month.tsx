@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { ControlKeydownPayload, DayOfWeek } from '../../types'
@@ -76,7 +76,7 @@ export type MonthSettings = {
     getDayAriaLabel?(date: Date): string
 
     /** Controls size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Determines whether controls should be separated by spacing, true by default */
     withCellSpacing?: boolean
@@ -176,7 +176,7 @@ export const Month = forwardRef<HTMLTableElement, MonthProps>((props, ref) => {
                 >
                     <Day
                         {...stylesApiProps}
-                        data-mantine-stop-propagation={__stopPropagation || undefined}
+                        data-wdesign-stop-propagation={__stopPropagation || undefined}
                         renderDay={renderDay}
                         date={date}
                         weekend={ctx.getWeekendDays(weekendDays).includes(date.getDay() as DayOfWeek)}

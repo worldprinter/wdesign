@@ -1,11 +1,11 @@
 import React from 'react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getSize } from '@worldprinter/wdesign-styles'
 
 import { sizes } from './PaginationControl/PaginationControl.styles'
 
-export function getIconSize(size: MantineNumberSize) {
+export function getIconSize(size: WDesignNumberSize) {
     return `calc(${getSize({ size, sizes })} / 2)`
 }
 

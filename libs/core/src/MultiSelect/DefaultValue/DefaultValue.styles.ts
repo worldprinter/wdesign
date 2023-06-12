@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 type DefaultLabelStyles = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     disabled: boolean
     readOnly: boolean
 }

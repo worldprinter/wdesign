@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
@@ -20,10 +20,10 @@ export type TextProps = {
     children?: React.ReactNode
 
     /** Key of theme.fontSizes or any valid CSS value to set font-size */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Key of theme.colors or any valid CSS color */
-    color?: 'dimmed' | MantineColor
+    color?: 'dimmed' | WDesignColor
 
     /** Sets font-weight css property */
     weight?: React.CSSProperties['fontWeight']
@@ -59,7 +59,7 @@ export type TextProps = {
     inherit?: boolean
 
     /** Controls gradient settings in gradient variant only */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 
     /** Shorthand for component="span" */
     span?: boolean

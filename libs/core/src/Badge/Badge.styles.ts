@@ -1,12 +1,12 @@
-import type { MantineColor, MantineGradient, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignGradient, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 const BADGE_VARIANTS = ['light', 'filled', 'outline', 'dot', 'gradient']
 
 export type BadgeStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
-    gradient: MantineGradient
+    color: WDesignColor
+    radius: WDesignNumberSize
+    gradient: WDesignGradient
     fullWidth: boolean
 }
 
@@ -27,11 +27,11 @@ const dotSizes = {
 }
 
 type GetVariantStylesInput = {
-    theme: MantineTheme
+    theme: WDesignTheme
     variant: string
-    color: MantineColor
+    color: WDesignColor
     size: string | number
-    gradient: MantineGradient
+    gradient: WDesignGradient
 }
 
 function getVariantStyles({ theme, variant, color, size, gradient }: GetVariantStylesInput) {

@@ -3,10 +3,10 @@ import React, { forwardRef } from 'react'
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
 import type {
     DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
+    WDesignColor,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
@@ -37,13 +37,13 @@ export type SwitchProps = {
     onLabel?: React.ReactNode
 
     /** Switch checked state color from theme.colors, defaults to theme.primaryColor */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Predefined size value */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Props spread to wrapper element */
     wrapperProps?: Record<string, any>

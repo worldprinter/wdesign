@@ -1,4 +1,4 @@
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 import type { TitleSize } from './Title'
@@ -11,7 +11,7 @@ export type TitleStylesParams = {
     inline: boolean
 }
 
-function getFontSize(size: TitleSize, element: HeadingElement, theme: MantineTheme) {
+function getFontSize(size: TitleSize, element: HeadingElement, theme: WDesignTheme) {
     if (typeof size !== 'undefined') {
         return size in theme.headings.sizes ? theme.headings.sizes[size].fontSize : rem(size)
     }
@@ -19,7 +19,7 @@ function getFontSize(size: TitleSize, element: HeadingElement, theme: MantineThe
     return theme.headings.sizes[element].fontSize
 }
 
-function getLineHeight(size: TitleSize, element: HeadingElement, theme: MantineTheme) {
+function getLineHeight(size: TitleSize, element: HeadingElement, theme: WDesignTheme) {
     if (typeof size !== 'undefined' && size in theme.headings.sizes) {
         return theme.headings.sizes[size].lineHeight
     }

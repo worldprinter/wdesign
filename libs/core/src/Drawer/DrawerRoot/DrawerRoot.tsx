@@ -4,7 +4,7 @@ import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import type { ModalBaseSettings } from '../../ModalBase'
 import { ModalBase, ModalBaseDefaultProps } from '../../ModalBase'
-import type { MantineTransition } from '../../Transition'
+import type { WDesignTransition } from '../../Transition'
 import type { ScrollAreaComponent } from '../Drawer.context'
 import { DrawerProvider } from '../Drawer.context'
 import useStyles from './DrawerRoot.styles'
@@ -19,14 +19,14 @@ export type DrawerRootProps = {
     position?: 'bottom' | 'left' | 'right' | 'top'
 } & ModalBaseSettings
 
-const transitions: Record<DrawerPosition, MantineTransition> = {
+const transitions: Record<DrawerPosition, WDesignTransition> = {
     top: 'slide-down',
     bottom: 'slide-up',
     left: 'slide-right',
     right: 'slide-left',
 }
 
-const rtlTransitions: Record<DrawerPosition, MantineTransition> = {
+const rtlTransitions: Record<DrawerPosition, WDesignTransition> = {
     top: 'slide-down',
     bottom: 'slide-up',
     right: 'slide-right',

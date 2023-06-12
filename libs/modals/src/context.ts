@@ -31,28 +31,28 @@ export type ModalsContextProps = {
     modals: ModalState[]
     openModal: (props: ModalSettings) => string
     openConfirmModal: (props: OpenConfirmModal) => string
-    openContextModal: <TKey extends MantineModal>(
+    openContextModal: <TKey extends WDesignModal>(
         modal: TKey,
-        props: OpenContextModal<Parameters<MantineModals[TKey]>[0]['innerProps']>,
+        props: OpenContextModal<Parameters<WDesignModals[TKey]>[0]['innerProps']>,
     ) => string
     closeModal: (id: string, canceled?: boolean) => void
-    closeContextModal: <TKey extends MantineModal>(id: TKey, canceled?: boolean) => void
+    closeContextModal: <TKey extends WDesignModal>(id: TKey, canceled?: boolean) => void
     closeAll: () => void
 }
 
-export type MantineModalsOverride = {}
+export type WDesignModalsOverride = {}
 
-export type MantineModalsOverwritten = MantineModalsOverride extends {
+export type WDesignModalsOverwritten = WDesignModalsOverride extends {
     modals: Record<string, React.FC<ContextModalProps<any>>>
 }
-    ? MantineModalsOverride
+    ? WDesignModalsOverride
     : {
           modals: Record<string, React.FC<ContextModalProps<any>>>
       }
 
-export type MantineModals = MantineModalsOverwritten['modals']
+export type WDesignModals = WDesignModalsOverwritten['modals']
 
-export type MantineModal = keyof MantineModals
+export type WDesignModal = keyof WDesignModals
 
 export const ModalsContext = createContext<ModalsContextProps>(null)
 ModalsContext.displayName = '@worldprinter/wdesign-modals/ModalsContext'

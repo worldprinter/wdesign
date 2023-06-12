@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -21,7 +21,7 @@ export type GroupProps = {
     grow?: boolean
 
     /** Space between elements */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 
     /** Defines align-items css property */
     align?: React.CSSProperties['alignItems']

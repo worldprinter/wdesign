@@ -1,11 +1,11 @@
 import type { EmotionCache } from '@emotion/cache'
 
-import type { useMantineProviderStyles } from '../../../theme/MantineProvider'
+import type { useWDesignProviderStyles } from '../../../theme/WDesignProvider'
 
 type Input<T extends Record<string, string>> = {
     cx(...classNames: any): string
     classes: T
-    context: ReturnType<typeof useMantineProviderStyles>
+    context: ReturnType<typeof useWDesignProviderStyles>
     classNames: Partial<T>
     name: string | string[]
     cache: EmotionCache
@@ -39,10 +39,10 @@ export function mergeClassNames<T extends Record<string, string>>({
             Array.isArray(name)
                 ? name
                       .filter(Boolean)
-                      .map((part) => `${cache?.key || 'mantine'}-${part}-${className}`)
+                      .map((part) => `${cache?.key || 'wdesign'}-${part}-${className}`)
                       .join(' ')
                 : name
-                ? `${cache?.key || 'mantine'}-${name}-${className}`
+                ? `${cache?.key || 'wdesign'}-${name}-${className}`
                 : null,
         )
         return acc

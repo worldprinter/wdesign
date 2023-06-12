@@ -4,13 +4,13 @@ import type { CSSObject } from '../../tss'
 import type { VariantInput, VariantOutput } from '../functions/fns/variant/variant'
 import type { ColorScheme } from './ColorScheme'
 import type { DeepPartial } from './DeepPartial'
-import type { MantineThemeColors } from './MantineColor'
-import type { MantineGradient } from './MantineGradient'
-import type { MantineNumberSize, MantineSize, MantineSizes } from './MantineSize'
+import type { WDesignThemeColors } from './WDesignColor'
+import type { WDesignGradient } from './WDesignGradient'
+import type { WDesignNumberSize, WDesignSize, WDesignSizes } from './WDesignSize'
 
 export type LoaderType = 'bars' | 'oval' | 'dots'
-export type MantineThemeOther = Record<string, any>
-export type MantineThemeComponents = Record<string, ThemeComponent>
+export type WDesignThemeOther = Record<string, any>
+export type WDesignThemeComponents = Record<string, ThemeComponent>
 
 export type HeadingStyle = {
     fontSize: string
@@ -20,18 +20,18 @@ export type HeadingStyle = {
 
 type Shade = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-export type MantinePrimaryShade = {
+export type WDesignPrimaryShade = {
     light: Shade
     dark: Shade
 }
 
-type MantineFocusRingStyles = {
-    styles(theme: MantineThemeBase): CSSObject
-    resetStyles(theme: MantineThemeBase): CSSObject
-    inputStyles(theme: MantineThemeBase): CSSObject
+type WDesignFocusRingStyles = {
+    styles(theme: WDesignThemeBase): CSSObject
+    resetStyles(theme: WDesignThemeBase): CSSObject
+    inputStyles(theme: WDesignThemeBase): CSSObject
 }
 
-type MantineThemeFunctions = {
+type WDesignThemeFunctions = {
     fontStyles(): any
     focusStyles(selector?: string): any
     cover(offset?: number | string): any
@@ -39,12 +39,12 @@ type MantineThemeFunctions = {
     rgba(color: string, alpha: number): string
     linearGradient(deg: number, ...colors: string[]): string
     radialGradient(...colors: string[]): string
-    gradient(gradient?: MantineGradient): string
-    smallerThan(breakpoint: MantineNumberSize): string
-    largerThan(breakpoint: MantineNumberSize): string
+    gradient(gradient?: WDesignGradient): string
+    smallerThan(breakpoint: WDesignNumberSize): string
+    largerThan(breakpoint: WDesignNumberSize): string
     lighten(color: string, alpha: number): string
     darken(color: string, alpha: number): string
-    radius(size?: MantineNumberSize | (string & {})): string | number
+    radius(size?: WDesignNumberSize | (string & {})): string | number
     variant(payload: VariantInput): VariantOutput
     primaryShade(colorScheme?: ColorScheme): Shade
     hover(hoverStyle: CSSObject): any
@@ -53,30 +53,30 @@ type MantineThemeFunctions = {
     dimmed(): string
 }
 
-export type MantineTheme = {
+export type WDesignTheme = {
     dir: 'ltr' | 'rtl'
-    primaryShade: Shade | MantinePrimaryShade
+    primaryShade: Shade | WDesignPrimaryShade
     focusRing: 'auto' | 'always' | 'never'
-    defaultRadius: MantineNumberSize | (string & {})
+    defaultRadius: WDesignNumberSize | (string & {})
     loader: LoaderType
     colorScheme: ColorScheme
     white: string
     black: string
-    colors: MantineThemeColors
+    colors: WDesignThemeColors
     fontFamily: CSSProperties['fontFamily']
     lineHeight: CSSProperties['lineHeight']
     transitionTimingFunction: CSSProperties['transitionTimingFunction']
     fontFamilyMonospace: CSSProperties['fontFamily']
-    primaryColor: keyof MantineThemeColors
+    primaryColor: keyof WDesignThemeColors
     respectReducedMotion: boolean
     cursorType: 'default' | 'pointer'
-    defaultGradient: MantineGradient
+    defaultGradient: WDesignGradient
 
-    fontSizes: MantineSizes
-    radius: MantineSizes
-    spacing: MantineSizes
-    breakpoints: MantineSizes
-    shadows: Record<MantineSize, string>
+    fontSizes: WDesignSizes
+    radius: WDesignSizes
+    spacing: WDesignSizes
+    breakpoints: WDesignSizes
+    shadows: Record<WDesignSize, string>
 
     headings: {
         fontFamily: CSSProperties['fontFamily']
@@ -91,13 +91,13 @@ export type MantineTheme = {
         }
     }
 
-    fn: MantineThemeFunctions
-    other: MantineThemeOther
+    fn: WDesignThemeFunctions
+    other: WDesignThemeOther
     activeStyles: CSSObject
     datesLocale: string
-    components: MantineThemeComponents
-    globalStyles: (theme: MantineTheme) => CSSObject
-    focusRingStyles: MantineFocusRingStyles
+    components: WDesignThemeComponents
+    globalStyles: (theme: WDesignTheme) => CSSObject
+    focusRingStyles: WDesignFocusRingStyles
 }
 
 export type ContextStylesParams = {
@@ -106,22 +106,22 @@ export type ContextStylesParams = {
 }
 
 type ThemeComponent = {
-    defaultProps?: Record<string, any> | ((theme: MantineTheme) => Record<string, any>)
+    defaultProps?: Record<string, any> | ((theme: WDesignTheme) => Record<string, any>)
     classNames?: Record<string, string>
     styles?:
         | Record<string, CSSObject>
-        | ((theme: MantineTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>)
+        | ((theme: WDesignTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>)
     variants?: Record<
         PropertyKey,
-        (theme: MantineTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>
+        (theme: WDesignTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>
     >
     sizes?: Record<
         PropertyKey,
-        (theme: MantineTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>
+        (theme: WDesignTheme, params: any, context: ContextStylesParams) => Record<string, CSSObject>
     >
 }
 
-export type MantineThemeBase = Omit<MantineTheme, 'fn'>
+export type WDesignThemeBase = Omit<WDesignTheme, 'fn'>
 
-export type MantineThemeOverride = DeepPartial<Omit<MantineThemeBase, 'other' | 'components'>> &
-    Partial<Pick<MantineThemeBase, 'other' | 'components'>>
+export type WDesignThemeOverride = DeepPartial<Omit<WDesignThemeBase, 'other' | 'components'>> &
+    Partial<Pick<WDesignThemeBase, 'other' | 'components'>>

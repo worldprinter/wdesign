@@ -1,14 +1,14 @@
-import type { CSSObject, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, em, getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
 export type AppShellStylesParams = {
-    padding: MantineNumberSize
+    padding: WDesignNumberSize
     fixed: boolean
-    navbarOffsetBreakpoint: MantineNumberSize
-    asideOffsetBreakpoint: MantineNumberSize
+    navbarOffsetBreakpoint: WDesignNumberSize
+    asideOffsetBreakpoint: WDesignNumberSize
 }
 
-function getPositionStyles(props: AppShellStylesParams, theme: MantineTheme): CSSObject {
+function getPositionStyles(props: AppShellStylesParams, theme: WDesignTheme): CSSObject {
     const padding = getSize({ size: props.padding, sizes: theme.spacing })
 
     const navbarOffset = props.navbarOffsetBreakpoint
@@ -25,10 +25,10 @@ function getPositionStyles(props: AppShellStylesParams, theme: MantineTheme): CS
 
     return {
         minHeight: '100vh',
-        paddingTop: `calc(var(--mantine-header-height, 0px) + ${padding})`,
-        paddingBottom: `calc(var(--mantine-footer-height, 0px) + ${padding})`,
-        paddingLeft: `calc(var(--mantine-navbar-width, 0px) + ${padding})`,
-        paddingRight: `calc(var(--mantine-aside-width, 0px) + ${padding})`,
+        paddingTop: `calc(var(--wdesign-header-height, 0px) + ${padding})`,
+        paddingBottom: `calc(var(--wdesign-footer-height, 0px) + ${padding})`,
+        paddingLeft: `calc(var(--wdesign-navbar-width, 0px) + ${padding})`,
+        paddingRight: `calc(var(--wdesign-aside-width, 0px) + ${padding})`,
 
         [`@media (max-width: ${em(getBreakpointValue(navbarOffset) - 1)})`]: {
             paddingLeft: padding,

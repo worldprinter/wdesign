@@ -1,11 +1,11 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, keyframes, rem } from '@worldprinter/wdesign-styles'
 
 export type SkeletonStylesParams = {
     height: number | string
     width: number | string
     circle: boolean
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     animate: boolean
 }
 

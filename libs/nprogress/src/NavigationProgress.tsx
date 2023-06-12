@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
-import type { MantineColor, PortalProps } from '@worldprinter/wdesign-core'
-import { getDefaultZIndex, OptionalPortal, Progress, useMantineTheme } from '@worldprinter/wdesign-core'
+import type { PortalProps, WDesignColor } from '@worldprinter/wdesign-core'
+import { getDefaultZIndex, OptionalPortal, Progress, useWDesignTheme } from '@worldprinter/wdesign-core'
 import { useDidUpdate, useInterval, useReducedMotion } from '@worldprinter/wdesign-hooks'
 
 import { useNavigationProgressEvents } from './events'
@@ -11,7 +11,7 @@ export type NavigationProgressProps = {
     initialProgress?: number
 
     /** Key of theme.colors of any other valid CSS color */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Height of the progressbar */
     size?: number
@@ -62,7 +62,7 @@ export function NavigationProgress({
     zIndex = getDefaultZIndex('max'),
     progressLabel,
 }: NavigationProgressProps) {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const shouldReduceMotion = useReducedMotion()
     const reducedMotion = theme.respectReducedMotion ? shouldReduceMotion : false
     const [_progress, setProgress] = useState(initialProgress)

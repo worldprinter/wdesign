@@ -2,12 +2,12 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
 import { getSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
@@ -23,13 +23,13 @@ export type ButtonStylesNames = Selectors<typeof useStyles>
 
 export type ButtonProps = {
     /** Predefined button size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Button type attribute */
     type?: 'submit' | 'button' | 'reset'
 
     /** Button color from theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Adds icon before button label  */
     leftIcon?: React.ReactNode
@@ -41,13 +41,13 @@ export type ButtonProps = {
     fullWidth?: boolean
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Controls button appearance */
     variant?: Variants<'filled' | 'outline' | 'light' | 'white' | 'default' | 'subtle' | 'gradient'>
 
     /** Controls gradient settings in gradient variant only */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 
     /** Set text-transform to uppercase */
     uppercase?: boolean

@@ -1,9 +1,9 @@
 import React, { createContext, useContext } from 'react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 type ContextValue = {
-    spacing: MantineNumberSize
+    spacing: WDesignNumberSize
 }
 
 const AvatarGroupContext = createContext<ContextValue>(null)

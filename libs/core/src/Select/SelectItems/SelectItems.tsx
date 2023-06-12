@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { randomId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { Divider } from '../../Divider/Divider'
 import { Text } from '../../Text/Text'
@@ -19,7 +19,7 @@ export type SelectItemsProps = {
     itemsRefs?: React.MutableRefObject<Record<string, HTMLDivElement>>
     onItemHover(index: number): void
     onItemSelect(item: SelectItem): void
-    size: MantineSize
+    size: WDesignSize
     itemComponent: React.FC<any>
     nothingFound?: React.ReactNode
     creatable?: boolean
@@ -108,7 +108,7 @@ export function SelectItems({
                 groupedItems.push(
                     <div
                         className={classes.separator}
-                        key={`__mantine-divider-${index}`}
+                        key={`__wdesign-divider-${index}`}
                     >
                         <Divider
                             classNames={{ label: classes.separatorLabel }}

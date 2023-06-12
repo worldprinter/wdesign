@@ -1,4 +1,4 @@
-export type MantineGradient = {
+export type WDesignGradient = {
     from: string
     to: string
     deg?: number

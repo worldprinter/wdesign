@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import { Input } from '../Input'
@@ -16,7 +16,7 @@ export type InlineInputProps = {
     id: string
     disabled: boolean
     error: React.ReactNode
-    size: MantineNumberSize
+    size: WDesignNumberSize
     labelPosition: 'left' | 'right'
 } & DefaultProps<InlineInputStylesNames> &
     React.ComponentPropsWithoutRef<'div'>

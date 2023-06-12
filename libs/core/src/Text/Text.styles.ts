@@ -1,8 +1,8 @@
-import type { CSSObject, MantineColor, MantineGradient, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignColor, WDesignGradient, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
 export type TextStylesParams = {
-    color: 'dimmed' | MantineColor
+    color: 'dimmed' | WDesignColor
     lineClamp: number
     truncate: 'end' | 'start' | boolean
     inline: boolean
@@ -10,19 +10,19 @@ export type TextStylesParams = {
     underline: boolean
     strikethrough: boolean
     italic: boolean
-    gradient: MantineGradient
+    gradient: WDesignGradient
     transform: React.CSSProperties['textTransform']
     align: React.CSSProperties['textAlign']
     weight: React.CSSProperties['fontWeight']
 }
 
 type GetTextColor = {
-    theme: MantineTheme
-    color: 'dimmed' | MantineColor
+    theme: WDesignTheme
+    color: 'dimmed' | WDesignColor
 }
 type GetTruncate = {
     truncate: 'end' | 'start' | boolean
-    theme: MantineTheme
+    theme: WDesignTheme
 }
 
 function getTextDecoration({ underline, strikethrough }: { underline: boolean; strikethrough: boolean }) {

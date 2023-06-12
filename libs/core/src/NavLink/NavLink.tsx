@@ -2,7 +2,7 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, Variants, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -32,7 +32,7 @@ export type NavLinkProps = {
     active?: boolean
 
     /** Key of theme.colors, active link color */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Active link variant */
     variant?: Variants<'filled' | 'light' | 'subtle'>
@@ -56,7 +56,7 @@ export type NavLinkProps = {
     disableRightSectionRotation?: boolean
 
     /** Key of theme.spacing or any valid CSS value to set collapsed links padding-left */
-    childrenOffset?: MantineNumberSize
+    childrenOffset?: WDesignNumberSize
 
     /** Adds disabled styles to root element */
     disabled?: boolean

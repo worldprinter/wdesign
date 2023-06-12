@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { useDidUpdate, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 import { getSize, rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -51,7 +51,7 @@ export type ColorPickerBaseProps = {
     swatchesPerRow?: number
 
     /** Predefined component size */
-    size?: MantineSize
+    size?: WDesignSize
 }
 
 export type ColorPickerProps = {

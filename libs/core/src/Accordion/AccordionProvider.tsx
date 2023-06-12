@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getSafeId } from '@worldprinter/wdesign-utils'
 
 import type { AccordionStylesNames } from './Accordion'
@@ -58,7 +58,7 @@ export type AccordionProviderProps<Multiple extends boolean = false> = {
     variant?: AccordionVariant
 
     /** Key of theme.radius or any valid CSS value to set border-radius, ignored when variant="default" */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 }
 
 type _AccordionProviderProps<Multiple extends boolean = false> = {

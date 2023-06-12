@@ -1,18 +1,18 @@
-import type { MantineNumberSize, MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize, WDesignSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, MANTINE_SIZES } from '@worldprinter/wdesign-styles'
 
 export type GridStylesParams = {
-    gutter: MantineNumberSize
-    gutterXs: MantineNumberSize
-    gutterSm: MantineNumberSize
-    gutterMd: MantineNumberSize
-    gutterLg: MantineNumberSize
-    gutterXl: MantineNumberSize
+    gutter: WDesignNumberSize
+    gutterXs: WDesignNumberSize
+    gutterSm: WDesignNumberSize
+    gutterMd: WDesignNumberSize
+    gutterLg: WDesignNumberSize
+    gutterXl: WDesignNumberSize
     justify?: React.CSSProperties['justifyContent']
     align?: React.CSSProperties['alignContent']
 }
 
-function getGutterStyles(gutters: Record<MantineSize, MantineNumberSize>, theme: MantineTheme) {
+function getGutterStyles(gutters: Record<WDesignSize, WDesignNumberSize>, theme: WDesignTheme) {
     return MANTINE_SIZES.reduce((acc, size) => {
         if (typeof gutters[size] !== 'undefined') {
             acc[`@media (min-width: ${theme.breakpoints[size]})`] = {

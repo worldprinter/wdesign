@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineNumberSize, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { CloseButton } from '../../CloseButton'
 import useStyles from './DefaultValue.styles'
@@ -12,8 +12,8 @@ export type MultiSelectValueProps = {
     onRemove(): void
     disabled: boolean
     readOnly: boolean
-    size: MantineSize
-    radius: MantineNumberSize
+    size: WDesignSize
+    radius: WDesignNumberSize
     variant: string
 } & DefaultProps<DefaultValueStylesNames> &
     React.ComponentPropsWithoutRef<'div'>

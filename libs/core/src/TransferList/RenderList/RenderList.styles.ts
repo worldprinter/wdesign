@@ -1,10 +1,10 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 type RenderListStyles = {
     reversed: boolean
     native: boolean
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
 }
 
 const ITEM_PADDING = rem(7)

@@ -1,15 +1,15 @@
-import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { ListStylesNames } from './List'
 
 type ListContextValue = {
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
     center?: boolean
     icon?: React.ReactNode
     listStyleType?: string
     withPadding?: boolean
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
     classNames?: ClassNames<ListStylesNames>
     styles?: Styles<ListStylesNames>
     unstyled?: boolean

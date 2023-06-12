@@ -1,10 +1,10 @@
-import type { CSSObject, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, em, getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
 export type MediaQueryStylesParams = {
-    smallerThan: MantineNumberSize
-    largerThan: MantineNumberSize
-    styles: CSSObject | ((theme: MantineTheme) => CSSObject)
+    smallerThan: WDesignNumberSize
+    largerThan: WDesignNumberSize
+    styles: CSSObject | ((theme: WDesignTheme) => CSSObject)
     query: string
 }
 

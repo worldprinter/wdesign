@@ -1,14 +1,14 @@
-import type { MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles } from '@worldprinter/wdesign-styles'
 
 export type AnchorStylesParams = {
-    color: MantineColor
+    color: WDesignColor
     underline: boolean
 }
 
 type GetAnchorColor = {
-    theme: MantineTheme
-    color: 'dimmed' | MantineColor
+    theme: WDesignTheme
+    color: 'dimmed' | WDesignColor
 }
 
 function getAnchorColor({ theme, color }: GetAnchorColor) {

@@ -1,13 +1,13 @@
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 
 type CurveData = {
     value: number
-    color: MantineColor
+    color: WDesignColor
     tooltip?: React.ReactNode
 } & React.ComponentPropsWithRef<'circle'>
 
 type RootCurveData = {
-    color?: MantineColor
+    color?: WDesignColor
 } & React.ComponentPropsWithRef<'circle'>
 
 type GetCurves = {
@@ -15,7 +15,7 @@ type GetCurves = {
     size: number
     thickness: number
     renderRoundedLineCaps: boolean
-    rootColor?: MantineColor
+    rootColor?: WDesignColor
 }
 
 type Curve = {

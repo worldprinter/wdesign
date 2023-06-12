@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { DayOfWeek } from '../../types'
@@ -15,7 +15,7 @@ export type WeekdaysRowProps = {
     __staticSelector?: string
 
     /** Controls size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** dayjs locale, defaults to value defined in DatesProvider */
     locale?: string

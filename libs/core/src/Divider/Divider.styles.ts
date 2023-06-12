@@ -1,8 +1,8 @@
-import type { MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type DividerStylesParams = {
-    color: MantineColor
+    color: WDesignColor
 }
 
 const sizes = {
@@ -13,7 +13,7 @@ const sizes = {
     xl: rem(5),
 }
 
-function getColor(theme: MantineTheme, color: MantineColor) {
+function getColor(theme: WDesignTheme, color: WDesignColor) {
     const themeColor = theme.fn.variant({ variant: 'outline', color }).border
 
     return typeof color === 'string' && (color in theme.colors || color.split('.')[0] in theme.colors)

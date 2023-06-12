@@ -32,7 +32,7 @@ export const ModalBaseContent = forwardRef<HTMLElement, ModalBaseContentProps>((
     const { classes, cx } = useStyles({ zIndex: ctx.zIndex + 1 }, ctx.stylesApi)
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-        const shouldTrigger = (event.target as HTMLElement)?.getAttribute('data-mantine-stop-propagation') !== 'true'
+        const shouldTrigger = (event.target as HTMLElement)?.getAttribute('data-wdesign-stop-propagation') !== 'true'
         shouldTrigger && event.key === 'Escape' && ctx.closeOnEscape && ctx.onClose()
         onKeyDown?.(event)
     }

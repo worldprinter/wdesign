@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -20,7 +20,7 @@ export type ColorSwatchProps = {
     size?: number | string
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** ColorSwatch children */
     children?: React.ReactNode

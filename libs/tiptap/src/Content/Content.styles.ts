@@ -1,4 +1,4 @@
-import type { MantineTheme } from '@worldprinter/wdesign-core'
+import type { WDesignTheme } from '@worldprinter/wdesign-core'
 import { createStyles, rem } from '@worldprinter/wdesign-core'
 
 type ContentStylesParams = {
@@ -6,7 +6,7 @@ type ContentStylesParams = {
     withTypographyStyles: boolean
 }
 
-function getCodeHighlight(withCodeHighlightStyles: boolean, theme: MantineTheme) {
+function getCodeHighlight(withCodeHighlightStyles: boolean, theme: WDesignTheme) {
     if (!withCodeHighlightStyles) {
         return null
     }

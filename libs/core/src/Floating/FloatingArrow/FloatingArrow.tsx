@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import { useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import type { ArrowPosition, FloatingPosition } from '../types'
 import { getArrowPositionStyles } from './get-arrow-position-styles'
@@ -18,7 +18,7 @@ type FloatingArrowProps = {
 
 export const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
     ({ position, arrowSize, arrowOffset, arrowRadius, arrowPosition, visible, arrowX, arrowY, ...others }, ref) => {
-        const theme = useMantineTheme()
+        const theme = useWDesignTheme()
         if (!visible) {
             return null
         }

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -44,7 +44,7 @@ export type LoadingOverlayProps = {
     exitTransitionDuration?: number
 
     /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>
 

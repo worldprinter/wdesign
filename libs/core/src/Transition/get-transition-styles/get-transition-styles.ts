@@ -1,4 +1,4 @@
-import type { MantineTransition } from '../transitions'
+import type { WDesignTransition } from '../transitions'
 import { transitions } from '../transitions'
 
 const transitionStatuses = {
@@ -16,7 +16,7 @@ export function getTransitionStyles({
     duration,
     timingFunction,
 }: {
-    transition: MantineTransition
+    transition: WDesignTransition
     state: keyof typeof transitionStatuses
     duration: number
     timingFunction: React.CSSProperties['transitionTimingFunction']

@@ -1,7 +1,7 @@
 import React, { forwardRef, useState } from 'react'
 
 import { useDidUpdate } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -31,7 +31,7 @@ export type ImageProps = {
     height?: number | string
 
     /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Enable placeholder when image is loading and when image fails to load */
     withPlaceholder?: boolean

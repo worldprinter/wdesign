@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -13,7 +13,7 @@ export type ProgressStylesNames = Selectors<typeof useStyles>
 
 type ProgressSection = {
     value: number
-    color: MantineColor
+    color: WDesignColor
     label?: string
     tooltip?: React.ReactNode
 } & React.ComponentPropsWithRef<'div'>
@@ -25,13 +25,13 @@ export type ProgressProps = {
     value?: number
 
     /** Progress color from theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Height of progress bar */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Adds stripes */
     striped?: boolean

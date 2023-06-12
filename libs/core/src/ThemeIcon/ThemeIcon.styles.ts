@@ -1,11 +1,11 @@
-import type { MantineColor, MantineGradient, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignGradient, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type ThemeIconStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     variant: string
-    gradient: MantineGradient
+    gradient: WDesignGradient
 }
 
 const sizes = {
@@ -19,10 +19,10 @@ const sizes = {
 const THEME_ICON_VARIANTS = ['filled', 'light', 'gradient', 'outline', 'default']
 
 type GetVariantStylesInput = {
-    theme: MantineTheme
+    theme: WDesignTheme
     variant: string
-    color: MantineColor
-    gradient: MantineGradient
+    color: WDesignColor
+    gradient: WDesignGradient
 }
 
 function getVariantStyles({ theme, variant, color, gradient }: GetVariantStylesInput) {

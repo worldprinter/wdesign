@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import { rem, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { rem, useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import type { BaseColorSliderProps } from '../ColorSlider/ColorSlider'
 import { ColorSlider } from '../ColorSlider/ColorSlider'
@@ -18,7 +18,7 @@ export const AlphaSlider = forwardRef<HTMLDivElement, AlphaSliderProps>((props, 
         defaultProps,
         props,
     )
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const _color = theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
 
     return (

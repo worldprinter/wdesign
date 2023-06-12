@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 type ModalBaseHeaderStylesParams = {
-    padding: MantineNumberSize
+    padding: WDesignNumberSize
 }
 
 export default createStyles((theme, { padding }: ModalBaseHeaderStylesParams) => {

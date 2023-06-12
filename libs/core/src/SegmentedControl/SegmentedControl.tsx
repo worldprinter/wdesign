@@ -10,12 +10,12 @@ import {
 } from '@worldprinter/wdesign-hooks'
 import type {
     DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
+    WDesignColor,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
 import type { SegmentedControlStylesParams } from './SegmentedControl.styles'
@@ -51,13 +51,13 @@ export type SegmentedControlProps = {
     fullWidth?: boolean
 
     /** Active control color from theme.colors, defaults to white in light color scheme and theme.colors.dark[9] in dark */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Controls font-size, paddings and height */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Transition duration in ms, set to 0 to turn off transitions */
     transitionDuration?: number
@@ -105,7 +105,7 @@ export const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps
         readOnly,
         ...others
     } = useComponentDefaultProps('SegmentedControl', defaultProps, props)
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const shouldReduceMotion = useReducedMotion()
     const reduceMotion = theme.respectReducedMotion ? shouldReduceMotion : false
 

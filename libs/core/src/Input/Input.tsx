@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, MantineSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, Variants, WDesignNumberSize, WDesignSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -38,7 +38,7 @@ export type InputSharedProps = {
     required?: boolean
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Defines input appearance, defaults to default in light color scheme and filled in dark */
     variant?: Variants<'default' | 'filled' | 'unstyled'>
@@ -47,7 +47,7 @@ export type InputSharedProps = {
     disabled?: boolean
 
     /** Input size */
-    size?: MantineSize
+    size?: WDesignSize
 }
 
 export type InputProps = {

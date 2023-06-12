@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles } from '@worldprinter/wdesign-styles'
 
 export type BackgroundImageStylesParams = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     src: string
 }
 

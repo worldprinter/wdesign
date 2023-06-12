@@ -1,9 +1,9 @@
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 import { getSize } from '@worldprinter/wdesign-styles'
 
 const NEGATIVE_VALUES = ['-xs', '-sm', '-md', '-lg', '-xl']
 
-export function getSpacingValue(size: string | number, theme: MantineTheme) {
+export function getSpacingValue(size: string | number, theme: WDesignTheme) {
     if (NEGATIVE_VALUES.includes(size as string)) {
         return `calc(${getSize({
             size: (size as string).replace('-', ''),

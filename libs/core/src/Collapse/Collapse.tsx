@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 
 import { useReducedMotion } from '@worldprinter/wdesign-hooks'
 import type { DefaultProps } from '@worldprinter/wdesign-styles'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { Box, extractSystemStyles } from '../Box'
 import { useCollapse } from './use-collapse'
@@ -45,7 +45,7 @@ export const Collapse = forwardRef<HTMLDivElement, CollapseProps>((props, ref) =
         animateOpacity,
         ...others
     } = useComponentDefaultProps('Collapse', defaultProps, props)
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
 
     const shouldReduceMotion = useReducedMotion()
     const reduceMotion = theme.respectReducedMotion ? shouldReduceMotion : false

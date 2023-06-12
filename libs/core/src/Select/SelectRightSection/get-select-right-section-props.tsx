@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 
 import type { SelectRightSectionProps } from './SelectRightSection'
 import { SelectRightSection } from './SelectRightSection'
@@ -9,7 +9,7 @@ type GetRightSectionProps = {
     rightSection?: React.ReactNode
     rightSectionWidth?: string | number
     styles: Record<string, any>
-    theme: MantineTheme
+    theme: WDesignTheme
     readOnly: boolean
 } & SelectRightSectionProps
 

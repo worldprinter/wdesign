@@ -1,11 +1,11 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 export type ScrollAreaComponent = React.FC<any>
 
 type ModalContext = {
     yOffset: string | number
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     scrollAreaComponent: ScrollAreaComponent
 }
 

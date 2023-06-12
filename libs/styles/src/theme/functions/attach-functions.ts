@@ -1,7 +1,7 @@
-import type { MantineTheme, MantineThemeBase } from '../types'
+import type { WDesignTheme, WDesignThemeBase } from '../types'
 import { fns } from './fns'
 
-export function attachFunctions(themeBase: MantineThemeBase): MantineTheme {
+export function attachFunctions(themeBase: WDesignThemeBase): WDesignTheme {
     return {
         ...themeBase,
         fn: {

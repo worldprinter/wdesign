@@ -1,12 +1,12 @@
 import type { EmblaCarouselType } from 'embla-carousel-react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 
 export type Embla = EmblaCarouselType
 export type CarouselOrientation = 'vertical' | 'horizontal'
 export type CarouselBreakpoint = {
-    maxWidth?: MantineNumberSize
-    minWidth?: MantineNumberSize
+    maxWidth?: WDesignNumberSize
+    minWidth?: WDesignNumberSize
     slideSize: string | number
-    slideGap?: MantineNumberSize
+    slideGap?: WDesignNumberSize
 }

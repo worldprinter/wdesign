@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 
-import type { MantineColor, MantineGradient, MantineThemeBase } from '../../../types'
+import type { WDesignColor, WDesignGradient, WDesignThemeBase } from '../../../types'
 import { gradient } from '../gradient/gradient'
 import { primaryShade } from '../primary-shade/primary-shade'
 import { rgba } from '../rgba/rgba'
@@ -8,8 +8,8 @@ import { themeColor } from '../theme-color/theme-color'
 
 export type VariantInput = {
     variant: string
-    color?: MantineColor
-    gradient?: MantineGradient
+    color?: WDesignColor
+    gradient?: WDesignGradient
     primaryFallback?: boolean
 }
 
@@ -26,7 +26,7 @@ type ColorInfo = {
     shade?: number
 }
 
-function getColorIndexInfo(color: string, theme: MantineThemeBase): ColorInfo {
+function getColorIndexInfo(color: string, theme: WDesignThemeBase): ColorInfo {
     if (typeof color === 'string' && color.includes('.')) {
         const [splittedColor, _splittedShade] = color.split('.')
         const splittedShade = parseInt(_splittedShade, 10)
@@ -39,7 +39,7 @@ function getColorIndexInfo(color: string, theme: MantineThemeBase): ColorInfo {
     return { isSplittedColor: false }
 }
 
-export function variant(theme: MantineThemeBase) {
+export function variant(theme: WDesignThemeBase) {
     const getThemeColor = themeColor(theme)
     const getPrimaryShade = primaryShade(theme)
     const getGradient = gradient(theme)

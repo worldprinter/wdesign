@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { ClassNames, DefaultProps, MantineShadow, Selectors, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, DefaultProps, Selectors, Styles, WDesignShadow } from '@worldprinter/wdesign-styles'
 import { rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -70,7 +70,7 @@ function SelectPopoverDropdown({
 type SelectPopoverProps = {
     opened: boolean
     transitionProps: TransitionOverride
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
     withinPortal?: boolean
     portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
     children: React.ReactNode

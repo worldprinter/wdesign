@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -27,7 +27,7 @@ export type OverlayProps = {
     zIndex?: React.CSSProperties['zIndex']
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Content rendered inside overlay */
     children?: React.ReactNode

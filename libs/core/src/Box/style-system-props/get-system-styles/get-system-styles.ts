@@ -1,10 +1,10 @@
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { getResponsiveValue } from '../get-responsive-value/get-responsive-value'
 import { SYSTEM_PROPS } from '../system-props/system-props'
 import { valueGetters } from '../value-getters/value-getters'
 
-export function getSystemStyles(systemStyles: Record<string, any>, theme: MantineTheme, systemProps = SYSTEM_PROPS) {
+export function getSystemStyles(systemStyles: Record<string, any>, theme: WDesignTheme, systemProps = SYSTEM_PROPS) {
     const styles = Object.keys(systemProps).reduce((acc, systemProp) => {
         if (systemProp in systemStyles && systemStyles[systemProp] !== undefined) {
             acc.push(

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, MantineShadow } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize, WDesignShadow } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -12,10 +12,10 @@ export type PaperProps = {
     variant?: string
 
     /** Predefined box-shadow from theme.shadows (xs, sm, md, lg, xl) or any valid css box-shadow property */
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Adds border styles */
     withBorder?: boolean

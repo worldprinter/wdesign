@@ -1,16 +1,16 @@
 export type { ColorScheme } from './ColorScheme'
 export type { DefaultProps, Sx, ClassNames, Styles } from './DefaultProps'
-export type { MantineColor, MantineThemeColors, DefaultMantineColor, MantineThemeColorsOverride } from './MantineColor'
-export type { MantineGradient } from './MantineGradient'
-export type { MantineStyleSystemProps, SystemProp, SpacingValue } from './MantineStyleSystem'
-export type { MantineShadow } from './MantineShadow'
-export type { MantineNumberSize, MantineSize, MantineSizes } from './MantineSize'
+export type { WDesignColor, WDesignThemeColors, DefaultWDesignColor, WDesignThemeColorsOverride } from './WDesignColor'
+export type { WDesignGradient } from './WDesignGradient'
+export type { WDesignStyleSystemProps, SystemProp, SpacingValue } from './WDesignStyleSystem'
+export type { WDesignShadow } from './WDesignShadow'
+export type { WDesignNumberSize, WDesignSize, WDesignSizes } from './WDesignSize'
 export type {
-    MantineTheme,
-    MantineThemeOverride,
-    MantineThemeBase,
-    MantineThemeOther,
+    WDesignTheme,
+    WDesignThemeOverride,
+    WDesignThemeBase,
+    WDesignThemeOther,
     ContextStylesParams,
-} from './MantineTheme'
+} from './WDesignTheme'
 export type { Tuple } from './Tuple'
 export type { Variants } from './Variants'

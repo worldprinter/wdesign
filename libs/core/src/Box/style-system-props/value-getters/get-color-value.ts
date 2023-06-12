@@ -1,6 +1,6 @@
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 
-export function getColorValue(color: any, theme: MantineTheme): string {
+export function getColorValue(color: any, theme: WDesignTheme): string {
     if (color === 'dimmed') {
         return theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6]
     }

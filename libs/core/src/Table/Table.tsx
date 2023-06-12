@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -20,13 +20,13 @@ export type TableProps = {
     captionSide?: 'top' | 'bottom'
 
     /** Horizontal cells spacing from theme.spacing or any valid CSS value */
-    horizontalSpacing?: MantineNumberSize
+    horizontalSpacing?: WDesignNumberSize
 
     /** Vertical cells spacing from theme.spacing or any valid CSS value */
-    verticalSpacing?: MantineNumberSize
+    verticalSpacing?: WDesignNumberSize
 
     /** Sets font size of all text inside table */
-    fontSize?: MantineNumberSize
+    fontSize?: WDesignNumberSize
 
     /** Add border to table */
     withBorder?: boolean

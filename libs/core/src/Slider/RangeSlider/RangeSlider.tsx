@@ -1,10 +1,10 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useMove, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
-import type { MantineTransition } from '../../Transition'
+import type { WDesignTransition } from '../../Transition'
 import type { MarksStylesNames } from '../Marks/Marks'
 import type { SliderRootStylesNames } from '../SliderRoot/SliderRoot'
 import { SliderRoot } from '../SliderRoot/SliderRoot'
@@ -24,13 +24,13 @@ export type RangeSliderProps = {
     variant?: string
 
     /** Color from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Predefined track and thumb size, number to set sizes */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Minimal possible value */
     min?: number
@@ -72,7 +72,7 @@ export type RangeSliderProps = {
     label?: React.ReactNode | ((value: number) => React.ReactNode)
 
     /** Label appear/disappear transition */
-    labelTransition?: MantineTransition
+    labelTransition?: WDesignTransition
 
     /** Label appear/disappear transition duration in ms */
     labelTransitionDuration?: number
@@ -165,7 +165,7 @@ export const RangeSlider = forwardRef<HTMLDivElement, RangeSliderProps>((props, 
         ...others
     } = useComponentDefaultProps('RangeSlider', defaultProps, props)
 
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const [focused, setFocused] = useState(-1)
     const [hovered, setHovered] = useState(false)
     const [_value, setValue] = useUncontrolled<Value>({

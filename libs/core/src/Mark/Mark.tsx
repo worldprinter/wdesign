@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -10,7 +10,7 @@ export type MarkProps = {
     variant?: string
 
     /** Background color from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'mark'>
 

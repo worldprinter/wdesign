@@ -1,6 +1,6 @@
 import type React from 'react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type GroupPosition = 'right' | 'center' | 'left' | 'apart'
@@ -9,7 +9,7 @@ export type GroupStylesParams = {
     position: GroupPosition
     noWrap: boolean
     grow: boolean
-    spacing: MantineNumberSize
+    spacing: WDesignNumberSize
     align: React.CSSProperties['alignItems']
     count: number
 }

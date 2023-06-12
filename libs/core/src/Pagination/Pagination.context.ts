@@ -1,4 +1,4 @@
-import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { PaginationStylesNames } from './PaginationRoot/PaginationRoot'
@@ -8,8 +8,8 @@ type PaginationContext = {
     range: (number | 'dots')[]
     active: number
     disabled: boolean
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     getItemProps?(page: number): Record<string, any>
     onChange(page: number): void
     onNext(): void
@@ -22,7 +22,7 @@ type PaginationContext = {
         styles?: Styles<PaginationStylesNames>
         unstyled?: boolean
         variant?: string
-        size?: MantineNumberSize
+        size?: WDesignNumberSize
     }
 }
 

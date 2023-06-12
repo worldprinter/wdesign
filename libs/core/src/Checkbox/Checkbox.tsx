@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
@@ -20,13 +20,13 @@ export type CheckboxProps = {
     variant?: string
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Controls label font-size and checkbox width and height */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Checkbox label */
     label?: React.ReactNode

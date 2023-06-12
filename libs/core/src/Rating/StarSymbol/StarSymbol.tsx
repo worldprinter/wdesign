@@ -1,13 +1,13 @@
 import React from 'react'
 
-import type { MantineColor, MantineSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { StarIcon } from './StarIcon'
 import useStyles from './StarSymbol.styles'
 
 export type StarSymbolProps = {
-    size: MantineSize
-    color: MantineColor
+    size: WDesignSize
+    color: WDesignColor
     type: 'empty' | 'full'
 }
 

@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { useIsomorphicEffect } from '@worldprinter/wdesign-hooks'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 export type PortalProps = {
     /** Portal children, for example, modal or popover */
@@ -23,7 +23,7 @@ export type PortalProps = {
 export function Portal(props: PortalProps): ReactPortal {
     const { children, target, className, innerRef, ...others } = useComponentDefaultProps('Portal', {}, props)
 
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const [mounted, setMounted] = useState(false)
     const ref = useRef<HTMLElement>()
 

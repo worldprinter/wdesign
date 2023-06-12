@@ -1,4 +1,4 @@
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 import type { FloatingPosition } from '../Floating'
 import type { PortalProps } from '../Portal'
@@ -27,10 +27,10 @@ export type TooltipBaseProps = {
     portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Defines whether content should be wrapped on to the next line */
     multiline?: boolean

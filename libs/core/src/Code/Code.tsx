@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -14,7 +14,7 @@ export type CodeProps = {
     children: React.ReactNode
 
     /** Code color and background from theme, defaults to gray in light theme and to dark in dark theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** True for code block, false for inline code */
     block?: boolean

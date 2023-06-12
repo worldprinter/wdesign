@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { StarSymbol } from '../StarSymbol/StarSymbol'
@@ -10,11 +10,11 @@ export type RatingItemStylesNames = Selectors<typeof useStyles>
 
 export type RatingItemProps = {
     variant: string
-    size: MantineSize
+    size: WDesignSize
     getSymbolLabel: (value: number) => string
     emptyIcon?: React.ReactNode | ((value: number) => React.ReactNode)
     fullIcon?: React.ReactNode | ((value: number) => React.ReactNode)
-    color: MantineColor
+    color: WDesignColor
     full: boolean
     active: boolean
     fractionValue: number

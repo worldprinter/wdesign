@@ -1,7 +1,7 @@
-import type { MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignTheme } from '@worldprinter/wdesign-styles'
 import { getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
-export function getSortedBreakpoints<T extends Record<string, any>>(theme: MantineTheme, breakpoints: T[]) {
+export function getSortedBreakpoints<T extends Record<string, any>>(theme: WDesignTheme, breakpoints: T[]) {
     if (breakpoints.length === 0) {
         return breakpoints
     }

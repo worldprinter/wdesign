@@ -1,9 +1,9 @@
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type StarSymbolStylesParams = {
     type: 'empty' | 'full'
-    color: MantineColor
+    color: WDesignColor
 }
 
 const sizes = {

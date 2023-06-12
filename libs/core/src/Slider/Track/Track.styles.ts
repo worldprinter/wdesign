@@ -1,11 +1,11 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { sizes } from '../SliderRoot/SliderRoot.styles'
 
 type TrackStyles = {
-    radius: MantineNumberSize
-    color: MantineColor
+    radius: WDesignNumberSize
+    color: WDesignColor
     disabled: boolean
     inverted: boolean
     thumbSize?: number
@@ -24,11 +24,11 @@ export default createStyles((theme, { radius, color, disabled, inverted, thumbSi
                 pointerEvents: 'none',
             },
 
-            '& .mantine-Slider-thumb': {
+            '& .wdesign-Slider-thumb': {
                 display: 'none',
             },
 
-            '& .mantine-Slider-track::before': {
+            '& .wdesign-Slider-track::before': {
                 content: '""',
                 backgroundColor: inverted
                     ? theme.colorScheme === 'dark'
@@ -39,7 +39,7 @@ export default createStyles((theme, { radius, color, disabled, inverted, thumbSi
                     : theme.colors.gray[2],
             },
 
-            '& .mantine-Slider-bar': {
+            '& .wdesign-Slider-bar': {
                 backgroundColor: inverted
                     ? theme.colorScheme === 'dark'
                         ? theme.colors.dark[4]

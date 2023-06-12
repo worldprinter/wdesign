@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
@@ -23,10 +23,10 @@ export type RadioProps = {
     label?: React.ReactNode
 
     /** Active radio color from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Predefined label fontSize, radio width, height and border-radius */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Replace default icon */
     icon?: React.FC<React.ComponentPropsWithoutRef<'svg'>>

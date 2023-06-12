@@ -1,4 +1,4 @@
-import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { AccordionStylesNames } from './Accordion'
@@ -14,7 +14,7 @@ type AccordionContext = {
     order: AccordionHeadingOrder
     chevron: React.ReactNode
     variant: AccordionVariant
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     onChange(value: string): void
     isItemActive(value: string): boolean
     getControlId(value: string): string

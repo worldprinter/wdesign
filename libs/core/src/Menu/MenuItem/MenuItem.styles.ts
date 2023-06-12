@@ -1,9 +1,9 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles } from '@worldprinter/wdesign-styles'
 
 type MenuItemStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
 }
 
 export default createStyles((theme, { color, radius }: MenuItemStylesParams) => ({

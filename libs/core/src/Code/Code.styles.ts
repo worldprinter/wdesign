@@ -1,8 +1,8 @@
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export type CodeStylesParams = {
-    color: MantineColor
+    color: WDesignColor
 }
 
 export default createStyles((theme, { color: _color }: CodeStylesParams) => {

@@ -1,4 +1,4 @@
-import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize, WDesignShadow } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { TransitionOverride } from '../Transition'
@@ -11,7 +11,7 @@ type ModalBaseContext = {
     closeOnClickOutside: boolean
     transitionProps: TransitionOverride
     zIndex: number
-    padding: MantineNumberSize
+    padding: WDesignNumberSize
     id: string
     getTitleId(): string
     getBodyId(): string
@@ -21,10 +21,10 @@ type ModalBaseContext = {
     setBodyMounted(mounted: boolean): void
     trapFocus: boolean
     closeOnEscape: boolean
-    shadow: MantineShadow
+    shadow: WDesignShadow
     stylesApi: {
         name: string
-        size: MantineNumberSize
+        size: WDesignNumberSize
         variant: string
         classNames: ClassNames<ModalBaseStylesNames>
         styles: Styles<ModalBaseStylesNames>

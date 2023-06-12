@@ -1,9 +1,9 @@
-import type { MantineSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
-type Breakpoints<T> = Partial<Record<MantineSize | (string & {}), T>>
+type Breakpoints<T> = Partial<Record<WDesignSize | (string & {}), T>>
 
-export function getSortedBreakpoints<T>(breakpoints: Breakpoints<T>, theme: MantineTheme): [string, T][] {
+export function getSortedBreakpoints<T>(breakpoints: Breakpoints<T>, theme: WDesignTheme): [string, T][] {
     if (!breakpoints) {
         return []
     }

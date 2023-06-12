@@ -1,14 +1,14 @@
-import type { CSSObject, MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignColor, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles } from '@worldprinter/wdesign-styles'
 
 export type TooltipStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     width: number | 'auto'
     multiline: boolean
 }
 
-function getColors(theme: MantineTheme, color?: MantineColor): CSSObject {
+function getColors(theme: WDesignTheme, color?: WDesignColor): CSSObject {
     if (!color) {
         return {
             backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[2] : theme.colors.gray[9],

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import { getPosition } from '../utils/get-position/get-position'
@@ -11,9 +11,9 @@ export type MarksStylesNames = Selectors<typeof useStyles>
 
 export type MarksProps = {
     marks: { value: number; label?: React.ReactNode }[]
-    size: MantineNumberSize
+    size: WDesignNumberSize
     thumbSize?: number
-    color: MantineColor
+    color: WDesignColor
     min: number
     max: number
     value: number

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import useStyles from './PickerControl.styles'
@@ -31,7 +31,7 @@ export type PickerControlProps = {
     lastInRange?: boolean
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 } & DefaultProps<PickerControlStylesNames> &
     React.ComponentPropsWithoutRef<'button'>
 

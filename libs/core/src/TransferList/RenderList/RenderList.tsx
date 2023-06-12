@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 import { useScrollIntoView } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
@@ -40,7 +40,7 @@ export type RenderListProps = {
     onMoveAll(): void
     onMove(): void
     height: number
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     listComponent?: React.FC<any>
     limit?: number
     transferIcon?: React.FunctionComponent<{ reversed }>

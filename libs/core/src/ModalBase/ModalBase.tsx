@@ -6,10 +6,10 @@ import { useFocusReturn, useId, useWindowEvent } from '@worldprinter/wdesign-hoo
 import type {
     ClassNames,
     DefaultProps,
-    MantineNumberSize,
-    MantineShadow,
     Selectors,
     Styles,
+    WDesignNumberSize,
+    WDesignShadow,
 } from '@worldprinter/wdesign-styles'
 import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
@@ -86,7 +86,7 @@ export type ModalBaseSettings = {
     zIndex?: number
 
     /** Key of theme.spacing or any valid CSS value to set content, header and footer padding, 'md' by default */
-    padding?: MantineNumberSize
+    padding?: WDesignNumberSize
 
     /** Id used to connect modal/drawer with body and title */
     id?: string
@@ -98,10 +98,10 @@ export type ModalBaseSettings = {
     closeOnEscape?: boolean
 
     /** Controls content width, 'md' by default */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Key of theme.shadows or any valid css box-shadow value, 'xl' by default */
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>
 

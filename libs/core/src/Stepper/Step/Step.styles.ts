@@ -1,10 +1,10 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 export type StepStylesParams = {
-    color: MantineColor
+    color: WDesignColor
     iconSize: number
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     allowStepClick: boolean
     iconPosition: 'right' | 'left'
     orientation: 'vertical' | 'horizontal'

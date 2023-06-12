@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createScopedKeydownHandler } from '@worldprinter/wdesign-utils'
 
@@ -24,7 +24,7 @@ export type TabProps = {
     icon?: React.ReactNode
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'button'>
 

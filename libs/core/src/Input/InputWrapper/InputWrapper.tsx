@@ -1,6 +1,6 @@
 import React, { forwardRef, Fragment } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -65,7 +65,7 @@ export type InputWrapperProps = {
     labelElement?: 'label' | 'div'
 
     /** Controls all elements font-size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Static css selector base */
     __staticSelector?: string

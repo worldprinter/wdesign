@@ -242,7 +242,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>((pro
                             {...inputProps}
                             {...others}
                             readOnly={readOnly}
-                            data-mantine-stop-propagation={dropdownOpened}
+                            data-wdesign-stop-propagation={dropdownOpened}
                             ref={useMergedRef(ref, inputRef)}
                             onKeyDown={handleInputKeydown}
                             classNames={classNames}

@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
 import { clamp, useId, useMergedRef, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -39,7 +39,7 @@ export type RatingProps = {
     fractions?: number
 
     /** Controls component size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Number of controls that should be rendered */
     count?: number
@@ -60,7 +60,7 @@ export type RatingProps = {
     highlightSelectedOnly?: boolean
 
     /** Key of theme.colors or any CSS color value, yellow by default */
-    color?: MantineColor
+    color?: WDesignColor
 } & DefaultProps<RatingStylesNames> &
     Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 

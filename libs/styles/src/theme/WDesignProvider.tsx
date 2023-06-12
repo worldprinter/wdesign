@@ -4,27 +4,27 @@ import React, { createContext, useContext } from 'react'
 
 import { DEFAULT_THEME } from './default-theme'
 import { GlobalStyles } from './GlobalStyles'
-import { MantineCssVariables } from './MantineCssVariables'
 import { NormalizeCSS } from './NormalizeCSS'
-import type { MantineTheme, MantineThemeOverride } from './types'
+import type { WDesignTheme, WDesignThemeOverride } from './types'
 import { filterProps } from './utils/filter-props/filter-props'
 import { mergeThemeWithFunctions } from './utils/merge-theme/merge-theme'
+import { WDesignCssVariables } from './WDesignCssVariables'
 
-type MantineProviderContextType = {
-    theme: MantineTheme
+type WDesignProviderContextType = {
+    theme: WDesignTheme
     emotionCache?: EmotionCache
 }
 
-const MantineProviderContext = createContext<MantineProviderContextType>({
+const WDesignProviderContext = createContext<WDesignProviderContextType>({
     theme: DEFAULT_THEME,
 })
 
-export function useMantineTheme() {
-    return useContext(MantineProviderContext)?.theme || DEFAULT_THEME
+export function useWDesignTheme() {
+    return useContext(WDesignProviderContext)?.theme || DEFAULT_THEME
 }
 
-export function useMantineProviderStyles(component: string | string[]) {
-    const theme = useMantineTheme()
+export function useWDesignProviderStyles(component: string | string[]) {
+    const theme = useWDesignTheme()
 
     const getStyles = (name: string) => ({
         styles: theme.components[name]?.styles || {},
@@ -40,8 +40,8 @@ export function useMantineProviderStyles(component: string | string[]) {
     return [getStyles(component)]
 }
 
-export function useMantineEmotionCache() {
-    return useContext(MantineProviderContext)?.emotionCache
+export function useWDesignEmotionCache() {
+    return useContext(WDesignProviderContext)?.emotionCache
 }
 
 export function useComponentDefaultProps<T extends Record<string, any>, U extends Partial<T> = {}>(
@@ -51,15 +51,15 @@ export function useComponentDefaultProps<T extends Record<string, any>, U extend
 ): T & {
     [Key in Extract<keyof T, keyof U>]-?: U[Key] | NonNullable<T[Key]>
 } {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const contextPropsPayload = theme.components[component]?.defaultProps
     const contextProps = typeof contextPropsPayload === 'function' ? contextPropsPayload(theme) : contextPropsPayload
 
     return { ...defaultProps, ...contextProps, ...filterProps(props) }
 }
 
-export type MantineProviderProps = {
-    theme?: MantineThemeOverride
+export type WDesignProviderProps = {
+    theme?: WDesignThemeOverride
     emotionCache?: EmotionCache
     withNormalizeCSS?: boolean
     withGlobalStyles?: boolean
@@ -68,7 +68,7 @@ export type MantineProviderProps = {
     inherit?: boolean
 }
 
-export function MantineProvider({
+export function WDesignProvider({
     theme,
     emotionCache,
     withNormalizeCSS = false,
@@ -76,23 +76,23 @@ export function MantineProvider({
     withCSSVariables = false,
     inherit = false,
     children,
-}: MantineProviderProps) {
-    const ctx = useContext(MantineProviderContext)
+}: WDesignProviderProps) {
+    const ctx = useContext(WDesignProviderContext)
     const mergedTheme = mergeThemeWithFunctions(DEFAULT_THEME, inherit ? { ...ctx.theme, ...theme } : theme)
 
     return (
         <ThemeProvider theme={mergedTheme}>
-            <MantineProviderContext.Provider value={{ theme: mergedTheme, emotionCache }}>
+            <WDesignProviderContext.Provider value={{ theme: mergedTheme, emotionCache }}>
                 {withNormalizeCSS && <NormalizeCSS />}
                 {withGlobalStyles && <GlobalStyles theme={mergedTheme} />}
-                {withCSSVariables && <MantineCssVariables theme={mergedTheme} />}
+                {withCSSVariables && <WDesignCssVariables theme={mergedTheme} />}
                 {typeof mergedTheme.globalStyles === 'function' && (
                     <Global styles={mergedTheme.globalStyles(mergedTheme) as any} />
                 )}
                 {children}
-            </MantineProviderContext.Provider>
+            </WDesignProviderContext.Provider>
         </ThemeProvider>
     )
 }
 
-MantineProvider.displayName = '@worldprinter/wdesign-core/MantineProvider'
+WDesignProvider.displayName = '@worldprinter/wdesign-core/WDesignProvider'

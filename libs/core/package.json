@@ -1,4 +1,15 @@
 {
     "name": "@worldprinter/wdesign-core",
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+    },
+    "dependencies": {
+        "@radix-ui/react-scroll-area": "1.0.2",
+        "react-textarea-autosize": "8.3.4",
+        "react-remove-scroll": "^2.5.5",
+        "@floating-ui/react": "^0.19.1"
+    },
+    "devDependencies": {}
 }

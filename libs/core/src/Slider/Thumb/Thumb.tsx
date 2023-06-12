@@ -1,9 +1,9 @@
 import React, { forwardRef, useState } from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
-import type { MantineTransition } from '../../Transition'
+import type { WDesignTransition } from '../../Transition'
 import { Transition } from '../../Transition'
 import useStyles from './Thumb.styles'
 
@@ -15,12 +15,12 @@ export type ThumbProps = {
     value: number
     position: number
     dragging: boolean
-    color: MantineColor
-    size: MantineNumberSize
+    color: WDesignColor
+    size: WDesignNumberSize
     label: React.ReactNode
     onKeyDownCapture?(event: React.KeyboardEvent<HTMLDivElement>): void
     onMouseDown?(event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>): void
-    labelTransition?: MantineTransition
+    labelTransition?: WDesignTransition
     labelTransitionDuration?: number
     labelTransitionTimingFunction?: string
     labelAlwaysOn: boolean

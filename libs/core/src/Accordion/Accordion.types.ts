@@ -1,4 +1,4 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 export type AccordionValue<Multiple extends boolean> = Multiple extends true ? string[] : string | null
 
@@ -7,5 +7,5 @@ export type AccordionChevronPosition = 'left' | 'right'
 export type AccordionVariant = 'default' | 'contained' | 'filled' | 'separated'
 
 export type AccordionStylesParams = {
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 }

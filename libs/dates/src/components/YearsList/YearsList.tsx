@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { Box, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { ControlsGroupSettings } from '../../types'
@@ -27,7 +27,7 @@ export type YearsListSettings = {
     getYearControlProps?(date: Date): Partial<PickerControlProps>
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Determines whether propagation for Escape key should be stopped */
     __stopPropagation?: boolean
@@ -109,7 +109,7 @@ export const YearsList = forwardRef<HTMLTableElement, YearsListProps>((props, re
                         styles={styles}
                         unstyled={unstyled}
                         __staticSelector={__staticSelector || 'YearsList'}
-                        data-mantine-stop-propagation={__stopPropagation || undefined}
+                        data-wdesign-stop-propagation={__stopPropagation || undefined}
                         disabled={isYearDisabled(year, minDate, maxDate)}
                         ref={(node) => __getControlRef?.(rowIndex, cellIndex, node)}
                         {...controlProps}

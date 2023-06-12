@@ -1,14 +1,14 @@
 import { attachFunctions } from '../../functions/attach-functions'
 import { getBreakpointValue } from '../../functions/fns/breakpoints/breakpoints'
-import type { MantineTheme, MantineThemeBase, MantineThemeOverride } from '../../types'
+import type { WDesignTheme, WDesignThemeBase, WDesignThemeOverride } from '../../types'
 
-export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: MantineThemeOverride): MantineThemeBase {
+export function mergeTheme(currentTheme: WDesignThemeBase, themeOverride?: WDesignThemeOverride): WDesignThemeBase {
     if (!themeOverride) {
         return currentTheme
     }
 
     // @ts-ignore
-    const result: MantineThemeBase = Object.keys(currentTheme).reduce((acc, key) => {
+    const result: WDesignThemeBase = Object.keys(currentTheme).reduce((acc, key) => {
         if (key === 'headings' && themeOverride.headings) {
             const sizes = themeOverride.headings.sizes
                 ? Object.keys(currentTheme.headings.sizes).reduce((headingsAcc, h) => {
@@ -18,7 +18,7 @@ export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: Manti
                           ...themeOverride.headings.sizes[h],
                       }
                       return headingsAcc
-                  }, {} as MantineThemeBase['headings']['sizes'])
+                  }, {} as WDesignThemeBase['headings']['sizes'])
                 : currentTheme.headings.sizes
             return {
                 ...acc,
@@ -52,7 +52,7 @@ export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: Manti
                 ? themeOverride[key]
                 : themeOverride[key] || currentTheme[key]
         return acc
-    }, {} as MantineThemeBase)
+    }, {} as WDesignThemeBase)
 
     if (themeOverride?.fontFamily && !themeOverride?.headings?.fontFamily) {
         result.headings.fontFamily = themeOverride.fontFamily as string
@@ -60,7 +60,7 @@ export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: Manti
 
     if (!(result.primaryColor in result.colors)) {
         throw new Error(
-            'MantineProvider: Invalid theme.primaryColor, it accepts only key of theme.colors, learn more – https://mantine.dev/theming/colors/#primary-color',
+            'WDesignProvider: Invalid theme.primaryColor, it accepts only key of theme.colors, learn more – https://wdesign.dev/theming/colors/#primary-color',
         )
     }
 
@@ -68,8 +68,8 @@ export function mergeTheme(currentTheme: MantineThemeBase, themeOverride?: Manti
 }
 
 export function mergeThemeWithFunctions(
-    currentTheme: MantineThemeBase,
-    themeOverride?: MantineThemeOverride,
-): MantineTheme {
+    currentTheme: WDesignThemeBase,
+    themeOverride?: WDesignThemeOverride,
+): WDesignTheme {
     return attachFunctions(mergeTheme(currentTheme, themeOverride))
 }

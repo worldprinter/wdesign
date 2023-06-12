@@ -2,11 +2,11 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
     Selectors,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
@@ -29,16 +29,16 @@ export type ActionIconProps = {
     variant?: Variants<'subtle' | 'filled' | 'outline' | 'light' | 'default' | 'transparent' | 'gradient'>
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Gradient input, only used when variant="gradient", theme.defaultGradient by default */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Predefined button size or any valid CSS value to set width and height */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Props added to Loader component (only visible when `loading` prop is set) */
     loaderProps?: LoaderProps

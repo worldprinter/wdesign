@@ -1,18 +1,18 @@
 import type {
     CSSObject,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineTheme,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
+    WDesignTheme,
 } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export const ACTION_ICON_VARIANTS = ['subtle', 'filled', 'outline', 'light', 'default', 'transparent', 'gradient']
 
 export type ActionIconStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
-    gradient: MantineGradient
+    color: WDesignColor
+    radius: WDesignNumberSize
+    gradient: WDesignGradient
 }
 
 export const sizes = {
@@ -25,9 +25,9 @@ export const sizes = {
 
 type GetVariantStyles = {
     variant: string
-    theme: MantineTheme
-    color: MantineColor
-    gradient: MantineGradient
+    theme: WDesignTheme
+    color: WDesignColor
+    gradient: WDesignGradient
 }
 
 function getVariantStyles({ variant, theme, color, gradient }: GetVariantStyles): CSSObject {

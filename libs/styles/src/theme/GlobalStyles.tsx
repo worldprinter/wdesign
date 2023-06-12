@@ -1,9 +1,9 @@
 import { Global } from '@emotion/react'
 import React from 'react'
 
-import type { MantineTheme } from './types'
+import type { WDesignTheme } from './types'
 
-export function GlobalStyles({ theme }: { theme: MantineTheme }) {
+export function GlobalStyles({ theme }: { theme: WDesignTheme }) {
     return (
         <Global
             styles={{

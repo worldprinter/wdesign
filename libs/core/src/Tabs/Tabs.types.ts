@@ -1,4 +1,4 @@
-import type { MantineColor, MantineNumberSize, Variants } from '@worldprinter/wdesign-styles'
+import type { Variants, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 export type TabsValue = string | null
 export type TabsOrientation = 'horizontal' | 'vertical'
@@ -9,7 +9,7 @@ export type TabsPlacement = 'right' | 'left'
 export type TabsStylesParams = {
     placement: TabsPlacement
     orientation: TabsOrientation
-    color?: MantineColor
-    radius?: MantineNumberSize
+    color?: WDesignColor
+    radius?: WDesignNumberSize
     inverted: boolean
 }

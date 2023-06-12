@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createStyles, rem } from '@worldprinter/wdesign-core'
 
 export type DefaultActionStylesParams = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
 }
 
 export default createStyles((theme, { radius }: DefaultActionStylesParams) => ({

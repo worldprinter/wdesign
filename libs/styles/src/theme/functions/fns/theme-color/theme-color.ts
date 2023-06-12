@@ -1,7 +1,7 @@
-import type { MantineThemeBase } from '../../../types'
+import type { WDesignThemeBase } from '../../../types'
 import { primaryShade } from '../primary-shade/primary-shade'
 
-export function themeColor(theme: MantineThemeBase) {
+export function themeColor(theme: WDesignThemeBase) {
     const getPrimaryShade = primaryShade(theme)
 
     return (color: string, shade?: number, primaryFallback = true, useSplittedShade = true) => {

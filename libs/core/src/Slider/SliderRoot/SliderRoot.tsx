@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
 import useStyles from './SliderRoot.styles'
@@ -8,7 +8,7 @@ import useStyles from './SliderRoot.styles'
 export type SliderRootStylesNames = Selectors<typeof useStyles>
 
 export type SliderRootProps = {
-    size: MantineNumberSize
+    size: WDesignNumberSize
     children: React.ReactNode
     disabled: boolean
     variant: string

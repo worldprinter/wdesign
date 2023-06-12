@@ -11,7 +11,7 @@ export type SpotlightEvents = {
     removeActions(ids: string[]): void
 }
 
-export const [useSpotlightEvents, createEvent] = createUseExternalEvents<SpotlightEvents>('mantine-spotlight')
+export const [useSpotlightEvents, createEvent] = createUseExternalEvents<SpotlightEvents>('wdesign-spotlight')
 
 export const openSpotlight = createEvent('open')
 export const closeSpotlight = createEvent('close')

@@ -1,4 +1,4 @@
-import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { TabsStylesNames } from './Tabs'
@@ -18,8 +18,8 @@ type TabsContext = {
     setMountedPanelIds(values: string[] | ((oldValue: string[]) => string[])): void
     mountedPanelIds: string[]
     variant: TabsVariant
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     inverted: boolean
     keepMounted: boolean
     placement: TabsPlacement

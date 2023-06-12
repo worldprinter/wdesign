@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import useStyles, { THUMB_SIZES } from './Thumb.styles'
 
@@ -14,7 +14,7 @@ type Position = {
 export type ThumbProps = {
     variant?: string
     position: Position
-    size: MantineSize
+    size: WDesignSize
     __staticSelector: string
 } & DefaultProps<ThumbStylesNames>
 

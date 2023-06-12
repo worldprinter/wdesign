@@ -1,4 +1,4 @@
-import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-core'
+import type { ClassNames, Styles, WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { CarouselStylesNames } from './Carousel'
@@ -8,7 +8,7 @@ import type { CarouselBreakpoint, CarouselOrientation, Embla } from './types'
 type CarouselContext = {
     embla: Embla
     slideSize: string | number
-    slideGap: MantineNumberSize
+    slideGap: WDesignNumberSize
     orientation: CarouselOrientation
     includeGapInSize: boolean
     breakpoints: CarouselBreakpoint[]

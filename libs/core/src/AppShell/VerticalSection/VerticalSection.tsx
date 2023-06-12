@@ -75,7 +75,7 @@ export const VerticalSection = forwardRef<HTMLElement, VerticalSectionProps>(
             typeof height === 'object' && height !== null
                 ? getSortedBreakpoints(height, theme).reduce((acc, [breakpoint, breakpointSize]) => {
                       acc[`@media (min-width: ${em(breakpoint)})`] = {
-                          [`--mantine-${section}-height`]: rem(breakpointSize),
+                          [`--wdesign-${section}-height`]: rem(breakpointSize),
                       }
 
                       return acc
@@ -93,7 +93,7 @@ export const VerticalSection = forwardRef<HTMLElement, VerticalSectionProps>(
                 <Global
                     styles={() => ({
                         ':root': {
-                            [`--mantine-${section}-height`]:
+                            [`--wdesign-${section}-height`]:
                                 typeof height === 'object' ? rem(height?.base) || '100%' : rem(height),
                             ...breakpoints,
                         },

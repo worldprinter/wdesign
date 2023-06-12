@@ -9,7 +9,7 @@ import useStyles from './TypographyStylesProvider.styles'
 export type TypographyStylesProviderProps = {
     variant?: string
 
-    /** Render any content to add Mantine typography styles */
+    /** Render any content to add WDesign typography styles */
     children: React.ReactNode
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>

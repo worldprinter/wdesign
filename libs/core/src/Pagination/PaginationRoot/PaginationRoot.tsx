@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { usePagination } from '@worldprinter/wdesign-hooks'
-import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createEventHandler } from '@worldprinter/wdesign-utils'
 
@@ -19,7 +19,7 @@ export type PaginationRootSettings = {
     variant?: string
 
     /** Controls height and min-width */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Total number of pages, must be an integer */
     total: number
@@ -43,10 +43,10 @@ export type PaginationRootSettings = {
     boundaries?: number
 
     /** Key of theme.colors, active item color, theme.primaryColor by default */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius, border-radius of items and controls, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Called when next page control is clicked */
     onNextPage?(): void

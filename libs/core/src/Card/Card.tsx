@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, forwardRef } from 'react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -14,7 +14,7 @@ export type CardProps = {
     variant?: string
 
     /** Card padding used to offset Card.Section, use it instead of p prop */
-    padding?: MantineNumberSize
+    padding?: WDesignNumberSize
 
     /** Card content */
     children: React.ReactNode

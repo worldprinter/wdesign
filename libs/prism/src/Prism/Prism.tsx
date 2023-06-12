@@ -7,12 +7,12 @@ import {
     ScrollArea,
     Tooltip,
     useComponentDefaultProps,
-    useMantineTheme,
+    useWDesignTheme,
     type DefaultProps,
-    type MantineColor,
-    type MantineNumberSize,
-    type MantineTheme,
     type Selectors,
+    type WDesignColor,
+    type WDesignNumberSize,
+    type WDesignTheme,
 } from '@worldprinter/wdesign-core'
 import { useClipboard } from '@worldprinter/wdesign-hooks'
 
@@ -44,7 +44,7 @@ export type PrismProps = {
     withLineNumbers?: boolean
 
     /** Highlight line at given line number with color from theme.colors */
-    highlightLines?: Record<string, { color: MantineColor; label?: string }>
+    highlightLines?: Record<string, { color: WDesignColor; label?: string }>
 
     /** Force color scheme, defaults to theme.colorScheme */
     colorScheme?: 'dark' | 'light'
@@ -56,10 +56,10 @@ export type PrismProps = {
     trim?: boolean
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Provide custom color scheme */
-    getPrismTheme?(theme: MantineTheme, colorScheme: 'light' | 'dark'): PrismTheme
+    getPrismTheme?(theme: WDesignTheme, colorScheme: 'light' | 'dark'): PrismTheme
 } & DefaultProps<PrismStylesNames> &
     Omit<React.ComponentPropsWithRef<'div'>, 'children'>
 
@@ -98,7 +98,7 @@ export const Prism = forwardRef<HTMLDivElement, PrismProps>((props: PrismProps, 
     const code = trim && typeof children === 'string' ? children.trim() : children
     const maxLineSize = code.split('\n').length.toString().length
 
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const clipboard = useClipboard()
     const _colorScheme = colorScheme || theme.colorScheme
     const { classes, cx } = useStyles(

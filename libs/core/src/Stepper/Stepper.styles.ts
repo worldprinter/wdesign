@@ -1,15 +1,15 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, em, getBreakpointValue, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { iconSizes } from './Step/Step.styles'
 
 export type StepperStylesParams = {
-    contentPadding: MantineNumberSize
+    contentPadding: WDesignNumberSize
     iconSize?: number
-    color: MantineColor
+    color: WDesignColor
     orientation: 'vertical' | 'horizontal'
     iconPosition: 'right' | 'left'
-    breakpoint: MantineNumberSize
+    breakpoint: WDesignNumberSize
 }
 
 export default createStyles(

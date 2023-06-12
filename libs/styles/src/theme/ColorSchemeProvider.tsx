@@ -9,12 +9,12 @@ type ColorSchemeContextProps = {
 
 const ColorSchemeContext = createContext<ColorSchemeContextProps>(null)
 
-export function useMantineColorScheme() {
+export function useWDesignColorScheme() {
     const ctx = useContext(ColorSchemeContext)
 
     if (!ctx) {
         throw new Error(
-            'useMantineColorScheme hook was called outside of context, make sure your app is wrapped with ColorSchemeProvider component',
+            'useWDesignColorScheme hook was called outside of context, make sure your app is wrapped with ColorSchemeProvider component',
         )
     }
 

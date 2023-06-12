@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import type { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input'
@@ -24,7 +24,7 @@ export type RadioGroupProps = {
     onChange?(value: string): void
 
     /** Predefined label fontSize, radio width, height and border-radius */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Props spread to root element */
     wrapperProps?: Record<string, any>

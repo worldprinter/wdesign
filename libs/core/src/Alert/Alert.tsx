@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, Variants, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -22,7 +22,7 @@ export type AlertProps = {
     children: React.ReactNode
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Icon displayed next to the title */
     icon?: React.ReactNode
@@ -37,7 +37,7 @@ export type AlertProps = {
     closeButtonLabel?: string
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 } & DefaultProps<AlertStylesNames, AlertStylesParams> &
     Omit<React.ComponentPropsWithoutRef<'div'>, 'title'>
 

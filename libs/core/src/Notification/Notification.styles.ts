@@ -1,9 +1,9 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export type NotificationStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     withTitle: boolean
 }
 

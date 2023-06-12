@@ -1,19 +1,19 @@
-import type { MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type NavLinkStylesParams = {
-    color: MantineColor
+    color: WDesignColor
     noWrap: boolean
-    childrenOffset: MantineNumberSize
+    childrenOffset: WDesignNumberSize
     alignIcon: 'top' | 'center'
 }
 
 const NAV_LINK_VARIANTS = ['filled', 'light', 'subtle']
 
 type GetVariantStylesInput = {
-    theme: MantineTheme
+    theme: WDesignTheme
     variant: string
-    color: MantineColor
+    color: WDesignColor
 }
 
 function getVariantStyles({ theme, variant, color }: GetVariantStylesInput) {

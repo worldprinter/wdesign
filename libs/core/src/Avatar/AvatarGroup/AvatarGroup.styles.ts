@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
 type AvatarGroupStylesParams = {
-    spacing: MantineNumberSize
+    spacing: WDesignNumberSize
 }
 
 export default createStyles((theme, { spacing }: AvatarGroupStylesParams) => ({

@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { Box } from '@worldprinter/wdesign-core'
 
 import { useCarouselContext } from '../Carousel.context'
@@ -16,7 +16,7 @@ export type CarouselSlideProps = {
     size?: string | number
 
     /** Key of theme.spacing or number to set gap between slides */
-    gap?: MantineNumberSize
+    gap?: WDesignNumberSize
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>
 

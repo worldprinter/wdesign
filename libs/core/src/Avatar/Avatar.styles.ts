@@ -1,20 +1,20 @@
 import type {
     CSSObject,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineTheme,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
+    WDesignTheme,
 } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export const AVATAR_VARIANTS = ['filled', 'light', 'gradient', 'outline']
 
 export type AvatarStylesParams = {
-    radius: MantineNumberSize
-    color: MantineColor
+    radius: WDesignNumberSize
+    color: WDesignColor
     withinGroup: boolean
-    spacing: MantineNumberSize
-    gradient: MantineGradient
+    spacing: WDesignNumberSize
+    gradient: WDesignGradient
 }
 
 export const sizes = {
@@ -27,8 +27,8 @@ export const sizes = {
 
 type GetGroupStylesInput = {
     withinGroup: boolean
-    spacing: MantineNumberSize
-    theme: MantineTheme
+    spacing: WDesignNumberSize
+    theme: WDesignTheme
 }
 
 function getGroupStyles({ withinGroup, spacing, theme }: GetGroupStylesInput): CSSObject {
@@ -47,10 +47,10 @@ function getGroupStyles({ withinGroup, spacing, theme }: GetGroupStylesInput): C
 }
 
 type GetVariantStylesInput = {
-    theme: MantineTheme
+    theme: WDesignTheme
     variant: string
-    color: MantineColor
-    gradient: MantineGradient
+    color: WDesignColor
+    gradient: WDesignGradient
 }
 
 function getVariantStyles({ theme, variant, color, gradient }: GetVariantStylesInput) {

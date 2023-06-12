@@ -2,7 +2,7 @@ import * as RadixScrollArea from '@radix-ui/react-scroll-area'
 import React, { forwardRef, useState } from 'react'
 
 import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 import { packSx } from '@worldprinter/wdesign-utils'
 
@@ -68,7 +68,7 @@ export const _ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>((props, r
     } = useComponentDefaultProps('ScrollArea', defaultProps, props)
 
     const [scrollbarHovered, setScrollbarHovered] = useState(false)
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const { classes, cx } = useStyles(
         {
             scrollbarSize,

@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
@@ -20,19 +20,19 @@ export type ThemeIconProps = {
     children: React.ReactNode
 
     /** Width and height of theme icon */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Icon color from theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Controls appearance */
     variant?: ThemeIconVariant
 
     /** Controls gradient settings in gradient variant only */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 } & DefaultProps<never, ThemeIconStylesParams> &
     React.ComponentPropsWithoutRef<'div'>
 

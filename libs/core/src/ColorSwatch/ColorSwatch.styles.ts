@@ -1,8 +1,8 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export type ColorSwatchStylesParams = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
 }
 
 export default createStyles((theme, { radius }: ColorSwatchStylesParams, { size }) => {

@@ -1,10 +1,10 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 type TimelineItemStyles = {
     bulletSize: number
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     align: 'right' | 'left'
     lineVariant: 'solid' | 'dashed' | 'dotted'
     lineWidth: number

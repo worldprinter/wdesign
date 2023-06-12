@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { useDidUpdate, useReducedMotion } from '@worldprinter/wdesign-hooks'
-import { useMantineTheme } from '@worldprinter/wdesign-styles'
+import { useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 export type TransitionStatus = 'entered' | 'exited' | 'entering' | 'exiting' | 'pre-exiting' | 'pre-entering'
 
@@ -26,7 +26,7 @@ export function useTransition({
     onEntered,
     onExited,
 }: UseTransition) {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const shouldReduceMotion = useReducedMotion()
     const reduceMotion = theme.respectReducedMotion ? shouldReduceMotion : false
     const [transitionDuration, setTransitionDuration] = useState(reduceMotion ? 0 : duration)

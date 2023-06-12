@@ -1,4 +1,4 @@
-import type { ClassNames, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { MenuStylesNames } from './Menu'
@@ -16,7 +16,7 @@ type MenuContext = {
     closeOnItemClick: boolean
     loop: boolean
     trigger: MenuTriggerEvent
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     opened: boolean
     classNames: ClassNames<MenuStylesNames>
     styles: Styles<MenuStylesNames>

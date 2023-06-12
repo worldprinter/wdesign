@@ -1,8 +1,8 @@
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 import { createStyles } from '@worldprinter/wdesign-styles'
 
 export type MarkStylesParams = {
-    color: MantineColor
+    color: WDesignColor
 }
 
 export default createStyles((theme, { color }: MarkStylesParams) => ({

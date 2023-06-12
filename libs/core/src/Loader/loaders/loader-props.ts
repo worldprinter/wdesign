@@ -1,8 +1,8 @@
 import type React from 'react'
 
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 
 export type LoaderProps = {
     size: number | string
-    color: MantineColor
+    color: WDesignColor
 } & React.ComponentPropsWithoutRef<'svg'>

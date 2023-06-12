@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
@@ -25,13 +25,13 @@ export type ListProps = {
     withPadding?: boolean
 
     /** Font size from theme or number to set value */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Icon that should replace list item dot */
     icon?: React.ReactNode
 
     /** Spacing between items from theme or number to set value */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 
     /** Center items with icon */
     center?: boolean

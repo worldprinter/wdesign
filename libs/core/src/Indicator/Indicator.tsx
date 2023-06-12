@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getDefaultZIndex, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -33,10 +33,10 @@ export type IndicatorProps = {
     label?: React.ReactNode
 
     /** Key of theme.radius or any valid CSS value to set border-radius, 1000rem by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Color from theme.colors or any other valid CSS color value */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Determines whether indicator should have border */
     withBorder?: boolean

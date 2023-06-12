@@ -1,10 +1,10 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
 export type ListStylesParams = {
     withPadding: boolean
     listStyleType: string
-    spacing: MantineNumberSize
+    spacing: WDesignNumberSize
     center: boolean
 }
 

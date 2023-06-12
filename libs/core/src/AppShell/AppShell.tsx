@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -40,13 +40,13 @@ export type AppShellProps = {
     children: React.ReactNode
 
     /** Content padding */
-    padding?: MantineNumberSize
+    padding?: WDesignNumberSize
 
     /** Breakpoint at which Navbar component should no longer be offset with padding-left, applicable only for fixed position */
-    navbarOffsetBreakpoint?: MantineNumberSize
+    navbarOffsetBreakpoint?: WDesignNumberSize
 
     /** Breakpoint at which Aside component should no longer be offset with padding-right, applicable only for fixed position */
-    asideOffsetBreakpoint?: MantineNumberSize
+    asideOffsetBreakpoint?: WDesignNumberSize
 } & DefaultProps<AppShellStylesNames>
 
 const defaultProps: Partial<AppShellProps> = {

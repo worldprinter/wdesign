@@ -2,7 +2,7 @@ import React, { forwardRef, useRef, useState } from 'react'
 
 import type { UseMovePosition } from '@worldprinter/wdesign-hooks'
 import { clampUseMovePosition, useDidUpdate, useMergedRef, useMove } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 import { rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -17,7 +17,7 @@ export type BaseColorSliderProps = {
     value: number
     onChange(value: number): void
     onChangeEnd(value: number): void
-    size?: MantineSize
+    size?: WDesignSize
     focusable?: boolean
     __staticSelector?: string
 } & DefaultProps<ColorSliderStylesNames> &

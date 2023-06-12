@@ -42,7 +42,7 @@ function onSameLevel(target: HTMLButtonElement, sibling: HTMLButtonElement, pare
 }
 
 type GetElementsSiblingsInput = {
-    /** Selector used to find parent node, e.g. '[role="tablist"]', '.mantine-Text-root' */
+    /** Selector used to find parent node, e.g. '[role="tablist"]', '.wdesign-Text-root' */
     parentSelector: string
 
     /** Selector used to find element siblings, e.g. '[data-tab]' */

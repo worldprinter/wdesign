@@ -1,9 +1,9 @@
-import type { MantineNumberSize, MantineShadow } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize, WDesignShadow } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 export type PaperStylesParams = {
-    radius: MantineNumberSize
-    shadow: MantineShadow
+    radius: WDesignNumberSize
+    shadow: WDesignShadow
 }
 
 export default createStyles((theme, { radius, shadow }: PaperStylesParams) => ({

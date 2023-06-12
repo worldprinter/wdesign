@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useDidUpdate, useMergedRef, useScrollIntoView, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineShadow, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignShadow, WDesignSize } from '@worldprinter/wdesign-styles'
 import { getDefaultZIndex } from '@worldprinter/wdesign-styles'
 import { groupOptions } from '@worldprinter/wdesign-utils'
 
@@ -34,13 +34,13 @@ export type SelectSharedProps<Item, Value> = {
     filter?(value: string, item: Item): boolean
 
     /** Input size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Props added to Transition component that used to animate dropdown presence, use to configure duration and animation type, { duration: 0, transition: 'fade' } by default */
     transitionProps?: TransitionOverride
 
     /** Dropdown shadow from theme or any value to set box-shadow */
-    shadow?: MantineShadow
+    shadow?: WDesignShadow
 
     /** Initial dropdown opened state */
     initiallyOpened?: boolean
@@ -597,7 +597,7 @@ export const Select = forwardRef<HTMLInputElement, SelectProps>((props, ref) => 
                             onFocus={handleInputFocus}
                             readOnly={!searchable || readOnly}
                             disabled={disabled}
-                            data-mantine-stop-propagation={shouldShowDropdown}
+                            data-wdesign-stop-propagation={shouldShowDropdown}
                             name={null}
                             classNames={{
                                 ...classNames,

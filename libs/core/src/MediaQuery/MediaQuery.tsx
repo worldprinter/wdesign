@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 
-import type { CSSObject, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import useStyles from './MediaQuery.styles'
@@ -12,16 +12,16 @@ export type MediaQueryProps = {
     children: React.ReactNode
 
     /** Styles applied to child when viewport is smaller than given breakpoint */
-    smallerThan?: MantineNumberSize
+    smallerThan?: WDesignNumberSize
 
     /** Styles applied to child when viewport is larger than given breakpoint */
-    largerThan?: MantineNumberSize
+    largerThan?: WDesignNumberSize
 
     /** Any other media query */
     query?: string
 
     /** Styles applied to child when breakpoint matches */
-    styles: CSSObject | ((theme: MantineTheme) => CSSObject)
+    styles: CSSObject | ((theme: WDesignTheme) => CSSObject)
 }
 
 export function MediaQuery(props: MediaQueryProps) {

@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignNumberSize, WDesignSize } from '@worldprinter/wdesign-core'
 import { UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import type { DayStylesParams } from './Day.styles'
@@ -20,10 +20,10 @@ export type DayProps = {
     date: Date
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Day size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Determines whether the day should be considered to be a weekend */
     weekend?: boolean

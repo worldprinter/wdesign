@@ -1,4 +1,4 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-core'
 
 export const sizes = {
@@ -10,7 +10,7 @@ export const sizes = {
 }
 
 export type DayStylesParams = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     isStatic: boolean
 }
 

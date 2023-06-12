@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
     ModalProps,
     ModalStylesNames,
     ScrollAreaAutosizeProps,
     Selectors,
     TextInputProps,
+    WDesignColor,
 } from '@worldprinter/wdesign-core'
 import { getDefaultZIndex, Modal, ScrollArea, TextInput, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { useDidUpdate } from '@worldprinter/wdesign-hooks'
@@ -66,7 +66,7 @@ export type InnerSpotlightProps = {
     highlightQuery?: boolean
 
     /** The highlight color */
-    highlightColor?: MantineColor
+    highlightColor?: WDesignColor
 
     /** Props spread to search input */
     searchInputProps?: TextInputProps

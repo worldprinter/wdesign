@@ -1,8 +1,8 @@
-import type { MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type InputStylesParams = {
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
     multiline: boolean
     invalid: boolean
     rightSectionWidth: string | number
@@ -24,7 +24,7 @@ export const sizes = {
 const INPUT_VARIANTS = ['default', 'filled', 'unstyled']
 
 type GetVariantStylesInput = {
-    theme: MantineTheme
+    theme: WDesignTheme
     variant: string
 }
 
@@ -116,7 +116,7 @@ export default createStyles(
                 marginBottom: offsetBottom ? `calc(${theme.spacing.xs} / 2)` : undefined,
 
                 '&:has(input:disabled)': {
-                    '& .mantine-Input-rightSection': {
+                    '& .wdesign-Input-rightSection': {
                         display: 'none',
                     },
                 },

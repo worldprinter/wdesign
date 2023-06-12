@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react'
 
 import type { DefaultProps, Selectors } from '@worldprinter/wdesign-styles'
-import { getDefaultZIndex, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { getDefaultZIndex, useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { Affix } from '../Affix'
 import { CloseButton } from '../CloseButton'
 import type { PaperProps } from '../Paper'
 import { Paper } from '../Paper'
-import type { MantineTransition } from '../Transition'
+import type { WDesignTransition } from '../Transition'
 import { Transition } from '../Transition'
 import useStyles from './Dialog.styles'
 
@@ -43,7 +43,7 @@ export type DialogProps = {
     opened: boolean
 
     /** Appear/disappear transition */
-    transition?: MantineTransition
+    transition?: WDesignTransition
 
     /** Duration in ms of modal transitions, set to 0 to disable all animations */
     transitionDuration?: number
@@ -129,7 +129,7 @@ export function DialogBody(props: DialogProps) {
 
 export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
     ({ zIndex = getDefaultZIndex('modal'), ...props }: DialogProps, ref) => {
-        const theme = useMantineTheme()
+        const theme = useWDesignTheme()
 
         return (
             <Affix

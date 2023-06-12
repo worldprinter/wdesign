@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { CloseButton } from '../CloseButton'
 import { FileButton } from '../FileButton'
@@ -26,7 +26,7 @@ export type FileInputProps<Multiple extends boolean = false> = {
     defaultValue?: Multiple extends true ? File[] : File | null
 
     /** Input size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Determines whether user can pick more than one file */
     multiple?: Multiple

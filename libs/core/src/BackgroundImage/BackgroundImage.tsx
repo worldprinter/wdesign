@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -15,7 +15,7 @@ export type BackgroundImageProps = {
     src: string
 
     /** Key of theme.radius or any valid CSS value to set border-radius, 0 by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 } & DefaultProps<never, BackgroundImageStylesParams> &
     React.ComponentPropsWithoutRef<'div'>
 

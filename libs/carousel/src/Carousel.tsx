@@ -3,7 +3,7 @@ import type { EmblaPluginType } from 'embla-carousel-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import React, { Children, forwardRef, useCallback, useEffect, useState } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { Box, ChevronIcon, UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { clamp } from '@worldprinter/wdesign-hooks'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
@@ -46,13 +46,13 @@ export type CarouselProps = {
     controlSize?: number
 
     /** Key of theme.spacing or number to set space between next/previous control and carousel boundary */
-    controlsOffset?: MantineNumberSize
+    controlsOffset?: WDesignNumberSize
 
     /** Slide width, defaults to 100%, examples: 40rem 50% */
     slideSize?: string | number
 
     /** Key of theme.spacing or number to set gap between slides */
-    slideGap?: MantineNumberSize
+    slideGap?: WDesignNumberSize
 
     /** Control slideSize and slideGap at different viewport sizes */
     breakpoints?: CarouselBreakpoint[]

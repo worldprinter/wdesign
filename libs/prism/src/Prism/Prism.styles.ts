@@ -1,11 +1,11 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createStyles, rem } from '@worldprinter/wdesign-core'
 
 export type PrismStylesParams = {
     colorScheme: 'light' | 'dark'
     native: boolean
     maxLineSize: number | string
-    radius: MantineNumberSize
+    radius: WDesignNumberSize
 }
 
 export default createStyles((theme, { colorScheme, native, maxLineSize, radius }: PrismStylesParams) => ({

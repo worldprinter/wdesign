@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { getTransitionStyles } from './get-transition-styles/get-transition-styles'
-import type { MantineTransition } from './transitions'
+import type { WDesignTransition } from './transitions'
 import { useTransition } from './use-transition'
 
 export type TransitionProps = {
@@ -9,7 +9,7 @@ export type TransitionProps = {
     keepMounted?: boolean
 
     /** Predefined transition name or transition styles */
-    transition: MantineTransition
+    transition: WDesignTransition
 
     /** Transition duration in ms */
     duration?: number

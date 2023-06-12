@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-core'
 import { Box, UnstyledButton, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 
 import useStyles from './CalendarHeader.styles'
@@ -51,7 +51,7 @@ export type CalendarHeaderSettings = {
     withPrevious?: boolean
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 }
 
 export type CalendarHeaderProps = {
@@ -132,7 +132,7 @@ export const CalendarHeader = forwardRef<HTMLDivElement, CalendarHeaderProps>((p
                     disabled={previousDisabled}
                     data-disabled={previousDisabled || undefined}
                     tabIndex={__preventFocus ? -1 : 0}
-                    data-mantine-stop-propagation={__stopPropagation || undefined}
+                    data-wdesign-stop-propagation={__stopPropagation || undefined}
                 >
                     {previousIcon || (
                         <Chevron
@@ -154,7 +154,7 @@ export const CalendarHeader = forwardRef<HTMLDivElement, CalendarHeaderProps>((p
                 data-static={!hasNextLevel || undefined}
                 aria-label={levelControlAriaLabel}
                 tabIndex={__preventFocus || !hasNextLevel ? -1 : 0}
-                data-mantine-stop-propagation={__stopPropagation || undefined}
+                data-wdesign-stop-propagation={__stopPropagation || undefined}
             >
                 {label}
             </UnstyledButton>
@@ -170,7 +170,7 @@ export const CalendarHeader = forwardRef<HTMLDivElement, CalendarHeaderProps>((p
                     disabled={nextDisabled}
                     data-disabled={nextDisabled || undefined}
                     tabIndex={__preventFocus ? -1 : 0}
-                    data-mantine-stop-propagation={__stopPropagation || undefined}
+                    data-wdesign-stop-propagation={__stopPropagation || undefined}
                 >
                     {nextIcon || (
                         <Chevron

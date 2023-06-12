@@ -2,10 +2,10 @@ import React, { Children, cloneElement, forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
+    WDesignColor,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
@@ -40,13 +40,13 @@ export type StepperProps = {
     progressIcon?: React.ReactNode | StepFragmentComponent
 
     /** Active and progress Step colors from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Step icon size */
     iconSize?: number
 
     /** Key of theme.spacing or any valid CSS value to set content padding-top */
-    contentPadding?: MantineNumberSize
+    contentPadding?: WDesignNumberSize
 
     /** Component orientation */
     orientation?: 'vertical' | 'horizontal'
@@ -55,13 +55,13 @@ export type StepperProps = {
     iconPosition?: 'right' | 'left'
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Breakpoint at which orientation will change from horizontal to vertical */
-    breakpoint?: MantineNumberSize
+    breakpoint?: WDesignNumberSize
 
     /** Whether to enable click on upcoming steps by default. Defaults to true **/
     allowNextStepsSelect?: boolean

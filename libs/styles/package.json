@@ -1,4 +1,14 @@
 {
     "name": "@worldprinter/wdesign-styles",
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0",
+        "@emotion/react": ">=11.9.0"
+    },
+    "dependencies": {
+        "clsx": "1.1.1",
+        "csstype": "3.0.9"
+    },
+    "devDependencies": {}
 }

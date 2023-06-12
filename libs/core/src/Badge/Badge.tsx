@@ -2,12 +2,12 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
@@ -21,19 +21,19 @@ export type BadgeVariant = Variants<'light' | 'filled' | 'outline' | 'dot' | 'gr
 
 export type BadgeProps = {
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Controls appearance */
     variant?: BadgeVariant
 
     /** Controls gradient, applied to gradient variant only */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 
     /** Badge height and font size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Sets badge width to 100% of parent element, hides overflow text with text-overflow: ellipsis */
     fullWidth?: boolean

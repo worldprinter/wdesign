@@ -1,7 +1,7 @@
-import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { getBreakpointValue, getSize } from '@worldprinter/wdesign-styles'
 
-function getSortedKeys(value: Record<string, any>, theme: MantineTheme) {
+function getSortedKeys(value: Record<string, any>, theme: WDesignTheme) {
     const sorted = Object.keys(value)
         .filter((breakpoint) => breakpoint !== 'base')
         .sort(
@@ -16,8 +16,8 @@ export type StyleProperty = string | string[]
 
 type GetResponsiveStyles = {
     value: any
-    theme: MantineTheme
-    getValue: (value: any, theme: MantineTheme) => any
+    theme: WDesignTheme
+    getValue: (value: any, theme: WDesignTheme) => any
     property: StyleProperty
 }
 

@@ -11,5 +11,5 @@ export { getStylesRef } from './get-styles-ref'
 export { Global } from './Global'
 export { useCss } from './use-css'
 export { useEmotionCache } from './use-emotion-cache'
-export { defaultMantineEmotionCache } from './default-emotion-cache'
+export { defaultWDesignEmotionCache } from './default-emotion-cache'
 export { createEmotionCache }

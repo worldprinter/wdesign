@@ -1,9 +1,9 @@
 import type {
     CSSObject,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
-    MantineTheme,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
+    WDesignTheme,
 } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
@@ -12,11 +12,11 @@ import { INPUT_SIZES } from '../Input'
 export const BUTTON_VARIANTS = ['filled', 'outline', 'light', 'white', 'default', 'subtle', 'gradient']
 
 export type ButtonStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     fullWidth: boolean
     compact: boolean
-    gradient: MantineGradient
+    gradient: WDesignGradient
     withRightIcon: boolean
     withLeftIcon: boolean
 }
@@ -77,10 +77,10 @@ const getWidthStyles = (fullWidth: boolean) => ({
 })
 
 type GetVariantStyles = {
-    theme: MantineTheme
-    color: MantineColor
+    theme: WDesignTheme
+    color: WDesignColor
     variant: string
-    gradient: MantineGradient
+    gradient: WDesignGradient
 }
 
 function getVariantStyles({ variant, theme, color, gradient }: GetVariantStyles) {

@@ -1,6 +1,6 @@
-import type { MantineThemeBase } from '../../../types'
+import type { WDesignThemeBase } from '../../../types'
 
-export function primaryShade(theme: MantineThemeBase) {
+export function primaryShade(theme: WDesignThemeBase) {
     return (colorScheme?: 'light' | 'dark') => {
         if (typeof theme.primaryShade === 'number') {
             return theme.primaryShade

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -12,7 +12,7 @@ export type StackProps = {
     variant?: string
 
     /** Key of theme.spacing or any valid CSS value to set gap */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 
     /** align-items CSS property */
     align?: React.CSSProperties['alignItems']

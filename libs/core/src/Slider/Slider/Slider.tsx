@@ -1,10 +1,10 @@
 import React, { forwardRef, useCallback, useRef, useState } from 'react'
 
 import { clamp, useMergedRef, useMove, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
-import { useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
+import { useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
-import type { MantineTransition } from '../../Transition'
+import type { WDesignTransition } from '../../Transition'
 import type { MarksStylesNames } from '../Marks/Marks'
 import type { SliderRootStylesNames } from '../SliderRoot/SliderRoot'
 import { SliderRoot } from '../SliderRoot/SliderRoot'
@@ -21,13 +21,13 @@ export type SliderProps = {
     variant?: string
 
     /** Color from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Controls size of track and thumb */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Minimal possible value */
     min?: number
@@ -63,7 +63,7 @@ export type SliderProps = {
     label?: React.ReactNode | ((value: number) => React.ReactNode)
 
     /** Label appear/disappear transition */
-    labelTransition?: MantineTransition
+    labelTransition?: WDesignTransition
 
     /** Label appear/disappear transition duration in ms */
     labelTransitionDuration?: number
@@ -148,7 +148,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
         ...others
     } = useComponentDefaultProps('Slider', defaultProps, props)
 
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const [hovered, setHovered] = useState(false)
     const [_value, setValue] = useUncontrolled({
         value: typeof value === 'number' ? clamp(value, min, max) : value,

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
 import { useId } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { extractSystemStyles } from '../Box'
@@ -28,7 +28,7 @@ export type TextareaProps = {
     wrapperProps?: Record<string, any>
 
     /** Input size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Static selectors base */
     __staticSelector?: string

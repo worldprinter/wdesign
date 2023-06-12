@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getSize, useComponentDefaultProps, useMantineTheme } from '@worldprinter/wdesign-styles'
+import { getSize, useComponentDefaultProps, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import type { GroupProps } from '../Group'
 import { Group } from '../Group'
@@ -77,7 +77,7 @@ export function Pagination(props: PaginationProps) {
         dotsIcon,
         ...others
     } = useComponentDefaultProps('Pagination', defaultProps, props)
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
 
     if (total <= 0) {
         return null

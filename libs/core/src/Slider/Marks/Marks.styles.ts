@@ -1,10 +1,10 @@
-import type { MantineColor } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { sizes } from '../SliderRoot/SliderRoot.styles'
 
 type MarksStyles = {
-    color: MantineColor
+    color: WDesignColor
     disabled: boolean
     thumbSize?: number
 }
@@ -16,7 +16,7 @@ export default createStyles((theme, { color, disabled, thumbSize }: MarksStyles,
         left: thumbSize ? rem(thumbSize / 2) : getSize({ sizes, size }),
 
         '&:has(~ input:disabled)': {
-            '& .mantine-Slider-markFilled': {
+            '& .wdesign-Slider-markFilled': {
                 border: `${rem(2)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]}`,
                 borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[4],
             },

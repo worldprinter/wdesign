@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -22,7 +22,7 @@ export type TimelineItemProps = {
     bulletSize?: number
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** React node that will be rendered after title */
     children?: React.ReactNode
@@ -34,7 +34,7 @@ export type TimelineItemProps = {
     lineActive?: boolean
 
     /** Highlight color for active item */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Line and bullet position relative to item content, controlled by Timeline component */
     align?: 'right' | 'left'

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import type { MantineColor } from '@worldprinter/wdesign-styles'
-import { useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor } from '@worldprinter/wdesign-styles'
+import { useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { Tooltip } from '../../Tooltip'
 import { getCurveProps } from './get-curve-props'
@@ -14,7 +14,7 @@ type CurveProps = {
     thickness: number
     lineRoundCaps: boolean
     root?: boolean
-    color?: MantineColor
+    color?: WDesignColor
     tooltip?: React.ReactNode
 } & React.ComponentPropsWithRef<'circle'>
 
@@ -30,7 +30,7 @@ export function Curve({
     tooltip,
     ...others
 }: CurveProps) {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const stroke = theme.fn.themeColor(
         color || (theme.colorScheme === 'dark' ? 'dark' : 'gray'),
         color ? theme.fn.primaryShade() : theme.colorScheme === 'dark' ? 4 : 1,

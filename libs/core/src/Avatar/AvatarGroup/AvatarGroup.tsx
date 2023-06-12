@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -14,7 +14,7 @@ export type AvatarGroupProps = {
     children: React.ReactNode
 
     /** Negative space between Avatars */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>
 

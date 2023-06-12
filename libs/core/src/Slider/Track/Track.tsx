@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -16,10 +16,10 @@ export type TrackProps = {
     offset?: number
     marksOffset?: number
     marks: { value: number; label?: React.ReactNode }[]
-    size: MantineNumberSize
+    size: WDesignNumberSize
     thumbSize?: number
-    radius: MantineNumberSize
-    color: MantineColor
+    radius: WDesignNumberSize
+    color: WDesignColor
     min: number
     max: number
     value: number

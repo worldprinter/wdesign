@@ -1,4 +1,4 @@
-import type { MantineNumberSize, MantineThemeBase } from '../../../types'
+import type { WDesignNumberSize, WDesignThemeBase } from '../../../types'
 import { em, getSize } from '../../../utils'
 
 export function getBreakpointValue(value: string | number) {
@@ -17,12 +17,12 @@ export function getBreakpointValue(value: string | number) {
     return Number(value)
 }
 
-export function largerThan(theme: MantineThemeBase) {
-    return (breakpoint: MantineNumberSize) =>
+export function largerThan(theme: WDesignThemeBase) {
+    return (breakpoint: WDesignNumberSize) =>
         `@media (min-width: ${em(getBreakpointValue(getSize({ size: breakpoint, sizes: theme.breakpoints })))})`
 }
 
-export function smallerThan(theme: MantineThemeBase) {
-    return (breakpoint: MantineNumberSize) =>
+export function smallerThan(theme: WDesignThemeBase) {
+    return (breakpoint: WDesignNumberSize) =>
         `@media (max-width: ${em(getBreakpointValue(getSize({ size: breakpoint, sizes: theme.breakpoints })) - 1)})`
 }

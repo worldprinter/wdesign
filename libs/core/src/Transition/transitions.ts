@@ -2,14 +2,14 @@ import type React from 'react'
 
 import { rem } from '@worldprinter/wdesign-styles'
 
-export type MantineTransitionStyles = {
+export type WDesignTransitionStyles = {
     common?: React.CSSProperties
     in: React.CSSProperties
     out: React.CSSProperties
     transitionProperty: React.CSSProperties['transitionProperty']
 }
 
-export type MantineTransitionName =
+export type WDesignTransitionName =
     | 'fade'
     | 'skew-up'
     | 'skew-down'
@@ -28,7 +28,7 @@ export type MantineTransitionName =
     | 'pop-bottom-left'
     | 'pop-bottom-right'
 
-export type MantineTransition = MantineTransitionName | MantineTransitionStyles
+export type WDesignTransition = WDesignTransitionName | WDesignTransitionStyles
 
 const popIn = {
     in: { opacity: 1, transform: 'scale(1)' },
@@ -36,7 +36,7 @@ const popIn = {
     transitionProperty: 'transform, opacity',
 }
 
-export const transitions: Record<MantineTransitionName, MantineTransitionStyles> = {
+export const transitions: Record<WDesignTransitionName, WDesignTransitionStyles> = {
     fade: {
         in: { opacity: 1 },
         out: { opacity: 0 },

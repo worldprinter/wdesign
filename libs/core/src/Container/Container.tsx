@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize, WDesignSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -10,13 +10,13 @@ export type ContainerProps = {
     variant?: string
 
     /** Predefined container max-width or number for max-width */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** If fluid is set to true, size prop is ignored and Container can expand to 100% of width */
     fluid?: boolean
 
     /** Container sizes */
-    sizes?: Record<MantineSize, number | string>
+    sizes?: Record<WDesignSize, number | string>
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'div'>
 

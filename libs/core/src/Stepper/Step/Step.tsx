@@ -3,10 +3,10 @@ import React, { forwardRef } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineNumberSize,
-    MantineSize,
     Selectors,
+    WDesignColor,
+    WDesignNumberSize,
+    WDesignSize,
 } from '@worldprinter/wdesign-styles'
 import { getSize, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
@@ -31,7 +31,7 @@ export type StepProps = {
     state?: 'stepInactive' | 'stepProgress' | 'stepCompleted'
 
     /** Step color from theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Should icon be displayed */
     withIcon?: boolean
@@ -58,10 +58,10 @@ export type StepProps = {
     iconPosition?: 'right' | 'left'
 
     /** Component size */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Indicates loading state on step */
     loading?: boolean

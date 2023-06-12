@@ -1,11 +1,11 @@
 import { DEFAULT_COLORS } from './default-colors'
 import { attachFunctions } from './functions/attach-functions'
-import type { MantineThemeBase } from './types'
+import type { WDesignThemeBase } from './types'
 
 export const MANTINE_COLORS = Object.keys(DEFAULT_COLORS)
 export const MANTINE_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 
-export const _DEFAULT_THEME: MantineThemeBase = {
+export const _DEFAULT_THEME: WDesignThemeBase = {
     dir: 'ltr',
     primaryShade: {
         light: 6,

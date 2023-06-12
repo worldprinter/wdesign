@@ -2,11 +2,11 @@ import React, { forwardRef, useEffect, useState } from 'react'
 
 import type {
     DefaultProps,
-    MantineColor,
-    MantineGradient,
-    MantineNumberSize,
     Selectors,
     Variants,
+    WDesignColor,
+    WDesignGradient,
+    WDesignNumberSize,
 } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
@@ -28,19 +28,19 @@ export type AvatarProps = {
     alt?: string
 
     /** Avatar width and height */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Controls appearance */
     variant?: Variants<'filled' | 'light' | 'gradient' | 'outline'>
 
     /** Gradient input, only used when variant="gradient", theme.defaultGradient by default */
-    gradient?: MantineGradient
+    gradient?: WDesignGradient
 
     /** <img /> element attributes */
     imageProps?: Record<string, any>

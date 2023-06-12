@@ -1,4 +1,4 @@
-import type { MantineColor, MantineNumberSize, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 export const sizes = {
@@ -34,11 +34,11 @@ const checkedPadding = {
 }
 
 export type ChipStylesParams = {
-    radius: MantineNumberSize
-    color: MantineColor
+    radius: WDesignNumberSize
+    color: WDesignColor
 }
 
-function getVariantStyles(theme: MantineTheme, { color }: { color: MantineColor }, variant: string) {
+function getVariantStyles(theme: WDesignTheme, { color }: { color: WDesignColor }, variant: string) {
     const filledColors = theme.fn.variant({ variant: 'filled', color })
     const lightColors = theme.fn.variant({ variant: 'light', color })
 

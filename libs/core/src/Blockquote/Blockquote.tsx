@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -14,7 +14,7 @@ export type BlockquoteProps = {
     variant?: string
 
     /** Icon color from theme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Icon, defaults to quote icon */
     icon?: React.ReactNode

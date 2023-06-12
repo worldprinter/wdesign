@@ -1,6 +1,6 @@
 import type { CSSObject } from '../../../../tss'
-import type { MantineThemeBase } from '../../../types'
+import type { WDesignThemeBase } from '../../../types'
 
-export function fontStyles(theme: MantineThemeBase) {
+export function fontStyles(theme: WDesignThemeBase) {
     return (): CSSObject => ({ fontFamily: theme.fontFamily || 'sans-serif' })
 }

@@ -1,11 +1,11 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, rem } from '@worldprinter/wdesign-styles'
 
 export type TableStylesParams = {
     captionSide: 'top' | 'bottom'
-    horizontalSpacing: MantineNumberSize
-    verticalSpacing: MantineNumberSize
-    fontSize: MantineNumberSize
+    horizontalSpacing: WDesignNumberSize
+    verticalSpacing: WDesignNumberSize
+    fontSize: WDesignNumberSize
     withBorder: boolean
     withColumnBorders: boolean
 }

@@ -1,13 +1,13 @@
 import type { CSSProperties } from 'react'
 
-import type { MantineColor } from './MantineColor'
-import type { MantineNumberSize, MantineSize } from './MantineSize'
+import type { WDesignColor } from './WDesignColor'
+import type { WDesignNumberSize, WDesignSize } from './WDesignSize'
 
-export type SystemProp<Value> = Value | Partial<Record<MantineSize | (string & {}), Value>>
+export type SystemProp<Value> = Value | Partial<Record<WDesignSize | (string & {}), Value>>
 
-export type SpacingValue = MantineNumberSize | (string & {})
+export type SpacingValue = WDesignNumberSize | (string & {})
 
-export type MantineStyleSystemProps = {
+export type WDesignStyleSystemProps = {
     m?: SystemProp<SpacingValue>
     my?: SystemProp<SpacingValue>
     mx?: SystemProp<SpacingValue>
@@ -24,8 +24,8 @@ export type MantineStyleSystemProps = {
     pl?: SystemProp<SpacingValue>
     pr?: SystemProp<SpacingValue>
 
-    bg?: SystemProp<MantineColor>
-    c?: SystemProp<MantineColor>
+    bg?: SystemProp<WDesignColor>
+    c?: SystemProp<WDesignColor>
     opacity?: SystemProp<CSSProperties['opacity']>
 
     ff?: SystemProp<CSSProperties['fontFamily']>

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { CSSObject, MantineColor, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignColor, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import { createPolymorphicComponent } from '@worldprinter/wdesign-utils'
 
@@ -14,10 +14,10 @@ export type HighlightProps = {
     highlight: string | string[]
 
     /** Color from theme that is used for highlighting */
-    highlightColor?: MantineColor
+    highlightColor?: WDesignColor
 
     /** Styles applied to highlighted part */
-    highlightStyles?: CSSObject | ((theme: MantineTheme) => CSSObject)
+    highlightStyles?: CSSObject | ((theme: WDesignTheme) => CSSObject)
 
     /** Full string part of which will be highlighted */
     children: string

@@ -1,14 +1,14 @@
-import type { MantineStyleSystemProps, MantineTheme, Sx } from '@worldprinter/wdesign-styles'
-import { useCss, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { Sx, WDesignStyleSystemProps, WDesignTheme } from '@worldprinter/wdesign-styles'
+import { useCss, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 import { getSystemStyles } from '../style-system-props/get-system-styles/get-system-styles'
 
-function extractSx(sx: Sx, theme: MantineTheme) {
+function extractSx(sx: Sx, theme: WDesignTheme) {
     return typeof sx === 'function' ? sx(theme) : sx
 }
 
-export function useSx(sx: Sx | Sx[], systemProps: MantineStyleSystemProps, className: string) {
-    const theme = useMantineTheme()
+export function useSx(sx: Sx | Sx[], systemProps: WDesignStyleSystemProps, className: string) {
+    const theme = useWDesignTheme()
     const { css, cx } = useCss()
 
     if (Array.isArray(sx)) {

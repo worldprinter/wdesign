@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { ClassNames, MantineColor, MantineNumberSize, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { getSafeId } from '@worldprinter/wdesign-utils'
 
 import type { TabsStylesNames } from './Tabs'
@@ -44,10 +44,10 @@ export type TabsProviderProps = {
     variant?: TabsVariant
 
     /** Key of theme.colors */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Determines whether tabs should have inverted styles */
     inverted?: boolean

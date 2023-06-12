@@ -1,6 +1,6 @@
 import type { ReferenceType } from '@floating-ui/react'
 
-import type { ClassNames, MantineNumberSize, MantineShadow, Styles } from '@worldprinter/wdesign-styles'
+import type { ClassNames, Styles, WDesignNumberSize, WDesignShadow } from '@worldprinter/wdesign-styles'
 import { createSafeContext } from '@worldprinter/wdesign-utils'
 
 import type { ArrowPosition, FloatingPosition } from '../Floating'
@@ -31,8 +31,8 @@ type PopoverContext = {
     portalProps?: Omit<PortalProps, 'children' | 'withinPortal'>
     closeOnEscape: boolean
     zIndex: React.CSSProperties['zIndex']
-    radius?: MantineNumberSize
-    shadow?: MantineShadow
+    radius?: WDesignNumberSize
+    shadow?: WDesignShadow
     onClose?(): void
     getDropdownId(): string
     getTargetId(): string

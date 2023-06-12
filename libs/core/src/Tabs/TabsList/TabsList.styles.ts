@@ -1,4 +1,4 @@
-import type { CSSObject, MantineTheme } from '@worldprinter/wdesign-styles'
+import type { CSSObject, WDesignTheme } from '@worldprinter/wdesign-styles'
 import { createStyles, rem } from '@worldprinter/wdesign-styles'
 
 import { GROUP_POSITIONS } from '../../Group/Group.styles'
@@ -11,7 +11,7 @@ type TabsListStylesParams = {
 
 function getVariantStyles(
     { orientation, inverted, placement }: TabsListStylesParams,
-    theme: MantineTheme,
+    theme: WDesignTheme,
     variant: string,
 ): CSSObject {
     const vertical = orientation === 'vertical'

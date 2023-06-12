@@ -1,4 +1,4 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, em, getBreakpointValue, getSize, rem } from '@worldprinter/wdesign-styles'
 
 import { getSortedBreakpoints } from './get-sorted-breakpoints/get-sorted-breakpoints'
@@ -16,7 +16,7 @@ type HorizontalSectionStyles = {
     width: Partial<Record<string, string | number>>
     height: string | number
     position: HorizontalSectionPosition
-    hiddenBreakpoint: MantineNumberSize
+    hiddenBreakpoint: WDesignNumberSize
     fixed: boolean
     zIndex: React.CSSProperties['zIndex']
     section: 'navbar' | 'aside'
@@ -63,14 +63,14 @@ export default createStyles(
             root: {
                 ...theme.fn.fontStyles(),
                 ...position,
-                top: layout === 'alt' ? 0 : position?.top || 'var(--mantine-header-height)',
+                top: layout === 'alt' ? 0 : position?.top || 'var(--wdesign-header-height)',
                 bottom: 0,
                 zIndex,
                 height: height
                     ? rem(height)
                     : layout === 'alt'
                     ? 'auto'
-                    : 'calc(100vh - var(--mantine-header-height, 0rem) - var(--mantine-footer-height, 0rem))',
+                    : 'calc(100vh - var(--wdesign-header-height, 0rem) - var(--wdesign-footer-height, 0rem))',
                 width: width?.base ? rem(width?.base) : '100%',
                 position: fixed ? 'fixed' : 'static',
                 boxSizing: 'border-box',

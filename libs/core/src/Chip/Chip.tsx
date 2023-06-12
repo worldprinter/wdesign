@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors, Variants } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, Variants, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
 
@@ -16,10 +16,10 @@ export type ChipStylesNames = Selectors<typeof useStyles>
 
 export type ChipProps = {
     /** Key of theme.radius or any valid CSS value to set border-radius, "xl" by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Predefined chip size */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Chip input type */
     type?: 'radio' | 'checkbox'
@@ -40,7 +40,7 @@ export type ChipProps = {
     onChange?(checked: boolean): void
 
     /** Active color from theme, defaults to theme.primaryColor */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Static id to bind input with label */
     id?: string

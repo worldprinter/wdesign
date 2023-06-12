@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -13,7 +13,7 @@ export type KbdProps = {
     children: React.ReactNode
 
     /** Controls component size, 'sm' by default */
-    size?: MantineSize
+    size?: WDesignSize
 } & DefaultProps &
     React.ComponentPropsWithoutRef<'kbd'>
 

@@ -1,16 +1,16 @@
-import type { ContextStylesParams, MantineTheme } from '../theme'
-import { useMantineEmotionCache, useMantineProviderStyles, useMantineTheme } from '../theme/MantineProvider'
+import type { ContextStylesParams, WDesignTheme } from '../theme'
+import { useWDesignEmotionCache, useWDesignProviderStyles, useWDesignTheme } from '../theme/WDesignProvider'
 import type { CSSObject } from './types'
 import { useCss } from './use-css'
 import { mergeClassNames } from './utils/merge-class-names/merge-class-names'
 
-type ContextStyles = ReturnType<typeof useMantineProviderStyles>
+type ContextStyles = ReturnType<typeof useWDesignProviderStyles>
 
 export type UseStylesOptions<Key extends string> = {
     classNames?: Partial<Record<Key, string>>
     styles?:
         | Partial<Record<Key, CSSObject>>
-        | ((theme: MantineTheme, params: any, context: ContextStylesParams) => Partial<Record<Key, CSSObject>>)
+        | ((theme: WDesignTheme, params: any, context: ContextStylesParams) => Partial<Record<Key, CSSObject>>)
     name: string | string[]
     unstyled?: boolean
     variant?: string
@@ -33,7 +33,7 @@ function assignAccStyles(acc: Record<string, CSSObject>, styles: Record<string, 
 
 function getStyles<Key extends string>(
     styles: UseStylesOptions<Key>['styles'] | ContextStyles,
-    theme: MantineTheme,
+    theme: WDesignTheme,
     params: Record<string, any>,
     contextParams: ContextStylesParams,
 ): CSSObject {
@@ -51,7 +51,7 @@ function getStyles<Key extends string>(
 
 type GetContextVariations = {
     ctx: ContextStyles
-    theme: MantineTheme
+    theme: WDesignTheme
     params: Record<string, any>
     variant: string
     size: number | string
@@ -80,31 +80,32 @@ export function createStyles<
     Key extends string = string,
     Params = void,
     Input extends Record<Key, CSSObject> = Record<Key, CSSObject>,
->(input: ((theme: MantineTheme, params: Params, variations: Variations) => Input) | Input) {
+>(input: ((theme: WDesignTheme, params: Params, variations: Variations) => Input) | Input) {
     const getCssObject = typeof input === 'function' ? input : () => input
 
     function useStyles(params: Params, options?: UseStylesOptions<Key>) {
-        const theme = useMantineTheme()
-        const context = useMantineProviderStyles(options?.name)
-        const cache = useMantineEmotionCache()
+        const theme = useWDesignTheme()
+        const context = useWDesignProviderStyles(options?.name as never)
+        const cache = useWDesignEmotionCache()
 
         const contextParams = { variant: options?.variant, size: options?.size }
         const { css, cx } = useCss()
-        const cssObject = getCssObject(theme, params, contextParams)
-        const componentStyles = getStyles(options?.styles, theme, params, contextParams)
-        const providerStyles = getStyles(context, theme, params, contextParams)
+        const cssObject = getCssObject(theme, params, contextParams as never)
+        const componentStyles = getStyles(options?.styles, theme, params as never, contextParams)
+        const providerStyles = getStyles(context, theme, params as never, contextParams)
         const contextVariations = getContextVariation({
             ctx: context,
             theme,
-            params,
-            variant: options?.variant,
-            size: options?.size,
+            params: params as never,
+            variant: options?.variant as never,
+            size: options?.size as never,
         })
 
         const classes = Object.fromEntries(
             Object.keys(cssObject).map((key) => {
                 const mergedStyles = cx(
-                    { [css(cssObject[key])]: !options?.unstyled },
+                    // @ts-ignore
+                    { [css(cssObject[key] as never)]: !options?.unstyled },
                     css(contextVariations[key]),
                     css(providerStyles[key]),
                     css(componentStyles[key]),
@@ -123,8 +124,8 @@ export function createStyles<
                 classNames: options?.classNames as {
                     [key in keyof Input]: string
                 },
-                name: options?.name,
-                cache,
+                name: options?.name as never,
+                cache: cache as never,
             }),
             cx,
             theme,

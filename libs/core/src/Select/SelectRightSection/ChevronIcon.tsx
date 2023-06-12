@@ -1,10 +1,10 @@
 import React from 'react'
 
-import type { MantineSize } from '@worldprinter/wdesign-styles'
-import { getSize, rem, useMantineTheme } from '@worldprinter/wdesign-styles'
+import type { WDesignSize } from '@worldprinter/wdesign-styles'
+import { getSize, rem, useWDesignTheme } from '@worldprinter/wdesign-styles'
 
 type ChevronIconProps = {
-    size: MantineSize
+    size: WDesignSize
     error: any
 } & React.ComponentPropsWithoutRef<'svg'>
 
@@ -17,7 +17,7 @@ const iconSizes = {
 }
 
 export function ChevronIcon({ size, error, style, ...others }: ChevronIconProps) {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     const _size = getSize({ size, sizes: iconSizes })
 
     return (

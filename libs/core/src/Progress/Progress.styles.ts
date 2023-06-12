@@ -1,4 +1,4 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, keyframes, rem } from '@worldprinter/wdesign-styles'
 
 const sizes = {
@@ -10,8 +10,8 @@ const sizes = {
 }
 
 export type ProgressStylesParams = {
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
 }
 
 const stripesAnimation = keyframes({

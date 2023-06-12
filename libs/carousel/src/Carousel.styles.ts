@@ -1,16 +1,16 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createStyles, getBreakpointValue, getSize, getSortedBreakpoints, rem } from '@worldprinter/wdesign-core'
 
 import type { CarouselBreakpoint } from './types'
 
 export type CarouselStylesParams = {
     controlSize: number | string
-    controlsOffset: MantineNumberSize
+    controlsOffset: WDesignNumberSize
     orientation: 'vertical' | 'horizontal'
     height: React.CSSProperties['height']
     includeGapInSize: boolean
     breakpoints: CarouselBreakpoint[]
-    slideGap: MantineNumberSize
+    slideGap: WDesignNumberSize
 }
 
 export default createStyles(
@@ -29,7 +29,7 @@ export default createStyles(
         const horizontal = orientation === 'horizontal'
 
         // Container styles by slideGap (for includeGapInSize case)
-        const getContainerStyles = (gap: MantineNumberSize) => {
+        const getContainerStyles = (gap: WDesignNumberSize) => {
             if (!includeGapInSize) return {}
 
             const slideGapValue = getSize({ size: gap, sizes: theme.spacing })

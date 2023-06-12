@@ -11,7 +11,7 @@ export type NotificationsEvents = {
 }
 
 export const [useNotificationsEvents, createEvent] =
-    createUseExternalEvents<NotificationsEvents>('mantine-notifications')
+    createUseExternalEvents<NotificationsEvents>('wdesign-notifications')
 
 export const showNotification = createEvent('show')
 export const hideNotification = createEvent('hide')

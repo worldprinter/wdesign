@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import type { UseMovePosition } from '@worldprinter/wdesign-hooks'
 import { clampUseMovePosition, useMove } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import { convertHsvaTo } from '../converters'
 import type { ThumbStylesNames } from '../Thumb/Thumb'
@@ -20,7 +20,7 @@ type SaturationProps = {
     onChange(color: Partial<HsvaColor>): void
     onChangeEnd(color: Partial<HsvaColor>): void
     saturationLabel?: string
-    size: MantineSize
+    size: WDesignSize
     color: string
     focusable?: boolean
     __staticSelector?: string

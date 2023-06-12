@@ -1,6 +1,6 @@
 import type { Tuple } from './Tuple'
 
-export type DefaultMantineColor =
+export type DefaultWDesignColor =
     | 'dark'
     | 'gray'
     | 'red'
@@ -17,12 +17,12 @@ export type DefaultMantineColor =
     | 'teal'
     | (string & {})
 
-export type MantineThemeColorsOverride = {}
+export type WDesignThemeColorsOverride = {}
 
-export type MantineThemeColors = MantineThemeColorsOverride extends {
+export type WDesignThemeColors = WDesignThemeColorsOverride extends {
     colors: Record<infer CustomColors, Tuple<string, 10>>
 }
     ? Record<CustomColors, Tuple<string, 10>>
-    : Record<DefaultMantineColor, Tuple<string, 10>>
+    : Record<DefaultWDesignColor, Tuple<string, 10>>
 
-export type MantineColor = keyof MantineThemeColors
+export type WDesignColor = keyof WDesignThemeColors

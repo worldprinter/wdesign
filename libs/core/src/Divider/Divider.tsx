@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Variants } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Variants, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { rem, useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -11,13 +11,13 @@ export type DividerStylesNames = 'label'
 
 export type DividerProps = {
     /** Key of theme.colors, defaults to "gray" in light color scheme and to "dark" in dark color scheme */
-    color?: MantineColor
+    color?: WDesignColor
 
     /** Divider orientation */
     orientation?: 'horizontal' | 'vertical'
 
     /** Sets height when orientation="horizontal" and width when orientation="vertical" */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Text inside the divider, only applicable when orientation="horizontal" */
     label?: React.ReactNode

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { DefaultProps, MantineColor, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { Text } from '@worldprinter/wdesign-core'
 
 import type { DefaultActionProps, DefaultActionStylesNames } from '../DefaultAction/DefaultAction'
@@ -23,8 +23,8 @@ export type ActionsListProps = {
     nothingFoundMessage?: React.ReactNode
     onActionTrigger(action: SpotlightAction): void
     highlightQuery: boolean
-    highlightColor: MantineColor
-    radius: MantineNumberSize
+    highlightColor: WDesignColor
+    radius: WDesignNumberSize
     variant: string
 } & DefaultProps<ActionsListStylesNames> &
     React.ComponentPropsWithoutRef<'div'>

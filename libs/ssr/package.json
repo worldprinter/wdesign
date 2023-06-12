@@ -1,4 +1,13 @@
 {
     "name": "@worldprinter/wdesign-ssr",
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0",
+        "@emotion/react": ">=11.9.0",
+        "@emotion/server": ">=11.4.0"
+    },
+    "dependencies": {
+        "html-react-parser": "1.4.12"
+    }
 }

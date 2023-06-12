@@ -1,7 +1,7 @@
-import { useMantineEmotionCache } from '../theme/MantineProvider'
-import { defaultMantineEmotionCache } from './default-emotion-cache'
+import { useWDesignEmotionCache } from '../theme/WDesignProvider'
+import { defaultWDesignEmotionCache } from './default-emotion-cache'
 
 export function useEmotionCache() {
-    const cache = useMantineEmotionCache()
-    return cache || defaultMantineEmotionCache
+    const cache = useWDesignEmotionCache()
+    return cache || defaultWDesignEmotionCache
 }

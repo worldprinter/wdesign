@@ -2,7 +2,7 @@ import React from 'react'
 import type { Accept, DropEvent, FileError, FileRejection, FileWithPath } from 'react-dropzone'
 import { useDropzone } from 'react-dropzone'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-core'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { Box, LoadingOverlay, useComponentDefaultProps } from '@worldprinter/wdesign-core'
 import { assignRef } from '@worldprinter/wdesign-hooks'
 import type { ForwardRefWithStaticComponents } from '@worldprinter/wdesign-utils'
@@ -18,10 +18,10 @@ export type DropzoneProps = {
     variant?: string
 
     /** Padding from theme.spacing, or any valid CSS value to set padding */
-    padding?: MantineNumberSize
+    padding?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Dropzone statues */
     children: React.ReactNode

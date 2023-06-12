@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react'
 
-import type { MantineSize } from '@worldprinter/wdesign-styles'
+import type { WDesignSize } from '@worldprinter/wdesign-styles'
 
 type SwitchGroupContextValue = {
     value: string[]
     onChange(event: React.ChangeEvent<HTMLInputElement>): void
-    size: MantineSize
+    size: WDesignSize
 }
 
 const SwitchGroupContext = createContext<SwitchGroupContextValue>(null)

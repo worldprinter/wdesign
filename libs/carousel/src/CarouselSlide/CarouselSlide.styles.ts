@@ -1,11 +1,11 @@
-import type { MantineNumberSize } from '@worldprinter/wdesign-core'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-core'
 import { createStyles, getBreakpointValue, getSize, getSortedBreakpoints, rem } from '@worldprinter/wdesign-core'
 
 import type { CarouselBreakpoint, CarouselOrientation } from '../types'
 
 export type CarouselSlideStylesParams = {
     size: string | number
-    gap: MantineNumberSize
+    gap: WDesignNumberSize
     orientation: CarouselOrientation
     includeGapInSize: boolean
     breakpoints: CarouselBreakpoint[]
@@ -14,7 +14,7 @@ export type CarouselSlideStylesParams = {
 export default createStyles(
     (theme, { size, gap, orientation, includeGapInSize, breakpoints = [] }: CarouselSlideStylesParams) => {
         // Slide styles by slideGap and slideSize
-        const getSlideStyles = (slideGap: MantineNumberSize, slideSize: string | number) => {
+        const getSlideStyles = (slideGap: WDesignNumberSize, slideSize: string | number) => {
             const slideGapValue = getSize({
                 size: slideGap,
                 sizes: theme.spacing,

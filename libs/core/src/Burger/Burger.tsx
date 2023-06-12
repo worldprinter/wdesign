@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { UnstyledButton } from '../UnstyledButton'
@@ -19,7 +19,7 @@ export type BurgerProps = {
     color?: string
 
     /** Predefined burger size or number to set width and height */
-    size?: MantineNumberSize
+    size?: WDesignNumberSize
 
     /** Transition duration in ms */
     transitionDuration?: number

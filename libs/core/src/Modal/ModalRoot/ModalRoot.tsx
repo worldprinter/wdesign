@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import type { ModalBaseSettings } from '../../ModalBase'
@@ -20,7 +20,7 @@ export type ModalRootProps = {
     scrollAreaComponent?: ScrollAreaComponent
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Determines whether the modal should be centered vertically, false by default */
     centered?: boolean

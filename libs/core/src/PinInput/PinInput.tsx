@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { useId, useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineNumberSize, MantineSize, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignNumberSize, WDesignSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Group } from '../Group'
@@ -25,13 +25,13 @@ export type PinInputProps = {
     form?: string
 
     /** Key of theme.spacing or any valid CSS value to set spacing between inputs */
-    spacing?: MantineNumberSize
+    spacing?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Input width and height */
-    size?: MantineSize
+    size?: WDesignSize
 
     /** If set, first input is focused when component is mounted */
     autoFocus?: boolean

@@ -1,4 +1,4 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 const sizes = {
@@ -10,8 +10,8 @@ const sizes = {
 }
 
 export type CheckboxStylesParams = {
-    radius: MantineNumberSize
-    color: MantineColor
+    radius: WDesignNumberSize
+    color: WDesignColor
     transitionDuration: number
     labelPosition: 'left' | 'right'
     error: boolean

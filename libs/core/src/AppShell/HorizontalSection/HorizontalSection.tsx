@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { em, getDefaultZIndex, Global, rem } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../../Box'
@@ -31,7 +31,7 @@ export type HorizontalSectionSharedProps = {
     position?: HorizontalSectionPosition
 
     /** Breakpoint at which component will be hidden if hidden prop is true */
-    hiddenBreakpoint?: MantineNumberSize
+    hiddenBreakpoint?: WDesignNumberSize
 
     /** Set to true to hide component at hiddenBreakpoint */
     hidden?: boolean
@@ -88,7 +88,7 @@ export const HorizontalSection = forwardRef<HTMLElement, HorizontalSectionProps>
 
         const breakpoints = getSortedBreakpoints(width, theme).reduce((acc, [breakpoint, breakpointSize]) => {
             acc[`@media (min-width: ${em(breakpoint)})`] = {
-                [`--mantine-${section}-width`]: rem(breakpointSize),
+                [`--wdesign-${section}-width`]: rem(breakpointSize),
             }
 
             return acc
@@ -107,7 +107,7 @@ export const HorizontalSection = forwardRef<HTMLElement, HorizontalSectionProps>
                 <Global
                     styles={() => ({
                         ':root': {
-                            [`--mantine-${section}-width`]: width?.base ? rem(width.base) : '0rem',
+                            [`--wdesign-${section}-width`]: width?.base ? rem(width.base) : '0rem',
                             ...breakpoints,
                         },
                     })}

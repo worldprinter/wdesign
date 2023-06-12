@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineColor, Selectors } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, Selectors, WDesignColor } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { Box } from '../Box'
@@ -12,7 +12,7 @@ export type RingProgressStylesNames = Selectors<typeof useStyles>
 
 type RingProgressSection = {
     value: number
-    color: MantineColor
+    color: WDesignColor
     tooltip?: React.ReactNode
 } & React.ComponentPropsWithRef<'circle'>
 
@@ -35,7 +35,7 @@ export type RingProgressProps = {
     sections: RingProgressSection[]
 
     /** Color of the root section, key of theme.colors or CSS color value */
-    rootColor?: MantineColor
+    rootColor?: WDesignColor
 } & DefaultProps<RingProgressStylesNames> &
     React.ComponentPropsWithoutRef<'div'>
 

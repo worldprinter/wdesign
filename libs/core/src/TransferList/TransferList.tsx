@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { useUncontrolled } from '@worldprinter/wdesign-hooks'
-import type { DefaultProps, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { useComponentDefaultProps } from '@worldprinter/wdesign-styles'
 
 import { SelectScrollArea } from '../Select/SelectScrollArea/SelectScrollArea'
@@ -58,10 +58,10 @@ export type TransferListProps = {
     listComponent?: any
 
     /** Breakpoint at which list will collapse to single column layout */
-    breakpoint?: MantineNumberSize
+    breakpoint?: WDesignNumberSize
 
     /** Key of theme.radius or any valid CSS value to set border-radius, theme.defaultRadius by default */
-    radius?: MantineNumberSize
+    radius?: WDesignNumberSize
 
     /** Whether to hide the transfer all button */
     showTransferAll?: boolean

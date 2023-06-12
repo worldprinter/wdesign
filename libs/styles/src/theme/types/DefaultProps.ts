@@ -1,16 +1,16 @@
 import type { CSSProperties } from 'react'
 
 import type { CSSObject } from '../../tss'
-import type { MantineStyleSystemProps } from './MantineStyleSystem'
-import type { ContextStylesParams, MantineTheme } from './MantineTheme'
+import type { WDesignStyleSystemProps } from './WDesignStyleSystem'
+import type { ContextStylesParams, WDesignTheme } from './WDesignTheme'
 
-export type Sx = CSSObject | ((theme: MantineTheme) => CSSObject)
+export type Sx = CSSObject | ((theme: WDesignTheme) => CSSObject)
 
 export type ClassNames<StylesNames extends string> = Partial<Record<StylesNames, string>>
 export type Styles<StylesNames extends string, StylesParams extends Record<string, any> = never> =
     | Partial<Record<StylesNames, CSSObject>>
     | ((
-          theme: MantineTheme,
+          theme: WDesignTheme,
           params: StylesParams,
           context: ContextStylesParams,
       ) => Partial<Record<StylesNames, CSSObject>>)
@@ -25,4 +25,4 @@ export type DefaultProps<
     classNames?: ClassNames<StylesNames>
     styles?: Styles<StylesNames, StylesParams>
     unstyled?: boolean
-} & MantineStyleSystemProps
+} & WDesignStyleSystemProps

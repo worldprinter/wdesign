@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import type { DefaultProps, MantineSize } from '@worldprinter/wdesign-styles'
+import type { DefaultProps, WDesignSize } from '@worldprinter/wdesign-styles'
 
 import type { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input'
 import { Input, useInputProps } from '../Input'
@@ -15,7 +15,7 @@ export type TextInputProps = {
     wrapperProps?: Record<string, any>
 
     /** Input size */
-    size?: MantineSize
+    size?: WDesignSize
 
     __staticSelector?: string
 } & DefaultProps<TextInputStylesNames> &

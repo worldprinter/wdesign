@@ -1,12 +1,12 @@
-import type { MantineColor, MantineNumberSize } from '@worldprinter/wdesign-styles'
+import type { WDesignColor, WDesignNumberSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getStylesRef, rem } from '@worldprinter/wdesign-styles'
 
 export const WRAPPER_PADDING = 4
 
 export type SegmentedControlStylesParams = {
     fullWidth: boolean
-    color: MantineColor
-    radius: MantineNumberSize
+    color: WDesignColor
+    radius: WDesignNumberSize
     shouldAnimate: boolean
     transitionDuration: number
     transitionTimingFunction: string

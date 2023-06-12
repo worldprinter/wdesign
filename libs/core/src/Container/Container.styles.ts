@@ -1,9 +1,9 @@
-import type { MantineSize } from '@worldprinter/wdesign-styles'
+import type { WDesignSize } from '@worldprinter/wdesign-styles'
 import { createStyles, getSize } from '@worldprinter/wdesign-styles'
 
 export type ContainerStylesParams = {
     fluid: boolean
-    sizes: Record<MantineSize, number | string>
+    sizes: Record<WDesignSize, number | string>
 }
 
 export default createStyles((theme, { fluid, sizes }: ContainerStylesParams, { size }) => ({

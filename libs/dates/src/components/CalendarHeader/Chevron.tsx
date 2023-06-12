@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { ChevronIcon, useMantineTheme } from '@worldprinter/wdesign-core'
+import { ChevronIcon, useWDesignTheme } from '@worldprinter/wdesign-core'
 
 type ChevronProps = {
     direction: 'next' | 'previous'
 } & React.ComponentPropsWithoutRef<'svg'>
 
 export function Chevron({ direction, style, ...others }: ChevronProps) {
-    const theme = useMantineTheme()
+    const theme = useWDesignTheme()
     return (
         <ChevronIcon
             {...others}

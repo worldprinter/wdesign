@@ -30,6 +30,7 @@
             "@worldprinter/wdesign-ssr": ["libs/ssr/src/index.ts"],
             "@worldprinter/wdesign-styles": ["libs/styles/src/index.ts"],
             "@worldprinter/wdesign-styles-api": ["libs/styles-api/src/index.ts"],
+            "@worldprinter/wdesign-table": ["libs/table/src/index.ts"],
             "@worldprinter/wdesign-tiptap": ["libs/tiptap/src/index.ts"],
             "@worldprinter/wdesign-utils": ["libs/utils/src/index.ts"]
         }

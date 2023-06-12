@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/worldprinter/wdesign/compare/v0.4.0...v0.5.0) (2023-06-12)
+
+
+### Features
+
+* change scoppe name and update deps ([6b8a70a](https://github.com/worldprinter/wdesign/commit/6b8a70a733d1636a623254f36ecba13822bc11f6))
+
 ## [0.4.0](https://github.com/worldprinter/wdesign/compare/v0.3.0...v0.4.0) (2023-06-07)
 
 ### Bug Fixes

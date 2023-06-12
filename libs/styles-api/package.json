@@ -1,8 +1,7 @@
 {
   "name": "@worldprinter/wdesign-styles-api",
-  "version": "0.7.0",
-  "peerDependencies": {
-  },
+  "version": "0.8.0",
+  "peerDependencies": {},
   "dependencies": {},
   "devDependencies": {}
 }

@@ -1,12 +1,13 @@
 {
-    "name": "@worldprinter/wdesign-prism",
-    "version": "0.7.0",
-    "peerDependencies": {
-        "react": ">=16.8.0",
-        "react-dom": ">=16.8.0"
-    },
-    "dependencies": {
-        "prism-react-renderer": "^1.2.1"
-    },
-    "devDependencies": {}
+  "name": "@worldprinter/wdesign-prism",
+  "version": "0.7.0",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^1.2.1"
+  },
+  "devDependencies": {}
 }

@@ -1,12 +1,13 @@
 {
-    "name": "@worldprinter/wdesign-dates",
-    "version": "0.7.0",
-    "peerDependencies": {
-        "react": ">=16.8.0",
-        "react-dom": ">=16.8.0"
-    },
-    "dependencies": {
-        "react-dropzone": "14.2.3"
-    },
-    "devDependencies": {}
+  "name": "@worldprinter/wdesign-dates",
+  "version": "0.7.0",
+  "peerDependencies": {
+    "dayjs": ">=1.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {}
 }

@@ -1,12 +1,14 @@
 {
-    "name": "@worldprinter/wdesign-tiptap",
-    "version": "0.7.0",
-    "peerDependencies": {
-        "@tabler/icons-react": ">=2.1.0",
-        "@tiptap/extension-link": "^2.0.0-beta.202",
-        "@tiptap/react": "^2.0.0-beta.202",
-        "react": ">=16.8.0"
-    },
-    "dependencies": {},
-    "devDependencies": {}
+  "name": "@worldprinter/wdesign-tiptap",
+  "version": "0.7.0",
+  "peerDependencies": {
+    "@tabler/icons-react": ">=2.1.0",
+    "@tiptap/extension-link": "^2.0.0-beta.202",
+    "@tiptap/react": "^2.0.0-beta.202",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

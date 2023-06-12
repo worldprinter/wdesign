@@ -20,7 +20,7 @@
                 "tsConfig": "libs/table/tsconfig.lib.json",
                 "project": "libs/table/package.json",
                 "entryFile": "libs/table/src/index.ts",
-                "external": ["react", "react-dom", "@emotion/react/jsx-runtime"],
+                "external": ["react", "react-dom", "react/jsx-runtime"],
                 "rollupConfig": "@nx/react/plugins/bundle-rollup",
                 "compiler": "tsc",
                 "assets": [

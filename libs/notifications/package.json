@@ -1,12 +1,13 @@
 {
-    "name": "@worldprinter/wdesign-notifications",
-    "version": "0.7.0",
-    "peerDependencies": {
-        "react": ">=16.8.0",
-        "react-dom": ">=16.8.0"
-    },
-    "dependencies": {
-        "react-transition-group": "4.4.2"
-    },
-    "devDependencies": {}
+  "name": "@worldprinter/wdesign-notifications",
+  "version": "0.7.0",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0"
+  },
+  "dependencies": {
+    "react-transition-group": "4.4.2"
+  },
+  "devDependencies": {}
 }

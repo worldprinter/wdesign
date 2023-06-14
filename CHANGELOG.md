@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/worldprinter/wdesign/compare/v0.8.0...v0.9.0) (2023-06-14)
+
+
+### Features
+
+* **core:** input wrapper add label position ([b09a7fe](https://github.com/worldprinter/wdesign/commit/b09a7fedec011cd8a8f1f3c186ab007637c2c895))
+* **docs:** update demo ([06402fa](https://github.com/worldprinter/wdesign/commit/06402fa845cb73e6d58e65b2a8892cc674e5d0f8))
+
+
+### Bug Fixes
+
+* add deps ([1f4d90d](https://github.com/worldprinter/wdesign/commit/1f4d90dfbced7a537fde9a979b44201460382126))
+
 ## [0.8.0](https://github.com/worldprinter/wdesign/compare/v0.7.0...v0.8.0) (2023-06-12)
 
 

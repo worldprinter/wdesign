@@ -1,11 +1,35 @@
 import { Callout } from 'nextra-theme-docs'
 
-import { Checkbox } from '@worldprinter/wdesign-core'
+import { Input, Box } from '@worldprinter/wdesign-core'
 
 # 介绍
 
 Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
 
-<Checkbox />
+<Box>
+  <Input.Wrapper
+    id="input-demo"
+    withAsterisk
+    label="Credit card information"
+    description="Please enter your credit card information, we need some money"
+    error="Your credit card expired"
+    labelPosition={"left"}
+  >
+    <Input id="input-demo" placeholder="Your email" />
+  </Input.Wrapper>
+</Box>
+
+
+<Box mt={'lg'}>
+  <Input.Wrapper
+    id="input-demo"
+    withAsterisk
+    label="Credit card information"
+    description="Please enter your credit card information, we need some money"
+    error="Your credit card expired"
+  >
+    <Input id="input-demo" placeholder="Your email" />
+  </Input.Wrapper>
+</Box>
 
 <Callout emoji='👾'>**Space Invaders** is a 1978 shoot 'em up arcade game developed by Tomohiro Nishikado.</Callout>

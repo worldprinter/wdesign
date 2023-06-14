@@ -4,6 +4,9 @@
     "overrides": [
         {
             "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+            "parserOptions": {
+                "project": ["apps/docs/tsconfig.json"]
+            },
             "rules": {
                 "@next/next/no-html-link-for-pages": ["error", "apps/docs/pages"],
                 "@typescript-eslint/consistent-type-imports": [

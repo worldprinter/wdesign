@@ -39,6 +39,9 @@ export type InputWrapperBaseProps = {
     /** Props spread to label element */
     labelProps?: Record<string, any>
 
+    /** Input label position */
+    labelPosition?: 'top' | 'left'
+
     /** Props spread to description element */
     descriptionProps?: Record<string, any>
 
@@ -75,6 +78,7 @@ export type InputWrapperProps = {
 
 const defaultProps: Partial<InputWrapperProps> = {
     labelElement: 'label',
+    labelPosition: 'top',
     size: 'sm',
     inputContainer: (children) => children,
     inputWrapperOrder: ['label', 'description', 'input', 'error'],
@@ -91,6 +95,7 @@ export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>((props
         description,
         labelElement,
         labelProps,
+        labelPosition,
         descriptionProps,
         errorProps,
         classNames,
@@ -105,14 +110,17 @@ export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>((props
         ...others
     } = useComponentDefaultProps('InputWrapper', defaultProps, props)
 
-    const { classes, cx } = useStyles(null, {
-        classNames,
-        styles,
-        name: ['InputWrapper', __staticSelector],
-        unstyled,
-        variant,
-        size,
-    })
+    const { classes, cx } = useStyles(
+        { labelPosition },
+        {
+            classNames,
+            styles,
+            name: ['InputWrapper', __staticSelector],
+            unstyled,
+            variant,
+            size,
+        },
+    )
 
     const sharedProps = {
         classNames,
@@ -170,20 +178,30 @@ export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>((props
         </InputError>
     )
 
-    const content = inputWrapperOrder.map((part) => {
-        switch (part) {
-            case 'label':
-                return _label
-            case 'input':
-                return _input
-            case 'description':
-                return _description
-            case 'error':
-                return _error
-            default:
-                return null
-        }
-    })
+    const pickContent = React.useCallback(
+        (orders) => {
+            return orders.map((part) => {
+                switch (part) {
+                    case 'label':
+                        return _label
+                    case 'input':
+                        return _input
+                    case 'description':
+                        return _description
+                    case 'error':
+                        return _error
+                    default:
+                        return null
+                }
+            })
+        },
+        [_description, _error, _input, _label],
+    )
+
+    const content =
+        labelPosition === 'top'
+            ? pickContent(inputWrapperOrder)
+            : pickContent(inputWrapperOrder.filter((part) => part !== 'label'))
 
     return (
         <InputWrapperProvider
@@ -200,7 +218,14 @@ export const InputWrapper = forwardRef<HTMLDivElement, InputWrapperProps>((props
                 ref={ref}
                 {...others}
             >
-                {content}
+                {labelPosition === 'top' ? (
+                    content
+                ) : (
+                    <>
+                        <Box className={cx(classes.labelWrapper, 'label-wrapper-container')}>{_label}</Box>
+                        <Box className={cx(classes.inputWrapper, 'input-wrapper-container')}>{content}</Box>
+                    </>
+                )}
             </Box>
         </InputWrapperProvider>
     )

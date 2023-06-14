@@ -23,7 +23,8 @@
             "defaultConfiguration": "development",
             "options": {
                 "buildTarget": "docs:build",
-                "dev": true
+                "dev": true,
+                "port": 4301
             },
             "configurations": {
                 "development": {
